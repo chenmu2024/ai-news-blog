@@ -61,6 +61,27 @@ def unwrap(md):
         return s[len(fence + "markdown"):-len(fence)].strip()
     return md
 
+def strip_internal_notes(md):
+    # Remove editor-facing production notes that must never appear to readers.
+    headings = (
+        "数据核验说明",
+        "图片说明",
+        "配图说明",
+        "发布说明",
+        "编辑说明",
+        "内部备注",
+        "来源核验说明",
+    )
+    names = "|".join(re.escape(x) for x in headings)
+    md = re.sub(
+        rf"(?ms)^##+\s*(?:{names})\s*$.*?(?=^##+\s|\Z)",
+        "",
+        md,
+    )
+    # Remove image-placement placeholders used during drafting.
+    md = re.sub(r"(?m)^>\s*配图建议：.*(?:\n|$)", "", md)
+    return re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
+
 def title_of(md):
     m = re.search(r"(?m)^#\s+(.+?)\s*$", md)
     if not m:
@@ -185,7 +206,7 @@ def create_draft(tok, title, body, cover_id):
 def main():
     if not ARTICLE.exists():
         fail("文章不存在: " + str(ARTICLE))
-    md = unwrap(ARTICLE.read_text(encoding="utf-8"))
+    md = strip_internal_notes(unwrap(ARTICLE.read_text(encoding="utf-8")))
     title = title_of(md)
     api_title = wechat_safe_title(title)
     digest = digest_of(md)

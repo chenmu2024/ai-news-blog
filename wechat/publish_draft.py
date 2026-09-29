@@ -6,9 +6,11 @@ import requests
 
 APP_ID = os.environ["WECHAT_APP_ID"].strip()
 APP_SECRET = os.environ["WECHAT_APP_SECRET"].strip()
+FIXIE_URL = (os.getenv("FIXIE_URL") or "").strip()
 AUTHOR = (os.getenv("WECHAT_AUTHOR") or "陈慕").strip()
 ARTICLE = Path(os.getenv("ARTICLE_PATH", "wechat/articles/today.md"))
 API = "https://api.weixin.qq.com/cgi-bin"
+PROXIES = {"http": FIXIE_URL, "https": FIXIE_URL} if FIXIE_URL else None
 
 def fail(msg):
     print("[ERROR]", msg)
@@ -19,7 +21,7 @@ def token():
         "grant_type": "client_credential",
         "appid": APP_ID,
         "secret": APP_SECRET
-    }, timeout=30)
+    }, timeout=30, proxies=PROXIES)
     r.raise_for_status()
     d = r.json()
     if not d.get("access_token"):
@@ -61,6 +63,7 @@ def upload_body(tok, content, mime, ext):
         params={"access_token": tok},
         files={"media": ("image" + ext, content, mime)},
         timeout=60,
+        proxies=PROXIES,
     )
     r.raise_for_status()
     d = r.json()
@@ -74,6 +77,7 @@ def upload_cover(tok, content, mime, ext):
         params={"access_token": tok, "type": "image"},
         files={"media": ("cover" + ext, content, mime)},
         timeout=60,
+        proxies=PROXIES,
     )
     r.raise_for_status()
     d = r.json()
@@ -119,7 +123,7 @@ def create_draft(tok, title, digest, body, cover_id):
         "need_open_comment": 0,
         "only_fans_can_comment": 0
     }]}
-    r = requests.post(API + "/draft/add", params={"access_token": tok}, json=payload, timeout=60)
+    r = requests.post(API + "/draft/add", params={"access_token": tok}, json=payload, timeout=60, proxies=PROXIES)
     r.raise_for_status()
     d = r.json()
     if not d.get("media_id"):
@@ -134,6 +138,7 @@ def main():
     digest = digest_of(md)
     sha = hashlib.sha256(md.encode("utf-8")).hexdigest()
     print("[ARTICLE]", title)
+    print("[PROXY]", "Fixie enabled" if PROXIES else "Direct connection")
     print("[SHA256]", sha)
 
     tok = token()

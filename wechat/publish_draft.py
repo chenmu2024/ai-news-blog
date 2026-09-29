@@ -19,23 +19,9 @@ PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
 def proxy_variants():
     if not PROXY_URL:
         return [None]
-
-    u = urlparse(PROXY_URL)
-    variants = []
-
-    # Webshare Backbone first. A fixed session id keeps the same exit IP
-    # for repeated runs, which is important for WeChat's IP allowlist.
-    if u.username and u.password:
-        backbone_user = u.username + "-us-4242"
-        backbone = f"http://{backbone_user}:{u.password}@p.webshare.io:80"
-        variants.append({"http": backbone, "https": backbone})
-
-    # Keep direct modes only as fallbacks.
-    variants.append({"http": PROXY_URL, "https": PROXY_URL})
-    if PROXY_URL.startswith("http://"):
-        socks = "socks5h://" + PROXY_URL[len("http://"):]
-        variants.append({"http": socks, "https": socks})
-    return variants
+    # Use the exact Webshare direct proxy configured in PROXY_URL.
+    # This keeps the WeChat API source IP identical to the allowlisted IP.
+    return [{"http": PROXY_URL, "https": PROXY_URL}]
 
 def request_with_proxy(method, url, **kwargs):
     last = None
@@ -44,9 +30,7 @@ def request_with_proxy(method, url, **kwargs):
             r = requests.request(method, url, proxies=proxies, **kwargs)
             r.raise_for_status()
             if idx == 1 and PROXY_URL:
-                print("[PROXY] Webshare Backbone sticky session connected")
-            elif idx > 1:
-                print(f"[PROXY] Fallback mode {idx} connected")
+                print("[PROXY] Direct static proxy connected")
             return r
         except Exception as e:
             last = e

@@ -1,19 +1,12 @@
 name: WeChat Metrics Collector
 
 on:
-  schedule:
-    - cron: "30 0 * * *"
   workflow_dispatch:
     inputs:
       date:
-        description: "Optional date to collect (YYYY-MM-DD). Leave empty for yesterday."
+        description: "Optional date to collect (YYYY-MM-DD)."
         required: false
         type: string
-  push:
-    branches: [main]
-    paths:
-      - "wechat/collect_metrics.py"
-      - ".github/workflows/wechat-metrics.yml"
 
 permissions:
   contents: write
@@ -45,17 +38,6 @@ jobs:
           if [ -n "${{ github.event.inputs.date }}" ]; then
             python wechat/collect_metrics.py --date "${{ github.event.inputs.date }}"
           else
-            python wechat/collect_metrics.py
-          fi
-
-      - name: Commit metrics
-        run: |
-          git config user.name "wechat-metrics-bot"
-          git config user.email "wechat-metrics-bot@users.noreply.github.com"
-          git add wechat/metrics
-          if git diff --cached --quiet; then
-            echo "No metrics changes to commit."
-          else
-            git commit -m "Update WeChat metrics"
-            git push
+            echo "Metrics collection is manual-only because the account lacks analytics API permission."
+            exit 0
           fi

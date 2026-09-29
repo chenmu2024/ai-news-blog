@@ -12,6 +12,7 @@ PROXY_URL = (os.getenv("PROXY_URL") or os.getenv("FIXIE_URL") or "").strip()
 AUTHOR = (os.getenv("WECHAT_AUTHOR") or "陈慕").strip()
 ARTICLE = Path(os.getenv("ARTICLE_PATH", "wechat/articles/today.md"))
 API = "https://api.weixin.qq.com/cgi-bin"
+# bridge-test-trigger
 PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
 
 def fail(msg):

@@ -1,6 +1,7 @@
 from __future__ import annotations
 import hashlib, os, re, sys
 from pathlib import Path
+from urllib.parse import urlparse
 from io import BytesIO
 import markdown
 import requests
@@ -18,10 +19,21 @@ PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
 def proxy_variants():
     if not PROXY_URL:
         return [None]
+
     variants = [{"http": PROXY_URL, "https": PROXY_URL}]
+
     if PROXY_URL.startswith("http://"):
         socks = "socks5h://" + PROXY_URL[len("http://"):]
         variants.append({"http": socks, "https": socks})
+
+        # Webshare Backbone fallback. Reuse the same credentials but connect
+        # through p.webshare.io:80 and restrict the exit pool to US proxies.
+        u = urlparse(PROXY_URL)
+        if u.username and u.password:
+            backbone_user = u.username + "-us"
+            backbone = f"http://{backbone_user}:{u.password}@p.webshare.io:80"
+            variants.append({"http": backbone, "https": backbone})
+
     return variants
 
 def request_with_proxy(method, url, **kwargs):
@@ -32,11 +44,16 @@ def request_with_proxy(method, url, **kwargs):
             r.raise_for_status()
             if idx == 2:
                 print("[PROXY] HTTP failed; SOCKS5 fallback succeeded")
+            elif idx == 3:
+                print("[PROXY] Direct modes failed; Webshare Backbone succeeded")
             return r
         except Exception as e:
             last = e
             if idx < len(proxy_variants()):
-                print("[PROXY] HTTP proxy failed; trying SOCKS5 fallback")
+                if idx == 1:
+                    print("[PROXY] Direct HTTP failed; trying SOCKS5")
+                elif idx == 2:
+                    print("[PROXY] SOCKS5 failed; trying Webshare Backbone")
                 continue
             raise last
 

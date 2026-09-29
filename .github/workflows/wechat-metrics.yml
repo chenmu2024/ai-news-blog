@@ -1,0 +1,61 @@
+name: WeChat Metrics Collector
+
+on:
+  schedule:
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Optional date to collect (YYYY-MM-DD). Leave empty for yesterday."
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - "wechat/collect_metrics.py"
+      - ".github/workflows/wechat-metrics.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Collect WeChat metrics
+        env:
+          WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python wechat/collect_metrics.py --date "${{ github.event.inputs.date }}"
+          else
+            python wechat/collect_metrics.py
+          fi
+
+      - name: Commit metrics
+        run: |
+          git config user.name "wechat-metrics-bot"
+          git config user.email "wechat-metrics-bot@users.noreply.github.com"
+          git add wechat/metrics
+          if git diff --cached --quiet; then
+            echo "No metrics changes to commit."
+          else
+            git commit -m "Update WeChat metrics"
+            git push
+          fi

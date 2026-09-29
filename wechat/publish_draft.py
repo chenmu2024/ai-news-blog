@@ -157,12 +157,11 @@ def styled_html(md):
     raw = raw.replace("<hr />", '<hr style="border:none;border-top:1px solid #e5e5e5;margin:30px 0;" />')
     return '<section style="font-size:16px;line-height:1.95;color:#222;word-break:break-word;">' + raw + "</section>"
 
-def create_draft(tok, title, digest, body, cover_id):
+def create_draft(tok, title, body, cover_id):
     payload = {"articles": [{
         "article_type": "news",
         "title": title,
         "author": AUTHOR[:16],
-        "digest": digest[:120],
         "content": body,
         "content_source_url": "",
         "thumb_media_id": cover_id,
@@ -195,7 +194,7 @@ def main():
     if not cover:
         fail("文章没有可用 PNG/JPEG 图片，无法创建公众号封面。")
     cover_id = upload_cover(tok, cover[0], cover[1], cover[2])
-    media_id = create_draft(tok, api_title, digest, styled_html(body_md), cover_id)
+    media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
     print("[SUCCESS] 已保存到微信公众号草稿箱")
     print("[SAFE] 未调用任何正式发布接口")
     print("[DRAFT_MEDIA_ID]", media_id)

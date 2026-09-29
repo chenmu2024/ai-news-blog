@@ -1,0 +1,35 @@
+name: WeChat Draft Bridge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "wechat/articles/today.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  create-wechat-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r wechat/requirements.txt
+
+      - name: Create WeChat draft only
+        env:
+          WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
+          WECHAT_AUTHOR: "陈慕"
+          ARTICLE_PATH: "wechat/articles/today.md"
+        run: python wechat/publish_draft.py

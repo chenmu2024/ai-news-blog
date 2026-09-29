@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-28",
+  "summary": {
+    "int_page_read_user": 0,
+    "int_page_read_count": 0,
+    "ori_page_read_user": 0,
+    "ori_page_read_count": 0,
+    "share_user": 0,
+    "share_count": 0,
+    "add_to_fav_user": 0,
+    "add_to_fav_count": 0,
+    "new_user": 0,
+    "cancel_user": 0,
+    "net_user": 0,
+    "cumulate_user": 0
+  },
+  "lifetime_articles": [],
+  "source_file": "wechat/metrics/raw/2026-09-28.json",
+  "report_file": "wechat/metrics/daily/2026-09-28.md",
+  "collected_at": "2026-09-29T12:49:20.537302+08:00"
+}

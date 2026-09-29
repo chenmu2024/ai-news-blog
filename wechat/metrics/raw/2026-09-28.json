@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-28",
+  "collected_at": "2026-09-29T12:49:20.537302+08:00",
+  "article_summary": {
+    "_error": {
+      "errcode": 48001,
+      "errmsg": "api unauthorized rid: 6abb4351-6a818579-5239d4c4"
+    }
+  },
+  "user_read": {
+    "_error": {
+      "errcode": 48001,
+      "errmsg": "api unauthorized rid: 6abb4351-57163dfe-4aaee6c1"
+    }
+  },
+  "user_share": {
+    "_error": {
+      "errcode": 48001,
+      "errmsg": "api unauthorized rid: 6abb4352-163621f1-590f4f1f"
+    }
+  },
+  "user_summary": {
+    "_error": {
+      "errcode": 48001,
+      "errmsg": "api unauthorized rid: 6abb4353-34ac09db-14d6317f"
+    }
+  },
+  "user_cumulate": {
+    "_error": {
+      "errcode": 48001,
+      "errmsg": "api unauthorized rid: 6abb4353-0e9a3144-58a562d2"
+    }
+  },
+  "article_total_7d": {
+    "2026-09-28": {
+      "_error": {
+        "errcode": 48001,
+        "errmsg": "api unauthorized rid: 6abb4354-6abe1752-125ec043"
+      }
+    },
+    "2026-09-27": {
+      "_error": {
+        "errcode": 48001,
+        "errmsg": "api unauthorized rid: 6abb4355-6f1ca943-3e94f8a7"
+      }
+    },
+    "2026-09-26": {
+      "_error": {
+        "errcode": 48001,
+        "errmsg": "api unauthorized rid: 6abb4355-30989f60-2e6a8e24"
+      }
+    },
+    "2026-09-25": {
+      "_error": {
+        "errcode": 48001,
+        "errmsg": "api unauthorized rid: 6abb4356-195de81d-1d2670b5"
+      }
+    },
+    "2026-09-24": {
+      "_error": {
+        "errcode": 48001,
+        "errmsg": "api unauthorized rid: 6abb4357-4236f911-240f77cb"
+      }
+    },
+    "2026-09-23": {
+      "_error": {
+        "errcode": 48001,
+        "errmsg": "api unauthorized rid: 6abb4358-4d8bb757-38d39e7e"
+      }
+    },
+    "2026-09-22": {
+      "_error": {
+        "errcode": 48001,
+        "errmsg": "api unauthorized rid: 6abb4358-6eec8ad6-6221b875"
+      }
+    }
+  }
+}

@@ -30,7 +30,7 @@ jobs:
         env:
           WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
           WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
-          FIXIE_URL: ${{ secrets.FIXIE_URL }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
           WECHAT_AUTHOR: "陈慕"
           ARTICLE_PATH: "wechat/articles/today.md"
         run: python wechat/publish_draft.py

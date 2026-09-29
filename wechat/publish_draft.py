@@ -8,11 +8,11 @@ from PIL import Image
 
 APP_ID = os.environ["WECHAT_APP_ID"].strip()
 APP_SECRET = os.environ["WECHAT_APP_SECRET"].strip()
-FIXIE_URL = (os.getenv("FIXIE_URL") or "").strip()
+PROXY_URL = (os.getenv("PROXY_URL") or os.getenv("FIXIE_URL") or "").strip()
 AUTHOR = (os.getenv("WECHAT_AUTHOR") or "陈慕").strip()
 ARTICLE = Path(os.getenv("ARTICLE_PATH", "wechat/articles/today.md"))
 API = "https://api.weixin.qq.com/cgi-bin"
-PROXIES = {"http": FIXIE_URL, "https": FIXIE_URL} if FIXIE_URL else None
+PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
 
 def fail(msg):
     print("[ERROR]", msg)
@@ -154,7 +154,7 @@ def main():
     digest = digest_of(md)
     sha = hashlib.sha256(md.encode("utf-8")).hexdigest()
     print("[ARTICLE]", title)
-    print("[PROXY]", "Fixie enabled" if PROXIES else "Direct connection")
+    print("[PROXY]", "Static proxy enabled" if PROXIES else "Direct connection")
     print("[SHA256]", sha)
 
     tok = token()

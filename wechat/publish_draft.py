@@ -15,17 +15,41 @@ API = "https://api.weixin.qq.com/cgi-bin"
 # bridge-test-trigger
 PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
 
+def proxy_variants():
+    if not PROXY_URL:
+        return [None]
+    variants = [{"http": PROXY_URL, "https": PROXY_URL}]
+    if PROXY_URL.startswith("http://"):
+        socks = "socks5h://" + PROXY_URL[len("http://"):]
+        variants.append({"http": socks, "https": socks})
+    return variants
+
+def request_with_proxy(method, url, **kwargs):
+    last = None
+    for idx, proxies in enumerate(proxy_variants(), start=1):
+        try:
+            r = requests.request(method, url, proxies=proxies, **kwargs)
+            r.raise_for_status()
+            if idx == 2:
+                print("[PROXY] HTTP failed; SOCKS5 fallback succeeded")
+            return r
+        except Exception as e:
+            last = e
+            if idx < len(proxy_variants()):
+                print("[PROXY] HTTP proxy failed; trying SOCKS5 fallback")
+                continue
+            raise last
+
 def fail(msg):
     print("[ERROR]", msg)
     sys.exit(1)
 
 def token():
-    r = requests.get(API + "/token", params={
+    r = request_with_proxy("GET", API + "/token", params={
         "grant_type": "client_credential",
         "appid": APP_ID,
         "secret": APP_SECRET
-    }, timeout=30, proxies=PROXIES)
-    r.raise_for_status()
+    }, timeout=30)
     d = r.json()
     if not d.get("access_token"):
         fail("获取 access_token 失败: " + str(d))
@@ -75,28 +99,26 @@ def get_image(url):
     return out.getvalue(), "image/jpeg", ".jpg"
 
 def upload_body(tok, content, mime, ext):
-    r = requests.post(
+    r = request_with_proxy(
+        "POST",
         API + "/media/uploadimg",
         params={"access_token": tok},
         files={"media": ("image" + ext, content, mime)},
         timeout=60,
-        proxies=PROXIES,
     )
-    r.raise_for_status()
     d = r.json()
     if not d.get("url"):
         raise RuntimeError("正文图片上传失败: " + str(d))
     return d["url"]
 
 def upload_cover(tok, content, mime, ext):
-    r = requests.post(
+    r = request_with_proxy(
+        "POST",
         API + "/material/add_material",
         params={"access_token": tok, "type": "image"},
         files={"media": ("cover" + ext, content, mime)},
         timeout=60,
-        proxies=PROXIES,
     )
-    r.raise_for_status()
     d = r.json()
     if not d.get("media_id"):
         raise RuntimeError("封面上传失败: " + str(d))
@@ -140,8 +162,7 @@ def create_draft(tok, title, digest, body, cover_id):
         "need_open_comment": 0,
         "only_fans_can_comment": 0
     }]}
-    r = requests.post(API + "/draft/add", params={"access_token": tok}, json=payload, timeout=60, proxies=PROXIES)
-    r.raise_for_status()
+    r = request_with_proxy("POST", API + "/draft/add", params={"access_token": tok}, json=payload, timeout=60)
     d = r.json()
     if not d.get("media_id"):
         fail("创建草稿失败: " + str(d))

@@ -1,5 +1,5 @@
 from __future__ import annotations
-import hashlib, os, re, sys
+import hashlib, json, os, re, sys
 from pathlib import Path
 from urllib.parse import urlparse
 from io import BytesIO
@@ -168,7 +168,15 @@ def create_draft(tok, title, body, cover_id):
         "need_open_comment": 0,
         "only_fans_can_comment": 0
     }]}
-    r = request_with_proxy("POST", API + "/draft/add", params={"access_token": tok}, json=payload, timeout=60)
+    post_data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    r = request_with_proxy(
+        "POST",
+        API + "/draft/add",
+        params={"access_token": tok},
+        data=post_data,
+        headers={"Content-Type": "application/json; charset=utf-8"},
+        timeout=60,
+    )
     d = r.json()
     if not d.get("media_id"):
         fail("创建草稿失败: " + str(d))

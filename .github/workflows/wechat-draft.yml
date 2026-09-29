@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "wechat/articles/today.md"
+      - "wechat/publish_draft.py"
+      - "wechat/requirements.txt"
   workflow_dispatch:
 
 permissions:

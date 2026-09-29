@@ -20,20 +20,21 @@ def proxy_variants():
     if not PROXY_URL:
         return [None]
 
-    variants = [{"http": PROXY_URL, "https": PROXY_URL}]
+    u = urlparse(PROXY_URL)
+    variants = []
 
+    # Webshare Backbone first. A fixed session id keeps the same exit IP
+    # for repeated runs, which is important for WeChat's IP allowlist.
+    if u.username and u.password:
+        backbone_user = u.username + "-us-4242"
+        backbone = f"http://{backbone_user}:{u.password}@p.webshare.io:80"
+        variants.append({"http": backbone, "https": backbone})
+
+    # Keep direct modes only as fallbacks.
+    variants.append({"http": PROXY_URL, "https": PROXY_URL})
     if PROXY_URL.startswith("http://"):
         socks = "socks5h://" + PROXY_URL[len("http://"):]
         variants.append({"http": socks, "https": socks})
-
-        # Webshare Backbone fallback. Reuse the same credentials but connect
-        # through p.webshare.io:80 and restrict the exit pool to US proxies.
-        u = urlparse(PROXY_URL)
-        if u.username and u.password:
-            backbone_user = u.username + "-us"
-            backbone = f"http://{backbone_user}:{u.password}@p.webshare.io:80"
-            variants.append({"http": backbone, "https": backbone})
-
     return variants
 
 def request_with_proxy(method, url, **kwargs):
@@ -42,18 +43,15 @@ def request_with_proxy(method, url, **kwargs):
         try:
             r = requests.request(method, url, proxies=proxies, **kwargs)
             r.raise_for_status()
-            if idx == 2:
-                print("[PROXY] HTTP failed; SOCKS5 fallback succeeded")
-            elif idx == 3:
-                print("[PROXY] Direct modes failed; Webshare Backbone succeeded")
+            if idx == 1 and PROXY_URL:
+                print("[PROXY] Webshare Backbone sticky session connected")
+            elif idx > 1:
+                print(f"[PROXY] Fallback mode {idx} connected")
             return r
         except Exception as e:
             last = e
             if idx < len(proxy_variants()):
-                if idx == 1:
-                    print("[PROXY] Direct HTTP failed; trying SOCKS5")
-                elif idx == 2:
-                    print("[PROXY] SOCKS5 failed; trying Webshare Backbone")
+                print(f"[PROXY] Mode {idx} failed; trying fallback")
                 continue
             raise last
 
@@ -83,7 +81,14 @@ def title_of(md):
     m = re.search(r"(?m)^#\s+(.+?)\s*$", md)
     if not m:
         fail("缺少一级标题")
-    return re.sub(r"[*_]", "", m.group(1)).strip()[:64]
+    return re.sub(r"[*_]", "", m.group(1)).strip()
+
+def wechat_safe_title(title):
+    # Current draft API documentation uses a 32-character title ceiling.
+    # Keep the Markdown H1 untouched; only shorten the WeChat title field.
+    if len(title) <= 32:
+        return title
+    return title[:31].rstrip("，。！？：；、 ") + "…"
 
 def digest_of(md):
     s = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", md)
@@ -170,6 +175,7 @@ def styled_html(md):
 
 def create_draft(tok, title, digest, body, cover_id):
     payload = {"articles": [{
+        "article_type": "news",
         "title": title,
         "author": AUTHOR[:16],
         "digest": digest[:120],
@@ -190,9 +196,12 @@ def main():
         fail("文章不存在: " + str(ARTICLE))
     md = unwrap(ARTICLE.read_text(encoding="utf-8"))
     title = title_of(md)
+    api_title = wechat_safe_title(title)
     digest = digest_of(md)
     sha = hashlib.sha256(md.encode("utf-8")).hexdigest()
     print("[ARTICLE]", title)
+    if api_title != title:
+        print("[WECHAT_TITLE]", api_title)
     print("[PROXY]", "Static proxy enabled" if PROXIES else "Direct connection")
     print("[SHA256]", sha)
 
@@ -202,7 +211,7 @@ def main():
     if not cover:
         fail("文章没有可用 PNG/JPEG 图片，无法创建公众号封面。")
     cover_id = upload_cover(tok, cover[0], cover[1], cover[2])
-    media_id = create_draft(tok, title, digest, styled_html(body_md), cover_id)
+    media_id = create_draft(tok, api_title, digest, styled_html(body_md), cover_id)
     print("[SUCCESS] 已保存到微信公众号草稿箱")
     print("[SAFE] 未调用任何正式发布接口")
     print("[DRAFT_MEDIA_ID]", media_id)

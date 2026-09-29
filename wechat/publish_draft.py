@@ -1,8 +1,10 @@
 from __future__ import annotations
 import hashlib, os, re, sys
 from pathlib import Path
+from io import BytesIO
 import markdown
 import requests
+from PIL import Image
 
 APP_ID = os.environ["WECHAT_APP_ID"].strip()
 APP_SECRET = os.environ["WECHAT_APP_SECRET"].strip()
@@ -54,8 +56,22 @@ def get_image(url):
     ct = (r.headers.get("Content-Type") or "").split(";")[0].lower()
     if ct not in ("image/png", "image/jpeg"):
         raise RuntimeError("图片类型不合格: %s -> %s" % (url, ct))
-    ext = ".png" if ct == "image/png" else ".jpg"
-    return r.content, ct, ext
+
+    # Only the WeChat upload goes through Fixie. Compress first to conserve
+    # the free proxy bandwidth while keeping article images readable.
+    img = Image.open(BytesIO(r.content))
+    img.thumbnail((1200, 1200))
+    if img.mode in ("RGBA", "LA"):
+        bg = Image.new("RGB", img.size, "white")
+        alpha = img.getchannel("A")
+        bg.paste(img.convert("RGB"), mask=alpha)
+        img = bg
+    elif img.mode != "RGB":
+        img = img.convert("RGB")
+
+    out = BytesIO()
+    img.save(out, format="JPEG", quality=82, optimize=True)
+    return out.getvalue(), "image/jpeg", ".jpg"
 
 def upload_body(tok, content, mime, ext):
     r = requests.post(

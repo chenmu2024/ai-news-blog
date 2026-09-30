@@ -98,7 +98,10 @@ def font_file(family):
         return "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
 
 def F(size, bold=False, serif=False):
-    family = "Noto Serif CJK SC" if serif else ("Noto Sans CJK SC:style=Bold" if bold else "Noto Sans CJK SC")
+    if serif:
+        family = "Noto Serif CJK SC:style=SemiBold" if bold else "Noto Serif CJK SC"
+    else:
+        family = "Noto Sans CJK SC:style=Medium" if bold else "Noto Sans CJK SC"
     return ImageFont.truetype(font_file(family), size)
 
 def wrap(draw, text, font, max_width):
@@ -127,18 +130,38 @@ def draw_cover(spec):
     W, H = 1200, 510
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
-    d.rounded_rectangle((28, 28, W-28, H-28), radius=30, fill=PANEL, outline=LINE, width=2)
-    d.rectangle((28, 28, 42, H-28), fill=RED)
+
+    # 大留白 + 双层细边框，避免“PPT感”
+    d.rounded_rectangle((24, 24, W-24, H-24), radius=34, fill=PANEL, outline=(232, 221, 201), width=2)
+    d.rounded_rectangle((42, 42, W-42, H-42), radius=28, outline=(239, 230, 214), width=1)
+
     title = str(spec.get("title") or "且知")
     subtitle = str(spec.get("subtitle") or "")
     kicker = str(spec.get("kicker") or "毛选方法论")
-    center_text(d, 70, kicker, F(34, bold=True), GOLD, W)
-    for i, line in enumerate(wrap(d, title, F(62, bold=True, serif=True), W-170)[:2]):
-        center_text(d, 132 + i*78, line, F(62, bold=True, serif=True), DARK_RED, W)
-    d.line((390, 330, 810, 330), fill=GOLD, width=3)
+
+    # 顶部品牌眉题
+    pill_w = 230
+    x0 = (W-pill_w)//2
+    d.rounded_rectangle((x0, 68, x0+pill_w, 118), radius=25, fill=(244, 234, 216))
+    center_text(d, 77, "且知 · " + kicker, F(24, bold=True), DARK_RED, W)
+
+    # 主标题使用宋体系，控制两行以内
+    title_font = F(60, bold=True, serif=True)
+    lines = wrap(d, title, title_font, W-180)[:2]
+    title_y = 150 if len(lines) == 2 else 185
+    for i, line in enumerate(lines):
+        center_text(d, title_y + i*78, line, title_font, DARK_RED, W)
+
+    # 金色细分隔线
+    d.line((430, 330, 770, 330), fill=GOLD, width=2)
+    d.ellipse((415, 325, 425, 335), fill=GOLD)
+    d.ellipse((775, 325, 785, 335), fill=GOLD)
+
     if subtitle:
-        for i, line in enumerate(wrap(d, subtitle, F(30), W-180)[:2]):
-            center_text(d, 360 + i*42, line, F(30), MUTED, W)
+        sub_font = F(28)
+        for i, line in enumerate(wrap(d, subtitle, sub_font, W-220)[:2]):
+            center_text(d, 360 + i*40, line, sub_font, MUTED, W)
+
     return img
 
 def draw_card(spec):
@@ -149,16 +172,30 @@ def draw_card(spec):
     if not isinstance(items, list):
         items = []
     items = items[:6]
-    row_h = 210
-    H = 300 + max(1, len(items))*row_h + 90
+
+    row_h = 216
+    H = 330 + max(1, len(items))*row_h + 86
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
-    d.text((70, 52), title, font=F(48, bold=True, serif=True), fill=DARK_RED)
+
+    # 外框
+    d.rounded_rectangle((34, 34, W-34, H-34), radius=32, fill=(249, 245, 236), outline=(232, 220, 197), width=2)
+
+    # 顶部小眉题
+    d.text((72, 62), "且知 · 毛选方法论", font=F(21, bold=True), fill=GOLD)
+
+    # 标题区：宋体系标题 + 灰色副标题
+    d.text((72, 104), title, font=F(48, bold=True, serif=True), fill=DARK_RED)
     if subtitle:
-        for i, line in enumerate(wrap(d, subtitle, F(27), W-140)[:2]):
-            d.text((72, 118 + i*38), line, font=F(27), fill=MUTED)
-    d.line((72, 205, W-72, 205), fill=GOLD, width=3)
-    y = 245
+        sy = 170
+        for i, line in enumerate(wrap(d, subtitle, F(26), W-144)[:2]):
+            d.text((74, sy+i*36), line, font=F(26), fill=MUTED)
+
+    divider_y = 244
+    d.line((72, divider_y, W-72, divider_y), fill=(221, 205, 177), width=2)
+    d.rectangle((72, divider_y-1, 220, divider_y+1), fill=GOLD)
+
+    y = 278
     for idx, raw in enumerate(items, start=1):
         if isinstance(raw, str):
             name, lead, detail = raw, "", ""
@@ -166,25 +203,37 @@ def draw_card(spec):
             name = str(raw.get("name") or f"第{idx}点")
             lead = str(raw.get("lead") or "")
             detail = str(raw.get("detail") or "")
+
         top = y
         bottom = y + row_h - 24
-        d.rounded_rectangle((56, top, W-56, bottom), radius=24, fill=PANEL, outline=LINE, width=2)
-        d.rounded_rectangle((76, top+28, 176, top+128), radius=22, fill=RED if idx % 2 else GOLD)
+
+        # 卡片主体
+        d.rounded_rectangle((58, top, W-58, bottom), radius=26, fill=(253, 250, 244), outline=(230, 219, 199), width=2)
+
+        # 序号徽章，比原版更轻
+        badge_fill = RED if idx % 2 else (173, 132, 65)
+        d.rounded_rectangle((82, top+32, 168, top+118), radius=22, fill=badge_fill)
         num = f"{idx:02d}"
-        box = d.textbbox((0,0), num, font=F(34, bold=True))
-        d.text((126-(box[2]-box[0])/2, top+56), num, font=F(34, bold=True), fill=(255,255,255))
-        d.text((212, top+26), name, font=F(36, bold=True, serif=True), fill=TEXT)
-        if lead:
-            lead_lines = wrap(d, lead, F(27, bold=True), W-310)[:2]
-            for j, line in enumerate(lead_lines):
-                d.text((212, top+80+j*38), line, font=F(27, bold=True), fill=RED)
+        num_font = F(30, bold=True)
+        box = d.textbbox((0,0), num, font=num_font)
+        d.text((125-(box[2]-box[0])/2, top+57), num, font=num_font, fill=(255,255,255))
+
+        # 内容层级：名称 > 红色结论 > 灰色解释
+        d.text((202, top+27), name, font=F(34, bold=True, serif=True), fill=TEXT)
+
+        lead_lines = wrap(d, lead, F(26, bold=True), W-304)[:2] if lead else []
+        for j, line in enumerate(lead_lines):
+            d.text((202, top+78+j*35), line, font=F(26, bold=True), fill=RED)
+
+        detail_y = top + 151 if lead_lines else top + 91
         if detail:
-            detail_y = top + (158 if lead else 98)
-            for j, line in enumerate(wrap(d, detail, F(24), W-310)[:2]):
-                if detail_y + j*34 < bottom - 12:
-                    d.text((212, detail_y+j*34), line, font=F(24), fill=MUTED)
+            for j, line in enumerate(wrap(d, detail, F(23), W-304)[:2]):
+                if detail_y + j*32 < bottom - 12:
+                    d.text((202, detail_y+j*32), line, font=F(23), fill=MUTED)
+
         y += row_h
-    d.text((70, H-58), "且知｜把大历史拆成小日常，把大战略拆成小习惯", font=F(22), fill=(140,128,112))
+
+    d.text((72, H-62), "且知｜把大历史拆成小日常，把大战略拆成小习惯", font=F(20), fill=(145, 132, 113))
     return img
 
 def image_bytes(img):
@@ -236,13 +285,73 @@ def render_and_replace(md, tok):
 
 def styled_html(md):
     raw = markdown.markdown(md, extensions=["extra", "fenced_code", "sane_lists"], output_format="html5")
-    raw = re.sub(r"<h2>(.*?)</h2>", r'<h2 style="font-size:22px;line-height:1.55;margin:36px 0 16px;font-weight:700;color:#8f1d14;">\1</h2>', raw, flags=re.S)
-    raw = re.sub(r"<h3>(.*?)</h3>", r'<h3 style="font-size:18px;line-height:1.6;margin:28px 0 12px;font-weight:700;color:#222;">\1</h3>', raw, flags=re.S)
-    raw = re.sub(r"<p>(.*?)</p>", r'<p style="font-size:16px;line-height:1.95;margin:14px 0;color:#222;">\1</p>', raw, flags=re.S)
-    raw = re.sub(r"<blockquote>(.*?)</blockquote>", r'<blockquote style="margin:20px 0;padding:14px 18px;border-left:4px solid #a62117;background:#fbf7ef;color:#555;">\1</blockquote>', raw, flags=re.S)
-    raw = re.sub(r'<img ([^>]*?)src="([^"]+)"([^>]*)>', r'<img \1src="\2"\3 style="max-width:100%;height:auto;display:block;margin:22px auto;" />', raw, flags=re.S)
-    raw = raw.replace("<hr />", '<hr style="border:none;border-top:1px solid #eadfcb;margin:32px 0;" />')
-    return '<section style="font-size:16px;line-height:1.95;color:#222;word-break:break-word;">' + raw + "</section>"
+
+    # 二级标题：轻卡片式章节头，保留公众号阅读的呼吸感
+    raw = re.sub(
+        r"<h2>(.*?)</h2>",
+        r'<section style="margin:38px 0 18px;padding:0 0 0 13px;border-left:4px solid #8f2219;"><h2 style="margin:0;font-family:Songti SC,STSong,Noto Serif SC,SimSun,serif;font-size:20px;line-height:1.55;font-weight:700;letter-spacing:.3px;color:#6f1812;">\1</h2></section>',
+        raw, flags=re.S,
+    )
+
+    raw = re.sub(
+        r"<h3>(.*?)</h3>",
+        r'<h3 style="margin:30px 0 14px;font-family:Songti SC,STSong,Noto Serif SC,SimSun,serif;font-size:18px;line-height:1.65;font-weight:700;color:#2b2926;">\1</h3>',
+        raw, flags=re.S,
+    )
+
+    # 正文：优先调用微信/手机系统自带中文字体
+    raw = re.sub(
+        r"<p>(.*?)</p>",
+        r'<p style="margin:17px 0;font-family:-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,Arial,sans-serif;font-size:16px;line-height:1.95;letter-spacing:.35px;text-align:justify;color:#2b2926;">\1</p>',
+        raw, flags=re.S,
+    )
+
+    # 加粗不做纯黑，使用“且知”统一暗红
+    raw = re.sub(
+        r"<strong>(.*?)</strong>",
+        r'<strong style="font-weight:700;color:#8f2219;">\1</strong>',
+        raw, flags=re.S,
+    )
+
+    # 原文引用：米白底 + 暗红左线 + 宋体
+    raw = re.sub(
+        r"<blockquote>(.*?)</blockquote>",
+        r'<blockquote style="margin:24px 0;padding:15px 18px 15px 20px;border-left:3px solid #9b2b22;border-radius:0 8px 8px 0;background:#faf5ea;color:#4a443d;"><section style="font-family:Songti SC,STSong,Noto Serif SC,SimSun,serif;font-size:16px;line-height:1.9;letter-spacing:.25px;">\1</section></blockquote>',
+        raw, flags=re.S,
+    )
+
+    # 图片留白统一，不加厚边框
+    raw = re.sub(
+        r'<img ([^>]*?)src="([^"]+)"([^>]*)>',
+        r'<img \1src="\2"\3 style="width:100%;max-width:100%;height:auto;display:block;margin:26px auto 28px;border-radius:8px;" />',
+        raw, flags=re.S,
+    )
+
+    # 列表
+    raw = re.sub(
+        r"<ul>(.*?)</ul>",
+        r'<ul style="margin:18px 0;padding-left:1.35em;font-family:-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;font-size:16px;line-height:1.9;color:#2b2926;">\1</ul>',
+        raw, flags=re.S,
+    )
+    raw = re.sub(
+        r"<ol>(.*?)</ol>",
+        r'<ol style="margin:18px 0;padding-left:1.45em;font-family:-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;font-size:16px;line-height:1.9;color:#2b2926;">\1</ol>',
+        raw, flags=re.S,
+    )
+    raw = re.sub(r"<li>(.*?)</li>", r'<li style="margin:8px 0;">\1</li>', raw, flags=re.S)
+
+    # 分隔线改为极轻的暖灰线
+    raw = raw.replace(
+        "<hr />",
+        '<section style="height:1px;background:#eadfcb;margin:34px 18% 32px;"></section>'
+    )
+
+    return (
+        '<section style="font-family:-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,Arial,sans-serif;'
+        'font-size:16px;line-height:1.95;color:#2b2926;word-break:break-word;padding:2px 3px;">'
+        + raw +
+        "</section>"
+    )
 
 def create_draft(tok, title, body, cover_id):
     payload = {"articles": [{"article_type": "news", "title": title, "author": AUTHOR[:16], "content": body, "content_source_url": "", "thumb_media_id": cover_id, "need_open_comment": 0, "only_fans_can_comment": 0}]}

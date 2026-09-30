@@ -275,7 +275,7 @@ def main():
         "article_sha256": sha,
         "title": api_title,
         "draft_media_id": media_id,
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("[SUCCESS] 已保存到“且知”微信公众号草稿箱")
     print("[SAFE] 未调用任何正式发布接口")
     print("[DRAFT_MEDIA_ID]", media_id)

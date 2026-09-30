@@ -373,6 +373,7 @@ def main():
     print("[PROXY]", "Static proxy enabled" if PROXIES else "Direct connection")
     tok = token()
     body_md = re.sub(r"(?m)^#\s+.+?\s*$", "", md, count=1).lstrip()
+    body_md = re.sub(r"(?m)^\*\*作者：.*?\*\*\s*$", "", body_md, count=1).lstrip()
     body_md, cover_id = render_and_replace(body_md, tok)
     media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
     STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)

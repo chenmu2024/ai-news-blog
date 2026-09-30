@@ -5,10 +5,11 @@ on:
     branches: [main]
     paths:
       - "qiezhi/articles/today.md"
-      - "qiezhi/publish_draft.py"
-      - "qiezhi/requirements.txt"
-      - ".github/workflows/qiezhi-draft.yml"
   workflow_dispatch:
+
+concurrency:
+  group: qiezhi-wechat-draft
+  cancel-in-progress: true
 
 permissions:
   contents: write

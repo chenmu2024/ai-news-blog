@@ -21,7 +21,7 @@ STATUS_PATH = Path(os.getenv("STATUS_PATH", "qiezhi/status/latest.json"))
 WECHAT_API = "https://api.weixin.qq.com/cgi-bin"
 PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
 
-CARD_RE = re.compile(r"<!--\\s*QIEZHI_CARD\\s*(\\{.*?\\})\\s*-->", re.S)
+CARD_RE = re.compile(r"<!--\s*QIEZHI_CARD\s+(.+?)\s*-->", re.S)
 
 BG = (247, 241, 229)
 PANEL = (251, 248, 240)
@@ -76,12 +76,12 @@ def unwrap(md):
 def strip_internal_notes(md):
     headings = ("数据核验说明", "图片说明", "配图说明", "发布说明", "编辑说明", "内部备注", "来源核验说明", "生成说明")
     names = "|".join(re.escape(x) for x in headings)
-    md = re.sub(rf"(?ms)^##+\\s*(?:{names})\\s*$.*?(?=^##+\\s|\\Z)", "", md)
-    md = re.sub(r"(?m)^>\\s*配图建议：.*(?:\\n|$)", "", md)
-    return re.sub(r"\\n{3,}", "\\n\\n", md).strip() + "\\n"
+    md = re.sub(rf"(?ms)^##+\s*(?:{names})\s*$.*?(?=^##+\s|\Z)", "", md)
+    md = re.sub(r"(?m)^>\s*配图建议：.*(?:\n|$)", "", md)
+    return re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
 
 def title_of(md):
-    m = re.search(r"(?m)^#\\s+(.+?)\\s*$", md)
+    m = re.search(r"(?m)^#\s+(.+?)\s*$", md)
     if not m:
         fail("缺少一级标题")
     return re.sub(r"[*_]", "", m.group(1)).strip()
@@ -263,7 +263,7 @@ def main():
     print("[SHA256]", sha)
     print("[PROXY]", "Static proxy enabled" if PROXIES else "Direct connection")
     tok = token()
-    body_md = re.sub(r"(?m)^#\\s+.+?\\s*$", "", md, count=1).lstrip()
+    body_md = re.sub(r"(?m)^#\s+.+?\s*$", "", md, count=1).lstrip()
     body_md, cover_id = render_and_replace(body_md, tok)
     media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
     STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)

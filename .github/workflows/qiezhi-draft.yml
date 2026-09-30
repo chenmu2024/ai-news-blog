@@ -1,0 +1,38 @@
+name: Qiezhi WeChat Draft Bridge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "qiezhi/articles/today.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  create-qiezhi-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r qiezhi/requirements.txt
+
+      - name: Generate AI images and create Qiezhi draft
+        env:
+          WECHAT_APP_ID: ${{ secrets.QIEZHI_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.QIEZHI_WECHAT_APP_SECRET }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: "且知"
+          ARTICLE_PATH: "qiezhi/articles/today.md"
+          IMAGE_MODEL: "gpt-image-2.5-flare"
+        run: python qiezhi/publish_draft.py

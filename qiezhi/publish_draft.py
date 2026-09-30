@@ -18,6 +18,7 @@ OPENAI_API_KEY = os.environ["OPENAI_API_KEY"].strip()
 PROXY_URL = (os.getenv("PROXY_URL") or "").strip()
 AUTHOR = (os.getenv("WECHAT_AUTHOR") or "且知").strip()
 ARTICLE = Path(os.getenv("ARTICLE_PATH", "qiezhi/articles/today.md"))
+STATUS_PATH = Path(os.getenv("STATUS_PATH", "qiezhi/status/latest.json"))
 IMAGE_MODEL = (os.getenv("IMAGE_MODEL") or "gpt-image-2.5-flare").strip()
 WECHAT_API = "https://api.weixin.qq.com/cgi-bin"
 OPENAI_IMAGE_API = "https://api.openai.com/v1/images/generations"
@@ -268,6 +269,13 @@ def main():
     body_md = re.sub(r"(?m)^#\s+.+?\s*$", "", md, count=1).lstrip()
     body_md, cover_id = generate_and_replace(body_md, tok)
     media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
+    STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    STATUS_PATH.write_text(json.dumps({
+        "status": "success",
+        "article_sha256": sha,
+        "title": api_title,
+        "draft_media_id": media_id,
+    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
     print("[SUCCESS] 已保存到“且知”微信公众号草稿箱")
     print("[SAFE] 未调用任何正式发布接口")
     print("[DRAFT_MEDIA_ID]", media_id)

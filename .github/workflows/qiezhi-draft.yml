@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - "qiezhi/articles/today.md"
+      - "qiezhi/publish_draft.py"
+      - "qiezhi/requirements.txt"
+      - ".github/workflows/qiezhi-draft.yml"
   workflow_dispatch:
 
 permissions:

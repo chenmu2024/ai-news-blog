@@ -364,10 +364,11 @@ def create_draft(tok, title, body, cover_id):
 def main():
     if not ARTICLE.exists():
         fail("文章不存在: " + str(ARTICLE))
-    md = strip_internal_notes(unwrap(ARTICLE.read_text(encoding="utf-8")))
+    raw_md = ARTICLE.read_text(encoding="utf-8")
+    sha = hashlib.sha256(raw_md.encode("utf-8")).hexdigest()
+    md = strip_internal_notes(unwrap(raw_md))
     title = title_of(md)
     api_title = wechat_safe_title(title)
-    sha = hashlib.sha256(md.encode("utf-8")).hexdigest()
     print("[ARTICLE]", title)
     print("[SHA256]", sha)
     print("[PROXY]", "Static proxy enabled" if PROXIES else "Direct connection")

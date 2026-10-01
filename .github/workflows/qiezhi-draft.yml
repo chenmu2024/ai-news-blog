@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "qiezhi/articles/today.md"
+      - "qiezhi/archive/*.md"
   workflow_dispatch:
 
 concurrency:
@@ -21,6 +21,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve latest archived article
+        shell: bash
+        run: |
+          LATEST="$(find qiezhi/archive -maxdepth 1 -type f -name '*.md' | sort | tail -n 1)"
+          if [ -z "$LATEST" ]; then
+            echo "No archived Qiezhi article found."
+            exit 1
+          fi
+          echo "ARTICLE_PATH=$LATEST" >> "$GITHUB_ENV"
+          echo "[ARTICLE_PATH] $LATEST"
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -41,19 +54,20 @@ jobs:
           WECHAT_APP_SECRET: ${{ secrets.QIEZHI_WECHAT_APP_SECRET }}
           PROXY_URL: ${{ secrets.PROXY_URL }}
           WECHAT_AUTHOR: "且知"
-          ARTICLE_PATH: "qiezhi/articles/today.md"
           STATUS_PATH: "qiezhi/status/latest.json"
         run: python qiezhi/publish_draft.py
 
-      - name: Commit success status
+      - name: Sync today article and success status
+        shell: bash
         run: |
+          cp "$ARTICLE_PATH" qiezhi/articles/today.md
           git config user.name "qiezhi-draft-bot"
           git config user.email "qiezhi-draft-bot@users.noreply.github.com"
-          git add qiezhi/status/latest.json
+          git add qiezhi/articles/today.md qiezhi/status/latest.json
           if git diff --cached --quiet; then
-            echo "No status change."
+            echo "No article/status change."
           else
-            git commit -m "Update Qiezhi draft status"
+            git commit -m "Sync latest Qiezhi article and draft status"
             git pull --rebase origin main
             git push
           fi

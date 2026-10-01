@@ -4,19 +4,36 @@ on:
   push:
     branches: [main]
     paths:
-      - "wechat/articles/today.md"
+      - "wechat/archive/*.md"
   workflow_dispatch:
 
+concurrency:
+  group: ai-wechat-draft
+  cancel-in-progress: true
+
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   create-wechat-draft:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve latest archived article
+        shell: bash
+        run: |
+          LATEST="$(find wechat/archive -maxdepth 1 -type f -name '*.md' | sort | tail -n 1)"
+          if [ -z "$LATEST" ]; then
+            echo "No archived AI article found."
+            exit 1
+          fi
+          echo "ARTICLE_PATH=$LATEST" >> "$GITHUB_ENV"
+          echo "[ARTICLE_PATH] $LATEST"
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -32,5 +49,56 @@ jobs:
           WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
           PROXY_URL: ${{ secrets.PROXY_URL }}
           WECHAT_AUTHOR: "陈慕"
-          ARTICLE_PATH: "wechat/articles/today.md"
+          ARTICLE_PATH: ${{ env.ARTICLE_PATH }}
         run: python wechat/publish_draft.py
+
+      - name: Sync today article and success status
+        shell: bash
+        run: |
+          mkdir -p wechat/articles wechat/status
+          cp "$ARTICLE_PATH" wechat/articles/today.md
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          article_path = Path(os.environ["ARTICLE_PATH"])
+          raw = article_path.read_bytes()
+          text = raw.decode("utf-8")
+          title = ""
+          for line in text.splitlines():
+              if line.startswith("# "):
+                  title = line[2:].strip()
+                  break
+
+          status = {
+              "status": "success",
+              "title": title,
+              "article_path": str(article_path).replace("\\", "/"),
+              "article_sha256": hashlib.sha256(raw).hexdigest(),
+              "workflow_run_id": os.environ.get("GITHUB_RUN_ID", ""),
+              "commit_sha": os.environ.get("GITHUB_SHA", ""),
+              "completed_at_utc": datetime.now(timezone.utc).isoformat(),
+          }
+          Path("wechat/status/latest.json").write_text(
+              json.dumps(status, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print("[STATUS] success")
+          print("[STATUS_TITLE]", title)
+          print("[STATUS_SHA256]", status["article_sha256"])
+          PY
+
+          git config user.name "ai-wechat-draft-bot"
+          git config user.email "ai-wechat-draft-bot@users.noreply.github.com"
+          git add wechat/articles/today.md wechat/status/latest.json
+          if git diff --cached --quiet; then
+            echo "No article/status change."
+          else
+            git commit -m "Sync latest AI article and draft status"
+            git pull --rebase origin main
+            git push
+          fi

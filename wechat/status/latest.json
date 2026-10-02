@@ -1,9 +1,9 @@
 {
   "status": "success",
-  "title": "OpenAI把AI变成常驻员工，我更关心这4个生意",
-  "article_path": "wechat/archive/2026-10-01.md",
-  "article_sha256": "65ee294a4b007fd12f55f8a5288d75a3511bbe0b657bb8eebb1b847723e7e3c6",
-  "workflow_run_id": "36803747583",
-  "commit_sha": "e9d52582c789d050dda913fa986d9af073dc7ecf",
-  "completed_at_utc": "2026-10-01T02:00:25.889590+00:00"
+  "title": "别再让AI只写代码：把GitHub Issue变成自动交付线",
+  "article_path": "wechat/archive/2026-10-02.md",
+  "article_sha256": "fb47dd41a9e99efb30f346b1b7b6e01826de6fa4ca7eddbfe036a9ab01c2922a",
+  "workflow_run_id": "36945684791",
+  "commit_sha": "29dceae0a8ac8a7c28be674ce878d86348a81ad0",
+  "completed_at_utc": "2026-10-02T00:23:04.810007+00:00"
 }

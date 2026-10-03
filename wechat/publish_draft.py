@@ -177,6 +177,102 @@ def image_to_jpeg(img):
     img.save(out, format="JPEG", quality=88, optimize=True)
     return out.getvalue(), "image/jpeg", ".jpg"
 
+WECHAT_CARD_RE = re.compile(r"<!--\s*WECHAT_CARD\s+(.+?)\s*-->", re.S)
+
+def make_info_card(spec):
+    W = 1080
+    title = str(spec.get("title") or "AI 一人公司实战")
+    subtitle = str(spec.get("subtitle") or "")
+    items = spec.get("items") or []
+    if not isinstance(items, list):
+        items = []
+    items = items[:6]
+
+    bg = (246, 248, 251)
+    panel = (255, 255, 255)
+    ink = (24, 31, 43)
+    muted = (92, 103, 121)
+    accent = (38, 99, 235)
+    accent2 = (20, 184, 166)
+    border = (225, 231, 239)
+
+    row_h = 188
+    H = 315 + max(1, len(items)) * row_h + 80
+    img = Image.new("RGB", (W, H), bg)
+    d = ImageDraw.Draw(img)
+
+    d.rounded_rectangle((32, 32, W-32, H-32), radius=30, fill=panel, outline=border, width=2)
+    d.rounded_rectangle((70, 58, 300, 104), radius=22, fill=(235, 242, 255))
+    d.text((92, 68), "陈慕 · AI一人公司实战", font=font(22, True), fill=accent)
+
+    d.text((70, 128), title, font=font(46, True), fill=ink)
+    if subtitle:
+        sy = 190
+        for i, ln in enumerate(wrap_text(d, subtitle, font(25), W-140)[:2]):
+            d.text((72, sy+i*34), ln, font=font(25), fill=muted)
+
+    divider_y = 250
+    d.line((70, divider_y, W-70, divider_y), fill=border, width=2)
+    d.rectangle((70, divider_y-1, 250, divider_y+1), fill=accent)
+
+    y = 282
+    for idx, raw in enumerate(items, start=1):
+        if isinstance(raw, str):
+            name, lead, detail = raw, "", ""
+        else:
+            name = str(raw.get("name") or f"第{idx}点")
+            lead = str(raw.get("lead") or "")
+            detail = str(raw.get("detail") or "")
+        top = y
+        bottom = y + row_h - 22
+
+        d.rounded_rectangle((58, top, W-58, bottom), radius=24, fill=(249, 251, 254), outline=border, width=2)
+        badge = accent if idx % 2 else accent2
+        d.rounded_rectangle((82, top+28, 160, top+106), radius=20, fill=badge)
+
+        num = f"{idx:02d}"
+        nf = font(28, True)
+        box = d.textbbox((0, 0), num, font=nf)
+        d.text((121-(box[2]-box[0])/2, top+51), num, font=nf, fill=(255,255,255))
+
+        d.text((194, top+24), name, font=font(32, True), fill=ink)
+
+        if lead:
+            lead_lines = wrap_text(d, lead, font(24, True), W-300)[:2]
+            for j, ln in enumerate(lead_lines):
+                d.text((194, top+70+j*32), ln, font=font(24, True), fill=accent)
+        else:
+            lead_lines = []
+
+        if detail:
+            detail_y = top + (132 if lead_lines else 80)
+            for j, ln in enumerate(wrap_text(d, detail, font(22), W-300)[:2]):
+                if detail_y + j*30 < bottom - 10:
+                    d.text((194, detail_y+j*30), ln, font=font(22), fill=muted)
+
+        y += row_h
+
+    d.text((70, H-58), "真实项目 · AI工作流 · 商业机会", font=font(20), fill=(132, 142, 158))
+    return image_to_jpeg(img)
+
+def replace_cards(md, tok):
+    count = [0]
+
+    def repl(m):
+        try:
+            spec = json.loads(m.group(1))
+        except Exception as e:
+            raise RuntimeError("WECHAT_CARD JSON格式错误: " + str(e))
+        content, mime, ext = make_info_card(spec)
+        url = upload_body(tok, content, mime, ext)
+        count[0] += 1
+        return f"![信息图]({url})"
+
+    out = WECHAT_CARD_RE.sub(repl, md)
+    if count[0]:
+        print("[WECHAT_CARDS]", count[0])
+    return out, count[0]
+
 def get_image(url):
     r = requests.get(url, timeout=40, allow_redirects=True)
     r.raise_for_status()
@@ -294,6 +390,7 @@ def main():
 
     tok = token()
     body_md = re.sub(r"(?m)^#\s+.+?\s*$", "", md, count=1).lstrip()
+    body_md, _card_count = replace_cards(body_md, tok)
     body_md, cover = replace_images(body_md, tok)
     if not cover:
         cover = make_fallback_cover(api_title)

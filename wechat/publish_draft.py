@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from io import BytesIO
 import markdown
 import requests
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 APP_ID = os.environ["WECHAT_APP_ID"].strip()
 APP_SECRET = os.environ["WECHAT_APP_SECRET"].strip()

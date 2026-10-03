@@ -1,9 +1,9 @@
 {
   "status": "success",
-  "title": "别再让AI只写代码：把GitHub Issue变成自动交付线",
-  "article_path": "wechat/archive/2026-10-02.md",
-  "article_sha256": "fb47dd41a9e99efb30f346b1b7b6e01826de6fa4ca7eddbfe036a9ab01c2922a",
-  "workflow_run_id": "36945684791",
-  "commit_sha": "29dceae0a8ac8a7c28be674ce878d86348a81ad0",
-  "completed_at_utc": "2026-10-02T00:23:04.810007+00:00"
+  "title": "AI开始常驻后台，一人公司真正该自动化什么",
+  "article_path": "wechat/archive/2026-10-03.md",
+  "article_sha256": "63bed18776922dfb29c3de8a76ca142665c624d0bd89732fb54f18001ecbe763",
+  "workflow_run_id": "37082704896",
+  "commit_sha": "55c4f821b7bd50ee0494c8a366363a901a704fbb",
+  "completed_at_utc": "2026-10-03T00:35:56.849964+00:00"
 }

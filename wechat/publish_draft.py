@@ -1,5 +1,5 @@
 from __future__ import annotations
-import hashlib, json, os, re, sys
+import hashlib, json, os, re, sys, subprocess
 from pathlib import Path
 from urllib.parse import urlparse
 from io import BytesIO
@@ -101,6 +101,81 @@ def digest_of(md):
     s = re.sub(r"[*_>#~\[\]()\-]+", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s[:110]
+
+def font_file(family="Noto Sans CJK SC"):
+    try:
+        path = subprocess.check_output(
+            ["fc-match", "-f", "%{file}", family],
+            text=True,
+        ).strip()
+        if path:
+            return path
+    except Exception:
+        pass
+    for p in (
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ):
+        if Path(p).exists():
+            return p
+    raise RuntimeError("找不到可用字体")
+
+def font(size, bold=False):
+    family = "Noto Sans CJK SC:style=Bold" if bold else "Noto Sans CJK SC"
+    return ImageFont.truetype(font_file(family), size)
+
+def wrap_text(draw, text, ft, max_width):
+    lines, line = [], ""
+    for ch in str(text):
+        trial = line + ch
+        if draw.textlength(trial, font=ft) <= max_width:
+            line = trial
+        else:
+            if line:
+                lines.append(line)
+            line = ch
+    if line:
+        lines.append(line)
+    return lines
+
+def make_fallback_cover(title):
+    # WeChat needs a thumb_media_id even when the article deliberately has
+    # no body images. Generate a relevant editorial cover locally instead
+    # of failing or inserting an unrelated logo/stock image.
+    W, H = 1200, 510
+    bg = (247, 248, 250)
+    panel = (255, 255, 255)
+    text = (20, 27, 39)
+    muted = (94, 105, 122)
+    accent = (37, 99, 235)
+    line = (226, 232, 240)
+
+    img = Image.new("RGB", (W, H), bg)
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle((28, 28, W-28, H-28), radius=30, fill=panel, outline=line, width=2)
+    d.rounded_rectangle((72, 66, 270, 112), radius=23, fill=(235, 242, 255))
+    d.text((96, 75), "AI 一人公司实战", font=font(24, True), fill=accent)
+
+    title_font = font(52, True)
+    lines = wrap_text(d, title, title_font, W-160)[:3]
+    y = 150 if len(lines) <= 2 else 132
+    for i, ln in enumerate(lines):
+        d.text((78, y + i*67), ln, font=title_font, fill=text)
+
+    divider_y = 352 if len(lines) <= 2 else 378
+    d.line((78, divider_y, W-78, divider_y), fill=line, width=2)
+    d.rectangle((78, divider_y-1, 250, divider_y+1), fill=accent)
+    d.text((78, divider_y+32), "陈慕｜真实项目 · AI工作流 · 商业机会", font=font(27), fill=muted)
+    print("[FALLBACK_COVER] generated locally")
+    return image_to_jpeg(img)
+
+def image_to_jpeg(img):
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    out = BytesIO()
+    img.save(out, format="JPEG", quality=88, optimize=True)
+    return out.getvalue(), "image/jpeg", ".jpg"
 
 def get_image(url):
     r = requests.get(url, timeout=40, allow_redirects=True)
@@ -221,7 +296,7 @@ def main():
     body_md = re.sub(r"(?m)^#\s+.+?\s*$", "", md, count=1).lstrip()
     body_md, cover = replace_images(body_md, tok)
     if not cover:
-        fail("文章没有可用 PNG/JPEG 图片，无法创建公众号封面。")
+        cover = make_fallback_cover(api_title)
     cover_id = upload_cover(tok, cover[0], cover[1], cover[2])
     media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
     print("[SUCCESS] 已保存到微信公众号草稿箱")

@@ -266,7 +266,7 @@ def replace_cards(md, tok):
         content, mime, ext = make_info_card(spec)
         url = upload_body(tok, content, mime, ext)
         count[0] += 1
-        return f"![信息图]({url})"
+        return f'<img src="{url}" alt="信息图" />'
 
     out = WECHAT_CARD_RE.sub(repl, md)
     if count[0]:

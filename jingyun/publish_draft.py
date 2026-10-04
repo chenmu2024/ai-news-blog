@@ -388,7 +388,10 @@ def get_draft(tok, media_id):
         headers={"Content-Type": "application/json; charset=utf-8"},
         timeout=60,
     )
-    d = r.json()
+    try:
+        d = json.loads(r.content.decode("utf-8"))
+    except Exception:
+        d = r.json()
     if d.get("errcode"):
         fail("读取草稿失败: " + str(d))
     return d
@@ -398,6 +401,8 @@ def verify_public_draft(tok, media_id):
     items = d.get("news_item") or []
     if not items:
         fail("微信草稿回读为空，无法验证公开正文")
+    if str(items[0].get("author") or "") != AUTHOR:
+        fail("微信草稿作者不一致: " + repr(items[0].get("author")))
     html = "\n".join(str(x.get("content") or "") for x in items if isinstance(x, dict))
     forbidden = ["资料来源", "图片来源", "核验说明", "编辑说明", "发布说明", "内部备注", "Content-Type", "Markdown"]
     leaked = [x for x in forbidden if x in html]

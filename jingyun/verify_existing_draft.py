@@ -21,12 +21,16 @@ def token():
 
 def main():
     tok=token()
-    d=req(
+    r=req(
         "POST",API+"/draft/get",
         params={"access_token":tok},
         data=json.dumps({"media_id":MEDIA_ID}).encode("utf-8"),
         headers={"Content-Type":"application/json; charset=utf-8"},
-    ).json()
+    )
+    try:
+        d=json.loads(r.content.decode("utf-8"))
+    except Exception:
+        d=r.json()
     if d.get("errcode"):
         raise RuntimeError(d)
     items=d.get("news_item") or []

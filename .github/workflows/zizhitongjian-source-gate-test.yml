@@ -23,6 +23,12 @@ jobs:
       - name: Install requests
         run: pip install "requests>=2.32,<3"
 
+      - name: Python syntax checks
+        run: |
+          python -m py_compile zizhitongjian/source_gate.py
+          python -m py_compile zizhitongjian/publish_draft.py
+          python -m py_compile content_os/quality_gate.py
+
       - name: Valid source must PASS
         run: |
           python zizhitongjian/source_gate.py \

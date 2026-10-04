@@ -1,0 +1,27 @@
+name: Zizhi Tongjian One-time Draft Cleanup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "zizhitongjian/cleanup_drafts.py"
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install "requests>=2.32,<3" "PySocks>=1.7,<2"
+
+      - name: Delete stale Tongjian drafts
+        env:
+          WECHAT_APP_ID: ${{ secrets.TONGJIAN_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.TONGJIAN_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python zizhitongjian/cleanup_drafts.py

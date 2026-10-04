@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "profile": "zizhitongjian",
+  "profile_name": "资治通鉴｜原典·人性·决策",
+  "score": 18,
+  "body_chars": 2319,
+  "template_hits": 3,
+  "internal_hits": 0,
+  "fact_signals": 8,
+  "stance_signals": 1,
+  "paragraph_regularity": {
+    "paragraphs": 44,
+    "cv": 0.438
+  },
+  "sentence_repetition": {
+    "sentences": 76,
+    "repeated_starts": 1,
+    "ratio": 0.014
+  },
+  "very_short_paragraph_ratio": 0.281,
+  "hard_failures": [],
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+}

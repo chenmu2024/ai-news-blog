@@ -132,6 +132,13 @@ FACT_PATTERNS_PARENTING = [
     r"(?:儿童|青少年|青春期|学龄前|学龄期|睡眠|情绪|依恋|同伴|学习|家庭|父母)",
     r"(?:WHO|UNICEF|AAP|CDC|卫健|儿科学会|心理学会)",
 ]
+JINGYUN_FABRICATED_FIRST_PERSON_PATTERNS = [
+    r"我老公", r"我丈夫", r"我老婆", r"我女儿", r"我儿子",
+    r"我离婚(?:那年|以后|之后|时)", r"我结婚(?:那年|以后|之后|时)",
+    r"我婆婆", r"我公公", r"我做咨询时", r"我的来访者",
+    r"我的一个闺蜜", r"我有一个闺蜜", r"我的一个朋友跟我说",
+]
+
 FACT_PATTERNS_QIEZHI = [
     r"《[^》]{2,30}》", r"毛泽东",
     r"《实践论》|《矛盾论》|《论持久战》|《反对本本主义》",
@@ -250,6 +257,13 @@ def evaluate(md: str, profile_key: str) -> dict:
         hard_failures.append(f"正文过短：{body_chars} 字符 < {profile['min_body_chars']}")
     if body_chars > profile["max_body_chars"]:
         hard_failures.append(f"正文过长：{body_chars} 字符 > {profile['max_body_chars']}")
+
+    if profile_key == "jingyun":
+        first_person_hits = count_matches(JINGYUN_FABRICATED_FIRST_PERSON_PATTERNS, body)
+        if first_person_hits:
+            hard_failures.append(
+                f"检测到 {first_person_hits} 处疑似虚构的第一人称私人经历；静筠日记禁止凭空编造婚姻、孩子、离婚、咨询或朋友经历"
+            )
 
     status = "PASS"
     if hard_failures or score > profile["warn_score"]:

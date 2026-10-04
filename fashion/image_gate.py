@@ -159,12 +159,15 @@ def main() -> int:
         if not verified:
             hard_failures.append(f"item_claims[{idx}] verified 必须为 true")
 
+    public_body = re.sub(SOURCE_RE, "", md)
     precise_claim_signal = re.search(
-        r"(?:同款|她穿的是|她身上的是|型号|SKU|货号|售价|价格为|¥|￥|\d+\s*元)",
-        re.sub(SOURCE_RE, "", md),
+        r"(?:她穿的是|她身上的是|图中(?:这件|这条|这双|这个).{0,12}(?:来自|是|同款)|"
+        r"(?:品牌|型号|SKU|货号|售价|价格为)\s*[:：]?|[¥￥]\s*\d+|"
+        r"\d+(?:\.\d+)?\s*元\s*(?:售价|价格))",
+        public_body,
     )
     if precise_claim_signal and not item_claims:
-        hard_failures.append("正文出现同款/型号/价格等精确单品信号，但 item_claims 为空")
+        hard_failures.append("正文出现品牌/型号/价格等精确单品事实声明，但 item_claims 为空")
 
     result = {
         "status": "FAIL" if hard_failures else "PASS",

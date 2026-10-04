@@ -1,0 +1,149 @@
+name: Fashion Image-first Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "fashion/image_gate.py"
+      - "fashion/publish_draft.py"
+      - "fashion/STYLE.md"
+      - "fashion/SOURCE_POLICY.md"
+      - "content_os/quality_gate.py"
+      - ".github/workflows/fashion-draft.yml"
+      - ".github/workflows/fashion-tests.yml"
+  workflow_dispatch:
+
+jobs:
+  fashion-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r fashion/requirements.txt
+
+      - name: Syntax checks
+        run: |
+          python -m py_compile fashion/image_gate.py
+          python -m py_compile fashion/publish_draft.py
+          python -m py_compile content_os/quality_gate.py
+
+      - name: Valid licensed image manifest must PASS
+        run: |
+          cat > /tmp/fashion-valid.md <<'EOF'
+          <!-- FASHION_SOURCE
+          {
+            "topic_type": "korean",
+            "subject": "韩系西装比例测试",
+            "images": [
+              {
+                "image_url": "https://example.com/look1.jpg",
+                "source_page_url": "https://example.com/look1",
+                "rights": "cc0",
+                "rights_evidence_url": "https://example.com/license1",
+                "verified": true,
+                "attribution_required": false,
+                "attribution_text": ""
+              },
+              {
+                "image_url": "https://example.com/look2.jpg",
+                "source_page_url": "https://example.com/look2",
+                "rights": "public_domain",
+                "rights_evidence_url": "https://example.com/license2",
+                "verified": true,
+                "attribution_required": false,
+                "attribution_text": ""
+              }
+            ],
+            "item_claims": []
+          }
+          -->
+          # 韩国女生穿西装为什么不显上班感
+
+          ![图1](https://example.com/look1.jpg)
+
+          这套真正好看的地方是肩线和裤型。普通人最值得抄的是上宽下直的比例，西装廓形有余量，但裤子仍然保持纵向线条。
+
+          ![图2](https://example.com/look2.jpg)
+
+          如果是小个子，衣长不建议完全照搬模特。版型、比例、配色、材质和鞋包体积要一起看。预算有限时，先把钱花在西装肩线和裤子的垂感上。
+
+          这里继续补足测试正文。韩系韩国西装大衣针织直筒裤肩线腰线衣长裤型廓形垂感材质叠穿配色比例普通人最值得抄预算更适合。
+          EOF
+          python fashion/image_gate.py --article /tmp/fashion-valid.md
+
+      - name: Public-but-unlicensed image manifest must FAIL
+        run: |
+          cat > /tmp/fashion-invalid.md <<'EOF'
+          <!-- FASHION_SOURCE
+          {
+            "topic_type": "celebrity",
+            "subject": "明星机场穿搭",
+            "images": [
+              {
+                "image_url": "https://example.com/celebrity1.jpg",
+                "source_page_url": "https://pinterest.com/example",
+                "rights": "pinterest",
+                "rights_evidence_url": "https://pinterest.com/example",
+                "verified": true,
+                "attribution_required": false,
+                "attribution_text": ""
+              },
+              {
+                "image_url": "https://example.com/celebrity2.jpg",
+                "source_page_url": "https://instagram.com/example",
+                "rights": "social_media",
+                "rights_evidence_url": "https://instagram.com/example",
+                "verified": true,
+                "attribution_required": false,
+                "attribution_text": ""
+              }
+            ],
+            "item_claims": []
+          }
+          -->
+          # 明星机场穿搭
+          ![图1](https://example.com/celebrity1.jpg)
+          ![图2](https://example.com/celebrity2.jpg)
+          正文测试。
+          EOF
+          set +e
+          python fashion/image_gate.py --article /tmp/fashion-invalid.md
+          CODE=$?
+          set -e
+          if [ "$CODE" -eq 0 ]; then
+            echo "ERROR: unlicensed public images unexpectedly passed"
+            exit 1
+          fi
+          echo "Unlicensed public images correctly rejected."
+
+      - name: Public copy sanitizer test
+        env:
+          WECHAT_APP_ID: test
+          WECHAT_APP_SECRET: test
+        run: |
+          python - <<'PY'
+          import importlib.util
+          spec = importlib.util.spec_from_file_location("pub", "fashion/publish_draft.py")
+          mod = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          sample = """<!-- FASHION_SOURCE
+          {"topic_type":"korean","images":[]}
+          -->
+          # 测试
+          正文最后一句。
+
+          ## 许可证据
+          内部说明
+          """
+          out = mod.strip_internal_notes(sample)
+          forbidden = ["FASHION_SOURCE", "许可证据", "内部说明"]
+          bad = [x for x in forbidden if x in out]
+          assert not bad, f"public metadata leaked: {bad}"
+          assert "正文最后一句。" in out
+          print("Fashion public copy sanitizer PASS")
+          PY

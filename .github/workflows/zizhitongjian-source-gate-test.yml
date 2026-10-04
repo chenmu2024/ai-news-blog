@@ -5,7 +5,10 @@ on:
     branches: [main]
     paths:
       - "zizhitongjian/source_gate.py"
+      - "zizhitongjian/publish_draft.py"
       - "zizhitongjian/tests/**"
+      - "content_os/quality_gate.py"
+      - ".github/workflows/zizhitongjian-draft.yml"
       - ".github/workflows/zizhitongjian-source-gate-test.yml"
   workflow_dispatch:
 

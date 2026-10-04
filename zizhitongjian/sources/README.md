@@ -3,12 +3,12 @@
 ## 1. 第一底本：四部丛刊本
 
 维基文库：
-https://zh.wikisource.org/zh-hans/資治通鑑_(四部叢刊本)
+https://zh.wikisource.org/zh-hant/資治通鑑_(四部叢刊本)
 
-用途：全文定位、按卷阅读、上下文核验。
+用途：全文定位、按卷阅读、上下文核验。自动 Gate 优先使用具体卷的 `zh-hant` 页面，以避免简繁自动转换造成逐字校验误判。
 
 维基文库另有《资治通鉴目录》，可辅助按时代定位：
-https://zh.wikisource.org/zh-hans/資治通鑑目錄
+https://zh.wikisource.org/zh-hant/資治通鑑目錄
 
 ## 2. 第二底本：四库全书影印本
 

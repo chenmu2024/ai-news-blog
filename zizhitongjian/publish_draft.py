@@ -83,6 +83,26 @@ def strip_internal_notes(md):
     )
     # Remove image-placement placeholders used during drafting.
     md = re.sub(r"(?m)^>\s*配图建议：.*(?:\n|$)", "", md)
+
+    # Reader-facing articles must not expose research/audit/source-production tails.
+    # Upstream should not generate them; these rules are a final publishing safeguard.
+    public_meta_headings = (
+        "原典依据", "图片来源", "参考资料", "参考来源", "来源说明",
+        "核验说明", "原文核验", "资料来源",
+    )
+    public_names = "|".join(re.escape(x) for x in public_meta_headings)
+    md = re.sub(
+        rf"(?ms)^##+\s*(?:{public_names})\s*$.*?(?=^##+\s|\Z)",
+        "",
+        md,
+    )
+    md = re.sub(
+        rf"(?m)^\s*(?:\*\*)?(?:{public_names})[：:].*?(?:\*\*)?\s*$",
+        "",
+        md,
+    )
+    # If a separator was only introducing a stripped source tail, remove the orphan line too.
+    md = re.sub(r"(?m)^\s*---\s*$\n\s*\Z", "", md)
     return re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
 
 def title_of(md):

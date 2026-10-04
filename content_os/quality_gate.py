@@ -36,10 +36,13 @@ TEMPLATE_PATTERNS = [
 ]
 
 INTERNAL_PATTERNS = [
-    r"数据核验说明", r"来源核验说明", r"配图建议", r"图片说明",
-    r"发布说明", r"编辑说明", r"内部备注", r"生成说明",
-    r"Content-Type", r"HTTP\s*(?:GET|POST|状态码)", r"Markdown", r"HTML",
-    r"Prompt", r"WECHAT_CARD", r"QIEZHI_CARD",
+    # Only flag editor/production metadata in an editorial context.
+    # Do not flag ordinary article discussion of Prompt/HTML/Markdown/HTTP.
+    r"(?m)^#{1,6}\\s*(?:数据核验说明|来源核验说明|配图建议|图片说明|发布说明|编辑说明|内部备注|生成说明)\\s*$",
+    r"(?m)^>\\s*配图建议[：:].*$",
+    r"(?:内部|系统|编辑|制作)\\s*Prompt\\s*[：:]",
+    r"(?:Markdown|HTML|HTTP|Content-Type)\\s*(?:说明|格式说明|技术说明|状态码说明)",
+    r"WECHAT_CARD", r"QIEZHI_CARD",
 ]
 
 STANCE_PATTERNS_AI = [

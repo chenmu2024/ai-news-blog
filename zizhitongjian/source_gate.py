@@ -119,6 +119,10 @@ def main() -> int:
         errors.append("primary_text_url 必须指向具体卷页，不能只填《资治通鉴》总目录")
     if host(verify) != "ctext.org":
         errors.append("image_check_url 必须指向 ctext.org 影印复核源")
+    if "chapter=" not in verify:
+        errors.append("image_check_url 必须指向 CText 对应具体卷页面，不能只填总库入口")
+    if d.get("image_check_done") is not True:
+        errors.append("image_check_done 必须为 true：重要原句/人名/官职/纪年需完成影印或图文对照复核")
 
     if d.get("context_verified") is not True:
         errors.append("context_verified 必须为 true：必须读过事件前后上下文")
@@ -181,6 +185,7 @@ def main() -> int:
         "year": d.get("year"),
         "primary_text_url": primary,
         "image_check_url": verify,
+        "image_check_done": d.get("image_check_done"),
         "context_verified": d.get("context_verified"),
         "original_excerpt_chars": len(excerpt),
         "direct_quote_count": len(quotes),

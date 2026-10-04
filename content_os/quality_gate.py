@@ -26,6 +26,15 @@ PROFILES = {
         "min_fact_signals": 5,
         "min_stance_signals": 1,
     },
+    "zizhitongjian": {
+        "name": "资治通鉴｜原典·人性·决策",
+        "max_score": 30,
+        "warn_score": 40,
+        "min_body_chars": 1500,
+        "max_body_chars": 5000,
+        "min_fact_signals": 4,
+        "min_stance_signals": 1,
+    },
     "qiezhi": {
         "name": "且知｜毛选/思想方法",
         "max_score": 30,
@@ -63,6 +72,10 @@ STANCE_PATTERNS_BUSINESS = [
     r"我的判断", r"关键不在", r"真正的问题", r"更值得看的是",
     r"真正决定", r"这家公司真正", r"代价是", r"护城河",
 ]
+STANCE_PATTERNS_TONGJIAN = [
+    r"我的判断", r"真正的问题", r"更值得看的是", r"放回当时",
+    r"从这个选择看", r"这里真正", r"他当时", r"并不是因为",
+]
 STANCE_PATTERNS_QIEZHI = [
     r"今天(?:我们|你|普通人|做事)", r"真正要做的", r"更重要的是",
     r"落到今天", r"具体到", r"可以先", r"不妨先",
@@ -77,6 +90,11 @@ FACT_PATTERNS_BUSINESS = [
     r"(?:20\d{2}|19\d{2})[年/-]", r"\b(?:GMV|ARR|IPO|CAGR|SKU|毛利率|净利率)\b",
     r"(?:营收|收入|利润|亏损|销量|门店|融资|估值|市值|市场份额|客单价|毛利)",
 ]
+FACT_PATTERNS_TONGJIAN = [
+    r"《资治通鉴》", r"司马光", r"臣光曰", r"卷[一二三四五六七八九十百零〇0-9]{1,8}",
+    r"(?:周|秦|汉|魏|晋|宋|齐|梁|陈|隋|唐|后梁|后唐|后晋|后汉|后周)纪",
+    r"(?:前)?\d{1,4}年", r"(?:皇帝|太子|丞相|将军|刺史|太守|尚书|司徒|司马)",
+]
 FACT_PATTERNS_QIEZHI = [
     r"《[^》]{2,30}》", r"毛泽东",
     r"《实践论》|《矛盾论》|《论持久战》|《反对本本主义》",
@@ -84,7 +102,8 @@ FACT_PATTERNS_QIEZHI = [
 ]
 
 def strip_production_markup(md: str) -> str:
-    text = re.sub(r"<!--\s*(?:WECHAT_CARD|QIEZHI_CARD)\s+.*?-->", "", md, flags=re.S)
+    text = re.sub(r"<!--\s*ZZTJ_SOURCE\s*\{[\s\S]*?\}\s*-->", "", md, flags=re.S)
+    text = re.sub(r"<!--\s*(?:WECHAT_CARD|QIEZHI_CARD)\s+.*?-->", "", text, flags=re.S)
     text = re.sub(r"```[\s\S]*?```", "", text)
     text = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", text)
     text = re.sub(r"(?m)^#{1,6}\s*", "", text)
@@ -142,6 +161,9 @@ def evaluate(md: str, profile_key: str) -> dict:
     if profile_key == "qiezhi":
         fact_patterns = FACT_PATTERNS_QIEZHI
         stance_patterns = STANCE_PATTERNS_QIEZHI
+    elif profile_key == "zizhitongjian":
+        fact_patterns = FACT_PATTERNS_TONGJIAN
+        stance_patterns = STANCE_PATTERNS_TONGJIAN
     elif profile_key == "business_story":
         fact_patterns = FACT_PATTERNS_BUSINESS
         stance_patterns = STANCE_PATTERNS_BUSINESS

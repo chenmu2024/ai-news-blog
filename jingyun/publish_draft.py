@@ -148,17 +148,17 @@ def make_fallback_cover(title):
     # no body images. Generate a relevant editorial cover locally instead
     # of failing or inserting an unrelated logo/stock image.
     W, H = 1200, 510
-    bg = (248, 244, 240)
-    panel = (255, 252, 249)
-    text = (20, 27, 39)
-    muted = (94, 105, 122)
-    accent = (146, 91, 88)
-    line = (226, 232, 240)
+    bg = (249, 246, 243)
+    panel = (255, 253, 251)
+    text = (45, 39, 37)
+    muted = (126, 113, 108)
+    accent = (155, 103, 99)
+    line = (232, 222, 217)
 
     img = Image.new("RGB", (W, H), bg)
     d = ImageDraw.Draw(img)
     d.rounded_rectangle((28, 28, W-28, H-28), radius=30, fill=panel, outline=line, width=2)
-    d.rounded_rectangle((72, 66, 270, 112), radius=23, fill=(235, 242, 255))
+    d.rounded_rectangle((72, 66, 270, 112), radius=23, fill=(247, 238, 234))
     d.text((96, 75), "静筠日记", font=font(24, True), fill=accent)
 
     title_font = font(52, True)
@@ -192,22 +192,22 @@ def make_info_card(spec):
         items = []
     items = items[:6]
 
-    bg = (248, 246, 241)
-    panel = (255, 255, 255)
-    ink = (24, 31, 43)
-    muted = (92, 103, 121)
-    accent = (169, 112, 53)
-    accent2 = (112, 100, 94)
-    border = (225, 231, 239)
+    bg = (249, 246, 243)
+    panel = (255, 253, 251)
+    ink = (52, 45, 42)
+    muted = (128, 116, 110)
+    accent = (155, 103, 99)
+    accent2 = (126, 112, 106)
+    border = (232, 222, 217)
 
-    row_h = 188
+    row_h = 176
     H = 315 + max(1, len(items)) * row_h + 80
     img = Image.new("RGB", (W, H), bg)
     d = ImageDraw.Draw(img)
 
     d.rounded_rectangle((32, 32, W-32, H-32), radius=30, fill=panel, outline=border, width=2)
-    d.rounded_rectangle((70, 58, 300, 104), radius=22, fill=(235, 242, 255))
-    d.text((92, 68), "静筠 · 静筠日记", font=font(22, True), fill=accent)
+    d.rounded_rectangle((70, 58, 278, 104), radius=22, fill=(247, 238, 234))
+    d.text((92, 68), "静筠日记", font=font(22, True), fill=accent)
 
     d.text((70, 128), title, font=font(46, True), fill=ink)
     if subtitle:
@@ -230,7 +230,7 @@ def make_info_card(spec):
         top = y
         bottom = y + row_h - 22
 
-        d.rounded_rectangle((58, top, W-58, bottom), radius=24, fill=(249, 251, 254), outline=border, width=2)
+        d.rounded_rectangle((58, top, W-58, bottom), radius=24, fill=(252, 249, 247), outline=border, width=2)
         badge = accent if idx % 2 else accent2
         d.rounded_rectangle((82, top+28, 160, top+106), radius=20, fill=badge)
 
@@ -256,7 +256,7 @@ def make_info_card(spec):
 
         y += row_h
 
-    d.text((70, H-58), "婚姻 · 家庭 · 工作 · 钱", font=font(20), fill=(132, 142, 158))
+    d.text((70, H-58), "婚姻 · 家庭 · 工作 · 钱", font=font(20), fill=(143, 130, 124))
     return image_to_jpeg(img)
 
 def replace_cards(md, tok):
@@ -370,14 +370,79 @@ def replace_images(md, tok):
     return pat.sub(repl, md), first[0]
 
 def styled_html(md):
-    raw = markdown.markdown(md, extensions=["extra", "fenced_code", "sane_lists"], output_format="html5")
-    raw = re.sub(r"<h2>(.*?)</h2>", r'<h2 style="font-size:22px;line-height:1.5;margin:34px 0 16px;font-weight:700;">\1</h2>', raw, flags=re.S)
-    raw = re.sub(r"<h3>(.*?)</h3>", r'<h3 style="font-size:18px;line-height:1.6;margin:28px 0 12px;font-weight:700;">\1</h3>', raw, flags=re.S)
-    raw = re.sub(r"<p>(.*?)</p>", r'<p style="font-size:16px;line-height:1.95;margin:14px 0;color:#222;">\1</p>', raw, flags=re.S)
-    raw = re.sub(r"<blockquote>(.*?)</blockquote>", r'<blockquote style="margin:18px 0;padding:12px 16px;border-left:4px solid #999;background:#f7f7f7;color:#555;">\1</blockquote>', raw, flags=re.S)
-    raw = re.sub(r'<img ([^>]*?)src="([^"]+)"([^>]*)>', r'<img \1src="\2"\3 style="max-width:100%;height:auto;display:block;margin:18px auto;" />', raw, flags=re.S)
-    raw = raw.replace("<hr />", '<hr style="border:none;border-top:1px solid #e5e5e5;margin:30px 0;" />')
-    return '<section style="font-size:16px;line-height:1.95;color:#222;word-break:break-word;">' + raw + "</section>"
+    raw = markdown.markdown(
+        md,
+        extensions=["extra", "fenced_code", "sane_lists"],
+        output_format="html5",
+    )
+
+    # Jingyun visual system: calm editorial / warm magazine, not template-heavy.
+    raw = re.sub(
+        r"<h2>(.*?)</h2>",
+        r'<h2 style="font-size:21px;line-height:1.55;margin:42px 0 20px;padding-left:12px;border-left:3px solid #9b6763;color:#332c2a;font-weight:700;letter-spacing:.2px;">\1</h2>',
+        raw,
+        flags=re.S,
+    )
+    raw = re.sub(
+        r"<h3>(.*?)</h3>",
+        r'<h3 style="font-size:18px;line-height:1.65;margin:32px 0 14px;color:#5b4743;font-weight:700;">\1</h3>',
+        raw,
+        flags=re.S,
+    )
+
+    # Render image captions before ordinary paragraphs.
+    raw = re.sub(
+        r"<p><em>(.*?)</em></p>",
+        r'<p style="font-size:13px;line-height:1.75;margin:6px 18px 28px;text-align:center;color:#9a8f8a;">\1</p>',
+        raw,
+        flags=re.S,
+    )
+    raw = re.sub(
+        r"<p>(.*?)</p>",
+        r'<p style="font-size:17px;line-height:1.95;margin:17px 0;color:#35302e;letter-spacing:.15px;text-align:justify;">\1</p>',
+        raw,
+        flags=re.S,
+    )
+    raw = re.sub(
+        r"<blockquote>(.*?)</blockquote>",
+        r'<blockquote style="margin:24px 0;padding:14px 18px;border-left:3px solid #b88984;background:#faf6f3;color:#685b56;font-size:16px;line-height:1.9;">\1</blockquote>',
+        raw,
+        flags=re.S,
+    )
+    raw = re.sub(
+        r"<strong>(.*?)</strong>",
+        r'<strong style="font-weight:700;color:#6f4d49;">\1</strong>',
+        raw,
+        flags=re.S,
+    )
+    raw = re.sub(
+        r"<ul>(.*?)</ul>",
+        r'<ul style="margin:16px 0 22px;padding-left:1.25em;color:#35302e;">\1</ul>',
+        raw,
+        flags=re.S,
+    )
+    raw = re.sub(
+        r"<li>(.*?)</li>",
+        r'<li style="font-size:16.5px;line-height:1.9;margin:7px 0;">\1</li>',
+        raw,
+        flags=re.S,
+    )
+    raw = re.sub(
+        r'<img ([^>]*?)src="([^"]+)"([^>]*)>',
+        r'<img \1src="\2"\3 style="max-width:100%;height:auto;display:block;margin:28px auto 8px;border-radius:8px;" />',
+        raw,
+        flags=re.S,
+    )
+    raw = raw.replace(
+        "<hr />",
+        '<hr style="border:none;border-top:1px solid #eadfda;margin:36px 0;" />',
+    )
+    return (
+        '<section style="font-size:17px;line-height:1.95;color:#35302e;'
+        'word-break:break-word;padding:0 2px;">'
+        + raw
+        + "</section>"
+    )
 
 def get_draft(tok, media_id):
     r = request_with_proxy(

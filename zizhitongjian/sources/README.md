@@ -12,10 +12,10 @@ https://zh.wikisource.org/zh-hant/資治通鑑目錄
 
 ## 2. 第二底本：四库全书影印本
 
-Chinese Text Project：
-https://ctext.org/library.pl?if=gb&res=7
+Chinese Text Project 总入口：
+https://ctext.org/wiki.pl?if=gb&res=593436
 
-用途：影印原页复核。资源说明为《钦定四库全书》本《资治通鉴》，294卷/141册，浙江大学图书馆藏本，CADAL扫描。
+用途：查找对应卷的具体页面，并通过其与底本影像关联的图文对照复核重要原句。每篇文章必须记录具体卷 URL（含 `chapter=`），不能只保存总入口。
 
 ## 3. 检索纪律
 

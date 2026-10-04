@@ -8,6 +8,7 @@
 - `qiezhi`：且知｜毛选/思想方法
 - `business_story`：生意显微镜｜商业故事
 - `zizhitongjian`：资治通鉴｜原典·人性·决策
+- `parenting`：陈慕｜育儿与家庭教育
 
 新增公众号方向时，应新增 Profile，而不是复制整套发布链路。
 

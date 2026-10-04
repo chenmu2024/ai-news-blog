@@ -1,5 +1,5 @@
 from __future__ import annotations
-import hashlib, json, os, re, sys, subprocess
+import hashlib, json, os, re, sys, subprocess, time
 from pathlib import Path
 from urllib.parse import urlparse
 from io import BytesIO
@@ -278,8 +278,34 @@ def replace_cards(md, tok):
     return out, count[0]
 
 def get_image(url):
-    r = requests.get(url, timeout=40, allow_redirects=True, headers={"User-Agent": "Mozilla/5.0 (compatible; ParentingWeChatPublisher/1.0)"})
-    r.raise_for_status()
+    r = None
+    last = None
+    for attempt in range(4):
+        try:
+            r = requests.get(
+                url,
+                timeout=40,
+                allow_redirects=True,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (compatible; ParentingWeChatPublisher/1.0)",
+                    "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+                },
+            )
+            if r.status_code == 429:
+                wait = 2 ** attempt
+                print(f"[IMAGE_RETRY] 429 for {url}; sleep {wait}s")
+                time.sleep(wait)
+                last = RuntimeError(f"429 Too Many Requests: {url}")
+                continue
+            r.raise_for_status()
+            break
+        except Exception as e:
+            last = e
+            if attempt >= 3:
+                raise
+            time.sleep(2 ** attempt)
+    if r is None or not r.ok:
+        raise last or RuntimeError("图片下载失败: " + url)
     ct = (r.headers.get("Content-Type") or "").split(";")[0].lower()
     if ct not in ("image/png", "image/jpeg"):
         raise RuntimeError("图片类型不合格: %s -> %s" % (url, ct))

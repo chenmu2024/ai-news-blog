@@ -35,6 +35,15 @@ PROFILES = {
         "min_fact_signals": 4,
         "min_stance_signals": 1,
     },
+    "parenting": {
+        "name": "陈慕｜育儿与家庭教育",
+        "max_score": 30,
+        "warn_score": 40,
+        "min_body_chars": 1500,
+        "max_body_chars": 5000,
+        "min_fact_signals": 3,
+        "min_stance_signals": 1,
+    },
     "qiezhi": {
         "name": "且知｜毛选/思想方法",
         "max_score": 30,
@@ -76,6 +85,10 @@ STANCE_PATTERNS_TONGJIAN = [
     r"我的判断", r"真正的问题", r"更值得看的是", r"放回当时",
     r"从这个选择看", r"这里真正", r"他当时", r"并不是因为",
 ]
+STANCE_PATTERNS_PARENTING = [
+    r"真正的问题", r"更重要的是", r"父母可以", r"可以先",
+    r"不妨先", r"与其", r"孩子需要", r"这里不是",
+]
 STANCE_PATTERNS_QIEZHI = [
     r"今天(?:我们|你|普通人|做事)", r"真正要做的", r"更重要的是",
     r"落到今天", r"具体到", r"可以先", r"不妨先",
@@ -94,6 +107,11 @@ FACT_PATTERNS_TONGJIAN = [
     r"《资治通鉴》", r"司马光", r"臣光曰", r"卷[一二三四五六七八九十百零〇0-9]{1,8}",
     r"(?:周|秦|汉|魏|晋|宋|齐|梁|陈|隋|唐|后梁|后唐|后晋|后汉|后周)纪",
     r"(?:前)?\d{1,4}年", r"(?:皇帝|太子|丞相|将军|刺史|太守|尚书|司徒|司马)",
+]
+FACT_PATTERNS_PARENTING = [
+    r"\d+\s*(?:岁|个月|分钟|小时|天|周|年|次)",
+    r"(?:儿童|青少年|青春期|学龄前|学龄期|睡眠|情绪|依恋|同伴|学习|家庭|父母)",
+    r"(?:WHO|UNICEF|AAP|CDC|卫健|儿科学会|心理学会)",
 ]
 FACT_PATTERNS_QIEZHI = [
     r"《[^》]{2,30}》", r"毛泽东",
@@ -161,6 +179,9 @@ def evaluate(md: str, profile_key: str) -> dict:
     if profile_key == "qiezhi":
         fact_patterns = FACT_PATTERNS_QIEZHI
         stance_patterns = STANCE_PATTERNS_QIEZHI
+    elif profile_key == "parenting":
+        fact_patterns = FACT_PATTERNS_PARENTING
+        stance_patterns = STANCE_PATTERNS_PARENTING
     elif profile_key == "zizhitongjian":
         fact_patterns = FACT_PATTERNS_TONGJIAN
         stance_patterns = STANCE_PATTERNS_TONGJIAN

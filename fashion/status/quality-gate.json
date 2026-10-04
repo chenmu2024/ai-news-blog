@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "profile": "fashion",
+  "profile_name": "女装穿搭｜Image-first",
+  "score": 5,
+  "body_chars": 1994,
+  "template_hits": 0,
+  "internal_hits": 0,
+  "fact_signals": 79,
+  "stance_signals": 10,
+  "paragraph_regularity": {
+    "paragraphs": 44,
+    "cv": 0.299
+  },
+  "sentence_repetition": {
+    "sentences": 79,
+    "repeated_starts": 5,
+    "ratio": 0.063
+  },
+  "very_short_paragraph_ratio": 0.457,
+  "hard_failures": [],
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+}

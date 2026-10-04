@@ -40,6 +40,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Content OS quality gate
+        run: |
+          python content_os/quality_gate.py \
+            --article "$ARTICLE_PATH" \
+            --profile ai_business \
+            --json-out wechat/status/quality-gate.json
+
       - name: Install Chinese fonts
         run: |
           sudo apt-get update
@@ -99,7 +106,7 @@ jobs:
 
           git config user.name "ai-wechat-draft-bot"
           git config user.email "ai-wechat-draft-bot@users.noreply.github.com"
-          git add wechat/articles/today.md wechat/status/latest.json
+          git add wechat/articles/today.md wechat/status/latest.json wechat/status/quality-gate.json
           if git diff --cached --quiet; then
             echo "No article/status change."
           else

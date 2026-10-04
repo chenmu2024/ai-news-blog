@@ -1,0 +1,115 @@
+name: Business Story WeChat Draft Bridge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "business/archive/*.md"
+  workflow_dispatch:
+
+concurrency:
+  group: business-wechat-draft
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  create-business-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve latest archived article
+        shell: bash
+        run: |
+          LATEST="$(find business/archive -maxdepth 1 -type f -name '*.md' | sort | tail -n 1)"
+          if [ -z "$LATEST" ]; then
+            echo "No archived business story found."
+            exit 1
+          fi
+          echo "ARTICLE_PATH=$LATEST" >> "$GITHUB_ENV"
+          echo "[ARTICLE_PATH] $LATEST"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Content OS quality gate
+        run: |
+          python content_os/quality_gate.py \
+            --article "$ARTICLE_PATH" \
+            --profile business_story \
+            --json-out business/status/quality-gate.json
+
+      - name: Install Chinese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+
+      - name: Install dependencies
+        run: pip install -r business/requirements.txt
+
+      - name: Create business WeChat draft only
+        env:
+          WECHAT_APP_ID: ${{ secrets.BUSINESS_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.BUSINESS_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: "陈慕"
+          ARTICLE_PATH: ${{ env.ARTICLE_PATH }}
+        run: python business/publish_draft.py
+
+      - name: Sync today article and success status
+        shell: bash
+        run: |
+          mkdir -p business/articles business/status
+          cp "$ARTICLE_PATH" business/articles/today.md
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          article_path = Path(os.environ["ARTICLE_PATH"])
+          raw = article_path.read_bytes()
+          text = raw.decode("utf-8")
+          title = ""
+          for line in text.splitlines():
+              if line.startswith("# "):
+                  title = line[2:].strip()
+                  break
+
+          status = {
+              "status": "success",
+              "title": title,
+              "article_path": str(article_path).replace("\\", "/"),
+              "article_sha256": hashlib.sha256(raw).hexdigest(),
+              "workflow_run_id": os.environ.get("GITHUB_RUN_ID", ""),
+              "commit_sha": os.environ.get("GITHUB_SHA", ""),
+              "completed_at_utc": datetime.now(timezone.utc).isoformat(),
+          }
+          Path("business/status/latest.json").write_text(
+              json.dumps(status, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print("[STATUS] success")
+          print("[STATUS_TITLE]", title)
+          PY
+
+          git config user.name "business-story-draft-bot"
+          git config user.email "business-story-draft-bot@users.noreply.github.com"
+          git add business/articles/today.md business/status/latest.json business/status/quality-gate.json
+          if git diff --cached --quiet; then
+            echo "No article/status change."
+          else
+            git commit -m "Sync latest business story and draft status"
+            git pull --rebase origin main
+            git push
+          fi

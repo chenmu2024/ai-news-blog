@@ -3,14 +3,14 @@
   "profile": "jingyun",
   "profile_name": "静筠日记｜女性生活",
   "score": 9,
-  "body_chars": 2157,
+  "body_chars": 2159,
   "template_hits": 1,
   "internal_hits": 0,
   "fact_signals": 34,
   "stance_signals": 9,
   "paragraph_regularity": {
     "paragraphs": 44,
-    "cv": 0.456
+    "cv": 0.455
   },
   "sentence_repetition": {
     "sentences": 95,

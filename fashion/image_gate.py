@@ -15,6 +15,7 @@ ALLOWED_RIGHTS = {
     "brand_editorial_permission",
     "affiliate_feed_permission",
     "user_owned",
+    "pexels_license",
 }
 
 TOPIC_TYPES = {"celebrity", "korean", "japanese", "lookbook", "model"}

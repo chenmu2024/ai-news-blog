@@ -19,10 +19,10 @@ https://zh.wikisource.org/zh-hant/資治通鑑_(四部叢刊本)
 
 用途：对重要原句、人物名、官职、纪年、关键字和异文做影印古籍复核。
 
-固定入口：
-https://ctext.org/library.pl?if=gb&res=7
+固定检索入口：
+https://ctext.org/wiki.pl?if=gb&res=593436
 
-该资源为《钦定四库全书》本，294卷，拆分为141册；原书来源为浙江大学图书馆，扫描者为 CADAL。
+CText 的《资治通鉴》页面按卷拆分，并与对应底本影印图像关联。每篇文章不得只记录总入口，必须找到本篇所用**具体卷页面**，例如卷十可记录 `https://ctext.org/wiki.pl?chapter=859058&if=gb`，并通过其图文对照/影像入口复核重要原句、人名、官职和纪年。
 
 ## 将来的升级底本
 
@@ -65,7 +65,8 @@ https://ctext.org/library.pl?if=gb&res=7
   "chronicle": "晋纪十四",
   "year": "纪年/公元年份",
   "primary_text_url": "https://zh.wikisource.org/...",
-  "image_check_url": "https://ctext.org/library.pl?if=gb&res=7",
+  "image_check_url": "https://ctext.org/wiki.pl?chapter=对应卷ID&if=gb",
+  "image_check_done": true,
   "context_verified": true,
   "original_excerpt": "本篇真正核对过的一段原文，至少20个汉字",
   "direct_quotes": [
@@ -75,7 +76,7 @@ https://ctext.org/library.pl?if=gb&res=7
 -->
 ```
 
-如正文没有直接引语，`direct_quotes` 可为空数组；但 `original_excerpt` 与 `context_verified` 仍不可缺失。
+如正文没有直接引语，`direct_quotes` 可为空数组；但 `original_excerpt`、`context_verified` 与 `image_check_done` 仍不可缺失。
 
 ## 公开文章中的出处
 

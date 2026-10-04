@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "profile": "jingyun",
+  "profile_name": "静筠日记｜女性生活",
+  "score": 9,
+  "body_chars": 2155,
+  "template_hits": 1,
+  "internal_hits": 0,
+  "fact_signals": 33,
+  "stance_signals": 9,
+  "paragraph_regularity": {
+    "paragraphs": 44,
+    "cv": 0.457
+  },
+  "sentence_repetition": {
+    "sentences": 95,
+    "repeated_starts": 4,
+    "ratio": 0.045
+  },
+  "very_short_paragraph_ratio": 0.438,
+  "hard_failures": [],
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+}

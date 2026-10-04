@@ -1,0 +1,114 @@
+name: Fashion Image-first WeChat Draft Bridge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "fashion/archive/*.md"
+  workflow_dispatch:
+
+concurrency:
+  group: fashion-wechat-draft
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  create-fashion-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve latest archived article
+        shell: bash
+        run: |
+          LATEST="$(find fashion/archive -maxdepth 1 -type f -name '*.md' | sort | tail -n 1)"
+          if [ -z "$LATEST" ]; then
+            echo "No fashion article found."
+            exit 1
+          fi
+          echo "ARTICLE_PATH=$LATEST" >> "$GITHUB_ENV"
+          echo "[ARTICLE_PATH] $LATEST"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fashion image rights gate
+        run: |
+          python fashion/image_gate.py \
+            --article "$ARTICLE_PATH" \
+            --json-out fashion/status/image-gate.json
+
+      - name: Content OS quality gate
+        run: |
+          python content_os/quality_gate.py \
+            --article "$ARTICLE_PATH" \
+            --profile fashion \
+            --json-out fashion/status/quality-gate.json
+
+      - name: Install Chinese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+
+      - name: Install dependencies
+        run: pip install -r fashion/requirements.txt
+
+      - name: Create fashion WeChat draft only
+        env:
+          WECHAT_APP_ID: ${{ secrets.FASHION_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.FASHION_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: ""
+          ARTICLE_PATH: ${{ env.ARTICLE_PATH }}
+        run: python fashion/publish_draft.py
+
+      - name: Sync today article and success status
+        shell: bash
+        run: |
+          mkdir -p fashion/articles fashion/status
+          cp "$ARTICLE_PATH" fashion/articles/today.md
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          article_path = Path(os.environ["ARTICLE_PATH"])
+          raw = article_path.read_bytes()
+          text = raw.decode("utf-8")
+          title = next((line[2:].strip() for line in text.splitlines() if line.startswith("# ")), "")
+          status = {
+              "status": "success",
+              "title": title,
+              "article_path": str(article_path).replace("\\", "/"),
+              "article_sha256": hashlib.sha256(raw).hexdigest(),
+              "workflow_run_id": os.environ.get("GITHUB_RUN_ID", ""),
+              "commit_sha": os.environ.get("GITHUB_SHA", ""),
+              "completed_at_utc": datetime.now(timezone.utc).isoformat(),
+          }
+          Path("fashion/status/latest.json").write_text(
+              json.dumps(status, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+          git config user.name "fashion-draft-bot"
+          git config user.email "fashion-draft-bot@users.noreply.github.com"
+          git add fashion/articles/today.md fashion/status/latest.json fashion/status/image-gate.json fashion/status/quality-gate.json
+          if git diff --cached --quiet; then
+            echo "No article/status change."
+          else
+            git commit -m "Sync latest fashion article and draft status"
+            git pull --rebase origin main
+            git push
+          fi

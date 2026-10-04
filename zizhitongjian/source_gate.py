@@ -6,6 +6,8 @@ import re
 import sys
 from pathlib import Path
 from urllib.parse import urlparse
+from html import unescape
+import requests
 
 MARKER_RE = re.compile(r"<!--\s*ZZTJ_SOURCE\s*(\{[\s\S]*?\})\s*-->", re.M)
 
@@ -21,6 +23,25 @@ def fail(msg: str, out: str | None = None) -> int:
 
 def host(url: str) -> str:
     return (urlparse(url).hostname or "").lower()
+
+def normalize_text(text: str) -> str:
+    text = unescape(text)
+    text = re.sub(r"<script[\\s\\S]*?</script>", "", text, flags=re.I)
+    text = re.sub(r"<style[\\s\\S]*?</style>", "", text, flags=re.I)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = re.sub(r"[\\s　]+", "", text)
+    text = text.replace("〇", "零")
+    return text
+
+def fetch_page(url: str) -> str:
+    r = requests.get(
+        url,
+        timeout=30,
+        headers={"User-Agent": "Mozilla/5.0 (compatible; TongjianSourceGate/1.0)"},
+        allow_redirects=True,
+    )
+    r.raise_for_status()
+    return r.text
 
 def main() -> int:
     ap = argparse.ArgumentParser()
@@ -59,6 +80,8 @@ def main() -> int:
     verify = str(d.get("image_check_url") or "").strip()
     if host(primary) != "zh.wikisource.org":
         errors.append("primary_text_url 必须指向 zh.wikisource.org 固定原文")
+    if "/%E5%8D%B7" not in primary and "/卷" not in primary:
+        errors.append("primary_text_url 必须指向具体卷页，不能只填《资治通鉴》总目录")
     if host(verify) != "ctext.org":
         errors.append("image_check_url 必须指向 ctext.org 影印复核源")
 
@@ -68,6 +91,24 @@ def main() -> int:
     excerpt = re.sub(r"\s+", "", str(d.get("original_excerpt") or ""))
     if len(excerpt) < 20:
         errors.append("original_excerpt 至少需要 20 个汉字，证明本篇实际核对过原文")
+
+    # Live verification: the recorded excerpt must actually appear on the
+    # exact Wikisource volume page. This prevents fabricated source metadata.
+    if not errors:
+        try:
+            primary_html = fetch_page(primary)
+            page_text = normalize_text(primary_html)
+            if normalize_text(excerpt) not in page_text:
+                errors.append("original_excerpt 未在 primary_text_url 对应的维基文库卷页中找到")
+        except Exception as e:
+            errors.append("无法在线核验 primary_text_url: " + str(e))
+
+        try:
+            verify_html = fetch_page(verify)
+            if len(verify_html) < 500:
+                errors.append("image_check_url 返回内容异常，无法确认影印复核入口")
+        except Exception as e:
+            errors.append("无法访问 image_check_url: " + str(e))
 
     quotes = d.get("direct_quotes")
     if not isinstance(quotes, list):
@@ -99,6 +140,8 @@ def main() -> int:
         "context_verified": d.get("context_verified"),
         "original_excerpt_chars": len(excerpt),
         "direct_quote_count": len(quotes),
+        "live_primary_excerpt_check": "PASS" if not any("original_excerpt" in e or "primary_text_url" in e for e in errors) else "FAIL",
+        "image_source_reachable": "PASS" if not any("image_check_url" in e for e in errors) else "FAIL",
         "hard_failures": errors,
     }
     payload = json.dumps(result, ensure_ascii=False, indent=2)

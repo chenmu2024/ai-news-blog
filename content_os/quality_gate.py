@@ -35,6 +35,15 @@ PROFILES = {
         "min_fact_signals": 4,
         "min_stance_signals": 1,
     },
+    "fashion": {
+        "name": "女装穿搭｜Image-first",
+        "max_score": 30,
+        "warn_score": 40,
+        "min_body_chars": 1100,
+        "max_body_chars": 3800,
+        "min_fact_signals": 3,
+        "min_stance_signals": 2,
+    },
     "jingyun": {
         "name": "静筠日记｜女性生活",
         "max_score": 30,
@@ -94,6 +103,10 @@ STANCE_PATTERNS_TONGJIAN = [
     r"我的判断", r"真正的问题", r"更值得看的是", r"放回当时",
     r"从这个选择看", r"这里真正", r"他当时", r"并不是因为",
 ]
+STANCE_PATTERNS_FASHION = [
+    r"真正好看", r"最值得抄", r"关键在", r"普通人", r"不建议",
+    r"更适合", r"最容易错", r"预算", r"版型", r"比例",
+]
 STANCE_PATTERNS_JINGYUN = [
     r"我更愿意", r"真正难的是", r"更诚实的说法", r"现实是",
     r"问题不在", r"并不意味着", r"未必", r"代价是",
@@ -122,6 +135,12 @@ FACT_PATTERNS_TONGJIAN = [
     r"(?:周|秦|汉|魏|晋|宋|齐|梁|陈|隋|唐|后梁|后唐|后晋|后汉|后周)纪",
     r"(?:前)?\d{1,4}年", r"(?:皇帝|太子|丞相|将军|刺史|太守|尚书|司徒|司马)",
 ]
+FACT_PATTERNS_FASHION = [
+    r"\d+(?:\.\d+)?\s*(?:cm|厘米|元|块|%|码)",
+    r"(?:西装|大衣|针织|衬衫|半裙|长裙|短裙|直筒裤|阔腿裤|牛仔裤|乐福鞋|运动鞋|靴|包)",
+    r"(?:肩线|腰线|衣长|裤型|廓形|垂感|材质|叠穿|配色|冷暖|明度|比例)",
+    r"(?:韩系|韩国|日系|日本|机场穿搭|Lookbook|Campaign|Press Kit)",
+]
 FACT_PATTERNS_JINGYUN = [
     r"\d+(?:\.\d+)?%", r"\d+\s*(?:岁|年|个月|万元|元|人|次|天|小时)",
     r"(?:婚姻|离婚|抚养|财产|收入|全职妈妈|职场|父母|养老|围绝经期|女性|家庭)",
@@ -147,6 +166,7 @@ FACT_PATTERNS_QIEZHI = [
 
 def strip_production_markup(md: str) -> str:
     text = re.sub(r"<!--\s*ZZTJ_SOURCE\s*\{[\s\S]*?\}\s*-->", "", md, flags=re.S)
+    text = re.sub(r"<!--\s*FASHION_SOURCE\s*\{[\s\S]*?\}\s*-->", "", text, flags=re.S)
     text = re.sub(r"<!--\s*(?:WECHAT_CARD|QIEZHI_CARD)\s+.*?-->", "", text, flags=re.S)
     text = re.sub(r"```[\s\S]*?```", "", text)
     text = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", text)
@@ -211,6 +231,9 @@ def evaluate(md: str, profile_key: str) -> dict:
     elif profile_key == "jingyun":
         fact_patterns = FACT_PATTERNS_JINGYUN
         stance_patterns = STANCE_PATTERNS_JINGYUN
+    elif profile_key == "fashion":
+        fact_patterns = FACT_PATTERNS_FASHION
+        stance_patterns = STANCE_PATTERNS_FASHION
     elif profile_key == "zizhitongjian":
         fact_patterns = FACT_PATTERNS_TONGJIAN
         stance_patterns = STANCE_PATTERNS_TONGJIAN

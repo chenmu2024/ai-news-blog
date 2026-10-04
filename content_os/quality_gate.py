@@ -17,6 +17,15 @@ PROFILES = {
         "min_fact_signals": 4,
         "min_stance_signals": 2,
     },
+    "business_story": {
+        "name": "生意显微镜｜商业故事",
+        "max_score": 30,
+        "warn_score": 40,
+        "min_body_chars": 1800,
+        "max_body_chars": 5600,
+        "min_fact_signals": 5,
+        "min_stance_signals": 1,
+    },
     "qiezhi": {
         "name": "且知｜毛选/思想方法",
         "max_score": 30,
@@ -49,6 +58,11 @@ STANCE_PATTERNS_AI = [
     r"我(?:更|最)?(?:看重|认为|觉得|判断|会|建议|倾向|不建议|更愿意|真正关心)",
     r"如果是我", r"我会先", r"我反而", r"我的判断",
 ]
+STANCE_PATTERNS_BUSINESS = [
+    r"我(?:更|最)?(?:看重|认为|判断|关心|倾向|不认为)",
+    r"我的判断", r"关键不在", r"真正的问题", r"更值得看的是",
+    r"真正决定", r"这家公司真正", r"代价是", r"护城河",
+]
 STANCE_PATTERNS_QIEZHI = [
     r"今天(?:我们|你|普通人|做事)", r"真正要做的", r"更重要的是",
     r"落到今天", r"具体到", r"可以先", r"不妨先",
@@ -57,6 +71,11 @@ STANCE_PATTERNS_QIEZHI = [
 FACT_PATTERNS_AI = [
     r"\d+(?:\.\d+)?%", r"\d+(?:\.\d+)?\s*(?:万|亿|美元|元|人|个月|年|天|次|家|个|倍|GB|MB|TB|B|M|K)",
     r"(?:20\d{2}|19\d{2})[年/-]", r"\b(?:ARR|MRR|CPC|KD|GPU|API|SEO|SaaS)\b",
+]
+FACT_PATTERNS_BUSINESS = [
+    r"\d+(?:\.\d+)?%", r"\d+(?:\.\d+)?\s*(?:万|亿|美元|元|人|家|店|门店|年|月|天|倍)",
+    r"(?:20\d{2}|19\d{2})[年/-]", r"\b(?:GMV|ARR|IPO|CAGR|SKU|毛利率|净利率)\b",
+    r"(?:营收|收入|利润|亏损|销量|门店|融资|估值|市值|市场份额|客单价|毛利)",
 ]
 FACT_PATTERNS_QIEZHI = [
     r"《[^》]{2,30}》", r"毛泽东",
@@ -120,9 +139,16 @@ def evaluate(md: str, profile_key: str) -> dict:
 
     internal_hits = count_matches(INTERNAL_PATTERNS, body)
     template_hits = count_matches(TEMPLATE_PATTERNS, body)
-    fact_patterns = FACT_PATTERNS_AI if profile_key == "ai_business" else FACT_PATTERNS_QIEZHI
+    if profile_key == "qiezhi":
+        fact_patterns = FACT_PATTERNS_QIEZHI
+        stance_patterns = STANCE_PATTERNS_QIEZHI
+    elif profile_key == "business_story":
+        fact_patterns = FACT_PATTERNS_BUSINESS
+        stance_patterns = STANCE_PATTERNS_BUSINESS
+    else:
+        fact_patterns = FACT_PATTERNS_AI
+        stance_patterns = STANCE_PATTERNS_AI
     fact_hits = count_matches(fact_patterns, body)
-    stance_patterns = STANCE_PATTERNS_AI if profile_key == "ai_business" else STANCE_PATTERNS_QIEZHI
     stance_hits = count_matches(stance_patterns, body)
 
     score = 0

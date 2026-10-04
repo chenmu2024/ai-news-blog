@@ -1,11 +1,12 @@
 # 公众号 Content OS
 
-本目录是两个公众号方向共用的发布前质量层。选题、Research、公众号生态扫描和 Humanize 由上游内容任务执行；仓库负责在真正创建草稿前再做一次可审计的硬 Gate。
+本目录是多个公众号方向共用的发布前质量层。选题、Research、公众号生态扫描和 Humanize 由上游内容任务执行；仓库负责在真正创建草稿前再做一次可审计的硬 Gate。
 
 ## 当前 Direction Profiles
 
 - `ai_business`：陈慕｜AI 一人公司实战
 - `qiezhi`：且知｜毛选/思想方法
+- `business_story`：生意显微镜｜商业故事
 
 新增公众号方向时，应新增 Profile，而不是复制整套发布链路。
 
@@ -38,6 +39,6 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成 Humanize 再�
 
 ## 发布边界
 
-仓库当前的两个 publish_draft.py 仍使用微信公众号官方 API（AppID/AppSecret + 可选静态代理/IP 白名单）创建草稿。只调用草稿接口，不调用正式发布/群发接口。
+仓库当前各 Direction 的 publish_draft.py 仍使用微信公众号官方 API（AppID/AppSecret + 可选静态代理/IP 白名单）创建草稿。只调用草稿接口，不调用正式发布/群发接口。
 
 “Session-first / 浏览器登录态复用”的 Easel 路线目前尚未工程化到本仓库，因此不能把它描述为已经切换完成。

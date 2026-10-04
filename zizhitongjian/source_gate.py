@@ -29,7 +29,11 @@ def normalize_text(text: str) -> str:
     text = re.sub(r"<script[\\s\\S]*?</script>", "", text, flags=re.I)
     text = re.sub(r"<style[\\s\\S]*?</style>", "", text, flags=re.I)
     text = re.sub(r"<[^>]+>", "", text)
+    # Ancient-text sources often differ only in punctuation, whitespace,
+    # Unicode quote forms, or editorial numbering. Ignore those for matching.
     text = re.sub(r"[\\s　]+", "", text)
+    text = re.sub(r"[，。！？；：、,.!?;:'\"“”‘’（）()《》〈〉【】\[\]〔〕—…·＊*#|/\\-]+", "", text)
+    text = re.sub(r"(?m)^\\d+", "", text)
     text = text.replace("〇", "零")
     return text
 
@@ -43,7 +47,7 @@ def fetch_page(url: str) -> str:
     r.raise_for_status()
     return r.text
 
-def fetch_wikisource_text(url: str) -> str:
+def fetch_wikisource_text(url: str, variant: str = "zh-hant") -> str:
     parsed = urlparse(url)
     parts = [unquote(x) for x in parsed.path.split("/") if x]
     # Expected forms include /zh-hant/資治通鑑/卷010 or /wiki/資治通鑑/卷010.
@@ -60,7 +64,7 @@ def fetch_wikisource_text(url: str) -> str:
             "prop": "text",
             "format": "json",
             "formatversion": "2",
-            "variant": "zh-hant",
+            "variant": variant,
         },
         timeout=30,
         headers={"User-Agent": "Mozilla/5.0 (compatible; TongjianSourceGate/1.0)"},
@@ -127,8 +131,10 @@ def main() -> int:
     # exact Wikisource volume page. This prevents fabricated source metadata.
     if not errors:
         try:
-            page_text = fetch_wikisource_text(primary)
-            if normalize_text(excerpt) not in page_text:
+            excerpt_norm = normalize_text(excerpt)
+            page_hant = fetch_wikisource_text(primary, "zh-hant")
+            page_hans = fetch_wikisource_text(primary, "zh-hans")
+            if excerpt_norm not in page_hant and excerpt_norm not in page_hans:
                 errors.append("original_excerpt 未在 primary_text_url 对应的维基文库卷页中找到")
         except Exception as e:
             errors.append("无法在线核验 primary_text_url: " + str(e))
@@ -154,10 +160,18 @@ def main() -> int:
                 errors.append(f"direct_quotes[{i}] 引语过短或为空")
             if item.get("verified") is not True:
                 errors.append(f"direct_quotes[{i}] 未标记 verified=true")
-            # Every declared direct quote must actually appear in the article,
-            # ignoring whitespace differences.
-            if text and text not in re.sub(r"\s+", "", md):
+            # Every declared direct quote must appear in the article and in
+            # the exact source volume. This prevents a fabricated quote from
+            # being marked verified=true only in metadata.
+            if text and normalize_text(text) not in normalize_text(md):
                 errors.append(f"direct_quotes[{i}] 未在正文中找到，来源记录与正文不一致")
+            if text and not any("primary_text_url" in e for e in errors):
+                try:
+                    q = normalize_text(text)
+                    if q not in fetch_wikisource_text(primary, "zh-hant") and q not in fetch_wikisource_text(primary, "zh-hans"):
+                        errors.append(f"direct_quotes[{i}] 未在对应《资治通鉴》卷页原文中找到")
+                except Exception as e:
+                    errors.append(f"direct_quotes[{i}] 原文在线核验失败: {e}")
 
     result = {
         "status": "FAIL" if errors else "PASS",

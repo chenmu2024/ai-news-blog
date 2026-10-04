@@ -40,6 +40,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install dependencies
+        run: pip install -r zizhitongjian/requirements.txt
+
       - name: Original-text source gate
         run: |
           python zizhitongjian/source_gate.py \
@@ -57,9 +60,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
-
-      - name: Install dependencies
-        run: pip install -r zizhitongjian/requirements.txt
 
       - name: Create Zizhi Tongjian WeChat draft only
         env:

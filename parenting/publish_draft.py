@@ -353,6 +353,32 @@ def styled_html(md):
     raw = raw.replace("<hr />", '<hr style="border:none;border-top:1px solid #e5e5e5;margin:30px 0;" />')
     return '<section style="font-size:16px;line-height:1.95;color:#222;word-break:break-word;">' + raw + "</section>"
 
+def get_draft(tok, media_id):
+    r = request_with_proxy(
+        "POST",
+        API + "/draft/get",
+        params={"access_token": tok},
+        data=json.dumps({"media_id": media_id}, ensure_ascii=False).encode("utf-8"),
+        headers={"Content-Type": "application/json; charset=utf-8"},
+        timeout=60,
+    )
+    d = r.json()
+    if d.get("errcode"):
+        fail("读取草稿失败: " + str(d))
+    return d
+
+def verify_public_draft(tok, media_id):
+    d = get_draft(tok, media_id)
+    items = d.get("news_item") or []
+    if not items:
+        fail("微信草稿回读为空，无法验证公开正文")
+    html = "\n".join(str(x.get("content") or "") for x in items if isinstance(x, dict))
+    forbidden = ["资料来源", "图片来源", "核验说明", "编辑说明", "发布说明", "内部备注", "Content-Type", "Markdown"]
+    leaked = [x for x in forbidden if x in html]
+    if leaked:
+        fail("微信公开草稿仍包含内部生产信息: " + ", ".join(leaked))
+    print("[PUBLIC_COPY_VERIFY] PASS")
+
 def create_draft(tok, title, body, cover_id):
     payload = {"articles": [{
         "article_type": "news",
@@ -400,6 +426,7 @@ def main():
         cover = make_fallback_cover(api_title)
     cover_id = upload_cover(tok, cover[0], cover[1], cover[2])
     media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
+    verify_public_draft(tok, media_id)
     print("[SUCCESS] 已保存到微信公众号草稿箱")
     print("[SAFE] 未调用任何正式发布接口")
     print("[DRAFT_MEDIA_ID]", media_id)

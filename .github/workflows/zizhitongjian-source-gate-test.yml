@@ -23,8 +23,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install requests
-        run: pip install "requests>=2.32,<3"
+      - name: Install dependencies
+        run: pip install -r zizhitongjian/requirements.txt
 
       - name: Python syntax checks
         run: |
@@ -42,18 +42,19 @@ jobs:
           spec = importlib.util.spec_from_file_location("pub", "zizhitongjian/publish_draft.py")
           mod = importlib.util.module_from_spec(spec)
           spec.loader.exec_module(mod)
-          sample = """# 测试
-<!-- ZZTJ_SOURCE
-{"work":"资治通鉴"}
--->
-正文最后一句。
-
----
-
-**原典依据：《资治通鉴》卷十；原文据维基文库核对，并以 CText 复核。**
-
-**图片来源：Wikimedia Commons；某政府网站。**
-"""
+          sample = "\n".join([
+              "# 测试",
+              "<!-- ZZTJ_SOURCE",
+              '{"work":"资治通鉴"}',
+              "-->",
+              "正文最后一句。",
+              "",
+              "---",
+              "",
+              "**原典依据：《资治通鉴》卷十；原文据维基文库核对，并以 CText 复核。**",
+              "",
+              "**图片来源：Wikimedia Commons；某政府网站。**",
+          ])
           out = mod.strip_internal_notes(sample)
           forbidden = ["ZZTJ_SOURCE", "原典依据：", "图片来源：", "Wikimedia Commons", "CText"]
           bad = [x for x in forbidden if x in out]

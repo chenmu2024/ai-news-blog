@@ -1,0 +1,45 @@
+name: Zizhi Tongjian Source Gate Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "zizhitongjian/source_gate.py"
+      - "zizhitongjian/tests/**"
+      - ".github/workflows/zizhitongjian-source-gate-test.yml"
+  workflow_dispatch:
+
+jobs:
+  source-gate-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install requests
+        run: pip install "requests>=2.32,<3"
+
+      - name: Valid source must PASS
+        run: |
+          python zizhitongjian/source_gate.py \
+            --article zizhitongjian/tests/source-valid.md \
+            --json-out /tmp/source-valid.json
+
+      - name: Fabricated excerpt must FAIL
+        shell: bash
+        run: |
+          set +e
+          python zizhitongjian/source_gate.py \
+            --article zizhitongjian/tests/source-invalid.md \
+            --json-out /tmp/source-invalid.json
+          CODE=$?
+          set -e
+          if [ "$CODE" -eq 0 ]; then
+            echo "ERROR: fabricated excerpt unexpectedly passed Source Gate"
+            exit 1
+          fi
+          echo "Fabricated excerpt correctly rejected."

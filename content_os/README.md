@@ -10,6 +10,7 @@
 - `zizhitongjian`：资治通鉴｜原典·人性·决策
 - `parenting`：陈慕｜育儿与家庭教育
 - `jingyun`：静筠日记｜女性生活
+- `fashion`：女装穿搭｜Image-first（明星穿搭 × 日韩穿搭 × 普通人复刻）
 
 新增公众号方向时，应新增 Profile，而不是复制整套发布链路。
 

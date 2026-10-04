@@ -62,6 +62,9 @@ def unwrap(md):
     return md
 
 def strip_internal_notes(md):
+    # Keep ZZTJ_SOURCE in the GitHub archive for auditing, but never send it
+    # into WeChat article HTML.
+    md = re.sub(r"<!--\s*ZZTJ_SOURCE\s*\{[\s\S]*?\}\s*-->", "", md, flags=re.M)
     # Remove editor-facing production notes that must never appear to readers.
     headings = (
         "数据核验说明",
@@ -155,7 +158,7 @@ def make_fallback_cover(title):
     d = ImageDraw.Draw(img)
     d.rounded_rectangle((28, 28, W-28, H-28), radius=30, fill=panel, outline=line, width=2)
     d.rounded_rectangle((72, 66, 270, 112), radius=23, fill=(235, 242, 255))
-    d.text((96, 75), "通鉴识局", font=font(24, True), fill=accent)
+    d.text((96, 75), "资治通鉴", font=font(24, True), fill=accent)
 
     title_font = font(52, True)
     lines = wrap_text(d, title, title_font, W-160)[:3]
@@ -203,7 +206,7 @@ def make_info_card(spec):
 
     d.rounded_rectangle((32, 32, W-32, H-32), radius=30, fill=panel, outline=border, width=2)
     d.rounded_rectangle((70, 58, 300, 104), radius=22, fill=(235, 242, 255))
-    d.text((92, 68), "陈慕 · 通鉴识局", font=font(22, True), fill=accent)
+    d.text((92, 68), "陈慕 · 资治通鉴", font=font(22, True), fill=accent)
 
     d.text((70, 128), title, font=font(46, True), fill=ink)
     if subtitle:

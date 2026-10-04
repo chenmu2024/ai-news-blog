@@ -1,0 +1,57 @@
+name: Parenting Publisher Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "parenting/publish_draft.py"
+      - "parenting/STYLE.md"
+      - "content_os/quality_gate.py"
+      - ".github/workflows/parenting-draft.yml"
+      - ".github/workflows/parenting-tests.yml"
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r parenting/requirements.txt
+
+      - name: Syntax checks
+        run: |
+          python -m py_compile parenting/publish_draft.py
+          python -m py_compile content_os/quality_gate.py
+
+      - name: Public copy sanitizer test
+        env:
+          WECHAT_APP_ID: test
+          WECHAT_APP_SECRET: test
+        run: |
+          python - <<'PY'
+          import importlib.util
+          spec = importlib.util.spec_from_file_location("pub", "parenting/publish_draft.py")
+          mod = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          sample = "\n".join([
+              "# 测试",
+              "正文最后一句。",
+              "",
+              "---",
+              "",
+              "**资料来源：某机构网页。**",
+              "**图片来源：某图库。**",
+          ])
+          out = mod.strip_internal_notes(sample)
+          forbidden = ["资料来源：", "图片来源："]
+          bad = [x for x in forbidden if x in out]
+          assert not bad, f"public metadata leaked: {bad}"
+          print("Parenting public-copy sanitizer PASS")
+          PY

@@ -1,0 +1,88 @@
+name: Jingyun Diary Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "jingyun/publish_draft.py"
+      - "jingyun/STYLE.md"
+      - "content_os/quality_gate.py"
+      - ".github/workflows/jingyun-draft.yml"
+      - ".github/workflows/jingyun-tests.yml"
+  workflow_dispatch:
+
+jobs:
+  jingyun-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r jingyun/requirements.txt
+
+      - name: Python syntax checks
+        run: |
+          python -m py_compile jingyun/publish_draft.py
+          python -m py_compile content_os/quality_gate.py
+
+      - name: Fabricated diary claims must FAIL
+        run: |
+          cat > /tmp/jingyun-fake.md <<'EOF'
+          # 一个女人真正开始清醒以后
+
+          我老公昨天又和我吵了一架。
+
+          我女儿今年上初中。我的一个闺蜜跟我说，女人到了40岁就该彻底为自己活一次。
+
+          现实是，很多女人到了这个年纪才发现，真正难的是如何在家庭、工作和自己的需要之间重新分配时间。婚姻不是一句离开就能解决的事，收入、孩子、父母和住房都会影响选择。
+
+          很多女人并不缺一个漂亮答案，她们缺的是把代价一项项看清楚。到了这个年纪，更重要的是重新知道什么是自己愿意承担的，什么又是不能继续承受的。
+
+          这里补足正文长度用于测试。女性家庭婚姻工作收入父母养老职场生活女性家庭婚姻工作收入父母养老职场生活女性家庭婚姻工作收入父母养老职场生活。
+          EOF
+          set +e
+          python content_os/quality_gate.py --article /tmp/jingyun-fake.md --profile jingyun --json-out /tmp/jingyun-fake.json
+          CODE=$?
+          set -e
+          if [ "$CODE" -eq 0 ]; then
+            echo "ERROR: fabricated first-person diary unexpectedly passed"
+            cat /tmp/jingyun-fake.json
+            exit 1
+          fi
+          grep -q "疑似虚构的第一人称私人经历" /tmp/jingyun-fake.json
+          echo "Fabricated diary claim correctly rejected."
+
+      - name: Public copy sanitizer test
+        env:
+          WECHAT_APP_ID: test
+          WECHAT_APP_SECRET: test
+        run: |
+          python - <<'PY'
+          import importlib.util
+          spec = importlib.util.spec_from_file_location("pub", "jingyun/publish_draft.py")
+          mod = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          sample = "\n".join([
+              "# 测试",
+              "这是正文最后一句。",
+              "",
+              "## 资料来源",
+              "某研究资料",
+              "",
+              "**图片来源：某图库。**",
+              "",
+              "## 编辑说明",
+              "内部备注",
+          ])
+          out = mod.strip_internal_notes(sample)
+          forbidden = ["资料来源", "图片来源", "编辑说明", "内部备注"]
+          bad = [x for x in forbidden if x in out]
+          assert not bad, f"public metadata leaked: {bad}"
+          assert "这是正文最后一句。" in out
+          print("Public copy sanitizer PASS")
+          PY

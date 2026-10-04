@@ -47,6 +47,7 @@
 - `brand_editorial_permission`
 - `affiliate_feed_permission`
 - `user_owned`
+- `pexels_license`
 
 `official`、`social_media`、`found_online`、`pinterest` 等不是许可类型，Image Gate 必须拒绝。
 
@@ -68,3 +69,10 @@
 如果正文写“同款 / 她穿的是 / 型号 / SKU / 精确价格”，必须在 `item_claims` 里有对应已核验来源。
 
 无法确认时，不写精确同款，改为版型和搭配逻辑分析。
+
+
+## Pexels
+
+Pexels 官方许可允许其照片免费用于个人与商业用途，且署名不是强制要求。使用时 rights 填 `pexels_license`，rights_evidence_url 固定指向 Pexels 官方 License 页面，并保留具体 photo page 作为 source_page_url。
+
+仍需遵守 Pexels 对可识别人物、商标、背书暗示等限制；不得把照片中的人物说成本文品牌代言人、顾客或真实案例。

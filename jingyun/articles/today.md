@@ -12,9 +12,9 @@
 
 白天要工作，晚上要顾家；孩子有事，父母也开始变老；婚姻里有要处理的问题，职场上也还有竞争。很多事情不是不重要，而是全部都重要的时候，人就必须开始排序。
 
-![一位中年女性在家中工作](https://commons.wikimedia.org/wiki/Special:Redirect/file/Middle-aged_businesswoman_typing_on_laptop_at_home_office.jpg?width=960)
+![一位中年女性在家中工作](https://images.pexels.com/photos/8871955/pexels-photo-8871955.jpeg?cs=srgb&dl=pexels-mikhail-nilov-8871955.jpg&fm=jpg)
 
-*工作、家庭和自己的时间，经常同时挤在同一天里。*
+*很多女性到了中年，工作与家庭仍然同时占据生活的中心。*
 
 ## 很多女人累的，不只是“事情多”
 
@@ -132,9 +132,9 @@
 
 问题从来不是哪种选择更高级，而是一个选择有没有现实支撑，未来如果需要改变，有没有重新调整的空间。
 
-![一位女性在安静的环境里阅读](https://commons.wikimedia.org/wiki/Special:Redirect/file/Middle-aged_businesswoman_reading_a_book_under_warm_light_in_a_quiet_room_during_evening_hours,_surrounded_by_notebooks_and_a_cozy_atmosphere.jpg?width=960)
+![一位女性在安静的环境里阅读](https://images.pexels.com/photos/6888678/pexels-photo-6888678.jpeg?cs=srgb&dl=pexels-meruyert-gonullu-6888678.jpg&fm=jpg)
 
-*给自己留下一段不服务任何人的时间，本身就是生活的一部分。*
+*给自己留下一段只属于自己的时间，本身就是生活的一部分。*
 
 ## 很多女人真正想要的，并不是“重新活一次”
 

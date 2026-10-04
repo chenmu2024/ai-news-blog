@@ -40,6 +40,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Content OS quality gate
+        run: |
+          python content_os/quality_gate.py \
+            --article "$ARTICLE_PATH" \
+            --profile qiezhi \
+            --json-out qiezhi/status/quality-gate.json
+
       - name: Install Chinese fonts
         run: |
           sudo apt-get update
@@ -63,7 +70,7 @@ jobs:
           cp "$ARTICLE_PATH" qiezhi/articles/today.md
           git config user.name "qiezhi-draft-bot"
           git config user.email "qiezhi-draft-bot@users.noreply.github.com"
-          git add qiezhi/articles/today.md qiezhi/status/latest.json
+          git add qiezhi/articles/today.md qiezhi/status/latest.json qiezhi/status/quality-gate.json
           if git diff --cached --quiet; then
             echo "No article/status change."
           else

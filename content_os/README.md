@@ -7,12 +7,13 @@
 - `ai_business`：陈慕｜AI 一人公司实战
 - `qiezhi`：且知｜毛选/思想方法
 - `business_story`：生意显微镜｜商业故事
+- `zizhitongjian`：资治通鉴｜原典·人性·决策
 
 新增公众号方向时，应新增 Profile，而不是复制整套发布链路。
 
 ## 固定全局流程
 
-候选池 → 微信公众号 Topic Intelligence → 撞题/去重 → Research / Fact Check → Draft → Humanize → AI味/可读性 Gate → 配图 Gate → 草稿箱 → 数据复盘。
+候选池 → 微信公众号 Topic Intelligence → 撞题/去重 → Research / Fact Check（原典类先过 Source Gate） → Draft → Humanize → AI味/可读性 Gate → 配图 Gate → 草稿箱 → 数据复盘。
 
 微信公众号文章只作为选题、标题和中文读者兴趣信号；外部事实必须回到官方/原始来源或高可信独立来源核验。
 

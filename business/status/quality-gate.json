@@ -3,21 +3,21 @@
   "profile": "business_story",
   "profile_name": "生意显微镜｜商业故事",
   "score": 0,
-  "body_chars": 3102,
+  "body_chars": 3281,
   "template_hits": 0,
   "internal_hits": 0,
   "fact_signals": 82,
   "stance_signals": 3,
   "paragraph_regularity": {
-    "paragraphs": 42,
-    "cv": 0.502
+    "paragraphs": 45,
+    "cv": 0.494
   },
   "sentence_repetition": {
-    "sentences": 88,
-    "repeated_starts": 6,
-    "ratio": 0.069
+    "sentences": 94,
+    "repeated_starts": 8,
+    "ratio": 0.086
   },
-  "very_short_paragraph_ratio": 0.196,
+  "very_short_paragraph_ratio": 0.186,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

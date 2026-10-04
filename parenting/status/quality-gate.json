@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "profile": "parenting",
+  "profile_name": "陈慕｜育儿与家庭教育",
+  "score": 17,
+  "body_chars": 2561,
+  "template_hits": 3,
+  "internal_hits": 0,
+  "fact_signals": 38,
+  "stance_signals": 3,
+  "paragraph_regularity": {
+    "paragraphs": 55,
+    "cv": 0.393
+  },
+  "sentence_repetition": {
+    "sentences": 101,
+    "repeated_starts": 3,
+    "ratio": 0.032
+  },
+  "very_short_paragraph_ratio": 0.442,
+  "hard_failures": [],
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+}

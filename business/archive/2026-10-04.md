@@ -10,6 +10,10 @@
 
 去年还被全球消费者追着买的Labubu，今年并没有消失。但泡泡玛特已经走到了一个比“再造一个爆款”更难的阶段。
 
+![巴黎奥斯曼旗舰店内景](https://i0.wp.com/echoesofgeeks.fr/wp-content/uploads/2026/09/POP-MART_Flagship-store-Paris-Haussmann-2.jpg?fit=1280%2C854&ssl=1)
+
+*巴黎 Haussmann 旗舰店内景。图片来自 POP MART 开业新闻稿官方素材，摄影/素材：Minuit Douze。*
+
 <!-- WECHAT_CARD {"title":"泡泡玛特2026上半年：增长还在，但结构已经变了","subtitle":"171.73亿元收入背后，国内和海外走出了两条不同曲线","items":[{"name":"集团收入","lead":"171.73亿元｜同比 +23.8%","detail":"归母净利润50.38亿元，同比增长10.1%"},{"name":"中国市场","lead":"122.01亿元｜同比 +47.3%","detail":"占集团收入71%，重新成为最主要增长来源"},{"name":"亚太","lead":"25.75亿元｜同比 -9.7%","detail":"线下仍增长，但线上流量红利明显回落"},{"name":"美洲","lead":"18.92亿元｜同比 -16.5%","detail":"线下收入增长19.5%，线上收入下降45.6%"},{"name":"欧洲及其他地区","lead":"5.06亿元｜同比 +5.9%","detail":"线下收入增长49.8%，线上收入下降59.0%"}]} -->
 
 ## 去年最猛的增长，正在变成今年最大的考题
@@ -36,7 +40,9 @@
 
 我的判断是，泡泡玛特海外真正的第二阶段，就是从“被流量推着卖”，转向“自己把消费者留下来”。
 
-<!-- WECHAT_CARD {"title":"海外真正的变化：不是门店没人了，而是线上红利退潮","subtitle":"2026年上半年，泡泡玛特多个海外市场出现同一种结构性变化","items":[{"name":"美洲线下","lead":"+19.5%","detail":"零售店从41家增加到86家，门店扩张仍在贡献增长"},{"name":"美洲线上","lead":"-45.6%","detail":"自营APP与官网收入下降44.6%，线上获客进入正常化阶段"},{"name":"亚太线下","lead":"+16.2%","detail":"零售店从69家增加到90家"},{"name":"亚太线上","lead":"-39.8%","detail":"公司明确提到外部流量红利逐步减弱"},{"name":"欧洲线下","lead":"+49.8%","detail":"零售店从18家增加到45家；同期线上收入下降59.0%"}]} -->
+![巴黎旗舰店THE MONSTERS陈列](https://i0.wp.com/echoesofgeeks.fr/wp-content/uploads/2026/09/POP-MART_Flagship-store-Paris-Haussmann-6.jpg?fit=1280%2C854&ssl=1)
+
+*巴黎 Haussmann 旗舰店里的 THE MONSTERS / Labubu 场景。图片来自 POP MART 开业新闻稿官方素材，摄影/素材：Minuit Douze。*
 
 ## 真正重要的，不是Labubu还能红多久
 
@@ -60,7 +66,9 @@
 
 Twinkle Twinkle今年爆发，不代表明年依旧能保持；今天有六个十亿元级IP，也不代表这些IP都已经拥有米老鼠、Hello Kitty那种穿越周期的生命力。潮玩公司的难点，从来不是做出一次爆款，而是把“偶然走红”变成“持续制造文化符号”的组织能力。
 
-<!-- WECHAT_CARD {"title":"Labubu占比下降，但泡泡玛特正在长出第二梯队","subtitle":"2026年上半年主要艺术家IP收入","items":[{"name":"THE MONSTERS","lead":"44.54亿元｜占比26.0%","detail":"去年同期48.14亿元，占比34.7%"},{"name":"Twinkle Twinkle","lead":"26.50亿元｜占比15.4%","detail":"去年同期仅3.89亿元，成为最快增长IP"},{"name":"CRYBABY","lead":"16.33亿元","detail":"继续进入十亿元级IP阵营"},{"name":"DIMOO","lead":"16.19亿元","detail":"与CRYBABY形成稳定第二梯队"},{"name":"SKULLPANDA","lead":"15.51亿元","detail":"上半年同样超过15亿元"},{"name":"HIRONO","lead":"10.09亿元","detail":"泡泡玛特十亿元级IP进一步增加"}]} -->
+![LABUBU Jazz Figure官方产品图](https://prod-america-res.popmart.com/default/20260327_175209_604765____3_labubu-jazz-figure_figurine_details_pop-mart-us_____1200x1200.jpg)
+
+*LABUBU Jazz Figure 官方产品实拍。图片来源：POP MART 官方产品页。*
 
 ## 为什么海外越放缓，泡泡玛特反而越要开大店
 

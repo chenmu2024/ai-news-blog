@@ -277,7 +277,7 @@ def replace_cards(md, tok):
     return out, count[0]
 
 def get_image(url):
-    r = requests.get(url, timeout=40, allow_redirects=True)
+    r = requests.get(url, timeout=40, allow_redirects=True, headers={"User-Agent": "Mozilla/5.0 (compatible; TongjianWeChatPublisher/1.0)"})
     r.raise_for_status()
     ct = (r.headers.get("Content-Type") or "").split(";")[0].lower()
     if ct not in ("image/png", "image/jpeg"):

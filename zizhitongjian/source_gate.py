@@ -5,7 +5,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 from html import unescape
 import requests
 
@@ -42,6 +42,37 @@ def fetch_page(url: str) -> str:
     )
     r.raise_for_status()
     return r.text
+
+def fetch_wikisource_text(url: str) -> str:
+    parsed = urlparse(url)
+    parts = [unquote(x) for x in parsed.path.split("/") if x]
+    # Expected forms include /zh-hant/資治通鑑/卷010 or /wiki/資治通鑑/卷010.
+    if parts and (parts[0].startswith("zh-") or parts[0] == "wiki"):
+        parts = parts[1:]
+    title = "/".join(parts)
+    if not title:
+        raise RuntimeError("无法从 primary_text_url 解析维基文库页名")
+    r = requests.get(
+        "https://zh.wikisource.org/w/api.php",
+        params={
+            "action": "parse",
+            "page": title,
+            "prop": "text",
+            "format": "json",
+            "formatversion": "2",
+            "variant": "zh-hant",
+        },
+        timeout=30,
+        headers={"User-Agent": "Mozilla/5.0 (compatible; TongjianSourceGate/1.0)"},
+    )
+    r.raise_for_status()
+    data = r.json()
+    if "error" in data:
+        raise RuntimeError("MediaWiki API error: " + str(data["error"]))
+    html = ((data.get("parse") or {}).get("text") or "")
+    if not html:
+        raise RuntimeError("MediaWiki API 未返回正文")
+    return normalize_text(html)
 
 def main() -> int:
     ap = argparse.ArgumentParser()
@@ -96,8 +127,7 @@ def main() -> int:
     # exact Wikisource volume page. This prevents fabricated source metadata.
     if not errors:
         try:
-            primary_html = fetch_page(primary)
-            page_text = normalize_text(primary_html)
+            page_text = fetch_wikisource_text(primary)
             if normalize_text(excerpt) not in page_text:
                 errors.append("original_excerpt 未在 primary_text_url 对应的维基文库卷页中找到")
         except Exception as e:

@@ -53,6 +53,14 @@ jobs:
             --profile fashion \
             --json-out fashion/status/quality-gate.json
 
+
+      - name: Global visual requirement gate
+        run: |
+          python content_os/visual_gate.py \
+            --article "$ARTICLE_PATH" \
+            --profile fashion \
+            --json-out fashion/status/visual-gate.json
+
       - name: Install Chinese fonts
         run: |
           sudo apt-get update
@@ -104,7 +112,7 @@ jobs:
 
           git config user.name "fashion-draft-bot"
           git config user.email "fashion-draft-bot@users.noreply.github.com"
-          git add fashion/articles/today.md fashion/status/latest.json fashion/status/image-gate.json fashion/status/quality-gate.json
+          git add fashion/articles/today.md fashion/status/latest.json fashion/status/image-gate.json fashion/status/quality-gate.json fashion/status/visual-gate.json
           if git diff --cached --quiet; then
             echo "No article/status change."
           else

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "profile": "parenting",
+  "required_visuals": 2,
+  "visual_count": 2,
+  "markdown_images": 2,
+  "html_images": 0,
+  "renderable_cards": 0,
+  "hard_failures": []
+}

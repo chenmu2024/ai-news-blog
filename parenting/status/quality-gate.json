@@ -3,21 +3,21 @@
   "profile": "parenting",
   "profile_name": "陈慕｜育儿与家庭教育",
   "score": 21,
-  "body_chars": 1880,
+  "body_chars": 1943,
   "template_hits": 4,
   "internal_hits": 0,
-  "fact_signals": 18,
-  "stance_signals": 5,
+  "fact_signals": 19,
+  "stance_signals": 6,
   "paragraph_regularity": {
-    "paragraphs": 38,
-    "cv": 0.43
+    "paragraphs": 40,
+    "cv": 0.423
   },
   "sentence_repetition": {
-    "sentences": 78,
+    "sentences": 80,
     "repeated_starts": 1,
-    "ratio": 0.014
+    "ratio": 0.013
   },
-  "very_short_paragraph_ratio": 0.453,
+  "very_short_paragraph_ratio": 0.442,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

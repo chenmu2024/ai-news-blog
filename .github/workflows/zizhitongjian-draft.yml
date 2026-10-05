@@ -56,6 +56,14 @@ jobs:
             --profile zizhitongjian \
             --json-out zizhitongjian/status/quality-gate.json
 
+
+      - name: Global visual requirement gate
+        run: |
+          python content_os/visual_gate.py \
+            --article "$ARTICLE_PATH" \
+            --profile zizhitongjian \
+            --json-out zizhitongjian/status/visual-gate.json
+
       - name: Install Chinese fonts
         run: |
           sudo apt-get update
@@ -98,7 +106,7 @@ jobs:
           PY
           git config user.name "tongjian-draft-bot"
           git config user.email "tongjian-draft-bot@users.noreply.github.com"
-          git add zizhitongjian/articles/today.md zizhitongjian/status/latest.json zizhitongjian/status/source-gate.json zizhitongjian/status/quality-gate.json
+          git add zizhitongjian/articles/today.md zizhitongjian/status/latest.json zizhitongjian/status/source-gate.json zizhitongjian/status/quality-gate.json zizhitongjian/status/visual-gate.json
           if git diff --cached --quiet; then
             echo "No article/status change."
           else

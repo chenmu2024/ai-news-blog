@@ -32,7 +32,7 @@ def normalize_text(text: str) -> str:
     # Ancient-text sources often differ only in punctuation, whitespace,
     # Unicode quote forms, or editorial numbering. Ignore those for matching.
     text = re.sub(r"[\\s　]+", "", text)
-    text = re.sub(r"[，。！？；：、,.!?;:'\"“”‘’（）()《》〈〉【】\[\]〔〕—…·＊*#|/\\-]+", "", text)
+    text = re.sub(r"[，。！？；：、,.!?;:'\"“”‘’「」『』（）()《》〈〉【】\[\]〔〕—…·＊*#|/\\-]+", "", text)
     text = re.sub(r"(?m)^\\d+", "", text)
     text = text.replace("〇", "零")
     return text

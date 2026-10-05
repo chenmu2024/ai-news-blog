@@ -78,6 +78,36 @@ def fetch_wikisource_text(url: str, variant: str = "zh-hant") -> str:
         raise RuntimeError("MediaWiki API 未返回正文")
     return normalize_text(html)
 
+def fetch_wikisource_wikitext(url: str) -> str:
+    parsed = urlparse(url)
+    parts = [unquote(x) for x in parsed.path.split("/") if x]
+    if parts and (parts[0].startswith("zh-") or parts[0] == "wiki"):
+        parts = parts[1:]
+    title = "/".join(parts)
+    if not title:
+        raise RuntimeError("无法从 primary_text_url 解析维基文库页名")
+    r = requests.get(
+        "https://zh.wikisource.org/w/api.php",
+        params={
+            "action": "parse",
+            "page": title,
+            "prop": "wikitext",
+            "format": "json",
+            "formatversion": "2",
+        },
+        timeout=30,
+        headers={"User-Agent": "Mozilla/5.0 (compatible; TongjianSourceGate/1.0)"},
+    )
+    r.raise_for_status()
+    data = r.json()
+    if "error" in data:
+        raise RuntimeError("MediaWiki API error: " + str(data["error"]))
+    raw = ((data.get("parse") or {}).get("wikitext") or "")
+    if not raw:
+        raise RuntimeError("MediaWiki API 未返回原始维基文本")
+    return normalize_text(raw)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--article", required=True)
@@ -143,10 +173,12 @@ def main() -> int:
             # check strict to the exact same volume URL, but allow the rendered
             # page as a second representation of that primary source.
             page_rendered = normalize_text(fetch_page(primary))
+            page_wikitext = fetch_wikisource_wikitext(primary)
             if (
                 excerpt_norm not in page_hant
                 and excerpt_norm not in page_hans
                 and excerpt_norm not in page_rendered
+                and excerpt_norm not in page_wikitext
             ):
                 errors.append("original_excerpt 未在 primary_text_url 对应的维基文库卷页中找到")
         except Exception as e:
@@ -184,7 +216,13 @@ def main() -> int:
                     quote_hant = fetch_wikisource_text(primary, "zh-hant")
                     quote_hans = fetch_wikisource_text(primary, "zh-hans")
                     quote_rendered = normalize_text(fetch_page(primary))
-                    if q not in quote_hant and q not in quote_hans and q not in quote_rendered:
+                    quote_wikitext = fetch_wikisource_wikitext(primary)
+                    if (
+                        q not in quote_hant
+                        and q not in quote_hans
+                        and q not in quote_rendered
+                        and q not in quote_wikitext
+                    ):
                         errors.append(f"direct_quotes[{i}] 未在对应《资治通鉴》卷页原文中找到")
                 except Exception as e:
                     errors.append(f"direct_quotes[{i}] 原文在线核验失败: {e}")

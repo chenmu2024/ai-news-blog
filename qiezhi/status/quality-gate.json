@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "profile": "qiezhi",
+  "profile_name": "且知｜毛选/思想方法",
+  "score": 8,
+  "body_chars": 2011,
+  "template_hits": 2,
+  "internal_hits": 0,
+  "fact_signals": 9,
+  "stance_signals": 2,
+  "paragraph_regularity": {
+    "paragraphs": 51,
+    "cv": 0.506
+  },
+  "sentence_repetition": {
+    "sentences": 78,
+    "repeated_starts": 1,
+    "ratio": 0.013
+  },
+  "very_short_paragraph_ratio": 0.33,
+  "hard_failures": [],
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+}

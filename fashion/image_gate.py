@@ -77,8 +77,8 @@ def main() -> int:
         hard_failures.append("subject 不能为空")
 
     images = data.get("images")
-    if not isinstance(images, list) or len(images) < 2:
-        hard_failures.append("至少需要 2 张已核验图片")
+    if not isinstance(images, list) or len(images) < 4:
+        hard_failures.append("至少需要 4 张已核验图片")
         images = images if isinstance(images, list) else []
 
     body_image_urls = set(IMAGE_RE.findall(md))

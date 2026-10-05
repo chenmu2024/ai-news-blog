@@ -47,6 +47,14 @@ jobs:
             --profile jingyun \
             --json-out jingyun/status/quality-gate.json
 
+
+      - name: Global visual requirement gate
+        run: |
+          python content_os/visual_gate.py \
+            --article "$ARTICLE_PATH" \
+            --profile jingyun \
+            --json-out jingyun/status/visual-gate.json
+
       - name: Install Chinese fonts
         run: |
           sudo apt-get update
@@ -99,7 +107,7 @@ jobs:
 
           git config user.name "jingyun-draft-bot"
           git config user.email "jingyun-draft-bot@users.noreply.github.com"
-          git add jingyun/articles/today.md jingyun/status/latest.json jingyun/status/quality-gate.json
+          git add jingyun/articles/today.md jingyun/status/latest.json jingyun/status/quality-gate.json jingyun/status/visual-gate.json
           if git diff --cached --quiet; then
             echo "No article/status change."
           else

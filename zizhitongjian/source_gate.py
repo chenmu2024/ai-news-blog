@@ -138,7 +138,16 @@ def main() -> int:
             excerpt_norm = normalize_text(excerpt)
             page_hant = fetch_wikisource_text(primary, "zh-hant")
             page_hans = fetch_wikisource_text(primary, "zh-hans")
-            if excerpt_norm not in page_hant and excerpt_norm not in page_hans:
+            # MediaWiki parse output can occasionally differ from the rendered
+            # volume page because of variant/rendering transforms. Keep the
+            # check strict to the exact same volume URL, but allow the rendered
+            # page as a second representation of that primary source.
+            page_rendered = normalize_text(fetch_page(primary))
+            if (
+                excerpt_norm not in page_hant
+                and excerpt_norm not in page_hans
+                and excerpt_norm not in page_rendered
+            ):
                 errors.append("original_excerpt 未在 primary_text_url 对应的维基文库卷页中找到")
         except Exception as e:
             errors.append("无法在线核验 primary_text_url: " + str(e))
@@ -172,7 +181,10 @@ def main() -> int:
             if text and not any("primary_text_url" in e for e in errors):
                 try:
                     q = normalize_text(text)
-                    if q not in fetch_wikisource_text(primary, "zh-hant") and q not in fetch_wikisource_text(primary, "zh-hans"):
+                    quote_hant = fetch_wikisource_text(primary, "zh-hant")
+                    quote_hans = fetch_wikisource_text(primary, "zh-hans")
+                    quote_rendered = normalize_text(fetch_page(primary))
+                    if q not in quote_hant and q not in quote_hans and q not in quote_rendered:
                         errors.append(f"direct_quotes[{i}] 未在对应《资治通鉴》卷页原文中找到")
                 except Exception as e:
                     errors.append(f"direct_quotes[{i}] 原文在线核验失败: {e}")

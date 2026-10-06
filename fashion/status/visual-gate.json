@@ -1,9 +1,9 @@
 {
   "status": "PASS",
   "profile": "fashion",
-  "required_visuals": 2,
-  "visual_count": 2,
-  "markdown_images": 2,
+  "required_visuals": 5,
+  "visual_count": 5,
+  "markdown_images": 5,
   "html_images": 0,
   "renderable_cards": 0,
   "hard_failures": []

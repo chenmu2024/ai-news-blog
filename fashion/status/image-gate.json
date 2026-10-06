@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "topic_type": "korean",
-  "image_count": 2,
-  "body_image_count": 2,
+  "image_count": 5,
+  "body_image_count": 5,
   "item_claim_count": 0,
   "hard_failures": [],
   "warnings": []

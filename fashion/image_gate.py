@@ -118,7 +118,7 @@ def main() -> int:
     public_body = re.sub(SOURCE_RE, "", md)
     precise_claim_signal = re.search(
         r"(?:她穿的是|她身上的是|图中(?:这件|这条|这双|这个).{0,12}(?:来自|是|同款)|"
-        r"(?:品牌|型号|SKU|货号|售价|价格为)\s*[:：]?|[¥￥]\s*\d+|"
+        r"(?:型号|SKU|货号|售价|价格为)\s*[:：]?|品牌\s*[:：]\s*|[¥￥]\s*\d+|"
         r"\d+(?:\.\d+)?\s*元\s*(?:售价|价格))",
         public_body,
     )

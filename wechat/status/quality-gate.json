@@ -2,22 +2,22 @@
   "status": "PASS",
   "profile": "ai_business",
   "profile_name": "陈慕｜AI 一人公司实战",
-  "score": 20,
-  "body_chars": 2060,
-  "template_hits": 6,
+  "score": 27,
+  "body_chars": 2747,
+  "template_hits": 4,
   "internal_hits": 0,
-  "fact_signals": 13,
-  "stance_signals": 6,
+  "fact_signals": 27,
+  "stance_signals": 3,
   "paragraph_regularity": {
-    "paragraphs": 48,
-    "cv": 0.543
+    "paragraphs": 58,
+    "cv": 0.493
   },
   "sentence_repetition": {
-    "sentences": 70,
+    "sentences": 93,
     "repeated_starts": 0,
-    "ratio": 0.0
+    "ratio": 0
   },
-  "very_short_paragraph_ratio": 0.307,
+  "very_short_paragraph_ratio": 0.435,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

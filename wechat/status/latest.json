@@ -1,11 +1,9 @@
 {
   "status": "success",
-  "title": "我把找新词这件事，做成了每天自动跑的机会雷达",
+  "title": "施耐德花226亿美元买下PTC，我看到工业AI旁边的3个小生意",
   "article_path": "wechat/archive/2026-10-06.md",
-  "article_sha256": "2918973d82d254866f73932d8ca8a93c1eb3c68d5a0e7648e9aec5aba347c84b",
-  "workflow_run_id": "37395451826",
-  "commit_sha": "8f8c5609b8e28dbe433f0a18d82c970a36aa4a7e",
-  "completed_at_utc": "2026-10-06T00:43:51.744518+00:00",
-  "draft_media_id": "7atnsfbEXVAzgXv2wTjVvJ2pipbxl574auvLcNPViJeOXEc1bdHVeIdI_unG5-Fg",
-  "closure_note": "WeChat draft creation succeeded; repository sync repaired after concurrent ref-lock race."
+  "article_sha256": "1f2202c77bcb947b1acbbc941d0218b9221c171aee1455f022bc738047ed1758",
+  "workflow_run_id": "37397863088",
+  "commit_sha": "0194ed60661c84b5f84346ed3701b3529414eb46",
+  "completed_at_utc": "2026-10-06T01:11:39.589451+00:00"
 }

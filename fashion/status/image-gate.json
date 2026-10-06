@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "topic_type": "japanese",
-  "subject": "原宿街拍的比例、配色与普通人复刻方法",
-  "image_count": 5,
-  "body_image_count": 5,
+  "topic_type": "korean",
+  "image_count": 2,
+  "body_image_count": 2,
   "item_claim_count": 0,
-  "hard_failures": []
+  "hard_failures": [],
+  "warnings": []
 }

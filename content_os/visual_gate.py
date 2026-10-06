@@ -12,7 +12,7 @@ MIN_VISUALS = {
     "zizhitongjian": 2,
     "parenting": 2,
     "jingyun": 2,
-    "fashion": 2,
+    "fashion": 5,
 }
 
 MARKDOWN_IMAGE_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")

@@ -2,22 +2,22 @@
   "status": "PASS",
   "profile": "zizhitongjian",
   "profile_name": "资治通鉴｜原典·人性·决策",
-  "score": 21,
-  "body_chars": 2033,
+  "score": 29,
+  "body_chars": 1965,
   "template_hits": 4,
   "internal_hits": 0,
-  "fact_signals": 9,
+  "fact_signals": 4,
   "stance_signals": 4,
   "paragraph_regularity": {
-    "paragraphs": 43,
-    "cv": 0.418
+    "paragraphs": 45,
+    "cv": 0.292
   },
   "sentence_repetition": {
-    "sentences": 84,
-    "repeated_starts": 4,
-    "ratio": 0.052
+    "sentences": 83,
+    "repeated_starts": 0,
+    "ratio": 0.0
   },
-  "very_short_paragraph_ratio": 0.448,
+  "very_short_paragraph_ratio": 0.5,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

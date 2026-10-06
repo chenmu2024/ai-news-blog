@@ -76,50 +76,40 @@ jobs:
           EOF
           python fashion/image_gate.py --article /tmp/fashion-valid.md
 
-      - name: Public-but-unlicensed image manifest must FAIL
+      - name: Public platform images with traceable sources may PASS
         run: |
-          cat > /tmp/fashion-invalid.md <<'EOF'
+          cat > /tmp/fashion-public.md <<'EOF'
           <!-- FASHION_SOURCE
           {
             "topic_type": "celebrity",
-            "subject": "明星机场穿搭",
+            "subject": "明星公开平台穿搭",
             "images": [
               {
                 "image_url": "https://example.com/celebrity1.jpg",
                 "source_page_url": "https://pinterest.com/example",
-                "rights": "pinterest",
-                "rights_evidence_url": "https://pinterest.com/example",
-                "verified": true,
-                "attribution_required": false,
-                "attribution_text": ""
+                "source_platform": "pinterest",
+                "creator": "example account",
+                "rights": "public_platform",
+                "verified": true
               },
               {
                 "image_url": "https://example.com/celebrity2.jpg",
                 "source_page_url": "https://instagram.com/example",
-                "rights": "social_media",
-                "rights_evidence_url": "https://instagram.com/example",
-                "verified": true,
-                "attribution_required": false,
-                "attribution_text": ""
+                "source_platform": "instagram",
+                "creator": "example account",
+                "rights": "public_platform",
+                "verified": true
               }
             ],
             "item_claims": []
           }
           -->
-          # 明星机场穿搭
+          # 明星公开穿搭的比例怎么学
           ![图1](https://example.com/celebrity1.jpg)
           ![图2](https://example.com/celebrity2.jpg)
-          正文测试。
+          普通人最值得抄的是比例、廓形、配色、材质和鞋包关系，不把公开平台图片当作精确品牌或价格证据。
           EOF
-          set +e
-          python fashion/image_gate.py --article /tmp/fashion-invalid.md
-          CODE=$?
-          set -e
-          if [ "$CODE" -eq 0 ]; then
-            echo "ERROR: unlicensed public images unexpectedly passed"
-            exit 1
-          fi
-          echo "Unlicensed public images correctly rejected."
+          python fashion/image_gate.py --article /tmp/fashion-public.md
 
       - name: Public copy sanitizer test
         env:

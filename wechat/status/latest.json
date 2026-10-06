@@ -1,9 +1,11 @@
 {
   "status": "success",
-  "title": "一家AI助理公司刚融10亿美元，我更想做它旁边的小生意",
-  "article_path": "wechat/archive/2026-10-05.md",
-  "article_sha256": "d6f24405dff8bcf1cf7d505162b1c6e3afe0ee872a40a69c593c38915fc7bbfa",
-  "workflow_run_id": "37247017341",
-  "commit_sha": "d5b81f991d666fed7476291e5e08b476554d9bc8",
-  "completed_at_utc": "2026-10-05T00:19:12.637224+00:00"
+  "title": "我把找新词这件事，做成了每天自动跑的机会雷达",
+  "article_path": "wechat/archive/2026-10-06.md",
+  "article_sha256": "2918973d82d254866f73932d8ca8a93c1eb3c68d5a0e7648e9aec5aba347c84b",
+  "workflow_run_id": "37395451826",
+  "commit_sha": "8f8c5609b8e28dbe433f0a18d82c970a36aa4a7e",
+  "completed_at_utc": "2026-10-06T00:43:51.744518+00:00",
+  "draft_media_id": "7atnsfbEXVAzgXv2wTjVvJ2pipbxl574auvLcNPViJeOXEc1bdHVeIdI_unG5-Fg",
+  "closure_note": "WeChat draft creation succeeded; repository sync repaired after concurrent ref-lock race."
 }

@@ -62,8 +62,8 @@ def main() -> int:
     images = data.get("images")
     if not isinstance(images, list):
         images = []
-    if len(images) < 2:
-        hard_failures.append("至少需要 2 张图片")
+    if len(images) < 5:
+        hard_failures.append("至少需要 5 张图片")
 
     body_image_urls = set(IMAGE_RE.findall(md))
     manifest_urls = set()

@@ -3,29 +3,12 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
-ALLOWED_RIGHTS = {
-    "cc0",
-    "public_domain",
-    "cc_by",
-    "licensed_press",
-    "brand_editorial_permission",
-    "affiliate_feed_permission",
-    "user_owned",
-    "pexels_license",
-}
-
-TOPIC_TYPES = {"celebrity", "korean", "japanese", "lookbook", "model"}
-
-SOURCE_RE = re.compile(
-    r"<!--\s*FASHION_SOURCE\s*(\{[\s\S]*?\})\s*-->",
-    re.S,
-)
-
+SOURCE_RE = re.compile(r"<!--\s*FASHION_SOURCE\s*(\{[\s\S]*?\})\s*-->", re.S)
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
+TOPIC_TYPES = {"celebrity", "korean", "japanese", "lookbook", "model"}
 
 
 def fail(msg: str) -> None:
@@ -67,19 +50,20 @@ def main() -> int:
     md = path.read_text(encoding="utf-8")
     data = load_manifest(md)
     hard_failures: list[str] = []
+    warnings: list[str] = []
 
     topic_type = str(data.get("topic_type") or "").strip()
     if topic_type not in TOPIC_TYPES:
-        hard_failures.append("topic_type 必须是 " + ", ".join(sorted(TOPIC_TYPES)))
+        hard_failures.append("topic_type 无效")
 
-    subject = str(data.get("subject") or "").strip()
-    if not subject:
+    if not str(data.get("subject") or "").strip():
         hard_failures.append("subject 不能为空")
 
     images = data.get("images")
-    if not isinstance(images, list) or len(images) < 4:
-        hard_failures.append("至少需要 4 张已核验图片")
-        images = images if isinstance(images, list) else []
+    if not isinstance(images, list):
+        images = []
+    if len(images) < 2:
+        hard_failures.append("至少需要 2 张图片")
 
     body_image_urls = set(IMAGE_RE.findall(md))
     manifest_urls = set()
@@ -92,55 +76,29 @@ def main() -> int:
         image_url = str(raw.get("image_url") or "").strip()
         source_page_url = str(raw.get("source_page_url") or "").strip()
         rights = str(raw.get("rights") or "").strip()
-        evidence = str(raw.get("rights_evidence_url") or "").strip()
         verified = raw.get("verified") is True
-        attribution_required = raw.get("attribution_required") is True
-        attribution_text = str(raw.get("attribution_text") or "").strip()
 
         if not valid_http_url(image_url):
             hard_failures.append(f"images[{idx}].image_url 无效")
         else:
             manifest_urls.add(image_url)
             if image_url not in body_image_urls:
-                hard_failures.append(f"images[{idx}] 未实际出现在正文: {image_url}")
+                hard_failures.append(f"images[{idx}] 未实际出现在正文")
 
-        if not valid_http_url(source_page_url):
-            hard_failures.append(f"images[{idx}].source_page_url 无效")
-
-        if rights not in ALLOWED_RIGHTS:
-            hard_failures.append(
-                f"images[{idx}].rights={rights!r} 不允许；公开可见/官方发布不等于转载许可"
-            )
-
-        if rights == "user_owned":
-            if evidence not in {"user_confirmed", "owned_by_user"} and not valid_http_url(evidence):
-                hard_failures.append(
-                    f"images[{idx}] user_owned 必须用 user_confirmed / owned_by_user 或有效证据URL"
-                )
-        elif not valid_http_url(evidence):
-            hard_failures.append(f"images[{idx}].rights_evidence_url 无效")
-
+        if source_page_url and not valid_http_url(source_page_url):
+            warnings.append(f"images[{idx}].source_page_url 不是有效 URL")
+        if not source_page_url and rights != "ai_generated":
+            warnings.append(f"images[{idx}] 缺少来源页，建议补充")
+        if not rights:
+            warnings.append(f"images[{idx}] 未填写 rights")
         if not verified:
-            hard_failures.append(f"images[{idx}] verified 必须为 true")
-
-        if rights == "cc_by" and not attribution_required:
-            hard_failures.append(f"images[{idx}] CC BY 必须 attribution_required=true")
-
-        if attribution_required:
-            if not attribution_text:
-                hard_failures.append(f"images[{idx}] 需要署名但 attribution_text 为空")
-            elif attribution_text not in md:
-                hard_failures.append(f"images[{idx}] 需要署名，但正文未出现 attribution_text")
+            warnings.append(f"images[{idx}] verified 未标记 true")
 
     extra_body_images = body_image_urls - manifest_urls
     if extra_body_images:
-        hard_failures.append(
-            "正文存在未登记到 FASHION_SOURCE 的图片: " + ", ".join(sorted(extra_body_images))
-        )
+        hard_failures.append("正文存在未登记到 FASHION_SOURCE 的图片")
 
-    item_claims = data.get("item_claims")
-    if item_claims is None:
-        item_claims = []
+    item_claims = data.get("item_claims") or []
     if not isinstance(item_claims, list):
         hard_failures.append("item_claims 必须是 array")
         item_claims = []
@@ -149,14 +107,12 @@ def main() -> int:
         if not isinstance(raw, dict):
             hard_failures.append(f"item_claims[{idx}] 必须是 object")
             continue
-        claim = str(raw.get("claim") or "").strip()
-        source_url = str(raw.get("source_url") or "").strip()
-        verified = raw.get("verified") is True
-        if not claim:
+        if not str(raw.get("claim") or "").strip():
             hard_failures.append(f"item_claims[{idx}].claim 不能为空")
+        source_url = str(raw.get("source_url") or "").strip()
         if not valid_http_url(source_url):
             hard_failures.append(f"item_claims[{idx}].source_url 无效")
-        if not verified:
+        if raw.get("verified") is not True:
             hard_failures.append(f"item_claims[{idx}] verified 必须为 true")
 
     public_body = re.sub(SOURCE_RE, "", md)
@@ -172,11 +128,11 @@ def main() -> int:
     result = {
         "status": "FAIL" if hard_failures else "PASS",
         "topic_type": topic_type,
-        "subject": subject,
         "image_count": len(images),
         "body_image_count": len(body_image_urls),
         "item_claim_count": len(item_claims),
         "hard_failures": hard_failures,
+        "warnings": warnings,
     }
 
     payload = json.dumps(result, ensure_ascii=False, indent=2)

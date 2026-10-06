@@ -57,7 +57,10 @@ jobs:
                 "verified": true,
                 "attribution_required": false,
                 "attribution_text": ""
-              }
+              },
+              {"image_url":"https://example.com/look3.jpg","source_page_url":"https://example.com/look3","rights":"public_platform","verified":true},
+              {"image_url":"https://example.com/look4.jpg","source_page_url":"https://example.com/look4","rights":"public_platform","verified":true},
+              {"image_url":"https://example.com/look5.jpg","source_page_url":"https://example.com/look5","rights":"public_platform","verified":true}
             ],
             "item_claims": []
           }
@@ -69,6 +72,9 @@ jobs:
           这套真正好看的地方是肩线和裤型。普通人最值得抄的是上宽下直的比例，西装廓形有余量，但裤子仍然保持纵向线条。
 
           ![图2](https://example.com/look2.jpg)
+          ![图3](https://example.com/look3.jpg)
+          ![图4](https://example.com/look4.jpg)
+          ![图5](https://example.com/look5.jpg)
 
           如果是小个子，衣长不建议完全照搬模特。版型、比例、配色、材质和鞋包体积要一起看。预算有限时，先把钱花在西装肩线和裤子的垂感上。
 
@@ -99,7 +105,10 @@ jobs:
                 "creator": "example account",
                 "rights": "public_platform",
                 "verified": true
-              }
+              },
+              {"image_url":"https://example.com/celebrity3.jpg","source_page_url":"https://xiaohongshu.com/example3","source_platform":"xiaohongshu","creator":"example account","rights":"public_platform","verified":true},
+              {"image_url":"https://example.com/celebrity4.jpg","source_page_url":"https://pinterest.com/example4","source_platform":"pinterest","creator":"example account","rights":"public_platform","verified":true},
+              {"image_url":"https://example.com/celebrity5.jpg","source_page_url":"https://instagram.com/example5","source_platform":"instagram","creator":"example account","rights":"public_platform","verified":true}
             ],
             "item_claims": []
           }
@@ -107,6 +116,9 @@ jobs:
           # 明星公开穿搭的比例怎么学
           ![图1](https://example.com/celebrity1.jpg)
           ![图2](https://example.com/celebrity2.jpg)
+          ![图3](https://example.com/celebrity3.jpg)
+          ![图4](https://example.com/celebrity4.jpg)
+          ![图5](https://example.com/celebrity5.jpg)
           普通人最值得抄的是比例、廓形、配色、材质和鞋包关系，不把公开平台图片当作精确品牌或价格证据。
           EOF
           python fashion/image_gate.py --article /tmp/fashion-public.md

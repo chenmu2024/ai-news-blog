@@ -2,13 +2,25 @@
 
 ## 核心原则
 
-**图片没有解决，文章就不生成。**
+**先找图，再写文章；但图片规则以实用为先，不做过度严格的授权门槛。**
 
-“网上能看到”不是转载许可；“品牌官方”也不是自动转载许可。
+允许灵活使用：
+- Pexels / Unsplash / Pixabay 等公共素材站；
+- 小红书、Instagram、Pinterest、品牌官网、明星公开社媒、新闻公开配图等公开可见图片；
+- AI 生成图；
+- 用户自有图或明确授权图。
+
+核心要求只保留：
+1. 图片来源尽量可追溯；
+2. 不把 AI 图冒充真实明星、真实街拍或新闻现场；
+3. 不靠看图猜品牌、型号、SKU、精确价格；
+4. 避免明显私密、偷拍、付费墙内、来源完全不明、水印严重或有明确侵权警告的图片。
+
+公开平台图片不要求必须先证明“明确可转载”才允许出稿。系统记录来源即可，不再把授权证明作为硬性阻断条件。
 
 ## FASHION_SOURCE
 
-每篇归档文章顶部必须包含：
+每篇文章顶部保留隐藏 FASHION_SOURCE，用于内部追溯：
 
 ```html
 <!-- FASHION_SOURCE
@@ -17,13 +29,12 @@
   "subject": "本篇人物/造型/主题",
   "images": [
     {
-      "image_url": "正文实际使用的图片直链",
-      "source_page_url": "图片来源页",
-      "rights": "cc0|public_domain|cc_by|licensed_press|brand_editorial_permission|affiliate_feed_permission|user_owned",
-      "rights_evidence_url": "能够证明使用权的页面",
-      "verified": true,
-      "attribution_required": false,
-      "attribution_text": ""
+      "image_url": "正文实际使用的图片地址",
+      "source_page_url": "原帖/素材页/来源页；AI 图可填持久化资产页",
+      "source_platform": "pexels|unsplash|pixabay|xiaohongshu|instagram|pinterest|brand_site|news|ai|other",
+      "creator": "作者/账号；能确认则填写",
+      "rights": "licensed|public_platform|ai_generated|user_owned|unknown_public",
+      "verified": true
     }
   ],
   "item_claims": [
@@ -37,42 +48,21 @@
 -->
 ```
 
-## Allowed rights
+## 图片数量
 
-自动发布只允许：
-- `cc0`
-- `public_domain`
-- `cc_by`
-- `licensed_press`
-- `brand_editorial_permission`
-- `affiliate_feed_permission`
-- `user_owned`
-- `pexels_license`
+通常每篇 3–6 张，最低 2 张。图片质量和相关性优先于数量，不允许用 Logo 凑数。
 
-`official`、`social_media`、`found_online`、`pinterest` 等不是许可类型，Image Gate 必须拒绝。
+## AI 图片
 
-## Attribution
+可用于穿搭示意、普通人复刻、单品组合、配色、比例、层次说明和封面。
+不得写成“这就是某明星本人”“这就是某场活动真实现场”或把 AI 图当事实证据。
 
-如果 `attribution_required=true`：
-- `attribution_text` 不得为空；
-- 正文必须真实出现该署名文字；
-- 不能把必须的署名偷偷放在隐藏注释里。
+## 明星/平台公开图
 
-## Celebrity images
-
-明星社交媒体图、新闻报道配图、品牌普通网页图默认都只作为线索。
-
-只有获得明确可用于编辑/公众号转载的权利证据，才能放入正文。
+可以用于文章编辑配图。优先保留原帖链接、账号名或来源页。
+若图片只是公开可见但未核验授权，不需要因此阻断文章；内部 rights 可记为 `public_platform` 或 `unknown_public`。
 
 ## Item claims
 
-如果正文写“同款 / 她穿的是 / 型号 / SKU / 精确价格”，必须在 `item_claims` 里有对应已核验来源。
-
-无法确认时，不写精确同款，改为版型和搭配逻辑分析。
-
-
-## Pexels
-
-Pexels 官方许可允许其照片免费用于个人与商业用途，且署名不是强制要求。使用时 rights 填 `pexels_license`，rights_evidence_url 固定指向 Pexels 官方 License 页面，并保留具体 photo page 作为 source_page_url。
-
-仍需遵守 Pexels 对可识别人物、商标、背书暗示等限制；不得把照片中的人物说成本文品牌代言人、顾客或真实案例。
+如果正文写“同款 / 她穿的是 / 型号 / SKU / 精确价格”，必须有可核验来源。
+无法确认时，改写为“同类版型 / 类似单品 / 这种肩线、裤型、配色值得抄”，不要猜。

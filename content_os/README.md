@@ -46,3 +46,8 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成 Humanize 再�
 仓库当前各 Direction 的 publish_draft.py 仍使用微信公众号官方 API（AppID/AppSecret + 可选静态代理/IP 白名单）创建草稿。只调用草稿接口，不调用正式发布/群发接口。
 
 “Session-first / 浏览器登录态复用”的 Easel 路线目前尚未工程化到本仓库，因此不能把它描述为已经切换完成。
+
+
+## 全局微信热门选题前置
+
+每日选题前必须先读取并执行 `content_os/TOPIC_INTELLIGENCE.md`：先用免费公开来源扫描近期同类型微信公众号热门/高表现文章，再进行本方向选题、近30天去重和事实核验。禁止使用 TinyFish；未完成微信热门扫描不得直接进入正式选题。

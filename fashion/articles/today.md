@@ -1,46 +1,46 @@
 <!-- FASHION_SOURCE
 {
-  "topic_type": "korean",
-  "subject": "秋季短外套与直筒下装的韩系比例复刻",
+  "topic_type": "celebrity",
+  "subject": "Jennie机场穿搭的比例、廓形与普通人复刻",
   "images": [
     {
-      "image_url": "https://i.pinimg.com/736x/04/84/50/048450f42736b2cb308774c494cc76cc.jpg",
-      "source_page_url": "https://kr.pinterest.com/pin/115615915423728411/",
-      "source_platform": "pinterest",
-      "creator": "Pinterest public post",
-      "rights": "public_platform",
-      "verified": true
-    },
-    {
-      "image_url": "https://i.pinimg.com/originals/6e/c3/60/6ec360ed71eba82fb5d8ac21ca09b419.jpg",
-      "source_page_url": "https://www.pinterest.com/pin/28288303903311206/",
-      "source_platform": "pinterest",
-      "creator": "Pinterest public post",
-      "rights": "public_platform",
-      "verified": true
-    },
-    {
-      "image_url": "https://stat.ameba.jp/user_images/20240109/11/kurimama2013/a5/bf/j/o1080108415387420232.jpg",
-      "source_page_url": "https://ameblo.jp/kurimama2013/entry-12835892405.html",
-      "source_platform": "other",
-      "creator": "Ameblo public fashion post",
-      "rights": "public_platform",
-      "verified": true
-    },
-    {
-      "image_url": "https://icdn.24h.com.vn/upload/3-2023/images/2023-09-07/Cach-mac-dep-2-kieu-blazer-hot-nhat-nam-nay-7-1694053122-202-width650height781.jpg",
-      "source_page_url": "https://giaoducthudo.giaoducthoidai.vn/cach-mac-dep-2-kieu-blazer-hot-nhat-nam-nay-94173.html",
+      "image_url": "https://cdn.tienphong.vn/images/eb16efed0e86af4d46ecc7783f1a70cf7ca38bdd3d91c0c0304e51230b82e4e6e865d33003c7b6ee46f9326da0f2cb58ea69c174c20cfdc0e21b0f18ebbd3b626edee2e57f8ec44b41e9054afe5255ac8dc510ce6789d45651eb43265a8c89ca/paris-fashion-week-spring-summer-2026-chanel-jennie-dcafxu.jpg",
+      "source_page_url": "https://hoahoctro.tienphong.vn/paris-fashion-week-tao-hinh-san-bay-cua-v-bts-jennie-blackpink-va-kai-exo-post1783907.tpo",
       "source_platform": "news",
-      "creator": "Public fashion editorial",
+      "creator": "Tien Phong public fashion editorial",
       "rights": "unknown_public",
       "verified": true
     },
     {
-      "image_url": "https://d31alb0ww8cl5g.cloudfront.net/carrierwave-test-siruku6/uploads/image/image_url/20282/23F53392-F7C7-4E54-882C-D0D32A226104.jpg",
-      "source_page_url": "https://www.waverry.jp/item/937",
-      "source_platform": "brand_site",
-      "creator": "Waverry public product styling",
+      "image_url": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/ME4WMMZVMM2DCZLGGVSTGN3DMQ.jpg",
+      "source_page_url": "https://biz.chosun.com/en/en-photo-ent/2026/03/22/RVOVRP4OGNGGNJL4QCL6Y3F53Q/",
+      "source_platform": "news",
+      "creator": "CHOSUNBIZ public airport photo",
       "rights": "unknown_public",
+      "verified": true
+    },
+    {
+      "image_url": "https://www.fashionn.com/files/board/2025/image/o_1j6nhqs55p6149b167q11v1r72j.jpg",
+      "source_page_url": "https://m.fashionn.com/board/read.php?number=58154&table=style",
+      "source_platform": "news",
+      "creator": "FashionN public fashion editorial",
+      "rights": "unknown_public",
+      "verified": true
+    },
+    {
+      "image_url": "https://i.pinimg.com/originals/37/a5/eb/37a5eb44a770383a179203906f476dff.jpg",
+      "source_page_url": "https://www.pinterest.com/pin/845973111265123859/",
+      "source_platform": "pinterest",
+      "creator": "Pinterest public post",
+      "rights": "public_platform",
+      "verified": true
+    },
+    {
+      "image_url": "https://i.pinimg.com/736x/17/93/3b/17933b5fdc76abf4366878c69397a013.jpg",
+      "source_page_url": "https://www.pinterest.com/pin/blackpink-jennie-feeling-comfy-in-her-lowkey-airport-outfit--601723200228159695/",
+      "source_platform": "pinterest",
+      "creator": "Pinterest public post",
+      "rights": "public_platform",
       "verified": true
     }
   ],
@@ -48,160 +48,168 @@
 }
 -->
 
-# 秋天最值得抄的韩系感，不是买大衣，是把比例穿干净
+# Jennie的机场穿搭为什么总显得利落？普通人最该抄这4个比例
 
-每到秋天，一搜“韩系穿搭”，最容易被种草的是单品。
+明星机场穿搭最容易让人走偏的地方，是一上来就找同款。
 
-短夹克、西装、针织、直筒裤、乐福鞋，看起来都不复杂，但很多人照着买回来，还是会觉得差一点。
+其实普通人真正值得抄的，往往不是某一件衣服，而是**整套衣服怎么分配长度、体积和颜色。**
 
-问题通常不在衣服够不够“韩”。
+Jennie很多机场造型有一个共同点：单品看起来不一定复杂，但上下半身的关系非常清楚。
 
-而在比例有没有整理干净。
+外套宽，裤线就直。
 
-韩系日常穿搭真正值得普通人抄的，是几个很稳定的关系：**上半身把长度收住，下半身把线条拉直，全身颜色不要互相打架，鞋包只留一个重点。**
+上衣短，腰线就出现。
 
-下面这5套公开平台穿搭，单品并不完全相同，但底层逻辑很接近。
+大衣长，里面就尽量干净。
 
-![米色短夹克与浅色直筒裤](https://i.pinimg.com/736x/04/84/50/048450f42736b2cb308774c494cc76cc.jpg)
+颜色有重点，但很少每一件都抢。
 
-## 1、短外套最重要的不是“短”，是别把腰线压没
+这也是为什么有些造型看起来很随意，照片里却不会显得拖沓。
 
-第一套最值得看的是外套下摆。
+![深色外套搭配浅色上衣与深色长裤](https://cdn.tienphong.vn/images/eb16efed0e86af4d46ecc7783f1a70cf7ca38bdd3d91c0c0304e51230b82e4e6e865d33003c7b6ee46f9326da0f2cb58ea69c174c20cfdc0e21b0f18ebbd3b626edee2e57f8ec44b41e9054afe5255ac8dc510ce6789d45651eb43265a8c89ca/paris-fashion-week-spring-summer-2026-chanel-jennie-dcafxu.jpg)
 
-夹克有松量，但长度没有一直盖到大腿，下面又接一条高腰直线型裤子，所以视觉重心很明确。
+## 1、长外套最怕的不是长，是里面也没有边界
 
-这就是短外套好穿的原因。
+第一套最值得抄的是长外套和内搭之间的关系。
 
-它不一定真的要到肚脐，也不需要露腰。
+外层有明显长度，里面的上衣却很干净，没有再叠一层很长的下摆。裤子保持纵向线条以后，长外套就不会把人切成一大块。
 
-只要外套结束的位置和裤腰之间能建立关系，腿就会显得更完整。
+普通人穿长大衣，经常容易出现一个问题：大衣很长，里面针织也长，裤腿又宽，鞋还很厚。
 
-小个子可以优先搜：**短夹克、箱型短外套、高腰直筒裤。**
+每一件单独都没问题，放在一起就会全身向外膨胀。
 
-胯宽的人不需要追超短款，可以让外套稍微越过胯最宽的位置，再把里面的上衣收进裤腰。
+如果身高不高，长外套里面更适合把腰线说明白。
 
-值得抄的是“腰线出现”，不是把衣服越买越短。
+不一定要塞衣角，但至少让内搭和裤腰之间有清晰关系。
 
-![棕色短外套与高腰深色牛仔裤](https://i.pinimg.com/originals/6e/c3/60/6ec360ed71eba82fb5d8ac21ca09b419.jpg)
+**最值得抄的不是大衣，而是“外长、内收、下直”。**
 
-## 2、颜色一深，轮廓反而要更简单
+![短西装与宽松长裤的同色系组合](https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/ME4WMMZVMM2DCZLGGVSTGN3DMQ.jpg)
 
-第二套是很典型的秋季组合：棕色短外套、黑色内搭、高腰深色牛仔裤。
+## 2、上半身有肩线，下半身就别再堆太多体积
 
-颜色已经比较有重量，所以版型没有再做得很复杂。
+第二套的重点在廓形。
 
-这也是普通人特别容易忽略的一点。
+上衣肩部存在感很强，下装虽然有松量，但整体还是往下走，没有在胯和裤脚继续堆出很多横向体积。
 
-秋天喜欢棕色、酒红、深灰没有问题，但颜色越深，衣服的体积越不能全部往外扩。
+这对肩宽的人尤其有参考价值。
 
-上身外套已经有轮廓，下装就保持直。
+很多人以为肩宽只能穿软塌衣服，其实不是。硬一点的肩线也可以穿，关键是下半身不能再同时做得又短又蓬。
 
-裤脚不要堆太多。
+想复刻，可以搜：
 
-鞋也不必特别厚重。
+短西装、箱型外套、直筒西裤、宽直裤、薄底皮鞋。
 
-这样颜色会显得有质感，而不是沉。
+不要执着具体品牌。
 
-如果肩宽，外套肩线可以软一点。
+看版型时先问两个问题：外套结束在哪里？裤子从胯到脚有没有一条连续的线？
 
-如果上半身丰满，内搭别同时又厚又高领，留出一点颈部线条会更轻。
+如果答案清楚，整套就容易利落。
 
-![米灰短外套与黑色直筒西裤](https://stat.ameba.jp/user_images/20240109/11/kurimama2013/a5/bf/j/o1080108415387420232.jpg)
+![深色长外套与简洁内搭](https://www.fashionn.com/files/board/2025/image/o_1j6nhqs55p6149b167q11v1r72j.jpg)
 
-## 3、上宽下直，比“全身都宽”更适合大多数人
+## 3、全身颜色越少，材质和比例越容易被看见
 
-第三套很适合通勤。
+第三套看起来“贵”的地方，不是颜色多。
 
-外套有一点宽松，但裤腿没有跟着一起无限放大。
+恰恰相反，它把颜色压得很少。
 
-这就是我最建议普通人抄的“上宽下直”。
+深色外套、低对比内搭、深色下装，大面积颜色基本在一个范围里。
 
-很多人理解韩系宽松，会把西装买大、裤子买大、鞋也买厚。
+这种穿法对普通人非常友好。
 
-最后不是松弛，是整个人被衣服吞掉。
+因为颜色少以后，最影响效果的就变成三件事：
 
-更稳的办法是只让一个区域负责体积。
+衣服垂不垂。
 
-上半身松，下半身就用直筒。
+肩线顺不顺。
 
-裤子宽，上衣就把长度收住。
+裤长合不合适。
 
-这套逻辑对梨形身材也很好用，因为裤腿从胯往下形成一条新的外轮廓，不需要用紧身裤去强调真实腿型。
+如果预算有限，我更建议把钱放在外套的面料和裤子的垂感，而不是一次买很多“有设计感”的小单品。
 
-预算有限时，我会把钱先花在裤子的腰胯和垂感上。
+秋冬尤其如此。
 
-裤子不对，整套最难救。
+一件质感稳定的外套，能反复接住不同内搭。
 
-![卡其短西装与深色宽直裤](https://icdn.24h.com.vn/upload/3-2023/images/2023-09-07/Cach-mac-dep-2-kieu-blazer-hot-nhat-nam-nay-7-1694053122-202-width650height781.jpg)
+## 4、针织最容易显普通，解决办法不是买更花的款
 
-## 4、韩系感最容易学的一点，其实是“颜色少”
+机场穿搭里经常能看到很简单的针织。
 
-这套卡其短西装看起来很完整，但真正起作用的颜色并不多。
+真正好看的地方通常不是图案，而是针织的长度和裤型之间没有互相打架。
 
-卡其是主色。
+![深色V领针织搭配浅色牛仔裤](https://i.pinimg.com/originals/37/a5/eb/37a5eb44a770383a179203906f476dff.jpg)
 
-深色裤子负责压住下半身。
+这种上深下浅的组合，对普通人特别好用。
 
-白色内搭只负责提亮。
+上半身颜色更稳，下半身用浅牛仔把重量拉开，不容易显得整个人沉下去。
 
-普通人复刻时，没有必要追“莫兰迪色”这种标签。
+小个子可以让针织下摆停在胯上方或接近腰线的位置。
 
-更实用的是一套衣服只保留两到三个大面积颜色。
+上半身丰满的人，则不必追太短，领口留一点空间、面料别太厚，效果会更轻。
 
-如果外套已经是棕、卡其、灰绿这种秋季色，裤子和鞋就回到黑、深蓝、米白。
+普通人搜品类时，可以直接找：V领针织、短款针织、浅色直筒牛仔裤、低饱和帽子。
 
-如果想加亮色，尽量放在包、围巾、帽子这种小面积位置。
+不需要把每件都买得特别有存在感。
 
-颜色少以后，材质反而更容易被看见。
+## 5、真正的“松弛感”，来自只让一个地方松
 
-针织的软、西装的挺、牛仔的纹理，都会让简单配色不无聊。
+还有一种很常见的机场组合：宽松上衣加牛仔裤。
 
-![短款浅色外套与深色直筒牛仔裤](https://d31alb0ww8cl5g.cloudfront.net/carrierwave-test-siruku6/uploads/image/image_url/20282/23F53392-F7C7-4E54-882C-D0D32A226104.jpg)
+看起来像随手穿，却很考验比例。
 
-## 5、鞋包别一起用力，整套才会真的“松”
+![宽松连帽上衣搭配牛仔裤](https://i.pinimg.com/736x/17/93/3b/17933b5fdc76abf4366878c69397a013.jpg)
 
-第五套最值得看的是鞋。
+如果上衣已经宽，裤子就不要同时堆出太多褶皱。
 
-短外套和直筒牛仔已经把比例定好了，鞋只需要把线条收住，不需要再增加一个巨大体积。
+如果裤子很宽，上衣长度就要收一点。
 
-这就是为什么乐福鞋、薄底运动鞋、线条干净的短靴很适合这类穿法。
+如果上衣和裤子都想松，可以靠鞋把底部收干净，避免再加一个巨大体积的鞋型。
 
-包也一样。
+**松弛不是全身都大，而是有松有收。**
 
-通勤需要容量，可以拿大包，但形状尽量简单。
+这句话几乎适用于所有想穿“明星机场感”的普通人。
 
-如果包本身已经很有存在感，鞋就安静一点。
+## 不同身材，怎么调整才不容易翻车
 
-如果鞋比较特别，包就别再抢。
+小个子最应该先管长度。
 
-**鞋包最好只让一个负责风格，另一个负责收尾。**
+长外套可以穿，但里面要有腰线；短外套更简单，尽量不要卡在胯最宽的位置。
 
-## 普通人真正该买什么？
+肩宽的人别同时用大垫肩、厚高领和巨型围巾。上半身已经有体积，颈部和下半身就留一点空间。
 
-如果你想把这5套的逻辑搬进自己的衣柜，不需要搜“韩系同款”。
+胯宽的人不需要硬穿紧身裤。直筒和宽直裤更容易重新画出腿部外轮廓，但腰胯必须合身，不能靠超大码遮。
 
-直接搜品类更有用：
+上半身丰满的人更适合把重点放在领口、面料和纵向线条，不要让厚针织、短外套和大包同时挤在胸口附近。
 
-短夹克、箱型短西装、高腰直筒牛仔裤、垂坠直筒西裤、薄针织、乐福鞋、简洁肩包。
+## 预算有限，先把钱花在哪里
 
-小个子先看外套长度。
+如果只能升级一件，我会先选裤子。
 
-肩宽的人先看肩线。
+一条腰胯合适、裤线干净、长度正确的直筒裤，可以把很多普通上衣拉回来。
 
-胯宽的人先看裤子从胯到大腿有没有余量。
+第二个值得花钱的是外套。
 
-上半身丰满的人不要同时用厚外套、厚内搭和高领把上半身塞满。
+因为外套决定肩线、长度和全身最大的色块。
 
-预算只有500元，优先把钱放在裤子和鞋。
+内搭反而可以简单。
 
-预算到1500元，再把外套的面料、肩线和做工提上去。
+鞋包也不需要一起贵。
 
-因为真正决定整套有没有“韩系干净感”的，不是品牌。
+鞋负责把裤脚收住，包负责补一点风格，二者只要有一个成为重点就够了。
 
-是你有没有把**长度、直线、颜色和体积**放到正确的位置。
+普通人真正应该搜的，不是“Jennie同款”，而是这些品类：
 
-秋天不需要买很多。
+短西装、长直大衣、V领针织、短款针织、直筒牛仔裤、宽直西裤、薄底皮鞋、简洁肩包。
 
-一件长度合适的短外套，两条直线型下装，两三件基础内搭，再加一双不抢戏的鞋，已经能组合出很多套。
+**这几套真正值得抄的，是比例，不是衣服身份证。**
 
-**韩系感不是堆单品，是把身上的线条整理干净。**
+机场穿搭之所以好看，本来就不是为了站着拍一张照片。
+
+它要坐、要走、要拖行李，还要能穿很多小时。
+
+所以最实用的复刻标准也很简单：
+
+肩线舒服，腰线清楚，裤线干净，颜色别打架。
+
+做到这四件事，普通衣服一样能穿出那种看起来毫不费力的利落感。

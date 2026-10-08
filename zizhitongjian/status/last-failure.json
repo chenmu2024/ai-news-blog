@@ -2,20 +2,15 @@
   "status": "failure",
   "profile": "zizhitongjian",
   "date": "2026-10-08",
-  "workflow_run_id": "37711509169",
-  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37711509169",
+  "workflow_run_id": "37712309407",
+  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37712309407",
   "article_path": "zizhitongjian/archive/2026-10-08.md",
   "jobs": [
     {
-      "id": 113098257013,
+      "id": 113100805377,
       "name": "create-zizhitongjian-draft",
       "conclusion": null,
-      "steps": [
-        {
-          "name": "Original-text source gate",
-          "conclusion": "failure"
-        }
-      ]
+      "steps": []
     }
   ],
   "apiError": null,

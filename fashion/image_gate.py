@@ -116,11 +116,19 @@ def main() -> int:
             hard_failures.append(f"item_claims[{idx}] verified 必须为 true")
 
     public_body = re.sub(SOURCE_RE, "", md)
+    # Words such as “货号/售价/型号” in a disclaimer are not a product claim.
+    # Require an asserted model/SKU/price value, or a positive identification
+    # statement. Do not penalize advice like “不凭照片猜品牌、货号或售价”.
+    claim_lines = [
+        line for line in public_body.splitlines()
+        if not re.search(r"不凭|不能|不要|不靠|不猜|不写|禁止|未核验|未经确认|并非", line)
+    ]
     precise_claim_signal = re.search(
         r"(?:她穿的是|她身上的是|图中(?:这件|这条|这双|这个).{0,12}(?:来自|是|同款)|"
-        r"(?:型号|SKU|货号|售价|价格为)\s*[:：]?|品牌\s*[:：]\s*|[¥￥]\s*\d+|"
+        r"(?:型号|SKU|货号|售价|价格)\s*[:：]\s*[^\s，。；]+|"
+        r"品牌\s*[:：]\s*[^\s，。；]+|[¥￥]\s*\d+|"
         r"\d+(?:\.\d+)?\s*元\s*(?:售价|价格))",
-        public_body,
+        "\n".join(claim_lines),
     )
     if precise_claim_signal and not item_claims:
         hard_failures.append("正文出现品牌/型号/价格等精确单品事实声明，但 item_claims 为空")

@@ -14,12 +14,12 @@ SOURCE = "weixinhost.com"
 MARKER = "微信10万+爆款文章"
 CATEGORY_TERMS = {
     "qiezhi": ("思想", "人生", "读书", "心态", "情绪", "认知", "人性", "焦虑", "处世"),
-    "wechat": ("AI", "人工智能", "智能体", "Agent", "模型", "创业", "一人公司", "SaaS", "科技公司"),
-    "business": ("公司", "企业", "品牌", "生意", "利润", "财报", "商战", "门店", "赔", "收入", "商业"),
-    "zizhitongjian": ("资治通鉴", "历史", "古代", "皇帝", "朝代", "人性", "三国", "唐朝", "汉朝"),
-    "parenting": ("孩子", "父母", "家长", "老师", "学校", "教育", "青春期", "作业", "育儿", "儿子", "女儿"),
-    "jingyun": ("女人", "女性", "中年", "婚姻", "情感", "老公", "婆婆", "工作", "岁", "钱难挣"),
-    "fashion": ("穿搭", "衣服", "穿着", "穿", "外套", "懒人", "搭配", "女装", "裙", "日韩", "女星"),
+    "wechat": ("人工智能", "智能体", "AI", "Agent", "SaaS", "一人公司", "独立开发", "大模型"),
+    "business": ("公司", "企业", "品牌", "生意", "利润", "财报", "商战", "门店", "收入", "商业"),
+    "zizhitongjian": ("资治通鉴", "古代", "皇帝", "朝代", "三国", "唐朝", "汉朝", "明朝", "帝王", "史书"),
+    "parenting": ("孩子", "父母", "家长", "老师", "学校", "教育", "青春期", "作业", "育儿", "亲子"),
+    "jingyun": ("女人", "女性", "中年", "婚姻", "情感", "老公", "婆婆", "职场", "钱难挣"),
+    "fashion": ("穿搭", "衣服", "外套", "搭配", "女装", "裙", "日韩", "时尚"),
 }
 
 class Anchors(HTMLParser):
@@ -98,8 +98,14 @@ def find_public_rankings(fetch: Callable[[str], str], today=None, window_days=5,
 def related_rankings(profile, entries, limit=6):
     terms = CATEGORY_TERMS[profile]
     out = []
-    for entry in entries:
+    seen_headlines = set()
+    # Adjacent days may contain the same 24-hour headline.
+    for entry in sorted(entries, key=lambda x: (-int(x["ranking_date"].replace("-", "")), x["rank"])):
         headline = entry["headline"].casefold()
+        normalized_headline = re.sub(r"[^\\w\\u4e00-\\u9fff]", "", headline)
+        if normalized_headline in seen_headlines:
+            continue
+        seen_headlines.add(normalized_headline)
         matches = [term for term in terms if term.casefold() in headline]
         if not matches:
             continue

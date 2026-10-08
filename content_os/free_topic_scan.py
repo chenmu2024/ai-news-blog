@@ -32,6 +32,46 @@ PROFILES = {
     "jingyun": {"query": "女性 中年 婚姻 职场 公众号", "image": "women street life"},
     "fashion": {"query": "日韩穿搭 明星穿搭 秋季 女装 公众号", "image": "fashion street style"},
 }
+# Secondary free discovery queries diversify subject/author coverage; they are
+# NOT proof that a headline is popular or that an indexed date is publication.
+SUPPLEMENTARY_QUERIES = {
+    "qiezhi": "毛选 调查研究 工作 方法 公众号",
+    "wechat": "AI创业 SaaS 独立开发者 真实案例 公众号",
+    "business": "公司 收购 利润 零售 商业故事 公众号",
+    "zizhitongjian": "资治通鉴 帝王 决策 历史故事 公众号",
+    "parenting": "孩子 拖延 手机 家庭沟通 教育 公众号",
+    "jingyun": "中年女人 母女 经济独立 婚姻 公众号",
+    "fashion": "韩系 日系 女明星 风衣 搭配 公众号",
+}
+UNTRUSTED_GENERIC_TITLES = frozenset({
+    "微信公众平台", "微信公众平台 - 微信公众平台", "微信公众平台 - 微信公众平台",
+    "微信公众号", "微信公众号登录", "微信公众平台登录",
+})
+
+
+def is_useful_discovery(item):
+    title = re.sub(r"\\s+", " ", (item.get("title") or "")).strip()
+    url = item.get("url") or ""
+    return (len(title) >= 6 and title not in UNTRUSTED_GENERIC_TITLES
+            and urlparse(url).scheme == "https")
+
+
+def title_mechanisms(title):
+    """Editorial *hypotheses* only; never treat these as verified popularity."""
+    result = []
+    if re.search(r"[？?]", title):
+        result.append("悬念提问")
+    if re.search(r"为什么|却|竟然|反而|没想到|但是|然而", title):
+        result.append("反差转折")
+    if re.search(r"\\d+[个条种年]|\\d+\\s*[招步点]", title):
+        result.append("数字结构")
+    if re.search(r"孩子|家长|妈妈|普通人|女人", title):
+        result.append("具体人群")
+    if re.search(r"公司|品牌|收购|融资|利润", title):
+        result.append("公司事件")
+    return result[:3] or ["主题直述"]
+
+
 UA = "ContentOS-TopicResearch/1.0 (public discovery only)"
 LIMIT_BYTES = 700_000
 
@@ -107,9 +147,9 @@ def news_index_results(query, limit=8):
         link = (item.findtext("link") or "").strip()
         if title and link:
             out.append({"title": title[:180], "url": link, "platform": "google_news_index",
-                        "published_at": item.findtext("pubDate"), "account": None,
+                        "published_at": None, "indexed_at": item.findtext("pubDate"), "account": None,
                         "heat": None, "heat_verified": False,
-                        "verification": "RSS indexed discovery; destination/publication not verified"})
+                        "verification": "RSS index date is not original WeChat article publication date"})
     return out
 
 
@@ -140,20 +180,36 @@ def scan(profile, max_items=8, with_images=False, public_rankings=None):
     rows = []
     statuses = {}
     for platform, func in [
-        ("wechat", lambda: wechat_results(cfg["query"], limit=max_items)),
-        ("google_news_index", lambda: news_index_results(cfg["query"], limit=max_items)),
+        ("wechat", wechat_results),
+        ("google_news_index", news_index_results),
     ]:
-        try:
-            found = func()
-            rows.extend(found)
-            statuses[platform] = {"status": "ok" if found else "empty", "count": len(found)}
-        except (ValueError, OSError, ET.ParseError) as exc:
-            statuses[platform] = {"status": "error", "message": str(exc)[:200]}
+        # The second request is a fallback only if the first query has fewer
+        # than five usable titles. Failed sources are isolated by profile.
+        source_rows = []
+        attempts = []
+        for query in [cfg["query"], SUPPLEMENTARY_QUERIES[profile]]:
+            if len(source_rows) >= 5:
+                break
+            try:
+                discovered = [x for x in func(query, limit=max_items) if is_useful_discovery(x)]
+                source_rows.extend(discovered)
+                attempts.append({"query": query, "status": "ok", "count": len(discovered)})
+            except (ValueError, OSError, ET.ParseError) as exc:
+                attempts.append({"query": query, "status": "error", "message": str(exc)[:150]})
+        rows.extend(source_rows)
+        statuses[platform] = {
+            "status": "ok" if source_rows else ("error" if any(x["status"] == "error" for x in attempts) else "empty"),
+            "count": len(source_rows), "attempts": attempts,
+        }
     seen, unique = set(), []
     for item in rows:
         key = item["url"].split("#")[0]
-        if key not in seen:
+        # RSS headlines can repeat; canonical URL is not always available.
+        title_key = re.sub(r"\\W+", "", item.get("title", "").casefold())
+        if key not in seen and ("t:" + title_key) not in seen:
             seen.add(key)
+            seen.add("t:" + title_key)
+            item["title_mechanisms"] = title_mechanisms(item["title"])
             unique.append(item)
     images = []
     if with_images:
@@ -176,8 +232,12 @@ def scan(profile, max_items=8, with_images=False, public_rankings=None):
             "public_ranking_signals": ranking_matches,
             "required_samples": 5, "required_heat_evidence": 2,
             "topic_gate": "research_ready" if len(unique) >= 5 and heat_count >= 2 else "insufficient_evidence",
+            "writing_allowed": True,
+            "writing_mode": "heat_verified" if len(unique) >= 5 and heat_count >= 2 else "fact_verified_source_fallback",
+            "candidate_confidence": "source_verified" if heat_count >= 2 else "indexed_title_only",
+            "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
             "sources": statuses, "articles": unique[:max_items * 2], "image_candidates": images,
-            "note": "Public ranked headlines are third-party claims, not official article reading-count measurements; topic gate stays conservative."}
+            "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."}
 
 
 def render(report):
@@ -189,7 +249,10 @@ def render(report):
     for key, entry in report["profiles"].items():
         lines += ["## " + key, "", "状态：" + entry["topic_gate"] +
                   "；样本 " + str(entry["sample_count"]) +
-                  "；已核实热度证据 " + str(entry["heat_evidence_count"]) + "/2", ""]
+                  "；已核实热度证据 " + str(entry["heat_evidence_count"]) + "/2",
+                  "写作模式：" + entry.get("writing_mode", "unverified") +
+                  "；允许写作：" + str(entry.get("writing_allowed", False)) +
+                  "（热度不足时只使用可核实的官方或原始来源，不宣称微信爆款）", ""]
         for item in entry["articles"]:
             lines.append("- [" + item["title"].replace("]", "") + "](" + item["url"] + ")"
                          + "（" + item["platform"] + "；热度：未知）")

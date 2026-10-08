@@ -9,10 +9,11 @@ on:
 
 concurrency:
   group: fashion-wechat-draft
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
+  actions: read
   actions: read
 
 jobs:
@@ -41,13 +42,20 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Draft idempotency preflight
+        id: preflight
+        shell: bash
+        run: |
+          python content_os/draft_preflight.py --profile fashion --article "$ARTICLE_PATH"
       - name: Fashion image rights gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python fashion/image_gate.py \
             --article "$ARTICLE_PATH" \
             --json-out fashion/status/image-gate.json
 
       - name: Content OS quality gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python content_os/quality_gate.py \
             --article "$ARTICLE_PATH" \
@@ -56,6 +64,7 @@ jobs:
 
 
       - name: Global visual requirement gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python content_os/visual_gate.py \
             --article "$ARTICLE_PATH" \
@@ -63,14 +72,17 @@ jobs:
             --json-out fashion/status/visual-gate.json
 
       - name: Install Chinese fonts
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           sudo apt-get update
           sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
 
       - name: Install dependencies
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: pip install -r fashion/requirements.txt
 
       - name: Create fashion WeChat draft only
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         env:
           WECHAT_APP_ID: ${{ secrets.FASHION_WECHAT_APP_ID }}
           WECHAT_APP_SECRET: ${{ secrets.FASHION_WECHAT_APP_SECRET }}
@@ -80,6 +92,7 @@ jobs:
         run: python fashion/publish_draft.py
 
       - name: Sync today article and success status
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         shell: bash
         run: |
           mkdir -p fashion/articles fashion/status

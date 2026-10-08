@@ -1,0 +1,110 @@
+"""Parse public third-party WeChat popularity rankings conservatively.
+
+Records only third-party *claims* with traceable dated source URLs.
+A ranking entry is not a verified official article reading count and does
+not independently pass Content OS's article heat-evidence gate.
+"""
+from __future__ import annotations
+from datetime import date, timedelta
+from html.parser import HTMLParser
+import re
+from typing import Callable
+
+SOURCE = "weixinhost.com"
+MARKER = "微信10万+爆款文章"
+CATEGORY_TERMS = {
+    "qiezhi": ("思想", "人生", "读书", "心态", "情绪", "认知", "人性", "焦虑", "处世"),
+    "wechat": ("AI", "人工智能", "智能体", "Agent", "模型", "创业", "一人公司", "SaaS", "科技公司"),
+    "business": ("公司", "企业", "品牌", "生意", "利润", "财报", "商战", "门店", "赔", "收入", "商业"),
+    "zizhitongjian": ("资治通鉴", "历史", "古代", "皇帝", "朝代", "人性", "三国", "唐朝", "汉朝"),
+    "parenting": ("孩子", "父母", "家长", "老师", "学校", "教育", "青春期", "作业", "育儿", "儿子", "女儿"),
+    "jingyun": ("女人", "女性", "中年", "婚姻", "情感", "老公", "婆婆", "工作", "岁", "钱难挣"),
+    "fashion": ("穿搭", "衣服", "穿着", "穿", "外套", "懒人", "搭配", "女装", "裙", "日韩", "女星"),
+}
+
+class Anchors(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.active = None
+        self.entries = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "a" and self.active is None:
+            self.active = {"url": dict(attrs).get("href", ""), "pieces": []}
+
+    def handle_data(self, data):
+        if self.active is not None:
+            self.active["pieces"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "a" and self.active is not None:
+            txt = re.sub(r"\s+", " ", "".join(self.active["pieces"])).strip()
+            self.entries.append((txt, self.active["url"]))
+            self.active = None
+
+
+def extract_rankings(page_html, day, source_url):
+    date_text = str(int(day[:4])) + "年" + str(int(day[5:7])) + "月" + str(int(day[8:10])) + "日"
+    if MARKER not in page_html or date_text not in re.sub(r"<[^>]+>", "", page_html):
+        raise ValueError("ranking marker or expected day absent; do not trust snapshot")
+    parser = Anchors()
+    parser.feed(page_html)
+    entries, seen = [], set()
+    for label, href in parser.entries:
+        if "查看标题拆解" not in label:
+            continue
+        text = label.replace("查看标题拆解", "").strip()
+        match = re.match(r"^0?(30|[12]\d|[1-9])\s*(.+)$", text)
+        if not match:
+            continue
+        rank, headline = int(match.group(1)), match.group(2).strip()
+        if rank > 30 or rank in seen or len(headline) < 5:
+            continue
+        seen.add(rank)
+        entries.append({
+            "headline": headline[:200], "rank": rank,
+            "ranking_date": day, "ranking_page": source_url,
+            "source_name": "侯斯特工坊",
+            "source_type": "third_party_public_list",
+            "source_claim": "source labels its list 微信10万+",
+            "article_read_count": None, "article_url": None,
+            "verified_article_read_count": False,
+            "verification": "public ranking claim only; ranking page does not provide official count or original article URL",
+        })
+    return sorted(entries, key=lambda x: x["rank"])
+
+
+def find_public_rankings(fetch: Callable[[str], str], today=None, window_days=5, max_successful_days=2):
+    today = today or date.today()
+    pages, errors, total = [], [], 0
+    for offset in range(1, min(7, window_days) + 1):
+        day = (today - timedelta(days=offset)).isoformat()
+        url = "https://weixinhost.com/hotspot-radar/" + day
+        try:
+            entries = extract_rankings(fetch(url), day, url)
+            if entries:
+                pages.extend(entries)
+                total += 1
+            else:
+                errors.append({"day": day, "status": "empty"})
+        except (ValueError, OSError) as exc:
+            errors.append({"day": day, "status": "unavailable", "reason": str(exc)[:120]})
+        if total >= max_successful_days:
+            break
+    return {"status": "ok" if total else "unavailable",
+            "pages_found": total, "entries": pages, "errors": errors}
+
+
+def related_rankings(profile, entries, limit=6):
+    terms = CATEGORY_TERMS[profile]
+    out = []
+    for entry in entries:
+        headline = entry["headline"].casefold()
+        matches = [term for term in terms if term.casefold() in headline]
+        if not matches:
+            continue
+        r = dict(entry)
+        r["matched_topic_terms"] = matches
+        r["topic_match_basis"] = "literal headline keywords only; not a claim of article relevance or readership"
+        out.append(r)
+    return sorted(out, key=lambda r: (-len(r["matched_topic_terms"]), -int(r["ranking_date"].replace("-", "")), r["rank"]))[:limit]

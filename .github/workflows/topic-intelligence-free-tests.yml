@@ -1,0 +1,24 @@
+name: Free Topic Scan Unit Tests
+
+on:
+  pull_request:
+    paths:
+      - "content_os/free_topic_scan.py"
+      - "content_os/tests/test_free_topic_scan.py"
+      - ".github/workflows/topic-intelligence-free-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover -s content_os/tests -p test_free_topic_scan.py -v
+      - run: python -m py_compile content_os/free_topic_scan.py

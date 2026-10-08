@@ -8,6 +8,7 @@ on:
       - "content_os/daily_healthcheck.py"
       - "content_os/draft_preflight.py"
       - ".github/workflows/draft-health-audit.yml"
+      - "content_os/tests/test_draft_*.py"
   schedule:
     # 10:15 and 13:15 Asia/Shanghai; independent of the 08:20 writing task.
     - cron: "15 2,5 * * *"
@@ -37,17 +38,25 @@ jobs:
       - name: Persist daily health report
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name "content-os-health-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content_os/daily-health
-          if ! git diff --cached --quiet; then
+          mkdir -p /tmp/content-os-health
+          cp -a content_os/daily-health/. /tmp/content-os-health/
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p content_os/daily-health
+            cp -a /tmp/content-os-health/. content_os/daily-health/
+            git add content_os/daily-health
+            if git diff --cached --quiet; then
+              echo "No health changes."
+              break
+            fi
             git commit -m "ops: record seven-profile draft health"
-            for attempt in 1 2 3; do
-              git pull --rebase origin main
-              if git push origin HEAD:main; then break; fi
-              if [ "$attempt" -eq 3 ]; then exit 1; fi
-              sleep $((attempt * 2))
-            done
-          fi
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" -eq 5 ]; then exit 1; fi
+            sleep $((attempt * 2))
+          done
       - name: Fail visibly when any draft or Gate is incomplete
         run: python content_os/daily_healthcheck.py --strict

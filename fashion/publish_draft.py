@@ -309,7 +309,8 @@ def get_image(url):
     if r is None or not r.ok:
         raise last or RuntimeError("图片下载失败: " + url)
     ct = (r.headers.get("Content-Type") or "").split(";")[0].lower()
-    # Allow WebP input from fashion CDNs; Pillow transcodes it to JPEG before WeChat upload.\n    if ct not in ("image/png", "image/jpeg", "image/webp"):
+    # Allow WebP input from fashion CDNs; Pillow transcodes it to JPEG before WeChat upload.
+    if ct not in ("image/png", "image/jpeg", "image/webp"):
         raise RuntimeError("图片类型不合格: %s -> %s" % (url, ct))
 
     # Only the WeChat upload goes through Fixie. Compress first to conserve

@@ -113,3 +113,4 @@ jobs:
               .addRaw(JSON.stringify(results,null,2)).write();
       - name: Fail visibly when any draft or Gate is incomplete
         run: python content_os/daily_healthcheck.py --strict
+# The push-triggered self-test is non-publishing; retry dispatch only runs on scheduled/manual audits.

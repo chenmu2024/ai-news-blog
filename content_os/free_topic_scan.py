@@ -50,7 +50,7 @@ UNTRUSTED_GENERIC_TITLES = frozenset({
 
 
 def is_useful_discovery(item):
-    title = re.sub(r"\\s+", " ", (item.get("title") or "")).strip()
+    title = re.sub(r"\s+", " ", (item.get("title") or "")).strip()
     url = item.get("url") or ""
     return (len(title) >= 6 and title not in UNTRUSTED_GENERIC_TITLES
             and urlparse(url).scheme == "https")
@@ -63,7 +63,7 @@ def title_mechanisms(title):
         result.append("悬念提问")
     if re.search(r"为什么|却|竟然|反而|没想到|但是|然而", title):
         result.append("反差转折")
-    if re.search(r"\\d+[个条种年]|\\d+\\s*[招步点]", title):
+    if re.search(r"\d+[个条种年]|\d+\s*[招步点]", title):
         result.append("数字结构")
     if re.search(r"孩子|家长|妈妈|普通人|女人", title):
         result.append("具体人群")
@@ -205,7 +205,7 @@ def scan(profile, max_items=8, with_images=False, public_rankings=None):
     for item in rows:
         key = item["url"].split("#")[0]
         # RSS headlines can repeat; canonical URL is not always available.
-        title_key = re.sub(r"\\W+", "", item.get("title", "").casefold())
+        title_key = re.sub(r"\W+", "", item.get("title", "").casefold())
         if key not in seen and ("t:" + title_key) not in seen:
             seen.add(key)
             seen.add("t:" + title_key)

@@ -2,6 +2,11 @@ name: Free WeChat Topic Discovery
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "content_os/free_topic_scan.py"
+      - ".github/workflows/topic-intelligence-free.yml"
   schedule:
     # 06:10 Asia/Shanghai. This is a research archive only.
     - cron: "10 22 * * *"

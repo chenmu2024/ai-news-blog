@@ -2,10 +2,17 @@
   "status": "failure",
   "profile": "fashion",
   "date": "2026-10-08",
-  "workflow_run_id": "37711223168",
-  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37711223168",
+  "workflow_run_id": "37711461896",
+  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37711461896",
   "article_path": "fashion/archive/2026-10-08.md",
-  "jobs": [],
-  "apiError": "Resource not accessible by integration",
+  "jobs": [
+    {
+      "id": 113098106620,
+      "name": "create-fashion-draft",
+      "conclusion": null,
+      "steps": []
+    }
+  ],
+  "apiError": null,
   "note": "Diagnostic metadata only; inspect workflow logs for actual traceback."
 }

@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "content_os/free_topic_scan.py"
+      - "content_os/public_rankings.py"
       - ".github/workflows/topic-intelligence-free.yml"
   schedule:
     # 06:10 Asia/Shanghai. This is a research archive only.
@@ -29,6 +30,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Verify free topic parsers
+        run: |
+          python -m unittest discover -s content_os/tests -p test_free_topic_scan.py -v
+          python -m unittest discover -s content_os/tests -p test_public_rankings.py -v
       - name: Read-only topic and image discovery
         run: python content_os/free_topic_scan.py --profile all --images
       - name: Commit private research artifacts

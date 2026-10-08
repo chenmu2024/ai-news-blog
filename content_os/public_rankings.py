@@ -102,7 +102,7 @@ def related_rankings(profile, entries, limit=6):
     # Adjacent days may contain the same 24-hour headline.
     for entry in sorted(entries, key=lambda x: (-int(x["ranking_date"].replace("-", "")), x["rank"])):
         headline = entry["headline"].casefold()
-        normalized_headline = re.sub(r"[^\\w\\u4e00-\\u9fff]", "", headline)
+        normalized_headline = "".join(ch for ch in headline if ch.isalnum())
         if normalized_headline in seen_headlines:
             continue
         seen_headlines.add(normalized_headline)

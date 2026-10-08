@@ -107,4 +107,4 @@ def related_rankings(profile, entries, limit=6):
         r["matched_topic_terms"] = matches
         r["topic_match_basis"] = "literal headline keywords only; not a claim of article relevance or readership"
         out.append(r)
-    return sorted(out, key=lambda r: (-len(r["matched_topic_terms"]), -r["ranking_date"].count("-"), r["rank"]))[:limit]
+    return sorted(out, key=lambda r: (-len(r["matched_topic_terms"]), -int(r["ranking_date"].replace("-", "")), r["rank"]))[:limit]

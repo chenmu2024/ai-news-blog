@@ -181,8 +181,11 @@ def scan(profile, max_items=8, with_images=False, public_rankings=None):
 
 
 def render(report):
+    ranking = report.get("public_ranking_discovery", {})
     lines = ["# 七公众号｜免费公开选题发现", "", "生成时间：" + report["generated_at"], "",
-             "**研究证据，不是已完成的微信热门验证。** 缺少阅读量或公开榜单证据时，不得认定爆款。", ""]
+             "**研究证据，不是已完成的微信热门验证。** 缺少阅读量或公开榜单证据时，不得认定爆款。",
+             "公开榜单新鲜度：" + ranking.get("freshness_status", "unverified"), "",
+             ranking.get("warning", ""), ""]
     for key, entry in report["profiles"].items():
         lines += ["## " + key, "", "状态：" + entry["topic_gate"] +
                   "；样本 " + str(entry["sample_count"]) +
@@ -216,7 +219,11 @@ def main():
               "public_ranking_discovery": {
                   "status": public_ranking_data["status"],
                   "pages_found": public_ranking_data["pages_found"],
-                  "errors": public_ranking_data["errors"]},
+                  "errors": public_ranking_data["errors"],
+                  "freshness_status": public_ranking_data["freshness_status"],
+                  "daily_overlap_checks": public_ranking_data["daily_overlap_checks"],
+                  "independent_recent_viral_evidence": False,
+                  "warning": public_ranking_data["warning"]},
               "profiles": {key: scan(key, with_images=args.images,
                                     public_rankings=public_ranking_data["entries"]) for key in targets}}
     OUTPUT.mkdir(parents=True, exist_ok=True)

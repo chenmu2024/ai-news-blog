@@ -74,25 +74,52 @@ def extract_rankings(page_html, day, source_url):
     return sorted(entries, key=lambda x: x["rank"])
 
 
+def normalize_headline(value):
+    return "".join(ch for ch in value.casefold() if ch.isalnum())
+
+
 def find_public_rankings(fetch: Callable[[str], str], today=None, window_days=5, max_successful_days=2):
     today = today or date.today()
-    pages, errors, total = [], [], 0
+    pages, errors, daily = [], [], {}
     for offset in range(1, min(7, window_days) + 1):
         day = (today - timedelta(days=offset)).isoformat()
         url = "https://weixinhost.com/hotspot-radar/" + day
         try:
             entries = extract_rankings(fetch(url), day, url)
             if entries:
+                daily[day] = entries
                 pages.extend(entries)
-                total += 1
             else:
                 errors.append({"day": day, "status": "empty"})
         except (ValueError, OSError) as exc:
             errors.append({"day": day, "status": "unavailable", "reason": str(exc)[:120]})
-        if total >= max_successful_days:
+        if len(daily) >= max_successful_days:
             break
-    return {"status": "ok" if total else "unavailable",
-            "pages_found": total, "entries": pages, "errors": errors}
+
+    # If two "daily" lists contain nearly identical titles, their dates do not
+    # establish that the content itself was published or popular on those days.
+    comparisons = []
+    dates = sorted(daily, reverse=True)
+    for day_a, day_b in zip(dates, dates[1:]):
+        a = {normalize_headline(x["headline"]) for x in daily[day_a]}
+        b = {normalize_headline(x["headline"]) for x in daily[day_b]}
+        if min(len(a), len(b)) >= 10:
+            comparisons.append({"dates": [day_a, day_b],
+                                "overlap_ratio": round(len(a & b) / min(len(a), len(b)), 3)})
+    suspicious = any(p["overlap_ratio"] >= 0.70 for p in comparisons)
+    freshness_status = ("suspected_repeated_snapshot" if suspicious
+                        else "distinct_daily_lists" if comparisons
+                        else "unverifiable_single_day")
+    return {
+        "status": "ok" if daily else "unavailable",
+        "pages_found": len(daily), "entries": pages, "errors": errors,
+        "daily_overlap_checks": comparisons,
+        "freshness_status": freshness_status,
+        "independent_recent_viral_evidence": False,
+        "warning": ("Daily-ranked titles substantially repeat. Treat list dates as page labels, "
+                    "not verified publication dates or independent evidence of recent virality.")
+                    if suspicious else "Third-party ranking claims still require original article verification."
+    }
 
 
 def related_rankings(profile, entries, limit=6):

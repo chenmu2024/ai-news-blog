@@ -1,9 +1,9 @@
 {
   "date": "2026-10-08",
-  "generated_at": "2026-10-08T09:33:52.298854+08:00",
+  "generated_at": "2026-10-08T09:35:58.295362+08:00",
   "timezone": "Asia/Shanghai",
-  "status": "incomplete",
-  "success_count": 6,
+  "status": "complete",
+  "success_count": 7,
   "expected_count": 7,
   "accounts": {
     "qiezhi": {
@@ -50,7 +50,7 @@
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
-      "status": "incomplete",
+      "status": "success",
       "archive": "zizhitongjian/archive/2026-10-08.md",
       "title": "周天子承认三家分晋：最危险的不是失去权力，而是失去最后一道边界",
       "workflow_run_id": "37712430900",
@@ -61,10 +61,7 @@
       },
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
-      "errors": [
-        "receipt_sha_mismatch_or_stale",
-        "today_not_identical_to_archive"
-      ]
+      "errors": []
     },
     "parenting": {
       "profile": "parenting",

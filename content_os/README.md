@@ -51,3 +51,10 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成 Humanize 再�
 ## 全局微信热门选题前置
 
 每日选题前必须先读取并执行 `content_os/TOPIC_INTELLIGENCE.md`：先用免费公开来源扫描近期同类型微信公众号热门/高表现文章，再进行本方向选题、近30天去重和事实核验。禁止使用 TinyFish；未完成微信热门扫描不得直接进入正式选题。
+
+## 稳定性和回执验收
+
+- 七个方向互相独立，`cancel-in-progress=false`；每次发布前先用 `content_os/draft_preflight.py` 核对 SHA-256 成功回执，重复运行不应重复创建相同草稿。
+- `content_os/daily_healthcheck.py` 扫描当天七份归档、状态、标题、SHA、today 文件及 Gate，生成 `content_os/daily-health`。10:15/13:15 北京时间 GitHub Actions 自动核查并尝试恢复已存在但未成功的归档。
+- 上游 08:20 ChatGPT 写作任务仍负责研究和生成文章；GitHub 不存在免费的独立原创文章生成器。选题热度不足不得阻断写作，但不能伪报热门阅读数据。
+- 只有当日7/7回执与文章完全一致才能宣称仓库侧全部成功。不会调用微信正式发布接口；微信后台视觉验收另行确认。

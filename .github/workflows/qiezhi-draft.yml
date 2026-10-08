@@ -88,6 +88,18 @@ jobs:
         shell: bash
         run: |
           cp "$ARTICLE_PATH" qiezhi/articles/today.md
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          article = Path(os.environ["ARTICLE_PATH"])
+          receipt_path = Path("qiezhi/status/latest.json")
+          receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+          checksum = hashlib.sha256(article.read_bytes()).hexdigest()
+          if receipt.get("status") != "success" or receipt.get("article_sha256") != checksum:
+              raise RuntimeError("Qiezhi receipt mismatch after draft creation")
+          receipt["article_path"] = article.as_posix()
+          receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          PY
           git config user.name "qiezhi-draft-bot"
           git config user.email "qiezhi-draft-bot@users.noreply.github.com"
           git add qiezhi/articles/today.md qiezhi/status/latest.json qiezhi/status/quality-gate.json qiezhi/status/visual-gate.json

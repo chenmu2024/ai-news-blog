@@ -18,6 +18,8 @@ from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 import xml.etree.ElementTree as ET
 
+from public_rankings import find_public_rankings, related_rankings
+
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "content_os" / "topic-intelligence"
 LOCAL = ZoneInfo("Asia/Shanghai")
@@ -37,7 +39,7 @@ LIMIT_BYTES = 700_000
 def fetch(url):
     p = urlparse(url)
     if p.scheme != "https" or p.hostname not in {
-        "weixin.sogou.com", "news.google.com", "commons.wikimedia.org"
+        "weixin.sogou.com", "news.google.com", "commons.wikimedia.org", "weixinhost.com"
     }:
         raise ValueError("Source host not allowed")
     req = Request(url, headers={"User-Agent": UA, "Accept-Language": "zh-CN,zh;q=0.9"})
@@ -133,7 +135,7 @@ def commons_images(query, limit=5):
     return result[:limit]
 
 
-def scan(profile, max_items=8, with_images=False):
+def scan(profile, max_items=8, with_images=False, public_rankings=None):
     cfg = PROFILES[profile]
     rows = []
     statuses = {}
@@ -164,12 +166,18 @@ def scan(profile, max_items=8, with_images=False):
     # Strict: only publicly independently verified rankings/read counts can
     # satisfy heat evidence; no guessed readings or account names.
     heat_count = sum(bool(item.get("heat_verified")) for item in unique)
+    ranking_matches = related_rankings(profile, public_rankings or [], limit=6)
+    statuses["public_rankings"] = {"status": "ok" if ranking_matches else "no_profile_match",
+                                    "count": len(ranking_matches)}
+    # A topical headline on a third-party 10万+ list is NOT an official view
+    # count and not necessarily the same article as a Sogou search hit.
     return {"profile": profile, "query": cfg["query"], "sample_count": len(unique),
-            "heat_evidence_count": heat_count, "required_samples": 5,
-            "required_heat_evidence": 2,
+            "heat_evidence_count": heat_count, "public_ranking_signal_count": len(ranking_matches),
+            "public_ranking_signals": ranking_matches,
+            "required_samples": 5, "required_heat_evidence": 2,
             "topic_gate": "research_ready" if len(unique) >= 5 and heat_count >= 2 else "insufficient_evidence",
             "sources": statuses, "articles": unique[:max_items * 2], "image_candidates": images,
-            "note": "Free index provides discovery, not reading counts or validated viral rank."}
+            "note": "Public ranked headlines are third-party claims, not official article reading-count measurements; topic gate stays conservative."}
 
 
 def render(report):
@@ -184,6 +192,12 @@ def render(report):
                          + "（" + item["platform"] + "；热度：未知）")
         if not entry["articles"]:
             lines.append("- 未获取有效公开样本；不代表该类别没有热门文章。")
+        lines += ["", "**第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** " +
+                  str(entry.get("public_ranking_signal_count", 0)), ""]
+        for rank in entry.get("public_ranking_signals", []):
+            lines.append("- [" + rank["headline"].replace("]", "") + "](" + rank["ranking_page"] + ")"
+                         + "；来源：侯斯特工坊；榜单日期：" + rank["ranking_date"] +
+                         "；位置：" + str(rank["rank"]) + "；原文阅读量：未核验")
         lines.append("")
     return "\n".join(lines)
 
@@ -194,10 +208,17 @@ def main():
     ap.add_argument("--images", action="store_true", help="Discover images; never auto-publish them")
     args = ap.parse_args()
     targets = PROFILES.keys() if args.profile == "all" else [args.profile]
+    public_ranking_data = find_public_rankings(fetch, today=datetime.now(LOCAL).date(),
+                                               window_days=5, max_successful_days=2)
     report = {"generated_at": datetime.now(LOCAL).isoformat(),
               "local_date": datetime.now(LOCAL).date().isoformat(),
               "monetary_cost": "no paid API", "auto_publish": False,
-              "profiles": {key: scan(key, with_images=args.images) for key in targets}}
+              "public_ranking_discovery": {
+                  "status": public_ranking_data["status"],
+                  "pages_found": public_ranking_data["pages_found"],
+                  "errors": public_ranking_data["errors"]},
+              "profiles": {key: scan(key, with_images=args.images,
+                                    public_rankings=public_ranking_data["entries"]) for key in targets}}
     OUTPUT.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
     (OUTPUT / (report["local_date"] + ".json")).write_text(payload, encoding="utf-8")

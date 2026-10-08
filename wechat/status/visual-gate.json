@@ -2,9 +2,9 @@
   "status": "PASS",
   "profile": "ai_business",
   "required_visuals": 2,
-  "visual_count": 4,
+  "visual_count": 3,
   "markdown_images": 0,
   "html_images": 0,
-  "renderable_cards": 4,
+  "renderable_cards": 3,
   "hard_failures": []
 }

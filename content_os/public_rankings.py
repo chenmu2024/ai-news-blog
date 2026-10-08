@@ -54,7 +54,7 @@ def extract_rankings(page_html, day, source_url):
         if "查看标题拆解" not in label:
             continue
         text = label.replace("查看标题拆解", "").strip()
-        match = re.match(r"^0?([1-9]|[12]\d|30)\s*(.+)$", text)
+        match = re.match(r"^0?(30|[12]\d|[1-9])\s*(.+)$", text)
         if not match:
             continue
         rank, headline = int(match.group(1)), match.group(2).strip()

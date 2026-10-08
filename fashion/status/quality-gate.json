@@ -2,22 +2,22 @@
   "status": "PASS",
   "profile": "fashion",
   "profile_name": "女装穿搭｜Image-first",
-  "score": 5,
-  "body_chars": 1841,
-  "template_hits": 0,
+  "score": 8,
+  "body_chars": 2535,
+  "template_hits": 2,
   "internal_hits": 0,
-  "fact_signals": 49,
-  "stance_signals": 20,
+  "fact_signals": 55,
+  "stance_signals": 8,
   "paragraph_regularity": {
-    "paragraphs": 48,
-    "cv": 0.318
+    "paragraphs": 60,
+    "cv": 0.376
   },
   "sentence_repetition": {
-    "sentences": 72,
-    "repeated_starts": 3,
-    "ratio": 0.043
+    "sentences": 91,
+    "repeated_starts": 1,
+    "ratio": 0.011
   },
-  "very_short_paragraph_ratio": 0.359,
+  "very_short_paragraph_ratio": 0.176,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

@@ -9,10 +9,11 @@ on:
 
 concurrency:
   group: zizhitongjian-wechat-draft
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
+  actions: read
   actions: read
 
 jobs:
@@ -44,13 +45,20 @@ jobs:
       - name: Install dependencies
         run: pip install -r zizhitongjian/requirements.txt
 
+      - name: Draft idempotency preflight
+        id: preflight
+        shell: bash
+        run: |
+          python content_os/draft_preflight.py --profile zizhitongjian --article "$ARTICLE_PATH"
       - name: Original-text source gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python zizhitongjian/source_gate.py \
             --article "$ARTICLE_PATH" \
             --json-out zizhitongjian/status/source-gate.json
 
       - name: Content OS quality gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python content_os/quality_gate.py \
             --article "$ARTICLE_PATH" \
@@ -59,6 +67,7 @@ jobs:
 
 
       - name: Global visual requirement gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python content_os/visual_gate.py \
             --article "$ARTICLE_PATH" \
@@ -66,11 +75,13 @@ jobs:
             --json-out zizhitongjian/status/visual-gate.json
 
       - name: Install Chinese fonts
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           sudo apt-get update
           sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
 
       - name: Create Zizhi Tongjian WeChat draft only
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         env:
           WECHAT_APP_ID: ${{ secrets.TONGJIAN_WECHAT_APP_ID }}
           WECHAT_APP_SECRET: ${{ secrets.TONGJIAN_WECHAT_APP_SECRET }}
@@ -80,6 +91,7 @@ jobs:
         run: python zizhitongjian/publish_draft.py
 
       - name: Sync today article and success status
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         shell: bash
         run: |
           mkdir -p zizhitongjian/articles zizhitongjian/status

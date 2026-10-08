@@ -1,0 +1,23 @@
+{
+  "status": "failure",
+  "profile": "zizhitongjian",
+  "date": "2026-10-08",
+  "workflow_run_id": "37711509169",
+  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37711509169",
+  "article_path": "zizhitongjian/archive/2026-10-08.md",
+  "jobs": [
+    {
+      "id": 113098257013,
+      "name": "create-zizhitongjian-draft",
+      "conclusion": null,
+      "steps": [
+        {
+          "name": "Original-text source gate",
+          "conclusion": "failure"
+        }
+      ]
+    }
+  ],
+  "apiError": null,
+  "note": "Diagnostic metadata only; inspect workflow logs for actual traceback."
+}

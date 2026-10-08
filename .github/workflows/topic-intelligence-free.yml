@@ -11,6 +11,8 @@ on:
   schedule:
     # 06:10 Asia/Shanghai. This is a research archive only.
     - cron: "10 22 * * *"
+    # 06:50 Asia/Shanghai: free recovery scan when the first run is delayed.
+    - cron: "50 22 * * *"
 
 permissions:
   contents: write
@@ -37,16 +39,28 @@ jobs:
       - name: Read-only topic and image discovery
         run: python content_os/free_topic_scan.py --profile all --images
       - name: Commit private research artifacts
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "content-os-topic-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content_os/topic-intelligence
-          if ! git diff --cached --quiet; then
+          # Reapply immutable generated outputs on top of the latest remote;
+          # simple 'pull --rebase' often conflicts with another scheduled run.
+          mkdir -p /tmp/content-os-research
+          cp -a content_os/topic-intelligence/. /tmp/content-os-research/
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p content_os/topic-intelligence
+            cp -a /tmp/content-os-research/. content_os/topic-intelligence/
+            git add content_os/topic-intelligence
+            if git diff --cached --quiet; then
+              echo "No research changes."
+              exit 0
+            fi
             git commit -m "research: update free WeChat topic discovery"
-            for attempt in 1 2 3; do
-              git pull --rebase origin main
-              if git push origin HEAD:main; then exit 0; fi
-              sleep $((attempt * 2))
-            done
-            exit 1
-          fi
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 2))
+          done
+          echo "::error::Unable to persist research after retries"
+          exit 1

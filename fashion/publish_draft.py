@@ -290,7 +290,7 @@ def get_image(url):
                 allow_redirects=True,
                 headers={
                     "User-Agent": "Mozilla/5.0 (compatible; FashionWeChatPublisher/1.0)",
-                    "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+                    "Accept": "image/jpeg,image/png,image/webp;q=0.8,*/*;q=0.1",
                 },
             )
             if r.status_code == 429:
@@ -309,7 +309,7 @@ def get_image(url):
     if r is None or not r.ok:
         raise last or RuntimeError("图片下载失败: " + url)
     ct = (r.headers.get("Content-Type") or "").split(";")[0].lower()
-    if ct not in ("image/png", "image/jpeg"):
+    # Allow WebP input from fashion CDNs; Pillow transcodes it to JPEG before WeChat upload.\n    if ct not in ("image/png", "image/jpeg", "image/webp"):
         raise RuntimeError("图片类型不合格: %s -> %s" % (url, ct))
 
     # Only the WeChat upload goes through Fixie. Compress first to conserve

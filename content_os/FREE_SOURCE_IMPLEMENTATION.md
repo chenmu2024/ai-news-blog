@@ -47,3 +47,33 @@ Only when a publicly accessible **contemporaneous** page exposes a named
 account, metric, date and provenance should its account-level signal be
 manually recorded. Never copy a channel's account-wide averages onto a
 specific article. The script does not claim to fetch official read counts.
+
+## Production-safe fallback and automation watchdog
+
+The free discovery scan now has a second topic-specific query for each of the
+seven directions, de-duplicates headline+URL, records source attempts, removes
+generic WeChat login titles and never mistakes Google News RSS index timestamps
+for WeChat article publication timestamps. It labels headline-hook
+classification as **editorial heuristics** rather than popularity evidence.
+
+`writing_allowed=True` is deliberately independent of `topic_gate`.
+`fact_verified_source_fallback` permits producing a sourced, original
+article despite insufficient evidence, but **does not** assert verified
+popularity. The 5-sample/2-verified-heat threshold remains visible and
+strict. It is not feasible to guarantee those signals for every category from
+free, public, no-login WeChat interfaces.
+
+GitHub Actions runs two free discovery windows (06:10 and 06:50 Shanghai).
+Draft jobs are serial within each account and have a SHA-256 success receipt
+preflight so restarting the workflow will not post the same archive again.
+An independent health workflow runs at 10:15 and 13:15 Shanghai, verifies
+all seven accounts and writes `content_os/daily-health/latest.json`. For a
+missing receipt with an existing archive it can dispatch one safe additional
+workflow attempt, but missing articles still require the upstream ChatGPT
+writing task. Report failures rather than inventing an article or bypassing
+source/image/quality gates.
+
+A crash after WeChat has accepted a draft but before repository status was
+committed cannot be safely distinguished from an unsent draft using the
+repository alone. In that case check the WeChat draft list/ID before retrying.
+Historical failure reports can remain even when a later run has succeeded.

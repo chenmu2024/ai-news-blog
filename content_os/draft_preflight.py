@@ -36,6 +36,14 @@ def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict
         and last.get("title") == title
         and (last.get("article_path") in (None, "", article.as_posix()))
     )
+    if (last.get("status") == "success"
+            and last.get("article_path") == article.as_posix()
+            and not confirmed):
+        raise ValueError(
+            "A successful WeChat draft already exists for this exact archive date, "
+            "but its receipt differs. Do not re-publish; reconcile the stored draft "
+            "and approved archive snapshot manually."
+        )
     return {
         "profile": profile,
         "article_path": article.as_posix(),

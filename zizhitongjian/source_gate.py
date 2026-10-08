@@ -151,8 +151,24 @@ def main() -> int:
         errors.append("image_check_url 必须指向 ctext.org 影印复核源")
     if "chapter=" not in verify:
         errors.append("image_check_url 必须指向 CText 对应具体卷页面，不能只填总库入口")
-    if d.get("image_check_done") is not True:
-        errors.append("image_check_done 必须为 true：重要原句/人名/官职/纪年需完成影印或图文对照复核")
+    # CText inaccessible: explicitly labelled two-edition original-text fallback.
+    # Never claim that inaccessible facsimile images were examined.
+    fallback = d.get("alternate_verification_mode") == "dual_edition_text_fallback"
+    alternate_url = str(d.get("alternate_text_url") or "").strip()
+    alternate_excerpt = re.sub(r"\\s+", "", str(d.get("alternate_excerpt") or ""))
+    if d.get("image_check_done") is not True and not fallback:
+        errors.append("缺少影印核验，且未提供备用的双版本原典核验")
+    if fallback:
+        if d.get("image_check_done") is True:
+            errors.append("不得把未核验的影印标为已完成")
+        if host(alternate_url) != "zh.wikisource.org" or "四庫全書本" not in unquote(alternate_url):
+            errors.append("alternate_text_url 必须为四库全书本的具体卷")
+        if "/%E5%8D%B7" not in alternate_url and "/卷" not in alternate_url:
+            errors.append("alternate_text_url 必须是具体卷页")
+        if len(alternate_excerpt) < 12:
+            errors.append("alternate_excerpt 至少12字")
+        if not str(d.get("alternate_access_reason") or "").strip():
+            errors.append("须记录不能检查 CText 影印的原因")
 
     if d.get("context_verified") is not True:
         errors.append("context_verified 必须为 true：必须读过事件前后上下文")
@@ -184,12 +200,23 @@ def main() -> int:
         except Exception as e:
             errors.append("无法在线核验 primary_text_url: " + str(e))
 
-        try:
-            verify_html = fetch_page(verify)
-            if len(verify_html) < 500:
-                errors.append("image_check_url 返回内容异常，无法确认影印复核入口")
-        except Exception as e:
-            errors.append("无法访问 image_check_url: " + str(e))
+        if fallback:
+            try:
+                second_hant = fetch_wikisource_text(alternate_url, "zh-hant")
+                second_hans = fetch_wikisource_text(alternate_url, "zh-hans")
+                second_html = normalize_text(fetch_page(alternate_url))
+                alternative = normalize_text(alternate_excerpt)
+                if alternative not in second_hant and alternative not in second_hans and alternative not in second_html:
+                    errors.append("alternate_excerpt 未在四库全书本具体卷中找到")
+            except Exception as e:
+                errors.append("第二版本原典在线核验失败: " + str(e))
+        else:
+            try:
+                verify_html = fetch_page(verify)
+                if len(verify_html) < 500:
+                    errors.append("image_check_url 返回内容异常，无法确认影印复核入口")
+            except Exception as e:
+                errors.append("无法访问 image_check_url: " + str(e))
 
     quotes = d.get("direct_quotes")
     if not isinstance(quotes, list):
@@ -236,11 +263,14 @@ def main() -> int:
         "primary_text_url": primary,
         "image_check_url": verify,
         "image_check_done": d.get("image_check_done"),
+        "verification_mode": "dual_edition_text_fallback_no_facsimile" if fallback else "facsimile_check",
+        "alternate_text_url": alternate_url if fallback else None,
+        "alternate_access_reason": d.get("alternate_access_reason") if fallback else None,
         "context_verified": d.get("context_verified"),
         "original_excerpt_chars": len(excerpt),
         "direct_quote_count": len(quotes),
         "live_primary_excerpt_check": "PASS" if not any("original_excerpt" in e or "primary_text_url" in e for e in errors) else "FAIL",
-        "image_source_reachable": "PASS" if not any("image_check_url" in e for e in errors) else "FAIL",
+        "image_source_reachable": "NOT_CHECKED_CTEXT_FALLBACK" if fallback else ("PASS" if not any("image_check_url" in e for e in errors) else "FAIL"),
         "hard_failures": errors,
     }
     payload = json.dumps(result, ensure_ascii=False, indent=2)

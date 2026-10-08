@@ -24,3 +24,26 @@ python content_os/free_topic_scan.py --profile parenting
 ```
 
 Do not interpret mere indexed occurrence as evidence of virality.
+
+## Popularity evidence freshness review
+
+The third-party Houst ranking list may repeat **identical article titles**
+across consecutive dated pages. The collector now compares adjacent daily
+lists and records `daily_overlap_checks`, `freshness_status`, and a warning.
+If overlap is >=70% across two pages with at least ten titles each, the status
+is `suspected_repeated_snapshot`. This is not proof of a fresh daily viral
+ranking, or proof of each listed article's date.
+
+Sources to check separately for **account-level** metrics (not automatically
+ingested, and not counted as article-reading evidence):
+
+- 清博指数指标口径说明: https://www.gsdata.cn/site/data-open?show=wx%2Ctt%2Cdy%2Cks
+- 新榜公众号分类榜单: https://www.newrank.cn/ranklist/gongzhonghao/20/1/2025-12-12
+  (this linked example is **historical**, not today's ranking)
+- 微信爆款文章公开榜单来源: https://weixinhost.com/hotspot-radar/archive
+- 微小榜公众号数据页面: https://wxrank.com/ (dynamic values may not load)
+
+Only when a publicly accessible **contemporaneous** page exposes a named
+account, metric, date and provenance should its account-level signal be
+manually recorded. Never copy a channel's account-wide averages onto a
+specific article. The script does not claim to fetch official read counts.

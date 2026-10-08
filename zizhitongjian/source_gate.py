@@ -26,14 +26,14 @@ def host(url: str) -> str:
 
 def normalize_text(text: str) -> str:
     text = unescape(text)
-    text = re.sub(r"<script[\\s\\S]*?</script>", "", text, flags=re.I)
-    text = re.sub(r"<style[\\s\\S]*?</style>", "", text, flags=re.I)
+    text = re.sub(r"<script[\s\S]*?</script>", "", text, flags=re.I)
+    text = re.sub(r"<style[\s\S]*?</style>", "", text, flags=re.I)
     text = re.sub(r"<[^>]+>", "", text)
     # Ancient-text sources often differ only in punctuation, whitespace,
     # Unicode quote forms, or editorial numbering. Ignore those for matching.
-    text = re.sub(r"[\\s　]+", "", text)
+    text = re.sub(r"[\s　]+", "", text)
     text = re.sub(r"[，。！？；：、,.!?;:'\"“”‘’「」『』（）()《》〈〉【】\[\]〔〕—…·＊*#|/\\-]+", "", text)
-    text = re.sub(r"(?m)^\\d+", "", text)
+    text = re.sub(r"(?m)^\d+", "", text)
     text = text.replace("〇", "零")
     return text
 

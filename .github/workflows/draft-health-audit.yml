@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: content-os-daily-health
@@ -58,5 +59,57 @@ jobs:
             if [ "$attempt" -eq 5 ]; then exit 1; fi
             sleep $((attempt * 2))
           done
+      - name: Retry an unsent archive once (scheduled audits only)
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const {owner,repo} = context.repo;
+            const report = JSON.parse(fs.readFileSync('content_os/daily-health/latest.json','utf8'));
+            const results = [];
+            for (const [profile,item] of Object.entries(report.accounts)) {
+              if (item.status === 'success') continue;
+              if (!fs.existsSync(item.archive)) {
+                results.push({profile,result:'missing_article',note:'No original article to retry'});
+                continue;
+              }
+              let prev = {};
+              try {prev = JSON.parse(fs.readFileSync(profile+'/status/latest.json','utf8'));} catch(_) {}
+              const sameReceipt = prev.status === 'success' &&
+                (prev.article_path === item.archive || (!prev.article_path && prev.title === item.title));
+              // Already published but a local artifact changed: do not post a duplicate.
+              if (sameReceipt) {
+                results.push({profile,result:'manual_artifact_conflict',note:'Published receipt exists; never auto-republish'});
+                continue;
+              }
+              const workflow_id = profile+'-draft.yml';
+              let runs;
+              try {
+                const rsp = await github.rest.actions.listWorkflowRunsForWorkflow({owner,repo,workflow_id,per_page:30});
+                runs = rsp.data.workflow_runs || [];
+              } catch(e) {
+                results.push({profile,result:'workflow_lookup_error',note:String(e.message||e)});
+                continue;
+              }
+              const day = report.date;
+              if (runs.some(r => ['queued','in_progress','waiting','requested','pending'].includes(r.status))) {
+                results.push({profile,result:'already_running'});
+                continue;
+              }
+              if (runs.some(r => r.event === 'workflow_dispatch' && r.created_at.slice(0,10) === day)) {
+                results.push({profile,result:'retry_limit_reached'});
+                continue;
+              }
+              try {
+                await github.rest.actions.createWorkflowDispatch({owner,repo,workflow_id,ref:'main'});
+                results.push({profile,result:'retry_requested',workflow_id});
+              } catch(e) {
+                results.push({profile,result:'retry_error',note:String(e.message||e)});
+              }
+            }
+            core.info(JSON.stringify(results));
+            await core.summary.addHeading('Content OS automatic safe retries')
+              .addRaw(JSON.stringify(results,null,2)).write();
       - name: Fail visibly when any draft or Gate is incomplete
         run: python content_os/daily_healthcheck.py --strict

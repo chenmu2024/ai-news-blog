@@ -129,3 +129,38 @@ jobs:
               sleep $((attempt * 2))
             done
           fi
+
+      - name: Record failure diagnostics
+        if: ${{ failure() }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const runId = context.runId;
+            const path = 'fashion/status/last-failure.json';
+            let jobs = [];
+            let apiError = null;
+            try {
+              const resp = await github.rest.actions.listJobsForWorkflowRun({owner, repo, run_id: runId, per_page: 100});
+              jobs = (resp.data.jobs || []).map(j => ({
+                id: j.id, name: j.name, conclusion: j.conclusion,
+                steps: (j.steps || []).filter(s => s.conclusion === 'failure').map(s => ({name:s.name,conclusion:s.conclusion}))
+              }));
+            } catch (e) {apiError = String(e.message || e);}
+            const result = {status:'failure', profile:'fashion', date:new Date().toISOString().slice(0,10),
+              workflow_run_id:String(runId), workflow_url:`https://github.com/${owner}/${repo}/actions/runs/${runId}`,
+              article_path:process.env.ARTICLE_PATH || 'fashion/archive/2026-10-08.md', jobs, apiError,
+              note:'Diagnostic metadata only; inspect workflow logs for actual traceback.'};
+            let sha;
+            try {
+              const old = await github.rest.repos.getContent({owner,repo,path,ref:'main'});
+              sha = old.data.sha;
+            } catch (e) {if (e.status !== 404) core.warning(String(e));}
+            await github.rest.repos.createOrUpdateFileContents({
+              owner,repo,path,branch:'main',sha,
+              message:'diagnostics(fashion): record failed draft workflow',
+              content:Buffer.from(JSON.stringify(result,null,2)+'\n').toString('base64')
+            });
+        env:
+          ARTICLE_PATH: ${{ env.ARTICLE_PATH }}

@@ -38,7 +38,8 @@ class PreflightTests(unittest.TestCase):
             "article_path": self.arc.as_posix(),
         }), encoding="utf-8")
         self.arc.write_text("# Title\n\nRevision.", encoding="utf-8")
-        self.assertTrue(preflight.inspect(self.arc, "fashion", self.status)["should_publish"])
+        with self.assertRaisesRegex(ValueError, "successful WeChat draft"):
+            preflight.inspect(self.arc, "fashion", self.status)
 
     def test_stale_or_failed_receipt_must_not_block(self):
         (self.status / "latest.json").write_text(json.dumps({

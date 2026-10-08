@@ -2,12 +2,12 @@
   "status": "failure",
   "profile": "zizhitongjian",
   "date": "2026-10-08",
-  "workflow_run_id": "37712309407",
-  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37712309407",
+  "workflow_run_id": "37712350924",
+  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37712350924",
   "article_path": "zizhitongjian/archive/2026-10-08.md",
   "jobs": [
     {
-      "id": 113100805377,
+      "id": 113100941136,
       "name": "create-zizhitongjian-draft",
       "conclusion": null,
       "steps": []

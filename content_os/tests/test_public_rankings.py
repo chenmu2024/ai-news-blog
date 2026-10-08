@@ -20,6 +20,23 @@ class RankingTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             r.extract_rankings(HTML_SAMPLE, "2026-10-05", "https://weixinhost.com/hotspot-radar/2026-10-05")
 
+    def test_repeated_headline_only_once(self):
+        same = {"headline": "舒服到不想脱下来的一套懒人穿搭",
+                "ranking_date": "2026-10-06", "rank": 6}
+        newer = dict(same, ranking_date="2026-10-07")
+        self.assertEqual(len(r.related_rankings("fashion", [same, newer])), 1)
+        self.assertEqual(r.related_rankings("fashion", [same, newer])[0]["ranking_date"], "2026-10-07")
+
+    def test_modern_sports_not_historical(self):
+        modern_sports = [{"headline": "韩国男篮成绩历史第二差",
+                          "ranking_date": "2026-10-07", "rank": 3}]
+        self.assertEqual(r.related_rankings("zizhitongjian", modern_sports), [])
+
+    def test_tv_plot_son_not_parenting(self):
+        drama = [{"headline": "她生了儿子并被男主护住",
+                  "ranking_date": "2026-10-07", "rank": 12}]
+        self.assertEqual(r.related_rankings("parenting", drama), [])
+
     def test_topic_match(self):
         rows = r.extract_rankings(HTML_SAMPLE, "2026-10-06", "https://weixinhost.com/hotspot-radar/2026-10-06")
         self.assertEqual(len(r.related_rankings("fashion", rows)), 1)

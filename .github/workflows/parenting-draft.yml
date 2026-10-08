@@ -9,10 +9,11 @@ on:
 
 concurrency:
   group: parenting-wechat-draft
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
+  actions: read
 
 jobs:
   create-parenting-draft:
@@ -40,7 +41,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Draft idempotency preflight
+        id: preflight
+        shell: bash
+        run: |
+          python content_os/draft_preflight.py --profile parenting --article "$ARTICLE_PATH"
       - name: Content OS quality gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python content_os/quality_gate.py \
             --article "$ARTICLE_PATH" \
@@ -49,6 +56,7 @@ jobs:
 
 
       - name: Global visual requirement gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python content_os/visual_gate.py \
             --article "$ARTICLE_PATH" \
@@ -56,14 +64,17 @@ jobs:
             --json-out parenting/status/visual-gate.json
 
       - name: Install Chinese fonts
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           sudo apt-get update
           sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
 
       - name: Install dependencies
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: pip install -r parenting/requirements.txt
 
       - name: Create parenting WeChat draft only
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         env:
           WECHAT_APP_ID: ${{ secrets.PARENTING_WECHAT_APP_ID }}
           WECHAT_APP_SECRET: ${{ secrets.PARENTING_WECHAT_APP_SECRET }}
@@ -73,6 +84,7 @@ jobs:
         run: python parenting/publish_draft.py
 
       - name: Sync today article and success status
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         shell: bash
         run: |
           mkdir -p parenting/articles parenting/status
@@ -124,3 +136,33 @@ jobs:
               sleep $((attempt * 2))
             done
           fi
+
+      - name: Record failed draft diagnostic
+        if: ${{ failure() }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner,repo} = context.repo;
+            const path = 'parenting/status/last-failure.json';
+            const runId = context.runId;
+            let jobs = [], readError = null;
+            try {
+              const result = await github.rest.actions.listJobsForWorkflowRun({owner,repo,run_id:runId,per_page:100});
+              jobs = (result.data.jobs||[]).map(j=>({id:j.id,name:j.name,conclusion:j.conclusion,
+                failed_steps:(j.steps||[]).filter(s=>s.conclusion==='failure').map(s=>s.name)}));
+            } catch(e) { readError = String(e.message||e); }
+            const audit = {status:'failure',date:new Date().toISOString().slice(0,10),
+              profile:'parenting', article_path:'parenting/archive/',
+              workflow_run_id:String(runId),url:`https://github.com/${owner}/${repo}/actions/runs/${runId}`,
+              jobs,readError};
+            for(let attempt=0;attempt<3;attempt++){
+              let sha;
+              try { sha = (await github.rest.repos.getContent({owner,repo,path,ref:'main'})).data.sha; }
+              catch(e){if(e.status!==404) throw e;}
+              try {
+                await github.rest.repos.createOrUpdateFileContents({owner,repo,path,sha,branch:'main',
+                  message:'diagnostics(parenting): persist failed draft run',
+                  content:Buffer.from(JSON.stringify(audit,null,2)+'\n').toString('base64')});
+                break;
+              } catch(e){if(e.status!==409||attempt===2) throw e;}
+            }

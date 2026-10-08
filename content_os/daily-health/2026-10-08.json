@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-08",
+  "generated_at": "2026-10-08T09:33:52.298854+08:00",
+  "timezone": "Asia/Shanghai",
+  "status": "incomplete",
+  "success_count": 6,
+  "expected_count": 7,
+  "accounts": {
+    "qiezhi": {
+      "profile": "qiezhi",
+      "status": "success",
+      "archive": "qiezhi/archive/2026-10-08.md",
+      "title": "毛选：一件事总在返工，问题往往不在执行力",
+      "workflow_run_id": null,
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "wechat": {
+      "profile": "wechat",
+      "status": "success",
+      "archive": "wechat/archive/2026-10-08.md",
+      "title": "一家开源AI公司融了9000万美元，我更想做企业落地的“小服务”",
+      "workflow_run_id": "37710324674",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "business": {
+      "profile": "business",
+      "status": "success",
+      "archive": "business/archive/2026-10-08.md",
+      "title": "Boots以89亿美元再易主：一家老药房，为什么又被当成零售宝贝？",
+      "workflow_run_id": "37710391695",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "zizhitongjian": {
+      "profile": "zizhitongjian",
+      "status": "incomplete",
+      "archive": "zizhitongjian/archive/2026-10-08.md",
+      "title": "周天子承认三家分晋：最危险的不是失去权力，而是失去最后一道边界",
+      "workflow_run_id": "37712430900",
+      "gates": {
+        "source-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "image_check_done": false,
+      "errors": [
+        "receipt_sha_mismatch_or_stale",
+        "today_not_identical_to_archive"
+      ]
+    },
+    "parenting": {
+      "profile": "parenting",
+      "status": "success",
+      "archive": "parenting/archive/2026-10-08.md",
+      "title": "孩子作业拖到深夜，很多家长第一步就问错了",
+      "workflow_run_id": "37710463882",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "jingyun": {
+      "profile": "jingyun",
+      "status": "success",
+      "archive": "jingyun/archive/2026-10-08.md",
+      "title": "妈妈开始变老以后，最难开口的往往不是“我想你”",
+      "workflow_run_id": "37711457342",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "fashion": {
+      "profile": "fashion",
+      "status": "success",
+      "archive": "fashion/archive/2026-10-08.md",
+      "title": "宋慧乔的秋天风衣为什么显得贵？韩国和日本女生给了5个答案",
+      "workflow_run_id": "37711755916",
+      "gates": {
+        "image-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    }
+  },
+  "topic_scan_date": "2026-10-08",
+  "topic_scan_available": true,
+  "topic_popularity_verified_count": {
+    "qiezhi": 0,
+    "wechat": 0,
+    "business": 0,
+    "zizhitongjian": 0,
+    "parenting": 0,
+    "jingyun": 0,
+    "fashion": 0
+  },
+  "note": "Repo receipt + hash + today's article + gates; not direct WeChat UI visual confirmation."
+}

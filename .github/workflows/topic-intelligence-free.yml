@@ -7,6 +7,8 @@ on:
     paths:
       - "content_os/free_topic_scan.py"
       - "content_os/public_rankings.py"
+      - "content_os/tests/test_free_topic_scan.py"
+      - "content_os/tests/test_public_rankings.py"
       - ".github/workflows/topic-intelligence-free.yml"
   schedule:
     # 06:10 Asia/Shanghai. This is a research archive only.

@@ -58,3 +58,12 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成 Humanize 再�
 - `content_os/daily_healthcheck.py` 扫描当天七份归档、状态、标题、SHA、today 文件及 Gate，生成 `content_os/daily-health`。10:15/13:15 北京时间 GitHub Actions 自动核查并尝试恢复已存在但未成功的归档。
 - 上游 08:20 ChatGPT 写作任务仍负责研究和生成文章；GitHub 不存在免费的独立原创文章生成器。选题热度不足不得阻断写作，但不能伪报热门阅读数据。
 - 只有当日7/7回执与文章完全一致才能宣称仓库侧全部成功。不会调用微信正式发布接口；微信后台视觉验收另行确认。
+
+## 外部图片与免费扫描容错（2026-10-09）
+
+执行 `content_os/RESILIENCE_POLICY.md`：六个外图发布器在使用微信官方媒体/草稿接口前，
+调用 `image_resilience.py` 完成全部图片 GET、解码、格式标准化、同图 JPEG 变体及**经明确许可核验**
+的同主题备用图；不合格图不静默替换。免费 Topic Intelligence 支持 Bing RSS → Google News 通用 RSS
+的独立线索备用（不计微信热门热度），当日扫描异常也继续依靠官方资料完成原创写作。
+回归测试见 `content_os/tests/test_image_resilience.py`、
+`.github/workflows/content-image-resilience-tests.yml`。

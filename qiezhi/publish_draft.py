@@ -290,7 +290,7 @@ def replace_stock_images(md, tok, staged):
     """Optional licensed lifestyle pictures are uploaded through WeChat, never hotlinked."""
     if not staged:
         return md
-    image_re = re.compile(r"!\\[([^\\]]*)\\]\\((https?://[^)\\s]+)\\)")
+    image_re = re.compile(r"!\[([^\]]*)\]\((https?://[^)\s]+)\)")
     cache = {}
 
     def substitute(match):

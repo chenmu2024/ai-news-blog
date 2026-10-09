@@ -48,7 +48,7 @@ class ImageResilienceTests(unittest.TestCase):
         out = m.prepare_images("# Test\n![Image](" + url + ")", "business", session=session)
         self.assertEqual(set(out), {url})
         self.assertEqual(out[url][1:], ("image/jpeg", ".jpg"))
-        self.assertTrue(out[url][0].startswith(b"\\xff\\xd8"))
+        self.assertTrue(out[url][0].startswith(bytes.fromhex("ffd8")))
 
     def test_pexels_avif_is_retried_as_explicit_jpeg(self):
         primary = "https://images.pexels.com/photos/123/pexels-photo-123.jpeg?auto=compress&cs=tinysrgb&w=1200"

@@ -120,6 +120,11 @@ class ImageResilienceTests(unittest.TestCase):
             self.assertFalse(m.public_https(url))
         self.assertTrue(m.public_https("https://images.pexels.com/p.jpg"))
 
+    def test_external_html_img_cannot_bypass_early_media_staging(self):
+        html = '<img src="https://example.com/unaudited-photo.jpg" alt="photo">'
+        with self.assertRaisesRegex(ValueError, "must be Markdown"):
+            m.prepare_images(html, "business")
+
     def test_fashion_requires_five_distinct_real_images(self):
         article = "\n".join("![Example](https://example.com/i" + str(i) + ".jpg)" for i in range(4))
         with self.assertRaisesRegex(ValueError, "five distinct"):

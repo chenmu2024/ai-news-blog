@@ -1,0 +1,39 @@
+name: Content OS Image Preflight Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content_os/image_resilience.py"
+      - "content_os/tests/test_image_resilience.py"
+      - "wechat/publish_draft.py"
+      - "business/publish_draft.py"
+      - "zizhitongjian/publish_draft.py"
+      - "parenting/publish_draft.py"
+      - "jingyun/publish_draft.py"
+      - "fashion/publish_draft.py"
+      - ".github/workflows/content-image-resilience-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  image-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install local image dependencies
+        run: pip install Pillow requests markdown
+      - name: Validate publisher syntax
+        run: |
+          python -m py_compile content_os/image_resilience.py \
+            wechat/publish_draft.py business/publish_draft.py \
+            zizhitongjian/publish_draft.py parenting/publish_draft.py \
+            jingyun/publish_draft.py fashion/publish_draft.py
+      - name: Image fallback offline regression tests
+        run: python -m unittest discover -s content_os/tests -p test_image_resilience.py -v

@@ -12,6 +12,9 @@ import markdown
 import requests
 from PIL import Image, ImageDraw, ImageFont
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from content_os.image_resilience import prepare_images, strip_image_backup_notes
+
 APP_ID = os.environ["WECHAT_APP_ID"].strip()
 APP_SECRET = os.environ["WECHAT_APP_SECRET"].strip()
 PROXY_URL = (os.getenv("PROXY_URL") or "").strip()
@@ -283,6 +286,26 @@ def render_and_replace(md, tok):
     print("[CARDS]", count[0])
     return out, cover_id[0]
 
+def replace_stock_images(md, tok, staged):
+    """Optional licensed lifestyle pictures are uploaded through WeChat, never hotlinked."""
+    if not staged:
+        return md
+    image_re = re.compile(r"!\\[([^\\]]*)\\]\\((https?://[^)\\s]+)\\)")
+    cache = {}
+
+    def substitute(match):
+        alt, source = match.group(1), match.group(2)
+        if source not in staged:
+            # Internal QIEZHI_CARD pictures are already hosted by WeChat.
+            return match.group(0)
+        if source not in cache:
+            data, mime, ext = staged[source]
+            cache[source] = upload_body(tok, data, mime, ext)
+        return f"![{alt}]({cache[source]})"
+
+    return image_re.sub(substitute, md)
+
+
 def styled_html(md):
     raw = markdown.markdown(md, extensions=["extra", "fenced_code", "sane_lists"], output_format="html5")
 
@@ -366,16 +389,21 @@ def main():
         fail("文章不存在: " + str(ARTICLE))
     raw_md = ARTICLE.read_text(encoding="utf-8")
     sha = hashlib.sha256(raw_md.encode("utf-8")).hexdigest()
-    md = strip_internal_notes(unwrap(raw_md))
+    md = strip_image_backup_notes(strip_internal_notes(unwrap(raw_md)))
     title = title_of(md)
     api_title = wechat_safe_title(title)
     print("[ARTICLE]", title)
     print("[SHA256]", sha)
     print("[PROXY]", "Static proxy enabled" if PROXIES else "Direct connection")
+    # Stage all free stock images before the first WeChat API call.
+    # qiezhi retains original editorial cards by default.
+    staged_stock = prepare_images(raw_md, profile="qiezhi")
+    print("[STOCK_IMAGE_PREFLIGHT]", len(staged_stock))
     tok = token()
     body_md = re.sub(r"(?m)^#\s+.+?\s*$", "", md, count=1).lstrip()
     body_md = re.sub(r"(?m)^\\s*(?:\\*\\*)?作者[：:]\\s*且知(?:\\*\\*)?\\s*$", "", body_md, count=1).lstrip()
     body_md, cover_id = render_and_replace(body_md, tok)
+    body_md = replace_stock_images(body_md, tok, staged_stock)
     media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
     STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
     STATUS_PATH.write_text(json.dumps({"status": "success", "article_sha256": sha, "title": api_title, "draft_media_id": media_id}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

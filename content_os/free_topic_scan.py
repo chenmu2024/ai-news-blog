@@ -79,7 +79,7 @@ LIMIT_BYTES = 700_000
 def fetch(url):
     p = urlparse(url)
     if p.scheme != "https" or p.hostname not in {
-        "weixin.sogou.com", "news.google.com", "commons.wikimedia.org", "weixinhost.com"
+        "weixin.sogou.com", "news.google.com", "commons.wikimedia.org", "weixinhost.com", "www.bing.com"
     }:
         raise ValueError("Source host not allowed")
     req = Request(url, headers={"User-Agent": UA, "Accept-Language": "zh-CN,zh;q=0.9"})
@@ -153,6 +153,42 @@ def news_index_results(query, limit=8):
     return out
 
 
+
+# Independent, no-login source for factual topic candidates; *not* WeChat traffic.
+# If Google News's WeChat index and Sogou go down simultaneously, this offers
+# a second provider's headlines. Never count these as WeChat articles or heat.
+BING_FALLBACK_QUERIES = {
+    "qiezhi": "学习 方法 调查研究 读书",
+    "wechat": "人工智能 Agent SaaS 创业 公司",
+    "business": "公司 财报 收购 品牌 商业",
+    "zizhitongjian": "资治通鉴 历史 人物 决策",
+    "parenting": "育儿 家庭教育 青少年 学校",
+    "jingyun": "女性 职场 婚姻 家庭",
+    "fashion": "韩国 日本 女明星 时尚 穿搭",
+}
+
+
+def bing_news_results(query, limit=6):
+    url = "https://www.bing.com/news/search?" + urlencode({"q": query, "format": "rss"})
+    root = ET.fromstring(fetch(url))
+    rows = []
+    for item in root.findall(".//item")[:limit]:
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        if not title or not link or not is_useful_discovery({"title": title, "url": link}):
+            continue
+        rows.append({
+            "title": title[:180], "url": link,
+            "platform": "bing_news_rss_non_wechat",
+            "published_at": None, "indexed_at": item.findtext("pubDate"),
+            "account": None, "heat": None, "heat_verified": False,
+            "verification": "third-party news RSS, not a WeChat original, "
+                            "not an article reading count or verified popularity",
+            "reference_only": True,
+        })
+    return rows[:limit]
+
+
 def commons_images(query, limit=5):
     url = "https://commons.wikimedia.org/w/api.php?" + urlencode({
         "action": "query", "generator": "search", "gsrsearch": "filetype:bitmap " + query,
@@ -175,7 +211,7 @@ def commons_images(query, limit=5):
     return result[:limit]
 
 
-def scan(profile, max_items=8, with_images=False, public_rankings=None):
+def scan(profile, max_items=8, with_images=False, public_rankings=None, use_extra_public_fallback=False):
     cfg = PROFILES[profile]
     rows = []
     statuses = {}
@@ -219,6 +255,24 @@ def scan(profile, max_items=8, with_images=False, public_rankings=None):
         except (ValueError, OSError) as exc:
             statuses["images"] = {"status": "error", "message": str(exc)[:200]}
 
+    # A complete failure of WeChat indexing must not block original reporting.
+    # Fallback news is kept OUTSIDE the WeChat samples and verified heat gate.
+    fallback_signals = []
+    if use_extra_public_fallback and len(unique) < 5:
+        try:
+            fallback_signals = bing_news_results(BING_FALLBACK_QUERIES[profile], limit=6)
+            statuses["bing_news_fallback"] = {
+                "status": "ok" if fallback_signals else "empty",
+                "count": len(fallback_signals),
+                "note": "Non-WeChat news clues; independent facts must still be verified.",
+            }
+        except (ValueError, OSError, ET.ParseError) as exc:
+            statuses["bing_news_fallback"] = {
+                "status": "error", "count": 0, "message": str(exc)[:160]
+            }
+    else:
+        statuses["bing_news_fallback"] = {"status": "not_needed", "count": 0}
+
     # Strict: only publicly independently verified rankings/read counts can
     # satisfy heat evidence; no guessed readings or account names.
     heat_count = sum(bool(item.get("heat_verified")) for item in unique)
@@ -236,7 +290,9 @@ def scan(profile, max_items=8, with_images=False, public_rankings=None):
             "writing_mode": "heat_verified" if len(unique) >= 5 and heat_count >= 2 else "fact_verified_source_fallback",
             "candidate_confidence": "source_verified" if heat_count >= 2 else "indexed_title_only",
             "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
-            "sources": statuses, "articles": unique[:max_items * 2], "image_candidates": images,
+            "sources": statuses, "articles": unique[:max_items * 2],
+            "fallback_news_signals": fallback_signals, "fallback_news_count": len(fallback_signals),
+            "image_candidates": images,
             "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."}
 
 
@@ -258,6 +314,18 @@ def render(report):
                          + "（" + item["platform"] + "；热度：未知）")
         if not entry["articles"]:
             lines.append("- 未获取有效公开样本；不代表该类别没有热门文章。")
+        if entry.get("fallback_news_signals"):
+            lines.extend(["", "**独立新闻RSS备用线索（非微信文章、非热门证据）：**"])
+            for item in entry["fallback_news_signals"]:
+                lines.append("- [" + item["title"].replace("]", "") + "](" + item["url"] + ")"
+                             + "（Bing 新闻索引；发布时间/原始事实仍需核验）")
+        if entry.get("prior_references"):
+            lines.extend(["", "**旧日线索：仅供选题发散，严禁冒充当天扫描：** " +
+                          entry.get("prior_reference_date", "unknown")])
+            for item in entry["prior_references"]:
+                lines.append("- [" + item["title"].replace("]", "") + "](" + item["url"] + ")"
+                             + "（历史参考，热度未知）")
+
         lines += ["", "**第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** " +
                   str(entry.get("public_ranking_signal_count", 0)), ""]
         for rank in entry.get("public_ranking_signals", []):
@@ -274,6 +342,15 @@ def main():
     ap.add_argument("--images", action="store_true", help="Discover images; never auto-publish them")
     args = ap.parse_args()
     targets = PROFILES.keys() if args.profile == "all" else [args.profile]
+    today = datetime.now(LOCAL).date().isoformat()
+    # Previous data is useful as a *stale reference* only, never as today's scan.
+    prior_report = {}
+    try:
+        prior_report = json.loads((OUTPUT / "latest.json").read_text(encoding="utf-8"))
+        if prior_report.get("local_date") == today:
+            prior_report = {}
+    except (FileNotFoundError, OSError, json.JSONDecodeError):
+        prior_report = {}
     public_ranking_data = find_public_rankings(fetch, today=datetime.now(LOCAL).date(),
                                                window_days=5, max_successful_days=2)
     report = {"generated_at": datetime.now(LOCAL).isoformat(),
@@ -288,7 +365,25 @@ def main():
                   "independent_recent_viral_evidence": False,
                   "warning": public_ranking_data["warning"]},
               "profiles": {key: scan(key, with_images=args.images,
-                                    public_rankings=public_ranking_data["entries"]) for key in targets}}
+                                    public_rankings=public_ranking_data["entries"],
+                                    use_extra_public_fallback=True) for key in targets}}
+    if prior_report and prior_report.get("local_date") < today:
+        for profile, item in report["profiles"].items():
+            if item["sample_count"] > 0 or item.get("fallback_news_count", 0) > 0:
+                continue
+            old = prior_report.get("profiles", {}).get(profile, {})
+            hints = [x for x in old.get("articles", []) if
+                     is_useful_discovery(x)]
+            item["prior_reference_date"] = prior_report["local_date"]
+            item["prior_references"] = hints[:5]
+            item["sources"]["stale_reference"] = {
+                "status": "historical_reference_only", "count": len(hints),
+                "date": prior_report["local_date"],
+            }
+    report["all_live_sources_unavailable"] = all(
+        item["sample_count"] == 0 and item.get("fallback_news_count", 0) == 0
+        for item in report["profiles"].values()
+    )
     OUTPUT.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
     (OUTPUT / (report["local_date"] + ".json")).write_text(payload, encoding="utf-8")

@@ -26,9 +26,9 @@ LOCAL = ZoneInfo("Asia/Shanghai")
 PROFILES = {
     "qiezhi": {"query": "毛泽东选集 人生 思想 公众号", "image": "history books"},
     "wechat": {"query": "AI Agent 独立开发 SaaS 一人公司 公众号", "image": "artificial intelligence computer"},
-    "business": {"query": "商业故事 公司 品牌 公众号", "image": "business office"},
+    "business": {"query": "泡泡玛特 瑞幸 蜜雪冰城 品牌 兴衰 公众号", "image": "business office"},
     "zizhitongjian": {"query": "资治通鉴 历史 人性 管理 公众号", "image": "historical books"},
-    "parenting": {"query": "育儿 家庭教育 孩子 手机 作业 公众号", "image": "family reading"},
+    "parenting": {"query": "小学生 家长群 家校沟通 教育 公众号", "image": "family reading"},
     "jingyun": {"query": "女性 中年 婚姻 职场 公众号", "image": "women street life"},
     "fashion": {"query": "日韩穿搭 明星穿搭 秋季 女装 公众号", "image": "fashion street style"},
 }
@@ -37,9 +37,9 @@ PROFILES = {
 SUPPLEMENTARY_QUERIES = {
     "qiezhi": "毛选 调查研究 工作 方法 公众号",
     "wechat": "AI创业 SaaS 独立开发者 真实案例 公众号",
-    "business": "公司 收购 利润 零售 商业故事 公众号",
+    "business": "胖东来 小米 比亚迪 消费品牌 商业转折 公众号",
     "zizhitongjian": "资治通鉴 帝王 决策 历史故事 公众号",
-    "parenting": "孩子 拖延 手机 家庭沟通 教育 公众号",
+    "parenting": "初中家长 青春期 手机 学习压力 公众号",
     "jingyun": "中年女人 母女 经济独立 婚姻 公众号",
     "fashion": "韩系 日系 女明星 风衣 搭配 公众号",
 }
@@ -160,9 +160,9 @@ def news_index_results(query, limit=8):
 BING_FALLBACK_QUERIES = {
     "qiezhi": "学习 方法 调查研究 读书",
     "wechat": "人工智能 Agent SaaS 创业 公司",
-    "business": "公司 财报 收购 品牌 商业",
+    "business": "消费品牌 零售 公司 转型 业绩",
     "zizhitongjian": "资治通鉴 历史 人物 决策",
-    "parenting": "育儿 家庭教育 青少年 学校",
+    "parenting": "中小学 家长 家校沟通 教育政策 青少年",
     "jingyun": "女性 职场 婚姻 家庭",
     "fashion": "韩国 日本 女明星 时尚 穿搭",
 }

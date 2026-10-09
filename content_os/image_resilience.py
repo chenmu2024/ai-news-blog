@@ -18,6 +18,7 @@ import requests
 from PIL import Image, ImageOps, UnidentifiedImageError
 
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
+HTML_IMAGE_RE = re.compile(r"""<img\b[^>]*\bsrc\s*=\s*["']https?://[^"']+["']""", re.I)
 BACKUPS_RE = re.compile(r"<!--\s*IMAGE_BACKUPS\s*(\{[\s\S]*?\})\s*-->", re.S)
 FASHION_RE = re.compile(r"<!--\s*FASHION_SOURCE\s*(\{[\s\S]*?\})\s*-->", re.S)
 SUPPORTED_RIGHTS = {"owned", "permission", "pexels_license", "unsplash_license",
@@ -166,6 +167,8 @@ def prepare_images(markdown: str, profile: str, session=None) -> dict[str, tuple
     if profile not in {"wechat", "business", "zizhitongjian", "parenting",
                        "jingyun", "fashion"}:
         raise ValueError("Unknown image preflight profile")
+    if HTML_IMAGE_RE.search(markdown):
+        raise ValueError("External HTML <img> must be Markdown image syntax for safe WeChat upload")
     urls = list(dict.fromkeys(IMAGE_RE.findall(markdown)))
     if profile == "fashion" and len(urls) < 5:
         raise ValueError("Fashion requires at least five distinct real images")

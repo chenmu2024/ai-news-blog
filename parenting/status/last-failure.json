@@ -1,0 +1,17 @@
+{
+  "status": "failure",
+  "date": "2026-10-09",
+  "profile": "parenting",
+  "article_path": "parenting/archive/",
+  "workflow_run_id": "37865596321",
+  "url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37865596321",
+  "jobs": [
+    {
+      "id": 113611444848,
+      "name": "create-parenting-draft",
+      "conclusion": null,
+      "failed_steps": []
+    }
+  ],
+  "readError": null
+}

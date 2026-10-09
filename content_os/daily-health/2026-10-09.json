@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-09",
+  "generated_at": "2026-10-09T16:57:36.644866+08:00",
+  "timezone": "Asia/Shanghai",
+  "status": "complete",
+  "success_count": 7,
+  "expected_count": 7,
+  "accounts": {
+    "qiezhi": {
+      "profile": "qiezhi",
+      "status": "success",
+      "archive": "qiezhi/archive/2026-10-09.md",
+      "title": "毛选：为什么书读了不少，真正遇到难题还是不会解",
+      "workflow_run_id": null,
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "wechat": {
+      "profile": "wechat",
+      "status": "success",
+      "archive": "wechat/archive/2026-10-09.md",
+      "title": "一家自动化公司要收购Boost.ai，我看到企业客服AI旁边的3门小生意",
+      "workflow_run_id": "37864983150",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "business": {
+      "profile": "business",
+      "status": "success",
+      "archive": "business/archive/2026-10-09.md",
+      "title": "必胜客被27亿美元拆卖：百胜为什么不再自己养这个老品牌",
+      "workflow_run_id": "37866072991",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "zizhitongjian": {
+      "profile": "zizhitongjian",
+      "status": "success",
+      "archive": "zizhitongjian/archive/2026-10-09.md",
+      "title": "商鞅徙木立信：五十金的承诺，真正改变了什么",
+      "workflow_run_id": "37865728060",
+      "gates": {
+        "source-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "image_check_done": false,
+      "errors": []
+    },
+    "parenting": {
+      "profile": "parenting",
+      "status": "success",
+      "archive": "parenting/archive/2026-10-09.md",
+      "title": "孩子早上说不想去学校，先别急着问“为什么又闹”",
+      "workflow_run_id": "37865941267",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "jingyun": {
+      "profile": "jingyun",
+      "status": "success",
+      "archive": "jingyun/archive/2026-10-09.md",
+      "title": "中年夫妻每天都在说话，为什么越来越像在交接工作",
+      "workflow_run_id": "37864734645",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "fashion": {
+      "profile": "fashion",
+      "status": "success",
+      "archive": "fashion/archive/2026-10-09.md",
+      "title": "日韩女生把针织开衫穿得不显老，关键不是买贵的",
+      "workflow_run_id": "37865660301",
+      "gates": {
+        "image-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    }
+  },
+  "topic_scan_date": "2026-10-09",
+  "topic_scan_available": true,
+  "topic_popularity_verified_count": {
+    "qiezhi": 0,
+    "wechat": 0,
+    "business": 0,
+    "zizhitongjian": 0,
+    "parenting": 0,
+    "jingyun": 0,
+    "fashion": 0
+  },
+  "note": "Repo receipt + hash + today's article + gates; not direct WeChat UI visual confirmation."
+}

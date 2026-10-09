@@ -2,22 +2,22 @@
   "status": "PASS",
   "profile": "jingyun",
   "profile_name": "静筠日记｜女性生活",
-  "score": 9,
-  "body_chars": 2775,
-  "template_hits": 1,
+  "score": 0,
+  "body_chars": 2562,
+  "template_hits": 0,
   "internal_hits": 0,
-  "fact_signals": 11,
-  "stance_signals": 5,
+  "fact_signals": 10,
+  "stance_signals": 4,
   "paragraph_regularity": {
-    "paragraphs": 71,
-    "cv": 0.343
+    "paragraphs": 50,
+    "cv": 0.407
   },
   "sentence_repetition": {
-    "sentences": 116,
-    "repeated_starts": 3,
-    "ratio": 0.026
+    "sentences": 84,
+    "repeated_starts": 1,
+    "ratio": 0.012
   },
-  "very_short_paragraph_ratio": 0.392,
+  "very_short_paragraph_ratio": 0.167,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

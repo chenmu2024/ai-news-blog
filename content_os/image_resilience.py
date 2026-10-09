@@ -1,8 +1,9 @@
 """Validate and stage article images *before* contacting WeChat.
 
 Works without paid APIs, cookies, browser sessions or CAPTCHA bypass.
-Unlicensed/unrelated images are never silently substituted. Explicit alternate
-images must be editorially verified as relevant and permitted for re-use.
+Unlicensed/unrelated images are never silently substituted. Contextual
+stock-photo alternatives are permitted for the four illustration-led profiles;
+celebrity, product and business evidence photos keep strict subject matching.
 The archive remains immutable after a successful draft receipt.
 """
 from __future__ import annotations
@@ -22,7 +23,12 @@ HTML_IMAGE_RE = re.compile(r"""<img\b[^>]*\bsrc\s*=\s*["']https?://[^"']+["']"""
 BACKUPS_RE = re.compile(r"<!--\s*IMAGE_BACKUPS\s*(\{[\s\S]*?\})\s*-->", re.S)
 FASHION_RE = re.compile(r"<!--\s*FASHION_SOURCE\s*(\{[\s\S]*?\})\s*-->", re.S)
 SUPPORTED_RIGHTS = {"owned", "permission", "pexels_license", "unsplash_license",
-                    "commons_licensed", "cc0", "public_domain"}
+                    "pixabay_license", "commons_licensed", "cc0", "public_domain"}
+# Informational/lifestyle channels may use Pexels/Unsplash-like *illustration*
+# that matches the paragraph scene rather than the very same pictured person.
+SCENE_IMAGE_PROFILES = frozenset({"qiezhi", "zizhitongjian", "parenting", "jingyun"})
+STRICT_IMAGE_PROFILES = frozenset({"wechat", "business", "fashion"})
+ALL_PROFILES = SCENE_IMAGE_PROFILES | STRICT_IMAGE_PROFILES
 MAX_BYTES = 14 * 1024 * 1024
 MAX_PIXELS = 28_000_000
 Image.MAX_IMAGE_PIXELS = MAX_PIXELS
@@ -60,7 +66,7 @@ def pexels_jpeg_variant(url: str) -> str | None:
     return urlunparse(p._replace(query=urlencode(query)))
 
 
-def _read_backups(markdown: str) -> dict[str, list[str]]:
+def _read_backups(markdown: str, profile: str) -> dict[str, list[str]]:
     mapping: dict[str, list[str]] = {}
     specs = []
     for regex in (BACKUPS_RE, FASHION_RE):
@@ -91,10 +97,14 @@ def _read_backups(markdown: str) -> dict[str, list[str]]:
             source_page = candidate.get("source_page_url")
             verified = candidate.get("verified") is True
             subject_match = candidate.get("subject_match") is True
+            # Scene-only matches are accepted for four illustrative channels,
+            # never for documentary/celebrity/product/business evidence.
+            scene_match = candidate.get("scene_match") is True
+            relevant = subject_match or (profile in SCENE_IMAGE_PROFILES and scene_match)
             rights = candidate.get("rights")
             if (isinstance(candidate_url, str) and public_https(candidate_url)
                     and isinstance(source_page, str) and public_https(source_page)
-                    and verified and subject_match and rights in SUPPORTED_RIGHTS):
+                    and verified and relevant and rights in SUPPORTED_RIGHTS):
                 mapping.setdefault(primary, []).append(candidate_url)
     return mapping
 
@@ -160,12 +170,12 @@ def _get_image(url: str, session=None) -> tuple[bytes, str, str]:
 def prepare_images(markdown: str, profile: str, session=None) -> dict[str, tuple[bytes, str, str]]:
     """All-or-nothing staging; never upload anything to WeChat on preflight failure.
 
-    Each original image URL is preserved for article rendering. An alternate
-    is allowed only after editorial metadata explicitly validates rights and
-    subject relevance; never substitute generic stock for a named person.
+    Each original image URL is preserved for article rendering. Alternatives
+    require editorial evidence for rights and relevance. qiezhi/zizhitongjian/
+    parenting/jingyun may use scene-matched free stock, only as illustration;
+    celebrity, named-person, product and business evidence remain strict.
     """
-    if profile not in {"wechat", "business", "zizhitongjian", "parenting",
-                       "jingyun", "fashion"}:
+    if profile not in ALL_PROFILES:
         raise ValueError("Unknown image preflight profile")
     if HTML_IMAGE_RE.search(markdown):
         raise ValueError("External HTML <img> must be Markdown image syntax for safe WeChat upload")
@@ -174,7 +184,7 @@ def prepare_images(markdown: str, profile: str, session=None) -> dict[str, tuple
         raise ValueError("Fashion requires at least five distinct real images")
     if not urls:
         return {}
-    backups = _read_backups(markdown)
+    backups = _read_backups(markdown, profile)
     result = {}
     for original in urls:
         candidates = [original]

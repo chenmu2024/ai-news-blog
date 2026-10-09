@@ -55,10 +55,10 @@ def is_useful_discovery(item):
     url = item.get("url") or ""
     # Explicit old-year headlines can inform background research but must not
     # be promoted to a current audience-interest sample.
-    years = [int(y) for y in re.findall(r"(?<!\\d)(20\\d{2})(?!\\d)", title)]
+    years = [int(y) for y in re.findall(r"(?<!\d)(20\d{2})(?!\d)", title)]
     stale_year = any(y < datetime.now(LOCAL).year - 1 for y in years)
     wechat_login = bool(re.search(
-        r"(?i)^(?:weixin\\s*[-—:]\\s*)?微信公众平台\\s*[-—:]\\s*微信公众平台$",
+        r"(?i)^(?:weixin\s*[-—:]\s*)?微信公众平台\s*[-—:]\s*微信公众平台$",
         title,
     ))
     return (len(title) >= 6 and title not in UNTRUSTED_GENERIC_TITLES

@@ -81,5 +81,54 @@ class TopicScanTests(unittest.TestCase):
         self.assertFalse(row["heat_verified"])
 
 
+    @patch.object(m, "bing_news_results")
+    @patch.object(m, "wechat_results")
+    @patch.object(m, "news_index_results")
+    def test_public_news_backup_never_becomes_wechat_popularity(self, google, wechat, bing):
+        wechat.side_effect = OSError("public index down")
+        google.return_value = []
+        bing.return_value = [{
+            "title": "一家真实公司发布了新的公告",
+            "url": "https://example.com/report",
+            "platform": "bing_news_rss_non_wechat", "heat_verified": False,
+            "reference_only": True
+        }]
+        result = m.scan("business", use_extra_public_fallback=True)
+        self.assertEqual(result["sample_count"], 0)
+        self.assertEqual(result["heat_evidence_count"], 0)
+        self.assertEqual(result["topic_gate"], "insufficient_evidence")
+        self.assertTrue(result["writing_allowed"])
+        self.assertEqual(result["fallback_news_count"], 1)
+        self.assertEqual(result["sources"]["bing_news_fallback"]["status"], "ok")
+
+    @patch.object(m, "bing_news_results")
+    @patch.object(m, "wechat_results")
+    @patch.object(m, "news_index_results")
+    def test_all_sources_failing_still_allows_fact_based_writing(self, google, wechat, bing):
+        wechat.side_effect = OSError("unavailable")
+        google.side_effect = OSError("unavailable")
+        bing.side_effect = OSError("unavailable")
+        result = m.scan("parenting", use_extra_public_fallback=True)
+        self.assertEqual(result["sample_count"], 0)
+        self.assertEqual(result["fallback_news_count"], 0)
+        self.assertEqual(result["topic_gate"], "insufficient_evidence")
+        self.assertTrue(result["writing_allowed"])
+        self.assertEqual(result["sources"]["bing_news_fallback"]["status"], "error")
+
+    @patch.object(m, "fetch")
+    def test_bing_rss_is_reference_only(self, fetch):
+        fetch.return_value = ('<rss><channel><item>'
+                              '<title>一家企业宣布新产品功能</title>'
+                              '<link>https://example.com/news/story</link>'
+                              '<pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>'
+                              '</item></channel></rss>')
+        items = m.bing_news_results("企业 AI")
+        self.assertEqual(len(items), 1)
+        self.assertTrue(items[0]["reference_only"])
+        self.assertFalse(items[0]["heat_verified"])
+        self.assertIsNone(items[0]["published_at"])
+        self.assertIn("not a WeChat original", items[0]["verification"])
+
+
 if __name__ == "__main__":
     unittest.main()

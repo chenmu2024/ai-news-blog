@@ -332,6 +332,44 @@ def scan(profile, max_items=8, with_images=False, public_rankings=None, use_extr
             "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."}
 
 
+
+def attach_fallback_references(report: dict, prior: dict, today: str) -> None:
+    """Keep earlier *labeled* clues if a later no-cost scan loses every source.
+
+    Never increase today's live sample or verified popularity counters.
+    Same-day cached headlines come from earlier *actual* scanning today;
+    yesterday's headlines are historical ideas, never today's report.
+    """
+    previous_day = prior.get("local_date")
+    if not isinstance(previous_day, str) or previous_day > today:
+        return
+    for profile, item in report["profiles"].items():
+        if item["sample_count"] > 0 or item.get("fallback_news_count", 0) > 0:
+            continue
+        old = prior.get("profiles", {}).get(profile, {})
+        hints = [x for x in old.get("articles", []) if is_useful_discovery(x)][:5]
+        if not hints:
+            hints = [x for x in old.get("same_day_cached_references", []) if
+                     is_useful_discovery(x)][:5]
+        if not hints:
+            continue
+        if previous_day == today:
+            item["same_day_cached_references"] = hints
+            item["same_day_cache_generated_at"] = prior.get("generated_at")
+            item["sources"]["same_day_cache"] = {
+                "status": "cached_earlier_today_not_new_fetch",
+                "count": len(hints), "date": today
+            }
+        else:
+            item["prior_reference_date"] = previous_day
+            item["prior_references"] = hints
+            item["sources"]["stale_reference"] = {
+                "status": "historical_reference_only", "count": len(hints),
+                "date": previous_day,
+            }
+
+
+
 def render(report):
     ranking = report.get("public_ranking_discovery", {})
     lines = ["# 七公众号｜免费公开选题发现", "", "生成时间：" + report["generated_at"], "",
@@ -355,6 +393,11 @@ def render(report):
             for item in entry["fallback_news_signals"]:
                 lines.append("- [" + item["title"].replace("]", "") + "](" + item["url"] + ")"
                              + "（免费新闻RSS备用线索；并非微信热度，事实仍需核验）")
+        if entry.get("same_day_cached_references"):
+            lines.extend(["", "**当天较早扫描缓存：本轮外部源不可用，仍不计新的热度证据。**"])
+            for item in entry["same_day_cached_references"]:
+                lines.append("- [" + item["title"].replace("]", "") + "](" + item["url"] + ")"
+                             + "（同日早些时候扫描，当前未重新核验）")
         if entry.get("prior_references"):
             lines.extend(["", "**旧日线索：仅供选题发散，严禁冒充当天扫描：** " +
                           entry.get("prior_reference_date", "unknown")])
@@ -383,8 +426,6 @@ def main():
     prior_report = {}
     try:
         prior_report = json.loads((OUTPUT / "latest.json").read_text(encoding="utf-8"))
-        if prior_report.get("local_date") == today:
-            prior_report = {}
     except (FileNotFoundError, OSError, json.JSONDecodeError):
         prior_report = {}
     public_ranking_data = find_public_rankings(fetch, today=datetime.now(LOCAL).date(),
@@ -403,19 +444,7 @@ def main():
               "profiles": {key: scan(key, with_images=args.images,
                                     public_rankings=public_ranking_data["entries"],
                                     use_extra_public_fallback=True) for key in targets}}
-    if prior_report and prior_report.get("local_date") < today:
-        for profile, item in report["profiles"].items():
-            if item["sample_count"] > 0 or item.get("fallback_news_count", 0) > 0:
-                continue
-            old = prior_report.get("profiles", {}).get(profile, {})
-            hints = [x for x in old.get("articles", []) if
-                     is_useful_discovery(x)]
-            item["prior_reference_date"] = prior_report["local_date"]
-            item["prior_references"] = hints[:5]
-            item["sources"]["stale_reference"] = {
-                "status": "historical_reference_only", "count": len(hints),
-                "date": prior_report["local_date"],
-            }
+    attach_fallback_references(report, prior_report, today)
     report["all_live_sources_unavailable"] = all(
         item["sample_count"] == 0 and item.get("fallback_news_count", 0) == 0
         for item in report["profiles"].values()

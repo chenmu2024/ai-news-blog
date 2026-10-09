@@ -101,19 +101,37 @@ class TopicScanTests(unittest.TestCase):
         self.assertEqual(result["fallback_news_count"], 1)
         self.assertEqual(result["sources"]["bing_news_fallback"]["status"], "ok")
 
+    @patch.object(m, "general_news_results")
     @patch.object(m, "bing_news_results")
     @patch.object(m, "wechat_results")
     @patch.object(m, "news_index_results")
-    def test_all_sources_failing_still_allows_fact_based_writing(self, google, wechat, bing):
+    def test_all_sources_failing_still_allows_fact_based_writing(self, google, wechat, bing, general):
         wechat.side_effect = OSError("unavailable")
         google.side_effect = OSError("unavailable")
         bing.side_effect = OSError("unavailable")
+        general.side_effect = OSError("unavailable")
         result = m.scan("parenting", use_extra_public_fallback=True)
         self.assertEqual(result["sample_count"], 0)
         self.assertEqual(result["fallback_news_count"], 0)
         self.assertEqual(result["topic_gate"], "insufficient_evidence")
         self.assertTrue(result["writing_allowed"])
         self.assertEqual(result["sources"]["bing_news_fallback"]["status"], "error")
+
+    @patch.object(m, "bing_news_results")
+    @patch.object(m, "wechat_results")
+    @patch.object(m, "news_index_results")
+    def test_full_wechat_sample_without_heat_still_adds_news_signal(self, google, wechat, bing):
+        wechat.return_value = [{"title": "真实公众号候选标题编号" + str(i),
+                                "url": "https://weixin.sogou.com/link?q=" + str(i),
+                                "heat_verified": False} for i in range(5)]
+        google.return_value = []
+        bing.return_value = [{"title": "公开来源报道新企业事件",
+                              "url": "https://example.com/news",
+                              "heat_verified": False}]
+        result = m.scan("business", use_extra_public_fallback=True)
+        self.assertEqual(result["sample_count"], 5)
+        self.assertEqual(result["fallback_news_count"], 1)
+        self.assertEqual(result["heat_evidence_count"], 0)
 
     @patch.object(m, "fetch")
     def test_bing_rss_is_reference_only(self, fetch):

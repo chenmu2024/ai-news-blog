@@ -7,6 +7,12 @@ import markdown
 import requests
 from PIL import Image, ImageDraw, ImageFont
 
+# Shared zero-cost preflight; no WeChat API call until every source image is staged.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from content_os.image_resilience import prepare_images, strip_image_backup_notes
+_PREPARED_IMAGES = {}
+
+
 APP_ID = os.environ["WECHAT_APP_ID"].strip()
 APP_SECRET = os.environ["WECHAT_APP_SECRET"].strip()
 PROXY_URL = (os.getenv("PROXY_URL") or os.getenv("FIXIE_URL") or "").strip()
@@ -278,53 +284,10 @@ def replace_cards(md, tok):
     return out, count[0]
 
 def get_image(url):
-    r = None
-    last = None
-    for attempt in range(4):
-        try:
-            r = requests.get(
-                url,
-                timeout=40,
-                allow_redirects=True,
-                headers={
-                    "User-Agent": "Mozilla/5.0 (compatible; ParentingWeChatPublisher/1.0)",
-                    "Accept": "image/jpeg,image/png;q=0.9,*/*;q=0.1",
-                },
-            )
-            if r.status_code == 429:
-                wait = 2 ** attempt
-                print(f"[IMAGE_RETRY] 429 for {url}; sleep {wait}s")
-                time.sleep(wait)
-                last = RuntimeError(f"429 Too Many Requests: {url}")
-                continue
-            r.raise_for_status()
-            break
-        except Exception as e:
-            last = e
-            if attempt >= 3:
-                raise
-            time.sleep(2 ** attempt)
-    if r is None or not r.ok:
-        raise last or RuntimeError("图片下载失败: " + url)
-    ct = (r.headers.get("Content-Type") or "").split(";")[0].lower()
-    if ct not in ("image/png", "image/jpeg"):
-        raise RuntimeError("图片类型不合格: %s -> %s" % (url, ct))
-
-    # Only the WeChat upload goes through Fixie. Compress first to conserve
-    # the free proxy bandwidth while keeping article images readable.
-    img = Image.open(BytesIO(r.content))
-    img.thumbnail((1200, 1200))
-    if img.mode in ("RGBA", "LA"):
-        bg = Image.new("RGB", img.size, "white")
-        alpha = img.getchannel("A")
-        bg.paste(img.convert("RGB"), mask=alpha)
-        img = bg
-    elif img.mode != "RGB":
-        img = img.convert("RGB")
-
-    out = BytesIO()
-    img.save(out, format="JPEG", quality=82, optimize=True)
-    return out.getvalue(), "image/jpeg", ".jpg"
+    # Bytes were decoded and converted to JPEG before the first WeChat API request.
+    if url not in _PREPARED_IMAGES:
+        raise RuntimeError("Image was not prepared by Content OS preflight: " + url)
+    return _PREPARED_IMAGES[url]
 
 def upload_body(tok, content, mime, ext):
     r = request_with_proxy(
@@ -433,7 +396,7 @@ def create_draft(tok, title, body, cover_id):
 def main():
     if not ARTICLE.exists():
         fail("文章不存在: " + str(ARTICLE))
-    md = strip_internal_notes(unwrap(ARTICLE.read_text(encoding="utf-8")))
+    md = strip_image_backup_notes(strip_internal_notes(unwrap(ARTICLE.read_text(encoding="utf-8"))))
     title = title_of(md)
     api_title = wechat_safe_title(title)
     digest = digest_of(md)
@@ -444,6 +407,10 @@ def main():
     print("[PROXY]", "Static proxy enabled" if PROXIES else "Direct connection")
     print("[SHA256]", sha)
 
+    # Failure here is safe: neither media/uploadimg nor draft/add was called.
+    _PREPARED_IMAGES.clear()
+    _PREPARED_IMAGES.update(prepare_images(ARTICLE.read_text(encoding="utf-8"), profile="parenting"))
+    print("[IMAGE_PREFLIGHT] staged", len(_PREPARED_IMAGES), "real source images")
     tok = token()
     body_md = re.sub(r"(?m)^#\s+.+?\s*$", "", md, count=1).lstrip()
     body_md, _card_count = replace_cards(body_md, tok)

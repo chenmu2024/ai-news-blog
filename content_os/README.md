@@ -67,3 +67,11 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成 Humanize 再�
 的独立线索备用（不计微信热门热度），当日扫描异常也继续依靠官方资料完成原创写作。
 回归测试见 `content_os/tests/test_image_resilience.py`、
 `.github/workflows/content-image-resilience-tests.yml`。
+
+### 按账号分级的免费图库配图（2026-10-09）
+
+- **A 且知 / D 资治通鉴 / E 育儿 / F 静筠日记**：可使用 Pexels、Unsplash、Pixabay 等免费授权场景图片；备用可为另一张同主题/情绪场景照，元数据注明 `scene_match: true`，不要求照片人物、地点与文章人物/历史事件相同，但**不得暗示真实事件现场或具体个案**。
+- **B AI一人公司 / C 生意显微镜 / G 女装穿搭**：保持真实产品、真实公司门店/资料、真实穿搭素材标准；备用仍需主体匹配，不能用无关图替代。
+- 所有外图必须可用、授权方式适用于使用场景，并在调用公众号官方草稿接口前预检解码和转换。A 号也可在现有自制卡片之外上传图库实景照；旧成功归档不重复触发草稿。
+
+详见 `content_os/RESILIENCE_POLICY.md` 和各账号 `STYLE.md`。

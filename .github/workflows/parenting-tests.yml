@@ -7,6 +7,8 @@ on:
       - "parenting/publish_draft.py"
       - "parenting/STYLE.md"
       - "content_os/quality_gate.py"
+      - "content_os/editorial_guard.py"
+      - "content_os/tests/test_editorial_guard.py"
       - ".github/workflows/parenting-draft.yml"
       - ".github/workflows/parenting-tests.yml"
   workflow_dispatch:
@@ -28,7 +30,8 @@ jobs:
       - name: Syntax checks
         run: |
           python -m py_compile parenting/publish_draft.py
-          python -m py_compile content_os/quality_gate.py
+          python -m py_compile content_os/quality_gate.py content_os/editorial_guard.py
+          python -m unittest discover -s content_os/tests -p test_editorial_guard.py -v
 
       - name: Public copy sanitizer test
         env:

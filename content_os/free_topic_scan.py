@@ -46,13 +46,23 @@ SUPPLEMENTARY_QUERIES = {
 UNTRUSTED_GENERIC_TITLES = frozenset({
     "微信公众平台", "微信公众平台 - 微信公众平台", "微信公众平台 - 微信公众平台",
     "微信公众号", "微信公众号登录", "微信公众平台登录",
+    "Weixin - 微信公众平台 - 微信公众平台",
 })
 
 
 def is_useful_discovery(item):
     title = re.sub(r"\s+", " ", (item.get("title") or "")).strip()
     url = item.get("url") or ""
+    # Explicit old-year headlines can inform background research but must not
+    # be promoted to a current audience-interest sample.
+    years = [int(y) for y in re.findall(r"(?<!\\d)(20\\d{2})(?!\\d)", title)]
+    stale_year = any(y < datetime.now(LOCAL).year - 1 for y in years)
+    wechat_login = bool(re.search(
+        r"(?i)^(?:weixin\\s*[-—:]\\s*)?微信公众平台\\s*[-—:]\\s*微信公众平台$",
+        title,
+    ))
     return (len(title) >= 6 and title not in UNTRUSTED_GENERIC_TITLES
+            and not stale_year and not wechat_login
             and urlparse(url).scheme == "https")
 
 

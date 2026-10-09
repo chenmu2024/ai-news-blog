@@ -7,6 +7,8 @@ import statistics
 import sys
 from pathlib import Path
 
+from editorial_guard import assess_editorial_title
+
 PROFILES = {
     "ai_business": {
         "name": "陈慕｜AI 一人公司实战",
@@ -325,6 +327,16 @@ def main() -> int:
         return 2
 
     result = evaluate(article.read_text(encoding="utf-8"), args.profile)
+    if args.profile in ("parenting", "business_story"):
+        heading = next(
+            (line[2:].strip() for line in article.read_text(encoding="utf-8").splitlines()
+             if line.startswith("# ")), ""
+        )
+        editorial = assess_editorial_title(args.profile, article, heading)
+        result["editorial_title_guard"] = editorial
+        if editorial["status"] == "FAIL":
+            result["hard_failures"].extend(editorial["reasons"])
+            result["status"] = "FAIL"
     payload = json.dumps(result, ensure_ascii=False, indent=2)
     print(payload)
     if args.json_out:

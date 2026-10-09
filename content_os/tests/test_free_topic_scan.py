@@ -148,5 +148,39 @@ class TopicScanTests(unittest.TestCase):
         self.assertIn("not a WeChat original", items[0]["verification"])
 
 
+    def test_same_day_cache_is_only_labeled_reference_not_false_success(self):
+        old = {"local_date": "2026-10-09", "generated_at": "2026-10-09T06:10:00+08:00",
+               "profiles": {"fashion": {"articles": [{
+                   "title": "来自早晨扫描的真实穿搭标题",
+                   "url": "https://weixin.sogou.com/link?url=story"
+               }]}}}
+        report = {"profiles": {"fashion": {
+            "sample_count": 0, "heat_evidence_count": 0,
+            "fallback_news_count": 0, "sources": {},
+            "topic_gate": "insufficient_evidence"
+        }}}
+        m.attach_fallback_references(report, old, "2026-10-09")
+        obj = report["profiles"]["fashion"]
+        self.assertEqual(obj["sample_count"], 0)
+        self.assertEqual(obj["heat_evidence_count"], 0)
+        self.assertEqual(len(obj["same_day_cached_references"]), 1)
+        self.assertEqual(obj["sources"]["same_day_cache"]["status"],
+                         "cached_earlier_today_not_new_fetch")
+
+    def test_yesterday_cache_remains_historical(self):
+        old = {"local_date": "2026-10-08", "profiles": {"fashion": {
+            "articles": [{"title": "旧日穿搭文章线索",
+                          "url": "https://weixin.sogou.com/link?url=yesterday"}]}}}
+        report = {"profiles": {"fashion": {
+            "sample_count": 0, "heat_evidence_count": 0,
+            "fallback_news_count": 0, "sources": {}
+        }}}
+        m.attach_fallback_references(report, old, "2026-10-09")
+        item = report["profiles"]["fashion"]
+        self.assertNotIn("same_day_cached_references", item)
+        self.assertEqual(item["prior_reference_date"], "2026-10-08")
+        self.assertEqual(item["sample_count"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()

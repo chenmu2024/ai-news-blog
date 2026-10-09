@@ -189,6 +189,32 @@ def bing_news_results(query, limit=6):
     return rows[:limit]
 
 
+
+def general_news_results(query, limit=6):
+    """Third-tier news RSS candidate stream; never a WeChat popularity source."""
+    url = "https://news.google.com/rss/search?" + urlencode({
+        "q": query, "hl": "zh-CN", "gl": "CN", "ceid": "CN:zh-Hans"
+    })
+    root = ET.fromstring(fetch(url))
+    rows = []
+    for item in root.findall(".//item")[:limit]:
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        if not is_useful_discovery({"title": title, "url": link}):
+            continue
+        rows.append({
+            "title": title[:180], "url": link,
+            "platform": "google_news_general_non_wechat",
+            "published_at": None, "indexed_at": item.findtext("pubDate"),
+            "account": None, "heat": None, "heat_verified": False,
+            "verification": "general news discovery only; not a WeChat article "
+                            "or independently verified popularity",
+            "reference_only": True,
+        })
+    return rows
+
+
+
 def commons_images(query, limit=5):
     url = "https://commons.wikimedia.org/w/api.php?" + urlencode({
         "action": "query", "generator": "search", "gsrsearch": "filetype:bitmap " + query,
@@ -258,20 +284,30 @@ def scan(profile, max_items=8, with_images=False, public_rankings=None, use_extr
     # A complete failure of WeChat indexing must not block original reporting.
     # Fallback news is kept OUTSIDE the WeChat samples and verified heat gate.
     fallback_signals = []
-    if use_extra_public_fallback and len(unique) < 5:
-        try:
-            fallback_signals = bing_news_results(BING_FALLBACK_QUERIES[profile], limit=6)
-            statuses["bing_news_fallback"] = {
-                "status": "ok" if fallback_signals else "empty",
-                "count": len(fallback_signals),
-                "note": "Non-WeChat news clues; independent facts must still be verified.",
-            }
-        except (ValueError, OSError, ET.ParseError) as exc:
-            statuses["bing_news_fallback"] = {
-                "status": "error", "count": 0, "message": str(exc)[:160]
-            }
+    missing_wechat_samples = len(unique) < 5
+    missing_independent_heat = sum(bool(x.get("heat_verified")) for x in unique) < 2
+    if use_extra_public_fallback and (missing_wechat_samples or missing_independent_heat):
+        # Two independent public provider families, neither counted as WeChat.
+        for platform, discovery in [
+            ("bing_news_fallback", bing_news_results),
+            ("general_news_fallback", general_news_results),
+        ]:
+            try:
+                candidates = discovery(BING_FALLBACK_QUERIES[profile], limit=6)
+                statuses[platform] = {
+                    "status": "ok" if candidates else "empty",
+                    "count": len(candidates),
+                    "note": "Non-WeChat news clues only; facts require primary verification.",
+                }
+                if candidates:
+                    fallback_signals = candidates
+                    break
+            except (ValueError, OSError, ET.ParseError) as exc:
+                statuses[platform] = {"status": "error", "count": 0,
+                                      "message": str(exc)[:160]}
     else:
         statuses["bing_news_fallback"] = {"status": "not_needed", "count": 0}
+        statuses["general_news_fallback"] = {"status": "not_needed", "count": 0}
 
     # Strict: only publicly independently verified rankings/read counts can
     # satisfy heat evidence; no guessed readings or account names.
@@ -318,7 +354,7 @@ def render(report):
             lines.extend(["", "**独立新闻RSS备用线索（非微信文章、非热门证据）：**"])
             for item in entry["fallback_news_signals"]:
                 lines.append("- [" + item["title"].replace("]", "") + "](" + item["url"] + ")"
-                             + "（Bing 新闻索引；发布时间/原始事实仍需核验）")
+                             + "（免费新闻RSS备用线索；并非微信热度，事实仍需核验）")
         if entry.get("prior_references"):
             lines.extend(["", "**旧日线索：仅供选题发散，严禁冒充当天扫描：** " +
                           entry.get("prior_reference_date", "unknown")])

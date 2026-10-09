@@ -17,9 +17,9 @@ from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 import requests
 from PIL import Image, ImageOps, UnidentifiedImageError
 
-IMAGE_RE = re.compile(r"!\\[[^\\]]*\\]\\((https?://[^)\\s]+)\\)")
-BACKUPS_RE = re.compile(r"<!--\\s*IMAGE_BACKUPS\\s*(\\{[\\s\\S]*?\\})\\s*-->", re.S)
-FASHION_RE = re.compile(r"<!--\\s*FASHION_SOURCE\\s*(\\{[\\s\\S]*?\\})\\s*-->", re.S)
+IMAGE_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
+BACKUPS_RE = re.compile(r"<!--\s*IMAGE_BACKUPS\s*(\{[\s\S]*?\})\s*-->", re.S)
+FASHION_RE = re.compile(r"<!--\s*FASHION_SOURCE\s*(\{[\s\S]*?\})\s*-->", re.S)
 SUPPORTED_RIGHTS = {"owned", "permission", "pexels_license", "unsplash_license",
                     "commons_licensed", "cc0", "public_domain"}
 MAX_BYTES = 14 * 1024 * 1024

@@ -1,6 +1,8 @@
 """Offline reliability regressions; no WeChat calls or network requests."""
+import importlib.util
 import io
 import json
+import os
 import sys
 import unittest
 from pathlib import Path
@@ -178,6 +180,27 @@ class ImageResilienceTests(unittest.TestCase):
         session = FakeSession({url: Response(url, data=b"<html>denied</html>", content_type="text/html")})
         with self.assertRaisesRegex(RuntimeError, "Preflight failed"):
             m.prepare_images("![Forbidden](" + url + ")", "wechat", session=session)
+
+    def test_qiezhi_uploaded_stock_url_does_not_replace_internal_card_url(self):
+        # Import publisher without calling the real WeChat API.
+        script = Path(__file__).resolve().parents[2] / "qiezhi" / "publish_draft.py"
+        with patch.dict(os.environ, {"WECHAT_APP_ID": "test",
+                                     "WECHAT_APP_SECRET": "test"}):
+            spec = importlib.util.spec_from_file_location("test_qiezhi_publisher", script)
+            pub = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(pub)
+        photo = "https://images.pexels.com/photos/333/pexels-photo-333.jpeg?fm=jpg"
+        card = "https://mmbiz.qpic.cn/sz_mmbiz_png/test-image/640"
+        markdown_text = ("![licensed lifestyle scene](" + photo + ")" +
+                         "\\n![rendered knowledge card](" + card + ")")
+        staged = {photo: (image_bytes(), "image/jpeg", ".jpg")}
+        with patch.object(pub, "upload_body",
+                          return_value="https://mmbiz.qpic.cn/approved-stock.jpg") as upload:
+            out = pub.replace_stock_images(markdown_text, "fake-token", staged)
+        upload.assert_called_once()
+        self.assertIn("https://mmbiz.qpic.cn/approved-stock.jpg", out)
+        self.assertIn(card, out)
+        self.assertNotIn(photo, out)
 
     def test_only_public_https_hosts(self):
         for url in ["http://example.com/a.jpg", "https://localhost/a.jpg",

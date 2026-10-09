@@ -288,7 +288,7 @@ def get_image(url):
                 allow_redirects=True,
                 headers={
                     "User-Agent": "Mozilla/5.0 (compatible; ParentingWeChatPublisher/1.0)",
-                    "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+                    "Accept": "image/jpeg,image/png;q=0.9,*/*;q=0.1",
                 },
             )
             if r.status_code == 429:

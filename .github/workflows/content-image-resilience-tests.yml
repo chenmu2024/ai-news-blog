@@ -6,6 +6,7 @@ on:
     paths:
       - "content_os/image_resilience.py"
       - "content_os/tests/test_image_resilience.py"
+      - "qiezhi/publish_draft.py"
       - "wechat/publish_draft.py"
       - "business/publish_draft.py"
       - "zizhitongjian/publish_draft.py"
@@ -32,7 +33,7 @@ jobs:
       - name: Validate publisher syntax
         run: |
           python -m py_compile content_os/image_resilience.py \
-            wechat/publish_draft.py business/publish_draft.py \
+            qiezhi/publish_draft.py wechat/publish_draft.py business/publish_draft.py \
             zizhitongjian/publish_draft.py parenting/publish_draft.py \
             jingyun/publish_draft.py fashion/publish_draft.py
       - name: Image fallback offline regression tests

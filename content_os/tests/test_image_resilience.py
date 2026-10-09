@@ -108,8 +108,8 @@ class ImageResilienceTests(unittest.TestCase):
             "rights": "pexels_license", "verified": True,
             "scene_match": True, "subject_match": False,
         }]}]}
-        article = ("<!-- IMAGE_BACKUPS\\n" + json.dumps(metadata) +
-                   "\\n-->\\n![Reading at a desk](" + first + ")")
+        article = ("<!-- IMAGE_BACKUPS\n" + json.dumps(metadata) +
+                   "\n-->\n![Reading at a desk](" + first + ")")
         for profile in ("qiezhi", "zizhitongjian", "parenting", "jingyun"):
             with self.subTest(profile=profile):
                 session = FakeSession({
@@ -131,15 +131,15 @@ class ImageResilienceTests(unittest.TestCase):
             "rights": "pexels_license", "verified": True,
             "scene_match": True, "subject_match": False,
         }]}]}
-        five = "\\n".join("![look](https://images.example.com/look" + str(i) +
+        five = "\n".join("![look](https://images.example.com/look" + str(i) +
                            ".jpg)" for i in range(4))
-        base = ("<!-- IMAGE_BACKUPS\\n" + json.dumps(metadata) +
-                "\\n-->\\n![real product](" + first + ")")
+        base = ("<!-- IMAGE_BACKUPS\n" + json.dumps(metadata) +
+                "\n-->\n![real product](" + first + ")")
         for profile in ("wechat", "business", "fashion"):
             with self.subTest(profile=profile):
                 session = FakeSession({first: Response(first, status=403)})
                 with self.assertRaisesRegex(RuntimeError, "Preflight failed"):
-                    m.prepare_images(base + ("\\n" + five if profile == "fashion" else ""),
+                    m.prepare_images(base + ("\n" + five if profile == "fashion" else ""),
                                      profile, session=session)
                 self.assertEqual([u for u, _ in session.calls], [first])
 
@@ -157,8 +157,8 @@ class ImageResilienceTests(unittest.TestCase):
                     "source_page_url": "https://www.pexels.com/photo/222/",
                     **bad,
                 }]}]}
-                article = ("<!-- IMAGE_BACKUPS\\n" + json.dumps(descriptor) +
-                           "\\n-->\\n![illustration](" + first + ")")
+                article = ("<!-- IMAGE_BACKUPS\n" + json.dumps(descriptor) +
+                           "\n-->\n![illustration](" + first + ")")
                 session = FakeSession({first: Response(first, status=403)})
                 with self.assertRaisesRegex(RuntimeError, "Preflight failed"):
                     m.prepare_images(article, "parenting", session=session)

@@ -2,22 +2,22 @@
   "status": "PASS",
   "profile": "business_story",
   "profile_name": "生意显微镜｜商业故事",
-  "score": 23,
-  "body_chars": 2827,
-  "template_hits": 2,
+  "score": 27,
+  "body_chars": 2334,
+  "template_hits": 3,
   "internal_hits": 0,
-  "fact_signals": 33,
+  "fact_signals": 38,
   "stance_signals": 0,
   "paragraph_regularity": {
-    "paragraphs": 57,
-    "cv": 0.529
+    "paragraphs": 39,
+    "cv": 0.417
   },
   "sentence_repetition": {
-    "sentences": 91,
+    "sentences": 67,
     "repeated_starts": 2,
-    "ratio": 0.022
+    "ratio": 0.03
   },
-  "very_short_paragraph_ratio": 0.162,
+  "very_short_paragraph_ratio": 0.204,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

@@ -42,6 +42,20 @@ class TopicScanTests(unittest.TestCase):
             "title": "一个品牌被收购之后发生了什么",
             "url": "https://weixin.sogou.com/link?url=story"}))
 
+    def test_login_page_and_explicit_old_year_are_not_current_stories(self):
+        self.assertFalse(m.is_useful_discovery({
+            "title": "Weixin - 微信公众平台 - 微信公众平台",
+            "url": "https://weixin.qq.com/login"
+        }))
+        self.assertFalse(m.is_useful_discovery({
+            "title": "2023年度消费品牌TOP100 瑞幸增长榜单",
+            "url": "https://weixin.sogou.com/link?url=old"
+        }))
+        self.assertTrue(m.is_useful_discovery({
+            "title": "瑞幸咖啡近期开店的商业逻辑",
+            "url": "https://weixin.sogou.com/link?url=new"
+        }))
+
     @patch.object(m, "wechat_results")
     @patch.object(m, "news_index_results")
     def test_insufficient_heat_uses_fact_based_writing_fallback(self, news, wechat):

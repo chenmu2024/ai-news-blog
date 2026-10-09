@@ -99,6 +99,71 @@ class ImageResilienceTests(unittest.TestCase):
             m.prepare_images(article, "business", session=session)
         self.assertEqual([x[0] for x in session.calls], [first])
 
+    def test_licensed_scene_photo_fallback_allowed_for_four_profiles(self):
+        first = "https://images.example.com/old-study-photo.jpg"
+        replacement = "https://images.pexels.com/photos/999/pexels-photo-999.jpeg?fm=jpg"
+        metadata = {"images": [{"primary": first, "alternatives": [{
+            "image_url": replacement,
+            "source_page_url": "https://www.pexels.com/photo/999/",
+            "rights": "pexels_license", "verified": True,
+            "scene_match": True, "subject_match": False,
+        }]}]}
+        article = ("<!-- IMAGE_BACKUPS\\n" + json.dumps(metadata) +
+                   "\\n-->\\n![Reading at a desk](" + first + ")")
+        for profile in ("qiezhi", "zizhitongjian", "parenting", "jingyun"):
+            with self.subTest(profile=profile):
+                session = FakeSession({
+                    first: Response(first, status=403),
+                    replacement: Response(replacement, data=image_bytes()),
+                })
+                prepared = m.prepare_images(article, profile, session=session)
+                self.assertIn(first, prepared)
+                self.assertEqual([u for u, _ in session.calls],
+                                 [first, replacement])
+                self.assertEqual(prepared[first][1], "image/jpeg")
+
+    def test_scene_only_fallback_does_not_weaken_three_restricted_profiles(self):
+        first = "https://images.example.com/pictured-real-shop.jpg"
+        unrelated = "https://images.pexels.com/photos/999/pexels-photo-999.jpeg?fm=jpg"
+        metadata = {"images": [{"primary": first, "alternatives": [{
+            "image_url": unrelated,
+            "source_page_url": "https://www.pexels.com/photo/999/",
+            "rights": "pexels_license", "verified": True,
+            "scene_match": True, "subject_match": False,
+        }]}]}
+        five = "\\n".join("![look](https://images.example.com/look" + str(i) +
+                           ".jpg)" for i in range(4))
+        base = ("<!-- IMAGE_BACKUPS\\n" + json.dumps(metadata) +
+                "\\n-->\\n![real product](" + first + ")")
+        for profile in ("wechat", "business", "fashion"):
+            with self.subTest(profile=profile):
+                session = FakeSession({first: Response(first, status=403)})
+                with self.assertRaisesRegex(RuntimeError, "Preflight failed"):
+                    m.prepare_images(base + ("\\n" + five if profile == "fashion" else ""),
+                                     profile, session=session)
+                self.assertEqual([u for u, _ in session.calls], [first])
+
+    def test_scene_fallback_requires_license_and_verified_source(self):
+        first = "https://images.example.com/one.jpg"
+        backup = "https://images.pexels.com/photos/222/pexels-photo-222.jpeg"
+        for bad in (
+            {"rights": "public_platform", "verified": True, "scene_match": True},
+            {"rights": "pexels_license", "verified": False, "scene_match": True},
+            {"rights": "pexels_license", "verified": True, "scene_match": False},
+        ):
+            with self.subTest(bad=bad):
+                descriptor = {"images": [{"primary": first, "alternatives": [{
+                    "image_url": backup,
+                    "source_page_url": "https://www.pexels.com/photo/222/",
+                    **bad,
+                }]}]}
+                article = ("<!-- IMAGE_BACKUPS\\n" + json.dumps(descriptor) +
+                           "\\n-->\\n![illustration](" + first + ")")
+                session = FakeSession({first: Response(first, status=403)})
+                with self.assertRaisesRegex(RuntimeError, "Preflight failed"):
+                    m.prepare_images(article, "parenting", session=session)
+                self.assertEqual(len(session.calls), 1)
+
     def test_transparent_png_becomes_jpeg_with_white_background(self):
         url = "https://images.example.com/clear.png"
         png = image_bytes(mode="RGBA", fmt="PNG", color=(255, 0, 0, 120))

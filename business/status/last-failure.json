@@ -3,11 +3,11 @@
   "date": "2026-10-09",
   "profile": "business",
   "article_path": "business/archive/",
-  "workflow_run_id": "37864917164",
-  "url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37864917164",
+  "workflow_run_id": "37865954129",
+  "url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37865954129",
   "jobs": [
     {
-      "id": 113609246243,
+      "id": 113612608658,
       "name": "create-business-draft",
       "conclusion": null,
       "failed_steps": []

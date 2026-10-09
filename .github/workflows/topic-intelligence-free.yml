@@ -15,6 +15,10 @@ on:
     - cron: "10 22 * * *"
     # 06:50 Asia/Shanghai: free recovery scan when the first run is delayed.
     - cron: "50 22 * * *"
+    # 07:30 and 07:55 China-time backup windows before the 08:20 writing task.
+    # GitHub scheduled jobs are best-effort, not guaranteed to start on time.
+    - cron: "30 23 * * *"
+    - cron: "55 23 * * *"
 
 permissions:
   contents: write

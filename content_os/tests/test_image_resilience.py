@@ -91,7 +91,7 @@ class ImageResilienceTests(unittest.TestCase):
         }]}]}
         article = "<!-- IMAGE_BACKUPS\n" + json.dumps(descriptor) + "\n-->\n![Actual](" + first + ")"
         session = FakeSession({first: Response(first, status=403)})
-        with self.assertRaisesRegex(RuntimeError, "Preflight failed"):
+        with self.assertRaisesRegex(ValueError, "five distinct"):
             m.prepare_images(article, "fashion", session=session)
         self.assertEqual(len(session.calls), 0)  # Fashion must first have 5 distinct images
         # With no fashion minimum, the unlicensed alternate remains unreachable.

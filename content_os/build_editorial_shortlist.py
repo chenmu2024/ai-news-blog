@@ -21,8 +21,8 @@ PROFILE_POSITIVE = {
     "fashion": re.compile(r"杨幂|刘亦菲|赵露思|Jisoo|Jennie|张员瑛|宋慧乔|林允儿|机场|时装周|穿搭|造型|礼服|秀场", re.I),
 }
 MARKETING = re.compile(r"福利|课程|合集|PDF下载|加微信|领取|训练营|知识付费|好书推荐|全套")
-SENSATIONAL = re.compile(r"炸锅|低胸|身材大变|走光|跳楼|自杀|惨死|杀害")
-FASHION_CONTEXT = re.compile(r"穿搭|机场|时装周|造型|礼服|秀场|街拍|西装|裙|外套|鞋|包")
+SENSATIONAL = re.compile(r"炸锅|低胸|身材大变|走光|跳楼|自杀|惨死|杀害|万箭穿心")\nRELATIONSHIP_CLICKBAIT = re.compile(r"实录[:：]?|婚外情|出轨|抓奸|原配|小三")
+FASHION_CONTEXT = re.compile(r"穿搭|造型|礼服|秀场|街拍|西装|裙|外套|鞋|包|上衣|裤|风衣|针织|大衣")
 CELEBRITY = re.compile(r"杨幂|刘亦菲|赵露思|Jisoo|Jennie|张员瑛|宋慧乔|林允儿", re.I)
 
 def editorial_quality(profile, title):
@@ -41,6 +41,9 @@ def editorial_quality(profile, title):
         flags.append("sensational_or_sensitive_framing")
         relevance-=25
         hook-=10
+    if profile=="jingyun" and RELATIONSHIP_CLICKBAIT.search(title):
+        flags.append("relationship_clickbait_requires_manual_review")
+        relevance-=25
     if profile=="fashion":
         if not CELEBRITY.search(title):
             flags.append("fashion_no_named_priority_celebrity")
@@ -100,7 +103,7 @@ def main():
             combined=list(dict.fromkeys(event.get("flags",[])+event.get("editorial_flags",[])))
             event["flags"]=combined
             severe={"marketing_or_sales_content","fashion_no_named_priority_celebrity","fashion_weak_outfit_context",
-                    "business_weak_company_event_signal","sensational_or_sensitive_framing","weak_profile_match"}
+                    "business_weak_company_event_signal","sensational_or_sensitive_framing","relationship_clickbait_requires_manual_review","weak_profile_match"}
             event["editorial_status"]="reject_or_research_only" if severe.intersection(combined) else "needs_manual_source_and_date_review"
             event["eligible_for_auto_selection"]=False
             if "unverified_heat" not in event["flags"]:

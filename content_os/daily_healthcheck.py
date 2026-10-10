@@ -56,12 +56,7 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
     expected_path = (base / "archive" / (day + ".md")).relative_to(root).as_posix()
     if reported_path != expected_path:
         errors.append("receipt_date_mismatch")
-    if raw is not None:
-        try:
-            if today.read_bytes() != raw:
-                errors.append("today_not_identical_to_archive")
-        except OSError:
-            errors.append("today_missing")
+    effective_today_raw = raw
     gates = ["quality-gate.json", "visual-gate.json"]
     if profile == "fashion":
         gates.insert(0, "image-gate.json")
@@ -111,11 +106,27 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
                 revision_status.get("operation") != "in_place_draft_update" or
                 not revision_status.get("draft_media_id")):
                 errors.append("fashion_explicit_revision_pending_or_unverified")
+            else:
+                if (status.get("current_article_path") != revised.relative_to(root).as_posix() or
+                    status.get("current_article_sha256") != revision_sha or
+                    status.get("current_title") != revision_title or
+                    status.get("draft_media_id") != revision_status.get("draft_media_id")):
+                    errors.append("fashion_current_receipt_does_not_match_revision")
+                effective_today_raw = revision_raw
+    if effective_today_raw is not None:
+        try:
+            if today.read_bytes() != effective_today_raw:
+                errors.append("today_not_identical_to_current_article")
+        except OSError:
+            errors.append("today_missing")
     source = read_json(base / "status" / "source-gate.json") if profile == "zizhitongjian" else {}
     return {
         "profile": profile, "status": "success" if not errors else "incomplete",
         "archive": archive.relative_to(root).as_posix(),
-        "title": title, "workflow_run_id": status.get("workflow_run_id"),
+        "title": (fashion_revision["title"] if fashion_revision and
+                  fashion_revision["status"] == "success" else title),
+        "archive_title": title,
+        "workflow_run_id": status.get("current_revision_workflow_run_id") or status.get("workflow_run_id"),
         "gates": gate_data,
         "journal_state": journal.get("state") or "MISSING",
         "fashion_revision": fashion_revision,

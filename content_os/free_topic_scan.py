@@ -20,6 +20,7 @@ import xml.etree.ElementTree as ET
 
 from public_rankings import find_public_rankings, related_rankings
 
+# Recovery trigger: maintain a fresh Asia/Shanghai daily public discovery archive.
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "content_os" / "topic-intelligence"
 LOCAL = ZoneInfo("Asia/Shanghai")

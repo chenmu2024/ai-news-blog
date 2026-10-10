@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "timezone": "Asia/Shanghai",
+  "policy": "Discovery sources are not verified popularity or permission to reproduce.",
+  "profiles": {
+    "qiezhi": {
+      "primary": [
+        "https://www.dswxyjy.org.cn/"
+      ],
+      "fallback": [
+        "https://www.12371.cn/",
+        "https://www.people.com.cn/"
+      ],
+      "hard_gate": "Mao Selected Works volumes 1-4 official text, exact quotation"
+    },
+    "wechat": {
+      "primary": [
+        "https://openai.com/news/",
+        "https://github.blog/feed/",
+        "https://www.anthropic.com/news"
+      ],
+      "fallback": [
+        "https://huggingface.co/blog/feed.xml",
+        "https://www.producthunt.com/feed"
+      ],
+      "hard_gate": "Title begins with 一家; verify real business case and financial claims"
+    },
+    "business": {
+      "primary": [
+        "https://www.cninfo.com.cn/",
+        "https://www.hkexnews.hk/"
+      ],
+      "fallback": [
+        "https://www.reuters.com/business/",
+        "https://www.sec.gov/edgar/search/"
+      ],
+      "hard_gate": "Company and figures grounded to dated filings or reliable reporting"
+    },
+    "zizhitongjian": {
+      "primary": [
+        "https://zh.wikisource.org/wiki/資治通鑑",
+        "https://ctext.org/wiki.pl?if=gb&res=3216"
+      ],
+      "fallback": [
+        "https://zh.wikisource.org/wiki/資治通鑑/卷001"
+      ],
+      "hard_gate": "Verify original passage against two accessible editions; never imply facsimile verification"
+    },
+    "parenting": {
+      "primary": [
+        "https://www.moe.gov.cn/",
+        "https://www.unicef.org/parenting"
+      ],
+      "fallback": [
+        "https://www.who.int/health-topics/adolescent-health",
+        "https://www.cdc.gov/child-development/"
+      ],
+      "hard_gate": "School-and-family conflicts; distinguish jurisdiction and medical evidence"
+    },
+    "jingyun": {
+      "primary": [
+        "https://www.unwomen.org/en/news",
+        "https://www.ilo.org/"
+      ],
+      "fallback": [
+        "https://www.who.int/news"
+      ],
+      "hard_gate": "No invented first-person experiences or gender antagonism"
+    },
+    "fashion": {
+      "primary": [
+        "https://www.vogue.com/fashion",
+        "https://www.elle.com/fashion/"
+      ],
+      "fallback": [
+        "https://www.harpersbazaar.com/fashion/"
+      ],
+      "hard_gate": "Recent real celebrity looks, five independently verified usable photo assets; media links not image permissions"
+    }
+  }
+}

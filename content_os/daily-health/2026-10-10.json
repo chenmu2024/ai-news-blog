@@ -1,6 +1,6 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T09:18:05.643359+08:00",
+  "generated_at": "2026-10-10T09:18:20.247979+08:00",
   "timezone": "Asia/Shanghai",
   "status": "complete",
   "success_count": 7,
@@ -16,6 +16,8 @@
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
+      "journal_state": "MISSING",
+      "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -30,6 +32,8 @@
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
+      "journal_state": "MISSING",
+      "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -44,6 +48,8 @@
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
+      "journal_state": "MISSING",
+      "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -59,6 +65,8 @@
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
+      "journal_state": "MISSING",
+      "draft_media_id_recorded": false,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
       "errors": []
@@ -73,6 +81,8 @@
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
+      "journal_state": "MISSING",
+      "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -87,6 +97,8 @@
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
+      "journal_state": "MISSING",
+      "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -102,6 +114,8 @@
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
+      "journal_state": "MISSING",
+      "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T10:52:20.811309+08:00",
+  "generated_at": "2026-10-10T11:08:54.306076+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -91,9 +91,10 @@
         },
         {
           "url": "https://www.hkexnews.hk/",
-          "status": "http_error",
-          "http_status": 403,
-          "error": "HTTP Error 403: Forbidden",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.hkexnews.hk/index.htm",
+          "content_type": "text/html",
           "role": "primary"
         },
         {

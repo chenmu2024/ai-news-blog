@@ -18,6 +18,9 @@ class TestFashionRevision(unittest.TestCase):
         self.assertIn("_media_id_from_verified_run(existing)", content)
         self.assertIn("draft_media_id", content)
         self.assertIn("_identical_revision", content)
+        self.assertIn("ensure_ascii=False", content)
+        self.assertIn("application/json; charset=utf-8", content)
+        self.assertIn("data=update_data", content)
 
     def test_wire_json_decodes_chinese_even_if_response_charset_is_wrong(self):
         tree = ast.parse(SCRIPT.read_text("utf-8"))

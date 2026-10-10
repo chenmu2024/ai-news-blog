@@ -1,5 +1,7 @@
 # 微信公众号 Topic Intelligence｜全局选题前置规则
 
+> **先读执行手册**：`content_os/OPERATIONS.md` 是每日08:20生产和11:20补漏的前置约束。先对每篇未提交稿运行 `publish_readiness.py`、适用 Gate 和 `image_preflight.py`，不要等 Actions 创建草稿时才发现缺卡、无效图片或数据来源问题。成功回执不可覆盖；见到 `draft-attempts/YYYY-MM-DD.json` 必须先核验，不允许重发。
+
 本规则适用于七个公众号方向：qiezhi、wechat、business、zizhitongjian、parenting、jingyun、fashion。
 
 ## 核心原则

@@ -55,6 +55,8 @@ def analyze(items,history):
         out[p].append({"event_id":key,"title":representative["title"],"url":representative.get("url"),
             "score":rank,"flags":flags,"independent_sources":sources,"cluster_size":len(group),
             "title_candidates":representative.get("title_candidates",[]),
+            "published_at":representative.get("published_at"),
+            "editorial_flags":list(representative.get("editorial_flags",[])),
             "metrics": {"views":representative.get("recent_views"),"baseline_views":representative.get("baseline_views")}})
     for p in PROFILES:out[p].sort(key=lambda x:(-x["score"],x["event_id"]))
     return out

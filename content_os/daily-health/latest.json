@@ -1,6 +1,6 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T10:03:28.452905+08:00",
+  "generated_at": "2026-10-10T10:05:28.949179+08:00",
   "timezone": "Asia/Shanghai",
   "status": "complete",
   "success_count": 7,
@@ -11,6 +11,7 @@
       "status": "success",
       "archive": "qiezhi/archive/2026-10-10.md",
       "title": "最伤团队的，往往不是争论，而是开会时没人说真话",
+      "archive_title": "最伤团队的，往往不是争论，而是开会时没人说真话",
       "workflow_run_id": null,
       "gates": {
         "quality-gate.json": "PASS",
@@ -28,6 +29,7 @@
       "status": "success",
       "archive": "wechat/archive/2026-10-10.md",
       "title": "一家AI公司与巨头分手后，又拿到超5亿美元：Manus的生意给一人公司什么提醒",
+      "archive_title": "一家AI公司与巨头分手后，又拿到超5亿美元：Manus的生意给一人公司什么提醒",
       "workflow_run_id": "38008917372",
       "gates": {
         "quality-gate.json": "PASS",
@@ -45,6 +47,7 @@
       "status": "success",
       "archive": "business/archive/2026-10-10.md",
       "title": "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
+      "archive_title": "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
       "workflow_run_id": "38011882219",
       "gates": {
         "quality-gate.json": "PASS",
@@ -62,6 +65,7 @@
       "status": "success",
       "archive": "zizhitongjian/archive/2026-10-10.md",
       "title": "智伯明明最强，为什么最后输给了三个弱者？",
+      "archive_title": "智伯明明最强，为什么最后输给了三个弱者？",
       "workflow_run_id": "38010834244",
       "gates": {
         "source-gate.json": "PASS",
@@ -80,6 +84,7 @@
       "status": "success",
       "archive": "parenting/archive/2026-10-10.md",
       "title": "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
+      "archive_title": "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
       "workflow_run_id": "38010683933",
       "gates": {
         "quality-gate.json": "PASS",
@@ -97,6 +102,7 @@
       "status": "success",
       "archive": "jingyun/archive/2026-10-10.md",
       "title": "40岁以后重新找工作，最难的不是把简历写漂亮",
+      "archive_title": "40岁以后重新找工作，最难的不是把简历写漂亮",
       "workflow_run_id": "38008741433",
       "gates": {
         "quality-gate.json": "PASS",
@@ -113,8 +119,9 @@
       "profile": "fashion",
       "status": "success",
       "archive": "fashion/archive/2026-10-10.md",
-      "title": "日本女生秋天把西装穿得松弛，关键不是买大一码",
-      "workflow_run_id": "38010796124",
+      "title": "Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么",
+      "archive_title": "日本女生秋天把西装穿得松弛，关键不是买大一码",
+      "workflow_run_id": "38015485717",
       "gates": {
         "image-gate.json": "PASS",
         "quality-gate.json": "PASS",

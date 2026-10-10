@@ -1,6 +1,6 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T10:37:30.529543+08:00",
+  "generated_at": "2026-10-10T10:38:34.523769+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -36,18 +36,18 @@
     "wechat": {
       "sources": [
         {
-          "url": "https://openai.com/news/",
-          "status": "http_error",
-          "http_status": 403,
-          "error": "HTTP Error 403: Forbidden",
-          "role": "primary"
-        },
-        {
           "url": "https://github.blog/feed/",
           "status": "reachable",
           "http_status": 200,
           "final_url": "https://github.blog/feed/",
           "content_type": "application/rss+xml",
+          "role": "primary"
+        },
+        {
+          "url": "https://openai.com/news/",
+          "status": "http_error",
+          "http_status": 403,
+          "error": "HTTP Error 403: Forbidden",
           "role": "primary"
         },
         {
@@ -119,18 +119,18 @@
     "zizhitongjian": {
       "sources": [
         {
-          "url": "https://zh.wikisource.org/wiki/資治通鑑",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://zh.wikisource.org/wiki/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91",
-          "content_type": "text/html",
-          "role": "primary"
-        },
-        {
           "url": "https://ctext.org/wiki.pl?if=gb&res=3216",
           "status": "reachable",
           "http_status": 200,
           "final_url": "https://ctext.org/wiki.pl?if=gb&res=3216",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/資治通鑑",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://zh.wikisource.org/wiki/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91",
           "content_type": "text/html",
           "role": "primary"
         },
@@ -166,18 +166,18 @@
           "role": "primary"
         },
         {
-          "url": "https://www.who.int/health-topics/adolescent-health",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.who.int/health-topics/adolescent-health",
-          "content_type": "text/html",
-          "role": "fallback"
-        },
-        {
           "url": "https://www.cdc.gov/child-development/",
           "status": "reachable",
           "http_status": 200,
           "final_url": "https://www.cdc.gov/child-development/",
+          "content_type": "text/html",
+          "role": "fallback"
+        },
+        {
+          "url": "https://www.who.int/health-topics/adolescent-health",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.who.int/health-topics/adolescent-health",
           "content_type": "text/html",
           "role": "fallback"
         }
@@ -189,18 +189,18 @@
     "jingyun": {
       "sources": [
         {
-          "url": "https://www.unwomen.org/en/news",
-          "status": "http_error",
-          "http_status": 403,
-          "error": "HTTP Error 403: Forbidden",
-          "role": "primary"
-        },
-        {
           "url": "https://www.ilo.org/",
           "status": "reachable",
           "http_status": 200,
           "final_url": "https://www.ilo.org/",
           "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.unwomen.org/en/news",
+          "status": "http_error",
+          "http_status": 403,
+          "error": "HTTP Error 403: Forbidden",
           "role": "primary"
         },
         {
@@ -219,18 +219,18 @@
     "fashion": {
       "sources": [
         {
-          "url": "https://www.vogue.com/fashion",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.vogue.com/fashion",
-          "content_type": "text/html",
-          "role": "primary"
-        },
-        {
           "url": "https://www.elle.com/fashion/",
           "status": "reachable",
           "http_status": 200,
           "final_url": "https://www.elle.com/fashion/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.vogue.com/fashion",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.vogue.com/fashion",
           "content_type": "text/html",
           "role": "primary"
         },

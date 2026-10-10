@@ -1,10 +1,14 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T10:05:28.949179+08:00",
+  "generated_at": "2026-10-10T10:45:14.764420+08:00",
   "timezone": "Asia/Shanghai",
   "status": "complete",
   "success_count": 7,
   "expected_count": 7,
+  "draft_confirmed_count": 0,
+  "legacy_media_id_receipt_count": 2,
+  "legacy_repo_receipt_only_count": 5,
+  "draft_confirmation_status": "legacy_compatibility",
   "accounts": {
     "qiezhi": {
       "profile": "qiezhi",
@@ -20,6 +24,8 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "legacy_status_media_id",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -38,6 +44,8 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -56,6 +64,8 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -75,6 +85,8 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmed": false,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
       "errors": []
@@ -93,6 +105,8 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -111,6 +125,8 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -135,6 +151,8 @@
         "workflow_run_id": "38015485717"
       },
       "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "legacy_status_media_id",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
       "errors": []
@@ -151,5 +169,5 @@
     "jingyun": 0,
     "fashion": 0
   },
-  "note": "Repo receipt + hash + today's article + gates; not direct WeChat UI visual confirmation."
+  "note": "status/success_count is repository compatibility. draft_confirmed_count requires the durable confirmed journal + matching SHA/path + media_id. This is not direct WeChat UI visual confirmation."
 }

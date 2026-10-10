@@ -80,12 +80,23 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
             check.get("article_path") != expected_path
         ):
             errors.append("gate_not_bound_to_archive:" + gate)
+    # Starting the first full post-rollout day, success MUST have a durable
+    # confirmation of the exact WeChat draft/add request and its media_id.
+    journal = read_json(base / "status" / "draft-attempts" / (day + ".json"))
+    if day >= "2026-10-11":
+        if (journal.get("state") != "confirmed" or
+            journal.get("article_sha256") != digest or
+            journal.get("article_path") != expected_path or
+            not journal.get("draft_media_id")):
+            errors.append("draft_add_journal_missing_or_unconfirmed")
     source = read_json(base / "status" / "source-gate.json") if profile == "zizhitongjian" else {}
     return {
         "profile": profile, "status": "success" if not errors else "incomplete",
         "archive": archive.relative_to(root).as_posix(),
         "title": title, "workflow_run_id": status.get("workflow_run_id"),
         "gates": gate_data,
+        "journal_state": journal.get("state") or "MISSING",
+        "draft_media_id_recorded": bool(journal.get("draft_media_id")),
         "verification_mode": source.get("verification_mode") if source else None,
         "image_check_done": source.get("image_check_done") if source else None,
         "errors": errors,

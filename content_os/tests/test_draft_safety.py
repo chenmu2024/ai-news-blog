@@ -41,6 +41,27 @@ class PreflightTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "successful WeChat draft"):
             preflight.inspect(self.arc, "fashion", self.status)
 
+    def test_unknown_draft_add_result_must_never_retry(self):
+        journal = self.status / "draft-attempts"
+        journal.mkdir()
+        (journal / "2026-10-08.json").write_text(json.dumps({
+            "state": "attempted", "article_sha256": self.digest,
+            "article_path": self.arc.as_posix(), "run_id": "123"
+        }), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "durable journal"):
+            preflight.inspect(self.arc, "fashion", self.status)
+
+    def test_confirmed_journal_without_latest_receipt_must_not_repost(self):
+        journal = self.status / "draft-attempts"
+        journal.mkdir()
+        (journal / "2026-10-08.json").write_text(json.dumps({
+            "state": "confirmed", "article_sha256": self.digest,
+            "draft_media_id": "test-media-id",
+            "article_path": self.arc.as_posix(), "run_id": "123"
+        }), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "durable journal"):
+            preflight.inspect(self.arc, "fashion", self.status)
+
     def test_stale_or_failed_receipt_must_not_block(self):
         (self.status / "latest.json").write_text(json.dumps({
             "status": "failure", "title": "Title", "article_sha256": self.digest,
@@ -80,6 +101,33 @@ class HealthTests(unittest.TestCase):
         result = health.make_report(self.root, self.day)
         self.assertEqual(result["status"], "complete")
         self.assertEqual(result["success_count"], 7)
+
+    def test_future_date_refuses_stale_gate_and_missing_journal(self):
+        self.day = "2026-10-11"
+        self.create_profile("business")
+        state = health.audit_profile(self.root, "business", self.day)
+        self.assertIn("draft_add_journal_missing_or_unconfirmed", state["errors"])
+        self.assertIn("gate_not_bound_to_archive:quality-gate.json", state["errors"])
+
+    def test_future_date_validated_with_bound_gates_and_confirmed_media_id(self):
+        self.day = "2026-10-11"
+        self.create_profile("business")
+        base = self.root / "business"
+        raw = (base / "archive" / "2026-10-11.md").read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()
+        for gate in ("quality-gate.json", "visual-gate.json"):
+            (base / "status" / gate).write_text(json.dumps({
+                "status": "PASS", "article_sha256": digest,
+                "article_path": "business/archive/2026-10-11.md"
+            }), encoding="utf-8")
+        journal = base / "status" / "draft-attempts"
+        journal.mkdir()
+        (journal / "2026-10-11.json").write_text(json.dumps({
+            "state": "confirmed", "draft_media_id": "receipt-123",
+            "article_sha256": digest, "article_path": "business/archive/2026-10-11.md"
+        }), encoding="utf-8")
+        state = health.audit_profile(self.root, "business", self.day)
+        self.assertEqual(state["status"], "success")
 
     def test_detects_missing_today_file(self):
         self.create_profile("jingyun")

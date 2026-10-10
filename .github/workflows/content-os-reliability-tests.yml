@@ -54,6 +54,20 @@ jobs:
           python -m py_compile {qiezhi,wechat,business,zizhitongjian,parenting,jingyun,fashion}/publish_draft.py
       - name: Offline full regression suite (no WeChat API)
         run: python -m unittest discover -s content_os/tests -p 'test_*.py' -v
+      - name: Test AIHOT editorial intelligence and seven source registries (offline)
+        run: |
+          python -m unittest content_os.test_editorial_intelligence -v
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from content_os.editorial_intelligence import PROFILES
+          data=json.loads(Path('content_os/source_registry.json').read_text('utf-8'))
+          assert set(data['profiles']) == set(PROFILES)
+          for profile, config in data['profiles'].items():
+              assert config['primary'] and config['fallback'] and config['hard_gate'], profile
+              assert all(u.startswith('https://') for u in config['primary']+config['fallback'])
+          print('[SOURCES] seven accounts configured')
+          PY
       - name: Validate the latest archived articles against publisher input contracts
         run: |
           python - <<'PY'

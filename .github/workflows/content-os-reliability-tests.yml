@@ -68,7 +68,7 @@ jobs:
                   print(f"[SKIP] {profile}: no article yet")
                   continue
               article = files[-1]
-              result = check(profile, article.read_text("utf-8"))
+              result = check(profile, article.read_text("utf-8"), article.stem)
               print(f"[ARCHIVE] {profile}: {article.name} {result['status']}")
               if result['status'] != 'PASS':
                   raise ValueError(f"{profile}: {result['errors']}")

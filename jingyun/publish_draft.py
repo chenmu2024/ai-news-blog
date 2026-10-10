@@ -10,6 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 # Shared zero-cost preflight; no WeChat API call until every source image is staged.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from content_os.image_resilience import prepare_images, strip_image_backup_notes
+from content_os.draft_journal import reserve as reserve_draft_add, confirm as confirm_draft_add
 _PREPARED_IMAGES = {}
 
 
@@ -450,6 +451,9 @@ def create_draft(tok, title, body, cover_id):
         "only_fans_can_comment": 0
     }]}
     post_data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    # Durable intent must be committed to GitHub BEFORE the non-idempotent
+    # WeChat draft/add API. Unknown outcomes must never be blindly retried.
+    reserve_draft_add("jingyun", ARTICLE, title)
     r = request_with_proxy(
         "POST",
         API + "/draft/add",
@@ -461,6 +465,7 @@ def create_draft(tok, title, body, cover_id):
     d = r.json()
     if not d.get("media_id"):
         fail("创建草稿失败: " + str(d))
+    confirm_draft_add("jingyun", ARTICLE, d["media_id"])
     return d["media_id"]
 
 def main():

@@ -1,9 +1,9 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T09:43:37.320456+08:00",
+  "generated_at": "2026-10-10T09:54:11.712456+08:00",
   "timezone": "Asia/Shanghai",
-  "status": "complete",
-  "success_count": 7,
+  "status": "incomplete",
+  "success_count": 6,
   "expected_count": 7,
   "accounts": {
     "qiezhi": {
@@ -17,6 +17,7 @@
         "visual-gate.json": "PASS"
       },
       "journal_state": "MISSING",
+      "fashion_revision": null,
       "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
@@ -33,6 +34,7 @@
         "visual-gate.json": "PASS"
       },
       "journal_state": "MISSING",
+      "fashion_revision": null,
       "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
@@ -49,6 +51,7 @@
         "visual-gate.json": "PASS"
       },
       "journal_state": "MISSING",
+      "fashion_revision": null,
       "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
@@ -66,6 +69,7 @@
         "visual-gate.json": "PASS"
       },
       "journal_state": "MISSING",
+      "fashion_revision": null,
       "draft_media_id_recorded": false,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
@@ -82,6 +86,7 @@
         "visual-gate.json": "PASS"
       },
       "journal_state": "MISSING",
+      "fashion_revision": null,
       "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
@@ -98,6 +103,7 @@
         "visual-gate.json": "PASS"
       },
       "journal_state": "MISSING",
+      "fashion_revision": null,
       "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
@@ -105,7 +111,7 @@
     },
     "fashion": {
       "profile": "fashion",
-      "status": "success",
+      "status": "incomplete",
       "archive": "fashion/archive/2026-10-10.md",
       "title": "日本女生秋天把西装穿得松弛，关键不是买大一码",
       "workflow_run_id": "38010796124",
@@ -115,10 +121,18 @@
         "visual-gate.json": "PASS"
       },
       "journal_state": "MISSING",
+      "fashion_revision": {
+        "article_path": "fashion/revisions/2026-10-10.md",
+        "title": "Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么",
+        "status": "pending",
+        "workflow_run_id": null
+      },
       "draft_media_id_recorded": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "fashion_explicit_revision_pending_or_unverified"
+      ]
     }
   },
   "topic_scan_date": "2026-10-10",

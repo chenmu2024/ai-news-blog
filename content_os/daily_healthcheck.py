@@ -11,6 +11,10 @@ import hashlib
 import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
+try:
+    from content_os.title_decisions import evaluate as evaluate_title_decisions
+except ImportError:
+    from title_decisions import evaluate as evaluate_title_decisions
 
 PROFILES = ("qiezhi", "wechat", "business", "zizhitongjian",
             "parenting", "jingyun", "fashion")
@@ -167,6 +171,12 @@ def make_report(root: Path, day: str | None = None) -> dict:
         alert_reasons.append("repository_or_gate_incomplete")
     if day >= "2026-10-11" and confirmed != len(PROFILES):
         alert_reasons.append("durable_draft_confirmation_incomplete")
+    title_report = evaluate_title_decisions(root, day) if day >= "2026-10-11" else {
+        "status": "not_required_legacy_day", "complete_count": 0, "expected_count": len(PROFILES), "profiles": {}
+    }
+    editorial_alert_reasons = []
+    if day >= "2026-10-11" and title_report.get("status") != "complete":
+        editorial_alert_reasons.append("headline_decision_ledger_incomplete")
     intel = read_json(root / "content_os" / "topic-intelligence" / (day + ".json"))
     return {
         "date": day,
@@ -181,6 +191,14 @@ def make_report(root: Path, day: str | None = None) -> dict:
         "draft_confirmation_status": confirmation_status,
         "alert_required": bool(alert_reasons),
         "alert_reasons": alert_reasons,
+        "editorial_alert_required": bool(editorial_alert_reasons),
+        "editorial_alert_reasons": editorial_alert_reasons,
+        "headline_decisions": {
+            "status": title_report.get("status"),
+            "complete_count": title_report.get("complete_count", 0),
+            "expected_count": title_report.get("expected_count", len(PROFILES)),
+            "profiles": title_report.get("profiles", {}),
+        },
         "accounts": accounts,
         "topic_scan_date": intel.get("local_date"),
         "topic_scan_available": bool(intel.get("profiles")),
@@ -201,6 +219,7 @@ def write_report(report: dict, folder: Path) -> None:
         "# 七公众号草稿健康检查 " + report["date"], "",
         f"仓库一致 {report['success_count']}/{report['expected_count']}；状态：{report['status']}",
         f"durable草稿确认 {report['draft_confirmed_count']}/{report['expected_count']}；确认状态：{report['draft_confirmation_status']}",
+        f"标题3选1记录 {report.get('headline_decisions',{}).get('complete_count',0)}/{report.get('headline_decisions',{}).get('expected_count',report['expected_count'])}；编辑告警：{report.get('editorial_alert_required',False)}",
         "", "| 方向 | 仓库一致 | 草稿确认模式 | 失败环节 |", "|---|---|---|---|",
     ]
     for k, d in report["accounts"].items():

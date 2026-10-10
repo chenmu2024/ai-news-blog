@@ -31,7 +31,7 @@ PROFILES = {
     "zizhitongjian": {"query": "资治通鉴 历史 人性 管理 公众号", "image": "historical books"},
     "parenting": {"query": "小学生 家长群 家校沟通 教育 公众号", "image": "family reading"},
     "jingyun": {"query": "女性 中年 婚姻 职场 公众号", "image": "women street life"},
-    "fashion": {"query": "日韩穿搭 明星穿搭 秋季 女装 公众号", "image": "fashion street style"},
+    "fashion": {"query": "2026 女明星 Jisoo 张员瑛 杨幂 机场穿搭 公众号", "image": "celebrity airport fashion"},
 }
 # Secondary free discovery queries diversify subject/author coverage; they are
 # NOT proof that a headline is popular or that an indexed date is publication.
@@ -42,7 +42,7 @@ SUPPLEMENTARY_QUERIES = {
     "zizhitongjian": "资治通鉴 帝王 决策 历史故事 公众号",
     "parenting": "初中家长 青春期 手机 学习压力 公众号",
     "jingyun": "中年女人 母女 经济独立 婚姻 公众号",
-    "fashion": "韩系 日系 女明星 风衣 搭配 公众号",
+    "fashion": "女明星 Jisoo Jennie 宋慧乔 刘亦菲 机场 穿搭 公众号",
 }
 UNTRUSTED_GENERIC_TITLES = frozenset({
     "微信公众平台", "微信公众平台 - 微信公众平台", "微信公众平台 - 微信公众平台",
@@ -175,7 +175,7 @@ BING_FALLBACK_QUERIES = {
     "zizhitongjian": "资治通鉴 历史 人物 决策",
     "parenting": "中小学 家长 家校沟通 教育政策 青少年",
     "jingyun": "女性 职场 婚姻 家庭",
-    "fashion": "韩国 日本 女明星 时尚 穿搭",
+    "fashion": "女明星 机场 时装周 造型 杨幂 张员瑛 Jisoo 2026",
 }
 
 

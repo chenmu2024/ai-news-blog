@@ -16,6 +16,8 @@ class ShortlistQualityTests(unittest.TestCase):
     def test_fashion_requires_named_priority_celeb_and_outfit(self):
         _, _, flags = editorial_quality("fashion", "秋天西装怎么穿更显瘦")
         self.assertIn("fashion_no_named_priority_celebrity", flags)
+        _, _, airport_only = editorial_quality("fashion", "杨幂泰国机场生图疯传：我们到底在追什么")
+        self.assertIn("fashion_weak_outfit_context", airport_only)
         _, _, ok = editorial_quality("fashion", "Jisoo机场穿搭：短外套怎么搭")
         self.assertNotIn("fashion_no_named_priority_celebrity", ok)
         self.assertNotIn("fashion_weak_outfit_context", ok)
@@ -23,6 +25,10 @@ class ShortlistQualityTests(unittest.TestCase):
     def test_clickbait_gets_sensitive_flag(self):
         _, _, flags = editorial_quality("jingyun", "31岁妈妈跳楼：击溃中年女人有多容易")
         self.assertIn("sensational_or_sensitive_framing", flags)
+
+    def test_jingyun_relationship_clickbait_is_manual_only(self):
+        _, _, flags = editorial_quality("jingyun", "实录：一个中年女人万箭穿心的婚外情")
+        self.assertIn("relationship_clickbait_requires_manual_review", flags)
 
     def test_history_sales_content_is_rejected_signal(self):
         _, _, flags = editorial_quality("zizhitongjian", "冯唐讲资治通鉴全部课程视频合集")

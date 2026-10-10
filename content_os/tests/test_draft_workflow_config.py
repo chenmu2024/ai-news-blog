@@ -22,6 +22,16 @@ class WorkflowConfigTests(unittest.TestCase):
                 self.assertIn("cancel-in-progress: false", content)
                 self.assertIn("id: preflight", content)
                 self.assertIn("content_os/draft_preflight.py", content)
+                self.assertIn("--today-only", content)
+                self.assertIn("content_os/publish_readiness.py", content)
+                self.assertIn("content_os/image_preflight.py", content)
+                self.assertIn("content_os/gate_trace.py", content)
+                self.assertIn("timeout-minutes: 5", content)
+                self.assertIn("gh workflow run draft-health-audit.yml --ref main", content)
+                self.assertLess(content.index("Validate external image bytes"),
+                                content.index("Install Chinese fonts"),
+                                "Image preflight must precede slow font setup")
+                self.assertIn("actions: write", content)
                 self.assertIn("--profile " + p, content)
                 self.assertIn("steps.preflight.outputs.should_publish", content)
                 permissions = content.split("\npermissions:\n", 1)[1].split("\njobs:\n", 1)[0]

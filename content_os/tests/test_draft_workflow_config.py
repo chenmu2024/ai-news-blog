@@ -28,9 +28,21 @@ class WorkflowConfigTests(unittest.TestCase):
                 self.assertIn("content_os/gate_trace.py", content)
                 self.assertIn("timeout-minutes: 5", content)
                 self.assertIn("gh workflow run draft-health-audit.yml --ref main", content)
+                self.assertLess(content.index("Draft idempotency preflight"),
+                                content.index("Validate external image bytes"),
+                                "Nothing should download images before the idempotency decision")
+                self.assertLess(content.index("Publisher input contract"),
+                                content.index("Validate external image bytes"),
+                                "Schema check must come before network image staging")
                 self.assertLess(content.index("Validate external image bytes"),
                                 content.index("Install Chinese fonts"),
                                 "Image preflight must precede slow font setup")
+                self.assertLess(content.index("Install dependencies"),
+                                content.index("Validate external image bytes"),
+                                "Image parser dependencies must exist before staging")
+                self.assertLess(content.index("Install Chinese fonts"),
+                                content.index("publish_draft.py"),
+                                "Complete setup before sending a draft")
                 self.assertIn("actions: write", content)
                 self.assertIn("--profile " + p, content)
                 self.assertIn("steps.preflight.outputs.should_publish", content)

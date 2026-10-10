@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "operation": "in_place_draft_update",
+  "original_article_path": "fashion/archive/2026-10-10.md",
+  "revision_path": "fashion/revisions/2026-10-10.md",
+  "revision_title": "Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么",
+  "revision_sha256": "79313d50627ad7ad6c05112fecb4240b94baf1553606047d82d31bca3824de71",
+  "draft_media_id": "gcTqbaQ9A7M3U7aJTBB3ZcEJZQ4zFD6Khvzg8GqEo1KriQB19j-bbM00RNuRkZrt",
+  "workflow_run_id": "38015485717"
+}

@@ -10,6 +10,8 @@ on:
       - "content_os/gate_trace.py"
       - "content_os/publish_readiness.py"
       - "content_os/image_preflight.py"
+      - "content_os/draft_journal.py"
+      - "content_os/tests/test_publish_readiness.py"
       - ".github/workflows/draft-health-audit.yml"
       - "content_os/tests/test_draft_*.py"
   schedule:
@@ -36,7 +38,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Test draft safety and audit logic
-        run: python -m unittest discover -s content_os/tests -p "test_draft_*.py" -v
+        run: |
+          python -m unittest discover -s content_os/tests -p "test_draft_*.py" -v
+          python -m unittest discover -s content_os/tests -p "test_publish_readiness.py" -v
       - name: Audit all seven profiles without publishing
         run: python content_os/daily_healthcheck.py --output-dir content_os/daily-health
       - name: Persist daily health report
@@ -78,6 +82,17 @@ jobs:
               }
               let prev = {};
               try {prev = JSON.parse(fs.readFileSync(profile+'/status/latest.json','utf8'));} catch(_) {}
+              // The separate durable journal is authoritative if GitHub
+              // status syncing crashed after WeChat acknowledged draft/add.
+              const journalPath = profile+'/status/draft-attempts/'+report.date+'.json';
+              if (fs.existsSync(journalPath)) {
+                let journal = {};
+                try {journal = JSON.parse(fs.readFileSync(journalPath,'utf8'));} catch (_) {}
+                results.push({profile,result:'draft_attempt_journal_present',
+                  state:journal.state || 'unknown',
+                  note:'Reconcile existing WeChat draft/media_id; never auto-retry'});
+                continue;
+              }
               const sameReceipt = prev.status === 'success' &&
                 (prev.article_path === item.archive || (!prev.article_path && prev.title === item.title));
               // Already published but a local artifact changed: do not post a duplicate.

@@ -12,6 +12,10 @@
 6. **WeChat API 成功但 GitHub 状态写入失败**：所有发布器在**实际 draft/add 前**调用 `draft_journal.reserve` 将 `attempted` 持久写入 GitHub，对成功返回的 `media_id` 立即 `confirm`。两步均由私有 GITHUB_TOKEN 完成（不需要付费服务）。再次运行若已有同日日志却没有匹配成功回执，必须停止自动上传，调查是否已在微信草稿箱。不得用旧的 last-failure 覆盖新的成功回执。
 7. **健康报告滞后**：每号成功同步后自动 workflow_dispatch `draft-health-audit.yml`；审计在读到最新 main 后重新生成报告而非回填旧快照。10:15/13:15独立计划审计仍保留，自动重试仅计划审计可执行，且见到同日草稿 attempt 日志就拒绝二次上传。GitHub定时任务是尽力执行，不能保证分钟级启动。
 
+## 微信标题与归档完全一致（2026-10-11 起）
+
+公众号发布器原来会在标题超过32个字符时自动截断，但成功回执有时写入完整H1，造成仓库验收与微信草稿真实标题不一致。从2026-10-11起，`publish_readiness.py` 要求所有七号新稿的H1最长32个Unicode字符，**写稿时直接取自然简洁、32字以内标题**，不能依赖接口截短。老稿历史归档不改动、不补发。
+
 ## 08:20 写稿前实际检查清单（写稿任务须主动执行）
 
 - 先读当日 `content_os/daily-health/latest.json` **日期是否等于今天**，再分别读 A..G 的当日 archive、status/latest、today、Gate、Actions。已成功账号直接跳过，不增稿/不修改原归档。

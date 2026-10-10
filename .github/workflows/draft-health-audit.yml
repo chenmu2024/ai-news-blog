@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - "content_os/daily_healthcheck.py"
+      - "content_os/title_decisions.py"
+      - "content_os/title-decisions/**"
       - "content_os/draft_preflight.py"
       - "content_os/gate_trace.py"
       - "content_os/publish_readiness.py"

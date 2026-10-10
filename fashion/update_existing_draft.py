@@ -162,9 +162,16 @@ def main():
         }
         if not pub.AUTHOR:
             article.pop("author", None)
+        # Align with the already proven fashion draft/add implementation:
+        # WeChat rejects escaped non-ASCII JSON for Chinese titles (45003).
+        update_data = json.dumps(
+            {"media_id": media_id, "index": 0, "articles": article},
+            ensure_ascii=False,
+        ).encode("utf-8")
         result = pub.request_with_proxy(
             "POST", pub.API + "/draft/update", params={"access_token": tok},
-            json={"media_id": media_id, "index": 0, "articles": article},
+            data=update_data,
+            headers={"Content-Type": "application/json; charset=utf-8"},
             timeout=90,
         ).json()
         if result.get("errcode") != 0:

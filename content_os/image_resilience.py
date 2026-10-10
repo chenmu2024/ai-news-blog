@@ -9,6 +9,9 @@ The archive remains immutable after a successful draft receipt.
 from __future__ import annotations
 
 from io import BytesIO
+from pathlib import Path
+import hashlib
+import os
 import ipaddress
 import json
 import re
@@ -167,6 +170,52 @@ def _get_image(url: str, session=None) -> tuple[bytes, str, str]:
                        type(last).__name__ + ")") from last
 
 
+def save_prepared_cache(markdown: str, profile: str,
+                        prepared: dict[str, tuple[bytes, str, str]],
+                        folder: Path) -> None:
+    """Store only validated JPEG bytes in ephemeral runner storage, never in git."""
+    folder.mkdir(parents=True, exist_ok=True)
+    manifest = {"schema": 1, "profile": profile,
+                "article_sha256": hashlib.sha256(markdown.encode("utf-8")).hexdigest(),
+                "images": {}}
+    for url, (data, content_type, extension) in prepared.items():
+        if content_type != "image/jpeg" or extension != ".jpg" or not data.startswith(bytes.fromhex("ffd8")):
+            raise ValueError("Only validated JPEG stage data can be cached")
+        name = hashlib.sha256(url.encode("utf-8")).hexdigest() + ".jpg"
+        (folder / name).write_bytes(data)
+        manifest["images"][url] = {"file": name, "sha256": hashlib.sha256(data).hexdigest()}
+    (folder / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), "utf-8")
+
+
+def load_prepared_cache(markdown: str, profile: str, folder: Path,
+                        urls: list[str]) -> dict[str, tuple[bytes, str, str]]:
+    """Fail closed on missing/corrupt cache; no second network GET after preflight."""
+    try:
+        manifest = json.loads((folder / "manifest.json").read_text("utf-8"))
+        expected = hashlib.sha256(markdown.encode("utf-8")).hexdigest()
+        if (manifest.get("schema") != 1 or manifest.get("profile") != profile or
+                manifest.get("article_sha256") != expected or
+                set(manifest.get("images", {})) != set(urls)):
+            raise ValueError("Staged image manifest differs from current archive")
+        result = {}
+        for url in urls:
+            record = manifest["images"][url]
+            name = hashlib.sha256(url.encode("utf-8")).hexdigest() + ".jpg"
+            if record.get("file") != name:
+                raise ValueError("Unexpected image stage filename")
+            data = (folder / name).read_bytes()
+            if hashlib.sha256(data).hexdigest() != record.get("sha256"):
+                raise ValueError("Staged JPEG checksum mismatch")
+            with Image.open(BytesIO(data)) as image:
+                if image.format != "JPEG" or min(image.size) < 160:
+                    raise ValueError("Invalid cached JPEG bytes")
+            result[url] = (data, "image/jpeg", ".jpg")
+        print("[IMAGE_STAGE] reused validated preflight JPEGs:", len(result))
+        return result
+    except (OSError, ValueError, KeyError, TypeError, UnidentifiedImageError) as exc:
+        raise RuntimeError("Staged image cache unavailable or tampered; refuse WeChat upload") from exc
+
+
 def prepare_images(markdown: str, profile: str, session=None) -> dict[str, tuple[bytes, str, str]]:
     """All-or-nothing staging; never upload anything to WeChat on preflight failure.
 
@@ -184,6 +233,11 @@ def prepare_images(markdown: str, profile: str, session=None) -> dict[str, tuple
         raise ValueError("Fashion requires at least five distinct real images")
     if not urls:
         return {}
+    if os.environ.get("CONTENT_OS_IMAGE_CACHE_READ") == "1":
+        folder = os.environ.get("CONTENT_OS_IMAGE_CACHE_DIR")
+        if not folder:
+            raise RuntimeError("Image stage reuse requested without cache directory")
+        return load_prepared_cache(markdown, profile, Path(folder), urls)
     backups = _read_backups(markdown, profile)
     result = {}
     for original in urls:

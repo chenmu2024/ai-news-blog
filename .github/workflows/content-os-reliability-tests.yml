@@ -15,6 +15,8 @@ on:
       - "parenting/publish_draft.py"
       - "jingyun/publish_draft.py"
       - "fashion/publish_draft.py"
+  schedule:
+    - cron: "45 23 * * *"
   workflow_dispatch:
 
 permissions:

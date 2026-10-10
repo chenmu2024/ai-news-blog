@@ -53,7 +53,8 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
     if title and status.get("title") != title:
         errors.append("receipt_title_mismatch")
     reported_path = status.get("article_path")
-    if reported_path and reported_path != (base / "archive" / (day + ".md")).relative_to(root).as_posix():
+    expected_path = (base / "archive" / (day + ".md")).relative_to(root).as_posix()
+    if reported_path != expected_path:
         errors.append("receipt_date_mismatch")
     if raw is not None:
         try:
@@ -72,6 +73,13 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
         gate_data[gate] = check.get("status") or "MISSING"
         if check.get("status") != "PASS":
             errors.append("gate_missing_or_not_pass:" + gate)
+        # Gate reports generated before the 2026-10-11 rollout lack a bound hash.
+        # All subsequent PASS values must prove they checked these exact bytes.
+        if day >= "2026-10-11" and (
+            check.get("article_sha256") != digest or
+            check.get("article_path") != expected_path
+        ):
+            errors.append("gate_not_bound_to_archive:" + gate)
     source = read_json(base / "status" / "source-gate.json") if profile == "zizhitongjian" else {}
     return {
         "profile": profile, "status": "success" if not errors else "incomplete",

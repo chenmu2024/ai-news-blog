@@ -3,21 +3,21 @@
   "profile": "jingyun",
   "profile_name": "静筠日记｜女性生活",
   "score": 0,
-  "body_chars": 2562,
+  "body_chars": 1970,
   "template_hits": 0,
   "internal_hits": 0,
-  "fact_signals": 10,
-  "stance_signals": 4,
+  "fact_signals": 21,
+  "stance_signals": 8,
   "paragraph_regularity": {
-    "paragraphs": 50,
-    "cv": 0.407
+    "paragraphs": 29,
+    "cv": 0.437
   },
   "sentence_repetition": {
-    "sentences": 84,
-    "repeated_starts": 1,
-    "ratio": 0.012
+    "sentences": 58,
+    "repeated_starts": 0,
+    "ratio": 0.0
   },
-  "very_short_paragraph_ratio": 0.167,
+  "very_short_paragraph_ratio": 0.121,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

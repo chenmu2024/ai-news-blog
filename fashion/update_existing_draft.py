@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 import re
+import requests
 
 import publish_draft as pub
 from content_os.image_resilience import prepare_images, strip_image_backup_notes
@@ -34,6 +35,47 @@ def _check_original():
             existing.get("title") != old_title):
         raise RuntimeError("Original immutable SHA/title/receipt mismatch; abort update")
     return existing, old_title
+
+
+def _media_id_from_verified_run(success_receipt: dict) -> str:
+    """Find exact media_id from the immutable original successful Actions run."""
+    token = os.environ.get("GH_TOKEN", "")
+    repo = os.environ.get("GITHUB_REPOSITORY", "")
+    run_id = str(success_receipt.get("workflow_run_id") or "")
+    if not token or not re.fullmatch(r"\d+", run_id) or "/" not in repo:
+        raise RuntimeError("Cannot securely retrieve original run media_id")
+    headers = {"Authorization": "Bearer " + token,
+               "Accept": "application/vnd.github+json"}
+    url = f"https://api.github.com/repos/{repo}/actions/runs/{run_id}/jobs"
+    response = requests.get(url, headers=headers, timeout=25)
+    response.raise_for_status()
+    media_ids = []
+    for job in (response.json().get("jobs") or []):
+        if job.get("conclusion") != "success":
+            continue
+        logurl = f"https://api.github.com/repos/{repo}/actions/jobs/{job['id']}/logs"
+        log_response = requests.get(logurl, headers=headers, timeout=30)
+        log_response.raise_for_status()
+        for line in log_response.text.splitlines():
+            m = re.search(r"\[DRAFT_MEDIA_ID\]\s+([^\s]+)", line)
+            if m:
+                media_ids.append(m.group(1))
+    if len(media_ids) != 1:
+        raise RuntimeError("Original successful workflow must contain precisely one media_id")
+    return media_ids[0]
+
+
+def _get_exact_draft(token: str, media_id: str) -> dict:
+    response = pub.request_with_proxy(
+        "POST", pub.API + "/draft/get", params={"access_token": token},
+        json={"media_id": media_id}, timeout=45,
+    ).json()
+    if response.get("errcode", 0) != 0:
+        raise RuntimeError("Original media_id no longer resolves to a WeChat draft")
+    articles = response.get("news_item") or []
+    if len(articles) != 1:
+        raise RuntimeError("Original WeChat draft must contain exactly one article")
+    return articles[0]
 
 
 def _draft_candidates(token: str, wanted: set[str]) -> dict[str, list[tuple[str, dict]]]:
@@ -93,17 +135,11 @@ def main():
             return
         raise RuntimeError("Revision receipt conflict")
     tok = pub.token()
-    lookup = _draft_candidates(tok, {old_title, title})
-    originals = lookup[old_title]
-    revised = lookup[title]
-    if len(originals) != 1 or revised:
-        if not originals and len(revised) == 1 and _identical_revision(revised[0][1], title):
-            media_id = revised[0][0]
-            print("[RECOVERY] WeChat already has this revised content; no duplicate update")
-        else:
-            raise RuntimeError("Cannot uniquely identify original/current draft; must inspect manually")
-    else:
-        media_id = originals[0][0]
+    media_id = _media_id_from_verified_run(existing)
+    current = _get_exact_draft(tok, media_id)
+    if _identical_revision(current, title):
+        print("[RECOVERY] Exact original media_id already has revised contents")
+    elif current.get("title") == old_title:
         rendered, cover_id = _render(tok, markdown, title)
         article = {
             "article_type": "news", "title": title, "author": pub.AUTHOR[:16],
@@ -120,6 +156,8 @@ def main():
         ).json()
         if result.get("errcode") != 0:
             raise RuntimeError("WeChat draft/update returned error: " + str(result.get("errcode")))
+    else:
+        raise RuntimeError("WeChat draft title/content differs from original; refuse update")
     verify = pub.request_with_proxy(
         "POST", pub.API + "/draft/get", params={"access_token": tok},
         json={"media_id": media_id}, timeout=45,

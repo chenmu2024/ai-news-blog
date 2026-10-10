@@ -7,6 +7,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.parse import urlsplit, urlunsplit, quote
 from urllib.error import HTTPError, URLError
 from zoneinfo import ZoneInfo
 
@@ -14,8 +15,16 @@ ROOT=Path(__file__).resolve().parents[1]
 TZ=ZoneInfo("Asia/Shanghai")
 UA="ContentOS-SourceHealth/1.0 (+public reachability only)"
 
+def ascii_url(url: str) -> str:
+    parts=urlsplit(url)
+    path=quote(parts.path, safe="/%:@")
+    query=quote(parts.query, safe="=&%:@,+/?")
+    fragment=quote(parts.fragment, safe="%:@,+/?")
+    return urlunsplit((parts.scheme,parts.netloc.encode("idna").decode("ascii"),path,query,fragment))
+
 def probe(url: str) -> dict:
-    req=Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xml;q=0.9,*/*;q=0.1"})
+    target=ascii_url(url)
+    req=Request(target,headers={"User-Agent":UA,"Accept":"text/html,application/xml;q=0.9,*/*;q=0.1"})
     try:
         with urlopen(req,timeout=12) as r:
             r.read(2048)

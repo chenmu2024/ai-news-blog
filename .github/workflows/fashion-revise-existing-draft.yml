@@ -1,0 +1,98 @@
+name: Fashion In-place Existing Draft Revision
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "fashion/revisions/*.md"
+  workflow_dispatch:
+
+concurrency:
+  group: fashion-wechat-draft
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  revise-existing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Identify explicitly revised article
+        run: |
+          FILE="$(find fashion/revisions -maxdepth 1 -name '????-??-??.md' -type f | sort | tail -n 1)"
+          test -n "$FILE" || { echo "No reviewed revision"; exit 1; }
+          echo "FASHION_REVISION_PATH=$FILE" >> "$GITHUB_ENV"
+      - name: Confirm original receipt and article are immutable
+        run: |
+          python - <<'PY'
+          import json,hashlib,os
+          from pathlib import Path
+          p=Path(os.environ['FASHION_REVISION_PATH'])
+          old=Path('fashion/archive')/p.name
+          status=json.loads(Path('fashion/status/latest.json').read_text('utf-8'))
+          assert old.exists() and status['status']=='success'
+          assert status['article_path']==old.as_posix()
+          assert status['article_sha256']==hashlib.sha256(old.read_bytes()).hexdigest()
+          assert not Path('fashion/status/revisions',p.stem+'.json').exists(), 'Revision already attempted or confirmed; do not retry automatically'
+          PY
+      - name: Install Python requirements
+        run: pip install -r fashion/requirements.txt
+      - name: Celebrity photo and provenance gate
+        run: python fashion/image_gate.py --article "$FASHION_REVISION_PATH" --json-out /tmp/fashion-revision-images.json
+      - name: Publisher input contract
+        run: python content_os/publish_readiness.py --profile fashion --article "$FASHION_REVISION_PATH"
+      - name: Editorial quality gate
+        run: python content_os/quality_gate.py --article "$FASHION_REVISION_PATH" --profile fashion --json-out /tmp/fashion-revision-quality.json
+      - name: Visual gate
+        run: python content_os/visual_gate.py --profile fashion --article "$FASHION_REVISION_PATH" --json-out /tmp/fashion-revision-visual.json
+      - name: Download and stage genuine celebrity photos
+        env:
+          CONTENT_OS_IMAGE_CACHE_DIR: ${{ runner.temp }}/fashion-revision-${{ github.run_id }}
+        timeout-minutes: 6
+        run: python content_os/image_preflight.py --profile fashion --article "$FASHION_REVISION_PATH"
+      - name: Install Chinese fonts if necessary
+        timeout-minutes: 4
+        run: |
+          set -euo pipefail
+          if ! fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'; then
+            timeout 90s sudo apt-get update -qq -o Acquire::Retries=1 -o Acquire::http::Timeout=15
+            timeout 110s sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends fonts-noto-cjk
+          fi
+          fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'
+      - name: Update precisely one existing WeChat draft (never draft/add)
+        env:
+          WECHAT_APP_ID: ${{ secrets.FASHION_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.FASHION_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          ARTICLE_PATH: ${{ env.FASHION_REVISION_PATH }}
+          FASHION_REVISION_PATH: ${{ env.FASHION_REVISION_PATH }}
+          CONTENT_OS_IMAGE_CACHE_READ: "1"
+          CONTENT_OS_IMAGE_CACHE_DIR: ${{ runner.temp }}/fashion-revision-${{ github.run_id }}
+        run: python fashion/update_existing_draft.py
+      - name: Persist reviewed revision receipt without editing original archive
+        run: |
+          set -euo pipefail
+          git config user.name "content-os-fashion-revision-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fashion/status/revisions
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "fashion: confirm in-place celebrity replacement of existing daily draft"
+          for n in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((n*2))"
+          done
+          exit 1
+      - name: Refresh health audit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run draft-health-audit.yml --ref main

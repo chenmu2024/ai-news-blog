@@ -1,6 +1,6 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T10:51:23.943113+08:00",
+  "generated_at": "2026-10-10T10:52:20.811309+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -151,7 +151,7 @@
       "sources": [
         {
           "url": "https://www.moe.gov.cn/",
-          "status": "reachable",
+          "status": "insecure_redirect",
           "http_status": 200,
           "final_url": "http://www.moe.gov.cn/",
           "content_type": "text/html",

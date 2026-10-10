@@ -8,6 +8,8 @@ on:
       - "content_os/free_topic_scan.py"
       - "content_os/build_editorial_shortlist.py"
       - "content_os/editorial_intelligence.py"
+      - "content_os/source_health.py"
+      - "content_os/source_registry.json"
       - "content_os/public_rankings.py"
       - "content_os/tests/test_free_topic_scan.py"
       - "content_os/tests/test_public_rankings.py"
@@ -46,6 +48,8 @@ jobs:
           python -m unittest discover -s content_os/tests -p test_public_rankings.py -v
       - name: Read-only topic and image discovery
         run: python content_os/free_topic_scan.py --profile all --images
+      - name: Audit configured primary and fallback sources
+        run: python content_os/source_health.py
       - name: Build advisory editorial shortlist from actual scan and archive history
         run: python content_os/build_editorial_shortlist.py
       - name: Commit private research artifacts
@@ -60,6 +64,8 @@ jobs:
           cp -a content_os/topic-intelligence/. /tmp/content-os-research/
           mkdir -p /tmp/content-os-editorial
           cp -a content_os/editorial-intelligence/. /tmp/content-os-editorial/
+          mkdir -p /tmp/content-os-source-health
+          cp -a content_os/source-health/. /tmp/content-os-source-health/
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
@@ -67,7 +73,9 @@ jobs:
             cp -a /tmp/content-os-research/. content_os/topic-intelligence/
             mkdir -p content_os/editorial-intelligence
             cp -a /tmp/content-os-editorial/. content_os/editorial-intelligence/
-            git add content_os/topic-intelligence content_os/editorial-intelligence
+            mkdir -p content_os/source-health
+            cp -a /tmp/content-os-source-health/. content_os/source-health/
+            git add content_os/topic-intelligence content_os/editorial-intelligence content_os/source-health
             if git diff --cached --quiet; then
               echo "No research changes."
               exit 0

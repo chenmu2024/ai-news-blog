@@ -44,6 +44,16 @@ def main():
     if data.get("local_date")!=today:raise SystemExit("Stale discovery archive: cannot rank as today's research")
     history={profile:archive_titles(profile) for profile in PROFILES}
     ranking=analyze(convert(data),history)
+    # Discovery/indexed headlines are NOT approved topics, even when numerically ranked.
+    # Gate every event against trustworthy recency, heat and primary evidence before writing.
+    for profile, events in ranking.items():
+        for event in events:
+            event["editorial_status"]="needs_manual_source_and_date_review"
+            event["eligible_for_auto_selection"]=False
+            if "unverified_heat" not in event["flags"]:
+                event["flags"].append("original_publication_date_unverified")
+            else:
+                event["flags"].extend(["original_publication_date_unverified","insufficient_popularity_evidence"])
     report={"date":today,"status":"advisory_only","discovery_generated_at":data.get("generated_at"),
         "ranking_provenance":"public discovery, not verified WeChat virality",
         "profiles":ranking}

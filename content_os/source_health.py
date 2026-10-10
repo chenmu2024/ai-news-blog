@@ -30,8 +30,13 @@ def probe(url: str) -> dict:
         with urlopen(req,timeout=12) as r:
             r.read(2048)
             code=getattr(r,"status",200)
-            return {"url":url,"status":"reachable" if 200 <= code < 400 else "http_error",
-                    "http_status":code,"final_url":r.geturl(),
+            final_url=r.geturl()
+            final_scheme=urlsplit(final_url).scheme.lower()
+            status="reachable" if 200 <= code < 400 else "http_error"
+            if urlsplit(url).scheme.lower()=="https" and final_scheme!="https":
+                status="insecure_redirect"
+            return {"url":url,"status":status,
+                    "http_status":code,"final_url":final_url,
                     "content_type":r.headers.get_content_type()}
     except HTTPError as e:
         return {"url":url,"status":"http_error","http_status":e.code,"error":str(e)[:180]}

@@ -22,6 +22,7 @@
 - 读 `TOPIC_INTELLIGENCE.md`、当天公开扫描、`RESILIENCE_POLICY.md`、该号 STYLE/SOURCE_POLICY及近30天归档；微信热度不足记录 `insufficient_evidence`，继续用可信官方来源完成内容。
 - 强制读取当天 `content_os/source-health/latest.json`、`content_os/editorial-intelligence/YYYY-MM-DD.json` 和 `content_os/reading-feedback/latest.json`。日期过期视为 stale；`reject_or_research_only` 不得直接作为主选题；`eligible_for_auto_selection=false` 只能当线索；阅读反馈只有真实 numeric_records 足够且对应标题特征 count>=3 才可作为辅助信号，缺失/未授权时保持 unknown，不得把 0、旧数据或“相对更好”换算成阅读量。主源在 GitHub Runner 健康检查失败时优先用同号可达备用源，并记录降级；可达性不等于事实已核验或版权可用。
 - 先完整草拟正文与来源记录，审查标题重复、官方原典、日期、所有引用、图片许可和场景描述。G至少5张真实可用的正文穿搭照片；A至少封面+正文知识卡；D Source Gate 需可核验卷次和上下文，CText不可访问时须真实双版本文本回退，不能虚称影印通过。
+- 从 2026-10-11 起，每号必须先给出 **3 个互不相同且都可用的标题候选**，最终标题必须是其中之一；保存到 `content_os/title-decisions/YYYY-MM-DD.json`，同时记录具体选择理由和依据（账号匹配、具体事件、30天去重、证据强度等）。最终 `selected_title` 必须与 archive 的 H1 完全一致，阅读量未知时 `verified_views=null`。标题决策缺失只触发编辑告警，绝不能因此对已成功草稿执行第二次 `draft/add`。
 - **提交新 archive 之前**，在临时文件上执行对应的结构、文风、源和图片校验。命令示例（以 C 为例）：
 
   `python content_os/publish_readiness.py --profile business --article /tmp/business-today.md`

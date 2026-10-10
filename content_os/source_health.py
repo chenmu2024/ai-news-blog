@@ -4,6 +4,7 @@ HTTP success never proves editorial suitability, freshness, rights, or factualit
 """
 from __future__ import annotations
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -40,14 +41,25 @@ def probe(url: str) -> dict:
 def main():
     now=datetime.now(TZ)
     reg=json.loads((ROOT/"content_os/source_registry.json").read_text("utf-8"))
-    profiles={}
+    jobs=[]
     for profile,cfg in reg["profiles"].items():
-        rows=[]
         for role in ("primary","fallback"):
             for url in cfg.get(role,[]):
-                row=probe(url)
-                row["role"]=role
-                rows.append(row)
+                jobs.append((profile,role,url))
+    grouped={profile:[] for profile in reg["profiles"]}
+    with ThreadPoolExecutor(max_workers=min(6,max(1,len(jobs)))) as pool:
+        futures={pool.submit(probe,url):(profile,role,url) for profile,role,url in jobs}
+        for future in as_completed(futures):
+            profile,role,url=futures[future]
+            try:
+                row=future.result()
+            except Exception as exc:
+                row={"url":url,"status":"probe_error","http_status":None,"error":str(exc)[:180]}
+            row["role"]=role
+            grouped[profile].append(row)
+    profiles={}
+    for profile,rows in grouped.items():
+        rows.sort(key=lambda x:(0 if x["role"]=="primary" else 1,x["url"]))
         profiles[profile]={
             "sources":rows,
             "primary_reachable":any(x["role"]=="primary" and x["status"]=="reachable" for x in rows),

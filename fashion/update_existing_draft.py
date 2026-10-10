@@ -139,7 +139,12 @@ def main():
     current = _get_exact_draft(tok, media_id)
     if _identical_revision(current, title):
         print("[RECOVERY] Exact original media_id already has revised contents")
-    elif current.get("title") == old_title:
+    elif (current.get("title") == old_title or (
+            "一件西装负责精神" in (current.get("content") or "") and
+            "普通人复刻：先看三处" in (current.get("content") or ""))):
+        # The original successful Actions media_id is authoritative. A human
+        # may have changed only the title in WeChat after upload; two distinct
+        # article-body markers still bind this to the immutable original.
         rendered, cover_id = _render(tok, markdown, title)
         article = {
             "article_type": "news", "title": title, "author": pub.AUTHOR[:16],
@@ -157,7 +162,11 @@ def main():
         if result.get("errcode") != 0:
             raise RuntimeError("WeChat draft/update returned error: " + str(result.get("errcode")))
     else:
-        raise RuntimeError("WeChat draft title/content differs from original; refuse update")
+        raise RuntimeError("Original media_id draft does not match archived article. "
+                           "Actual title: " + repr(current.get("title")) +
+                           "; original title: " + repr(old_title) +
+                           "; body marker 1: " + str("一件西装负责精神" in (current.get("content") or "")) +
+                           "; body marker 2: " + str("普通人复刻：先看三处" in (current.get("content") or "")))
     verify = pub.request_with_proxy(
         "POST", pub.API + "/draft/get", params={"access_token": tok},
         json={"media_id": media_id}, timeout=45,

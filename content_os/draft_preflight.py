@@ -13,6 +13,7 @@ from pathlib import Path
 import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from draft_journal import locate
 
 
 def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict:
@@ -38,6 +39,16 @@ def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict
         and last.get("title") == title
         and (last.get("article_path") in (None, "", article.as_posix()))
     )
+    # A remote write-ahead journal is present before draft/add. Even if GitHub
+    # status/latest.json was not committed, an ambiguous HTTP result cannot be
+    # retried without inspecting the confirmed media_id or WeChat draft list.
+    journal = locate(profile, article, status_dir)
+    if journal is not None and not confirmed:
+        raise ValueError(
+            "Draft/add attempt exists in durable journal (state=%s). "
+            "Reconcile the WeChat media_id and status first; NEVER retry "
+            "an ambiguous non-idempotent API call." % journal.get("state")
+        )
     if (last.get("status") == "success"
             and last.get("article_path") == article.as_posix()
             and not confirmed):

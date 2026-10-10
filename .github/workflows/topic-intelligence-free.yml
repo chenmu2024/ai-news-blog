@@ -11,7 +11,7 @@ on:
       - "content_os/source_health.py"
       - "content_os/source_registry.json"
       - "content_os/reading_feedback.py"
-      - "content_os/reading-feedback/**"
+      - "content_os/reading-feedback/manual.jsonl"
       - "content_os/public_rankings.py"
       - "content_os/tests/test_free_topic_scan.py"
       - "content_os/tests/test_public_rankings.py"

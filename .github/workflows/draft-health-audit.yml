@@ -7,6 +7,9 @@ on:
     paths:
       - "content_os/daily_healthcheck.py"
       - "content_os/draft_preflight.py"
+      - "content_os/gate_trace.py"
+      - "content_os/publish_readiness.py"
+      - "content_os/image_preflight.py"
       - ".github/workflows/draft-health-audit.yml"
       - "content_os/tests/test_draft_*.py"
   schedule:
@@ -42,13 +45,12 @@ jobs:
           set -euo pipefail
           git config user.name "content-os-health-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          mkdir -p /tmp/content-os-health
-          cp -a content_os/daily-health/. /tmp/content-os-health/
+          # Always recompute AFTER fetching main. Previously we copied an old
+          # snapshot over a newly successful receipt, leaving latest.json stale.
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
-            mkdir -p content_os/daily-health
-            cp -a /tmp/content-os-health/. content_os/daily-health/
+            python content_os/daily_healthcheck.py --output-dir content_os/daily-health > /tmp/content-os-rechecked.json
             git add content_os/daily-health
             if git diff --cached --quiet; then
               echo "No health changes."
@@ -60,7 +62,7 @@ jobs:
             sleep $((attempt * 2))
           done
       - name: Retry an unsent archive once (scheduled audits only)
-        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'schedule' }}
         uses: actions/github-script@v7
         with:
           script: |
@@ -111,6 +113,7 @@ jobs:
             core.info(JSON.stringify(results));
             await core.summary.addHeading('Content OS automatic safe retries')
               .addRaw(JSON.stringify(results,null,2)).write();
-      - name: Fail visibly when any draft or Gate is incomplete
+      - name: Fail visibly on scheduled audit when any draft or Gate is incomplete
+        if: ${{ github.event_name == 'schedule' }}
         run: python content_os/daily_healthcheck.py --strict
 # The push-triggered self-test is non-publishing; retry dispatch only runs on scheduled/manual audits.

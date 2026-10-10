@@ -1,20 +1,22 @@
-"""Fetch and decode EVERY external image before installing optional fonts.
-
-No WeChat credentials or uploads; reuse the publisher's strict image stage.
-"""
+"""Validate external images before optional font setup and WeChat API use."""
 from __future__ import annotations
 import argparse
 import json
+import os
 from pathlib import Path
-from image_resilience import prepare_images
+from image_resilience import prepare_images, save_prepared_cache
 
 
 def main() -> int:
-    p = argparse.ArgumentParser()
-    p.add_argument("--profile", required=True)
-    p.add_argument("--article", type=Path, required=True)
-    args = p.parse_args()
-    staged = prepare_images(args.article.read_text(encoding="utf-8"), args.profile)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--profile", required=True)
+    parser.add_argument("--article", type=Path, required=True)
+    args = parser.parse_args()
+    original = args.article.read_text(encoding="utf-8")
+    staged = prepare_images(original, args.profile)
+    cache_dir = os.environ.get("CONTENT_OS_IMAGE_CACHE_DIR")
+    if cache_dir:
+        save_prepared_cache(original, args.profile, staged, Path(cache_dir))
     print(json.dumps({"status": "PASS", "profile": args.profile,
                       "staged_images": len(staged)}, ensure_ascii=False))
     return 0

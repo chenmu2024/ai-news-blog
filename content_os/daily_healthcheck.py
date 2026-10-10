@@ -89,6 +89,28 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
             journal.get("article_path") != expected_path or
             not journal.get("draft_media_id")):
             errors.append("draft_add_journal_missing_or_unconfirmed")
+    fashion_revision = None
+    if profile == "fashion":
+        revised = base / "revisions" / (day + ".md")
+        if revised.is_file():
+            revision_raw = revised.read_bytes()
+            revision_sha = hashlib.sha256(revision_raw).hexdigest()
+            revision_title = title_for(revision_raw.decode("utf-8"))
+            revision_status = read_json(base / "status" / "revisions" / (day + ".json"))
+            fashion_revision = {
+                "article_path": revised.relative_to(root).as_posix(),
+                "title": revision_title,
+                "status": revision_status.get("status") or "pending",
+                "workflow_run_id": revision_status.get("workflow_run_id"),
+            }
+            if (revision_status.get("status") != "success" or
+                revision_status.get("revision_sha256") != revision_sha or
+                revision_status.get("revision_path") != revised.relative_to(root).as_posix() or
+                revision_status.get("revision_title") != revision_title or
+                revision_status.get("original_article_path") != expected_path or
+                revision_status.get("operation") != "in_place_draft_update" or
+                not revision_status.get("draft_media_id")):
+                errors.append("fashion_explicit_revision_pending_or_unverified")
     source = read_json(base / "status" / "source-gate.json") if profile == "zizhitongjian" else {}
     return {
         "profile": profile, "status": "success" if not errors else "incomplete",
@@ -96,6 +118,7 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
         "title": title, "workflow_run_id": status.get("workflow_run_id"),
         "gates": gate_data,
         "journal_state": journal.get("state") or "MISSING",
+        "fashion_revision": fashion_revision,
         "draft_media_id_recorded": bool(journal.get("draft_media_id")),
         "verification_mode": source.get("verification_mode") if source else None,
         "image_check_done": source.get("image_check_done") if source else None,

@@ -1,54 +1,54 @@
 <!-- FASHION_SOURCE
 {
-  "topic_type": "japanese",
-  "subject": "日本穿搭：宽肩西装与秋季半裙的廓形和比例，普通人复刻",
+  "topic_type": "celebrity",
+  "subject": "Jisoo、张员瑛、Jennie、Karina、林允儿｜2026年1—9月公开真实造型的普通人复刻",
   "images": [
     {
-      "image_url": "https://images.wear2.jp/coordinate/qri8vJ0g/UNwNIomB/1704240168_1000.jpg",
-      "source_page_url": "https://wear.jp/coordinate/?item_id=74790705",
-      "source_platform": "wear_jp",
-      "creator": "WEAR outfit contributor",
+      "image_url": "https://prcdn.freetls.fastly.net/release_image/8795/3116/8795-3116-321856c597c016fe8fdd33fc2b94f29b-1800x2700.jpg?auto=webp&bg-color=fff&fit=bounds&format=jpeg&height=1350&quality=85%2C65&width=1950",
+      "source_page_url": "https://prtimes.jp/main/html/rd/p/000003116.000008795.html",
+      "source_platform": "brand_site",
+      "creator": "Dior（2026-09-25机场官方新闻图）",
+      "rights": "brand_press_public",
+      "verified": true
+    },
+    {
+      "image_url": "https://kpopping.com/_next/image?q=75&url=https%3A%2F%2Fcdn.kpopping.com%2Fkpics%2F2026%2F09%2F1790561137761-8dmcvm-2.jpg&w=1080",
+      "source_page_url": "https://kpopping.com/kpics/260928-wonyoung-instagram-updates",
+      "source_platform": "instagram_repost",
+      "creator": "张员瑛公开社媒照片（kpopping图片页）",
       "rights": "public_platform",
       "verified": true
     },
     {
-      "image_url": "https://api.fastretailing.com/ugc/v1/uq/jp/SR_IMAGES/ugc_stylehint_uq_jp_photo_240316_1294322_r-1000-1333",
-      "source_page_url": "https://www.uniqlo.com/jp/ja/stylingbook/stylehint/5767999",
-      "source_platform": "uniqlo_stylehint",
-      "creator": "UNIQLO StyleHint",
-      "rights": "brand_public_style",
-      "verified": true
-    },
-    {
-      "image_url": "https://images.wear2.jp/coordinate/4Xiqn8Lj/qRbAfSCr/1696043335_500.jpg",
-      "source_page_url": "https://wear.jp/namn0n/23392252/",
-      "source_platform": "wear_jp",
-      "creator": "namino / URBAN RESEARCH DOORS",
+      "image_url": "https://image.starnewskorea.com/cdn-cgi/image/f%3Davif%2Cw%3D860/21/2026/03/2026032207271522149_1.jpg",
+      "source_page_url": "https://www.starnewskorea.com/en/music/2026/03/22/2026032207271522149",
+      "source_platform": "news",
+      "creator": "STARNEWS（2026-03-22机场摄影）",
       "rights": "public_platform",
       "verified": true
     },
     {
-      "image_url": "https://images.wear2.jp/coordinate_sub_image/ROimyyMd/ABwb76ks/1729391921_1000.jpg",
-      "source_page_url": "https://wear.jp/haruka061444/24677818/",
-      "source_platform": "wear_jp",
-      "creator": "Haruka / WEAR",
+      "image_url": "https://newsimg.koreatimes.co.kr/2026/01/16/549c038d-45fa-42ba-96b5-03256181b2dd.jpg",
+      "source_page_url": "https://www.koreatimes.co.kr/lifestyle/trends/20260117/aespas-karina-shows-off-modern-classic-style-en-route-to-milan",
+      "source_platform": "news",
+      "creator": "The Korea Times（2026-01-16机场造型）",
       "rights": "public_platform",
       "verified": true
     },
     {
-      "image_url": "https://images.wear2.jp/coordinate/3oiw7Xj4/akOpjYGB/1690646006_1000.jpg",
-      "source_page_url": "https://wear.jp/category/skirt/?color_group_id=3&tag_ids=530",
-      "source_platform": "wear_jp",
-      "creator": "WEAR outfit contributor",
+      "image_url": "https://www.fashionn.com/files/board/2026/image/o_1jhv2emqnmdjfdrgs1l4kjreh.jpg",
+      "source_page_url": "https://m.fashionn.com/board/read.php?number=59936&table=style",
+      "source_platform": "news",
+      "creator": "FashionN（2026-02-21林允儿机场）",
       "rights": "public_platform",
       "verified": true
     },
     {
-      "image_url": "https://images.wear2.jp/coordinate/p3i3vqvW/rOanU6FS/1757312867_1000.jpg",
-      "source_page_url": "https://wear.jp/publictokyozozo/25743742/",
-      "source_platform": "wear_jp",
-      "creator": "PUBLIC TOKYO WOMENS",
-      "rights": "brand_public_style",
+      "image_url": "https://img.hankyung.com/photo/202602/BF.43437233.1.jpg",
+      "source_page_url": "https://www.tenasia.com/entertainment/2026022703724",
+      "source_platform": "news",
+      "creator": "TenAsia / 韩经网（2026-02-27 Jisoo机场）",
+      "rights": "public_platform",
       "verified": true
     }
   ],
@@ -56,92 +56,78 @@
 }
 -->
 
-# 日本女生秋天把西装穿得松弛，关键不是买大一码
+# Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么
 
-秋天的西装有一个很实际的尴尬：想穿得有精神，一不小心就像刚从正式会议出来；想穿得轻松，又可能因为肩太宽、衣太长，把整个人罩得没比例。
+每到时装周，女明星的机场穿搭就很容易刷屏。漂亮的照片很多，但真正让普通人愿意收藏的，不一定是手上那只包，而是她们把一件普通外套、牛仔裤、针织衫搭得很有精神的办法。
 
-我找了六组来自日本穿搭社区、品牌造型页的实际穿搭。它们有的配黑色长裙，有的配格纹外套和白裙，也有用海军蓝西装搭灰色针织裙的组合。
+这次挑了六组有照片与公开来源的造型：Jisoo、张员瑛、Jennie、Karina、林允儿，其中Jisoo有两套不同时间的机场装扮。照片分别来自2026年1月至9月的公开出行或社交平台，**不是同一天、也不是同一场活动**。每张都只拆解照片能看到的版型、比例和颜色；品牌、具体活动日期只有可核验时才说明。
 
-看起来风格不完全相同，背后的思路却非常接近：**西装负责结构，裙子负责缓和硬度，鞋包负责把整套衣服带回日常生活。**
+先说结论：**最值得复制的不是同款，而是衣服之间的松紧、长短和重点如何分配。** 秋天温差大的城市更应该看叠穿与鞋子的舒适度，而不是硬照着机场照片露腿或穿高跟鞋。
 
-这些都是不同人物的不同造型，不能把它们当作同一个人换着穿的“同款”。普通人真正可以照着学的，是比例、明度和衣服之间的关系。
+## 01 Jisoo：灰针织衫与浅牛仔，松弛感来自一明一暗
 
-## 第一套：浅灰宽肩西装，加黑色长裙
+![2026年9月Jisoo在仁川机场的灰色针织外套和浅色牛仔裤造型](https://prcdn.freetls.fastly.net/release_image/8795/3116/8795-3116-321856c597c016fe8fdd33fc2b94f29b-1800x2700.jpg?auto=webp&bg-color=fff&fit=bounds&format=jpeg&height=1350&quality=85%2C65&width=1950)
 
-![浅灰宽松西装与黑色长裙的日本街头造型](https://images.wear2.jp/coordinate/qri8vJ0g/UNwNIomB/1704240168_1000.jpg)
+Dior于9月29日发布的官方图片记录了Jisoo在9月25日从仁川机场出发的造型：灰色有纹理的针织外套，里面是浅色上衣，搭配浅牛仔裤；淡色的小包给整体增加一个精致的视觉点。
 
-这组搭配第一眼并不复杂：浅灰色外套搭上黑色长裙，脚下是有体积感的深色鞋，肩头背着浅色帆布包。
+这身为什么没有“把衣服穿得很贵”的距离感？因为大件衣服没有抢风头：针织的纹理负责层次，牛仔裤负责日常感。外套并不短，但柔软的材质让肩线看起来不僵硬，包袋的小体积又避免了下半身过于松散。
 
-它的关键不在于“越宽越时髦”，而在于上下装的重量有分工。西装肩部和衣身偏宽，黑色长裙却通过统一颜色把下半身轮廓收得比较完整；鞋子稍重，视觉上便能接住外套的宽松。
+普通人复刻，试“灰色宽松针织开衫＋浅蓝直筒或微宽牛仔裤＋浅色小包”。如果上身偏丰满，不需要刻意买更大的开衫，选肩线自然、下摆不过度鼓起的版型即可。预算优先放在不易起球、手感舒适的针织面料，包不用追求昂贵标识；一个能反复搭配的基础色小包更实用。
 
-如果照搬时把外套、裙子、鞋子全换成厚重的深色，小个子可能会觉得整个人被压低。可以保留浅外套配深下装的结构，再缩短一点外套下摆，露出更多腿部的纵向线条。
+## 02 张员瑛：一身浅色，靠一个小重点提神
 
-## 第二套：细格纹西装与白色内搭，让正式感变轻
+![2026年9月张员瑛公开社媒照片中的奶油白针织上衣与淡粉色包](https://kpopping.com/_next/image?q=75&url=https%3A%2F%2Fcdn.kpopping.com%2Fkpics%2F2026%2F09%2F1790561137761-8dmcvm-2.jpg&w=1080)
 
-![格纹西装白色内搭与黑色长裙的日本品牌造型](https://api.fastretailing.com/ugc/v1/uq/jp/SR_IMAGES/ugc_stylehint_uq_jp_photo_240316_1294322_r-1000-1333)
+这张图来自张员瑛9月28日前后的公开社交平台照片整理。她选择奶油白针织上衣，胸前的小装饰带来一点活泼感，手里的淡粉色包则让整体颜色保持柔和。**这张是社媒穿搭照片，不把它误称为机场现场实拍。**
 
-这张日本品牌穿搭图中，外套用细小格纹制造秩序感，里面则以白色上衣和黑色长裙搭出干净的底色。
+明星的同类造型容易让人第一眼注意到包，但更值得学的其实是颜色控制。白、奶油色、浅粉色都属于比较轻柔的色域，衣服上已经有装饰，其他配件就没必要再叠好几个醒目的颜色。
 
-白色内搭的作用尤其重要。格纹本来信息很多，领口附近如果再叠大面积复杂花纹，注意力就容易散。现在脸部周围明亮，下装又用稳定的深色收住，外套的格纹就变成点缀，而不是整套造型的噪声。
+普通人想学，找“奶油白针织短袖或薄毛衣＋米白或浅蓝下装＋小面积粉色包”。不想走甜妹路线，可以把粉色换成棕色或黑色，整体仍然清爽。小个子如果担心上衣压个子，就把衣摆整理到腰附近，重点放在清楚的腰线。
 
-复刻不一定要找同样的格纹。可以搜“灰色细格纹西装”“素色长裙”“白色方领或圆领上衣”。如果你平时通勤希望利落，领口和袖口的整洁程度，往往比外套的品牌更影响观感。
+## 03 Jennie：格纹西装一整套，也能像周末出门
 
-## 第三套：橘色针织衫和奶油白长裙，把灰西装从办公室拉回街头
+![Jennie于2026年3月机场出行的格纹套装、白T与格纹帽造型](https://image.starnewskorea.com/cdn-cgi/image/f%3Davif%2Cw%3D860/21/2026/03/2026032207271522149_1.jpg)
 
-![灰色宽松格纹西装配橘色内搭和奶油白长裙](https://images.wear2.jp/coordinate/4Xiqn8Lj/qRbAfSCr/1696043335_500.jpg)
+STARNEWS记录了Jennie在2026年3月22日离开仁川机场时的格纹造型。她用格纹外套搭同系列长裤，里面却不是严肃的衬衫，而是印花白T；头上的格纹帽、墨镜进一步减弱了“办公套装”的拘谨感。
 
-这一套让灰色外套不那么沉闷的，是里面那件暖橘色上衣。
+这里最厉害的不是叠了多少贵东西，而是**一套强结构衣服里保留一个随意的入口**。格纹在西装和长裤之间形成连续的视觉线条，T恤则让整体不那么正式。普通人不一定需要买同款格纹套装，可以用自己已有的西装外套配直筒裤，再换上一件白T。
 
-灰色是低调的中性色，奶油白长裙又很轻。橘色只占上半身中间一小块面积，却让穿搭多了秋天的暖意。包袋继续用黑色，就不需要鞋子或首饰再提供强烈颜色。
+搭配时只留一个大图案重点。如果外套格纹特别明显，帽子就选纯色；裤型最好能露出鞋面一点，不然秋天把格纹和厚鞋堆在一起容易显沉。
 
-如果肤色不适合很亮的橘色，可以把它替换成砖红、焦糖或低饱和栗色。重点不是买一件“流行色”，而是控制颜色面积：外套和裙子负责打底，内搭负责把眼睛吸引到上半身。
+## 04 Karina：格纹外套配百褶裙，学院感不必装嫩
 
-对肩较宽的人，落肩外套可以有松量，但别让袖长盖住整只手；露出一点手腕，通常会让造型更轻盈。
+![Karina赴米兰活动的灰色格纹外套、深色百褶裙与棕色手袋](https://newsimg.koreatimes.co.kr/2026/01/16/549c038d-45fa-42ba-96b5-03256181b2dd.jpg)
 
-## 第四套：黑西装与灰色直线裙，靠腰线避免沉闷
+Karina在米兰相关公开出行造型里，用灰色格纹夹克搭深色百褶裙，蓝色上衣的领口从深色内搭上露出少许，棕色手袋提供了一点暖色。照片对应的是2026年初的活动，不是本周的新机场照。
 
-![黑色西装配灰色纽扣长裙的秋季日系造型](https://images.wear2.jp/coordinate_sub_image/ROimyyMd/ABwb76ks/1729391921_1000.jpg)
+这套值得学的是几种硬度的组合：外套偏挺，百褶裙会随着动作变化，包袋的皮质感负责最后的稳重。如果三件单品都太软，造型会没有重点；如果都很硬，又容易像制服。
 
-黑外套、深色内搭、灰裙子，颜色几乎没有跳出中性色，却仍有清楚的层次。原因是裙腰较高，裙身有纵向装饰，外套的硬挺线条不会让腰部完全消失。
+普通人复刻“灰格纹短夹克＋深色A字百褶裙＋小面积蓝色内搭”。不喜欢短裙，可以换成膝下百褶半裙，用乐福鞋或简洁短靴连接上下比例。重点是版型关系，不是一定要穿出学生感。
 
-复刻时最应该确认的不是裙子的具体品牌，而是**裙腰位置和外套长度是否彼此配合**。
+## 05 林允儿：风衣加格纹围巾，秋天的层次感可以很简单
 
-如果外套下摆正好压在胯部最宽的位置，配一条特别蓬的裙子可能显得臃肿。可以换一条落感更直的裙子，或选择更短一点的外套。对于身形较高的人，长外套与长裙可以形成连贯竖线；对小个子来说，留出腰部的视觉位置通常更稳妥。
+![2026年2月林允儿机场出发时的浅色风衣、格纹围巾与深色大包造型](https://www.fashionn.com/files/board/2026/image/o_1jhv2emqnmdjfdrgs1l4kjreh.jpg)
 
-## 第五套：海军蓝西装和灰色长裙，比纯黑多一点轻松感
+林允儿2026年2月飞往伦敦参加时装周相关活动时，穿过浅米色风衣并搭配格纹围巾。这身造型的颜色没有很夸张，反而特别适合真正需要每天通勤的人学。
 
-![海军蓝双排扣西装与灰色针织半裙的日本街拍](https://images.wear2.jp/coordinate/3oiw7Xj4/akOpjYGB/1690646006_1000.jpg)
+风衣提供纵向线条，格纹围巾给脸部附近增加细节，大包有实用容量。全套服装以浅色为主，深色包把视觉压在肩侧，避免浅色从头到脚过于轻飘。秋天最常见的困难，是叠穿后脖子和肩膀都显厚；这里更值得注意围巾的松量和外套肩线是否留了空间。
 
-如果你已经有一件黑西装，可以考虑下一次换海军蓝，而不是再买另一件黑色。
+复刻时不必找相同品牌，只要“米色风衣＋低饱和格纹围巾＋深色实用包”。如果颈部比较短，可把围巾垂下来形成长线条，不必缠上好几圈。预算优先给耐穿的风衣版型。
 
-海军蓝仍然有正式感，但比纯黑更柔和。图片里，它搭配浅灰色长裙、白色内搭和有分量的鞋，整套颜色层次很少，却很清爽。
+## 06 Jisoo：蓝色针织配黑色短裙，重点留给上半身
 
-这组搭配还有个值得抄的细节：外套肩部保持轮廓，下半身则用较贴近身体的纵向裙型平衡，不让上宽下宽同时放大。银色手袋提供小面积亮点，整体仍然不显复杂。
+![Jisoo在2026年2月机场的蓝色开衫、白T和黑色短裙造型](https://img.hankyung.com/photo/202602/BF.43437233.1.jpg)
 
-想让它适合普通通勤，把大鞋换成简洁的乐福鞋也可以；想保留休闲感，就用运动鞋承接裙摆，但要留意鞋底厚度和裙长是否协调。
+再看Jisoo另一套不同时间的机场造型。2026年2月27日，她穿蓝色针织开衫、白色T恤和黑色短裙亮相。和9月的灰开衫＋牛仔裤相比，这身更明显地强调上半身色彩和下装长度的反差。
 
-## 第六套：深灰西装与棕色长裙，用材质让整套更有层次
+它的构成其实很简单：白T把蓝色开衫衬得更清楚，黑色短裙把颜色和线条收住，视觉重点集中在上身。真正可借鉴的是“**一个显眼色＋两个基础色**”，不是必须穿短裙。
 
-![深灰西装深色内搭与棕色长裙的日本品牌造型](https://images.wear2.jp/coordinate/p3i3vqvW/rOanU6FS/1757312867_1000.jpg)
+上班或秋季早晚温差大，可以把下装换成黑色直筒裤，蓝开衫仍然有精神；想偏年轻一点，就配A字裙和低跟鞋。鞋包不必再选大面积艳色，否则原本干净的配色容易被打散；也不需要为了复刻照片专门买一双不适合自己通勤的高跟鞋。
 
-最后这套最适合说明材质的重要性。
+## 普通人最值得抄的五个动作
 
-深灰色外套有明显结构感，深色内搭负责低调，下面的棕色裙子则有更柔软的垂坠感。几件衣服并没有很强烈的颜色冲突，但软硬、深浅和长短已经提供足够变化。
+看完六套，真正有用的是五个动作：第一，外套有宽度，下装就给清楚的直线或腰线；第二，全身颜色先用两种基础色，再给一种小面积重点色；第三，大件用基础款，小包、围巾或T恤负责风格；第四，硬挺和柔软各留一个位置，不要全部堆同一种材质；第五，预算先留给版型、面料和鞋的舒适度，不把钱都用在明星身上的品牌标识。
 
-如果裤装穿久了想换裙子，先试试这样的组合：一件肩线清楚的深色西装，一条布料能自然下落的棕色半裙，配黑色简洁鞋包。与其不停添加项链、丝巾和其他装饰，不如先确认裙摆走路时是不是自然，外套扣上与敞开是不是都好看。
+同样是几位女明星在不同时间的公开造型，Jisoo的针织、Jennie的格纹、Karina的短夹克、林允儿的风衣，在照片里各有特色；普通人并不需要把六套逐件买回来。
 
-## 普通人复刻：先看三处，不急着买贵衣服
-
-六套搭配看完，可以先回到自己的衣柜做一个简单检查。
-
-第一，看肩。西装可以宽，但肩膀和袖长不能完全失去控制。宽一点的肩线配直线条长裙，往往比上下同时膨胀更容易拿捏。
-
-第二，看腰。上衣如果盖住臀部，就让裙型更简洁；外套如果短一点，下装可以保留轻微蓬度。所谓“显比例”，很多时候只是在控制体积出现的位置。
-
-第三，看鞋包。长裙加西装已经能形成明显风格，鞋包不必每件都抢眼。通勤想稳重，深色皮鞋配小包；周末想随意，可以换帆布包和运动鞋，但不要让每件配饰都承担主角角色。
-
-预算有限，我会优先挑**肩部合适、面料不容易走形的西装**，其次是穿着舒适、垂坠自然的裙子。尤其对于常穿的基础款，版型往往比当季的装饰细节更值得花钱。
-
-日韩穿搭真正值得借鉴的，不是照搬镜头中的脸、身高和单品价格，而是看清衣服之间怎样互相让位。
-
-一件西装负责精神，一条长裙负责松弛，鞋包负责日常。**能把这些关系搭清楚，衣服就不需要每次都重新买。**
+**最值得复制的不是同款，而是你能不能把自己的衣柜也搭得清楚、舒服、好看。**

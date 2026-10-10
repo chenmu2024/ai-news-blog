@@ -8,8 +8,10 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 try:
     from content_os.editorial_intelligence import analyze, PROFILES
+    from content_os.reading_feedback import headline_features
 except ImportError:
     from editorial_intelligence import analyze, PROFILES
+    from reading_feedback import headline_features
 
 PROFILE_POSITIVE = {
     "qiezhi": re.compile(r"毛选|毛泽东|调查研究|实践论|矛盾论|群众路线|实事求是"),
@@ -96,6 +98,8 @@ def main():
     data=json.loads(latest.read_text("utf-8"))
     if data.get("local_date")!=today:raise SystemExit("Stale discovery archive: cannot rank as today's research")
     history={profile:archive_titles(profile) for profile in PROFILES}
+    feedback_path=ROOT/"content_os/reading-feedback/latest.json"
+    feedback=json.loads(feedback_path.read_text("utf-8")) if feedback_path.exists() else {"profiles":{}}
     ranking=analyze(convert(data),history)
     # Discovery/indexed headlines are NOT approved topics, even when numerically ranked.
     # Gate every event against trustworthy recency, heat and primary evidence before writing.
@@ -107,12 +111,21 @@ def main():
                     "business_weak_company_event_signal","sensational_or_sensitive_framing","relationship_clickbait_requires_manual_review","weak_profile_match"}
             event["editorial_status"]="reject_or_research_only" if severe.intersection(combined) else "needs_manual_source_and_date_review"
             event["eligible_for_auto_selection"]=False
+            feats=headline_features(event["title"])
+            profile_feedback=(feedback.get("profiles") or {}).get(profile,{})
+            feature_stats=profile_feedback.get("features") or {}
+            usable={f:feature_stats[f] for f in feats if f in feature_stats and feature_stats[f].get("count",0)>=3}
+            event["headline_features"]=feats
+            event["performance_feedback"]=usable
+            event["performance_feedback_status"]="ready" if usable else "insufficient_samples"
             if "unverified_heat" not in event["flags"]:
                 event["flags"].append("original_publication_date_unverified")
             else:
                 event["flags"].extend(["original_publication_date_unverified","insufficient_popularity_evidence"])
     report={"date":today,"status":"advisory_only","discovery_generated_at":data.get("generated_at"),
         "ranking_provenance":"public discovery, not verified WeChat virality",
+        "reading_feedback_generated_at":feedback.get("generated_at"),
+        "reading_feedback_policy":feedback.get("policy","No verified reading feedback available."),
         "profiles":ranking}
     out=ROOT/"content_os/editorial-intelligence"/f"{today}.json"
     out.parent.mkdir(parents=True,exist_ok=True)

@@ -11,6 +11,8 @@ import json
 import os
 from pathlib import Path
 import sys
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 
 def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict:
@@ -59,9 +61,16 @@ def main() -> int:
     ap.add_argument("--profile", required=True)
     ap.add_argument("--article", required=True)
     ap.add_argument("--status-dir", type=Path)
+    ap.add_argument("--today-only", action="store_true", help="Never dispatch yesterday archive on schedule/manual rerun")
     args = ap.parse_args()
     try:
         result = inspect(Path(args.article), args.profile, args.status_dir)
+        # A daily draft bridge must never publish yesterday's latest archive
+        # when today's writing task has not created its new file.
+        today = datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+        if args.today_only and Path(args.article).stem != today:
+            result["should_publish"] = False
+            result["reason"] = "archive_not_today"
     except (OSError, ValueError) as exc:
         print(f"::error::{exc}", file=sys.stderr)
         return 1

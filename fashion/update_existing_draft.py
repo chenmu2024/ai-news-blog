@@ -65,11 +65,19 @@ def _media_id_from_verified_run(success_receipt: dict) -> str:
     return media_ids[0]
 
 
+def _wechat_json(response):
+    # The static proxy may label a UTF-8 JSON response as Latin-1.
+    # requests.Response.json() then produces mojibake (e.g. æ\x97¥æ\x9c¬).
+    # Decode raw wire bytes explicitly, preserving Chinese titles and HTML.
+    return json.loads(response.content.decode("utf-8"))
+
+
 def _get_exact_draft(token: str, media_id: str) -> dict:
     response = pub.request_with_proxy(
         "POST", pub.API + "/draft/get", params={"access_token": token},
         json={"media_id": media_id}, timeout=45,
-    ).json()
+    )
+    response = _wechat_json(response)
     if response.get("errcode", 0) != 0:
         raise RuntimeError("Original media_id no longer resolves to a WeChat draft")
     articles = response.get("news_item") or []
@@ -167,10 +175,11 @@ def main():
                            "; original title: " + repr(old_title) +
                            "; body marker 1: " + str("一件西装负责精神" in (current.get("content") or "")) +
                            "; body marker 2: " + str("普通人复刻：先看三处" in (current.get("content") or "")))
-    verify = pub.request_with_proxy(
+    verify_response = pub.request_with_proxy(
         "POST", pub.API + "/draft/get", params={"access_token": tok},
         json={"media_id": media_id}, timeout=45,
-    ).json()
+    )
+    verify = _wechat_json(verify_response)
     articles = verify.get("news_item") or []
     if len(articles) != 1 or not _identical_revision(articles[0], title):
         raise RuntimeError("WeChat draft/get failed revised-title/content verification")

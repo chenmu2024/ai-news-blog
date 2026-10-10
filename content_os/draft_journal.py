@@ -74,6 +74,32 @@ def _put(token: str, repo: str, path: str, value: dict, sha: str | None) -> None
     _request("PUT", _endpoint(repo, path), token, data)
 
 
+def gate_snapshot(profile: str, article: Path) -> dict | None:
+    """Capture exact PASS artifacts so a confirmed draft can recover after sync crash.
+
+    Missing/stale reports never become invented PASS values. The normal draft
+    creation still uses its own gates; snapshots only authorize later recovery.
+    """
+    files = ["quality-gate.json", "visual-gate.json"]
+    if profile == "fashion":
+        files.append("image-gate.json")
+    if profile == "zizhitongjian":
+        files.append("source-gate.json")
+    expected = hashlib.sha256(article.read_bytes()).hexdigest()
+    checked = {}
+    for name in files:
+        try:
+            report = json.loads((Path(profile) / "status" / name).read_text("utf-8"))
+        except (OSError, ValueError):
+            return None
+        if (report.get("status") != "PASS" or
+                report.get("article_sha256") != expected or
+                report.get("article_path") != article.as_posix()):
+            return None
+        checked[name] = report
+    return checked
+
+
 def reserve(profile: str, article: Path, title: str) -> None:
     token, repo, run_id = _environment()
     path = journal_path(profile, article)
@@ -89,6 +115,9 @@ def reserve(profile: str, article: Path, title: str) -> None:
         "title": title,
         "run_id": run_id,
     }
+    passed_gates = gate_snapshot(profile, article)
+    if passed_gates is not None:
+        intent["passed_gates"] = passed_gates
     for attempt in range(5):
         try:
             _put(token, repo, path, intent, None)

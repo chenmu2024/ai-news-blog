@@ -4,6 +4,7 @@ import io
 import json
 import os
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -212,6 +213,52 @@ class ImageResilienceTests(unittest.TestCase):
         html = '<img src="https://example.com/unaudited-photo.jpg" alt="photo">'
         with self.assertRaisesRegex(ValueError, "must be Markdown"):
             m.prepare_images(html, "business")
+
+    def test_staged_jpeg_is_reused_without_network(self):
+        url = "https://images.example.com/coffee.jpg"
+        markdown = "# Brand story\\n![Real photo](" + url + ")"
+        source = FakeSession({url: Response(url)})
+        with tempfile.TemporaryDirectory() as temp:
+            original = m.prepare_images(markdown, "business", session=source)
+            self.assertEqual(len(source.calls), 1)
+            m.save_prepared_cache(markdown, "business", original, Path(temp))
+            blocked = FakeSession({})
+            env = {"CONTENT_OS_IMAGE_CACHE_READ": "1", "CONTENT_OS_IMAGE_CACHE_DIR": temp}
+            with patch.dict(os.environ, env):
+                loaded = m.prepare_images(markdown, "business", session=blocked)
+            self.assertEqual(loaded, original)
+            self.assertEqual(blocked.calls, [])
+
+    def test_cache_rejects_article_change_and_wrong_profile(self):
+        url = "https://images.example.com/store.jpg"
+        markdown = "# Store\\n![Store](" + url + ")"
+        with tempfile.TemporaryDirectory() as temp:
+            m.save_prepared_cache(markdown, "business",
+                                  {url: (image_bytes(), "image/jpeg", ".jpg")}, Path(temp))
+            env = {"CONTENT_OS_IMAGE_CACHE_READ": "1", "CONTENT_OS_IMAGE_CACHE_DIR": temp}
+            with patch.dict(os.environ, env):
+                with self.assertRaisesRegex(RuntimeError, "cache unavailable or tampered"):
+                    m.prepare_images(markdown + "\\nChanged", "business")
+                with self.assertRaisesRegex(RuntimeError, "cache unavailable or tampered"):
+                    m.prepare_images(markdown, "parenting")
+
+    def test_cache_rejects_corrupt_bytes_and_missing_manifest(self):
+        url = "https://images.example.com/shop.jpg"
+        markdown = "# Store\\n![Shop](" + url + ")"
+        with tempfile.TemporaryDirectory() as temp:
+            m.save_prepared_cache(markdown, "business",
+                                  {url: (image_bytes(), "image/jpeg", ".jpg")}, Path(temp))
+            manifest = json.loads((Path(temp) / "manifest.json").read_text("utf-8"))
+            filename = manifest["images"][url]["file"]
+            (Path(temp) / filename).write_bytes(b"tampered")
+            env = {"CONTENT_OS_IMAGE_CACHE_READ": "1", "CONTENT_OS_IMAGE_CACHE_DIR": temp}
+            with patch.dict(os.environ, env):
+                with self.assertRaisesRegex(RuntimeError, "cache unavailable or tampered"):
+                    m.prepare_images(markdown, "business")
+            (Path(temp) / "manifest.json").unlink()
+            with patch.dict(os.environ, env):
+                with self.assertRaisesRegex(RuntimeError, "cache unavailable or tampered"):
+                    m.prepare_images(markdown, "business")
 
     def test_fashion_requires_five_distinct_real_images(self):
         article = "\n".join("![Example](https://example.com/i" + str(i) + ".jpg)" for i in range(4))

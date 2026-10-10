@@ -50,7 +50,7 @@ jobs:
           PY
       - name: Compile reliability and all seven draft publishers
         run: |
-          python -m py_compile content_os/{draft_journal,draft_preflight,daily_healthcheck,gate_trace,publish_readiness,image_preflight,image_resilience,quality_gate,visual_gate}.py
+          python -m py_compile content_os/{draft_journal,draft_preflight,daily_healthcheck,gate_trace,publish_readiness,image_preflight,image_resilience,quality_gate,visual_gate,editorial_intelligence,build_editorial_shortlist,source_health,reading_feedback,manual_review}.py
           python -m py_compile {qiezhi,wechat,business,zizhitongjian,parenting,jingyun,fashion}/publish_draft.py
       - name: Offline full regression suite (no WeChat API)
         run: python -m unittest discover -s content_os/tests -p 'test_*.py' -v
@@ -68,6 +68,8 @@ jobs:
               assert all(u.startswith('https://') for u in config['primary']+config['fallback'])
           print('[SOURCES] seven accounts configured')
           PY
+      - name: Validate manual review ledger schema
+        run: python content_os/manual_review.py
       - name: Validate the latest archived articles against publisher input contracts
         run: |
           python - <<'PY'

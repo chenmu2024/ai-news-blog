@@ -21,7 +21,8 @@ PROFILE_POSITIVE = {
     "fashion": re.compile(r"杨幂|刘亦菲|赵露思|Jisoo|Jennie|张员瑛|宋慧乔|林允儿|机场|时装周|穿搭|造型|礼服|秀场", re.I),
 }
 MARKETING = re.compile(r"福利|课程|合集|PDF下载|加微信|领取|训练营|知识付费|好书推荐|全套")
-SENSATIONAL = re.compile(r"炸锅|低胸|身材大变|走光|跳楼|自杀|惨死|杀害|万箭穿心")\nRELATIONSHIP_CLICKBAIT = re.compile(r"实录[:：]?|婚外情|出轨|抓奸|原配|小三")
+SENSATIONAL = re.compile(r"炸锅|低胸|身材大变|走光|跳楼|自杀|惨死|杀害|万箭穿心")
+RELATIONSHIP_CLICKBAIT = re.compile(r"实录[:：]?|婚外情|出轨|抓奸|原配|小三")
 FASHION_CONTEXT = re.compile(r"穿搭|造型|礼服|秀场|街拍|西装|裙|外套|鞋|包|上衣|裤|风衣|针织|大衣")
 CELEBRITY = re.compile(r"杨幂|刘亦菲|赵露思|Jisoo|Jennie|张员瑛|宋慧乔|林允儿", re.I)
 

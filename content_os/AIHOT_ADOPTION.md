@@ -33,3 +33,6 @@ source discovery -> fallback decision -> date verification -> event duplicate re
 `python -m unittest content_os.test_editorial_intelligence`
 `python -m compileall -q content_os`
 Run existing CI reliability regression and `publish_readiness.py` on an unsubmitted staging article per profile. A real end-to-end pass requires seven verified same-day official WeChat draft receipts, not merely seven green quality gates. Keep this advisory module outside the publish workflow until its trial data and tests are verified.
+
+## Daily advisory artifact (automated)
+The existing free-topic-discovery workflow now runs `content_os/build_editorial_shortlist.py` after collecting its same-day source index and commits `content_os/editorial-intelligence/YYYY-MM-DD.json`. Before selecting an article, check **today's** file and its `flags`, then consult original articles and near-30-day archive. Do not treat `score` as established readership or `heat_verified=false` as popularity. Old or missing daily artifact means insufficient evidence, not a pass. This workflow does not generate three titles by itself, access WeChat statistics, or draft any article; those remain editorial/production-stage responsibilities. If the collector fails, consult `topic-intelligence/latest.json` and log failure; never reuse yesterday's shortlist as today.

@@ -13,7 +13,7 @@ concurrency:
 
 permissions:
   contents: write
-  actions: read
+  actions: write
 
 jobs:
   create-zizhitongjian-draft:
@@ -44,17 +44,40 @@ jobs:
       - name: Install dependencies
         run: pip install -r zizhitongjian/requirements.txt
 
+
+      - name: Validate external image bytes before optional rendering
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        timeout-minutes: 5
+        run: python content_os/image_preflight.py --profile zizhitongjian --article "$ARTICLE_PATH"
+
+      - name: Install Chinese fonts (bounded)
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        timeout-minutes: 5
+        run: |
+          set -euo pipefail
+          if fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'; then
+            echo "[FONTS] Existing CJK fonts found; skip apt."
+          else
+            timeout 90s sudo apt-get update -qq -o Acquire::Retries=1 -o Acquire::http::Timeout=15
+            timeout 120s sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends fonts-noto-cjk
+          fi
+          fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans' || { echo "::error::Chinese fonts missing"; exit 1; }
+
       - name: Draft idempotency preflight
         id: preflight
         shell: bash
         run: |
-          python content_os/draft_preflight.py --profile zizhitongjian --article "$ARTICLE_PATH"
+          python content_os/draft_preflight.py --today-only --profile zizhitongjian --article "$ARTICLE_PATH"
       - name: Original-text source gate
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
           python zizhitongjian/source_gate.py \
             --article "$ARTICLE_PATH" \
             --json-out zizhitongjian/status/source-gate.json
+
+      - name: Publisher input contract (no WeChat calls)
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        run: python content_os/publish_readiness.py --profile zizhitongjian --article "$ARTICLE_PATH"
 
       - name: Content OS quality gate
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
@@ -73,11 +96,9 @@ jobs:
             --profile zizhitongjian \
             --json-out zizhitongjian/status/visual-gate.json
 
-      - name: Install Chinese fonts
+      - name: Bind passed gates to immutable article SHA256
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+        run: python content_os/gate_trace.py --profile zizhitongjian --article "$ARTICLE_PATH"
 
       - name: Create Zizhi Tongjian WeChat draft only
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
@@ -135,6 +156,12 @@ jobs:
               sleep $((attempt * 2))
             done
           fi
+
+      - name: Refresh daily health audit after confirmed draft
+        if: ${{ steps.preflight.outputs.should_publish == 'true' && success() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run draft-health-audit.yml --ref main
 
       - name: Record failure diagnostics
         if: ${{ failure() }}

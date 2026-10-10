@@ -1,0 +1,252 @@
+{
+  "date": "2026-10-10",
+  "generated_at": "2026-10-10T10:37:30.529543+08:00",
+  "profiles": {
+    "qiezhi": {
+      "sources": [
+        {
+          "url": "https://www.dswxyjy.org.cn/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.dswxyjy.org.cn/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.12371.cn/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.12371.cn/",
+          "content_type": "text/html",
+          "role": "fallback"
+        },
+        {
+          "url": "https://www.people.com.cn/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.people.com.cn/",
+          "content_type": "text/html",
+          "role": "fallback"
+        }
+      ],
+      "primary_reachable": true,
+      "fallback_reachable": true,
+      "note": "Reachability only; content/date/licence/fact checks remain mandatory."
+    },
+    "wechat": {
+      "sources": [
+        {
+          "url": "https://openai.com/news/",
+          "status": "http_error",
+          "http_status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "role": "primary"
+        },
+        {
+          "url": "https://github.blog/feed/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://github.blog/feed/",
+          "content_type": "application/rss+xml",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.anthropic.com/news",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.anthropic.com/news",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://huggingface.co/blog/feed.xml",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://huggingface.co/blog/feed.xml",
+          "content_type": "application/rss+xml",
+          "role": "fallback"
+        },
+        {
+          "url": "https://www.producthunt.com/feed",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.producthunt.com/feed",
+          "content_type": "application/atom+xml",
+          "role": "fallback"
+        }
+      ],
+      "primary_reachable": true,
+      "fallback_reachable": true,
+      "note": "Reachability only; content/date/licence/fact checks remain mandatory."
+    },
+    "business": {
+      "sources": [
+        {
+          "url": "https://www.cninfo.com.cn/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.cninfo.com.cn/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.hkexnews.hk/",
+          "status": "http_error",
+          "http_status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.reuters.com/business/",
+          "status": "http_error",
+          "http_status": 401,
+          "error": "HTTP Error 401: HTTP Forbidden",
+          "role": "fallback"
+        },
+        {
+          "url": "https://www.sec.gov/edgar/search/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.sec.gov/edgar/search/",
+          "content_type": "text/html",
+          "role": "fallback"
+        }
+      ],
+      "primary_reachable": true,
+      "fallback_reachable": true,
+      "note": "Reachability only; content/date/licence/fact checks remain mandatory."
+    },
+    "zizhitongjian": {
+      "sources": [
+        {
+          "url": "https://zh.wikisource.org/wiki/資治通鑑",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://zh.wikisource.org/wiki/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://ctext.org/wiki.pl?if=gb&res=3216",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://ctext.org/wiki.pl?if=gb&res=3216",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷001",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://zh.wikisource.org/wiki/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91/%E5%8D%B7001",
+          "content_type": "text/html",
+          "role": "fallback"
+        }
+      ],
+      "primary_reachable": true,
+      "fallback_reachable": true,
+      "note": "Reachability only; content/date/licence/fact checks remain mandatory."
+    },
+    "parenting": {
+      "sources": [
+        {
+          "url": "https://www.moe.gov.cn/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "http://www.moe.gov.cn/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.unicef.org/parenting",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.unicef.org/parenting/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.who.int/health-topics/adolescent-health",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.who.int/health-topics/adolescent-health",
+          "content_type": "text/html",
+          "role": "fallback"
+        },
+        {
+          "url": "https://www.cdc.gov/child-development/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.cdc.gov/child-development/",
+          "content_type": "text/html",
+          "role": "fallback"
+        }
+      ],
+      "primary_reachable": true,
+      "fallback_reachable": true,
+      "note": "Reachability only; content/date/licence/fact checks remain mandatory."
+    },
+    "jingyun": {
+      "sources": [
+        {
+          "url": "https://www.unwomen.org/en/news",
+          "status": "http_error",
+          "http_status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.ilo.org/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.ilo.org/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.who.int/news",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.who.int/news",
+          "content_type": "text/html",
+          "role": "fallback"
+        }
+      ],
+      "primary_reachable": true,
+      "fallback_reachable": true,
+      "note": "Reachability only; content/date/licence/fact checks remain mandatory."
+    },
+    "fashion": {
+      "sources": [
+        {
+          "url": "https://www.vogue.com/fashion",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.vogue.com/fashion",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.elle.com/fashion/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.elle.com/fashion/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.harpersbazaar.com/fashion/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.harpersbazaar.com/fashion/",
+          "content_type": "text/html",
+          "role": "fallback"
+        }
+      ],
+      "primary_reachable": true,
+      "fallback_reachable": true,
+      "note": "Reachability only; content/date/licence/fact checks remain mandatory."
+    }
+  },
+  "policy": "No login, paid API, CAPTCHA bypass or authentication attempted."
+}

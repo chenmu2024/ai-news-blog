@@ -97,6 +97,7 @@ jobs:
       - name: Render Qiezhi cards and create WeChat draft
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         env:
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
           WECHAT_APP_ID: ${{ secrets.QIEZHI_WECHAT_APP_ID }}
           WECHAT_APP_SECRET: ${{ secrets.QIEZHI_WECHAT_APP_SECRET }}
           PROXY_URL: ${{ secrets.PROXY_URL }}

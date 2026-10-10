@@ -38,7 +38,7 @@ def editorial_quality(profile, title):
         flags.append("marketing_or_sales_content")
         relevance-=35
     if SENSATIONAL.search(title):
-        flags.append("sensational_or_sensitive framing")
+        flags.append("sensational_or_sensitive_framing")
         relevance-=25
         hook-=10
     if profile=="fashion":
@@ -100,7 +100,7 @@ def main():
             combined=list(dict.fromkeys(event.get("flags",[])+event.get("editorial_flags",[])))
             event["flags"]=combined
             severe={"marketing_or_sales_content","fashion_no_named_priority_celebrity","fashion_weak_outfit_context",
-                    "business_weak_company_event_signal","sensational_or_sensitive framing","weak_profile_match"}
+                    "business_weak_company_event_signal","sensational_or_sensitive_framing","weak_profile_match"}
             event["editorial_status"]="reject_or_research_only" if severe.intersection(combined) else "needs_manual_source_and_date_review"
             event["eligible_for_auto_selection"]=False
             if "unverified_heat" not in event["flags"]:

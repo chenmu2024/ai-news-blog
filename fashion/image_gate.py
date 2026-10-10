@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import date, timedelta
 import json
 import re
 from pathlib import Path
@@ -9,6 +10,48 @@ from urllib.parse import urlparse
 SOURCE_RE = re.compile(r"<!--\s*FASHION_SOURCE\s*(\{[\s\S]*?\})\s*-->", re.S)
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
 TOPIC_TYPES = {"celebrity", "korean", "japanese", "lookbook", "model"}
+
+
+CELEBRITY_START = date(2026, 10, 11)
+MIN_CELEBRITY_PER_SEVEN = 5
+
+
+def celebrity_quota_error(article: Path, topic_type: str) -> str | None:
+    """Prospective seven-publication block: at least five celebrity stories.
+
+    Applies only to new archive files. Existing articles, and in-place
+    revisions that already updated an actual WeChat draft, stay immutable.
+    A skipped prior day cannot be treated as a celebrity publication.
+    """
+    if article.parent.name != "archive" or article.parent.parent.name != "fashion":
+        return None
+    try:
+        article_day = date.fromisoformat(article.stem)
+    except ValueError:
+        return None
+    if article_day < CELEBRITY_START:
+        return None
+    offset = (article_day - CELEBRITY_START).days
+    slot = offset % 7
+    start = article_day - timedelta(days=slot)
+    previous_celebrity = 0
+    for i in range(slot):
+        previous = article.parent / ((start + timedelta(days=i)).isoformat() + ".md")
+        if not previous.exists():
+            continue
+        try:
+            m = SOURCE_RE.search(previous.read_text(encoding="utf-8"))
+            if m and json.loads(m.group(1)).get("topic_type") == "celebrity":
+                previous_celebrity += 1
+        except (OSError, ValueError):
+            continue
+    total_possible = previous_celebrity + int(topic_type == "celebrity") + (6 - slot)
+    if total_possible < MIN_CELEBRITY_PER_SEVEN:
+        return (
+            "明星穿搭不足：每连续7个自然日至少5篇真实明星造型。"
+            "当前稿若为普通街拍，将无法达到比例；请更换为明星穿搭专题。"
+        )
+    return None
 
 
 def fail(msg: str) -> None:
@@ -55,6 +98,9 @@ def main() -> int:
     topic_type = str(data.get("topic_type") or "").strip()
     if topic_type not in TOPIC_TYPES:
         hard_failures.append("topic_type 无效")
+    quota_error = celebrity_quota_error(path, topic_type)
+    if quota_error:
+        hard_failures.append(quota_error)
 
     if not str(data.get("subject") or "").strip():
         hard_failures.append("subject 不能为空")
@@ -93,6 +139,19 @@ def main() -> int:
             warnings.append(f"images[{idx}] 未填写 rights")
         if not verified:
             warnings.append(f"images[{idx}] verified 未标记 true")
+
+    if (topic_type == "celebrity" and path.parent.name == "archive" and
+            path.stem >= CELEBRITY_START.isoformat()):
+        authentic = [
+            entry for entry in images
+            if isinstance(entry, dict)
+            and entry.get("verified") is True
+            and entry.get("rights") not in ("ai_generated", "unknown_public")
+            and str(entry.get("creator") or "").strip()
+            and valid_http_url(str(entry.get("source_page_url") or ""))
+        ]
+        if len(authentic) < 5:
+            hard_failures.append("明星专题至少5张实名来源的真实造型照片；AI及无来源图不可计入")
 
     extra_body_images = body_image_urls - manifest_urls
     if extra_body_images:

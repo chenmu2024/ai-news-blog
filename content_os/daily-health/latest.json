@@ -1,6 +1,6 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T10:45:28.707969+08:00",
+  "generated_at": "2026-10-10T10:47:39.339463+08:00",
   "timezone": "Asia/Shanghai",
   "status": "complete",
   "success_count": 7,
@@ -9,6 +9,8 @@
   "legacy_media_id_receipt_count": 2,
   "legacy_repo_receipt_only_count": 5,
   "draft_confirmation_status": "legacy_compatibility",
+  "alert_required": false,
+  "alert_reasons": [],
   "accounts": {
     "qiezhi": {
       "profile": "qiezhi",

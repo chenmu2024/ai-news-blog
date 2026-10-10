@@ -34,6 +34,7 @@
 
   D额外执行对应 `source_gate.py`，G额外执行 `image_gate.py`；编辑重复标题用 `editorial_guard.py` 对照近30天归档。每张图片为真且许可可追溯后才能调用 `GitHub create_file`。
 - 不允许把成功文章改标题、换图或重写；修复失败只能针对确实尚未发起 draft/add 的文章。**HTTP超时不等于草稿创建失败**。
+- 需要人工调查时，将结论与证据追加到 `content_os/manual-review/decisions.jsonl`，并用 `python content_os/manual_review.py` 校验；模型建议不得冒充人工批准。对 source/topic/fact/image/draft/retry/metrics 任一人工放行必须记录 reviewer、decision、evidence。
 - 创建归档后需查 Actions 到底运行到了哪一步。仅在正文、Gate、持久草稿日志、SHA、today和成功回执全部匹配后报“公众号草稿完成”。不自动正式发布/群发。
 
 ## 11:20 补漏
@@ -42,7 +43,7 @@
 2. 对失败号先看同日 run/job/log，判断失败发生在 `draft/add` **之前还是之后**。
 3. 当日 `status/draft-attempts/YYYY-MM-DD.json` 不存在且对应工作流已经结束，才能认为没有接近 WeChat draft/add；仍需确认运行日志。
 4. 若尝试日志存在且 state=attempted 或 confirmed，但主状态缺失/不符：停止自动重传，查已确认媒体ID及官方微信草稿列表，恢复一致回执；绝对不能让补漏任务重复 POST 草稿。
-5. 审计报告相对于 `Asia/Shanghai` 当前日期过期，则标记 stale 并用实时仓库/Actions重新核对，不得用旧报告宣告成功。
+5. 审计报告相对于 `Asia/Shanghai` 当前日期过期，则标记 stale 并用实时仓库/Actions重新核对，不得用旧报告宣告成功；若 `content_os/daily-health/latest.json` 的 `alert_required=true`，必须列出 `alert_reasons` 并进入故障处理，不得只看 `success_count`。
 6. 每个账号独立；来源或微信单号故障不阻塞其他6号。
 
 ## 第二轮长期故障预防（2026-10-10）

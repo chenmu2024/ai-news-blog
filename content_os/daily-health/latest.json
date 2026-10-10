@@ -1,6 +1,6 @@
 {
   "date": "2026-10-10",
-  "generated_at": "2026-10-10T10:49:25.553322+08:00",
+  "generated_at": "2026-10-10T10:54:56.390173+08:00",
   "timezone": "Asia/Shanghai",
   "status": "complete",
   "success_count": 7,
@@ -11,6 +11,14 @@
   "draft_confirmation_status": "legacy_compatibility",
   "alert_required": false,
   "alert_reasons": [],
+  "editorial_alert_required": false,
+  "editorial_alert_reasons": [],
+  "headline_decisions": {
+    "status": "not_required_legacy_day",
+    "complete_count": 0,
+    "expected_count": 7,
+    "profiles": {}
+  },
   "accounts": {
     "qiezhi": {
       "profile": "qiezhi",

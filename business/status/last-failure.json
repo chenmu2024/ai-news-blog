@@ -1,13 +1,13 @@
 {
   "status": "failure",
-  "date": "2026-10-09",
+  "date": "2026-10-10",
   "profile": "business",
   "article_path": "business/archive/",
-  "workflow_run_id": "37865954129",
-  "url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37865954129",
+  "workflow_run_id": "38010634975",
+  "url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/38010634975",
   "jobs": [
     {
-      "id": 113612608658,
+      "id": 114089561682,
       "name": "create-business-draft",
       "conclusion": null,
       "failed_steps": []

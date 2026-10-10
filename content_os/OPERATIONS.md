@@ -44,6 +44,15 @@
 5. 审计报告相对于 `Asia/Shanghai` 当前日期过期，则标记 stale 并用实时仓库/Actions重新核对，不得用旧报告宣告成功。
 6. 每个账号独立；来源或微信单号故障不阻塞其他6号。
 
+## 第二轮长期故障预防（2026-10-10）
+
+- **图片只下载一次**：七号使用 `image_preflight.py` 在无微信凭证阶段验证所有图片并保存到同一次 Runner 的临时目录；`image_resilience.py` 上传阶段必须从校验过的缓存复用JPEG，验证文章SHA、每图哈希、JPEG格式，不再次访问不稳定图片图床；缓存损坏则停发。
+- **过期内容不做耗时准备**：D《资治通鉴》的幂等检查已提前至依赖/图片/字体准备之前，七号统一遵守先 `draft_preflight.py --today-only`。
+- **冲突重试**：七号正文草稿成功后的 GitHub 状态同步，在多个账号同时推送时做最多7轮仓库冲突重试；重试只写状态与结果，绝不重新调用微信 `draft/add`。
+- **07:45每日离线回归**：`content-os-reliability-tests.yml` 使用 `45 23 * * *`（UTC）计划每天约07:45北京时间检查语法、配置、模拟故障和最新归档；GitHub cron可能延迟，离线绿灯不代替真实草稿成功。
+- **完整的已确认草稿自恢复**：新稿 `draft_journal.py` 在 `attempted` 记录中保存经过SHA绑定的Gate快照，`confirmed` 保存微信 `media_id`。健康审计遇到成功创建但本地状态回写失败时，`reconcile_confirmed.py` 可以只凭哈希一致的归档、已确认 `media_id`、PASS Gate快照恢复 `status/latest.json`、Gate和 `today.md`；绝不再次调用微信API。无 `confirmed` 或Gate快照缺失时仍失败关闭，等待调查。
+- **微信真实标题一致性**：2026-10-11起新稿H1不超过32字符，防止微信接口自动截短，造成仓库标题和实际草稿不一致。历史稿仅审计，不更改。
+
 ## 质量与可用性验收
 
 - CI `Content OS Reliability Regression Suite` 编译七个发布器和关键脚本，解析所有工作流 YAML，运行无API回归测试，并检查最新归档的发布器输入契约。

@@ -79,6 +79,8 @@ jobs:
       - name: Validate external image bytes before font setup
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         timeout-minutes: 5
+        env:
+          CONTENT_OS_IMAGE_CACHE_DIR: ${{ runner.temp }}/content-os-images-${{ github.run_id }}-${{ github.run_attempt }}
         run: python content_os/image_preflight.py --profile wechat --article "$ARTICLE_PATH"
 
       - name: Install Chinese fonts (bounded)
@@ -98,6 +100,8 @@ jobs:
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         env:
           CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          CONTENT_OS_IMAGE_CACHE_DIR: ${{ runner.temp }}/content-os-images-${{ github.run_id }}-${{ github.run_attempt }}
+          CONTENT_OS_IMAGE_CACHE_READ: "1"
           WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
           WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
           PROXY_URL: ${{ secrets.PROXY_URL }}

@@ -1,0 +1,17 @@
+{
+  "status": "failure",
+  "date": "2026-10-10",
+  "profile": "qiezhi",
+  "article_path": "qiezhi/archive/",
+  "workflow_run_id": "38008883729",
+  "url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/38008883729",
+  "jobs": [
+    {
+      "id": 114083997754,
+      "name": "create-qiezhi-draft",
+      "conclusion": null,
+      "failed_steps": []
+    }
+  ],
+  "readError": null
+}

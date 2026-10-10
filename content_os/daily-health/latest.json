@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-09",
-  "generated_at": "2026-10-09T16:57:36.644866+08:00",
+  "date": "2026-10-10",
+  "generated_at": "2026-10-10T09:14:27.035252+08:00",
   "timezone": "Asia/Shanghai",
   "status": "complete",
   "success_count": 7,
@@ -9,8 +9,8 @@
     "qiezhi": {
       "profile": "qiezhi",
       "status": "success",
-      "archive": "qiezhi/archive/2026-10-09.md",
-      "title": "毛选：为什么书读了不少，真正遇到难题还是不会解",
+      "archive": "qiezhi/archive/2026-10-10.md",
+      "title": "最伤团队的，往往不是争论，而是开会时没人说真话",
       "workflow_run_id": null,
       "gates": {
         "quality-gate.json": "PASS",
@@ -23,9 +23,9 @@
     "wechat": {
       "profile": "wechat",
       "status": "success",
-      "archive": "wechat/archive/2026-10-09.md",
-      "title": "一家自动化公司要收购Boost.ai，我看到企业客服AI旁边的3门小生意",
-      "workflow_run_id": "37864983150",
+      "archive": "wechat/archive/2026-10-10.md",
+      "title": "一家AI公司与巨头分手后，又拿到超5亿美元：Manus的生意给一人公司什么提醒",
+      "workflow_run_id": "38008917372",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
@@ -37,9 +37,9 @@
     "business": {
       "profile": "business",
       "status": "success",
-      "archive": "business/archive/2026-10-09.md",
-      "title": "必胜客被27亿美元拆卖：百胜为什么不再自己养这个老品牌",
-      "workflow_run_id": "37866072991",
+      "archive": "business/archive/2026-10-10.md",
+      "title": "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
+      "workflow_run_id": "38011882219",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
@@ -51,9 +51,9 @@
     "zizhitongjian": {
       "profile": "zizhitongjian",
       "status": "success",
-      "archive": "zizhitongjian/archive/2026-10-09.md",
-      "title": "商鞅徙木立信：五十金的承诺，真正改变了什么",
-      "workflow_run_id": "37865728060",
+      "archive": "zizhitongjian/archive/2026-10-10.md",
+      "title": "智伯明明最强，为什么最后输给了三个弱者？",
+      "workflow_run_id": "38010834244",
       "gates": {
         "source-gate.json": "PASS",
         "quality-gate.json": "PASS",
@@ -66,9 +66,9 @@
     "parenting": {
       "profile": "parenting",
       "status": "success",
-      "archive": "parenting/archive/2026-10-09.md",
-      "title": "孩子早上说不想去学校，先别急着问“为什么又闹”",
-      "workflow_run_id": "37865941267",
+      "archive": "parenting/archive/2026-10-10.md",
+      "title": "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
+      "workflow_run_id": "38010683933",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
@@ -80,9 +80,9 @@
     "jingyun": {
       "profile": "jingyun",
       "status": "success",
-      "archive": "jingyun/archive/2026-10-09.md",
-      "title": "中年夫妻每天都在说话，为什么越来越像在交接工作",
-      "workflow_run_id": "37864734645",
+      "archive": "jingyun/archive/2026-10-10.md",
+      "title": "40岁以后重新找工作，最难的不是把简历写漂亮",
+      "workflow_run_id": "38008741433",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
@@ -94,9 +94,9 @@
     "fashion": {
       "profile": "fashion",
       "status": "success",
-      "archive": "fashion/archive/2026-10-09.md",
-      "title": "日韩女生把针织开衫穿得不显老，关键不是买贵的",
-      "workflow_run_id": "37865660301",
+      "archive": "fashion/archive/2026-10-10.md",
+      "title": "日本女生秋天把西装穿得松弛，关键不是买大一码",
+      "workflow_run_id": "38010796124",
       "gates": {
         "image-gate.json": "PASS",
         "quality-gate.json": "PASS",
@@ -107,7 +107,7 @@
       "errors": []
     }
   },
-  "topic_scan_date": "2026-10-09",
+  "topic_scan_date": "2026-10-10",
   "topic_scan_available": true,
   "topic_popularity_verified_count": {
     "qiezhi": 0,

@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-10",
+  "generated_at": "2026-10-10T09:14:27.035252+08:00",
+  "timezone": "Asia/Shanghai",
+  "status": "complete",
+  "success_count": 7,
+  "expected_count": 7,
+  "accounts": {
+    "qiezhi": {
+      "profile": "qiezhi",
+      "status": "success",
+      "archive": "qiezhi/archive/2026-10-10.md",
+      "title": "最伤团队的，往往不是争论，而是开会时没人说真话",
+      "workflow_run_id": null,
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "wechat": {
+      "profile": "wechat",
+      "status": "success",
+      "archive": "wechat/archive/2026-10-10.md",
+      "title": "一家AI公司与巨头分手后，又拿到超5亿美元：Manus的生意给一人公司什么提醒",
+      "workflow_run_id": "38008917372",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "business": {
+      "profile": "business",
+      "status": "success",
+      "archive": "business/archive/2026-10-10.md",
+      "title": "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
+      "workflow_run_id": "38011882219",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "zizhitongjian": {
+      "profile": "zizhitongjian",
+      "status": "success",
+      "archive": "zizhitongjian/archive/2026-10-10.md",
+      "title": "智伯明明最强，为什么最后输给了三个弱者？",
+      "workflow_run_id": "38010834244",
+      "gates": {
+        "source-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "image_check_done": false,
+      "errors": []
+    },
+    "parenting": {
+      "profile": "parenting",
+      "status": "success",
+      "archive": "parenting/archive/2026-10-10.md",
+      "title": "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
+      "workflow_run_id": "38010683933",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "jingyun": {
+      "profile": "jingyun",
+      "status": "success",
+      "archive": "jingyun/archive/2026-10-10.md",
+      "title": "40岁以后重新找工作，最难的不是把简历写漂亮",
+      "workflow_run_id": "38008741433",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "fashion": {
+      "profile": "fashion",
+      "status": "success",
+      "archive": "fashion/archive/2026-10-10.md",
+      "title": "日本女生秋天把西装穿得松弛，关键不是买大一码",
+      "workflow_run_id": "38010796124",
+      "gates": {
+        "image-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    }
+  },
+  "topic_scan_date": "2026-10-10",
+  "topic_scan_available": true,
+  "topic_popularity_verified_count": {
+    "qiezhi": 0,
+    "wechat": 0,
+    "business": 0,
+    "zizhitongjian": 0,
+    "parenting": 0,
+    "jingyun": 0,
+    "fashion": 0
+  },
+  "note": "Repo receipt + hash + today's article + gates; not direct WeChat UI visual confirmation."
+}

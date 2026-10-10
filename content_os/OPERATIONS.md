@@ -20,6 +20,7 @@
 
 - 先读当日 `content_os/daily-health/latest.json` **日期是否等于今天**，再分别读 A..G 的当日 archive、status/latest、today、Gate、Actions。已成功账号直接跳过，不增稿/不修改原归档。
 - 读 `TOPIC_INTELLIGENCE.md`、当天公开扫描、`RESILIENCE_POLICY.md`、该号 STYLE/SOURCE_POLICY及近30天归档；微信热度不足记录 `insufficient_evidence`，继续用可信官方来源完成内容。
+- 强制读取当天 `content_os/source-health/latest.json`、`content_os/editorial-intelligence/YYYY-MM-DD.json` 和 `content_os/reading-feedback/latest.json`。日期过期视为 stale；`reject_or_research_only` 不得直接作为主选题；`eligible_for_auto_selection=false` 只能当线索；阅读反馈只有真实 numeric_records 足够且对应标题特征 count>=3 才可作为辅助信号，缺失/未授权时保持 unknown，不得把 0、旧数据或“相对更好”换算成阅读量。主源在 GitHub Runner 健康检查失败时优先用同号可达备用源，并记录降级；可达性不等于事实已核验或版权可用。
 - 先完整草拟正文与来源记录，审查标题重复、官方原典、日期、所有引用、图片许可和场景描述。G至少5张真实可用的正文穿搭照片；A至少封面+正文知识卡；D Source Gate 需可核验卷次和上下文，CText不可访问时须真实双版本文本回退，不能虚称影印通过。
 - **提交新 archive 之前**，在临时文件上执行对应的结构、文风、源和图片校验。命令示例（以 C 为例）：
 

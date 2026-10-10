@@ -12,6 +12,7 @@ on:
       - "content_os/image_preflight.py"
       - "content_os/draft_journal.py"
       - "content_os/reconcile_confirmed.py"
+      - "content_os/tests/test_reconcile_confirmed.py"
       - "content_os/tests/test_publish_readiness.py"
       - ".github/workflows/draft-health-audit.yml"
       - "content_os/tests/test_draft_*.py"
@@ -42,6 +43,7 @@ jobs:
         run: |
           python -m unittest discover -s content_os/tests -p "test_draft_*.py" -v
           python -m unittest discover -s content_os/tests -p "test_publish_readiness.py" -v
+          python -m unittest discover -s content_os/tests -p "test_reconcile_confirmed.py" -v
       - name: Audit all seven profiles without publishing
         run: python content_os/daily_healthcheck.py --output-dir content_os/daily-health
       - name: Persist daily health report

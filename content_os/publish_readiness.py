@@ -15,7 +15,7 @@ IMG_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
 BLOCK_RE = re.compile(r"<!--\s*(FASHION_SOURCE|ZZTJ_SOURCE)\s*(\{[\s\S]*?\})\s*-->", re.S)
 
 
-def check(profile: str, markdown: str) -> dict:
+def check(profile: str, markdown: str, article_date: str | None = None) -> dict:
     if profile not in PROFILES:
         raise ValueError("unknown profile: " + profile)
     errors: list[str] = []
@@ -23,6 +23,8 @@ def check(profile: str, markdown: str) -> dict:
                   if line.startswith("# ")), "")
     if not title:
         errors.append("missing H1 title")
+    if article_date and article_date >= "2026-10-11" and len(title) > 32:
+        errors.append("微信标题超过32字：将被发布器截短，必须在新建归档前改为32字以内")
     if profile == "wechat" and not title.startswith("一家"):
         errors.append("AI channel headline must start with 一家")
     images = IMG_RE.findall(markdown)
@@ -80,7 +82,7 @@ def main() -> int:
     p.add_argument("--profile", required=True, choices=sorted(PROFILES))
     p.add_argument("--article", type=Path, required=True)
     args = p.parse_args()
-    result = check(args.profile, args.article.read_text(encoding="utf-8"))
+    result = check(args.profile, args.article.read_text(encoding="utf-8"), args.article.stem)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return int(result["status"] != "PASS")
 

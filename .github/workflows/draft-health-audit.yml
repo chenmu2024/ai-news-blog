@@ -11,6 +11,7 @@ on:
       - "content_os/publish_readiness.py"
       - "content_os/image_preflight.py"
       - "content_os/draft_journal.py"
+      - "content_os/reconcile_confirmed.py"
       - "content_os/tests/test_publish_readiness.py"
       - ".github/workflows/draft-health-audit.yml"
       - "content_os/tests/test_draft_*.py"
@@ -54,8 +55,14 @@ jobs:
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
+            # Only a confirmed media_id PLUS the immutable PASS-gate snapshot
+            # permits state repair. This script never calls WeChat draft/add.
+            python content_os/reconcile_confirmed.py --root . > /tmp/content-os-reconcile.json
             python content_os/daily_healthcheck.py --output-dir content_os/daily-health > /tmp/content-os-rechecked.json
-            git add content_os/daily-health
+            git add -A -- content_os/daily-health qiezhi/status qiezhi/articles \\
+              wechat/status wechat/articles business/status business/articles \\
+              zizhitongjian/status zizhitongjian/articles parenting/status parenting/articles \\
+              jingyun/status jingyun/articles fashion/status fashion/articles
             if git diff --cached --quiet; then
               echo "No health changes."
               break

@@ -33,7 +33,7 @@ class ReadyTests(unittest.TestCase):
         self.assertEqual(result["status"], "FAIL")
 
     def test_future_long_wechat_title_fails_before_draft_add(self):
-        headline = "一家技术公司换了新老板以后还要重新寻找自己的长期增长方向"
+        headline = "一家技术公司换了新老板以后还要重新寻找自己的长期增长方向和市场竞争位置以及新产品路线"
         doc = "# " + headline + "\n<!-- WECHAT_CARD {\"title\":\"分析\",\"items\":[]} -->"
         self.assertGreater(len(headline), 32)
         self.assertEqual(readiness.check("wechat", doc, "2026-10-11")["status"], "FAIL")

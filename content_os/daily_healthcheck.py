@@ -78,12 +78,22 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
     # Starting the first full post-rollout day, success MUST have a durable
     # confirmation of the exact WeChat draft/add request and its media_id.
     journal = read_json(base / "status" / "draft-attempts" / (day + ".json"))
-    if day >= "2026-10-11":
-        if (journal.get("state") != "confirmed" or
-            journal.get("article_sha256") != digest or
-            journal.get("article_path") != expected_path or
-            not journal.get("draft_media_id")):
-            errors.append("draft_add_journal_missing_or_unconfirmed")
+    journal_confirmed = bool(
+        journal.get("state") == "confirmed" and
+        journal.get("article_sha256") == digest and
+        journal.get("article_path") == expected_path and
+        journal.get("draft_media_id")
+    )
+    if day >= "2026-10-11" and not journal_confirmed:
+        errors.append("draft_add_journal_missing_or_unconfirmed")
+    if journal_confirmed:
+        confirmation_mode = "confirmed_journal"
+    elif day < "2026-10-11" and status.get("draft_media_id"):
+        confirmation_mode = "legacy_status_media_id"
+    elif day < "2026-10-11" and status.get("status") == "success":
+        confirmation_mode = "legacy_repo_receipt_only"
+    else:
+        confirmation_mode = "unconfirmed"
     fashion_revision = None
     if profile == "fashion":
         revised = base / "revisions" / (day + ".md")
@@ -131,6 +141,8 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
         "journal_state": journal.get("state") or "MISSING",
         "fashion_revision": fashion_revision,
         "draft_media_id_recorded": bool(journal.get("draft_media_id")),
+        "draft_confirmation_mode": confirmation_mode,
+        "draft_confirmed": journal_confirmed,
         "verification_mode": source.get("verification_mode") if source else None,
         "image_check_done": source.get("image_check_done") if source else None,
         "errors": errors,
@@ -141,6 +153,15 @@ def make_report(root: Path, day: str | None = None) -> dict:
     day = day or datetime.now(LOCAL).date().isoformat()
     accounts = {p: audit_profile(root, p, day) for p in PROFILES}
     successes = sum(v["status"] == "success" for v in accounts.values())
+    confirmed = sum(v.get("draft_confirmed") is True for v in accounts.values())
+    legacy_media = sum(v.get("draft_confirmation_mode") == "legacy_status_media_id" for v in accounts.values())
+    legacy_repo_only = sum(v.get("draft_confirmation_mode") == "legacy_repo_receipt_only" for v in accounts.values())
+    if confirmed == len(PROFILES):
+        confirmation_status = "confirmed"
+    elif day < "2026-10-11" and successes == len(PROFILES):
+        confirmation_status = "legacy_compatibility"
+    else:
+        confirmation_status = "incomplete"
     intel = read_json(root / "content_os" / "topic-intelligence" / (day + ".json"))
     return {
         "date": day,
@@ -149,6 +170,10 @@ def make_report(root: Path, day: str | None = None) -> dict:
         "status": "complete" if successes == len(PROFILES) else "incomplete",
         "success_count": successes,
         "expected_count": len(PROFILES),
+        "draft_confirmed_count": confirmed,
+        "legacy_media_id_receipt_count": legacy_media,
+        "legacy_repo_receipt_only_count": legacy_repo_only,
+        "draft_confirmation_status": confirmation_status,
         "accounts": accounts,
         "topic_scan_date": intel.get("local_date"),
         "topic_scan_available": bool(intel.get("profiles")),
@@ -156,7 +181,7 @@ def make_report(root: Path, day: str | None = None) -> dict:
             p: (intel.get("profiles", {}).get(p, {}) or {}).get("heat_evidence_count", 0)
             for p in PROFILES
         },
-        "note": "Repo receipt + hash + today's article + gates; not direct WeChat UI visual confirmation.",
+        "note": "status/success_count is repository compatibility. draft_confirmed_count requires the durable confirmed journal + matching SHA/path + media_id. This is not direct WeChat UI visual confirmation.",
     }
 
 
@@ -167,12 +192,13 @@ def write_report(report: dict, folder: Path) -> None:
     (folder / "latest.json").write_text(data, encoding="utf-8")
     rows = [
         "# 七公众号草稿健康检查 " + report["date"], "",
-        f"已完成 {report['success_count']}/{report['expected_count']}；状态：{report['status']}",
-        "", "| 方向 | 草稿回执+归档一致 | 失败环节 |", "|---|---|---|",
+        f"仓库一致 {report['success_count']}/{report['expected_count']}；状态：{report['status']}",
+        f"durable草稿确认 {report['draft_confirmed_count']}/{report['expected_count']}；确认状态：{report['draft_confirmation_status']}",
+        "", "| 方向 | 仓库一致 | 草稿确认模式 | 失败环节 |", "|---|---|---|---|",
     ]
     for k, d in report["accounts"].items():
-        rows.append(f"| {k} | {d['status']} | {', '.join(d['errors']) or '无'} |")
-    rows.extend(["", "注：这是仓库/工作流回执核验，并非微信公众号后台视觉验收。"])
+        rows.append(f"| {k} | {d['status']} | {d.get('draft_confirmation_mode','unknown')} | {', '.join(d['errors']) or '无'} |")
+    rows.extend(["", "注：仓库 success 不等于 durable 草稿确认；2026-10-11 起 success 必须同时满足 confirmed journal + media_id。仍非微信公众号后台视觉验收。"])
     if not report["topic_scan_available"]:
         rows.append("选题扫描数据缺失；此状态不得阻断合格文章写作。")
     markdown = "\n".join(rows) + "\n"

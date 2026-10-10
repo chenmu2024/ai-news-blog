@@ -10,6 +10,7 @@ import base64
 import hashlib
 import json
 import os
+import time
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.parse import quote
@@ -88,7 +89,19 @@ def reserve(profile: str, article: Path, title: str) -> None:
         "title": title,
         "run_id": run_id,
     }
-    _put(token, repo, path, intent, None)
+    for attempt in range(5):
+        try:
+            _put(token, repo, path, intent, None)
+            break
+        except HTTPError as exc:
+            if exc.code not in (409, 422, 429, 500, 502, 503, 504) or attempt == 4:
+                raise
+            # Concurrent journal writes for seven independent accounts may
+            # race the main branch. A conflicting SAME-DAY intent must stop.
+            previous, _ = _get(token, repo, path)
+            if previous:
+                raise RuntimeError("Another draft/add attempt already exists for " + path)
+            time.sleep(1 + attempt)
     print("[DRAFT_JOURNAL] durable attempted reservation:", path)
 
 

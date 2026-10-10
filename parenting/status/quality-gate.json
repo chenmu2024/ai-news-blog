@@ -2,22 +2,36 @@
   "status": "PASS",
   "profile": "parenting",
   "profile_name": "陈慕｜育儿与家庭教育",
-  "score": 0,
-  "body_chars": 2147,
-  "template_hits": 0,
+  "score": 10,
+  "body_chars": 2233,
+  "template_hits": 1,
   "internal_hits": 0,
-  "fact_signals": 13,
-  "stance_signals": 3,
+  "fact_signals": 20,
+  "stance_signals": 1,
   "paragraph_regularity": {
-    "paragraphs": 41,
-    "cv": 0.425
+    "paragraphs": 32,
+    "cv": 0.365
   },
   "sentence_repetition": {
-    "sentences": 73,
-    "repeated_starts": 4,
-    "ratio": 0.055
+    "sentences": 59,
+    "repeated_starts": 0,
+    "ratio": 0.0
   },
-  "very_short_paragraph_ratio": 0.208,
+  "very_short_paragraph_ratio": 0.105,
   "hard_failures": [],
-  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+  "editorial_title_guard": {
+    "status": "PASS",
+    "reasons": [],
+    "compared": 6,
+    "prior_six_titles": [
+      "孩子早上说不想去学校，先别急着问“为什么又闹”",
+      "孩子作业拖到深夜，很多家长第一步就问错了",
+      "手机一收就翻脸，很多家庭真正缺的不是“限时”",
+      "孩子每天睡前都要拖半小时，问题可能不只是磨蹭",
+      "孩子一输就发脾气，父母先别急着教他“输得起”",
+      "孩子一写作业就拖拉，很多父母其实催错了地方"
+    ],
+    "template_family": null
+  }
 }

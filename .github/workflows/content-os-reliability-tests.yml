@@ -1,0 +1,73 @@
+name: Content OS Reliability Regression Suite
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content_os/**"
+      - ".github/workflows/*-draft.yml"
+      - ".github/workflows/draft-health-audit.yml"
+      - ".github/workflows/content-os-reliability-tests.yml"
+      - "qiezhi/publish_draft.py"
+      - "wechat/publish_draft.py"
+      - "business/publish_draft.py"
+      - "zizhitongjian/publish_draft.py"
+      - "parenting/publish_draft.py"
+      - "jingyun/publish_draft.py"
+      - "fashion/publish_draft.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: content-os-reliability
+  cancel-in-progress: false
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test-only dependencies
+        run: pip install Pillow requests markdown PyYAML
+      - name: Validate every bridge YAML
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          directory = Path(".github/workflows")
+          files = sorted(directory.glob("*.yml"))
+          for f in files:
+              yaml.compose(f.read_text("utf-8"))
+          print(f"[YAML] {len(files)} valid workflow files")
+          PY
+      - name: Compile reliability and all seven draft publishers
+        run: |
+          python -m py_compile content_os/{draft_journal,draft_preflight,daily_healthcheck,gate_trace,publish_readiness,image_preflight,image_resilience,quality_gate,visual_gate}.py
+          python -m py_compile {qiezhi,wechat,business,zizhitongjian,parenting,jingyun,fashion}/publish_draft.py
+      - name: Offline full regression suite (no WeChat API)
+        run: python -m unittest discover -s content_os/tests -p 'test_*.py' -v
+      - name: Validate the latest archived articles against publisher input contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import sys
+          sys.path.insert(0, 'content_os')
+          from publish_readiness import check
+          for profile in ("qiezhi","wechat","business","zizhitongjian",
+                          "parenting","jingyun","fashion"):
+              files = sorted((Path(profile)/"archive").glob("????-??-??.md"))
+              if not files:
+                  print(f"[SKIP] {profile}: no article yet")
+                  continue
+              article = files[-1]
+              result = check(profile, article.read_text("utf-8"))
+              print(f"[ARCHIVE] {profile}: {article.name} {result['status']}")
+              if result['status'] != 'PASS':
+                  raise ValueError(f"{profile}: {result['errors']}")
+          PY

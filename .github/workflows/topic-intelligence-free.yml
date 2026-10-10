@@ -10,6 +10,8 @@ on:
       - "content_os/editorial_intelligence.py"
       - "content_os/source_health.py"
       - "content_os/source_registry.json"
+      - "content_os/reading_feedback.py"
+      - "content_os/reading-feedback/**"
       - "content_os/public_rankings.py"
       - "content_os/tests/test_free_topic_scan.py"
       - "content_os/tests/test_public_rankings.py"
@@ -50,6 +52,8 @@ jobs:
         run: python content_os/free_topic_scan.py --profile all --images
       - name: Audit configured primary and fallback sources
         run: python content_os/source_health.py
+      - name: Summarize verified reading feedback if available
+        run: python content_os/reading_feedback.py
       - name: Build advisory editorial shortlist from actual scan and archive history
         run: python content_os/build_editorial_shortlist.py
       - name: Commit private research artifacts
@@ -66,6 +70,8 @@ jobs:
           cp -a content_os/editorial-intelligence/. /tmp/content-os-editorial/
           mkdir -p /tmp/content-os-source-health
           cp -a content_os/source-health/. /tmp/content-os-source-health/
+          mkdir -p /tmp/content-os-reading-feedback
+          cp -a content_os/reading-feedback/. /tmp/content-os-reading-feedback/
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
@@ -75,7 +81,9 @@ jobs:
             cp -a /tmp/content-os-editorial/. content_os/editorial-intelligence/
             mkdir -p content_os/source-health
             cp -a /tmp/content-os-source-health/. content_os/source-health/
-            git add content_os/topic-intelligence content_os/editorial-intelligence content_os/source-health
+            mkdir -p content_os/reading-feedback
+            cp -a /tmp/content-os-reading-feedback/. content_os/reading-feedback/
+            git add content_os/topic-intelligence content_os/editorial-intelligence content_os/source-health content_os/reading-feedback
             if git diff --cached --quiet; then
               echo "No research changes."
               exit 0

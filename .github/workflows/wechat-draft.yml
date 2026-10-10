@@ -157,13 +157,13 @@ jobs:
             echo "No article/status change."
           else
             git commit -m "Sync latest AI article and draft status"
-            for attempt in 1 2 3; do
+            for attempt in 1 2 3 4 5 6 7; do
               git pull --rebase origin main
               if git push; then
                 break
               fi
-              if [ "$attempt" -eq 3 ]; then
-                echo "Push failed after 3 attempts."
+              if [ "$attempt" -eq 7 ]; then
+                echo "Push failed after 7 attempts."
                 exit 1
               fi
               sleep $((attempt * 2))

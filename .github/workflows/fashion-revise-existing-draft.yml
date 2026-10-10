@@ -70,6 +70,7 @@ jobs:
           fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'
       - name: Update precisely one existing WeChat draft (never draft/add)
         env:
+          GH_TOKEN: ${{ github.token }}
           WECHAT_APP_ID: ${{ secrets.FASHION_WECHAT_APP_ID }}
           WECHAT_APP_SECRET: ${{ secrets.FASHION_WECHAT_APP_SECRET }}
           PROXY_URL: ${{ secrets.PROXY_URL }}

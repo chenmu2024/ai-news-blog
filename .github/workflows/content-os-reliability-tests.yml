@@ -4,7 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - "content_os/**"
+      - "content_os/*.py"
+      - "content_os/*.json"
+      - "content_os/*.md"
+      - "content_os/tests/**"
       - ".github/workflows/*-draft.yml"
       - ".github/workflows/draft-health-audit.yml"
       - ".github/workflows/content-os-reliability-tests.yml"

@@ -41,30 +41,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install -r zizhitongjian/requirements.txt
-
-
-      - name: Validate external image bytes before optional rendering
-        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
-        timeout-minutes: 5
-        env:
-          CONTENT_OS_IMAGE_CACHE_DIR: ${{ runner.temp }}/content-os-images-${{ github.run_id }}-${{ github.run_attempt }}
-        run: python content_os/image_preflight.py --profile zizhitongjian --article "$ARTICLE_PATH"
-
-      - name: Install Chinese fonts (bounded)
-        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
-        timeout-minutes: 5
-        run: |
-          set -euo pipefail
-          if fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'; then
-            echo "[FONTS] Existing CJK fonts found; skip apt."
-          else
-            timeout 90s sudo apt-get update -qq -o Acquire::Retries=1 -o Acquire::http::Timeout=15
-            timeout 120s sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends fonts-noto-cjk
-          fi
-          fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans' || { echo "::error::Chinese fonts missing"; exit 1; }
-
       - name: Draft idempotency preflight
         id: preflight
         shell: bash
@@ -101,6 +77,30 @@ jobs:
       - name: Bind passed gates to immutable article SHA256
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: python content_os/gate_trace.py --profile zizhitongjian --article "$ARTICLE_PATH"
+
+      - name: Install dependencies
+        run: pip install -r zizhitongjian/requirements.txt
+
+
+      - name: Validate external image bytes before optional rendering
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        timeout-minutes: 5
+        env:
+          CONTENT_OS_IMAGE_CACHE_DIR: ${{ runner.temp }}/content-os-images-${{ github.run_id }}-${{ github.run_attempt }}
+        run: python content_os/image_preflight.py --profile zizhitongjian --article "$ARTICLE_PATH"
+
+      - name: Install Chinese fonts (bounded)
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        timeout-minutes: 5
+        run: |
+          set -euo pipefail
+          if fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'; then
+            echo "[FONTS] Existing CJK fonts found; skip apt."
+          else
+            timeout 90s sudo apt-get update -qq -o Acquire::Retries=1 -o Acquire::http::Timeout=15
+            timeout 120s sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends fonts-noto-cjk
+          fi
+          fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans' || { echo "::error::Chinese fonts missing"; exit 1; }
 
       - name: Create Zizhi Tongjian WeChat draft only
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}

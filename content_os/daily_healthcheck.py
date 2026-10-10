@@ -162,6 +162,11 @@ def make_report(root: Path, day: str | None = None) -> dict:
         confirmation_status = "legacy_compatibility"
     else:
         confirmation_status = "incomplete"
+    alert_reasons = []
+    if successes != len(PROFILES):
+        alert_reasons.append("repository_or_gate_incomplete")
+    if day >= "2026-10-11" and confirmed != len(PROFILES):
+        alert_reasons.append("durable_draft_confirmation_incomplete")
     intel = read_json(root / "content_os" / "topic-intelligence" / (day + ".json"))
     return {
         "date": day,
@@ -174,6 +179,8 @@ def make_report(root: Path, day: str | None = None) -> dict:
         "legacy_media_id_receipt_count": legacy_media,
         "legacy_repo_receipt_only_count": legacy_repo_only,
         "draft_confirmation_status": confirmation_status,
+        "alert_required": bool(alert_reasons),
+        "alert_reasons": alert_reasons,
         "accounts": accounts,
         "topic_scan_date": intel.get("local_date"),
         "topic_scan_available": bool(intel.get("profiles")),

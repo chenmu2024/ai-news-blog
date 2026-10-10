@@ -32,6 +32,13 @@ class ReadyTests(unittest.TestCase):
         result = readiness.check("qiezhi", "# X\n" + card("cover") + "\n<!-- QIEZHI_CARD {bad} -->")
         self.assertEqual(result["status"], "FAIL")
 
+    def test_future_long_wechat_title_fails_before_draft_add(self):
+        headline = "一家技术公司换了新老板以后还要重新寻找自己的长期增长方向"
+        doc = "# " + headline + "\n<!-- WECHAT_CARD {\"title\":\"分析\",\"items\":[]} -->"
+        self.assertGreater(len(headline), 32)
+        self.assertEqual(readiness.check("wechat", doc, "2026-10-11")["status"], "FAIL")
+        self.assertEqual(readiness.check("wechat", doc, "2026-10-10")["status"], "PASS")
+
     def test_ai_title_starts_with_a_company(self):
         self.assertEqual(readiness.check("wechat", "# 一家AI公司如何赚钱\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->")["status"], "PASS")
         self.assertEqual(readiness.check("wechat", "# AI巨头赚钱了\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->")["status"], "FAIL")

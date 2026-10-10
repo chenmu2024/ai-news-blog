@@ -2,22 +2,22 @@
   "status": "PASS",
   "profile": "qiezhi",
   "profile_name": "且知｜毛选/思想方法",
-  "score": 6,
-  "body_chars": 2120,
-  "template_hits": 0,
+  "score": 4,
+  "body_chars": 1871,
+  "template_hits": 1,
   "internal_hits": 0,
-  "fact_signals": 7,
-  "stance_signals": 1,
+  "fact_signals": 6,
+  "stance_signals": 4,
   "paragraph_regularity": {
-    "paragraphs": 42,
-    "cv": 0.523
+    "paragraphs": 27,
+    "cv": 0.406
   },
   "sentence_repetition": {
-    "sentences": 81,
-    "repeated_starts": 0,
-    "ratio": 0.0
+    "sentences": 57,
+    "repeated_starts": 1,
+    "ratio": 0.018
   },
-  "very_short_paragraph_ratio": 0.173,
+  "very_short_paragraph_ratio": 0.156,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
 }

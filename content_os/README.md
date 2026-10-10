@@ -1,5 +1,7 @@
 # 公众号 Content OS
 
+> **先读执行手册**：`content_os/OPERATIONS.md` 是每日08:20生产和11:20补漏的前置约束。先对每篇未提交稿运行 `publish_readiness.py`、适用 Gate 和 `image_preflight.py`，不要等 Actions 创建草稿时才发现缺卡、无效图片或数据来源问题。成功回执不可覆盖；见到 `draft-attempts/YYYY-MM-DD.json` 必须先核验，不允许重发。
+
 本目录是多个公众号方向共用的发布前质量层。选题、Research、公众号生态扫描和 Humanize 由上游内容任务执行；仓库负责在真正创建草稿前再做一次可审计的硬 Gate。
 
 ## 当前 Direction Profiles

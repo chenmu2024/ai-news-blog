@@ -5,5 +5,11 @@
   "article_sha256": "82d49a0dc7eb8ed066353b2e2aa86a7ae49cb9073f04d025658485e6a1606bef",
   "workflow_run_id": "38010796124",
   "commit_sha": "7b38beec4828dae0ac923256210f79fbfd923924",
-  "completed_at_utc": "2026-10-10T00:51:48.948543+00:00"
+  "completed_at_utc": "2026-10-10T00:51:48.948543+00:00",
+  "current_article_path": "fashion/revisions/2026-10-10.md",
+  "current_title": "Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么",
+  "current_article_sha256": "79313d50627ad7ad6c05112fecb4240b94baf1553606047d82d31bca3824de71",
+  "current_operation": "in_place_draft_update",
+  "current_revision_workflow_run_id": "38015485717",
+  "draft_media_id": "gcTqbaQ9A7M3U7aJTBB3ZcEJZQ4zFD6Khvzg8GqEo1KriQB19j-bbM00RNuRkZrt"
 }

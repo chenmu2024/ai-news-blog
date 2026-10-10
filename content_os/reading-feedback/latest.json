@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-10-10T10:39:57.577598+08:00",
+  "source": "manual_verified_only",
+  "records": 0,
+  "profiles": {
+    "business": {
+      "records": 0,
+      "numeric_records": 0,
+      "avg_views": null,
+      "features": {}
+    },
+    "fashion": {
+      "records": 0,
+      "numeric_records": 0,
+      "avg_views": null,
+      "features": {}
+    },
+    "jingyun": {
+      "records": 0,
+      "numeric_records": 0,
+      "avg_views": null,
+      "features": {}
+    },
+    "parenting": {
+      "records": 0,
+      "numeric_records": 0,
+      "avg_views": null,
+      "features": {}
+    },
+    "qiezhi": {
+      "records": 0,
+      "numeric_records": 0,
+      "avg_views": null,
+      "features": {}
+    },
+    "wechat": {
+      "records": 0,
+      "numeric_records": 0,
+      "avg_views": null,
+      "features": {}
+    },
+    "zizhitongjian": {
+      "records": 0,
+      "numeric_records": 0,
+      "avg_views": null,
+      "features": {}
+    }
+  },
+  "policy": "No missing views are inferred; qualitative records never become numeric metrics."
+}

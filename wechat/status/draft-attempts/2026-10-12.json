@@ -1,0 +1,47 @@
+{
+  "state": "attempted",
+  "profile": "wechat",
+  "article_path": "wechat/archive/2026-10-12.md",
+  "article_sha256": "1212aa38e6ae95360711c27bf0b91040f5beb46302f22c820722e8a18e8a629a",
+  "title": "一家AI芯片公司融资8.75亿美元，机会在哪",
+  "run_id": "38182629223",
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "ai_business",
+      "profile_name": "陈慕｜AI 一人公司实战",
+      "score": 15,
+      "body_chars": 2226,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 9,
+      "stance_signals": 1,
+      "paragraph_regularity": {
+        "paragraphs": 24,
+        "cv": 0.428
+      },
+      "sentence_repetition": {
+        "sentences": 61,
+        "repeated_starts": 2,
+        "ratio": 0.033
+      },
+      "very_short_paragraph_ratio": 0.074,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "1212aa38e6ae95360711c27bf0b91040f5beb46302f22c820722e8a18e8a629a",
+      "article_path": "wechat/archive/2026-10-12.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "ai_business",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 0,
+      "html_images": 0,
+      "renderable_cards": 2,
+      "hard_failures": [],
+      "article_sha256": "1212aa38e6ae95360711c27bf0b91040f5beb46302f22c820722e8a18e8a629a",
+      "article_path": "wechat/archive/2026-10-12.md"
+    }
+  }
+}

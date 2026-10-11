@@ -1,11 +1,11 @@
 {
   "date": "2026-10-12",
-  "generated_at": "2026-10-12T07:00:41.372125+08:00",
+  "generated_at": "2026-10-12T07:01:20.382021+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 3,
+  "success_count": 4,
   "expected_count": 7,
-  "draft_confirmed_count": 3,
+  "draft_confirmed_count": 4,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -153,31 +153,23 @@
     },
     "wechat": {
       "profile": "wechat",
-      "status": "incomplete",
+      "status": "success",
       "archive": "wechat/archive/2026-10-12.md",
       "title": "一家AI芯片公司融资8.75亿美元，机会在哪",
       "archive_title": "一家AI芯片公司融资8.75亿美元，机会在哪",
-      "workflow_run_id": "38100084368",
+      "workflow_run_id": "38182629223",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "receipt_sha_mismatch_or_stale",
-        "receipt_title_mismatch",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed",
-        "today_not_identical_to_current_article"
-      ]
+      "errors": []
     },
     "business": {
       "profile": "business",

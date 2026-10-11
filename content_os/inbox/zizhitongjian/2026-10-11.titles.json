@@ -1,0 +1,25 @@
+{
+  "candidates": [
+    "魏文侯冒雨赴约：没人监督的承诺还算数吗",
+    "魏文侯为什么下雨也要出门赴一个小约",
+    "魏文侯的一次雨天赴约，暴露了守信的难处"
+  ],
+  "selected_title": "魏文侯冒雨赴约：没人监督的承诺还算数吗",
+  "rationale": "魏文侯事迹载《资治通鉴》卷一周纪一，与近三天三家分晋、商鞅徙木、智伯灭亡不同，围绕小人物承诺与管理者可信任的现实判断展开；区分实际冒雨去取消约定和强行在雨中猎，未加入原典没有的个人对白。",
+  "basis": [
+    "Wikisource《资治通鉴》四部丛刊本卷第一原文（魏文侯与虞人期猎）",
+    "Wikisource《资治通鉴》四库全书本卷001胡三省注作文本交叉核验，不声称影印核验",
+    "CText周纪一对应章节仅作为影印检查入口，image_check_done=false",
+    "30日zizhitongjian归档去重"
+  ],
+  "verified_views": null,
+  "evidence": {
+    "facts_checked": true,
+    "image_rights_checked": true,
+    "source_urls": [
+      "https://zh.wikisource.org/zh-hant/資治通鑑_(四部叢刊本)/卷第一",
+      "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷001",
+      "https://ctext.org/wiki.pl?chapter=100482&if=gb"
+    ]
+  }
+}

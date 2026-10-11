@@ -2,36 +2,38 @@
   "status": "PASS",
   "profile": "business_story",
   "profile_name": "生意显微镜｜商业故事",
-  "score": 15,
-  "body_chars": 2157,
-  "template_hits": 0,
+  "score": 4,
+  "body_chars": 2703,
+  "template_hits": 1,
   "internal_hits": 0,
-  "fact_signals": 56,
-  "stance_signals": 0,
+  "fact_signals": 76,
+  "stance_signals": 2,
   "paragraph_regularity": {
-    "paragraphs": 36,
-    "cv": 0.446
+    "paragraphs": 30,
+    "cv": 0.384
   },
   "sentence_repetition": {
-    "sentences": 59,
-    "repeated_starts": 1,
-    "ratio": 0.017
+    "sentences": 66,
+    "repeated_starts": 5,
+    "ratio": 0.076
   },
-  "very_short_paragraph_ratio": 0.0,
+  "very_short_paragraph_ratio": 0.062,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
   "editorial_title_guard": {
     "status": "PASS",
     "reasons": [],
-    "compared": 6,
+    "compared": 7,
     "prior_six_titles": [
+      "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
       "必胜客被27亿美元拆卖：百胜为什么不再自己养这个老品牌",
       "Boots以89亿美元再易主：一家老药房，为什么又被当成零售宝贝？",
       "Uber花23亿美元买下ezCater，真正想抢的不是午饭",
       "Nike越裁员，越暴露真正的问题不在成本",
-      "日本涂料为什么又买东南亚？这是一场60年的渠道战争",
-      "泡泡玛特：Labubu之后，最难的一仗才刚开始"
+      "日本涂料为什么又买东南亚？这是一场60年的渠道战争"
     ],
     "template_family": null
-  }
+  },
+  "article_sha256": "0a95d106dba3e463c6ae28d1b95e2c487aea2a8b3ebdefcff975f9953e6428e0",
+  "article_path": "business/archive/2026-10-11.md"
 }

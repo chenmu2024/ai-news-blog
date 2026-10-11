@@ -10,7 +10,10 @@ import re
 from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from ai_scene_policy import check as check_ai_scene
+try:
+    from content_os.ai_scene_policy import check as check_ai_scene
+except ImportError:
+    from ai_scene_policy import check as check_ai_scene
 
 PROFILES = {"qiezhi", "wechat", "business", "zizhitongjian", "parenting", "jingyun", "fashion"}
 CARD_RE = re.compile(r"<!--\s*(QIEZHI_CARD|WECHAT_CARD)\s+(.+?)\s*-->", re.S)

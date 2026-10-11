@@ -1,0 +1,68 @@
+{
+  "state": "attempted",
+  "profile": "zizhitongjian",
+  "article_path": "zizhitongjian/archive/2026-10-11.md",
+  "article_sha256": "7232d97f5259809da4b73f30f4bcda9581b0d18ce6abb8f1d262d8bca2cbb56c",
+  "title": "魏文侯冒雨赴约：没人监督的承诺还算数吗",
+  "run_id": "38100814477",
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "zizhitongjian",
+      "profile_name": "资治通鉴｜原典·人性·决策",
+      "score": 14,
+      "body_chars": 2238,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 7,
+      "stance_signals": 1,
+      "paragraph_regularity": {
+        "paragraphs": 29,
+        "cv": 0.364
+      },
+      "sentence_repetition": {
+        "sentences": 73,
+        "repeated_starts": 2,
+        "ratio": 0.027
+      },
+      "very_short_paragraph_ratio": 0.167,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "7232d97f5259809da4b73f30f4bcda9581b0d18ce6abb8f1d262d8bca2cbb56c",
+      "article_path": "zizhitongjian/archive/2026-10-11.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "zizhitongjian",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 0,
+      "html_images": 0,
+      "renderable_cards": 2,
+      "hard_failures": [],
+      "article_sha256": "7232d97f5259809da4b73f30f4bcda9581b0d18ce6abb8f1d262d8bca2cbb56c",
+      "article_path": "zizhitongjian/archive/2026-10-11.md"
+    },
+    "source-gate.json": {
+      "status": "PASS",
+      "work": "资治通鉴",
+      "volume": 1,
+      "chronicle": "周纪一",
+      "year": "周威烈王二十三年前后的魏文侯事迹",
+      "primary_text_url": "https://zh.wikisource.org/zh-hant/資治通鑑_(四部叢刊本)/卷第一",
+      "image_check_url": "https://ctext.org/wiki.pl?chapter=100482&if=gb",
+      "image_check_done": false,
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "alternate_text_url": "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷001",
+      "alternate_access_reason": "四部丛刊本与四库全书本卷一分别查验此事，因未逐页核对CText影印图像，仅以双版本原典文本复核，不将数字转写当影印。",
+      "context_verified": true,
+      "original_excerpt_chars": 24,
+      "direct_quote_count": 0,
+      "live_primary_excerpt_check": "PASS",
+      "image_source_reachable": "NOT_CHECKED_CTEXT_FALLBACK",
+      "hard_failures": [],
+      "article_sha256": "7232d97f5259809da4b73f30f4bcda9581b0d18ce6abb8f1d262d8bca2cbb56c",
+      "article_path": "zizhitongjian/archive/2026-10-11.md"
+    }
+  }
+}

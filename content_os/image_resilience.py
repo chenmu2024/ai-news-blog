@@ -28,7 +28,7 @@ except ImportError:
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
 HTML_IMAGE_RE = re.compile(r"""<img\b[^>]*\bsrc\s*=\s*["']https?://[^"']+["']""", re.I)
 BACKUPS_RE = re.compile(r"<!--\s*IMAGE_BACKUPS\s*(\{[\s\S]*?\})\s*-->", re.S)
-AI_SCENE_RE = re.compile(r"<!--\\s*AI_SCENE\\s*(\\{[\\s\\S]*?\\})\\s*-->", re.S)
+AI_SCENE_RE = re.compile(r"<!--\s*AI_SCENE\s*(\{[\s\S]*?\})\s*-->", re.S)
 FASHION_RE = re.compile(r"<!--\s*FASHION_SOURCE\s*(\{[\s\S]*?\})\s*-->", re.S)
 SUPPORTED_RIGHTS = {"owned", "permission", "pexels_license", "unsplash_license",
                     "pixabay_license", "commons_licensed", "cc0", "public_domain"}

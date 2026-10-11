@@ -23,6 +23,30 @@
           "https://www.unicef.org/parenting/child-care/supporting-child-negative-online-experience"
         ]
       }
+    },
+    "jingyun": {
+      "candidates": [
+        "家里人人都忙，为什么总是她记住所有的事",
+        "一家人都在做事，为何只有她不能下班",
+        "家庭分工最难的，常常不是谁来做家务"
+      ],
+      "selected_title": "家里人人都忙，为什么总是她记住所有的事",
+      "rationale": "选择具体的家庭准备事项展开被忽略的照护管理劳动，贴合女性30–50岁读者，同时区别10月10日重新找工作与10月9日夫妻交谈主题；使用ILO全球无偿照护统计但明确不映射中国个体，不虚构作者经历。",
+      "basis": [
+        "ILO 2024 2023年全球因照护责任不在劳动力市场女性708 million，非中国数据",
+        "ILO 2024 体面工作与照护经济决议（认可、减少、再分配）",
+        "近30天jingyun归档去重",
+        "静筠日记STYLE中年女性、家庭事务和现实成本"
+      ],
+      "verified_views": null,
+      "evidence": {
+        "facts_checked": true,
+        "image_rights_checked": true,
+        "source_urls": [
+          "https://www.ilo.org/resource/news/unpaid-care-work-prevents-708-million-women-participating-labour-market",
+          "https://www.ilo.org/publications/centering-reward-and-representation-domestic-workers-care-economy"
+        ]
+      }
     }
   },
   "date": "2026-10-11"

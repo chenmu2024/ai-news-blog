@@ -42,6 +42,15 @@ class AiSceneRules(unittest.TestCase):
         self.assertIn("asset SHA256 mismatch", " ".join(verify_bytes(
             "parenting", "2026-10-13", post, getter=lambda _: b"other bytes")))
 
+    def test_private_ai_metadata_never_leaks_into_wechat_body(self):
+        from content_os.image_resilience import strip_image_backup_notes
+        post = article()
+        public = strip_image_backup_notes(post)
+        self.assertNotIn("AI_SCENE", public)
+        self.assertNotIn("generation_id", public)
+        self.assertIn("![写实生活场景]", public)
+        self.assertIn("WECHAT_CARD", public)
+
     def test_false_provenance_is_rejected(self):
         post = article(rights="public_platform", genid="")
         self.assertTrue(check("parenting", "2026-10-13", post)[0])

@@ -27,14 +27,16 @@
     },
     "business": {
       "primary": [
-        "https://www.cninfo.com.cn/",
-        "https://www.hkexnews.hk/"
+        "https://www.gov.cn/",
+        "https://www.mohrss.gov.cn/",
+        "https://www.nhsa.gov.cn/",
+        "https://www.mohurd.gov.cn/"
       ],
       "fallback": [
-        "https://www.reuters.com/business/",
-        "https://www.sec.gov/edgar/search/"
+        "https://www.mca.gov.cn/",
+        "https://www.chinatax.gov.cn/"
       ],
-      "hard_gate": "Company and figures grounded to dated filings or reliable reporting"
+      "hard_gate": "Verify original national/provincial/municipal official policy, current effective dates, eligibility, local vs nonlocal status, benefit amount, application steps and documentary evidence. City-specific government sources required."
     },
     "zizhitongjian": {
       "primary": [
@@ -48,14 +50,14 @@
     },
     "parenting": {
       "primary": [
-        "https://www.moe.gov.cn/",
-        "https://www.unicef.org/parenting"
+        "https://www.unicef.org/parenting",
+        "https://www.who.int/health-topics/adolescent-health"
       ],
       "fallback": [
-        "https://www.who.int/health-topics/adolescent-health",
+        "https://www.moe.gov.cn/",
         "https://www.cdc.gov/child-development/"
       ],
-      "hard_gate": "School-and-family conflicts; distinguish jurisdiction and medical evidence"
+      "hard_gate": "Original scenario-based parenting comic. Verify any medical/development factual claims; never misrepresent fictional children as real cases. Actual readable continuous comic panels and valid image media required."
     },
     "jingyun": {
       "primary": [

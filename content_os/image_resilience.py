@@ -283,4 +283,4 @@ def prepare_images(markdown: str, profile: str, session=None) -> dict[str, tuple
 
 def strip_image_backup_notes(markdown: str) -> str:
     """Production/source metadata cannot leak into the public WeChat article."""
-    return BACKUPS_RE.sub("", markdown)
+    return AI_SCENE_RE.sub("", BACKUPS_RE.sub("", markdown))

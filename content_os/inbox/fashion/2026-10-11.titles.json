@@ -1,0 +1,28 @@
+{
+  "candidates": [
+    "Jisoo五套经典造型，普通人最该学哪一招",
+    "Jisoo五套活动造型，最值得抄的是这五处细节",
+    "Jisoo从舞台到活动的五次穿搭变化"
+  ],
+  "selected_title": "Jisoo五套经典造型，普通人最该学哪一招",
+  "rationale": "选五套2017–2022有准确活动日期、可明确识别Jisoo本人、Wikimedia Commons已复核CC BY4.0许可证的照片，集中研究可复刻的领口、轮廓、腰线和撞色；不冒充2026年新造型，不推断精确品牌单品价格或鞋包不可见细节；与近30天普通日韩针织、西装、机场明星混搭主题区分。",
+  "basis": [
+    "Wikimedia Commons文件页五个原始Jisoo活动时间与地点",
+    "五张图片都标记CC BY 4.0、原作者和原始文件记录",
+    "2017-05-17演出、2019-06-30签售、2019-08-19活动、2020-01-09品牌活动、2022-03-29品牌活动",
+    "Fashion Image-first真实人物与不少于五张穿搭照片的规则",
+    "近30天fashion归档去重"
+  ],
+  "verified_views": null,
+  "evidence": {
+    "facts_checked": true,
+    "image_rights_checked": true,
+    "source_urls": [
+      "https://commons.wikimedia.org/wiki/File:Kim_ji-soo.jpg",
+      "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30,_2019_(1).png",
+      "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19,_2019_(6).png",
+      "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09,_2020_(1).jpg",
+      "https://commons.wikimedia.org/wiki/File:170517_Kim_Ji-soo_Blackpink_06.jpg"
+    ]
+  }
+}

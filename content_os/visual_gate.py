@@ -4,6 +4,7 @@ import argparse
 import json
 import re
 from pathlib import Path
+from ai_scene_policy import check as check_ai_scene
 
 MIN_VISUALS = {
     "ai_business": 2,
@@ -39,6 +40,10 @@ def main() -> int:
     required = MIN_VISUALS[args.profile]
 
     failures = []
+    article_date = p.stem if re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", p.stem) else None
+    if article_date:
+        ai_errors, _ = check_ai_scene(args.profile, article_date, md)
+        failures.extend(ai_errors)
     if total < required:
         failures.append(
             f"视觉内容不足：{total} < {required}。每篇公众号文章必须有图片，禁止纯文字稿进入草稿箱。"

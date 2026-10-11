@@ -9,10 +9,13 @@ on:
       - "content_os/inbox_promote.py"
       - "content_os/prearchive_validate.py"
       - "content_os/tests/test_inbox_promote.py"
+      - "content_os/safe_dispatch.py"
+      - "content_os/tests/test_safe_dispatch.py"
       - ".github/workflows/content-os-inbox-promote.yml"
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: content-os-verified-candidate-promotion
@@ -32,7 +35,7 @@ jobs:
       - name: Install free checker dependencies
         run: pip install 'requests>=2.32,<3' 'pillow>=11,<13' 'markdown>=3.7,<4' 'PySocks>=1.7,<2'
       - name: Validate promotion safety tests
-        run: python -m unittest content_os.tests.test_inbox_promote -v
+        run: python -m unittest content_os.tests.test_inbox_promote content_os.tests.test_safe_dispatch -v
       - name: Verify each account and create new archive only after all gates PASS
         shell: bash
         run: |
@@ -74,4 +77,19 @@ jobs:
               sleep "$ATTEMPT"
             done
             echo "::endgroup::"
+          done
+
+      - name: Dispatch first safe WeChat draft workflow explicitly
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git reset --hard origin/main
+          DATE="$(python -c 'from datetime import datetime;from zoneinfo import ZoneInfo;print(datetime.now(ZoneInfo("Asia/Shanghai")).date())')"
+          for PROFILE in qiezhi wechat business zizhitongjian parenting jingyun fashion; do
+            # GITHUB_TOKEN push never triggers downstream workflow-on-push.
+            # Each dispatch is guarded against existing daily Actions/journals.
+            python content_os/safe_dispatch.py --profile "$PROFILE" --date "$DATE"
           done

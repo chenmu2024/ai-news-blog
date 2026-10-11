@@ -94,3 +94,8 @@
 若 ChatGPT 写稿任务不能在本地运行Python预检，就先仅创建 `content_os/inbox/<profile>/YYYY-MM-DD.md`，及同路径 `YYYY-MM-DD.titles.json`。sidecar 必须包含恰好3个不同的标题 `candidates`、与正文H1一致的 `selected_title`、具体 `rationale`、`basis`、`verified_views:null`、以及 `evidence:{facts_checked:true,image_rights_checked:true,source_urls:[实际核实的HTTPS来源]}`。证据字段必须真实，不可通过捏造true或来源绕Gate。来源无凭证/图片版权不明的候选保持在inbox、不触发草稿。
 
 `content-os-inbox-promote.yml` 只使用GitHub Actions，按A到G分别验证候选稿，执行 `prearchive_validate.py` 的事实/原典/视觉/质量/图片GET解码与30日去重，全部PASS后才创建原版不可变 archive 并以当日最新main合并标题账本；任何账号失败不影响其他账号。成功归档由原有 `*-draft.yml` 独立处理微信官方草稿，inbox流程绝不调用微信API，不写today/status。重复archive或draft-attempts直接SKIP。正式验收仍需confirmed journal+匹配SHA/path+media_id+PASS Gates。
+
+
+## GitHub Token 不触发下游push的修复（2026-10-11）
+
+GitHub Actions 使用默认 `GITHUB_TOKEN` 推送生成的 archive 时，不会再次触发普通 `push` 工作流。故在成功创建归档后，由 `content-os-inbox-promote.yml` 使用 `actions:write` 显式分发对应 `<profile>-draft.yml`，**只分发、不直接请求微信API**。分发前 `safe_dispatch.py` 必须核实：当天archive的最后变更确由本中转工作流提交；当天没有draft-attempts journal；今天没有旧成功回执；没有同日或运行中的对应draft Actions、Actions历史查询完整。任一异常或GitHub响应不明均停止分发，人工查询，不做盲目重试。七号互相独立，成功草稿永不重复。

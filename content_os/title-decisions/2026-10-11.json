@@ -47,6 +47,32 @@
           "https://www.ilo.org/publications/centering-reward-and-representation-domestic-workers-care-economy"
         ]
       }
+    },
+    "wechat": {
+      "candidates": [
+        "一家AI公司花1亿美元扶持服务商，普通人学什么",
+        "一家AI公司不只卖模型，还在投资落地服务",
+        "一家AI巨头扶持服务商，单人开发者该做什么"
+      ],
+      "selected_title": "一家AI公司花1亿美元扶持服务商，普通人学什么",
+      "rationale": "Anthropic 2026年3月官方公布1亿美元初始伙伴投入，5月另设面向中型企业的AI服务公司，真实资本配置与企业落地缺口之间形成商业转折；给一人公司具体核验、试点和可重复交付路径，区别前日Manus融资选题。",
+      "basis": [
+        "Anthropic官方2026-03-12 Claude Partner Network初始$100m投入",
+        "Anthropic官方2026-05-04新企业AI服务公司与业务交付机制",
+        "Anthropic官方2026-06-03 Services Track伙伴评估标准",
+        "30日wechat归档去重",
+        "未把合作伙伴资金说成普通人可以直接领取"
+      ],
+      "verified_views": null,
+      "evidence": {
+        "facts_checked": true,
+        "image_rights_checked": true,
+        "source_urls": [
+          "https://www.anthropic.com/news/claude-partner-network",
+          "https://www.anthropic.com/news/enterprise-ai-services-company",
+          "https://www.anthropic.com/news/services-track-partner-hub"
+        ]
+      }
     }
   },
   "date": "2026-10-11"

@@ -1,202 +1,188 @@
 {
-  "date": "2026-10-11",
-  "generated_at": "2026-10-11T16:44:18.689319+08:00",
+  "date": "2026-10-12",
+  "generated_at": "2026-10-12T05:07:23.367707+08:00",
   "timezone": "Asia/Shanghai",
-  "status": "complete",
-  "success_count": 7,
+  "status": "incomplete",
+  "success_count": 2,
   "expected_count": 7,
-  "draft_confirmed_count": 7,
+  "draft_confirmed_count": 2,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
-  "draft_confirmation_status": "confirmed",
-  "alert_required": false,
-  "alert_reasons": [],
-  "editorial_alert_required": false,
-  "editorial_alert_reasons": [],
+  "draft_confirmation_status": "incomplete",
+  "alert_required": true,
+  "alert_reasons": [
+    "repository_or_gate_incomplete",
+    "durable_draft_confirmation_incomplete"
+  ],
+  "editorial_alert_required": true,
+  "editorial_alert_reasons": [
+    "headline_decision_ledger_incomplete"
+  ],
   "headline_decisions": {
-    "status": "complete",
-    "complete_count": 7,
+    "status": "incomplete",
+    "complete_count": 2,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
-        "status": "complete",
-        "selected_title": "毛选：判断失误之前，往往少了一次调查",
-        "candidates": [
-          "毛选：判断失误之前，往往少了一次调查",
-          "毛选：问题越难，越别急着提出解决办法",
-          "毛选：别把自己的经验，当成今天的事实"
-        ],
-        "rationale": "从《反对本本主义》第一卷已核对的调查原则切入现实中的错误归因，避免复刻昨日团队会议不说真话和此前返工主题；只将确证的1930年篇名与‘没有调查，没有发言权’短句归原著，不杜撰现代三栏法为毛泽东原话。",
-        "basis": [
-          "中共中央党史和文献研究院《毛选》一至四卷主要修订情况确认《反对本本主义》编入第二版第一卷",
-          "党史和文献研究院《毛泽东如何解读〈反对本本主义〉》确认原题《调查工作》写于1930年5月及原文含“没有调查，没有发言权”",
-          "党史和文献研究院《反对本本主义》地位和作用核对全文历史语境",
-          "近30日且知归档去重"
-        ],
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
         "verified_views": null,
-        "errors": []
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
       },
       "wechat": {
-        "status": "complete",
-        "selected_title": "一家AI公司花1亿美元扶持服务商，普通人学什么",
-        "candidates": [
-          "一家AI公司花1亿美元扶持服务商，普通人学什么",
-          "一家AI公司不只卖模型，还在投资落地服务",
-          "一家AI巨头扶持服务商，单人开发者该做什么"
-        ],
-        "rationale": "Anthropic 2026年3月官方公布1亿美元初始伙伴投入，5月另设面向中型企业的AI服务公司，真实资本配置与企业落地缺口之间形成商业转折；给一人公司具体核验、试点和可重复交付路径，区别前日Manus融资选题。",
-        "basis": [
-          "Anthropic官方2026-03-12 Claude Partner Network初始$100m投入",
-          "Anthropic官方2026-05-04新企业AI服务公司与业务交付机制",
-          "Anthropic官方2026-06-03 Services Track伙伴评估标准",
-          "30日wechat归档去重",
-          "未把合作伙伴资金说成普通人可以直接领取"
-        ],
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
         "verified_views": null,
-        "errors": []
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
       },
       "business": {
         "status": "complete",
-        "selected_title": "海底捞海外半年收入涨12%，开店反而很克制",
+        "selected_title": "上海失业金每月2340元：谁能领、怎么办",
         "candidates": [
-          "海底捞海外半年收入涨12%，开店反而很克制",
-          "海底捞海外只多3家店，半年收入为何涨12%",
-          "海底捞出海开始算效率账，而不是比谁开店快"
+          "上海失业金每月2340元：谁能领、怎么办",
+          "上海失业金新规：领多久、怎么申请",
+          "外地户口在上海失业，能领2340元吗"
         ],
-        "rationale": "中国读者熟悉海底捞；特海国际2026年8月公告显示国际市场餐厅数量小幅增加却收入同比增长12.1%、餐厅经营利润率显著改善；通过认清上市主体和财务口径形成“开店数量 vs 单店效率”的真实反差，区别10月10日瑞幸新加坡品牌选题。",
+        "rationale": "上海2026年8月16日生效新失业金申领办法，2026年7月1日新支付标准2340元，覆盖大量职工权益搜索意图；与武汉家庭购房号内容无重合，近30天商业故事归档无同类。",
         "basis": [
-          "Super Hi International 2026-08-26 2026 Q2/H1财报",
-          "美国SEC披露Super Hi 2026半年财务信息",
-          "2026H1 revenue $444.8m，同比+12.1%",
-          "餐厅层面经营利润率10.7% vs 6.4%，非集团净利润率",
-          "近30天归档去重"
+          "沪人社规〔2026〕18号全文",
+          "上海市人社局2026-08-06政策问答含最新支付额",
+          "人社部官方申领渠道",
+          "核对旧申领周期与新规衔接"
         ],
         "verified_views": null,
         "errors": []
       },
       "zizhitongjian": {
-        "status": "complete",
-        "selected_title": "魏文侯冒雨赴约：没人监督的承诺还算数吗",
-        "candidates": [
-          "魏文侯冒雨赴约：没人监督的承诺还算数吗",
-          "魏文侯为什么下雨也要出门赴一个小约",
-          "魏文侯的一次雨天赴约，暴露了守信的难处"
-        ],
-        "rationale": "魏文侯事迹载《资治通鉴》卷一周纪一，与近三天三家分晋、商鞅徙木、智伯灭亡不同，围绕小人物承诺与管理者可信任的现实判断展开；区分实际冒雨去取消约定和强行在雨中猎，未加入原典没有的个人对白。",
-        "basis": [
-          "Wikisource《资治通鉴》四部丛刊本卷第一原文（魏文侯与虞人期猎）",
-          "Wikisource《资治通鉴》四库全书本卷001胡三省注作文本交叉核验，不声称影印核验",
-          "CText周纪一对应章节仅作为影印检查入口，image_check_done=false",
-          "30日zizhitongjian归档去重"
-        ],
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
         "verified_views": null,
-        "errors": []
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
       },
       "parenting": {
         "status": "complete",
-        "selected_title": "孩子被同学移出群聊，家长该怎么找老师",
+        "selected_title": "武汉二孩买房补贴6万：外地人怎么申请",
         "candidates": [
-          "孩子被同学移出群聊，家长该怎么找老师",
-          "同学群里一句玩笑，为什么会让孩子不敢上学",
-          "校园排挤发生后，家长和老师怎样分工"
+          "武汉二孩买房补贴6万：外地人怎么申请",
+          "武汉二孩家庭购房补贴6万，申领条件详解",
+          "武汉多子女新房补贴：外地户口可申请吗"
         ],
-        "rationale": "聚焦小学和初中家长的同伴关系、家校协作冲突，与此前的作业、家长群消息话题保持区分；采用真实场景而不编造具体投诉案例，给出当晚沟通和学校协作的行动路径。",
+        "rationale": "核验武汉市2025年扩围政策、2026年12月31日延期及2026年8月办事细节；家庭政策账号专注有孩子的家庭，和职工失业金文章区分；前一天育儿归档为同伴关系，不重复。",
         "basis": [
-          "UNICEF Parenting: How to talk to your child's school about bullying",
-          "UNICEF Parenting: How to support your child through a negative online experience",
-          "当前 parenting 账号定位：学校教育现实与家庭冲突",
-          "对照近30日归档，避免复制孩子拖拉/父母先别模板"
+          "武汉住更局2025-05-13政策解答",
+          "武汉市政府2026-01-17答复续期",
+          "武汉住更局2026-08-13关于安居链数据同步",
+          "核对2025年及2026年政策窗口与孩次时间"
         ],
         "verified_views": null,
         "errors": []
       },
       "jingyun": {
-        "status": "complete",
-        "selected_title": "家里人人都忙，为什么总是她记住所有的事",
-        "candidates": [
-          "家里人人都忙，为什么总是她记住所有的事",
-          "一家人都在做事，为何只有她不能下班",
-          "家庭分工最难的，常常不是谁来做家务"
-        ],
-        "rationale": "选择具体的家庭准备事项展开被忽略的照护管理劳动，贴合女性30–50岁读者，同时区别10月10日重新找工作与10月9日夫妻交谈主题；使用ILO全球无偿照护统计但明确不映射中国个体，不虚构作者经历。",
-        "basis": [
-          "ILO 2024 2023年全球因照护责任不在劳动力市场女性708 million，非中国数据",
-          "ILO 2024 体面工作与照护经济决议（认可、减少、再分配）",
-          "近30天jingyun归档去重",
-          "静筠日记STYLE中年女性、家庭事务和现实成本"
-        ],
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
         "verified_views": null,
-        "errors": []
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
       },
       "fashion": {
-        "status": "complete",
-        "selected_title": "Jisoo五套经典造型，普通人最该学哪一招",
-        "candidates": [
-          "Jisoo五套经典造型，普通人最该学哪一招",
-          "Jisoo五套活动造型，最值得抄的是这五处细节",
-          "Jisoo从舞台到活动的五次穿搭变化"
-        ],
-        "rationale": "选五套2017–2022有准确活动日期、可明确识别Jisoo本人、Wikimedia Commons已复核CC BY4.0许可证的照片，集中研究可复刻的领口、轮廓、腰线和撞色；不冒充2026年新造型，不推断精确品牌单品价格或鞋包不可见细节；与近30天普通日韩针织、西装、机场明星混搭主题区分。",
-        "basis": [
-          "Wikimedia Commons文件页五个原始Jisoo活动时间与地点",
-          "五张图片都标记CC BY 4.0、原作者和原始文件记录",
-          "2017-05-17演出、2019-06-30签售、2019-08-19活动、2020-01-09品牌活动、2022-03-29品牌活动",
-          "Fashion Image-first真实人物与不少于五张穿搭照片的规则",
-          "近30天fashion归档去重"
-        ],
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
         "verified_views": null,
-        "errors": []
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
       }
     }
   },
   "accounts": {
     "qiezhi": {
       "profile": "qiezhi",
-      "status": "success",
-      "archive": "qiezhi/archive/2026-10-11.md",
-      "title": "毛选：判断失误之前，往往少了一次调查",
-      "archive_title": "毛选：判断失误之前，往往少了一次调查",
+      "status": "incomplete",
+      "archive": "qiezhi/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": null,
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "confirmed",
+      "journal_state": "MISSING",
       "fashion_revision": null,
-      "draft_media_id_recorded": true,
-      "draft_confirmation_mode": "confirmed_journal",
-      "draft_confirmed": true,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "wechat": {
       "profile": "wechat",
-      "status": "success",
-      "archive": "wechat/archive/2026-10-11.md",
-      "title": "一家AI公司花1亿美元扶持服务商，普通人学什么",
-      "archive_title": "一家AI公司花1亿美元扶持服务商，普通人学什么",
+      "status": "incomplete",
+      "archive": "wechat/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38100084368",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "confirmed",
+      "journal_state": "MISSING",
       "fashion_revision": null,
-      "draft_media_id_recorded": true,
-      "draft_confirmation_mode": "confirmed_journal",
-      "draft_confirmed": true,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "business": {
       "profile": "business",
       "status": "success",
-      "archive": "business/archive/2026-10-11.md",
-      "title": "海底捞海外半年收入涨12%，开店反而很克制",
-      "archive_title": "海底捞海外半年收入涨12%，开店反而很克制",
-      "workflow_run_id": "38100141131",
+      "archive": "business/archive/2026-10-12.md",
+      "title": "上海失业金每月2340元：谁能领、怎么办",
+      "archive_title": "上海失业金每月2340元：谁能领、怎么办",
+      "workflow_run_id": "38174983853",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
@@ -212,32 +198,40 @@
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
-      "status": "success",
-      "archive": "zizhitongjian/archive/2026-10-11.md",
-      "title": "魏文侯冒雨赴约：没人监督的承诺还算数吗",
-      "archive_title": "魏文侯冒雨赴约：没人监督的承诺还算数吗",
+      "status": "incomplete",
+      "archive": "zizhitongjian/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38100814477",
       "gates": {
         "source-gate.json": "PASS",
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "confirmed",
+      "journal_state": "MISSING",
       "fashion_revision": null,
-      "draft_media_id_recorded": true,
-      "draft_confirmation_mode": "confirmed_journal",
-      "draft_confirmed": true,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:source-gate.json",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "parenting": {
       "profile": "parenting",
       "status": "success",
-      "archive": "parenting/archive/2026-10-11.md",
-      "title": "孩子被同学移出群聊，家长该怎么找老师",
-      "archive_title": "孩子被同学移出群聊，家长该怎么找老师",
-      "workflow_run_id": "38099841584",
+      "archive": "parenting/archive/2026-10-12.md",
+      "title": "武汉二孩买房补贴6万：外地人怎么申请",
+      "archive_title": "武汉二孩买房补贴6万：外地人怎么申请",
+      "workflow_run_id": "38174988443",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
@@ -253,47 +247,62 @@
     },
     "jingyun": {
       "profile": "jingyun",
-      "status": "success",
-      "archive": "jingyun/archive/2026-10-11.md",
-      "title": "家里人人都忙，为什么总是她记住所有的事",
-      "archive_title": "家里人人都忙，为什么总是她记住所有的事",
+      "status": "incomplete",
+      "archive": "jingyun/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38100007678",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "confirmed",
+      "journal_state": "MISSING",
       "fashion_revision": null,
-      "draft_media_id_recorded": true,
-      "draft_confirmation_mode": "confirmed_journal",
-      "draft_confirmed": true,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "fashion": {
       "profile": "fashion",
-      "status": "success",
-      "archive": "fashion/archive/2026-10-11.md",
-      "title": "Jisoo五套经典造型，普通人最该学哪一招",
-      "archive_title": "Jisoo五套经典造型，普通人最该学哪一招",
+      "status": "incomplete",
+      "archive": "fashion/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38100931500",
       "gates": {
         "image-gate.json": "PASS",
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "confirmed",
+      "journal_state": "MISSING",
       "fashion_revision": null,
-      "draft_media_id_recorded": true,
-      "draft_confirmation_mode": "confirmed_journal",
-      "draft_confirmed": true,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:image-gate.json",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     }
   },
-  "topic_scan_date": "2026-10-11",
+  "topic_scan_date": "2026-10-12",
   "topic_scan_available": true,
   "topic_popularity_verified_count": {
     "qiezhi": 0,

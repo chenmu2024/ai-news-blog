@@ -1,0 +1,317 @@
+{
+  "date": "2026-10-12",
+  "generated_at": "2026-10-12T05:07:23.367707+08:00",
+  "timezone": "Asia/Shanghai",
+  "status": "incomplete",
+  "success_count": 2,
+  "expected_count": 7,
+  "draft_confirmed_count": 2,
+  "legacy_media_id_receipt_count": 0,
+  "legacy_repo_receipt_only_count": 0,
+  "draft_confirmation_status": "incomplete",
+  "alert_required": true,
+  "alert_reasons": [
+    "repository_or_gate_incomplete",
+    "durable_draft_confirmation_incomplete"
+  ],
+  "editorial_alert_required": true,
+  "editorial_alert_reasons": [
+    "headline_decision_ledger_incomplete"
+  ],
+  "headline_decisions": {
+    "status": "incomplete",
+    "complete_count": 2,
+    "expected_count": 7,
+    "profiles": {
+      "qiezhi": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "wechat": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "business": {
+        "status": "complete",
+        "selected_title": "上海失业金每月2340元：谁能领、怎么办",
+        "candidates": [
+          "上海失业金每月2340元：谁能领、怎么办",
+          "上海失业金新规：领多久、怎么申请",
+          "外地户口在上海失业，能领2340元吗"
+        ],
+        "rationale": "上海2026年8月16日生效新失业金申领办法，2026年7月1日新支付标准2340元，覆盖大量职工权益搜索意图；与武汉家庭购房号内容无重合，近30天商业故事归档无同类。",
+        "basis": [
+          "沪人社规〔2026〕18号全文",
+          "上海市人社局2026-08-06政策问答含最新支付额",
+          "人社部官方申领渠道",
+          "核对旧申领周期与新规衔接"
+        ],
+        "verified_views": null,
+        "errors": []
+      },
+      "zizhitongjian": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "parenting": {
+        "status": "complete",
+        "selected_title": "武汉二孩买房补贴6万：外地人怎么申请",
+        "candidates": [
+          "武汉二孩买房补贴6万：外地人怎么申请",
+          "武汉二孩家庭购房补贴6万，申领条件详解",
+          "武汉多子女新房补贴：外地户口可申请吗"
+        ],
+        "rationale": "核验武汉市2025年扩围政策、2026年12月31日延期及2026年8月办事细节；家庭政策账号专注有孩子的家庭，和职工失业金文章区分；前一天育儿归档为同伴关系，不重复。",
+        "basis": [
+          "武汉住更局2025-05-13政策解答",
+          "武汉市政府2026-01-17答复续期",
+          "武汉住更局2026-08-13关于安居链数据同步",
+          "核对2025年及2026年政策窗口与孩次时间"
+        ],
+        "verified_views": null,
+        "errors": []
+      },
+      "jingyun": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "fashion": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      }
+    }
+  },
+  "accounts": {
+    "qiezhi": {
+      "profile": "qiezhi",
+      "status": "incomplete",
+      "archive": "qiezhi/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
+      "workflow_run_id": null,
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
+    },
+    "wechat": {
+      "profile": "wechat",
+      "status": "incomplete",
+      "archive": "wechat/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
+      "workflow_run_id": "38100084368",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
+    },
+    "business": {
+      "profile": "business",
+      "status": "success",
+      "archive": "business/archive/2026-10-12.md",
+      "title": "上海失业金每月2340元：谁能领、怎么办",
+      "archive_title": "上海失业金每月2340元：谁能领、怎么办",
+      "workflow_run_id": "38174983853",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "confirmed",
+      "fashion_revision": null,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "zizhitongjian": {
+      "profile": "zizhitongjian",
+      "status": "incomplete",
+      "archive": "zizhitongjian/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
+      "workflow_run_id": "38100814477",
+      "gates": {
+        "source-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "image_check_done": false,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:source-gate.json",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
+    },
+    "parenting": {
+      "profile": "parenting",
+      "status": "success",
+      "archive": "parenting/archive/2026-10-12.md",
+      "title": "武汉二孩买房补贴6万：外地人怎么申请",
+      "archive_title": "武汉二孩买房补贴6万：外地人怎么申请",
+      "workflow_run_id": "38174988443",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "confirmed",
+      "fashion_revision": null,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": []
+    },
+    "jingyun": {
+      "profile": "jingyun",
+      "status": "incomplete",
+      "archive": "jingyun/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
+      "workflow_run_id": "38100007678",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
+    },
+    "fashion": {
+      "profile": "fashion",
+      "status": "incomplete",
+      "archive": "fashion/archive/2026-10-12.md",
+      "title": "",
+      "archive_title": "",
+      "workflow_run_id": "38100931500",
+      "gates": {
+        "image-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:image-gate.json",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
+    }
+  },
+  "topic_scan_date": "2026-10-12",
+  "topic_scan_available": true,
+  "topic_popularity_verified_count": {
+    "qiezhi": 0,
+    "wechat": 0,
+    "business": 0,
+    "zizhitongjian": 0,
+    "parenting": 0,
+    "jingyun": 0,
+    "fashion": 0
+  },
+  "note": "status/success_count is repository compatibility. draft_confirmed_count requires the durable confirmed journal + matching SHA/path + media_id. This is not direct WeChat UI visual confirmation."
+}

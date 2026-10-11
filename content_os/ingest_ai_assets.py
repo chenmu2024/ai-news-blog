@@ -39,9 +39,9 @@ def ingest(root: Path) -> dict:
             profile, day, name = rel.parts
             if profile not in PROFILES:
                 raise ValueError("invalid profile")
-            if not re.fullmatch(r"20\\d{2}-\\d{2}-\\d{2}", day):
+            if not re.fullmatch(r"20\d{2}-\d{2}-\d{2}", day):
                 raise ValueError("invalid date")
-            if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_.-]{1,110}\\.(?:webp|png|jpe?g)\\.json", name):
+            if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_.-]{1,110}\.(?:webp|png|jpe?g)\.json", name):
                 raise ValueError("invalid filename")
             filename = name[:-5]
             raw = json.loads(input_path.read_text("utf-8"))

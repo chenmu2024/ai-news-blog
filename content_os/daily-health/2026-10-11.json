@@ -1,11 +1,11 @@
 {
   "date": "2026-10-11",
-  "generated_at": "2026-10-11T08:52:11.850076+08:00",
+  "generated_at": "2026-10-11T08:55:07.718295+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 1,
+  "success_count": 2,
   "expected_count": 7,
-  "draft_confirmed_count": 1,
+  "draft_confirmed_count": 2,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 1,
+    "complete_count": 2,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -90,16 +90,22 @@
         "errors": []
       },
       "jingyun": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "家里人人都忙，为什么总是她记住所有的事",
+        "candidates": [
+          "家里人人都忙，为什么总是她记住所有的事",
+          "一家人都在做事，为何只有她不能下班",
+          "家庭分工最难的，常常不是谁来做家务"
+        ],
+        "rationale": "选择具体的家庭准备事项展开被忽略的照护管理劳动，贴合女性30–50岁读者，同时区别10月10日重新找工作与10月9日夫妻交谈主题；使用ILO全球无偿照护统计但明确不映射中国个体，不虚构作者经历。",
+        "basis": [
+          "ILO 2024 2023年全球因照护责任不在劳动力市场女性708 million，非中国数据",
+          "ILO 2024 体面工作与照护经济决议（认可、减少、再分配）",
+          "近30天jingyun归档去重",
+          "静筠日记STYLE中年女性、家庭事务和现实成本"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "fashion": {
         "status": "missing_or_invalid",
@@ -248,30 +254,23 @@
     },
     "jingyun": {
       "profile": "jingyun",
-      "status": "incomplete",
+      "status": "success",
       "archive": "jingyun/archive/2026-10-11.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38008741433",
+      "title": "家里人人都忙，为什么总是她记住所有的事",
+      "archive_title": "家里人人都忙，为什么总是她记住所有的事",
+      "workflow_run_id": "38100007678",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     },
     "fashion": {
       "profile": "fashion",

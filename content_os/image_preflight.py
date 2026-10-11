@@ -5,7 +5,10 @@ import json
 import os
 from pathlib import Path
 from image_resilience import prepare_images, save_prepared_cache
-from ai_scene_policy import verify_bytes as verify_ai_scene_bytes
+try:
+    from content_os.ai_scene_policy import verify_bytes as verify_ai_scene_bytes
+except ImportError:
+    from ai_scene_policy import verify_bytes as verify_ai_scene_bytes
 import re
 
 

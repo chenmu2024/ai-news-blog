@@ -1,6 +1,6 @@
 # 2026年10月12日｜七公众号文章全文合集
 
-> 正式归档：A–F六篇，微信草稿回执已确认。G为完整候选稿，**尚未确认微信草稿**。此文件为当日文章阅读和审核合集，并非新的微信发布指令。
+> 正式归档：A–G七篇，微信公众号草稿journal及media_id已全部确认。此文件为当日文章阅读和审核合集，并非新的微信发布指令。
 > 注意：当日六篇正式归档原稿不含独立AI原创写实图。本合集保留正文原意、将信息卡转成可阅读文字；另有单独制作的六张AI场景图可用于视觉审核，但不表示已上传微信。
 
 ## 目录
@@ -11,7 +11,7 @@
 - D 资治通鉴：《赵奢向平原君家追税：权贵为何反而举荐他》 — [原始归档](https://github.com/chenmu2024/ai-news-blog/blob/main/zizhitongjian/archive/2026-10-12.md)
 - E 家庭政策：《武汉二孩买房补贴6万：外地人怎么申请》 — [原始归档](https://github.com/chenmu2024/ai-news-blog/blob/main/parenting/archive/2026-10-12.md)
 - F 静筠日记：《到了中年，朋友慢慢走散，还要主动联系吗》 — [原始归档](https://github.com/chenmu2024/ai-news-blog/blob/main/jingyun/archive/2026-10-12.md)
-- G 女装穿搭：《Rosé五组真实造型：普通人如何学配色与比例》 — [原始候选](https://github.com/chenmu2024/ai-news-blog/blob/main/content_os/inbox/fashion/2026-10-12.md)
+- G 女装穿搭：《Rosé五组真实造型：普通人如何学配色与比例》 — [原始归档](https://github.com/chenmu2024/ai-news-blog/blob/main/fashion/archive/2026-10-12.md)
 
 ---
 
@@ -501,7 +501,7 @@ Positron的融资是一个可核实的商业信号，说明AI推理基础设施�
 
 ---
 
-## G｜女装穿搭（仅候选稿、未确认草稿）
+## G｜女装穿搭（草稿已确认）
 
 # Rosé五组真实造型：普通人如何学配色与比例
 

@@ -1,0 +1,25 @@
+{
+  "candidates": [
+    "上海失业金每月2340元：谁能领、怎么办",
+    "上海失业金新规：领多久、怎么申请",
+    "外地户口在上海失业，能领2340元吗"
+  ],
+  "selected_title": "上海失业金每月2340元：谁能领、怎么办",
+  "rationale": "上海2026年8月16日生效新失业金申领办法，2026年7月1日新支付标准2340元，覆盖大量职工权益搜索意图；与武汉家庭购房号内容无重合，近30天商业故事归档无同类。",
+  "basis": [
+    "沪人社规〔2026〕18号全文",
+    "上海市人社局2026-08-06政策问答含最新支付额",
+    "人社部官方申领渠道",
+    "核对旧申领周期与新规衔接"
+  ],
+  "verified_views": null,
+  "evidence": {
+    "facts_checked": true,
+    "image_rights_checked": true,
+    "source_urls": [
+      "https://rsj.sh.gov.cn/tshbx_17729/20260812/t0035_1443067.html",
+      "https://rsj.sh.gov.cn/tzcjd_17352_17352/20260812/t0035_1443066.html",
+      "https://www.mohrss.gov.cn/SYrlzyhshbzb/zxhd/SYzaixianfangtan/201905_4435/ftnr/202208/t20220808_481344.html"
+    ]
+  }
+}

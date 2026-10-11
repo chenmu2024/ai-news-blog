@@ -16,8 +16,8 @@
 
 ## 生产次序（先生成实际文件，后写候选文章）
 1. 按当天主题用真实可用的图像生成模型生成 JPEG/PNG/WebP 文件；记录**真实**`generator`、`generation_id` 和生成场景描述。不能只写一句“已生成”。
-2. 用本地 Pillow/文件工具打开并校验真实图片，确认主题相关、不含乱码/假证据、无错误人物；记录**原文件字节**SHA256。图片要在原始 GitHub 仓库存储为二进制，例如 `content_os/assets/ai-scenes/<profile>/YYYY-MM-DD/<unique>.webp`。需用 GitHub 二进制 blob/tree/commit/ref 上传；`create_file` 是 UTF-8 文本接口，不能用它直接保存二进制图片。
-3. 图片通过 `https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/<profile>/YYYY-MM-DD/<unique>.webp` 实际 HTTP GET 验证后，放进 Markdown 正文 `![写实AI原创场景示意](https://raw.../...webp)`。不得粘贴 `sandbox:`、ChatGPT私有图片链接或想象中的资产URL。
+2. 用本地 Pillow/文件工具打开并校验真实图片，确认主题相关、不含乱码/假证据、无错误人物；记录**原文件字节**SHA256。图片要在**私有** GitHub 仓库存储为二进制，例如 `content_os/assets/ai-scenes/<profile>/YYYY-MM-DD/<unique>.webp`。需用 GitHub 二进制 blob/tree/commit/ref 上传；`create_file` 是 UTF-8 文本接口，不能用它直接保存二进制图片。
+3. 由于仓库为**private**，这个 `raw.githubusercontent.com` URL 只是正文/发布器识别的资产标识，**不能假设匿名GET公开可用**。GitHub Actions 从本仓库checkout实际读取二进制，核验原字节SHA256/格式/解码并上传微信；微信返回的媒体URL随后验证 HTTP 可读。使用内部标识 `https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/<profile>/YYYY-MM-DD/<unique>.webp`，验证仓库中真实文件存在后，放进 Markdown 正文 `![写实AI原创场景示意](https://raw.../...webp)`。不得粘贴 `sandbox:`、ChatGPT私有图片链接或想象中的资产URL。
 4. 每张**被正文使用**的AI图在文章保留一个隐藏的 `AI_SCENE` JSON：
    ```text
    <!-- AI_SCENE {"profile":"jingyun","article_date":"2026-10-13","image_url":"https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/jingyun/2026-10-13/scene.webp","sha256":"<真实原文件64位小写SHA256>","generator":"openai_image_gen","generation_id":"<真实工具生成ID>","rights":"ai_created_owned","synthetic":true,"scene_role":"illustration","scene_description":"成年亚洲女性在晨光中的普通书房整理笔记，未对应真实人物","pretends_to_be_real_person_or_record":false} -->

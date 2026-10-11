@@ -2,9 +2,11 @@
   "status": "PASS",
   "profile": "parenting",
   "required_visuals": 2,
-  "visual_count": 3,
-  "markdown_images": 2,
+  "visual_count": 2,
+  "markdown_images": 0,
   "html_images": 0,
-  "renderable_cards": 1,
-  "hard_failures": []
+  "renderable_cards": 2,
+  "hard_failures": [],
+  "article_sha256": "a4c73ecab1d520e2e869835209086c225fef810114063afb02110904d8ed1968",
+  "article_path": "parenting/archive/2026-10-11.md"
 }

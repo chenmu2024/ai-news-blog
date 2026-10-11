@@ -1,26 +1,21 @@
 {
   "date": "2026-10-11",
-  "generated_at": "2026-10-11T09:09:13.364622+08:00",
+  "generated_at": "2026-10-11T09:11:27.948135+08:00",
   "timezone": "Asia/Shanghai",
-  "status": "incomplete",
-  "success_count": 6,
+  "status": "complete",
+  "success_count": 7,
   "expected_count": 7,
-  "draft_confirmed_count": 6,
+  "draft_confirmed_count": 7,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
-  "draft_confirmation_status": "incomplete",
-  "alert_required": true,
-  "alert_reasons": [
-    "repository_or_gate_incomplete",
-    "durable_draft_confirmation_incomplete"
-  ],
-  "editorial_alert_required": true,
-  "editorial_alert_reasons": [
-    "headline_decision_ledger_incomplete"
-  ],
+  "draft_confirmation_status": "confirmed",
+  "alert_required": false,
+  "alert_reasons": [],
+  "editorial_alert_required": false,
+  "editorial_alert_reasons": [],
   "headline_decisions": {
-    "status": "incomplete",
-    "complete_count": 6,
+    "status": "complete",
+    "complete_count": 7,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -134,16 +129,23 @@
         "errors": []
       },
       "fashion": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "Jisoo五套经典造型，普通人最该学哪一招",
+        "candidates": [
+          "Jisoo五套经典造型，普通人最该学哪一招",
+          "Jisoo五套活动造型，最值得抄的是这五处细节",
+          "Jisoo从舞台到活动的五次穿搭变化"
+        ],
+        "rationale": "选五套2017–2022有准确活动日期、可明确识别Jisoo本人、Wikimedia Commons已复核CC BY4.0许可证的照片，集中研究可复刻的领口、轮廓、腰线和撞色；不冒充2026年新造型，不推断精确品牌单品价格或鞋包不可见细节；与近30天普通日韩针织、西装、机场明星混搭主题区分。",
+        "basis": [
+          "Wikimedia Commons文件页五个原始Jisoo活动时间与地点",
+          "五张图片都标记CC BY 4.0、原作者和原始文件记录",
+          "2017-05-17演出、2019-06-30签售、2019-08-19活动、2020-01-09品牌活动、2022-03-29品牌活动",
+          "Fashion Image-first真实人物与不少于五张穿搭照片的规则",
+          "近30天fashion归档去重"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       }
     }
   },
@@ -271,32 +273,24 @@
     },
     "fashion": {
       "profile": "fashion",
-      "status": "incomplete",
+      "status": "success",
       "archive": "fashion/archive/2026-10-11.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38015485717",
+      "title": "Jisoo五套经典造型，普通人最该学哪一招",
+      "archive_title": "Jisoo五套经典造型，普通人最该学哪一招",
+      "workflow_run_id": "38100931500",
       "gates": {
         "image-gate.json": "PASS",
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:image-gate.json",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     }
   },
   "topic_scan_date": "2026-10-11",

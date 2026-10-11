@@ -1,0 +1,47 @@
+{
+  "state": "attempted",
+  "profile": "jingyun",
+  "article_path": "jingyun/archive/2026-10-12.md",
+  "article_sha256": "437b0bd7cebe16bbc4aa71cd504b98b1a40e1f20f8cfd131a4d5b5d7bb07db62",
+  "title": "到了中年，朋友慢慢走散，还要主动联系吗",
+  "run_id": "38183313844",
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "jingyun",
+      "profile_name": "静筠日记｜女性生活",
+      "score": 4,
+      "body_chars": 2347,
+      "template_hits": 1,
+      "internal_hits": 0,
+      "fact_signals": 9,
+      "stance_signals": 9,
+      "paragraph_regularity": {
+        "paragraphs": 28,
+        "cv": 0.305
+      },
+      "sentence_repetition": {
+        "sentences": 73,
+        "repeated_starts": 2,
+        "ratio": 0.027
+      },
+      "very_short_paragraph_ratio": 0.091,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "437b0bd7cebe16bbc4aa71cd504b98b1a40e1f20f8cfd131a4d5b5d7bb07db62",
+      "article_path": "jingyun/archive/2026-10-12.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "jingyun",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 0,
+      "html_images": 0,
+      "renderable_cards": 2,
+      "hard_failures": [],
+      "article_sha256": "437b0bd7cebe16bbc4aa71cd504b98b1a40e1f20f8cfd131a4d5b5d7bb07db62",
+      "article_path": "jingyun/archive/2026-10-12.md"
+    }
+  }
+}

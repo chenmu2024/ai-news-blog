@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Asia/Shanghai",
+  "generated_at": "2026-10-11T08:36:32.287338+08:00",
+  "profiles": {
+    "qiezhi": {
+      "action": "write_new_archive",
+      "archive": "qiezhi/archive/2026-10-11.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "qiezhi/archive/2026-10-10.md",
+      "reasons": [
+        "today_archive_missing"
+      ]
+    },
+    "wechat": {
+      "action": "write_new_archive",
+      "archive": "wechat/archive/2026-10-11.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "wechat/archive/2026-10-10.md",
+      "reasons": [
+        "today_archive_missing"
+      ]
+    },
+    "business": {
+      "action": "write_new_archive",
+      "archive": "business/archive/2026-10-11.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "business/archive/2026-10-10.md",
+      "reasons": [
+        "today_archive_missing"
+      ]
+    },
+    "zizhitongjian": {
+      "action": "write_new_archive",
+      "archive": "zizhitongjian/archive/2026-10-11.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "zizhitongjian/archive/2026-10-10.md",
+      "reasons": [
+        "today_archive_missing"
+      ]
+    },
+    "parenting": {
+      "action": "write_new_archive",
+      "archive": "parenting/archive/2026-10-11.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "parenting/archive/2026-10-10.md",
+      "reasons": [
+        "today_archive_missing"
+      ]
+    },
+    "jingyun": {
+      "action": "write_new_archive",
+      "archive": "jingyun/archive/2026-10-11.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "jingyun/archive/2026-10-10.md",
+      "reasons": [
+        "today_archive_missing"
+      ]
+    },
+    "fashion": {
+      "action": "write_new_archive",
+      "archive": "fashion/archive/2026-10-11.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "fashion/archive/2026-10-10.md",
+      "reasons": [
+        "today_archive_missing"
+      ]
+    }
+  },
+  "input_freshness": {
+    "source_health": {
+      "recorded_date": "2026-10-10",
+      "fresh": false
+    },
+    "editorial_intelligence": {
+      "recorded_date": null,
+      "fresh": false
+    },
+    "reading_feedback": {
+      "recorded_date": "2026-10-10",
+      "fresh": false
+    },
+    "daily_health": {
+      "recorded_date": "2026-10-11",
+      "fresh": true
+    },
+    "topic_intelligence": {
+      "recorded_date": "2026-10-10",
+      "fresh": false
+    }
+  },
+  "confirmed_count": 0,
+  "missing_archives": [
+    "qiezhi",
+    "wechat",
+    "business",
+    "zizhitongjian",
+    "parenting",
+    "jingyun",
+    "fashion"
+  ],
+  "manual_review": [],
+  "policy": "Missing/stale research, reading feedback and health are NON-BLOCKING for responsible original writing. Record insufficient_evidence, verify facts independently, and complete permitted accounts one by one. This classifier NEVER authorizes draft/add; inspect Actions and run all applicable gates before archive creation or API access."
+}

@@ -1,13 +1,13 @@
 {
   "status": "failure",
   "profile": "zizhitongjian",
-  "date": "2026-10-10",
-  "workflow_run_id": "38010740578",
-  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/38010740578",
-  "article_path": "zizhitongjian/archive/2026-10-10.md",
+  "date": "2026-10-11",
+  "workflow_run_id": "38100508552",
+  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/38100508552",
+  "article_path": "zizhitongjian/archive/2026-10-11.md",
   "jobs": [
     {
-      "id": 114089896538,
+      "id": 114355302744,
       "name": "create-zizhitongjian-draft",
       "conclusion": null,
       "steps": []

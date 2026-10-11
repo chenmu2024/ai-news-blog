@@ -20,6 +20,10 @@ from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 import requests
 from PIL import Image, ImageOps, UnidentifiedImageError
+try:
+    from content_os.ai_scene_policy import asset_file as trusted_ai_scene_asset
+except ImportError:
+    from ai_scene_policy import asset_file as trusted_ai_scene_asset
 
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
 HTML_IMAGE_RE = re.compile(r"""<img\b[^>]*\bsrc\s*=\s*["']https?://[^"']+["']""", re.I)
@@ -145,7 +149,24 @@ def _jpeg_from_response(response, requested: str) -> tuple[bytes, str, str]:
 
 def _get_image(url: str, session=None) -> tuple[bytes, str, str]:
     if not public_https(url):
-        raise ValueError("Only public HTTPS image sources are allowed")
+        raise ValueError("Only HTTPS image identities are allowed")
+    # Private repository assets cannot be anonymously GET'd from GitHub Raw.
+    # Read the actual checked-out binary file; it is subsequently converted,
+    # staged and POSTed to WeChat, whose returned image URL is publicly readable.
+    local_asset = trusted_ai_scene_asset(url)
+    if local_asset is not None:
+        try:
+            payload = local_asset.read_bytes()
+            mime = ("image/webp" if local_asset.suffix.lower() == ".webp" else
+                    "image/png" if local_asset.suffix.lower() == ".png" else "image/jpeg")
+            class _LocalVerifiedResponse:
+                content = payload
+                headers = {"Content-Type": mime}
+                def raise_for_status(self):
+                    return None
+            return _jpeg_from_response(_LocalVerifiedResponse(), url)
+        except (OSError, ValueError) as exc:
+            raise RuntimeError("Private AI scene image not readable or decodable: " + str(local_asset)) from exc
     requester = session or requests
     headers = {"User-Agent": UA, "Accept": "image/jpeg,image/png,image/webp;q=0.8,*/*;q=0.1"}
     last = None

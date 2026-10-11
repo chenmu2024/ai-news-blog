@@ -1,11 +1,11 @@
 {
   "date": "2026-10-11",
-  "generated_at": "2026-10-11T08:56:30.154180+08:00",
+  "generated_at": "2026-10-11T08:57:32.820082+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 3,
+  "success_count": 4,
   "expected_count": 7,
-  "draft_confirmed_count": 3,
+  "draft_confirmed_count": 4,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 3,
+    "complete_count": 4,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -55,16 +55,23 @@
         "errors": []
       },
       "business": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "海底捞海外半年收入涨12%，开店反而很克制",
+        "candidates": [
+          "海底捞海外半年收入涨12%，开店反而很克制",
+          "海底捞海外只多3家店，半年收入为何涨12%",
+          "海底捞出海开始算效率账，而不是比谁开店快"
+        ],
+        "rationale": "中国读者熟悉海底捞；特海国际2026年8月公告显示国际市场餐厅数量小幅增加却收入同比增长12.1%、餐厅经营利润率显著改善；通过认清上市主体和财务口径形成“开店数量 vs 单店效率”的真实反差，区别10月10日瑞幸新加坡品牌选题。",
+        "basis": [
+          "Super Hi International 2026-08-26 2026 Q2/H1财报",
+          "美国SEC披露Super Hi 2026半年财务信息",
+          "2026H1 revenue $444.8m，同比+12.1%",
+          "餐厅层面经营利润率10.7% vs 6.4%，非集团净利润率",
+          "近30天归档去重"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "zizhitongjian": {
         "status": "missing_or_invalid",
@@ -178,30 +185,23 @@
     },
     "business": {
       "profile": "business",
-      "status": "incomplete",
+      "status": "success",
       "archive": "business/archive/2026-10-11.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38011882219",
+      "title": "海底捞海外半年收入涨12%，开店反而很克制",
+      "archive_title": "海底捞海外半年收入涨12%，开店反而很克制",
+      "workflow_run_id": "38100141131",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",

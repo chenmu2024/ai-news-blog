@@ -1,133 +1,195 @@
 <!-- FASHION_SOURCE
 {
   "topic_type": "celebrity",
-  "subject": "Jisoo、张员瑛、Jennie、Karina、林允儿｜2026年1—9月公开真实造型的普通人复刻",
+  "subject": "Jisoo（金智秀）：2017—2022年五组公开场合的经典造型，非2026年新造型",
   "images": [
     {
-      "image_url": "https://prcdn.freetls.fastly.net/release_image/8795/3116/8795-3116-321856c597c016fe8fdd33fc2b94f29b-1800x2700.jpg?auto=webp&bg-color=fff&fit=bounds&format=jpeg&height=1350&quality=85%2C65&width=1950",
-      "source_page_url": "https://prtimes.jp/main/html/rd/p/000003116.000008795.html",
-      "source_platform": "brand_site",
-      "creator": "Dior（2026-09-25机场官方新闻图）",
-      "rights": "brand_press_public",
-      "verified": true
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Kim_ji-soo.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_ji-soo.jpg",
+      "source_platform": "wikimedia_commons",
+      "creator": "Off The Page",
+      "rights": "commons_licensed",
+      "verified": true,
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "event_date": "2022-03-29",
+      "alternatives": [
+        {
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Kim_ji-soo.jpg/330px-Kim_ji-soo.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_ji-soo.jpg",
+          "rights": "commons_licensed",
+          "verified": true,
+          "subject_match": true,
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Kim_ji-soo.jpg/330px-Kim_ji-soo.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_ji-soo.jpg",
+          "rights": "commons_licensed",
+          "verified": true,
+          "subject_match": true,
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
     },
     {
-      "image_url": "https://kpopping.com/_next/image?q=75&url=https%3A%2F%2Fcdn.kpopping.com%2Fkpics%2F2026%2F09%2F1790561137761-8dmcvm-2.jpg&w=1080",
-      "source_page_url": "https://kpopping.com/kpics/260928-wonyoung-instagram-updates",
-      "source_platform": "instagram_repost",
-      "creator": "张员瑛公开社媒照片（kpopping图片页）",
-      "rights": "public_platform",
-      "verified": true
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30%2C_2019_%281%29.png",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30,_2019_(1).png",
+      "source_platform": "wikimedia_commons",
+      "creator": "Off The Page",
+      "rights": "commons_licensed",
+      "verified": true,
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "event_date": "2019-06-30",
+      "alternatives": [
+        {
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30%2C_2019_%281%29.png/500px-Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30%2C_2019_%281%29.png",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30,_2019_(1).png",
+          "rights": "commons_licensed",
+          "verified": true,
+          "subject_match": true,
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
     },
     {
-      "image_url": "https://image.starnewskorea.com/cdn-cgi/image/f%3Davif%2Cw%3D860/21/2026/03/2026032207271522149_1.jpg",
-      "source_page_url": "https://www.starnewskorea.com/en/music/2026/03/22/2026032207271522149",
-      "source_platform": "news",
-      "creator": "STARNEWS（2026-03-22机场摄影）",
-      "rights": "public_platform",
-      "verified": true
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%286%29.png",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19,_2019_(6).png",
+      "source_platform": "wikimedia_commons",
+      "creator": "Off The Page",
+      "rights": "commons_licensed",
+      "verified": true,
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "event_date": "2019-08-19",
+      "alternatives": [
+        {
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%286%29.png/500px-Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%286%29.png",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19,_2019_(6).png",
+          "rights": "commons_licensed",
+          "verified": true,
+          "subject_match": true,
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
     },
     {
-      "image_url": "https://newsimg.koreatimes.co.kr/2026/01/16/549c038d-45fa-42ba-96b5-03256181b2dd.jpg",
-      "source_page_url": "https://www.koreatimes.co.kr/lifestyle/trends/20260117/aespas-karina-shows-off-modern-classic-style-en-route-to-milan",
-      "source_platform": "news",
-      "creator": "The Korea Times（2026-01-16机场造型）",
-      "rights": "public_platform",
-      "verified": true
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09%2C_2020_%281%29.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09,_2020_(1).jpg",
+      "source_platform": "wikimedia_commons",
+      "creator": "Off The Page",
+      "rights": "commons_licensed",
+      "verified": true,
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "event_date": "2020-01-09",
+      "alternatives": [
+        {
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09%2C_2020_%281%29.jpg/500px-Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09%2C_2020_%281%29.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09,_2020_(1).jpg",
+          "rights": "commons_licensed",
+          "verified": true,
+          "subject_match": true,
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
     },
     {
-      "image_url": "https://www.fashionn.com/files/board/2026/image/o_1jhv2emqnmdjfdrgs1l4kjreh.jpg",
-      "source_page_url": "https://m.fashionn.com/board/read.php?number=59936&table=style",
-      "source_platform": "news",
-      "creator": "FashionN（2026-02-21林允儿机场）",
-      "rights": "public_platform",
-      "verified": true
-    },
-    {
-      "image_url": "https://img.hankyung.com/photo/202602/BF.43437233.1.jpg",
-      "source_page_url": "https://www.tenasia.com/entertainment/2026022703724",
-      "source_platform": "news",
-      "creator": "TenAsia / 韩经网（2026-02-27 Jisoo机场）",
-      "rights": "public_platform",
-      "verified": true
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/170517_Kim_Ji-soo_Blackpink_06.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:170517_Kim_Ji-soo_Blackpink_06.jpg",
+      "source_platform": "wikimedia_commons",
+      "creator": "D4cgrapher",
+      "rights": "commons_licensed",
+      "verified": true,
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "event_date": "2017-05-17",
+      "alternatives": [
+        {
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/170517_Kim_Ji-soo_Blackpink_06.jpg/500px-170517_Kim_Ji-soo_Blackpink_06.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:170517_Kim_Ji-soo_Blackpink_06.jpg",
+          "rights": "commons_licensed",
+          "verified": true,
+          "subject_match": true,
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/170517_Kim_Ji-soo_Blackpink_06.jpg/500px-170517_Kim_Ji-soo_Blackpink_06.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:170517_Kim_Ji-soo_Blackpink_06.jpg",
+          "verified": true,
+          "subject_match": true,
+          "rights": "commons_licensed",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
     }
   ],
   "item_claims": []
 }
 -->
 
-# Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么
+# Jisoo五套经典造型，普通人最该学哪一招
 
-每到时装周，女明星的机场穿搭就很容易刷屏。漂亮的照片很多，但真正让普通人愿意收藏的，不一定是手上那只包，而是她们把一件普通外套、牛仔裤、针织衫搭得很有精神的办法。
+说到Jisoo，很多人第一时间想到的是时装活动的精致感。但真正适合普通人学习的，不是把明星所有单品买回家，也不是依照一张照片猜出品牌和价钱，而是弄清楚衣服怎样安排肩线、领口、腰线和色彩。
 
-这次挑了六组有照片与公开来源的造型：Jisoo、张员瑛、Jennie、Karina、林允儿，其中Jisoo有两套不同时间的机场装扮。照片分别来自2026年1月至9月的公开出行或社交平台，**不是同一天、也不是同一场活动**。每张都只拆解照片能看到的版型、比例和颜色；品牌、具体活动日期只有可核验时才说明。
+这次挑出的是**2017年至2022年的五张真实公开活动照片**，不是2026年最新机场街拍，更不是把几次活动当成同一天的五套换装。照片来自Wikimedia Commons对应人物、时间明确的文件页，授权方式为CC BY 4.0。选这些跨年的造型，主要因为它们表现了五种完全不同的搭配方式：深色利落、清爽蓝色、墨绿礼服、黑色礼服和舞台撞色。
 
-先说结论：**最值得复制的不是同款，而是衣服之间的松紧、长短和重点如何分配。** 秋天温差大的城市更应该看叠穿与鞋子的舒适度，而不是硬照着机场照片露腿或穿高跟鞋。
+明星活动照大多经过灯光、摄影角度和妆发配合，不能直接照搬到早八通勤。普通人最值得抄的是**结构和搭配顺序**，不是舞台上的所有细节。
 
-## 01 Jisoo：灰针织衫与浅牛仔，松弛感来自一明一暗
+## 第一套：2022年的深色外套，用白领口给轮廓透气
 
-![2026年9月Jisoo在仁川机场的灰色针织外套和浅色牛仔裤造型](https://prcdn.freetls.fastly.net/release_image/8795/3116/8795-3116-321856c597c016fe8fdd33fc2b94f29b-1800x2700.jpg?auto=webp&bg-color=fff&fit=bounds&format=jpeg&height=1350&quality=85%2C65&width=1950)
+![Jisoo 2022年公开活动的深色利落外套与白色领口](https://upload.wikimedia.org/wikipedia/commons/c/c3/Kim_ji-soo.jpg)
 
-Dior于9月29日发布的官方图片记录了Jisoo在9月25日从仁川机场出发的造型：灰色有纹理的针织外套，里面是浅色上衣，搭配浅牛仔裤；淡色的小包给整体增加一个精致的视觉点。
+这张照片拍摄于2022年3月29日首尔的Dior活动。画面里最直观的组合，是深色结构感上装与明亮的白色领口。整体颜色并不丰富，却因为面部附近有一圈白色，避免了深色服装把上半身压得过于沉闷。
 
-这身为什么没有“把衣服穿得很贵”的距离感？因为大件衣服没有抢风头：针织的纹理负责层次，牛仔裤负责日常感。外套并不短，但柔软的材质让肩线看起来不僵硬，包袋的小体积又避免了下半身过于松散。
+深色外套最难的不是不够正式，而是从肩膀到胸前都变成一块没有呼吸感的深色区域。白领口把视线提到脸附近，外套则负责维持直线轮廓，两者刚好互补。
 
-普通人复刻，试“灰色宽松针织开衫＋浅蓝直筒或微宽牛仔裤＋浅色小包”。如果上身偏丰满，不需要刻意买更大的开衫，选肩线自然、下摆不过度鼓起的版型即可。预算优先放在不易起球、手感舒适的针织面料，包不用追求昂贵标识；一个能反复搭配的基础色小包更实用。
+**普通人复刻**可以搜“深色短款西装”“白色翻领衬衫”“挺括短外套”，不需要把发饰、品牌元素和整套妆容一起复制。肩部本身较宽的人，尽量选择肩线清楚但不过度加厚肩垫的版本。通勤场景里，下装可以用深色直筒裤维持简洁，不必增加更多复杂图案。
 
-## 02 张员瑛：一身浅色，靠一个小重点提神
+## 第二套：2019年的蓝色穿搭，颜色温柔但不模糊
 
-![2026年9月张员瑛公开社媒照片中的奶油白针织上衣与淡粉色包](https://kpopping.com/_next/image?q=75&url=https%3A%2F%2Fcdn.kpopping.com%2Fkpics%2F2026%2F09%2F1790561137761-8dmcvm-2.jpg&w=1080)
+![Jisoo 2019年永登浦签售公开造型中的蓝色服装](https://upload.wikimedia.org/wikipedia/commons/2/2e/Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30%2C_2019_%281%29.png)
 
-这张图来自张员瑛9月28日前后的公开社交平台照片整理。她选择奶油白针织上衣，胸前的小装饰带来一点活泼感，手里的淡粉色包则让整体颜色保持柔和。**这张是社媒穿搭照片，不把它误称为机场现场实拍。**
+第二张来自2019年6月30日的永登浦签售活动。画面中蓝色服装是主体，整体视觉比第一套更柔和。它给人的启发不是“所有人都该穿这个蓝色”，而是色彩可以成为整套造型的中心，其他细节不必同时争夺注意力。
 
-明星的同类造型容易让人第一眼注意到包，但更值得学的其实是颜色控制。白、奶油色、浅粉色都属于比较轻柔的色域，衣服上已经有装饰，其他配件就没必要再叠好几个醒目的颜色。
+如果上衣已有明确的蓝色，耳饰、包袋和发饰就不需要再叠三个高饱和颜色。日常搭配里可以留一件蓝色衬衫、针织上衣或浅蓝裙，把另一部分交给白、灰、牛仔蓝等较易协调的颜色。
 
-普通人想学，找“奶油白针织短袖或薄毛衣＋米白或浅蓝下装＋小面积粉色包”。不想走甜妹路线，可以把粉色换成棕色或黑色，整体仍然清爽。小个子如果担心上衣压个子，就把衣摆整理到腰附近，重点放在清楚的腰线。
+这套最容易错的，是把“温柔”等同于所有单品都要软。软面料搭配清楚的领口或腰线，反而更有精神。小个子可以尝试短一些的蓝色上衣配高腰下装，先找清楚比例，再考虑装饰。
 
-## 03 Jennie：格纹西装一整套，也能像周末出门
+## 第三套：2019年的墨绿礼服，重点不是绿色本身
 
-![Jennie于2026年3月机场出行的格纹套装、白T与格纹帽造型](https://image.starnewskorea.com/cdn-cgi/image/f%3Davif%2Cw%3D860/21/2026/03/2026032207271522149_1.jpg)
+![Jisoo 2019年Dior活动的深绿格纹抹胸造型](https://upload.wikimedia.org/wikipedia/commons/9/90/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%286%29.png)
 
-STARNEWS记录了Jennie在2026年3月22日离开仁川机场时的格纹造型。她用格纹外套搭同系列长裤，里面却不是严肃的衬衫，而是印花白T；头上的格纹帽、墨镜进一步减弱了“办公套装”的拘谨感。
+2019年8月19日公开活动的造型，墨绿色格纹与深色宽腰带形成了鲜明对比。照片中上半身的线条比较完整：肩部露肤，视觉重点集中在胸口的格纹和腰部那一段深色结构上。
 
-这里最厉害的不是叠了多少贵东西，而是**一套强结构衣服里保留一个随意的入口**。格纹在西装和长裤之间形成连续的视觉线条，T恤则让整体不那么正式。普通人不一定需要买同款格纹套装，可以用自己已有的西装外套配直筒裤，再换上一件白T。
+这不是建议普通人照着买一件抹胸礼服上班。更值得抄的，是**图案已经复杂时，怎样用一块清楚的深色区域稳定视线**。格纹有多个方向，腰部深色区域却给它加了一条明确的分界线，因此不容易显得凌乱。
 
-搭配时只留一个大图案重点。如果外套格纹特别明显，帽子就选纯色；裤型最好能露出鞋面一点，不然秋天把格纹和厚鞋堆在一起容易显沉。
+普通人可把这种关系换成“格纹连衣裙＋纯色腰带”或者“带细格纹的上衣＋深色高腰裙”。如果肩部不适合露肤，可以选择普通圆领或方领，保留“图案与纯色之间有明确边界”的思路。不要把活动中的造型误认成必须日常购买的完整同款。
 
-## 04 Karina：格纹外套配百褶裙，学院感不必装嫩
+## 第四套：2020年的黑色造型，靠领口而不是亮色抢镜
 
-![Karina赴米兰活动的灰色格纹外套、深色百褶裙与棕色手袋](https://newsimg.koreatimes.co.kr/2026/01/16/549c038d-45fa-42ba-96b5-03256181b2dd.jpg)
+![Jisoo 2020年Jimmy Choo公开活动的黑色简洁礼服](https://upload.wikimedia.org/wikipedia/commons/e/e7/Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09%2C_2020_%281%29.jpg)
 
-Karina在米兰相关公开出行造型里，用灰色格纹夹克搭深色百褶裙，蓝色上衣的领口从深色内搭上露出少许，棕色手袋提供了一点暖色。照片对应的是2026年初的活动，不是本周的新机场照。
+2020年1月9日Jimmy Choo活动的黑色造型，第一眼是干净的深色，但领口形状比服装上的装饰更突出。很多人在挑黑色衣服时，总担心不够有存在感，于是不断叠加金属配饰、亮色包和复杂鞋款，最后反而丢掉了黑色本身的利落。
 
-这套值得学的是几种硬度的组合：外套偏挺，百褶裙会随着动作变化，包袋的皮质感负责最后的稳重。如果三件单品都太软，造型会没有重点；如果都很硬，又容易像制服。
+这张照片能提醒我们：一件黑色上装如果有明确的开口、肩部和衣身结构，本身就有视觉信息。普通人复刻时，可以先从“领口有形状的黑色连衣裙”“剪裁干净的黑色上衣”找起，把关注点放在肩线、颈部留白和穿着时是否舒服。
 
-普通人复刻“灰格纹短夹克＋深色A字百褶裙＋小面积蓝色内搭”。不喜欢短裙，可以换成膝下百褶半裙，用乐福鞋或简洁短靴连接上下比例。重点是版型关系，不是一定要穿出学生感。
+如果你习惯日常黑白通勤，可以搭配米白色包袋或简洁鞋款，让深色成为主角。不必为了追求“高级”买满身设计；好的版型比多一件装饰更值得花预算。
 
-## 05 林允儿：风衣加格纹围巾，秋天的层次感可以很简单
+## 第五套：2017年舞台上的红与紫，学的是控制撞色面积
 
-![2026年2月林允儿机场出发时的浅色风衣、格纹围巾与深色大包造型](https://www.fashionn.com/files/board/2026/image/o_1jhv2emqnmdjfdrgs1l4kjreh.jpg)
+![Jisoo 2017年舞台表演的红色上装与紫色外搭](https://upload.wikimedia.org/wikipedia/commons/a/aa/170517_Kim_Ji-soo_Blackpink_06.jpg)
 
-林允儿2026年2月飞往伦敦参加时装周相关活动时，穿过浅米色风衣并搭配格纹围巾。这身造型的颜色没有很夸张，反而特别适合真正需要每天通勤的人学。
+最后一张照片来自2017年5月17日的舞台表演，红色与紫色的对比很醒目。舞台服装要在灯光下形成视觉效果，因此颜色通常更大胆，和日常走路、上班、逛街的需求不一样。
 
-风衣提供纵向线条，格纹围巾给脸部附近增加细节，大包有实用容量。全套服装以浅色为主，深色包把视觉压在肩侧，避免浅色从头到脚过于轻飘。秋天最常见的困难，是叠穿后脖子和肩膀都显厚；这里更值得注意围巾的松量和外套肩线是否留了空间。
+这套最值得学的不是“红紫一定要一起穿”，而是让**其中一个颜色占主体，另一个颜色只负责强调局部**。当两种颜色都非常饱和，还继续加入复杂花纹和巨大配饰，整套容易失去重心。
 
-复刻时不必找相同品牌，只要“米色风衣＋低饱和格纹围巾＋深色实用包”。如果颈部比较短，可把围巾垂下来形成长线条，不必缠上好几圈。预算优先给耐穿的风衣版型。
+普通人不妨先小面积尝试：酒红色针织配深紫围巾，或者低饱和紫色开衫配暗红色内搭。怕撞色的人可以加入一件黑色或深灰色下装，让视觉停下来。把舞台装饰全部减掉，只保留一处颜色反差，日常会更容易穿。
 
-## 06 Jisoo：蓝色针织配黑色短裙，重点留给上半身
+## 五套照片放在一起，真正能复制的是什么
 
-![Jisoo在2026年2月机场的蓝色开衫、白T和黑色短裙造型](https://img.hankyung.com/photo/202602/BF.43437233.1.jpg)
+把这五套摆在一起，会发现Jisoo没有靠单一的所谓“显贵公式”完成所有造型。深色外套讲的是领口和轮廓；蓝色服装讲的是颜色的主次；墨绿格纹讲的是腰线；黑色礼服讲的是剪裁；舞台红紫讲的是色彩比例。
 
-再看Jisoo另一套不同时间的机场造型。2026年2月27日，她穿蓝色针织开衫、白色T恤和黑色短裙亮相。和9月的灰开衫＋牛仔裤相比，这身更明显地强调上半身色彩和下装长度的反差。
+如果预算有限，我更建议先解决自己衣柜里出现频率最高的问题。总穿西装的人先找合适肩线；喜欢半裙和连衣裙的人先弄清腰线；总觉得衣服颜色混乱的人，先学着减少整套的主要色彩数量。把预算用在真正穿得出去、穿得舒服的衣服上，往往比买明星的所谓“同款”更实际。
 
-它的构成其实很简单：白T把蓝色开衫衬得更清楚，黑色短裙把颜色和线条收住，视觉重点集中在上身。真正可借鉴的是“**一个显眼色＋两个基础色**”，不是必须穿短裙。
+五张照片里的光线、场景和着装标准不同，不能据此比较明星不同时期的外貌或身材，也不能推算某套衣服的价格和具体材质。**一张图能说明造型关系，却不能证明没出现在画面里的商品信息。**
 
-上班或秋季早晚温差大，可以把下装换成黑色直筒裤，蓝开衫仍然有精神；想偏年轻一点，就配A字裙和低跟鞋。鞋包不必再选大面积艳色，否则原本干净的配色容易被打散；也不需要为了复刻照片专门买一双不适合自己通勤的高跟鞋。
+对普通人来说，学习明星穿搭最有用的一步，就是把“我想穿得和她一模一样”改成“我想找到她这套里最起作用的那个细节”。
 
-## 普通人最值得抄的五个动作
-
-看完六套，真正有用的是五个动作：第一，外套有宽度，下装就给清楚的直线或腰线；第二，全身颜色先用两种基础色，再给一种小面积重点色；第三，大件用基础款，小包、围巾或T恤负责风格；第四，硬挺和柔软各留一个位置，不要全部堆同一种材质；第五，预算先留给版型、面料和鞋的舒适度，不把钱都用在明星身上的品牌标识。
-
-同样是几位女明星在不同时间的公开造型，Jisoo的针织、Jennie的格纹、Karina的短夹克、林允儿的风衣，在照片里各有特色；普通人并不需要把六套逐件买回来。
-
-**最值得复制的不是同款，而是你能不能把自己的衣柜也搭得清楚、舒服、好看。**
+摄影与授权：图片一至四由 **Off The Page** 拍摄，图片五由 **D4cgrapher** 拍摄。图片均取自Wikimedia Commons各自的文件页面，以 **Creative Commons Attribution 4.0（CC BY 4.0）** 授权使用，版式适配时进行了尺寸调整。授权条款：https://creativecommons.org/licenses/by/4.0/ 。各照片的原始文件页与摄影来源均可在对应图片的Wikimedia Commons记录中核对。

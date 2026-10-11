@@ -1,9 +1,11 @@
 {
   "status": "PASS",
-  "topic_type": "japanese",
-  "image_count": 6,
-  "body_image_count": 6,
+  "topic_type": "celebrity",
+  "image_count": 5,
+  "body_image_count": 5,
   "item_claim_count": 0,
   "hard_failures": [],
-  "warnings": []
+  "warnings": [],
+  "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
+  "article_path": "fashion/archive/2026-10-11.md"
 }

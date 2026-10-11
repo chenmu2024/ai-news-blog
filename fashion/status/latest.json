@@ -1,15 +1,9 @@
 {
   "status": "success",
-  "title": "日本女生秋天把西装穿得松弛，关键不是买大一码",
-  "article_path": "fashion/archive/2026-10-10.md",
-  "article_sha256": "82d49a0dc7eb8ed066353b2e2aa86a7ae49cb9073f04d025658485e6a1606bef",
-  "workflow_run_id": "38010796124",
-  "commit_sha": "7b38beec4828dae0ac923256210f79fbfd923924",
-  "completed_at_utc": "2026-10-10T00:51:48.948543+00:00",
-  "current_article_path": "fashion/revisions/2026-10-10.md",
-  "current_title": "Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么",
-  "current_article_sha256": "79313d50627ad7ad6c05112fecb4240b94baf1553606047d82d31bca3824de71",
-  "current_operation": "in_place_draft_update",
-  "current_revision_workflow_run_id": "38015485717",
-  "draft_media_id": "gcTqbaQ9A7M3U7aJTBB3ZcEJZQ4zFD6Khvzg8GqEo1KriQB19j-bbM00RNuRkZrt"
+  "title": "Jisoo五套经典造型，普通人最该学哪一招",
+  "article_path": "fashion/archive/2026-10-11.md",
+  "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
+  "workflow_run_id": "38100931500",
+  "commit_sha": "16d95a68492bd4e9f38eab18fab199af903fd092",
+  "completed_at_utc": "2026-10-11T01:11:16.028961+00:00"
 }

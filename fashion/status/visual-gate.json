@@ -2,9 +2,11 @@
   "status": "PASS",
   "profile": "fashion",
   "required_visuals": 5,
-  "visual_count": 6,
-  "markdown_images": 6,
+  "visual_count": 5,
+  "markdown_images": 5,
   "html_images": 0,
   "renderable_cards": 0,
-  "hard_failures": []
+  "hard_failures": [],
+  "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
+  "article_path": "fashion/archive/2026-10-11.md"
 }

@@ -3,21 +3,23 @@
   "profile": "fashion",
   "profile_name": "女装穿搭｜Image-first",
   "score": 8,
-  "body_chars": 2064,
+  "body_chars": 2408,
   "template_hits": 2,
   "internal_hits": 0,
-  "fact_signals": 60,
-  "stance_signals": 7,
+  "fact_signals": 22,
+  "stance_signals": 17,
   "paragraph_regularity": {
-    "paragraphs": 36,
-    "cv": 0.412
+    "paragraphs": 29,
+    "cv": 0.521
   },
   "sentence_repetition": {
-    "sentences": 62,
-    "repeated_starts": 0,
-    "ratio": 0.0
+    "sentences": 63,
+    "repeated_starts": 2,
+    "ratio": 0.032
   },
-  "very_short_paragraph_ratio": 0.077,
+  "very_short_paragraph_ratio": 0.033,
   "hard_failures": [],
-  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+  "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
+  "article_path": "fashion/archive/2026-10-11.md"
 }

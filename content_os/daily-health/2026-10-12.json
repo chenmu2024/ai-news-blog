@@ -1,11 +1,11 @@
 {
   "date": "2026-10-12",
-  "generated_at": "2026-10-12T07:01:20.382021+08:00",
+  "generated_at": "2026-10-12T07:09:19.910709+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 4,
+  "success_count": 5,
   "expected_count": 7,
-  "draft_confirmed_count": 4,
+  "draft_confirmed_count": 5,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 4,
+    "complete_count": 5,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -75,16 +75,21 @@
         "errors": []
       },
       "zizhitongjian": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "赵奢向平原君家追税：权贵为何反而举荐他",
+        "candidates": [
+          "赵奢向平原君家追税：权贵为何反而举荐他",
+          "赵奢执法得罪平原君，结局为何反转",
+          "资治通鉴：赵奢为何敢向权贵征税"
+        ],
+        "rationale": "《资治通鉴》卷五周纪五赵奢收税事件，四部丛刊本与四库全书本原典同卷交叉核对；与昨日卷一魏文侯守信故事主题不同；不照搬古代严刑。",
+        "basis": [
+          "四部丛刊本卷第五周赧王四十四年",
+          "四库全书本卷005同段文字",
+          "CText卷五作为影印入口，未声称完成影印核验"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "parenting": {
         "status": "complete",
@@ -193,32 +198,24 @@
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
-      "status": "incomplete",
+      "status": "success",
       "archive": "zizhitongjian/archive/2026-10-12.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38100814477",
+      "title": "赵奢向平原君家追税：权贵为何反而举荐他",
+      "archive_title": "赵奢向平原君家追税：权贵为何反而举荐他",
+      "workflow_run_id": "38183134669",
       "gates": {
         "source-gate.json": "PASS",
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:source-gate.json",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     },
     "parenting": {
       "profile": "parenting",

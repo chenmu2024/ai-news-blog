@@ -1,0 +1,58 @@
+{
+  "state": "attempted",
+  "profile": "fashion",
+  "article_path": "fashion/archive/2026-10-12.md",
+  "article_sha256": "9168c6d6b096a13cd12d26ecc0132512d6c52785470154a8712ffc9132238848",
+  "title": "Rosé五组真实造型：普通人如何学配色与比例",
+  "run_id": "38184894382",
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "fashion",
+      "profile_name": "女装穿搭｜Image-first",
+      "score": 0,
+      "body_chars": 1412,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 21,
+      "stance_signals": 13,
+      "paragraph_regularity": {
+        "paragraphs": 15,
+        "cv": 0.67
+      },
+      "sentence_repetition": {
+        "sentences": 45,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.2,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "9168c6d6b096a13cd12d26ecc0132512d6c52785470154a8712ffc9132238848",
+      "article_path": "fashion/archive/2026-10-12.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "fashion",
+      "required_visuals": 5,
+      "visual_count": 5,
+      "markdown_images": 5,
+      "html_images": 0,
+      "renderable_cards": 0,
+      "hard_failures": [],
+      "article_sha256": "9168c6d6b096a13cd12d26ecc0132512d6c52785470154a8712ffc9132238848",
+      "article_path": "fashion/archive/2026-10-12.md"
+    },
+    "image-gate.json": {
+      "status": "PASS",
+      "topic_type": "celebrity",
+      "image_count": 5,
+      "body_image_count": 5,
+      "item_claim_count": 0,
+      "hard_failures": [],
+      "warnings": [],
+      "article_sha256": "9168c6d6b096a13cd12d26ecc0132512d6c52785470154a8712ffc9132238848",
+      "article_path": "fashion/archive/2026-10-12.md"
+    }
+  }
+}

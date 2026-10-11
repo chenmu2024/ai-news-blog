@@ -46,6 +46,10 @@ jobs:
         shell: bash
         run: |
           python content_os/draft_preflight.py --today-only --profile zizhitongjian --article "$ARTICLE_PATH"
+      - name: Install dependencies for original-text gate
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        run: pip install -r zizhitongjian/requirements.txt
+
       - name: Original-text source gate
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: |
@@ -77,10 +81,6 @@ jobs:
       - name: Bind passed gates to immutable article SHA256
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}
         run: python content_os/gate_trace.py --profile zizhitongjian --article "$ARTICLE_PATH"
-
-      - name: Install dependencies
-        run: pip install -r zizhitongjian/requirements.txt
-
 
       - name: Validate external image bytes before optional rendering
         if: ${{ steps.preflight.outputs.should_publish == 'true' }}

@@ -1,11 +1,11 @@
 {
   "date": "2026-10-11",
-  "generated_at": "2026-10-11T08:55:07.718295+08:00",
+  "generated_at": "2026-10-11T08:56:30.154180+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 2,
+  "success_count": 3,
   "expected_count": 7,
-  "draft_confirmed_count": 2,
+  "draft_confirmed_count": 3,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 2,
+    "complete_count": 3,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -36,16 +36,23 @@
         ]
       },
       "wechat": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "一家AI公司花1亿美元扶持服务商，普通人学什么",
+        "candidates": [
+          "一家AI公司花1亿美元扶持服务商，普通人学什么",
+          "一家AI公司不只卖模型，还在投资落地服务",
+          "一家AI巨头扶持服务商，单人开发者该做什么"
+        ],
+        "rationale": "Anthropic 2026年3月官方公布1亿美元初始伙伴投入，5月另设面向中型企业的AI服务公司，真实资本配置与企业落地缺口之间形成商业转折；给一人公司具体核验、试点和可重复交付路径，区别前日Manus融资选题。",
+        "basis": [
+          "Anthropic官方2026-03-12 Claude Partner Network初始$100m投入",
+          "Anthropic官方2026-05-04新企业AI服务公司与业务交付机制",
+          "Anthropic官方2026-06-03 Services Track伙伴评估标准",
+          "30日wechat归档去重",
+          "未把合作伙伴资金说成普通人可以直接领取"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "business": {
         "status": "missing_or_invalid",
@@ -151,30 +158,23 @@
     },
     "wechat": {
       "profile": "wechat",
-      "status": "incomplete",
+      "status": "success",
       "archive": "wechat/archive/2026-10-11.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38008917372",
+      "title": "一家AI公司花1亿美元扶持服务商，普通人学什么",
+      "archive_title": "一家AI公司花1亿美元扶持服务商，普通人学什么",
+      "workflow_run_id": "38100084368",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     },
     "business": {
       "profile": "business",

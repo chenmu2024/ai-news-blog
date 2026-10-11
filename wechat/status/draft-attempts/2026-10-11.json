@@ -1,0 +1,47 @@
+{
+  "state": "attempted",
+  "profile": "wechat",
+  "article_path": "wechat/archive/2026-10-11.md",
+  "article_sha256": "0ddf0ce9c56198ae71924c9779926c74cbd05169c2dff7807ac7d4ada4731683",
+  "title": "一家AI公司花1亿美元扶持服务商，普通人学什么",
+  "run_id": "38100084368",
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "ai_business",
+      "profile_name": "陈慕｜AI 一人公司实战",
+      "score": 12,
+      "body_chars": 2844,
+      "template_hits": 1,
+      "internal_hits": 0,
+      "fact_signals": 4,
+      "stance_signals": 5,
+      "paragraph_regularity": {
+        "paragraphs": 32,
+        "cv": 0.467
+      },
+      "sentence_repetition": {
+        "sentences": 68,
+        "repeated_starts": 2,
+        "ratio": 0.029
+      },
+      "very_short_paragraph_ratio": 0.059,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "0ddf0ce9c56198ae71924c9779926c74cbd05169c2dff7807ac7d4ada4731683",
+      "article_path": "wechat/archive/2026-10-11.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "ai_business",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 0,
+      "html_images": 0,
+      "renderable_cards": 2,
+      "hard_failures": [],
+      "article_sha256": "0ddf0ce9c56198ae71924c9779926c74cbd05169c2dff7807ac7d4ada4731683",
+      "article_path": "wechat/archive/2026-10-11.md"
+    }
+  }
+}

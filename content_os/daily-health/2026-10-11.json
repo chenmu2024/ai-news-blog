@@ -1,11 +1,11 @@
 {
   "date": "2026-10-11",
-  "generated_at": "2026-10-11T08:59:15.330800+08:00",
+  "generated_at": "2026-10-11T09:09:13.364622+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 5,
+  "success_count": 6,
   "expected_count": 7,
-  "draft_confirmed_count": 5,
+  "draft_confirmed_count": 6,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 5,
+    "complete_count": 6,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -80,16 +80,22 @@
         "errors": []
       },
       "zizhitongjian": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "魏文侯冒雨赴约：没人监督的承诺还算数吗",
+        "candidates": [
+          "魏文侯冒雨赴约：没人监督的承诺还算数吗",
+          "魏文侯为什么下雨也要出门赴一个小约",
+          "魏文侯的一次雨天赴约，暴露了守信的难处"
+        ],
+        "rationale": "魏文侯事迹载《资治通鉴》卷一周纪一，与近三天三家分晋、商鞅徙木、智伯灭亡不同，围绕小人物承诺与管理者可信任的现实判断展开；区分实际冒雨去取消约定和强行在雨中猎，未加入原典没有的个人对白。",
+        "basis": [
+          "Wikisource《资治通鉴》四部丛刊本卷第一原文（魏文侯与虞人期猎）",
+          "Wikisource《资治通鉴》四库全书本卷001胡三省注作文本交叉核验，不声称影印核验",
+          "CText周纪一对应章节仅作为影印检查入口，image_check_done=false",
+          "30日zizhitongjian归档去重"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "parenting": {
         "status": "complete",
@@ -204,32 +210,24 @@
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
-      "status": "incomplete",
+      "status": "success",
       "archive": "zizhitongjian/archive/2026-10-11.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38010834244",
+      "title": "魏文侯冒雨赴约：没人监督的承诺还算数吗",
+      "archive_title": "魏文侯冒雨赴约：没人监督的承诺还算数吗",
+      "workflow_run_id": "38100814477",
       "gates": {
         "source-gate.json": "PASS",
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:source-gate.json",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     },
     "parenting": {
       "profile": "parenting",

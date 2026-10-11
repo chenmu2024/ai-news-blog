@@ -1,0 +1,61 @@
+{
+  "state": "attempted",
+  "profile": "parenting",
+  "article_path": "parenting/archive/2026-10-11.md",
+  "article_sha256": "a4c73ecab1d520e2e869835209086c225fef810114063afb02110904d8ed1968",
+  "title": "孩子被同学移出群聊，家长该怎么找老师",
+  "run_id": "38099841584",
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "parenting",
+      "profile_name": "陈慕｜育儿与家庭教育",
+      "score": 0,
+      "body_chars": 2628,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 22,
+      "stance_signals": 9,
+      "paragraph_regularity": {
+        "paragraphs": 28,
+        "cv": 0.349
+      },
+      "sentence_repetition": {
+        "sentences": 73,
+        "repeated_starts": 2,
+        "ratio": 0.027
+      },
+      "very_short_paragraph_ratio": 0.067,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "editorial_title_guard": {
+        "status": "PASS",
+        "reasons": [],
+        "compared": 7,
+        "prior_six_titles": [
+          "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
+          "孩子早上说不想去学校，先别急着问“为什么又闹”",
+          "孩子作业拖到深夜，很多家长第一步就问错了",
+          "手机一收就翻脸，很多家庭真正缺的不是“限时”",
+          "孩子每天睡前都要拖半小时，问题可能不只是磨蹭",
+          "孩子一输就发脾气，父母先别急着教他“输得起”"
+        ],
+        "template_family": null
+      },
+      "article_sha256": "a4c73ecab1d520e2e869835209086c225fef810114063afb02110904d8ed1968",
+      "article_path": "parenting/archive/2026-10-11.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "parenting",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 0,
+      "html_images": 0,
+      "renderable_cards": 2,
+      "hard_failures": [],
+      "article_sha256": "a4c73ecab1d520e2e869835209086c225fef810114063afb02110904d8ed1968",
+      "article_path": "parenting/archive/2026-10-11.md"
+    }
+  }
+}

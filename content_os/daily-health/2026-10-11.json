@@ -1,11 +1,11 @@
 {
   "date": "2026-10-11",
-  "generated_at": "2026-10-11T08:57:32.820082+08:00",
+  "generated_at": "2026-10-11T08:59:15.330800+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 4,
+  "success_count": 5,
   "expected_count": 7,
-  "draft_confirmed_count": 4,
+  "draft_confirmed_count": 5,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,20 +20,26 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 4,
+    "complete_count": 5,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "毛选：判断失误之前，往往少了一次调查",
+        "candidates": [
+          "毛选：判断失误之前，往往少了一次调查",
+          "毛选：问题越难，越别急着提出解决办法",
+          "毛选：别把自己的经验，当成今天的事实"
+        ],
+        "rationale": "从《反对本本主义》第一卷已核对的调查原则切入现实中的错误归因，避免复刻昨日团队会议不说真话和此前返工主题；只将确证的1930年篇名与‘没有调查，没有发言权’短句归原著，不杜撰现代三栏法为毛泽东原话。",
+        "basis": [
+          "中共中央党史和文献研究院《毛选》一至四卷主要修订情况确认《反对本本主义》编入第二版第一卷",
+          "党史和文献研究院《毛泽东如何解读〈反对本本主义〉》确认原题《调查工作》写于1930年5月及原文含“没有调查，没有发言权”",
+          "党史和文献研究院《反对本本主义》地位和作用核对全文历史语境",
+          "近30日且知归档去重"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "wechat": {
         "status": "complete",
@@ -138,30 +144,23 @@
   "accounts": {
     "qiezhi": {
       "profile": "qiezhi",
-      "status": "incomplete",
+      "status": "success",
       "archive": "qiezhi/archive/2026-10-11.md",
-      "title": "",
-      "archive_title": "",
+      "title": "毛选：判断失误之前，往往少了一次调查",
+      "archive_title": "毛选：判断失误之前，往往少了一次调查",
       "workflow_run_id": null,
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     },
     "wechat": {
       "profile": "wechat",

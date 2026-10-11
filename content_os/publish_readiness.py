@@ -10,6 +10,7 @@ import re
 from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from ai_scene_policy import check as check_ai_scene
 
 PROFILES = {"qiezhi", "wechat", "business", "zizhitongjian", "parenting", "jingyun", "fashion"}
 CARD_RE = re.compile(r"<!--\s*(QIEZHI_CARD|WECHAT_CARD)\s+(.+?)\s*-->", re.S)
@@ -30,6 +31,8 @@ def check(profile: str, markdown: str, article_date: str | None = None) -> dict:
     article_date = article_date or datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
     if article_date >= "2026-10-11" and len(title) > 32:
         errors.append("微信标题超过32字：将被发布器截短，必须在新建归档前改为32字以内")
+    ai_errors, _ = check_ai_scene(profile, article_date, markdown)
+    errors.extend(ai_errors)
     if profile == "wechat" and not title.startswith("一家"):
         errors.append("AI channel headline must start with 一家")
     images = IMG_RE.findall(markdown)

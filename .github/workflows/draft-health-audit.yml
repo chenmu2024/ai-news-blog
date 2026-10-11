@@ -125,8 +125,15 @@ jobs:
                 results.push({profile,result:'already_running'});
                 continue;
               }
-              if (runs.some(r => r.event === 'workflow_dispatch' && r.created_at.slice(0,10) === day)) {
-                results.push({profile,result:'retry_limit_reached'});
+              // Any same-day run might have crossed the non-idempotent
+              // draft/add boundary. Without full verified job logs, fail closed.
+              // GitHub timestamps are UTC; compare in Asia/Shanghai.
+              const localDay = iso => new Intl.DateTimeFormat('sv-SE', {
+                timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'
+              }).format(new Date(iso));
+              if (runs.length >= 30 || runs.some(r => localDay(r.created_at) === day)) {
+                results.push({profile,result:'existing_or_unverified_workflow_attempt',
+                  note:'Read all job logs and draft journal; no automatic second draft/add'});
                 continue;
               }
               try {

@@ -29,6 +29,10 @@ def validate_record(profile:str, rec:dict, expected_title:str)->list[str]:
         c=[]
     if c and len({x.strip() for x in c})!=3:
         errors.append("candidate_titles_must_be_unique")
+    if c and any(len(x.strip())>32 for x in c):
+        errors.append("candidate_title_exceeds_32_chars")
+    if profile=="wechat" and c and any(not x.strip().startswith("一家") for x in c):
+        errors.append("wechat_candidate_must_start_with_yijia")
     selected=rec.get("selected_title")
     if not isinstance(selected,str) or not selected.strip():
         errors.append("selected_title_missing")
@@ -43,7 +47,7 @@ def validate_record(profile:str, rec:dict, expected_title:str)->list[str]:
     if not isinstance(basis,list) or not basis or any(not isinstance(x,str) or not x.strip() for x in basis):
         errors.append("basis_must_be_nonempty_string_list")
     # These fields must describe evidence, not imply unavailable metrics.
-    if rec.get("verified_views") is not None and (not isinstance(rec.get("verified_views"),int) or rec["verified_views"]<0):
+    if rec.get("verified_views") is not None and (type(rec.get("verified_views")) is not int or rec["verified_views"]<0):
         errors.append("verified_views_must_be_nonnegative_integer_or_null")
     return errors
 

@@ -1,0 +1,60 @@
+name: Content OS Production Handoff Watchdog
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 09:20 and 11:45 Asia/Shanghai. Never drafts or overwrites articles.
+    - cron: "20 1 * * *"
+    - cron: "45 3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "content_os/production_preflight.py"
+      - "content_os/tests/test_production_preflight.py"
+      - ".github/workflows/content-os-production-watchdog.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-os-production-watchdog
+  cancel-in-progress: false
+
+jobs:
+  audit-handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test fail-closed production handoff
+        run: python -m unittest content_os.tests.test_production_preflight -v
+      - name: Produce a seven-account state report (read-only)
+        run: python content_os/production_preflight.py --output content_os/production-health/latest.json
+      - name: Persist handoff audit without modifying article or status
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp content_os/production-health/latest.json /tmp/production-health.json
+          git config user.name "content-os-handoff-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python content_os/production_preflight.py --output content_os/production-health/latest.json
+            DATE="$(python -c 'from datetime import datetime; from zoneinfo import ZoneInfo; print(datetime.now(ZoneInfo("Asia/Shanghai")).date())')"
+            cp content_os/production-health/latest.json "content_os/production-health/$DATE.json"
+            git add content_os/production-health
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "ops: persist production handoff health"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 2))
+          done
+          exit 1
+      - name: Report incompletes without invoking draft/add
+        if: ${{ github.event_name == 'schedule' }}
+        run: python content_os/production_preflight.py --strict

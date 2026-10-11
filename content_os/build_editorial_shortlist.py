@@ -1,5 +1,7 @@
 """Convert already-collected public discovery into advisory editorial shortlist.
 No external calls, no LLM, no publishing. Historical archive titles feed de-dup.
+Research may be late. It is NEVER a hard dependency for ChatGPT original writing:
+the producer must independently verify current sources and record missing heat.
 """
 from __future__ import annotations
 import json, re

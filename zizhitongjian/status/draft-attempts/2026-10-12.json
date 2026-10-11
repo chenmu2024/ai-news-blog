@@ -1,0 +1,68 @@
+{
+  "state": "attempted",
+  "profile": "zizhitongjian",
+  "article_path": "zizhitongjian/archive/2026-10-12.md",
+  "article_sha256": "3cadf475ceb602b95d68e97c319cca218fe696c1b1ebac06edf2aff688089db4",
+  "title": "赵奢向平原君家追税：权贵为何反而举荐他",
+  "run_id": "38183134669",
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "zizhitongjian",
+      "profile_name": "资治通鉴｜原典·人性·决策",
+      "score": 10,
+      "body_chars": 2075,
+      "template_hits": 1,
+      "internal_hits": 0,
+      "fact_signals": 8,
+      "stance_signals": 1,
+      "paragraph_regularity": {
+        "paragraphs": 28,
+        "cv": 0.371
+      },
+      "sentence_repetition": {
+        "sentences": 62,
+        "repeated_starts": 1,
+        "ratio": 0.016
+      },
+      "very_short_paragraph_ratio": 0.121,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "3cadf475ceb602b95d68e97c319cca218fe696c1b1ebac06edf2aff688089db4",
+      "article_path": "zizhitongjian/archive/2026-10-12.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "zizhitongjian",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 0,
+      "html_images": 0,
+      "renderable_cards": 2,
+      "hard_failures": [],
+      "article_sha256": "3cadf475ceb602b95d68e97c319cca218fe696c1b1ebac06edf2aff688089db4",
+      "article_path": "zizhitongjian/archive/2026-10-12.md"
+    },
+    "source-gate.json": {
+      "status": "PASS",
+      "work": "资治通鉴",
+      "volume": 5,
+      "chronicle": "周纪五",
+      "year": "周赧王四十四年（公元前271年）",
+      "primary_text_url": "https://zh.wikisource.org/zh-hant/資治通鑑_(四部叢刊本)/卷第五",
+      "image_check_url": "https://ctext.org/wiki.pl?chapter=244743&if=gb",
+      "image_check_done": false,
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "alternate_text_url": "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷005",
+      "alternate_access_reason": "以四部丛刊本与四库全书本同卷文字复核事件；未逐页核对CText影印，不声称已完成影印查验。",
+      "context_verified": true,
+      "original_excerpt_chars": 31,
+      "direct_quote_count": 0,
+      "live_primary_excerpt_check": "PASS",
+      "image_source_reachable": "NOT_CHECKED_CTEXT_FALLBACK",
+      "hard_failures": [],
+      "article_sha256": "3cadf475ceb602b95d68e97c319cca218fe696c1b1ebac06edf2aff688089db4",
+      "article_path": "zizhitongjian/archive/2026-10-12.md"
+    }
+  }
+}

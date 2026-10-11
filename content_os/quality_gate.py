@@ -60,7 +60,7 @@ PROFILES = {
         "name": "民生家庭政策与生育福利指南",
         "max_score": 30,
         "warn_score": 40,
-         # Family welfare explainer: actionable, sourced prose with verified cards.
+        # Family welfare explainer: actionable, sourced prose with verified cards.
         "min_body_chars": 850,
         "max_body_chars": 4600,
         "min_fact_signals": 5,
@@ -153,8 +153,8 @@ FACT_PATTERNS_JINGYUN = [
     r"(?:民法典|法院|统计局|卫健|妇联|WHO|UN Women|ILO|OECD)",
 ]
 FACT_PATTERNS_PARENTING = [
-    r"\\d+(?:\\.\\d+)?%", r"\\d+(?:\\.\\d+)?\\s*(?:元|万|年|月|天|周|岁|个月)",
-    r"(?:20\\d{2}|19\\d{2})[年/-]",
+    r"\d+(?:\.\d+)?%", r"\d+(?:\.\d+)?\s*(?:元|万|年|月|天|周|岁|个月)",
+    r"(?:20\d{2}|19\d{2})[年/-]",
     r"(?:生育|孕产|产检|津贴|育儿补贴|儿童医保|居民医保|职工医保|医疗|托育|多子女|二孩|三孩|购房补贴)",
     r"(?:申请|申领|参保|结算|报销|审核|材料|截止|户籍|异地|官方|政策|政府|服务包)",
     r"(?:卫健|医保局|住房|人社|发放|补助|待遇|补贴|支付)",

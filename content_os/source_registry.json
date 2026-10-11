@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timezone": "Asia/Shanghai",
-  "policy": "Discovery sources are not verified popularity or permission to reproduce.",
+  "policy": "Discovery sources are not verified popularity or permission to reproduce. Business and parenting require distinct same-day policy subjects, primary government documents and current local implementing rules; never invent policy benefits or application methods.",
   "profiles": {
     "qiezhi": {
       "primary": [
@@ -36,7 +36,7 @@
         "https://www.mca.gov.cn/",
         "https://www.chinatax.gov.cn/"
       ],
-      "hard_gate": "Verify original national/provincial/municipal official policy, current effective dates, eligibility, local vs nonlocal status, benefit amount, application steps and documentary evidence. City-specific government sources required."
+      "hard_gate": "Worker/public livelihood benefits only: social and medical insurance, unemployment, pensions, flexible employment, work injury, housing provident fund, rent/home purchase and talent subsidies. Verify current original national/local policy, effective and application dates, household registration/insured location/identity, exact amount and restrictions, official application process, exclusions and misconceptions. No generic corporate stories. Must not duplicate parenting policy topic on the same day."
     },
     "zizhitongjian": {
       "primary": [
@@ -50,14 +50,17 @@
     },
     "parenting": {
       "primary": [
-        "https://www.unicef.org/parenting",
-        "https://www.who.int/health-topics/adolescent-health"
+        "https://www.gov.cn/",
+        "https://www.nhc.gov.cn/",
+        "https://www.nhsa.gov.cn/",
+        "https://www.moe.gov.cn/",
+        "https://www.mohurd.gov.cn/"
       ],
       "fallback": [
-        "https://www.moe.gov.cn/",
-        "https://www.cdc.gov/child-development/"
+        "https://www.mohrss.gov.cn/",
+        "https://www.mca.gov.cn/"
       ],
-      "hard_gate": "Original scenario-based parenting comic. Verify any medical/development factual claims; never misrepresent fictional children as real cases. Actual readable continuous comic panels and valid image media required."
+      "hard_gate": "Family policy only: pregnancy, childbirth, maternity insurance, childcare subsidy, child medical insurance, nursery, multi-child housing and preschool benefits. Verify original currently effective local government policy, document number, dates, locality, eligibility including household registration and insured location, birth order, exact benefit and limits, payment mechanism, official application steps and exclusions. No comics or generic parenting stories. Never claim all childbirth expenses free or unconditional twin housing subsidy."
     },
     "jingyun": {
       "primary": [

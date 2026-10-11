@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - "content_os/inbox/**"
+      - "content_os/asset-staging/**"
+      - "content_os/ingest_ai_assets.py"
       - "content_os/inbox_promote.py"
       - "content_os/prearchive_validate.py"
       - "content_os/tests/test_inbox_promote.py"
@@ -34,6 +36,32 @@ jobs:
           python-version: "3.12"
       - name: Install free checker dependencies
         run: pip install 'requests>=2.32,<3' 'pillow>=11,<13' 'markdown>=3.7,<4' 'PySocks>=1.7,<2'
+      - name: Ingest generated AI image bytes from verified private staging
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "content-os-candidate-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for ATTEMPT in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python content_os/ingest_ai_assets.py
+            git add -A -- content_os/
+            if git diff --cached --quiet; then
+              echo "[AI_ASSETS] No newly verified images"
+              break
+            fi
+            git commit -m "assets: materialize SHA-verified AI scene images"
+            if git push origin HEAD:main; then
+              echo "[AI_ASSETS] Persisted generated binary assets"
+              break
+            fi
+            if [ "$ATTEMPT" -eq 3 ]; then
+              echo "::error::Could not persist generated AI image bytes"
+              exit 1
+            fi
+            sleep "$ATTEMPT"
+          done
       - name: Validate promotion safety tests
         run: python -m unittest content_os.tests.test_inbox_promote content_os.tests.test_safe_dispatch -v
       - name: Verify each account and create new archive only after all gates PASS

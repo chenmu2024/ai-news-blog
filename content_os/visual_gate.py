@@ -4,7 +4,10 @@ import argparse
 import json
 import re
 from pathlib import Path
-from ai_scene_policy import check as check_ai_scene
+try:
+    from content_os.ai_scene_policy import check as check_ai_scene
+except ImportError:
+    from ai_scene_policy import check as check_ai_scene
 
 MIN_VISUALS = {
     "ai_business": 2,

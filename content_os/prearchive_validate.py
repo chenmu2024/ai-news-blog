@@ -21,6 +21,10 @@ except ImportError:
     from editorial_guard import assess_editorial_title
 
 ROOT = Path(__file__).resolve().parents[1]
+# Direct execution (python content_os/prearchive_validate.py) has content_os/
+# on sys.path, not necessarily the repository root. Required for fashion gate.
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 PROFILES = ("qiezhi", "wechat", "business", "zizhitongjian",
             "parenting", "jingyun", "fashion")
 QUALITY_NAMES = {"wechat": "ai_business", "business": "business_story"}

@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    "Rosé五组真实造型：普通人如何学配色与比例",
+    "Rosé五套旧造型，最值得抄的是这几点",
+    "从Rosé五张照片学会配色和肩腰比例"
+  ],
+  "selected_title": "Rosé五组真实造型：普通人如何学配色与比例",
+  "rationale": "五张真实、有Commons明确可再利用许可的Rosé不同时期服装照片已逐页核实作者、来源和日期，逐图给出非品牌猜测的普通人复刻。与10月11日Jisoo主题和10日日本素人风格不同。不冒充2026新现场；文件名与拍摄日期有冲突时以来源页日期为准。",
+  "basis": [
+    "2018-06-24粉丝签售原图及CC BY 4.0",
+    "JadeHilton机场照片Commons许可页，实际页面标注2020-02-21",
+    "2019阿姆斯特丹巡演摄影师CC BY-SA 4.0",
+    "2022-09-25签售照片版权人CC BY-SA 4.0",
+    "2024-04-15 Rimowa官方场景视频截图于Commons经CC BY 3.0审查",
+    "与2026-10-11已发表草稿Jisoo不同人物且5张真实摄影不混入AI"
+  ],
+  "verified_views": null,
+  "evidence": {
+    "facts_checked": true,
+    "image_rights_checked": true,
+    "source_urls": [
+      "https://commons.wikimedia.org/wiki/File:(180624)_BLACKPINK_fansign_event_at_the_AK_Plaza_in_Bundang_012.jpg",
+      "https://commons.wikimedia.org/wiki/File:Ros%C3%A9_at_airport,2019.jpg",
+      "https://commons.wikimedia.org/wiki/File:20190518_Blackpink_Amsterdam_concert_09_Ros%C3%A9_and_Lisa.jpg",
+      "https://commons.wikimedia.org/wiki/File:Rosé_at_a_fan_signing_event_on_September_25,_2022_(cropped).jpg",
+      "https://commons.wikimedia.org/wiki/File:Blackpink_Rosé_Rimowa_1.jpg"
+    ]
+  }
+}

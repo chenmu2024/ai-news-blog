@@ -3,17 +3,19 @@
   "work": "资治通鉴",
   "volume": 1,
   "chronicle": "周纪一",
-  "year": "晋国智氏、韩氏、魏氏、赵氏争权之际；事件在周威烈王正式命三晋为诸侯之前",
+  "year": "周威烈王二十三年前后的魏文侯事迹",
   "primary_text_url": "https://zh.wikisource.org/zh-hant/資治通鑑_(四部叢刊本)/卷第一",
   "image_check_url": "https://ctext.org/wiki.pl?chapter=100482&if=gb",
   "image_check_done": false,
   "verification_mode": "dual_edition_text_fallback_no_facsimile",
   "alternate_text_url": "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷001",
-  "alternate_access_reason": "已分别读取四部丛刊本卷第一与四库全书本卷001原文；CText卷第一仅获取可检索文本，未进行影印图像逐字核验，因此使用明确标注的双版本原典文本备选。",
+  "alternate_access_reason": "四部丛刊本与四库全书本卷一分别查验此事，因未逐页核对CText影印图像，仅以双版本原典文本复核，不将数字转写当影印。",
   "context_verified": true,
-  "original_excerpt_chars": 31,
+  "original_excerpt_chars": 24,
   "direct_quote_count": 0,
   "live_primary_excerpt_check": "PASS",
   "image_source_reachable": "NOT_CHECKED_CTEXT_FALLBACK",
-  "hard_failures": []
+  "hard_failures": [],
+  "article_sha256": "7232d97f5259809da4b73f30f4bcda9581b0d18ce6abb8f1d262d8bca2cbb56c",
+  "article_path": "zizhitongjian/archive/2026-10-11.md"
 }

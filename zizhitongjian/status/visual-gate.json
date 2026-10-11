@@ -2,9 +2,11 @@
   "status": "PASS",
   "profile": "zizhitongjian",
   "required_visuals": 2,
-  "visual_count": 3,
-  "markdown_images": 1,
+  "visual_count": 2,
+  "markdown_images": 0,
   "html_images": 0,
   "renderable_cards": 2,
-  "hard_failures": []
+  "hard_failures": [],
+  "article_sha256": "7232d97f5259809da4b73f30f4bcda9581b0d18ce6abb8f1d262d8bca2cbb56c",
+  "article_path": "zizhitongjian/archive/2026-10-11.md"
 }

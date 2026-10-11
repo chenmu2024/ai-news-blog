@@ -2,7 +2,7 @@
 import tempfile
 from pathlib import Path
 import unittest
-from content_os.safe_dispatch import classify
+from content_os.safe_dispatch import classify, classify_verified_predraft_failure
 
 class DispatchTests(unittest.TestCase):
     def setUp(self):
@@ -32,6 +32,31 @@ class DispatchTests(unittest.TestCase):
     def test_receipt_blocks(self):
         self.assertFalse(classify(self.root,"parenting",self.day,self.msg,[],
                          {"article_path":"parenting/archive/2026-10-11.md"})[0])
+    def test_exact_predraft_source_gate_failure_allows_one_safe_recovery(self):
+        prior=[{"id":123,"status":"completed","conclusion":"failure",
+                "event":"workflow_dispatch","created_at":"2026-10-11T01:03:07Z"}]
+        jobs=[{"conclusion":"failure","steps":[
+            {"name":"Draft idempotency preflight","conclusion":"success"},
+            {"name":"Original-text source gate","conclusion":"failure"},
+            {"name":"Create Zizhi Tongjian WeChat draft only","conclusion":"skipped"},
+        ]}]
+        path=self.root/"zizhitongjian/archive/2026-10-11.md"
+        path.parent.mkdir(parents=True,exist_ok=True)
+        path.write_text("# valid original",encoding="utf-8")
+        msg="content(zizhitongjian): promote verified 2026-10-11 archive"
+        self.assertEqual(classify_verified_predraft_failure(
+            self.root,"zizhitongjian",self.day,msg,prior,{},jobs)[0],True)
+        # No second attempt: once there are two same-day runs, STOP.
+        self.assertEqual(classify_verified_predraft_failure(
+            self.root,"zizhitongjian",self.day,msg,prior*2,{},jobs)[0],False)
+        jobs[0]["steps"][2]["conclusion"]="success"
+        self.assertEqual(classify_verified_predraft_failure(
+            self.root,"zizhitongjian",self.day,msg,prior,{},jobs)[0],False)
+
+    def test_other_accounts_cannot_recover_failed_ones_automatically(self):
+        self.assertFalse(classify_verified_predraft_failure(
+            self.root,"parenting",self.day,self.msg,[],{},[])[0])
+
     def test_unverified_history_blocks(self):
         self.assertFalse(classify(self.root,"parenting",self.day,self.msg,[{}]*100,{})[0])
 

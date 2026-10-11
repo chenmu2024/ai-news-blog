@@ -99,3 +99,8 @@
 ## GitHub Token 不触发下游push的修复（2026-10-11）
 
 GitHub Actions 使用默认 `GITHUB_TOKEN` 推送生成的 archive 时，不会再次触发普通 `push` 工作流。故在成功创建归档后，由 `content-os-inbox-promote.yml` 使用 `actions:write` 显式分发对应 `<profile>-draft.yml`，**只分发、不直接请求微信API**。分发前 `safe_dispatch.py` 必须核实：当天archive的最后变更确由本中转工作流提交；当天没有draft-attempts journal；今天没有旧成功回执；没有同日或运行中的对应draft Actions、Actions历史查询完整。任一异常或GitHub响应不明均停止分发，人工查询，不做盲目重试。七号互相独立，成功草稿永不重复。
+
+
+## 2026-10-11 资治通鉴早期工作流失败的一次性恢复
+- 当天原稿归档已完成，第一次 `Zizhi Tongjian WeChat Draft Bridge` 在安装依赖前执行 source_gate，出现 `ModuleNotFoundError: requests`，**微信草稿步骤当次为skipped**，且无 `draft-attempts/2026-10-11.json`。已将 `pip install -r zizhitongjian/requirements.txt` 移到原典 Gate 之前。
+- 安全分发脚本只对此账号、当天、同一篇已验证 archive、**恰好一次**已完成的 workflow_dispatch 失败、对应原典 source step=FAIL 与 `Create Zizhi Tongjian WeChat draft only`=SKIPPED、预检成功、没有同日日志/回执的情形，允许一次额外分发，且在下次运行发现第二次工作流就停止。其余任何未知结果或API边界不清绝不能重试。该脚本只分发GitHub Actions，不直接访问微信。

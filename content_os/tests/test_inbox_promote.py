@@ -1,0 +1,54 @@
+"""Offline verification of immutable inbox promotion."""
+import json
+import tempfile
+import unittest
+from unittest.mock import patch
+from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from content_os.inbox_promote import promote
+
+DAY=datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+
+class PromotionTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp=tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root=Path(self.tmp.name)
+        self.candidate=self.root/"content_os"/"inbox"/"wechat"/f"{DAY}.md"
+        self.sidecar=self.root/"content_os"/"inbox"/"wechat"/f"{DAY}.titles.json"
+        self.candidate.parent.mkdir(parents=True)
+        self.candidate.write_text('# 一家AI公司如何改善流程\n<!-- WECHAT_CARD {"title":"案例","items":[]} -->',"utf-8")
+        self.rec={"candidates":["一家AI公司如何改善流程","一家AI创业公司怎样落地","一家新公司如何找到客户"],
+            "selected_title":"一家AI公司如何改善流程",
+            "rationale":"真实公司解决具体业务问题，事实核对且近30日标题不重复。",
+            "basis":["官方项目主页","产品功能及用途","30日归档对照"],
+            "verified_views":None,
+            "evidence":{"facts_checked":True,"image_rights_checked":True,
+                        "source_urls":["https://github.com/example/repo"]}}
+        self.sidecar.write_text(json.dumps(self.rec,ensure_ascii=False),"utf-8")
+    def test_missing_candidate_skips(self):
+        self.candidate.unlink()
+        self.assertEqual(promote(self.root,"wechat",DAY)["status"],"SKIP")
+    def test_invalid_title_prevents_archive(self):
+        self.rec["selected_title"]="错误标题"
+        self.sidecar.write_text(json.dumps(self.rec,ensure_ascii=False),"utf-8")
+        self.assertEqual(promote(self.root,"wechat",DAY)["status"],"FAIL")
+        self.assertFalse((self.root/"wechat/archive"/f"{DAY}.md").exists())
+    def test_no_network_cannot_promote(self):
+        self.assertEqual(promote(self.root,"wechat",DAY,check_network=False)["status"],"FAIL")
+    def test_approved_candidate_stages_ledger_and_archive_only(self):
+        with patch("content_os.inbox_promote.validate",return_value={"status":"PASS","errors":[]}):
+            result=promote(self.root,"wechat",DAY)
+        self.assertEqual(result["status"],"READY_FOR_COMMIT")
+        self.assertTrue((self.root/"wechat/archive"/f"{DAY}.md").is_file())
+        self.assertFalse((self.root/"wechat/status/latest.json").exists())
+    def test_prior_archive_never_overwritten(self):
+        file=self.root/"wechat/archive"/f"{DAY}.md"
+        file.parent.mkdir(parents=True)
+        file.write_text("untouched")
+        self.assertEqual(promote(self.root,"wechat",DAY)["status"],"SKIP")
+        self.assertEqual(file.read_text(),"untouched")
+
+if __name__=="__main__":
+    unittest.main()

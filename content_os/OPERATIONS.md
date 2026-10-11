@@ -87,3 +87,10 @@
 `python content_os/prearchive_validate.py --profile wechat --date 2026-10-11 --article /tmp/wechat-today.md`
 
 该命令**不使用微信API、不改动历史归档和草稿**，会对实际的30天归档检查标题重复，对7号执行结构、质量、视觉及适用的原典/穿搭Gate，并实际下载解码每张正文图片；对明星穿搭强制来源、许可及真人图标记。只有状态为PASS，且候选已完成原始事实核验、授权记录及标题三选一账本，才可创建当日 archive。仅 `--skip-image-network` 的结果永远不代表发布就绪。GitHub Actions 会再次校验，并以正式文章 SHA 绑定 Gate 快照。不能把候选预检当作官方微信已建草稿证明。
+
+
+## 七号候选稿自动安全转交（2026-10-11）
+
+若 ChatGPT 写稿任务不能在本地运行Python预检，就先仅创建 `content_os/inbox/<profile>/YYYY-MM-DD.md`，及同路径 `YYYY-MM-DD.titles.json`。sidecar 必须包含恰好3个不同的标题 `candidates`、与正文H1一致的 `selected_title`、具体 `rationale`、`basis`、`verified_views:null`、以及 `evidence:{facts_checked:true,image_rights_checked:true,source_urls:[实际核实的HTTPS来源]}`。证据字段必须真实，不可通过捏造true或来源绕Gate。来源无凭证/图片版权不明的候选保持在inbox、不触发草稿。
+
+`content-os-inbox-promote.yml` 只使用GitHub Actions，按A到G分别验证候选稿，执行 `prearchive_validate.py` 的事实/原典/视觉/质量/图片GET解码与30日去重，全部PASS后才创建原版不可变 archive 并以当日最新main合并标题账本；任何账号失败不影响其他账号。成功归档由原有 `*-draft.yml` 独立处理微信官方草稿，inbox流程绝不调用微信API，不写today/status。重复archive或draft-attempts直接SKIP。正式验收仍需confirmed journal+匹配SHA/path+media_id+PASS Gates。

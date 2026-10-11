@@ -1,195 +1,51 @@
-<!-- FASHION_SOURCE
-{
-  "topic_type": "celebrity",
-  "subject": "Jisoo（金智秀）：2017—2022年五组公开场合的经典造型，非2026年新造型",
-  "images": [
-    {
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Kim_ji-soo.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_ji-soo.jpg",
-      "source_platform": "wikimedia_commons",
-      "creator": "Off The Page",
-      "rights": "commons_licensed",
-      "verified": true,
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "event_date": "2022-03-29",
-      "alternatives": [
-        {
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Kim_ji-soo.jpg/330px-Kim_ji-soo.jpg",
-          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_ji-soo.jpg",
-          "rights": "commons_licensed",
-          "verified": true,
-          "subject_match": true,
-          "license_url": "https://creativecommons.org/licenses/by/4.0/"
-        },
-        {
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Kim_ji-soo.jpg/330px-Kim_ji-soo.jpg",
-          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_ji-soo.jpg",
-          "rights": "commons_licensed",
-          "verified": true,
-          "subject_match": true,
-          "license_url": "https://creativecommons.org/licenses/by/4.0/"
-        }
-      ]
-    },
-    {
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30%2C_2019_%281%29.png",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30,_2019_(1).png",
-      "source_platform": "wikimedia_commons",
-      "creator": "Off The Page",
-      "rights": "commons_licensed",
-      "verified": true,
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "event_date": "2019-06-30",
-      "alternatives": [
-        {
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30%2C_2019_%281%29.png/500px-Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30%2C_2019_%281%29.png",
-          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30,_2019_(1).png",
-          "rights": "commons_licensed",
-          "verified": true,
-          "subject_match": true,
-          "license_url": "https://creativecommons.org/licenses/by/4.0/"
-        }
-      ]
-    },
-    {
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%286%29.png",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19,_2019_(6).png",
-      "source_platform": "wikimedia_commons",
-      "creator": "Off The Page",
-      "rights": "commons_licensed",
-      "verified": true,
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "event_date": "2019-08-19",
-      "alternatives": [
-        {
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%286%29.png/500px-Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%286%29.png",
-          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19,_2019_(6).png",
-          "rights": "commons_licensed",
-          "verified": true,
-          "subject_match": true,
-          "license_url": "https://creativecommons.org/licenses/by/4.0/"
-        }
-      ]
-    },
-    {
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09%2C_2020_%281%29.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09,_2020_(1).jpg",
-      "source_platform": "wikimedia_commons",
-      "creator": "Off The Page",
-      "rights": "commons_licensed",
-      "verified": true,
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "event_date": "2020-01-09",
-      "alternatives": [
-        {
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09%2C_2020_%281%29.jpg/500px-Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09%2C_2020_%281%29.jpg",
-          "source_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09,_2020_(1).jpg",
-          "rights": "commons_licensed",
-          "verified": true,
-          "subject_match": true,
-          "license_url": "https://creativecommons.org/licenses/by/4.0/"
-        }
-      ]
-    },
-    {
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/170517_Kim_Ji-soo_Blackpink_06.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:170517_Kim_Ji-soo_Blackpink_06.jpg",
-      "source_platform": "wikimedia_commons",
-      "creator": "D4cgrapher",
-      "rights": "commons_licensed",
-      "verified": true,
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "event_date": "2017-05-17",
-      "alternatives": [
-        {
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/170517_Kim_Ji-soo_Blackpink_06.jpg/500px-170517_Kim_Ji-soo_Blackpink_06.jpg",
-          "source_page_url": "https://commons.wikimedia.org/wiki/File:170517_Kim_Ji-soo_Blackpink_06.jpg",
-          "rights": "commons_licensed",
-          "verified": true,
-          "subject_match": true,
-          "license_url": "https://creativecommons.org/licenses/by/4.0/"
-        },
-        {
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/170517_Kim_Ji-soo_Blackpink_06.jpg/500px-170517_Kim_Ji-soo_Blackpink_06.jpg",
-          "source_page_url": "https://commons.wikimedia.org/wiki/File:170517_Kim_Ji-soo_Blackpink_06.jpg",
-          "verified": true,
-          "subject_match": true,
-          "rights": "commons_licensed",
-          "license_url": "https://creativecommons.org/licenses/by/4.0/"
-        }
-      ]
-    }
-  ],
-  "item_claims": []
-}
--->
+<!-- FASHION_SOURCE {"topic_type":"celebrity","subject":"Rosé 2018签售、2020机场、2019演唱会、2022签售、2024品牌活动五张不同场景真实造型旧图","images":[{"image_url":"https://upload.wikimedia.org/wikipedia/commons/5/57/%28180624%29_BLACKPINK_fansign_event_at_the_AK_Plaza_in_Bundang_012.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:(180624)_BLACKPINK_fansign_event_at_the_AK_Plaza_in_Bundang_012.jpg","creator":"Idol Hunter","license_url":"https://creativecommons.org/licenses/by/4.0/","rights":"commons_licensed","verified":true,"alternatives":[{"image_url":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/%28180624%29_BLACKPINK_fansign_event_at_the_AK_Plaza_in_Bundang_012.jpg/500px-%28180624%29_BLACKPINK_fansign_event_at_the_AK_Plaza_in_Bundang_012.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:(180624)_BLACKPINK_fansign_event_at_the_AK_Plaza_in_Bundang_012.jpg","creator":"Idol Hunter","rights":"commons_licensed","verified":true,"subject_match":true,"license_url":"https://creativecommons.org/licenses/by/4.0/"}]},{"image_url":"https://upload.wikimedia.org/wikipedia/commons/1/18/Ros%C3%A9_at_airport%2C2019.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Rosé_at_airport,2019.jpg","creator":"JadeHilton","license_url":"https://creativecommons.org/licenses/by-sa/4.0/","rights":"commons_licensed","verified":true,"alternatives":[{"image_url":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Ros%C3%A9_at_airport%2C2019.jpg/500px-Ros%C3%A9_at_airport%2C2019.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Rosé_at_airport,2019.jpg","creator":"JadeHilton","rights":"commons_licensed","verified":true,"subject_match":true,"license_url":"https://creativecommons.org/licenses/by-sa/4.0/"}]},{"image_url":"https://upload.wikimedia.org/wikipedia/commons/c/c6/20190518_Blackpink_Amsterdam_concert_09_Ros%C3%A9_and_Lisa.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:20190518_Blackpink_Amsterdam_concert_09_Rosé_and_Lisa.jpg","creator":"Robbie Klinkenberg","license_url":"https://creativecommons.org/licenses/by-sa/4.0/","rights":"commons_licensed","verified":true,"alternatives":[{"image_url":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/20190518_Blackpink_Amsterdam_concert_09_Ros%C3%A9_and_Lisa.jpg/1280px-20190518_Blackpink_Amsterdam_concert_09_Ros%C3%A9_and_Lisa.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:20190518_Blackpink_Amsterdam_concert_09_Rosé_and_Lisa.jpg","creator":"Robbie Klinkenberg","rights":"commons_licensed","verified":true,"subject_match":true,"license_url":"https://creativecommons.org/licenses/by-sa/4.0/"}]},{"image_url":"https://upload.wikimedia.org/wikipedia/commons/a/aa/Ros%C3%A9_at_a_fan_signing_event_on_September_25%2C_2022_%28cropped%29.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Rosé_at_a_fan_signing_event_on_September_25,_2022_(cropped).jpg","creator":"Btspurplegalaxy","license_url":"https://creativecommons.org/licenses/by-sa/4.0/","rights":"commons_licensed","verified":true,"alternatives":[{"image_url":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Ros%C3%A9_at_a_fan_signing_event_on_September_25%2C_2022_%28cropped%29.jpg/960px-Ros%C3%A9_at_a_fan_signing_event_on_September_25%2C_2022_%28cropped%29.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Rosé_at_a_fan_signing_event_on_September_25,_2022_(cropped).jpg","creator":"Btspurplegalaxy","rights":"commons_licensed","verified":true,"subject_match":true,"license_url":"https://creativecommons.org/licenses/by-sa/4.0/"}]},{"image_url":"https://upload.wikimedia.org/wikipedia/commons/b/b3/Blackpink_Ros%C3%A9_Rimowa_1.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Blackpink_Rosé_Rimowa_1.jpg","creator":"TV10","license_url":"https://creativecommons.org/licenses/by/3.0/","rights":"commons_licensed","verified":true,"alternatives":[{"image_url":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Blackpink_Ros%C3%A9_Rimowa_1.jpg/500px-Blackpink_Ros%C3%A9_Rimowa_1.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Blackpink_Rosé_Rimowa_1.jpg","creator":"TV10","rights":"commons_licensed","verified":true,"subject_match":true,"license_url":"https://creativecommons.org/licenses/by/3.0/"}]}],"item_claims":[]} -->
 
-# Jisoo五套经典造型，普通人最该学哪一招
+# Rosé五组真实造型：普通人如何学配色与比例
 
-说到Jisoo，很多人第一时间想到的是时装活动的精致感。但真正适合普通人学习的，不是把明星所有单品买回家，也不是依照一张照片猜出品牌和价钱，而是弄清楚衣服怎样安排肩线、领口、腰线和色彩。
+明星穿搭好看，未必因为衣服昂贵。真正影响第一眼观感的，往往是轮廓、明暗对比、领口和颜色主次。这次选择Rosé在2018至2024年不同场景下的五张真实照片，讨论普通人能借鉴的搭配思路。所有图片的摄影人和开放许可均来自对应Wikimedia Commons文件页；这不是2026年新造型报道，也不猜测同款型号或价格。
 
-这次挑出的是**2017年至2022年的五张真实公开活动照片**，不是2026年最新机场街拍，更不是把几次活动当成同一天的五套换装。照片来自Wikimedia Commons对应人物、时间明确的文件页，授权方式为CC BY 4.0。选这些跨年的造型，主要因为它们表现了五种完全不同的搭配方式：深色利落、清爽蓝色、墨绿礼服、黑色礼服和舞台撞色。
+## 2018年签售：有一个重点就够了
 
-明星活动照大多经过灯光、摄影角度和妆发配合，不能直接照搬到早八通勤。普通人最值得抄的是**结构和搭配顺序**，不是舞台上的所有细节。
+![2018年Rosé签售白色上衣](https://upload.wikimedia.org/wikipedia/commons/5/57/%28180624%29_BLACKPINK_fansign_event_at_the_AK_Plaza_in_Bundang_012.jpg)
 
-## 第一套：2022年的深色外套，用白领口给轮廓透气
+*摄影：Idol Hunter，CC BY 4.0。*
 
-![Jisoo 2022年公开活动的深色利落外套与白色领口](https://upload.wikimedia.org/wikipedia/commons/c/c3/Kim_ji-soo.jpg)
+画面里的红发十分醒目，白色上衣与袖口细黑条纹却保持克制。这种组合最值得学习的不是染发，而是让亮色只承担一个重点。普通人如果选择酒红色围巾或鲜艳包袋，就可用米白、灰色上衣做背景。色彩集中，比同时穿好几件饱和色更容易显得整洁。选择上装还需考虑自己的肩宽与领口舒适度，不必复制照片里的所有配饰。
 
-这张照片拍摄于2022年3月29日首尔的Dior活动。画面里最直观的组合，是深色结构感上装与明亮的白色领口。整体颜色并不丰富，却因为面部附近有一圈白色，避免了深色服装把上半身压得过于沉闷。
+## 机场浅驼外套：浅色需要结构
 
-深色外套最难的不是不够正式，而是从肩膀到胸前都变成一块没有呼吸感的深色区域。白领口把视线提到脸附近，外套则负责维持直线轮廓，两者刚好互补。
+![Rosé机场浅驼外套](https://upload.wikimedia.org/wikipedia/commons/1/18/Ros%C3%A9_at_airport%2C2019.jpg)
 
-**普通人复刻**可以搜“深色短款西装”“白色翻领衬衫”“挺括短外套”，不需要把发饰、品牌元素和整套妆容一起复制。肩部本身较宽的人，尽量选择肩线清楚但不过度加厚肩垫的版本。通勤场景里，下装可以用深色直筒裤维持简洁，不必增加更多复杂图案。
+*摄影：JadeHilton，CC BY-SA 4.0。*
 
-## 第二套：2019年的蓝色穿搭，颜色温柔但不模糊
+浅驼色大衣与深色内搭形成清晰层次，深色集中在中间，浅色衣领则为脸附近留出空间。与其追求某个流行色，不如看衣领会不会塌、肩线是否合身、衣长是否改变原本的身材比例。肩部较宽的人可以减少厚重肩垫；上半身较薄的人则可借助略有结构的外套建立轮廓。这张素材的文件名有2019，但其来源页列出的拍摄日期是2020年2月21日，本文不把文件名当成活动日期证据。
 
-![Jisoo 2019年永登浦签售公开造型中的蓝色服装](https://upload.wikimedia.org/wikipedia/commons/2/2e/Kim_Ji-soo_at_fansign_event_in_Yeongdeungpo_on_June_30%2C_2019_%281%29.png)
+## 2019年演唱会：明亮白色适用于舞台，日常要减法
 
-第二张来自2019年6月30日的永登浦签售活动。画面中蓝色服装是主体，整体视觉比第一套更柔和。它给人的启发不是“所有人都该穿这个蓝色”，而是色彩可以成为整套造型的中心，其他细节不必同时争夺注意力。
+![Rosé与Lisa在2019年阿姆斯特丹演唱会](https://upload.wikimedia.org/wikipedia/commons/c/c6/20190518_Blackpink_Amsterdam_concert_09_Ros%C3%A9_and_Lisa.jpg)
 
-如果上衣已有明确的蓝色，耳饰、包袋和发饰就不需要再叠三个高饱和颜色。日常搭配里可以留一件蓝色衬衫、针织上衣或浅蓝裙，把另一部分交给白、灰、牛仔蓝等较易协调的颜色。
+*摄影：Robbie Klinkenberg，CC BY-SA 4.0。*
 
-这套最容易错的，是把“温柔”等同于所有单品都要软。软面料搭配清楚的领口或腰线，反而更有精神。小个子可以尝试短一些的蓝色上衣配高腰下装，先找清楚比例，再考虑装饰。
+远景中，Rosé和Lisa的白色舞台服装在深蓝灯光下依然显眼。演唱会需要从远处看清腿部、腰线与整体轮廓，但这并不意味着白色短舞台装就是上班穿搭。普通人真正可以借鉴的是浅色主调与简单轮廓：白色短上衣配高腰直筒裤，或者米白针织配挺括半裙。把舞台的强烈露肤比例删掉，保留上短下长，才是更容易日常使用的版本。
 
-## 第三套：2019年的墨绿礼服，重点不是绿色本身
+## 2022年签售：黑色单品的关键是领口
 
-![Jisoo 2019年Dior活动的深绿格纹抹胸造型](https://upload.wikimedia.org/wikipedia/commons/9/90/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%286%29.png)
+![Rosé 2022年签售黑色方领造型](https://upload.wikimedia.org/wikipedia/commons/a/aa/Ros%C3%A9_at_a_fan_signing_event_on_September_25%2C_2022_%28cropped%29.jpg)
 
-2019年8月19日公开活动的造型，墨绿色格纹与深色宽腰带形成了鲜明对比。照片中上半身的线条比较完整：肩部露肤，视觉重点集中在胸口的格纹和腰部那一段深色结构上。
+*摄影：Btspurplegalaxy，CC BY-SA 4.0。*
 
-这不是建议普通人照着买一件抹胸礼服上班。更值得抄的，是**图案已经复杂时，怎样用一块清楚的深色区域稳定视线**。格纹有多个方向，腰部深色区域却给它加了一条明确的分界线，因此不容易显得凌乱。
+这张照片里，黑色衣服并没有依靠闪亮装饰吸引视线。方领留白、肩部袖形和胸口结构已经提供了足够的视觉信息。选黑色上装可以先试领口：是否适合自己的肩颈、坐下时是否舒服、袖子是否妨碍日常动作。肩宽者无需硬选夸张泡泡袖；肩部较窄的人则可考虑适当的袖山。好版型比盲目叠饰品更实用。
 
-普通人可把这种关系换成“格纹连衣裙＋纯色腰带”或者“带细格纹的上衣＋深色高腰裙”。如果肩部不适合露肤，可以选择普通圆领或方领，保留“图案与纯色之间有明确边界”的思路。不要把活动中的造型误认成必须日常购买的完整同款。
+## 2024年活动：深色抹胸不等于日常必须露肤
 
-## 第四套：2020年的黑色造型，靠领口而不是亮色抢镜
+![Rosé 2024年Rimowa活动深色造型](https://upload.wikimedia.org/wikipedia/commons/b/b3/Blackpink_Ros%C3%A9_Rimowa_1.jpg)
 
-![Jisoo 2020年Jimmy Choo公开活动的黑色简洁礼服](https://upload.wikimedia.org/wikipedia/commons/e/e7/Kim_Ji-soo_at_Jimmy_Choo_Event_on_January_09%2C_2020_%281%29.jpg)
+*原影像：TV10，CC BY 3.0。*
 
-2020年1月9日Jimmy Choo活动的黑色造型，第一眼是干净的深色，但领口形状比服装上的装饰更突出。很多人在挑黑色衣服时，总担心不够有存在感，于是不断叠加金属配饰、亮色包和复杂鞋款，最后反而丢掉了黑色本身的利落。
+品牌活动照片的重点是干净的肩颈留白与上装深色纹理。适合正式场合的比例未必适合通勤，普通人复刻不需要购买抹胸，可以改用线条干净的方领针织或简洁黑色衬衫。保留肩部和领口之间的空间感，配饰反而少一些。预算有限时，优先挑真正合身且穿得频繁的基础单品，而非只会出现一次的明星造型复制品。
 
-这张照片能提醒我们：一件黑色上装如果有明确的开口、肩部和衣身结构，本身就有视觉信息。普通人复刻时，可以先从“领口有形状的黑色连衣裙”“剪裁干净的黑色上衣”找起，把关注点放在肩线、颈部留白和穿着时是否舒服。
+## 五组造型背后，是配色与比例的取舍
 
-如果你习惯日常黑白通勤，可以搭配米白色包袋或简洁鞋款，让深色成为主角。不必为了追求“高级”买满身设计；好的版型比多一件装饰更值得花预算。
+把这些不同年份的照片放在一起，会发现无论是白色签售装、浅色机场外套、白色舞台装还是两组黑色活动装，主要视觉元素都很清晰。我们可以按四个问题检查自己的衣柜：今天的场合是什么？一身里哪个颜色最醒目？腰线与肩线是否合适？鞋包是在呼应主体，还是和它抢位置？
 
-## 第五套：2017年舞台上的红与紫，学的是控制撞色面积
-
-![Jisoo 2017年舞台表演的红色上装与紫色外搭](https://upload.wikimedia.org/wikipedia/commons/a/aa/170517_Kim_Ji-soo_Blackpink_06.jpg)
-
-最后一张照片来自2017年5月17日的舞台表演，红色与紫色的对比很醒目。舞台服装要在灯光下形成视觉效果，因此颜色通常更大胆，和日常走路、上班、逛街的需求不一样。
-
-这套最值得学的不是“红紫一定要一起穿”，而是让**其中一个颜色占主体，另一个颜色只负责强调局部**。当两种颜色都非常饱和，还继续加入复杂花纹和巨大配饰，整套容易失去重心。
-
-普通人不妨先小面积尝试：酒红色针织配深紫围巾，或者低饱和紫色开衫配暗红色内搭。怕撞色的人可以加入一件黑色或深灰色下装，让视觉停下来。把舞台装饰全部减掉，只保留一处颜色反差，日常会更容易穿。
-
-## 五套照片放在一起，真正能复制的是什么
-
-把这五套摆在一起，会发现Jisoo没有靠单一的所谓“显贵公式”完成所有造型。深色外套讲的是领口和轮廓；蓝色服装讲的是颜色的主次；墨绿格纹讲的是腰线；黑色礼服讲的是剪裁；舞台红紫讲的是色彩比例。
-
-如果预算有限，我更建议先解决自己衣柜里出现频率最高的问题。总穿西装的人先找合适肩线；喜欢半裙和连衣裙的人先弄清腰线；总觉得衣服颜色混乱的人，先学着减少整套的主要色彩数量。把预算用在真正穿得出去、穿得舒服的衣服上，往往比买明星的所谓“同款”更实际。
-
-五张照片里的光线、场景和着装标准不同，不能据此比较明星不同时期的外貌或身材，也不能推算某套衣服的价格和具体材质。**一张图能说明造型关系，却不能证明没出现在画面里的商品信息。**
-
-对普通人来说，学习明星穿搭最有用的一步，就是把“我想穿得和她一模一样”改成“我想找到她这套里最起作用的那个细节”。
-
-摄影与授权：图片一至四由 **Off The Page** 拍摄，图片五由 **D4cgrapher** 拍摄。图片均取自Wikimedia Commons各自的文件页面，以 **Creative Commons Attribution 4.0（CC BY 4.0）** 授权使用，版式适配时进行了尺寸调整。授权条款：https://creativecommons.org/licenses/by/4.0/ 。各照片的原始文件页与摄影来源均可在对应图片的Wikimedia Commons记录中核对。
+具体搭配时，不必把照片中的头发、饰品、活动灯光和高跟鞋一起复刻。需要走路通勤的人更应考虑舒适与洗护；小个子要留意上衣长度；肩部偏宽者要看实际落肩与袖山。真实照片是理解版型的参考，不是对某一种身材的标准答案。学会决定哪里突出、哪里收住，比买明星同款更有价值。

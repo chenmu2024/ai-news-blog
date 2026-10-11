@@ -2,24 +2,24 @@
   "status": "PASS",
   "profile": "fashion",
   "profile_name": "女装穿搭｜Image-first",
-  "score": 8,
-  "body_chars": 2408,
-  "template_hits": 2,
+  "score": 0,
+  "body_chars": 1412,
+  "template_hits": 0,
   "internal_hits": 0,
-  "fact_signals": 22,
-  "stance_signals": 17,
+  "fact_signals": 21,
+  "stance_signals": 13,
   "paragraph_regularity": {
-    "paragraphs": 29,
-    "cv": 0.521
+    "paragraphs": 15,
+    "cv": 0.67
   },
   "sentence_repetition": {
-    "sentences": 63,
-    "repeated_starts": 2,
-    "ratio": 0.032
+    "sentences": 45,
+    "repeated_starts": 0,
+    "ratio": 0.0
   },
-  "very_short_paragraph_ratio": 0.033,
+  "very_short_paragraph_ratio": 0.2,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
-  "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
-  "article_path": "fashion/archive/2026-10-11.md"
+  "article_sha256": "9168c6d6b096a13cd12d26ecc0132512d6c52785470154a8712ffc9132238848",
+  "article_path": "fashion/archive/2026-10-12.md"
 }

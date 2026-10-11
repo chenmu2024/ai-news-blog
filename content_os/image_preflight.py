@@ -16,7 +16,7 @@ def main() -> int:
     args = parser.parse_args()
     original = args.article.read_text(encoding="utf-8")
     day = args.article.stem
-    if re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", day):
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", day):
         ai_errors = verify_ai_scene_bytes(args.profile, day, original)
         if ai_errors:
             print(json.dumps({"status": "FAIL", "profile": args.profile, "errors": ai_errors}, ensure_ascii=False))

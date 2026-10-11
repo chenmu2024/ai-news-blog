@@ -21,7 +21,7 @@
 - 先读当日 `content_os/daily-health/latest.json` **日期是否等于今天**，再分别读 A..G 的当日 archive、status/latest、today、Gate、Actions。已成功账号直接跳过，不增稿/不修改原归档。
 - 读 `TOPIC_INTELLIGENCE.md`、当天公开扫描、`RESILIENCE_POLICY.md`、该号 STYLE/SOURCE_POLICY及近30天归档；微信热度不足记录 `insufficient_evidence`，继续用可信官方来源完成内容。
 - 强制读取当天 `content_os/source-health/latest.json`、`content_os/editorial-intelligence/YYYY-MM-DD.json` 和 `content_os/reading-feedback/latest.json`。日期过期视为 stale；`reject_or_research_only` 不得直接作为主选题；`eligible_for_auto_selection=false` 只能当线索；阅读反馈只有真实 numeric_records 足够且对应标题特征 count>=3 才可作为辅助信号，缺失/未授权时保持 unknown，不得把 0、旧数据或“相对更好”换算成阅读量。主源在 GitHub Runner 健康检查失败时优先用同号可达备用源，并记录降级；可达性不等于事实已核验或版权可用。
-- 先完整草拟正文与来源记录，审查标题重复、官方原典、日期、所有引用、图片许可和场景描述。G至少5张获得再使用许可的真人明星照片；A至少封面+正文知识卡。2026-10-13起，除G外每号每篇额外必须有至少1张真实生成并实际保存的AI原创写实风格图片（人物/自然/生活/史实意境须与内容相关）；AI场景不能替代政策数字卡、原典考据或真实商业证据，卡片也不能替代该写实图。AI_SCENE记录生成模型、生成ID、图片SHA、GitHub持久URL、用途与合成身份；publish_readiness/visual_gate/image_preflight须通过元数据和HTTP实际哈希、解码检查，未真实生成/未上传则FAIL，不得伪造字段；D Source Gate 需可核验卷次和上下文，CText不可访问时须真实双版本文本回退，不能虚称影印通过。
+- 先完整草拟正文与来源记录，审查标题重复、官方原典、日期、所有引用、图片许可和场景描述。G至少5张获得再使用许可的真人明星照片；A至少封面+正文知识卡。2026-10-13起，除G外每号每篇额外必须有至少1张真实生成并实际保存的AI原创写实风格图片（人物/自然/生活/史实意境须与内容相关）；AI场景不能替代政策数字卡、原典考据或真实商业证据，卡片也不能替代该写实图。AI_SCENE记录生成模型、生成ID、图片SHA、私有GitHub资产标识、用途与合成身份；publish_readiness/visual_gate/image_preflight须在已checkout的私有仓库核验文件SHA256、解码及微信媒体可用性，未真实生成/未上传则FAIL，不得伪造字段；D Source Gate 需可核验卷次和上下文，CText不可访问时须真实双版本文本回退，不能虚称影印通过。
 - 从 2026-10-11 起，每号必须先给出 **3 个互不相同且都可用的标题候选**，最终标题必须是其中之一；保存到 `content_os/title-decisions/YYYY-MM-DD.json`，同时记录具体选择理由和依据（账号匹配、具体事件、30天去重、证据强度等）。最终 `selected_title` 必须与 archive 的 H1 完全一致，阅读量未知时 `verified_views=null`。标题决策缺失只触发编辑告警，绝不能因此对已成功草稿执行第二次 `draft/add`。
 - **提交新 archive 之前**，在临时文件上执行对应的结构、文风、源和图片校验。命令示例（以 C 为例）：
 

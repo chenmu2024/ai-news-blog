@@ -1,26 +1,21 @@
 {
   "date": "2026-10-12",
-  "generated_at": "2026-10-12T07:21:06.014401+08:00",
+  "generated_at": "2026-10-12T07:37:20.483271+08:00",
   "timezone": "Asia/Shanghai",
-  "status": "incomplete",
-  "success_count": 6,
+  "status": "complete",
+  "success_count": 7,
   "expected_count": 7,
-  "draft_confirmed_count": 6,
+  "draft_confirmed_count": 7,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
-  "draft_confirmation_status": "incomplete",
-  "alert_required": true,
-  "alert_reasons": [
-    "repository_or_gate_incomplete",
-    "durable_draft_confirmation_incomplete"
-  ],
-  "editorial_alert_required": true,
-  "editorial_alert_reasons": [
-    "headline_decision_ledger_incomplete"
-  ],
+  "draft_confirmation_status": "confirmed",
+  "alert_required": false,
+  "alert_reasons": [],
+  "editorial_alert_required": false,
+  "editorial_alert_reasons": [],
   "headline_decisions": {
-    "status": "incomplete",
-    "complete_count": 6,
+    "status": "complete",
+    "complete_count": 7,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -127,16 +122,24 @@
         "errors": []
       },
       "fashion": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "Rosé五组真实造型：普通人如何学配色与比例",
+        "candidates": [
+          "Rosé五组真实造型：普通人如何学配色与比例",
+          "Rosé五套旧造型，最值得抄的是这几点",
+          "从Rosé五张照片学会配色和肩腰比例"
+        ],
+        "rationale": "五张真实、有Commons明确可再利用许可的Rosé不同时期服装照片已逐页核实作者、来源和日期，逐图给出非品牌猜测的普通人复刻。与10月11日Jisoo主题和10日日本素人风格不同。不冒充2026新现场；文件名与拍摄日期有冲突时以来源页日期为准。",
+        "basis": [
+          "2018-06-24粉丝签售原图及CC BY 4.0",
+          "JadeHilton机场照片Commons许可页，实际页面标注2020-02-21",
+          "2019阿姆斯特丹巡演摄影师CC BY-SA 4.0",
+          "2022-09-25签售照片版权人CC BY-SA 4.0",
+          "2024-04-15 Rimowa官方场景视频截图于Commons经CC BY 3.0审查",
+          "与2026-10-11已发表草稿Jisoo不同人物且5张真实摄影不混入AI"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       }
     }
   },
@@ -264,32 +267,24 @@
     },
     "fashion": {
       "profile": "fashion",
-      "status": "incomplete",
+      "status": "success",
       "archive": "fashion/archive/2026-10-12.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38100931500",
+      "title": "Rosé五组真实造型：普通人如何学配色与比例",
+      "archive_title": "Rosé五组真实造型：普通人如何学配色与比例",
+      "workflow_run_id": "38184894382",
       "gates": {
         "image-gate.json": "PASS",
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:image-gate.json",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     }
   },
   "topic_scan_date": "2026-10-12",

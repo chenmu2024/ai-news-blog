@@ -1,31 +1,121 @@
 {
-  "date": "2026-10-10",
-  "generated_at": "2026-10-10T16:26:39.470815+08:00",
+  "date": "2026-10-11",
+  "generated_at": "2026-10-11T08:36:28.615825+08:00",
   "timezone": "Asia/Shanghai",
-  "status": "complete",
-  "success_count": 7,
+  "status": "incomplete",
+  "success_count": 0,
   "expected_count": 7,
   "draft_confirmed_count": 0,
-  "legacy_media_id_receipt_count": 2,
-  "legacy_repo_receipt_only_count": 5,
-  "draft_confirmation_status": "legacy_compatibility",
-  "alert_required": false,
-  "alert_reasons": [],
-  "editorial_alert_required": false,
-  "editorial_alert_reasons": [],
+  "legacy_media_id_receipt_count": 0,
+  "legacy_repo_receipt_only_count": 0,
+  "draft_confirmation_status": "incomplete",
+  "alert_required": true,
+  "alert_reasons": [
+    "repository_or_gate_incomplete",
+    "durable_draft_confirmation_incomplete"
+  ],
+  "editorial_alert_required": true,
+  "editorial_alert_reasons": [
+    "headline_decision_ledger_incomplete"
+  ],
   "headline_decisions": {
-    "status": "not_required_legacy_day",
+    "status": "incomplete",
     "complete_count": 0,
     "expected_count": 7,
-    "profiles": {}
+    "profiles": {
+      "qiezhi": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "wechat": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "business": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "zizhitongjian": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "parenting": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "jingyun": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "fashion": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      }
+    }
   },
   "accounts": {
     "qiezhi": {
       "profile": "qiezhi",
-      "status": "success",
-      "archive": "qiezhi/archive/2026-10-10.md",
-      "title": "最伤团队的，往往不是争论，而是开会时没人说真话",
-      "archive_title": "最伤团队的，往往不是争论，而是开会时没人说真话",
+      "status": "incomplete",
+      "archive": "qiezhi/archive/2026-10-11.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": null,
       "gates": {
         "quality-gate.json": "PASS",
@@ -34,18 +124,25 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "legacy_status_media_id",
+      "draft_confirmation_mode": "unconfirmed",
       "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "wechat": {
       "profile": "wechat",
-      "status": "success",
-      "archive": "wechat/archive/2026-10-10.md",
-      "title": "一家AI公司与巨头分手后，又拿到超5亿美元：Manus的生意给一人公司什么提醒",
-      "archive_title": "一家AI公司与巨头分手后，又拿到超5亿美元：Manus的生意给一人公司什么提醒",
+      "status": "incomplete",
+      "archive": "wechat/archive/2026-10-11.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38008917372",
       "gates": {
         "quality-gate.json": "PASS",
@@ -54,18 +151,25 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmation_mode": "unconfirmed",
       "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "business": {
       "profile": "business",
-      "status": "success",
-      "archive": "business/archive/2026-10-10.md",
-      "title": "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
-      "archive_title": "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
+      "status": "incomplete",
+      "archive": "business/archive/2026-10-11.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38011882219",
       "gates": {
         "quality-gate.json": "PASS",
@@ -74,18 +178,25 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmation_mode": "unconfirmed",
       "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
-      "status": "success",
-      "archive": "zizhitongjian/archive/2026-10-10.md",
-      "title": "智伯明明最强，为什么最后输给了三个弱者？",
-      "archive_title": "智伯明明最强，为什么最后输给了三个弱者？",
+      "status": "incomplete",
+      "archive": "zizhitongjian/archive/2026-10-11.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38010834244",
       "gates": {
         "source-gate.json": "PASS",
@@ -95,18 +206,26 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmation_mode": "unconfirmed",
       "draft_confirmed": false,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:source-gate.json",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "parenting": {
       "profile": "parenting",
-      "status": "success",
-      "archive": "parenting/archive/2026-10-10.md",
-      "title": "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
-      "archive_title": "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
+      "status": "incomplete",
+      "archive": "parenting/archive/2026-10-11.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38010683933",
       "gates": {
         "quality-gate.json": "PASS",
@@ -115,18 +234,25 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmation_mode": "unconfirmed",
       "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "jingyun": {
       "profile": "jingyun",
-      "status": "success",
-      "archive": "jingyun/archive/2026-10-10.md",
-      "title": "40岁以后重新找工作，最难的不是把简历写漂亮",
-      "archive_title": "40岁以后重新找工作，最难的不是把简历写漂亮",
+      "status": "incomplete",
+      "archive": "jingyun/archive/2026-10-11.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38008741433",
       "gates": {
         "quality-gate.json": "PASS",
@@ -135,18 +261,25 @@
       "journal_state": "MISSING",
       "fashion_revision": null,
       "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "legacy_repo_receipt_only",
+      "draft_confirmation_mode": "unconfirmed",
       "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     },
     "fashion": {
       "profile": "fashion",
-      "status": "success",
-      "archive": "fashion/archive/2026-10-10.md",
-      "title": "Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么",
-      "archive_title": "日本女生秋天把西装穿得松弛，关键不是买大一码",
+      "status": "incomplete",
+      "archive": "fashion/archive/2026-10-11.md",
+      "title": "",
+      "archive_title": "",
       "workflow_run_id": "38015485717",
       "gates": {
         "image-gate.json": "PASS",
@@ -154,22 +287,25 @@
         "visual-gate.json": "PASS"
       },
       "journal_state": "MISSING",
-      "fashion_revision": {
-        "article_path": "fashion/revisions/2026-10-10.md",
-        "title": "Jisoo、张员瑛等女星的6套机场穿搭，普通人能学什么",
-        "status": "success",
-        "workflow_run_id": "38015485717"
-      },
+      "fashion_revision": null,
       "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "legacy_status_media_id",
+      "draft_confirmation_mode": "unconfirmed",
       "draft_confirmed": false,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": []
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:image-gate.json",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed"
+      ]
     }
   },
-  "topic_scan_date": "2026-10-10",
-  "topic_scan_available": true,
+  "topic_scan_date": null,
+  "topic_scan_available": false,
   "topic_popularity_verified_count": {
     "qiezhi": 0,
     "wechat": 0,

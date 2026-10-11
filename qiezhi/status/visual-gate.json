@@ -2,9 +2,11 @@
   "status": "PASS",
   "profile": "qiezhi",
   "required_visuals": 2,
-  "visual_count": 4,
-  "markdown_images": 2,
+  "visual_count": 3,
+  "markdown_images": 0,
   "html_images": 0,
-  "renderable_cards": 2,
-  "hard_failures": []
+  "renderable_cards": 3,
+  "hard_failures": [],
+  "article_sha256": "af2c9c8a89a29c2e11791f5f49c87054e8b7cb676b11a6dd1518976d33b9fc40",
+  "article_path": "qiezhi/archive/2026-10-11.md"
 }

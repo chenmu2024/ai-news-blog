@@ -3,21 +3,23 @@
   "profile": "qiezhi",
   "profile_name": "且知｜毛选/思想方法",
   "score": 4,
-  "body_chars": 1871,
+  "body_chars": 2659,
   "template_hits": 1,
   "internal_hits": 0,
-  "fact_signals": 6,
-  "stance_signals": 4,
+  "fact_signals": 10,
+  "stance_signals": 3,
   "paragraph_regularity": {
-    "paragraphs": 27,
-    "cv": 0.406
+    "paragraphs": 35,
+    "cv": 0.398
   },
   "sentence_repetition": {
-    "sentences": 57,
-    "repeated_starts": 1,
-    "ratio": 0.018
+    "sentences": 90,
+    "repeated_starts": 0,
+    "ratio": 0.0
   },
-  "very_short_paragraph_ratio": 0.156,
+  "very_short_paragraph_ratio": 0.103,
   "hard_failures": [],
-  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+  "article_sha256": "af2c9c8a89a29c2e11791f5f49c87054e8b7cb676b11a6dd1518976d33b9fc40",
+  "article_path": "qiezhi/archive/2026-10-11.md"
 }

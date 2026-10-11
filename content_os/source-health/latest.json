@@ -1,14 +1,15 @@
 {
   "date": "2026-10-12",
-  "generated_at": "2026-10-12T04:50:10.805646+08:00",
+  "generated_at": "2026-10-12T07:07:01.000390+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
         {
           "url": "https://www.dswxyjy.org.cn/",
-          "status": "unreachable",
-          "http_status": null,
-          "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.dswxyjy.org.cn/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {
@@ -28,7 +29,7 @@
           "role": "fallback"
         }
       ],
-      "primary_reachable": false,
+      "primary_reachable": true,
       "fallback_reachable": true,
       "note": "Reachability only; content/date/licence/fact checks remain mandatory."
     },
@@ -166,34 +167,56 @@
     "parenting": {
       "sources": [
         {
-          "url": "https://www.unicef.org/parenting",
+          "url": "https://www.gov.cn/",
           "status": "reachable",
           "http_status": 200,
-          "final_url": "https://www.unicef.org/parenting/",
+          "final_url": "https://www.gov.cn/",
           "content_type": "text/html",
           "role": "primary"
-        },
-        {
-          "url": "https://www.who.int/health-topics/adolescent-health",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.who.int/health-topics/adolescent-health",
-          "content_type": "text/html",
-          "role": "primary"
-        },
-        {
-          "url": "https://www.cdc.gov/child-development/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.cdc.gov/child-development/",
-          "content_type": "text/html",
-          "role": "fallback"
         },
         {
           "url": "https://www.moe.gov.cn/",
           "status": "insecure_redirect",
           "http_status": 200,
           "final_url": "http://www.moe.gov.cn/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.mohurd.gov.cn/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.mohurd.gov.cn/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.nhc.gov.cn/",
+          "status": "http_error",
+          "http_status": 412,
+          "error": "HTTP Error 412: Precondition Failed",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.nhsa.gov.cn/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.nhsa.gov.cn/",
+          "content_type": "text/html",
+          "role": "primary"
+        },
+        {
+          "url": "https://www.mca.gov.cn/",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+          "role": "fallback"
+        },
+        {
+          "url": "https://www.mohrss.gov.cn/",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.mohrss.gov.cn/",
           "content_type": "text/html",
           "role": "fallback"
         }

@@ -96,6 +96,30 @@
           "https://www.prnewswire.com/news-releases/positron-ai-raises-875-million-at-a-5-billion-valuation-to-bring-its-next-generation-inference-silicon-to-market-302874601.html"
         ]
       }
+    },
+    "zizhitongjian": {
+      "candidates": [
+        "赵奢向平原君家追税：权贵为何反而举荐他",
+        "赵奢执法得罪平原君，结局为何反转",
+        "资治通鉴：赵奢为何敢向权贵征税"
+      ],
+      "selected_title": "赵奢向平原君家追税：权贵为何反而举荐他",
+      "rationale": "《资治通鉴》卷五周纪五赵奢收税事件，四部丛刊本与四库全书本原典同卷交叉核对；与昨日卷一魏文侯守信故事主题不同；不照搬古代严刑。",
+      "basis": [
+        "四部丛刊本卷第五周赧王四十四年",
+        "四库全书本卷005同段文字",
+        "CText卷五作为影印入口，未声称完成影印核验"
+      ],
+      "verified_views": null,
+      "evidence": {
+        "facts_checked": true,
+        "image_rights_checked": true,
+        "source_urls": [
+          "https://zh.wikisource.org/zh-hant/資治通鑑_(四部叢刊本)/卷第五",
+          "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷005",
+          "https://ctext.org/wiki.pl?chapter=244743&if=gb"
+        ]
+      }
     }
   },
   "date": "2026-10-12"

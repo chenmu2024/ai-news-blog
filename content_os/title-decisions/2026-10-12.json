@@ -24,6 +24,32 @@
           "https://www.mohrss.gov.cn/SYrlzyhshbzb/zxhd/SYzaixianfangtan/201905_4435/ftnr/202208/t20220808_481344.html"
         ]
       }
+    },
+    "parenting": {
+      "candidates": [
+        "武汉二孩买房补贴6万：外地人怎么申请",
+        "武汉二孩家庭购房补贴6万，申领条件详解",
+        "武汉多子女新房补贴：外地户口可申请吗"
+      ],
+      "selected_title": "武汉二孩买房补贴6万：外地人怎么申请",
+      "rationale": "核验武汉市2025年扩围政策、2026年12月31日延期及2026年8月办事细节；家庭政策账号专注有孩子的家庭，和职工失业金文章区分；前一天育儿归档为同伴关系，不重复。",
+      "basis": [
+        "武汉住更局2025-05-13政策解答",
+        "武汉市政府2026-01-17答复续期",
+        "武汉住更局2026-08-13关于安居链数据同步",
+        "核对2025年及2026年政策窗口与孩次时间"
+      ],
+      "verified_views": null,
+      "evidence": {
+        "facts_checked": true,
+        "image_rights_checked": true,
+        "source_urls": [
+          "https://3g.wuhan.gov.cn/hdjl/rdhy/202505/t20250513_2580335.shtml",
+          "https://www.wuhan.gov.cn/hdjl/lxgs/202601/t20260117_2713181.shtml",
+          "https://zgj.wuhan.gov.cn/hdjl_44/lxgs_/202609/t20260901_2841544.shtml",
+          "https://zgj.wuhan.gov.cn/hdjl_44/lxgs_/202511/t20251120_2680861.shtml"
+        ]
+      }
     }
   },
   "date": "2026-10-12"

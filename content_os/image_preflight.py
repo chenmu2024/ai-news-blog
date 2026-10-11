@@ -5,6 +5,8 @@ import json
 import os
 from pathlib import Path
 from image_resilience import prepare_images, save_prepared_cache
+from ai_scene_policy import verify_bytes as verify_ai_scene_bytes
+import re
 
 
 def main() -> int:
@@ -13,6 +15,12 @@ def main() -> int:
     parser.add_argument("--article", type=Path, required=True)
     args = parser.parse_args()
     original = args.article.read_text(encoding="utf-8")
+    day = args.article.stem
+    if re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", day):
+        ai_errors = verify_ai_scene_bytes(args.profile, day, original)
+        if ai_errors:
+            print(json.dumps({"status": "FAIL", "profile": args.profile, "errors": ai_errors}, ensure_ascii=False))
+            return 1
     staged = prepare_images(original, args.profile)
     cache_dir = os.environ.get("CONTENT_OS_IMAGE_CACHE_DIR")
     if cache_dir:

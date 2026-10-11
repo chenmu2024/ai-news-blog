@@ -42,8 +42,33 @@ def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict
     # A remote write-ahead journal is present before draft/add. Even if GitHub
     # status/latest.json was not committed, an ambiguous HTTP result cannot be
     # retried without inspecting the confirmed media_id or WeChat draft list.
+    journal_file = (status_dir or Path(profile) / "status") / "draft-attempts" / (article.stem + ".json")
     journal = locate(profile, article, status_dir)
-    if journal is not None and not confirmed:
+    if article.stem >= "2026-10-11":
+        if journal_file.exists():
+            # Malformed or empty files are not proof of a safe first attempt.
+            if not journal:
+                raise ValueError("Invalid durable draft journal; manual review required; NEVER retry draft/add")
+            valid_confirmation = (
+                journal.get("state") == "confirmed"
+                and journal.get("article_sha256") == digest
+                and journal.get("article_path") == article.as_posix()
+                and bool(journal.get("draft_media_id"))
+            )
+            if not (valid_confirmation and confirmed):
+                raise ValueError(
+                    "Draft/add attempt exists in durable journal (state=%s); "
+                    "reconcile confirmed receipt, SHA, path and media_id before retry."
+                    % journal.get("state")
+                )
+        elif confirmed:
+            raise ValueError(
+                "Successful receipt on a post-rollout day lacks durable journal; "
+                "manual review required; NEVER retry draft/add."
+            )
+    elif journal_file.exists() and not journal:
+        raise ValueError("Invalid durable draft journal; NEVER retry draft/add")
+    elif journal is not None and not confirmed:
         raise ValueError(
             "Draft/add attempt exists in durable journal (state=%s). "
             "Reconcile the WeChat media_id and status first; NEVER retry "
@@ -63,7 +88,9 @@ def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict
         "article_sha256": digest,
         "status_path": status_file.as_posix(),
         "should_publish": not confirmed,
-        "reason": "matching_success_receipt" if confirmed else "no_matching_success_receipt",
+        "reason": ("confirmed_journal" if confirmed and article.stem >= "2026-10-11"
+                   else "matching_success_receipt" if confirmed
+                   else "no_matching_success_receipt"),
     }
 
 

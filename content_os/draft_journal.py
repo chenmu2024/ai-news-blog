@@ -116,6 +116,11 @@ def reserve(profile: str, article: Path, title: str) -> None:
         "run_id": run_id,
     }
     passed_gates = gate_snapshot(profile, article)
+    if article.stem >= "2026-10-11" and passed_gates is None:
+        raise RuntimeError(
+            "No SHA/path-bound PASS gate snapshot; refuse WeChat draft/add "
+            "before write-ahead journal creation."
+        )
     if passed_gates is not None:
         intent["passed_gates"] = passed_gates
     for attempt in range(5):

@@ -69,6 +69,57 @@ class PreflightTests(unittest.TestCase):
         self.assertTrue(preflight.inspect(self.arc, "fashion", self.status)["should_publish"])
 
 
+    def test_post_rollout_receipt_without_journal_stops(self):
+        self.arc = self.root / "fashion" / "archive" / "2026-10-11.md"
+        self.arc.write_text("# Title\nSample", encoding="utf-8")
+        digest = hashlib.sha256(self.arc.read_bytes()).hexdigest()
+        (self.status / "latest.json").write_text(json.dumps({
+            "status": "success", "title": "Title", "article_sha256": digest,
+            "article_path": self.arc.as_posix(),
+        }), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "lacks durable journal"):
+            preflight.inspect(self.arc, "fashion", self.status)
+
+    def test_post_rollout_confirmed_matching_journal_skips(self):
+        self.arc = self.root / "fashion" / "archive" / "2026-10-11.md"
+        self.arc.write_text("# Title\nSample", encoding="utf-8")
+        digest = hashlib.sha256(self.arc.read_bytes()).hexdigest()
+        (self.status / "latest.json").write_text(json.dumps({
+            "status": "success", "title": "Title", "article_sha256": digest,
+            "article_path": self.arc.as_posix(),
+        }), encoding="utf-8")
+        journal = self.status / "draft-attempts"
+        journal.mkdir()
+        (journal / "2026-10-11.json").write_text(json.dumps({
+            "state": "confirmed", "article_sha256": digest,
+            "article_path": self.arc.as_posix(), "draft_media_id": "media123",
+        }), encoding="utf-8")
+        result = preflight.inspect(self.arc, "fashion", self.status)
+        self.assertFalse(result["should_publish"])
+        self.assertEqual(result["reason"], "confirmed_journal")
+
+    def test_post_rollout_attempted_even_with_status_stops(self):
+        self.arc = self.root / "fashion" / "archive" / "2026-10-11.md"
+        self.arc.write_text("# Title\nSample", encoding="utf-8")
+        digest = hashlib.sha256(self.arc.read_bytes()).hexdigest()
+        (self.status / "latest.json").write_text(json.dumps({
+            "status": "success", "title": "Title", "article_sha256": digest,
+            "article_path": self.arc.as_posix(),
+        }), encoding="utf-8")
+        journal = self.status / "draft-attempts"
+        journal.mkdir()
+        (journal / "2026-10-11.json").write_text('{"state":"attempted"}', encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Draft/add attempt exists"):
+            preflight.inspect(self.arc, "fashion", self.status)
+
+    def test_corrupted_journal_fails_closed(self):
+        journal = self.status / "draft-attempts"
+        journal.mkdir()
+        (journal / "2026-10-08.json").write_text("{invalid", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Invalid durable draft journal"):
+            preflight.inspect(self.arc, "fashion", self.status)
+
+
 class HealthTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()

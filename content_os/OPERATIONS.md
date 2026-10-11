@@ -1,6 +1,6 @@
 # Content OS｜七公众号长期可靠性运行手册
 
-更新：2026-10-10；时区统一 Asia/Shanghai。此文是执行约束，不是完成保证。
+更新：2026-10-11；时区统一 Asia/Shanghai。此文是执行约束，不是完成保证。
 
 ## 根因与处理层
 
@@ -70,3 +70,11 @@
 - If `production_preflight.py` returns `skip_confirmed`, do not write anything to that account, even if headline ledger is missing. `manual_review_required` means no draft retry and investigate official receipt/journal with evidence. `inspect_actions_before_dispatch` means archive already exists: do not recreate it; inspect Jobs and logs, then follow safety policy. Only `write_new_archive` permits considering a new account-specific archive, after full validation.
 - The non-publishing `content-os-production-watchdog.yml` records seven-account handoff at 09:20/11:45. A red/missing handoff means incomplete production, **not** permission to re-upload. All WeChat draft API calls remain restricted to existing profile Actions. GitHub Actions checks cannot substitute for a real ChatGPT writing task.
 - **Do not call the task complete from a successful scan or green CI.** Report exact daily archive count and strong confirmed journal count separately. Continue A-G independently within the task; if operating time/resources are exhausted, report each missing archive/unfinished step rather than claiming the daily job succeeded. 
+
+
+## 草稿入口及归档预检修复（2026-10-11）
+
+- 临时文件名不带日期时，`publish_readiness.py` 根据 Asia/Shanghai 今天日期执行32字限制；也可使用 `--date YYYY-MM-DD` 显式指定待发布日。不要因待审文件位于 `/tmp` 而漏检标题。
+- 从2026-10-11起 `draft_preflight.py` 不接受只有 `status/latest.json` success 而没有持久 `draft-attempts` journal 的草稿成功断言。journal JSON损坏、attempted、SHA/path冲突时一律停止且不得重发；journal confirmed 与完整状态一致时幂等跳过。
+- 从2026-10-11起 `draft_journal.reserve` 要求 exact archive SHA/path-bound PASS Gate 快照存在才允许进入 write-ahead reservation；不得产生无法安全恢复的无 Gate 强确认草稿。
+- 注意：现有排程已经接入生产巡检，但免费 ChatGPT 定时生产仍与 GitHub 校验、草稿桥分离。CI绿色、watchdog健康或任一天旧版7/7不代表今日七篇已写成、草稿已确认。若任务写不出文章，必须真实报告具体缺口。禁止用空白/无授权图片/模板文章伪造进度。

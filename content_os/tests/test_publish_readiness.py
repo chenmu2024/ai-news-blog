@@ -39,6 +39,12 @@ class ReadyTests(unittest.TestCase):
         self.assertEqual(readiness.check("wechat", doc, "2026-10-11")["status"], "FAIL")
         self.assertEqual(readiness.check("wechat", doc, "2026-10-10")["status"], "PASS")
 
+    def test_temp_candidate_cannot_bypass_current_title_limit(self):
+        headline = "一家人工智能公司为了寻找增长而不断增加客户以及开发很多不同业务方向仍然没有找到确定的盈利路径"
+        self.assertGreater(len(headline), 32)
+        doc = "# " + headline + "\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->"
+        self.assertEqual(readiness.check("wechat", doc)["status"], "FAIL")
+
     def test_ai_title_starts_with_a_company(self):
         self.assertEqual(readiness.check("wechat", "# 一家AI公司如何赚钱\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->")["status"], "PASS")
         self.assertEqual(readiness.check("wechat", "# AI巨头赚钱了\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->")["status"], "FAIL")

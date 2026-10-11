@@ -8,6 +8,8 @@ import argparse
 import json
 import re
 from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 PROFILES = {"qiezhi", "wechat", "business", "zizhitongjian", "parenting", "jingyun", "fashion"}
 CARD_RE = re.compile(r"<!--\s*(QIEZHI_CARD|WECHAT_CARD)\s+(.+?)\s*-->", re.S)
@@ -23,7 +25,10 @@ def check(profile: str, markdown: str, article_date: str | None = None) -> dict:
                   if line.startswith("# ")), "")
     if not title:
         errors.append("missing H1 title")
-    if article_date and article_date >= "2026-10-11" and len(title) > 32:
+    # Pre-archive candidates are often /tmp/xxxx-today.md; their filename
+    # MUST NOT turn off the rule that applies to today's WeChat titles.
+    article_date = article_date or datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+    if article_date >= "2026-10-11" and len(title) > 32:
         errors.append("微信标题超过32字：将被发布器截短，必须在新建归档前改为32字以内")
     if profile == "wechat" and not title.startswith("一家"):
         errors.append("AI channel headline must start with 一家")
@@ -81,8 +86,12 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--profile", required=True, choices=sorted(PROFILES))
     p.add_argument("--article", type=Path, required=True)
+    p.add_argument("--date", help="Target Asia/Shanghai article date YYYY-MM-DD; defaults to today's date for temporary files")
     args = p.parse_args()
-    result = check(args.profile, args.article.read_text(encoding="utf-8"), args.article.stem)
+    target_day = args.date
+    if target_day is None and re.fullmatch(r"\d{4}-\d{2}-\d{2}", args.article.stem):
+        target_day = args.article.stem
+    result = check(args.profile, args.article.read_text(encoding="utf-8"), target_day)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return int(result["status"] != "PASS")
 

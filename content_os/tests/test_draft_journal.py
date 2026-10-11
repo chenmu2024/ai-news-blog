@@ -22,11 +22,15 @@ class JournalTests(unittest.TestCase):
         self.article.parent.mkdir(parents=True)
         self.article.write_text("# 新稿\n\n原创文章", encoding="utf-8")
         self.state = {}
+        self.fake_gate = patch.object(journal, "gate_snapshot", return_value={
+            "quality-gate.json": {"status": "PASS"},
+            "visual-gate.json": {"status": "PASS"},
+        })
         self.fake_env = patch.object(journal, "_environment",
                                      return_value=("test-token", "example/repo", "run-11"))
         self.fake_get = patch.object(journal, "_get", side_effect=self.get)
         self.fake_put = patch.object(journal, "_put", side_effect=self.put)
-        for item in (self.fake_env, self.fake_get, self.fake_put):
+        for item in (self.fake_gate, self.fake_env, self.fake_get, self.fake_put):
             item.start()
             self.addCleanup(item.stop)
 
@@ -56,6 +60,12 @@ class JournalTests(unittest.TestCase):
         journal.confirm("business", self.article, "media-confirmed-123")
         with self.assertRaisesRegex(RuntimeError, "media_id conflict"):
             journal.confirm("business", self.article, "different-media-id")
+
+    def test_new_draft_without_bound_pass_gates_refuses_reservation(self):
+        with patch.object(journal, "gate_snapshot", return_value=None):
+            with self.assertRaisesRegex(RuntimeError, "No SHA/path-bound PASS gate snapshot"):
+                journal.reserve("business", self.article, "新稿")
+        self.assertEqual(self.state, {})
 
     def test_mutated_archive_cannot_be_confirmed(self):
         journal.reserve("business", self.article, "新稿")

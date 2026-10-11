@@ -57,13 +57,13 @@ PROFILES = {
         "min_stance_signals": 2,
     },
     "parenting": {
-        "name": "陈慕｜原创漫画育儿",
+        "name": "民生家庭政策与生育福利指南",
         "max_score": 30,
         "warn_score": 40,
-        # Comics are image-first; a long prose quota would defeat the format.
-        "min_body_chars": 350,
-        "max_body_chars": 2800,
-        "min_fact_signals": 2,
+         # Family welfare explainer: actionable, sourced prose with verified cards.
+        "min_body_chars": 850,
+        "max_body_chars": 4600,
+        "min_fact_signals": 5,
         "min_stance_signals": 1,
     },
     "qiezhi": {
@@ -117,8 +117,8 @@ STANCE_PATTERNS_JINGYUN = [
     r"很多女人", r"到了这个年纪", r"真正需要", r"更重要的是",
 ]
 STANCE_PATTERNS_PARENTING = [
-    r"真正的问题", r"更重要的是", r"父母可以", r"可以先",
-    r"不妨先", r"与其", r"孩子需要", r"这里不是",
+    r"符合条件", r"不符合", r"先确认", r"申请前", r"需要注意",
+    r"具体以", r"可以申领", r"不要混淆", r"家长可以",
 ]
 STANCE_PATTERNS_QIEZHI = [
     r"今天(?:我们|你|普通人|做事)", r"真正要做的", r"更重要的是",
@@ -153,9 +153,11 @@ FACT_PATTERNS_JINGYUN = [
     r"(?:民法典|法院|统计局|卫健|妇联|WHO|UN Women|ILO|OECD)",
 ]
 FACT_PATTERNS_PARENTING = [
-    r"\d+\s*(?:岁|个月|分钟|小时|天|周|年|次)",
-    r"(?:儿童|青少年|青春期|学龄前|学龄期|睡眠|情绪|依恋|同伴|学习|家庭|父母)",
-    r"(?:WHO|UNICEF|AAP|CDC|卫健|儿科学会|心理学会)",
+    r"\\d+(?:\\.\\d+)?%", r"\\d+(?:\\.\\d+)?\\s*(?:元|万|年|月|天|周|岁|个月)",
+    r"(?:20\\d{2}|19\\d{2})[年/-]",
+    r"(?:生育|孕产|产检|津贴|育儿补贴|儿童医保|居民医保|职工医保|医疗|托育|多子女|二孩|三孩|购房补贴)",
+    r"(?:申请|申领|参保|结算|报销|审核|材料|截止|户籍|异地|官方|政策|政府|服务包)",
+    r"(?:卫健|医保局|住房|人社|发放|补助|待遇|补贴|支付)",
 ]
 JINGYUN_FABRICATED_FIRST_PERSON_PATTERNS = [
     r"我老公", r"我丈夫", r"我老婆", r"我女儿", r"我儿子",

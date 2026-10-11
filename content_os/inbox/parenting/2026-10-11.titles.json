@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    "孩子被同学移出群聊，家长该怎么找老师",
+    "同学群里一句玩笑，为什么会让孩子不敢上学",
+    "校园排挤发生后，家长和老师怎样分工"
+  ],
+  "selected_title": "孩子被同学移出群聊，家长该怎么找老师",
+  "rationale": "聚焦小学和初中家长的同伴关系、家校协作冲突，与此前的作业、家长群消息话题保持区分；采用真实场景而不编造具体投诉案例，给出当晚沟通和学校协作的行动路径。",
+  "basis": [
+    "UNICEF Parenting: How to talk to your child's school about bullying",
+    "UNICEF Parenting: How to support your child through a negative online experience",
+    "当前 parenting 账号定位：学校教育现实与家庭冲突",
+    "对照近30日归档，避免复制孩子拖拉/父母先别模板"
+  ],
+  "verified_views": null,
+  "evidence": {
+    "facts_checked": true,
+    "image_rights_checked": true,
+    "source_urls": [
+      "https://www.unicef.org/parenting/child-care/how-talk-school-about-bullying",
+      "https://www.unicef.org/parenting/child-care/supporting-child-negative-online-experience"
+    ]
+  }
+}

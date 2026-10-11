@@ -20,11 +20,12 @@ PROFILES = {
         "min_stance_signals": 2,
     },
     "business_story": {
-        "name": "生意显微镜｜商业故事",
+        # Internal legacy profile key retained for backwards-compatible workflows.
+        "name": "民生政策与福利指南｜办事攻略",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 1800,
-        "max_body_chars": 5600,
+        "min_body_chars": 850,
+        "max_body_chars": 4600,
         "min_fact_signals": 5,
         "min_stance_signals": 1,
     },
@@ -56,12 +57,13 @@ PROFILES = {
         "min_stance_signals": 2,
     },
     "parenting": {
-        "name": "陈慕｜育儿与家庭教育",
+        "name": "陈慕｜原创漫画育儿",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 1500,
-        "max_body_chars": 5000,
-        "min_fact_signals": 3,
+        # Comics are image-first; a long prose quota would defeat the format.
+        "min_body_chars": 350,
+        "max_body_chars": 2800,
+        "min_fact_signals": 2,
         "min_stance_signals": 1,
     },
     "qiezhi": {
@@ -97,9 +99,9 @@ STANCE_PATTERNS_AI = [
     r"如果是我", r"我会先", r"我反而", r"我的判断",
 ]
 STANCE_PATTERNS_BUSINESS = [
-    r"我(?:更|最)?(?:看重|认为|判断|关心|倾向|不认为)",
-    r"我的判断", r"关键不在", r"真正的问题", r"更值得看的是",
-    r"真正决定", r"这家公司真正", r"代价是", r"护城河",
+    # Public-benefit explainers prioritize accurate eligibility/action over opinions.
+    r"符合条件", r"不符合", r"先确认", r"需要注意", r"具体以",
+    r"要分清", r"可以申请", r"办理前", r"不要混淆",
 ]
 STANCE_PATTERNS_TONGJIAN = [
     r"我的判断", r"真正的问题", r"更值得看的是", r"放回当时",
@@ -128,9 +130,11 @@ FACT_PATTERNS_AI = [
     r"(?:20\d{2}|19\d{2})[年/-]", r"\b(?:ARR|MRR|CPC|KD|GPU|API|SEO|SaaS)\b",
 ]
 FACT_PATTERNS_BUSINESS = [
-    r"\d+(?:\.\d+)?%", r"\d+(?:\.\d+)?\s*(?:万|亿|美元|元|人|家|店|门店|年|月|天|倍)",
-    r"(?:20\d{2}|19\d{2})[年/-]", r"\b(?:GMV|ARR|IPO|CAGR|SKU|毛利率|净利率)\b",
-    r"(?:营收|收入|利润|亏损|销量|门店|融资|估值|市值|市场份额|客单价|毛利)",
+    r"\d+(?:\.\d+)?%", r"\d+(?:\.\d+)?\s*(?:万|亿|元|个月|年|月|天|周)",
+    r"(?:20\d{2}|19\d{2})[年/-]",
+    r"(?:社保|医保|人社|公积金|养老金|生育津贴|失业金|工伤|职工医保|居民医保|产假|育儿补贴)",
+    r"(?:申请|申领|缴费|到账|受理|审核|待遇|材料|期限|工作日|身份证|居住证|户籍|参保)",
+    r"(?:政策|通知|办法|实施细则|官方|政务服务|政府|医保局|人社局)",
 ]
 FACT_PATTERNS_TONGJIAN = [
     r"《资治通鉴》", r"司马光", r"臣光曰", r"卷[一二三四五六七八九十百零〇0-9]{1,8}",

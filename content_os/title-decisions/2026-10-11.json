@@ -73,6 +73,31 @@
           "https://www.anthropic.com/news/services-track-partner-hub"
         ]
       }
+    },
+    "business": {
+      "candidates": [
+        "海底捞海外半年收入涨12%，开店反而很克制",
+        "海底捞海外只多3家店，半年收入为何涨12%",
+        "海底捞出海开始算效率账，而不是比谁开店快"
+      ],
+      "selected_title": "海底捞海外半年收入涨12%，开店反而很克制",
+      "rationale": "中国读者熟悉海底捞；特海国际2026年8月公告显示国际市场餐厅数量小幅增加却收入同比增长12.1%、餐厅经营利润率显著改善；通过认清上市主体和财务口径形成“开店数量 vs 单店效率”的真实反差，区别10月10日瑞幸新加坡品牌选题。",
+      "basis": [
+        "Super Hi International 2026-08-26 2026 Q2/H1财报",
+        "美国SEC披露Super Hi 2026半年财务信息",
+        "2026H1 revenue $444.8m，同比+12.1%",
+        "餐厅层面经营利润率10.7% vs 6.4%，非集团净利润率",
+        "近30天归档去重"
+      ],
+      "verified_views": null,
+      "evidence": {
+        "facts_checked": true,
+        "image_rights_checked": true,
+        "source_urls": [
+          "https://ir.superhiinternational.com/news-releases/news-release-details/super-hi-reports-unaudited-financial-results-second-quarter-2026",
+          "https://www.sec.gov/Archives/edgar/data/1995306/000110465926101041/tm2624076d1_ex99-2.htm"
+        ]
+      }
     }
   },
   "date": "2026-10-11"

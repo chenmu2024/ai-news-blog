@@ -53,7 +53,7 @@ jobs:
           PY
       - name: Compile reliability and all seven draft publishers
         run: |
-          python -m py_compile content_os/{draft_journal,draft_preflight,daily_healthcheck,gate_trace,publish_readiness,image_preflight,image_resilience,quality_gate,visual_gate,editorial_intelligence,build_editorial_shortlist,source_health,reading_feedback,manual_review,title_decisions}.py
+          python -m py_compile content_os/{draft_journal,draft_preflight,daily_healthcheck,gate_trace,publish_readiness,prearchive_validate,production_preflight,image_preflight,image_resilience,quality_gate,visual_gate,editorial_intelligence,build_editorial_shortlist,source_health,reading_feedback,manual_review,title_decisions}.py
           python -m py_compile {qiezhi,wechat,business,zizhitongjian,parenting,jingyun,fashion}/publish_draft.py
       - name: Offline full regression suite (no WeChat API)
         run: python -m unittest discover -s content_os/tests -p 'test_*.py' -v

@@ -78,3 +78,12 @@
 - 从2026-10-11起 `draft_preflight.py` 不接受只有 `status/latest.json` success 而没有持久 `draft-attempts` journal 的草稿成功断言。journal JSON损坏、attempted、SHA/path冲突时一律停止且不得重发；journal confirmed 与完整状态一致时幂等跳过。
 - 从2026-10-11起 `draft_journal.reserve` 要求 exact archive SHA/path-bound PASS Gate 快照存在才允许进入 write-ahead reservation；不得产生无法安全恢复的无 Gate 强确认草稿。
 - 注意：现有排程已经接入生产巡检，但免费 ChatGPT 定时生产仍与 GitHub 校验、草稿桥分离。CI绿色、watchdog健康或任一天旧版7/7不代表今日七篇已写成、草稿已确认。若任务写不出文章，必须真实报告具体缺口。禁止用空白/无授权图片/模板文章伪造进度。
+
+
+## 原创归档前一键检查（2026-10-11）
+
+将待写入正文先保存为临时 Markdown，然后执行（示例）：
+
+`python content_os/prearchive_validate.py --profile wechat --date 2026-10-11 --article /tmp/wechat-today.md`
+
+该命令**不使用微信API、不改动历史归档和草稿**，会对实际的30天归档检查标题重复，对7号执行结构、质量、视觉及适用的原典/穿搭Gate，并实际下载解码每张正文图片；对明星穿搭强制来源、许可及真人图标记。只有状态为PASS，且候选已完成原始事实核验、授权记录及标题三选一账本，才可创建当日 archive。仅 `--skip-image-network` 的结果永远不代表发布就绪。GitHub Actions 会再次校验，并以正式文章 SHA 绑定 Gate 快照。不能把候选预检当作官方微信已建草稿证明。

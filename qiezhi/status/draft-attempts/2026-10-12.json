@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "qiezhi",
   "article_path": "qiezhi/archive/2026-10-12.md",
   "article_sha256": "abc2cfb4836d26c1ada7a2afab4f2c007df81adcf6cf726b1ca92dc502d96652",
@@ -43,5 +43,6 @@
       "article_sha256": "abc2cfb4836d26c1ada7a2afab4f2c007df81adcf6cf726b1ca92dc502d96652",
       "article_path": "qiezhi/archive/2026-10-12.md"
     }
-  }
+  },
+  "draft_media_id": "YNxOnkeDOZzJhARCaZWR-SUgXzPfXGLNx9ZfHgRVhyg0rxaXzZyJyKG0O3CrWT0-"
 }

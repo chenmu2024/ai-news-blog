@@ -1,0 +1,58 @@
+{
+  "state": "attempted",
+  "profile": "fashion",
+  "article_path": "fashion/archive/2026-10-11.md",
+  "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
+  "title": "Jisoo五套经典造型，普通人最该学哪一招",
+  "run_id": "38100931500",
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "fashion",
+      "profile_name": "女装穿搭｜Image-first",
+      "score": 8,
+      "body_chars": 2408,
+      "template_hits": 2,
+      "internal_hits": 0,
+      "fact_signals": 22,
+      "stance_signals": 17,
+      "paragraph_regularity": {
+        "paragraphs": 29,
+        "cv": 0.521
+      },
+      "sentence_repetition": {
+        "sentences": 63,
+        "repeated_starts": 2,
+        "ratio": 0.032
+      },
+      "very_short_paragraph_ratio": 0.033,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
+      "article_path": "fashion/archive/2026-10-11.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "fashion",
+      "required_visuals": 5,
+      "visual_count": 5,
+      "markdown_images": 5,
+      "html_images": 0,
+      "renderable_cards": 0,
+      "hard_failures": [],
+      "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
+      "article_path": "fashion/archive/2026-10-11.md"
+    },
+    "image-gate.json": {
+      "status": "PASS",
+      "topic_type": "celebrity",
+      "image_count": 5,
+      "body_image_count": 5,
+      "item_claim_count": 0,
+      "hard_failures": [],
+      "warnings": [],
+      "article_sha256": "080586c352ca04084fc799ebe6dd4273b458569749f21042ed06bf28edb3ffe4",
+      "article_path": "fashion/archive/2026-10-11.md"
+    }
+  }
+}

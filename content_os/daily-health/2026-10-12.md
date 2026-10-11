@@ -1,13 +1,13 @@
 # 七公众号草稿健康检查 2026-10-12
 
-仓库一致 2/7；状态：incomplete
-durable草稿确认 2/7；确认状态：incomplete
-标题3选1记录 2/7；编辑告警：True
+仓库一致 3/7；状态：incomplete
+durable草稿确认 3/7；确认状态：incomplete
+标题3选1记录 4/7；编辑告警：True
 
 | 方向 | 仓库一致 | 草稿确认模式 | 失败环节 |
 |---|---|---|---|
-| qiezhi | incomplete | unconfirmed | archive_missing_or_unreadable, archive_title_missing, receipt_date_mismatch, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed |
-| wechat | incomplete | unconfirmed | archive_missing_or_unreadable, archive_title_missing, receipt_date_mismatch, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed |
+| qiezhi | success | confirmed_journal | 无 |
+| wechat | incomplete | unconfirmed | receipt_sha_mismatch_or_stale, receipt_title_mismatch, receipt_date_mismatch, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed, today_not_identical_to_current_article |
 | business | success | confirmed_journal | 无 |
 | zizhitongjian | incomplete | unconfirmed | archive_missing_or_unreadable, archive_title_missing, receipt_date_mismatch, gate_not_bound_to_archive:source-gate.json, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed |
 | parenting | success | confirmed_journal | 无 |

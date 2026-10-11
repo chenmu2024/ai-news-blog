@@ -1,11 +1,11 @@
 {
   "date": "2026-10-12",
-  "generated_at": "2026-10-12T05:07:34.070250+08:00",
+  "generated_at": "2026-10-12T07:00:41.372125+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 2,
+  "success_count": 3,
   "expected_count": 7,
-  "draft_confirmed_count": 2,
+  "draft_confirmed_count": 3,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,32 +20,41 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 2,
+    "complete_count": 4,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "毛选：事情越多，越要先抓住关键矛盾",
+        "candidates": [
+          "毛选：事情越多，越要先抓住关键矛盾",
+          "毛选：忙到失控时，先解决哪一件事",
+          "毛选：问题一大堆，为什么要先抓重点"
+        ],
+        "rationale": "依据官方《矛盾论》主要矛盾章节，区别于昨日调查主题",
+        "basis": [
+          "官方第一卷第320页",
+          "官方第一卷第322页"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "wechat": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "一家AI芯片公司融资8.75亿美元，机会在哪",
+        "candidates": [
+          "一家AI芯片公司融资8.75亿美元，机会在哪",
+          "一家推理芯片公司融了8.75亿美元",
+          "一家AI公司拿到8.75亿美元，要解决什么"
+        ],
+        "rationale": "2026-09-10 Positron官方融资公告有金额与估值；聚焦推理成本与一人公司可验证业务，和10月11日企业AI服务商话题区分；未把公司模拟性能当独立实测。",
+        "basis": [
+          "Positron 2026-09-10公司融资公告",
+          "Positron官方公司历程和产品页面",
+          "2026-10-11 AI号归档为Anthropic服务商生态"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "business": {
         "status": "complete",
@@ -124,37 +133,30 @@
   "accounts": {
     "qiezhi": {
       "profile": "qiezhi",
-      "status": "incomplete",
+      "status": "success",
       "archive": "qiezhi/archive/2026-10-12.md",
-      "title": "",
-      "archive_title": "",
+      "title": "毛选：事情越多，越要先抓住关键矛盾",
+      "archive_title": "毛选：事情越多，越要先抓住关键矛盾",
       "workflow_run_id": null,
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     },
     "wechat": {
       "profile": "wechat",
       "status": "incomplete",
       "archive": "wechat/archive/2026-10-12.md",
-      "title": "",
-      "archive_title": "",
+      "title": "一家AI芯片公司融资8.75亿美元，机会在哪",
+      "archive_title": "一家AI芯片公司融资8.75亿美元，机会在哪",
       "workflow_run_id": "38100084368",
       "gates": {
         "quality-gate.json": "PASS",
@@ -168,12 +170,13 @@
       "verification_mode": null,
       "image_check_done": null,
       "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
+        "receipt_sha_mismatch_or_stale",
+        "receipt_title_mismatch",
         "receipt_date_mismatch",
         "gate_not_bound_to_archive:quality-gate.json",
         "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
+        "draft_add_journal_missing_or_unconfirmed",
+        "today_not_identical_to_current_article"
       ]
     },
     "business": {

@@ -10,7 +10,7 @@ MIN_VISUALS = {
     "business_story": 2,
     "qiezhi": 2,
     "zizhitongjian": 2,
-    "parenting": 2,
+    "parenting": 4,
     "jingyun": 2,
     "fashion": 5,
 }

@@ -2,22 +2,24 @@
   "status": "PASS",
   "profile": "jingyun",
   "profile_name": "静筠日记｜女性生活",
-  "score": 0,
-  "body_chars": 1970,
-  "template_hits": 0,
+  "score": 4,
+  "body_chars": 2473,
+  "template_hits": 1,
   "internal_hits": 0,
-  "fact_signals": 21,
-  "stance_signals": 8,
+  "fact_signals": 26,
+  "stance_signals": 5,
   "paragraph_regularity": {
-    "paragraphs": 29,
-    "cv": 0.437
+    "paragraphs": 26,
+    "cv": 0.362
   },
   "sentence_repetition": {
-    "sentences": 58,
-    "repeated_starts": 0,
-    "ratio": 0.0
+    "sentences": 70,
+    "repeated_starts": 1,
+    "ratio": 0.014
   },
-  "very_short_paragraph_ratio": 0.121,
+  "very_short_paragraph_ratio": 0.069,
   "hard_failures": [],
-  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。"
+  "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+  "article_sha256": "224e3da4757ea8a18b56fcad9eb826fc0ba86fdc1a4ab4fe22e9fe4f080d20e3",
+  "article_path": "jingyun/archive/2026-10-11.md"
 }

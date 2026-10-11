@@ -3,8 +3,10 @@
   "profile": "jingyun",
   "required_visuals": 2,
   "visual_count": 2,
-  "markdown_images": 2,
+  "markdown_images": 0,
   "html_images": 0,
-  "renderable_cards": 0,
-  "hard_failures": []
+  "renderable_cards": 2,
+  "hard_failures": [],
+  "article_sha256": "224e3da4757ea8a18b56fcad9eb826fc0ba86fdc1a4ab4fe22e9fe4f080d20e3",
+  "article_path": "jingyun/archive/2026-10-11.md"
 }

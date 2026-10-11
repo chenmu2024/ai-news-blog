@@ -1,11 +1,11 @@
 {
   "date": "2026-10-12",
-  "generated_at": "2026-10-12T07:09:19.910709+08:00",
+  "generated_at": "2026-10-12T07:11:51.371574+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 5,
+  "success_count": 6,
   "expected_count": 7,
-  "draft_confirmed_count": 5,
+  "draft_confirmed_count": 6,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 5,
+    "complete_count": 6,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -110,16 +110,21 @@
         "errors": []
       },
       "jingyun": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "到了中年，朋友慢慢走散，还要主动联系吗",
+        "candidates": [
+          "到了中年，朋友慢慢走散，还要主动联系吗",
+          "中年朋友不再联系，是疏远还是太忙",
+          "老朋友渐渐走散，要不要先发一条消息"
+        ],
+        "rationale": "聚焦成年女性友情关系与个人社交选择，区别于10月11日家庭隐形劳动、10日重返职场及9日婚姻沟通；以WHO社会联结报告作背景，仅阐述报告实际覆盖的普遍联系，不伪造特定个案及统计。两张自制信息卡仅呈现本文原创判断，均非机构图表。",
+        "basis": [
+          "世界卫生组织社会联结委员会2025-06-30报告",
+          "与静筠近三日已归档选题核对",
+          "情境均明确为观察及假设，未声称作者真实经历"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "fashion": {
         "status": "missing_or_invalid",
@@ -239,30 +244,23 @@
     },
     "jingyun": {
       "profile": "jingyun",
-      "status": "incomplete",
+      "status": "success",
       "archive": "jingyun/archive/2026-10-12.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38100007678",
+      "title": "到了中年，朋友慢慢走散，还要主动联系吗",
+      "archive_title": "到了中年，朋友慢慢走散，还要主动联系吗",
+      "workflow_run_id": "38183313844",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed"
-      ]
+      "errors": []
     },
     "fashion": {
       "profile": "fashion",

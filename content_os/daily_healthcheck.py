@@ -136,6 +136,11 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
     # New drafts require actual WeChat draft/get verified inline media.
     # Missing readback is NOT permission to repeat non-idempotent draft/add.
     readback = read_json(base / "status" / "draft-readback" / (day + ".json"))
+    if not readback:
+        # Backward-compatible durability through the already committed Visual Gate.
+        # Still require the exact media_id, archive SHA/path and article day.
+        readback = (read_json(base / "status" / "visual-gate.json")
+                    .get("wechat_inline_readback") or {})
     readback_verified = (readback.get("draft_get_verified") is True
         and readback.get("draft_media_id") == journal.get("draft_media_id")
         and readback.get("article_sha256") == digest

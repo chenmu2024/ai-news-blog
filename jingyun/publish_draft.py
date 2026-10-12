@@ -10,6 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 # Shared zero-cost preflight; no WeChat API call until every source image is staged.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from content_os.image_resilience import prepare_images, strip_image_backup_notes
+from content_os.public_draft_contract import verify_and_record
 from content_os.draft_journal import reserve as reserve_draft_add, confirm as confirm_draft_add
 _PREPARED_IMAGES = {}
 
@@ -471,7 +472,7 @@ def create_draft(tok, title, body, cover_id):
 def main():
     if not ARTICLE.exists():
         fail("文章不存在: " + str(ARTICLE))
-    md = strip_image_backup_notes(strip_internal_notes(unwrap(ARTICLE.read_text(encoding="utf-8"))))
+    md = strip_image_backup_notes(strip_internal_notes(unwrap(ARTICLE.read_text(encoding="utf-8"))), profile="jingyun")
     title = title_of(md)
     api_title = wechat_safe_title(title)
     digest = digest_of(md)
@@ -493,7 +494,11 @@ def main():
     if not cover:
         cover = make_fallback_cover(api_title)
     cover_id = upload_cover(tok, cover[0], cover[1], cover[2])
-    media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
+    public_html = styled_html(body_md)
+    media_id = create_draft(tok, api_title, public_html, cover_id)
+    # Read-only verification; confirmed journal prevents duplicate draft/add.
+    verify_and_record("jingyun", ARTICLE, api_title, media_id, public_html,
+                      tok, request_with_proxy, API)
     verify_public_draft(tok, media_id)
     print("[SUCCESS] 已保存到微信公众号草稿箱")
     print("[SAFE] 未调用任何正式发布接口")

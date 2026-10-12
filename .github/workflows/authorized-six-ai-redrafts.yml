@@ -1,0 +1,141 @@
+name: User Authorized Six AI-image Redrafts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content_os/redrafts/**/2026-10-12.md"
+      - "content_os/assets/ai-scenes/**/2026-10-12/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: user-authorized-six-ai-redrafts-2026-10-12-v2
+  cancel-in-progress: false
+
+jobs:
+  create-six-redrafts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install requests pillow markdown PyYAML
+      - name: Install Chinese fonts
+        timeout-minutes: 5
+        run: |
+          if ! fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'; then
+            timeout 90s sudo apt-get update -qq -o Acquire::Retries=1 -o Acquire::http::Timeout=15
+            timeout 120s sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends fonts-noto-cjk
+          fi
+
+      - name: A qiezhi new illustrated draft
+        id: a
+        continue-on-error: true
+        env:
+          PROFILE: qiezhi
+          ARTICLE_PATH: content_os/redrafts/qiezhi/2026-10-12.md
+          AUTHORIZED_REDRAFT_ID: 2026-10-12-ai-inline-v2
+          CONTENT_OS_USER_AUTHORIZED_REDRAFT: "1"
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          WECHAT_APP_ID: ${{ secrets.QIEZHI_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.QIEZHI_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: 且知
+        run: python content_os/authorized_redraft.py
+
+      - name: B wechat new illustrated draft
+        id: b
+        continue-on-error: true
+        env:
+          PROFILE: wechat
+          ARTICLE_PATH: content_os/redrafts/wechat/2026-10-12.md
+          AUTHORIZED_REDRAFT_ID: 2026-10-12-ai-inline-v2
+          CONTENT_OS_USER_AUTHORIZED_REDRAFT: "1"
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: 陈慕
+        run: python content_os/authorized_redraft.py
+
+      - name: C business new illustrated draft
+        id: c
+        continue-on-error: true
+        env:
+          PROFILE: business
+          ARTICLE_PATH: content_os/redrafts/business/2026-10-12.md
+          AUTHORIZED_REDRAFT_ID: 2026-10-12-ai-inline-v2
+          CONTENT_OS_USER_AUTHORIZED_REDRAFT: "1"
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          WECHAT_APP_ID: ${{ secrets.BUSINESS_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.BUSINESS_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: 陈慕
+        run: python content_os/authorized_redraft.py
+
+      - name: D zizhitongjian new illustrated draft
+        id: d
+        continue-on-error: true
+        env:
+          PROFILE: zizhitongjian
+          ARTICLE_PATH: content_os/redrafts/zizhitongjian/2026-10-12.md
+          AUTHORIZED_REDRAFT_ID: 2026-10-12-ai-inline-v2
+          CONTENT_OS_USER_AUTHORIZED_REDRAFT: "1"
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          WECHAT_APP_ID: ${{ secrets.TONGJIAN_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.TONGJIAN_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: 陈慕
+        run: python content_os/authorized_redraft.py
+
+      - name: E parenting new illustrated draft
+        id: e
+        continue-on-error: true
+        env:
+          PROFILE: parenting
+          ARTICLE_PATH: content_os/redrafts/parenting/2026-10-12.md
+          AUTHORIZED_REDRAFT_ID: 2026-10-12-ai-inline-v2
+          CONTENT_OS_USER_AUTHORIZED_REDRAFT: "1"
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          WECHAT_APP_ID: ${{ secrets.PARENTING_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.PARENTING_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: 陈慕
+        run: python content_os/authorized_redraft.py
+
+      - name: F jingyun new illustrated draft
+        id: f
+        continue-on-error: true
+        env:
+          PROFILE: jingyun
+          ARTICLE_PATH: content_os/redrafts/jingyun/2026-10-12.md
+          AUTHORIZED_REDRAFT_ID: 2026-10-12-ai-inline-v2
+          CONTENT_OS_USER_AUTHORIZED_REDRAFT: "1"
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          WECHAT_APP_ID: ${{ secrets.JINGYUN_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.JINGYUN_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: 静筠
+        run: python content_os/authorized_redraft.py
+
+      - name: Require all six new drafts confirmed
+        if: always()
+        env:
+          A: ${{ steps.a.outcome }}
+          B: ${{ steps.b.outcome }}
+          C: ${{ steps.c.outcome }}
+          D: ${{ steps.d.outcome }}
+          E: ${{ steps.e.outcome }}
+          F: ${{ steps.f.outcome }}
+        run: |
+          printf 'A=%s B=%s C=%s D=%s E=%s F=%s\n' "$A" "$B" "$C" "$D" "$E" "$F"
+          [ "$A" = success ] && [ "$B" = success ] && [ "$C" = success ] &&
+          [ "$D" = success ] && [ "$E" = success ] && [ "$F" = success ]

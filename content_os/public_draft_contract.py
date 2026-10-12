@@ -23,7 +23,7 @@ CAPTION = re.compile(
     r"虚构人物|不是真实|AI生成)(?:[\s:：、（(]|$)", re.I
 )
 METADATA = re.compile(
-    r"<!--\s*(?:AI_SCENE|IMAGE_BACKUPS|ZZTJ_SOURCE|FASHION_SOURCE)\b|"
+    r"\b(?:AI_SCENE|IMAGE_BACKUPS|ZZTJ_SOURCE|FASHION_SOURCE)\b|"
     r"\b(?:generation_id|scene_description|scene_role)\s*[:=]", re.I
 )
 FORBIDDEN_CAPTIONS = (

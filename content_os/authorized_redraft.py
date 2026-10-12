@@ -114,7 +114,10 @@ def get_draft(pub,tok,media_id):
         params={"access_token":tok},
         data=json.dumps({"media_id":media_id},ensure_ascii=False).encode("utf-8"),
         headers={"Content-Type":"application/json; charset=utf-8"},timeout=60)
-    d=r.json()
+    try:
+        d=json.loads(r.content.decode("utf-8"))
+    except Exception:
+        d=r.json()
     if d.get("errcode"):
         fail("draft/get failed: "+str(d))
     return d

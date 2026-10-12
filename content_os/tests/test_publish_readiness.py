@@ -25,7 +25,7 @@ class ReadyTests(unittest.TestCase):
         self.assertIn("QIEZHI_CARD", " ".join(r["errors"]))
 
     def test_qiezhi_repaired_cover_and_inline_are_accepted(self):
-        result = readiness.check("qiezhi", "# 本日文章\n" + card("cover") + "\n" + card("inline"))
+        result = readiness.check("qiezhi", "# 本日文章\n" + card("cover") + "\n" + card("inline"), "2026-10-12")
         self.assertEqual(result["status"], "PASS")
 
     def test_malformed_json_is_rejected_before_wechat(self):
@@ -46,8 +46,8 @@ class ReadyTests(unittest.TestCase):
         self.assertEqual(readiness.check("wechat", doc)["status"], "FAIL")
 
     def test_ai_title_starts_with_a_company(self):
-        self.assertEqual(readiness.check("wechat", "# 一家AI公司如何赚钱\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->")["status"], "PASS")
-        self.assertEqual(readiness.check("wechat", "# AI巨头赚钱了\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->")["status"], "FAIL")
+        self.assertEqual(readiness.check("wechat", "# 一家AI公司如何赚钱\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->", "2026-10-12")["status"], "PASS")
+        self.assertEqual(readiness.check("wechat", "# AI巨头赚钱了\n<!-- WECHAT_CARD {\"title\":\"案例\",\"items\":[]} -->", "2026-10-12")["status"], "FAIL")
 
     def test_fashion_requires_manifest_and_five_unique_photos(self):
         images = [{"image_url": f"https://images.example.com/{i}.jpg"} for i in range(5)]

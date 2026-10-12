@@ -152,7 +152,7 @@ jobs:
 
           git config user.name "ai-wechat-draft-bot"
           git config user.email "ai-wechat-draft-bot@users.noreply.github.com"
-          git add wechat/articles/today.md wechat/status/latest.json wechat/status/quality-gate.json wechat/status/visual-gate.json
+          git add wechat/articles/today.md wechat/status/latest.json wechat/status/quality-gate.json wechat/status/visual-gate.json wechat/status/draft-readback
           if git diff --cached --quiet; then
             echo "No article/status change."
           else

@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "wechat",
   "authorization_id": "2026-10-12-ai-inline-v2",
   "article_path": "content_os/redrafts/wechat/2026-10-12.md",
@@ -7,5 +7,9 @@
   "title": "一家AI芯片公司融资8.75亿美元｜配图版",
   "run_id": "38187104978",
   "user_authorized_new_draft": true,
-  "reason": "User explicitly requested a new draft with the AI realistic image embedded in the WeChat body."
+  "reason": "User explicitly requested a new draft with the AI realistic image embedded in the WeChat body.",
+  "draft_media_id": "7atnsfbEXVAzgXv2wTjVvIcE7-vbFXq-k0LNd56KKYskFOCBmNCR27pamrLin9KP",
+  "verified_inline_image_urls": [
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/To6vHlqnF5pq66HQkawqTaKYea4f1EoMOvI6kIyYtd1sEz8B7d33788HvQ6eYIibNXs4Vg9WBSx1tMSHHe9ZmHTIl285ulic6iacxUA91Kf8sw/0?from=appmsg"
+  ]
 }

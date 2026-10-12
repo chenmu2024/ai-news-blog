@@ -1,0 +1,1 @@
+Trigger UTF-8 draft/get verification for the six already-confirmed user-authorized illustrated drafts. No new draft/add should occur.

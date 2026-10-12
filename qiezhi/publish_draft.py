@@ -14,6 +14,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from content_os.image_resilience import prepare_images, strip_image_backup_notes
+from content_os.public_draft_contract import verify_and_record
 from content_os.draft_journal import reserve as reserve_draft_add, confirm as confirm_draft_add
 
 APP_ID = os.environ["WECHAT_APP_ID"].strip()
@@ -394,7 +395,7 @@ def main():
         fail("文章不存在: " + str(ARTICLE))
     raw_md = ARTICLE.read_text(encoding="utf-8")
     sha = hashlib.sha256(raw_md.encode("utf-8")).hexdigest()
-    md = strip_image_backup_notes(strip_internal_notes(unwrap(raw_md)))
+    md = strip_image_backup_notes(strip_internal_notes(unwrap(raw_md)), profile="qiezhi")
     title = title_of(md)
     api_title = wechat_safe_title(title)
     print("[ARTICLE]", title)
@@ -409,7 +410,11 @@ def main():
     body_md = re.sub(r"(?m)^\\s*(?:\\*\\*)?作者[：:]\\s*且知(?:\\*\\*)?\\s*$", "", body_md, count=1).lstrip()
     body_md, cover_id = render_and_replace(body_md, tok)
     body_md = replace_stock_images(body_md, tok, staged_stock)
-    media_id = create_draft(tok, api_title, styled_html(body_md), cover_id)
+    public_html = styled_html(body_md)
+    media_id = create_draft(tok, api_title, public_html, cover_id)
+    # Read-only verification; confirmed journal prevents duplicate draft/add.
+    verify_and_record("qiezhi", ARTICLE, api_title, media_id, public_html,
+                      tok, request_wechat, WECHAT_API)
     STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
     STATUS_PATH.write_text(json.dumps({"status": "success", "article_sha256": sha, "title": api_title, "draft_media_id": media_id}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("[SUCCESS] 已保存到“且知”微信公众号草稿箱")

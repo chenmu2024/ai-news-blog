@@ -134,5 +134,16 @@ def verify_and_record(profile: str, article: Path, title: str, media_id: str,
     out = Path(profile) / "status" / "draft-readback" / (article.stem + ".json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # Redundant proof channel: all seven bridge workflows already commit visual-gate.json.
+    # Prevents partial deployment of a newly added file path from losing the proof.
+    visual = Path(profile) / "status" / "visual-gate.json"
+    if visual.exists():
+        gate = json.loads(visual.read_text(encoding="utf-8"))
+        if (gate.get("status") != "PASS" or
+            gate.get("article_sha256") != result["article_sha256"] or
+            gate.get("article_path") != result["article_path"]):
+            raise RuntimeError("Visual gate article binding mismatches WeChat readback")
+        gate["wechat_inline_readback"] = result
+        visual.write_text(json.dumps(gate, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("[WECHAT_DRAFT_READBACK] verified", profile, result["inline_image_count"], out)
     return result

@@ -128,7 +128,7 @@ jobs:
           PY
           git config user.name "qiezhi-draft-bot"
           git config user.email "qiezhi-draft-bot@users.noreply.github.com"
-          git add qiezhi/articles/today.md qiezhi/status/latest.json qiezhi/status/quality-gate.json qiezhi/status/visual-gate.json
+          git add qiezhi/articles/today.md qiezhi/status/latest.json qiezhi/status/quality-gate.json qiezhi/status/visual-gate.json qiezhi/status/draft-readback
           if git diff --cached --quiet; then
             echo "No article/status change."
           else

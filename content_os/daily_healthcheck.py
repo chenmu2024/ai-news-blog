@@ -133,6 +133,17 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
                 errors.append("today_not_identical_to_current_article")
         except OSError:
             errors.append("today_missing")
+    # New drafts require actual WeChat draft/get verified inline media.
+    # Missing readback is NOT permission to repeat non-idempotent draft/add.
+    readback = read_json(base / "status" / "draft-readback" / (day + ".json"))
+    readback_verified = (readback.get("draft_get_verified") is True
+        and readback.get("draft_media_id") == journal.get("draft_media_id")
+        and readback.get("article_sha256") == digest
+        and readback.get("article_path") == archive.relative_to(root).as_posix()
+        and readback.get("article_date") == day
+        and (readback.get("inline_image_count") or 0) >= (5 if profile == "fashion" else 1))
+    if day >= "2026-10-13" and not readback_verified:
+        errors.append("wechat_inline_image_readback_missing_or_mismatched")
     source = read_json(base / "status" / "source-gate.json") if profile == "zizhitongjian" else {}
     return {
         "profile": profile, "status": "success" if not errors else "incomplete",
@@ -149,6 +160,8 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
         "draft_confirmed": journal_confirmed,
         "verification_mode": source.get("verification_mode") if source else None,
         "image_check_done": source.get("image_check_done") if source else None,
+        "wechat_inline_readback_verified": readback_verified,
+        "wechat_inline_image_count": readback.get("inline_image_count"),
         "errors": errors,
     }
 

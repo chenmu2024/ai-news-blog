@@ -188,8 +188,8 @@ def verify_saved_draft(pub,tok,media_id,uploaded_urls,public_md):
     actual="\n".join(str(x.get("content") or "") for x in items if isinstance(x,dict))
     if "AI_SCENE" in actual or "generation_id" in actual:
         fail("internal AI provenance leaked into public draft")
-    if "AI原创写实示意图" not in actual:
-        fail("AI illustration caption missing from saved WeChat body")
+    if "AI原创写实示意图" in actual:
+        fail("AI illustration caption leaked into saved WeChat body")
     image_count=len(re.findall(r"<img\b",actual,re.I))
     minimum=expected_body_images(public_md)
     if image_count<minimum:
@@ -216,7 +216,7 @@ def main():
 
     # Readiness needs internal source records (especially ZZTJ_SOURCE), whereas
     # public rendering must strip them. Run the contract check first.
-    ready_md=pub.strip_image_backup_notes(pub.unwrap(original))
+    ready_md=pub.strip_image_backup_notes(pub.unwrap(original), profile=PROFILE)
     ready=readiness_check(PROFILE,ready_md,"2026-10-12")
     if ready["status"]!="PASS":
         fail("publisher readiness failed: "+str(ready["errors"]))

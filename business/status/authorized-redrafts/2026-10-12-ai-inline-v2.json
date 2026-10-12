@@ -11,5 +11,8 @@
   "draft_media_id": "NG_wEUXyotkqJkaF2RZgwGAJFTHw33uFzmkY1lujaUWy1MWQ-tlNgGwtLZ0t0PVH",
   "verified_inline_image_urls": [
     "http://mmbiz.qpic.cn/sz_mmbiz_jpg/jVXYxXWgBgaz6qgAsjGNvuwVGjQ2SGunibon9NEdn4pNztTjZzX5rwrnp9DAbE438jOE7ycO8XG1N5W2ibEIe5WHWUv3fjcpTDv5ObhlSzK3c/0?from=appmsg"
-  ]
+  ],
+  "draft_get_verified": true,
+  "draft_get_inline_image_count": 3,
+  "draft_get_verified_at_utc": "2026-10-12T00:18:38.411368+00:00"
 }

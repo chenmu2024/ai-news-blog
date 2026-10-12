@@ -1,84 +1,84 @@
 {
-  "date": "2026-10-11",
+  "date": "2026-10-12",
   "timezone": "Asia/Shanghai",
-  "generated_at": "2026-10-11T18:18:21.769441+08:00",
+  "generated_at": "2026-10-12T15:27:36.478251+08:00",
   "profiles": {
     "qiezhi": {
       "action": "skip_confirmed",
-      "archive": "qiezhi/archive/2026-10-11.md",
+      "archive": "qiezhi/archive/2026-10-12.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "qiezhi/archive/2026-10-11.md",
+      "receipt_path": "qiezhi/archive/2026-10-12.md",
       "reasons": []
     },
     "wechat": {
       "action": "skip_confirmed",
-      "archive": "wechat/archive/2026-10-11.md",
+      "archive": "wechat/archive/2026-10-12.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "wechat/archive/2026-10-11.md",
+      "receipt_path": "wechat/archive/2026-10-12.md",
       "reasons": []
     },
     "business": {
       "action": "skip_confirmed",
-      "archive": "business/archive/2026-10-11.md",
+      "archive": "business/archive/2026-10-12.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "business/archive/2026-10-11.md",
+      "receipt_path": "business/archive/2026-10-12.md",
       "reasons": []
     },
     "zizhitongjian": {
       "action": "skip_confirmed",
-      "archive": "zizhitongjian/archive/2026-10-11.md",
+      "archive": "zizhitongjian/archive/2026-10-12.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "zizhitongjian/archive/2026-10-11.md",
+      "receipt_path": "zizhitongjian/archive/2026-10-12.md",
       "reasons": []
     },
     "parenting": {
       "action": "skip_confirmed",
-      "archive": "parenting/archive/2026-10-11.md",
+      "archive": "parenting/archive/2026-10-12.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "parenting/archive/2026-10-11.md",
+      "receipt_path": "parenting/archive/2026-10-12.md",
       "reasons": []
     },
     "jingyun": {
       "action": "skip_confirmed",
-      "archive": "jingyun/archive/2026-10-11.md",
+      "archive": "jingyun/archive/2026-10-12.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "jingyun/archive/2026-10-11.md",
+      "receipt_path": "jingyun/archive/2026-10-12.md",
       "reasons": []
     },
     "fashion": {
       "action": "skip_confirmed",
-      "archive": "fashion/archive/2026-10-11.md",
+      "archive": "fashion/archive/2026-10-12.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "fashion/archive/2026-10-11.md",
+      "receipt_path": "fashion/archive/2026-10-12.md",
       "reasons": []
     }
   },
   "input_freshness": {
     "source_health": {
-      "recorded_date": "2026-10-11",
+      "recorded_date": "2026-10-12",
       "fresh": true
     },
     "editorial_intelligence": {
-      "recorded_date": "2026-10-11",
+      "recorded_date": "2026-10-12",
       "fresh": true
     },
     "reading_feedback": {
-      "recorded_date": "2026-10-11",
+      "recorded_date": "2026-10-12",
       "fresh": true
     },
     "daily_health": {
-      "recorded_date": "2026-10-11",
+      "recorded_date": "2026-10-12",
       "fresh": true
     },
     "topic_intelligence": {
-      "recorded_date": "2026-10-11",
+      "recorded_date": "2026-10-12",
       "fresh": true
     }
   },

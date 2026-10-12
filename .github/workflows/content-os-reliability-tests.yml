@@ -1,6 +1,8 @@
 name: Content OS Reliability Regression Suite
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
     paths:

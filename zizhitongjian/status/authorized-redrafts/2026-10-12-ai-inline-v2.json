@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "zizhitongjian",
   "authorization_id": "2026-10-12-ai-inline-v2",
   "article_path": "content_os/redrafts/zizhitongjian/2026-10-12.md",
@@ -7,5 +7,9 @@
   "title": "赵奢追税：权贵为何反而举荐他｜配图版",
   "run_id": "38187299088",
   "user_authorized_new_draft": true,
-  "reason": "User explicitly requested a new draft with an AI realistic image embedded in the WeChat body."
+  "reason": "User explicitly requested a new draft with an AI realistic image embedded in the WeChat body.",
+  "draft_media_id": "Ew3n3AUcZRS6Fu5y58VPvbw1EFstegZTHFj3ioOeb4mH4W8pkowN1fQm2lkTngcj",
+  "verified_inline_image_urls": [
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/g6tpQqYrb45YPeWx07h5kslBL1Q8wBGRoNYbARLNRlslx4B0mnjJoHN7j7SMACk95aQ3ibtY4BfMY8vt2Kybko7UTc8jSv1uKmvHepR1EJO8/0?from=appmsg"
+  ]
 }

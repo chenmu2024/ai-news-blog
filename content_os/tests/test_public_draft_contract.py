@@ -66,6 +66,42 @@ class PublicBodyTests(unittest.TestCase):
             finally:
                 os.chdir(cwd)
 
+    def test_visual_gate_fallback_is_persisted_for_existing_workflows(self):
+        import hashlib
+        import json
+        import os
+        with tempfile.TemporaryDirectory() as root:
+            cwd = Path.cwd()
+            try:
+                os.chdir(root)
+                article = Path("business/archive/2026-10-13.md")
+                article.parent.mkdir(parents=True)
+                article.write_text("# 标题\n", "utf-8")
+                sha = hashlib.sha256(article.read_bytes()).hexdigest()
+                gate = Path("business/status/visual-gate.json")
+                gate.parent.mkdir(parents=True)
+                gate.write_text(json.dumps({
+                    "status": "PASS", "article_path": article.as_posix(),
+                    "article_sha256": sha,
+                }), "utf-8")
+                call = Mock()
+                call.return_value.json.return_value = {
+                    "news_item": [{"title": "标题", "content": body()}]}
+                verify_and_record("business", article, "标题", "mid",
+                                  body(), "tok", call, "https://api.weixin.qq.com/cgi-bin")
+                recorded = json.loads(gate.read_text("utf-8"))
+                self.assertEqual(recorded["wechat_inline_readback"]["draft_media_id"], "mid")
+                self.assertEqual(recorded["wechat_inline_readback"]["article_sha256"], sha)
+                gate.write_text(json.dumps({
+                    "status": "PASS", "article_path": article.as_posix(),
+                    "article_sha256": "0" * 64
+                }), "utf-8")
+                with self.assertRaisesRegex(RuntimeError, "binding"):
+                    verify_and_record("business", article, "标题", "mid",
+                                      body(), "tok", call, "https://api.weixin.qq.com/cgi-bin")
+            finally:
+                os.chdir(cwd)
+
     def test_publishers_have_no_mass_send_or_publication_api(self):
         root = Path(__file__).resolve().parents[2]
         for p in ("qiezhi", "wechat", "business", "zizhitongjian",

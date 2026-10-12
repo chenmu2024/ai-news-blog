@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "jingyun",
   "authorization_id": "2026-10-12-ai-inline-v2",
   "article_path": "content_os/redrafts/jingyun/2026-10-12.md",
@@ -7,5 +7,9 @@
   "title": "中年朋友走散了，还要主动联系吗｜配图版",
   "run_id": "38187104978",
   "user_authorized_new_draft": true,
-  "reason": "User explicitly requested a new draft with the AI realistic image embedded in the WeChat body."
+  "reason": "User explicitly requested a new draft with the AI realistic image embedded in the WeChat body.",
+  "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsBm-vG6h3x_QEC-4lLfv7Da8OgapZCFTztjmuv3duE_Q",
+  "verified_inline_image_urls": [
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/1lvNK0VGgiamf2Oia3eOCrvlTTKGsl1JpChR8UFr6IWJ46bVVSWHrJJbayyqeH6ejMpVr1icooOCMiaE0NQKSysD547OFpibibVcia8k9GPLqPpHfk/0?from=appmsg"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "parenting",
   "authorization_id": "2026-10-12-ai-inline-v2",
   "article_path": "content_os/redrafts/parenting/2026-10-12.md",
@@ -7,5 +7,9 @@
   "title": "武汉二孩买房补贴6万：外地人申请｜配图版",
   "run_id": "38187104978",
   "user_authorized_new_draft": true,
-  "reason": "User explicitly requested a new draft with the AI realistic image embedded in the WeChat body."
+  "reason": "User explicitly requested a new draft with the AI realistic image embedded in the WeChat body.",
+  "draft_media_id": "cyRgts0DS_D6YB0L1h-Eu7J4EvMaADk-u82t41PGJlLRicXugu9VY3-5d3EgnQhZ",
+  "verified_inline_image_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/38fm2PhQcLicuvjMibrsBjkmUWhJCzvd8DibqVzzuOgGQZ0lbdf42hiccFqY1t5QEibsEhnClkwmQ4lmpvuic13kXjejY5Eib9qewJv6m98urtL7dw/0?from=appmsg"
+  ]
 }

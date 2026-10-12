@@ -1,0 +1,1 @@
+Trigger idempotent WeChat draft/get verification for the six user-authorized illustrated drafts. No draft/add should occur for already confirmed journals.

@@ -151,7 +151,7 @@ jobs:
 
           git config user.name "fashion-draft-bot"
           git config user.email "fashion-draft-bot@users.noreply.github.com"
-          git add fashion/articles/today.md fashion/status/latest.json fashion/status/image-gate.json fashion/status/quality-gate.json fashion/status/visual-gate.json
+          git add fashion/articles/today.md fashion/status/latest.json fashion/status/image-gate.json fashion/status/quality-gate.json fashion/status/visual-gate.json fashion/status/draft-readback
           if git diff --cached --quiet; then
             echo "No article/status change."
           else

@@ -73,6 +73,30 @@ class DraftHealthSemanticsTests(unittest.TestCase):
             self.assertTrue(confirmed["wechat_inline_readback_verified"])
             self.assertEqual(confirmed["status"], "success")
 
+    def test_2026_10_13_accepts_gate_bound_readback_without_new_directory(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            profile, article, checksum, status_dir = self._base(root, "2026-10-13", "mid")
+            journal = status_dir / "draft-attempts" / "2026-10-13.json"
+            journal.parent.mkdir()
+            journal.write_text(json.dumps({
+                "state": "confirmed", "draft_media_id": "mid",
+                "article_path": article.relative_to(root).as_posix(),
+                "article_sha256": checksum,
+            }), "utf-8")
+            visual = status_dir / "visual-gate.json"
+            gate = json.loads(visual.read_text("utf-8"))
+            gate["wechat_inline_readback"] = {
+                "draft_get_verified": True, "draft_media_id": "mid",
+                "article_path": article.relative_to(root).as_posix(),
+                "article_sha256": checksum, "article_date": "2026-10-13",
+                "inline_image_count": 1,
+            }
+            visual.write_text(json.dumps(gate), "utf-8")
+            result = audit_profile(root, profile, "2026-10-13")
+            self.assertTrue(result["wechat_inline_readback_verified"])
+            self.assertEqual(result["status"], "success")
+
     def test_rollout_requires_matching_confirmed_journal(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td)

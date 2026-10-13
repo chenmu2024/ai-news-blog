@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "wechat",
   "article_path": "wechat/archive/2026-10-13.md",
   "article_sha256": "365b2ba1c024788499aee9361c39c2618ca3015c467d395e422d1ebf9fc3833d",
@@ -47,5 +47,6 @@
       "article_sha256": "365b2ba1c024788499aee9361c39c2618ca3015c467d395e422d1ebf9fc3833d",
       "article_path": "wechat/archive/2026-10-13.md"
     }
-  }
+  },
+  "draft_media_id": "7atnsfbEXVAzgXv2wTjVvBIpMEs6V7wmwggr7WKvgRooCq7LVKNwS0WzjA0J_1CM"
 }

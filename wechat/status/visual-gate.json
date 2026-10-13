@@ -3,10 +3,23 @@
   "profile": "ai_business",
   "required_visuals": 2,
   "visual_count": 2,
-  "markdown_images": 0,
+  "markdown_images": 1,
   "html_images": 0,
-  "renderable_cards": 2,
+  "renderable_cards": 1,
   "hard_failures": [],
-  "article_sha256": "1212aa38e6ae95360711c27bf0b91040f5beb46302f22c820722e8a18e8a629a",
-  "article_path": "wechat/archive/2026-10-12.md"
+  "article_sha256": "365b2ba1c024788499aee9361c39c2618ca3015c467d395e422d1ebf9fc3833d",
+  "article_path": "wechat/archive/2026-10-13.md",
+  "wechat_inline_readback": {
+    "draft_get_verified": true,
+    "state": "verified",
+    "profile": "wechat",
+    "draft_media_id": "7atnsfbEXVAzgXv2wTjVvBIpMEs6V7wmwggr7WKvgRooCq7LVKNwS0WzjA0J_1CM",
+    "inline_image_count": 2,
+    "expected_inline_image_count": 2,
+    "readback_body_sha256": "df61da51106fcbeca44f3f599cf47a829edcc24d9c6fb706100f71edeffd7afc",
+    "verified_at_utc": "2026-10-13T01:06:51.299314+00:00",
+    "article_path": "wechat/archive/2026-10-13.md",
+    "article_sha256": "365b2ba1c024788499aee9361c39c2618ca3015c467d395e422d1ebf9fc3833d",
+    "article_date": "2026-10-13"
+  }
 }

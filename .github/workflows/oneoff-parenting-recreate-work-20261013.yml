@@ -1,4 +1,6 @@
 name: One-time authorized October 13 missing parenting Work draft
+# Retry after unsupported freepublish permission; draft list remains fully checked.
+# Retry safe ONLY because first run stopped before journal or draft/add.
 on:
   push:
     branches: [main]

@@ -117,6 +117,30 @@
           "https://theory.people.com.cn/n1/2020/0817/c40531-31824408.html"
         ]
       }
+    },
+    "zizhitongjian": {
+      "candidates": [
+        "商鞅徙木立信：司马光真正担心的是什么",
+        "商鞅赏了五十金，后来为何没人敢议论",
+        "徙木立信之后，《资治通鉴》还写了什么"
+      ],
+      "selected_title": "商鞅徙木立信：司马光真正担心的是什么",
+      "rationale": "对照资治通鉴卷二《周纪二》与四库全书本卷二，严格区分历史叙事、商鞅行法与司马光臣光曰评论，并补足处罚和民莫敢议令的上下文；与昨日赵奢税务故事不重复。",
+      "basis": [
+        "维基文库《资治通鉴》卷002周纪二逐段核对",
+        "维基文库四库全书本卷002并列核验",
+        "CText卷第二记录入口，影印未逐页完成故如实注明fallback"
+      ],
+      "verified_views": null,
+      "evidence": {
+        "facts_checked": true,
+        "image_rights_checked": true,
+        "source_urls": [
+          "https://zh.wikisource.org/zh-hant/資治通鑑/卷002",
+          "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷002",
+          "https://ctext.org/wiki.pl?chapter=66452&if=gb"
+        ]
+      }
     }
   },
   "date": "2026-10-13"

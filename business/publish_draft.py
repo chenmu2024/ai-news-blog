@@ -354,7 +354,7 @@ def create_draft(tok, title, body, cover_id):
     post_data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     # Durable intent must be committed to GitHub BEFORE the non-idempotent
     # WeChat draft/add API. Unknown outcomes must never be blindly retried.
-    reserve_draft_add("business", ARTICLE, title)
+    reserve_draft_add("business", ARTICLE, title, public_body_html=body)
     r = request_with_proxy(
         "POST",
         API + "/draft/add",

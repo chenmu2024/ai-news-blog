@@ -48,7 +48,26 @@ jobs:
           python -m unittest discover -s content_os/tests -p "test_reconcile_confirmed.py" -v
       - name: Audit all seven profiles without publishing
         run: python content_os/daily_healthcheck.py --output-dir content_os/daily-health
+      - name: Install free readback-only recovery dependency
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+        run: pip install 'requests[socks]>=2.32,<3'
       - name: Persist daily health report
+        env:
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          QIEZHI_WECHAT_APP_ID: ${{ secrets.QIEZHI_WECHAT_APP_ID }}
+          QIEZHI_WECHAT_APP_SECRET: ${{ secrets.QIEZHI_WECHAT_APP_SECRET }}
+          WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
+          BUSINESS_WECHAT_APP_ID: ${{ secrets.BUSINESS_WECHAT_APP_ID }}
+          BUSINESS_WECHAT_APP_SECRET: ${{ secrets.BUSINESS_WECHAT_APP_SECRET }}
+          TONGJIAN_WECHAT_APP_ID: ${{ secrets.TONGJIAN_WECHAT_APP_ID }}
+          TONGJIAN_WECHAT_APP_SECRET: ${{ secrets.TONGJIAN_WECHAT_APP_SECRET }}
+          PARENTING_WECHAT_APP_ID: ${{ secrets.PARENTING_WECHAT_APP_ID }}
+          PARENTING_WECHAT_APP_SECRET: ${{ secrets.PARENTING_WECHAT_APP_SECRET }}
+          JINGYUN_WECHAT_APP_ID: ${{ secrets.JINGYUN_WECHAT_APP_ID }}
+          JINGYUN_WECHAT_APP_SECRET: ${{ secrets.JINGYUN_WECHAT_APP_SECRET }}
+          FASHION_WECHAT_APP_ID: ${{ secrets.FASHION_WECHAT_APP_ID }}
+          FASHION_WECHAT_APP_SECRET: ${{ secrets.FASHION_WECHAT_APP_SECRET }}
         shell: bash
         run: |
           set -euo pipefail
@@ -62,6 +81,12 @@ jobs:
             # Only a confirmed media_id PLUS the immutable PASS-gate snapshot
             # permits state repair. This script never calls WeChat draft/add.
             python content_os/reconcile_confirmed.py --root . > /tmp/content-os-reconcile.json
+            if [ "$GITHUB_EVENT_NAME" = "schedule" ] || [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+              # This script may ONLY read existing official drafts. It never
+              # calls draft/add or generates a replacement publication.
+              python content_os/recover_readback.py --root . > /tmp/content-os-readback-recovery.json
+              cat /tmp/content-os-readback-recovery.json
+            fi
             python content_os/daily_healthcheck.py --output-dir content_os/daily-health > /tmp/content-os-rechecked.json
             git add -A -- content_os/daily-health qiezhi/status qiezhi/articles \
               wechat/status wechat/articles business/status business/articles \

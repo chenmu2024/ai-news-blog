@@ -1,0 +1,13 @@
+{
+  "draft_get_verified": true,
+  "state": "verified",
+  "profile": "business",
+  "draft_media_id": "NG_wEUXyotkqJkaF2RZgwJzkBsPr7x5AjN9u3-eFQ6-TiE0sO1XPQIH3_-KtHvRR",
+  "inline_image_count": 2,
+  "expected_inline_image_count": 2,
+  "readback_body_sha256": "c869a6a24c264e82563f421ba274dc498ae5432993c515bc4ed62b54126d4d8a",
+  "verified_at_utc": "2026-10-13T01:05:29.389494+00:00",
+  "article_path": "business/archive/2026-10-13.md",
+  "article_sha256": "db741e0ea648490058984b7674a4d84df80bfa19e976b5f08db2db3d17f09b89",
+  "article_date": "2026-10-13"
+}

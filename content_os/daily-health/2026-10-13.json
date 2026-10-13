@@ -1,6 +1,6 @@
 {
   "date": "2026-10-13",
-  "generated_at": "2026-10-13T09:27:58.057933+08:00",
+  "generated_at": "2026-10-13T10:03:56.901150+08:00",
   "timezone": "Asia/Shanghai",
   "status": "complete",
   "success_count": 7,
@@ -147,6 +147,10 @@
       "archive": "qiezhi/archive/2026-10-13.md",
       "title": "毛选《实践论》：别把知道误当成做到",
       "archive_title": "毛选《实践论》：别把知道误当成做到",
+      "editorial_review": {
+        "status": "NOT_REQUIRED",
+        "errors": []
+      },
       "workflow_run_id": null,
       "gates": {
         "quality-gate.json": "PASS",
@@ -169,6 +173,10 @@
       "archive": "wechat/archive/2026-10-13.md",
       "title": "一家AI语音公司的订阅生意，值得一人公司学什么",
       "archive_title": "一家AI语音公司的订阅生意，值得一人公司学什么",
+      "editorial_review": {
+        "status": "NOT_REQUIRED",
+        "errors": []
+      },
       "workflow_run_id": "38330513850",
       "gates": {
         "quality-gate.json": "PASS",
@@ -191,6 +199,10 @@
       "archive": "business/archive/2026-10-13.md",
       "title": "医保个人账户跨省给家人用，先分清这三件事",
       "archive_title": "医保个人账户跨省给家人用，先分清这三件事",
+      "editorial_review": {
+        "status": "NOT_REQUIRED",
+        "errors": []
+      },
       "workflow_run_id": "38330374492",
       "gates": {
         "quality-gate.json": "PASS",
@@ -213,6 +225,10 @@
       "archive": "zizhitongjian/archive/2026-10-13.md",
       "title": "商鞅徙木立信：司马光真正担心的是什么",
       "archive_title": "商鞅徙木立信：司马光真正担心的是什么",
+      "editorial_review": {
+        "status": "NOT_REQUIRED",
+        "errors": []
+      },
       "workflow_run_id": "38331879999",
       "gates": {
         "source-gate.json": "PASS",
@@ -236,6 +252,10 @@
       "archive": "parenting/archive/2026-10-13.md",
       "title": "北京育儿补贴每孩每年3600元，怎么申领",
       "archive_title": "北京育儿补贴每孩每年3600元，怎么申领",
+      "editorial_review": {
+        "status": "NOT_REQUIRED",
+        "errors": []
+      },
       "workflow_run_id": "38330273682",
       "gates": {
         "quality-gate.json": "PASS",
@@ -258,6 +278,10 @@
       "archive": "jingyun/archive/2026-10-13.md",
       "title": "为什么总把自己的事留到以后",
       "archive_title": "为什么总把自己的事留到以后",
+      "editorial_review": {
+        "status": "NOT_REQUIRED",
+        "errors": []
+      },
       "workflow_run_id": "38328415865",
       "gates": {
         "quality-gate.json": "PASS",
@@ -280,6 +304,10 @@
       "archive": "fashion/archive/2026-10-13.md",
       "title": "Jisoo五套旧造型，真正值得学的是比例",
       "archive_title": "Jisoo五套旧造型，真正值得学的是比例",
+      "editorial_review": {
+        "status": "NOT_REQUIRED",
+        "errors": []
+      },
       "workflow_run_id": "38332164729",
       "gates": {
         "image-gate.json": "PASS",

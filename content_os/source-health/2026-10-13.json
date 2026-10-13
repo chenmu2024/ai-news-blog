@@ -1,14 +1,15 @@
 {
   "date": "2026-10-13",
-  "generated_at": "2026-10-13T11:14:13.967794+08:00",
+  "generated_at": "2026-10-13T11:42:39.896081+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
         {
           "url": "https://www.dswxyjy.org.cn/",
-          "status": "unreachable",
-          "http_status": null,
-          "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.dswxyjy.org.cn/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {
@@ -28,7 +29,7 @@
           "role": "fallback"
         }
       ],
-      "primary_reachable": false,
+      "primary_reachable": true,
       "fallback_reachable": true,
       "note": "Reachability only; content/date/licence/fact checks remain mandatory."
     },
@@ -106,9 +107,10 @@
         },
         {
           "url": "https://www.nhsa.gov.cn/",
-          "status": "unreachable",
-          "http_status": null,
-          "error": "<urlopen error timed out>",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.nhsa.gov.cn/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {
@@ -197,9 +199,10 @@
         },
         {
           "url": "https://www.nhsa.gov.cn/",
-          "status": "unreachable",
-          "http_status": null,
-          "error": "<urlopen error timed out>",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.nhsa.gov.cn/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {

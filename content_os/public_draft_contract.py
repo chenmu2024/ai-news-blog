@@ -17,18 +17,22 @@ PROFILES = ("qiezhi", "wechat", "business", "zizhitongjian",
 NO_CAPTION = set(PROFILES) - {"fashion"}
 IMG_LINE = re.compile(r"^\s*!\[[^\]]*\]\([^)]+\)\s*$")
 CAPTION = re.compile(
-    r"^(?:AI(?:原创)?(?:写实)?(?:配图|图片|示意图|场景)|"
-    r"配图|图片|图注|图源|图片来源|照片来源|来源说明|"
-    r"图[一二三四五六七八九十\d]+|摄影|此图|该图|本图|"
-    r"虚构人物|不是真实|AI生成)(?:[\s:：、（(]|$)", re.I
+    r"^(?:AI\s*(?:原创)?(?:写实)?(?:配图|图片|示意图|场景|生成)|"
+    r"配图(?:说明)?|图片(?:说明|来源)?|图注|图源|照片来源|来源说明|"
+    r"图\s*[一二三四五六七八九十\d]+|摄影(?:师)?|"
+    r"此图(?:为|是)?|该图(?:为|是)?|本图(?:为|是)?|"
+    r"虚构人物|不是真实|AI生成|画面(?:为|是|展示|内容)?|"
+    r"场景(?:为|是|展示|说明)?)(?:[\s:：、（(]|$)", re.I
 )
 METADATA = re.compile(
     r"\b(?:AI_SCENE|IMAGE_BACKUPS|ZZTJ_SOURCE|FASHION_SOURCE)\b|"
-    r"\b(?:generation_id|scene_description|scene_role)\s*[:=]", re.I
+    r"\b(?:generator|generation_id|sha256|rights|synthetic|"
+    r"scene_description|scene_role|pretends_to_be_real_person_or_record)\s*[:=]", re.I
 )
 FORBIDDEN_CAPTIONS = (
     "AI原创写实示意图", "AI配图：", "AI原创配图：",
     "此图为虚构人物", "不是真实肖像", "不是真实历史现场",
+    "AI配图说明", "图片说明：", "照片来源：", "图注：",
 )
 
 
@@ -44,9 +48,9 @@ def strip_figure_captions(markdown: str, profile: str) -> str:
                 output.append(line)
                 continue
             unwrapped = content.strip("*_ ").lstrip("> ")
-            italic = (content.startswith("*") and content.endswith("*")) or (
-                content.startswith("_") and content.endswith("_"))
-            if italic or CAPTION.match(unwrapped):
+            # Emphasis is not inherently a caption: never discard ordinary
+            # italic prose or a quoted passage merely because it follows a photo.
+            if CAPTION.match(unwrapped):
                 while output and not output[-1].strip():
                     output.pop()
                 after_picture = False
@@ -75,6 +79,47 @@ def image_sources(body: str) -> list[str]:
     return parser.urls
 
 
+class _PublicParagraphs(HTMLParser):
+    """Extract visible paragraph text while remembering which block has an image."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.blocks = []
+        self.current = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() in ("p", "figcaption", "h1", "h2", "h3", "h4", "li"):
+            if self.current is None:
+                self.current = {"text": [], "image": False}
+        if tag.lower() == "img":
+            if self.current is None:
+                self.current = {"text": [], "image": True}
+            self.current["image"] = True
+
+    def handle_data(self, data):
+        if self.current is not None:
+            self.current["text"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag.lower() in ("p", "figcaption", "h1", "h2", "h3", "h4", "li"):
+            if self.current is not None:
+                self.blocks.append((self.current["image"], "".join(self.current["text"]).strip()))
+                self.current = None
+
+
+def contains_adjacent_caption(body: str) -> bool:
+    """Fail closed on caption paragraphs directly after inline images."""
+    parser = _PublicParagraphs()
+    parser.feed(body)
+    previous_picture = False
+    for contains_image, value in parser.blocks:
+        if previous_picture and value and CAPTION.match(value.strip("*_ ").lstrip("> ")):
+            return True
+        if value or contains_image:
+            previous_picture = contains_image
+    return False
+
+
 def verify_saved_payload(profile: str, title: str, media_id: str,
                          expected_html: str, payload: dict) -> dict:
     """Verify the saved body contains ALL uploaded inline images."""
@@ -86,12 +131,13 @@ def verify_saved_payload(profile: str, title: str, media_id: str,
     if not items or not isinstance(items[0], dict):
         raise RuntimeError("WeChat draft/get returned no news_item")
     saved = items[0]
-    if saved.get("title") and saved["title"] != title:
+    if saved.get("title") != title:
         raise RuntimeError("WeChat readback title mismatch")
     actual = str(saved.get("content") or "")
     if not actual or METADATA.search(actual):
         raise RuntimeError("Draft body missing or internal metadata leaked")
-    if profile in NO_CAPTION and any(x in html.unescape(actual) for x in FORBIDDEN_CAPTIONS):
+    if profile in NO_CAPTION and (any(x in html.unescape(actual) for x in FORBIDDEN_CAPTIONS)
+                                  or contains_adjacent_caption(actual)):
         raise RuntimeError("A-F draft contains forbidden AI figure caption")
     expected_urls = image_sources(expected_html)
     actual_urls = image_sources(actual)

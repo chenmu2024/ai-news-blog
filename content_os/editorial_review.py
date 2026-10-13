@@ -15,6 +15,18 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 ACTIVATION = "2026-10-14"
+HUMANIZER_ACTIVATION = "2026-10-14"
+HUMANIZER_VERSION = "v3"
+HUMANIZER_LIBRARY = "wechat-humanizer-v3-2014-2016"
+HUMANIZER_STYLES = {
+    "qiezhi": {"opinion", "explainer", "story"},
+    "wechat": {"explainer", "opinion", "story"},
+    "business": {"explainer", "life"},
+    "zizhitongjian": {"story", "culture", "opinion"},
+    "parenting": {"explainer", "life"},
+    "jingyun": {"life", "opinion", "story"},
+    "fashion": {"culture", "explainer", "life"},
+}
 CHECKS = {
     "qiezhi": ("original_context", "single_real_problem"),
     "wechat": ("paid_task", "cost_or_tradeoff", "evidence_scope"),
@@ -44,7 +56,11 @@ def review_path(root, profile, day):
 
 def policy_hash(root, profile):
     paths = ["content_os/PRODUCTION_BRIEF.md", "content_os/EDITORIAL_VOICE.md",
-             "content_os/editorial-feedback.json", f"{profile}/STYLE.md"]
+             "content_os/editorial-feedback.json",
+             "content_os/humanizer/README.md",
+             "content_os/humanizer/account_profiles.json",
+             "content_os/humanizer/reference_manifest.json",
+             f"{profile}/STYLE.md"]
     return hashlib.sha256(b"\0".join((root / p).read_text("utf-8").encode("utf-8") for p in paths)).hexdigest()
 
 
@@ -53,6 +69,66 @@ def recent_archives(root, profile, day):
     return sorted((p for p in (root / profile / "archive").glob("????-??-??.md")
                    if 0 < (target - date.fromisoformat(p.stem)).days <= 30), reverse=True)[:3]
 
+
+
+def _humanizer_errors(rec, profile, body):
+    """Validate Humanizer V3 handoff evidence; never expose corpus fulltext."""
+    errors = []
+    data = rec.get("humanizer")
+    if not isinstance(data, dict):
+        return ["editorial_humanizer_v3_missing"]
+    if data.get("version") != HUMANIZER_VERSION:
+        errors.append("editorial_humanizer_version_mismatch")
+    if data.get("reference_library") != HUMANIZER_LIBRARY:
+        errors.append("editorial_humanizer_reference_library_mismatch")
+    if data.get("copied_reference_text") is not False:
+        errors.append("editorial_humanizer_must_attest_no_reference_copying")
+    if data.get("fact_recheck") is not True:
+        errors.append("editorial_humanizer_fact_recheck_missing")
+    if not _anchor(data.get("final_excerpt"), body):
+        errors.append("editorial_humanizer_final_excerpt_missing")
+    removed = data.get("anti_patterns_removed")
+    if (not isinstance(removed, list) or len(removed) < 2
+            or any(not _text(x, 4) for x in removed)):
+        errors.append("editorial_humanizer_needs_two_concrete_edits")
+    refs = data.get("reference_examples")
+    if not isinstance(refs, list) or not (3 <= len(refs) <= 5):
+        errors.append("editorial_humanizer_requires_3_to_5_references")
+        return errors
+    distinct_sources = set()
+    project_refs = 0
+    for item in refs:
+        if not isinstance(item, dict):
+            errors.append("editorial_humanizer_reference_invalid")
+            continue
+        origin = item.get("origin")
+        if origin == "project_bank":
+            project_refs += 1
+        elif origin == "web_benchmark":
+            try:
+                parsed = urlparse(str(item.get("url") or ""))
+                if parsed.scheme != "https" or not parsed.hostname:
+                    errors.append("editorial_humanizer_web_reference_needs_https_url")
+            except ValueError:
+                errors.append("editorial_humanizer_web_reference_needs_https_url")
+        else:
+            errors.append("editorial_humanizer_reference_origin_invalid")
+        source_name = item.get("source_name")
+        if not _text(source_name, 2):
+            errors.append("editorial_humanizer_reference_source_missing")
+        else:
+            distinct_sources.add(source_name.strip())
+        if not _text(item.get("reference_id"), 6):
+            errors.append("editorial_humanizer_reference_id_missing")
+        if item.get("style") not in HUMANIZER_STYLES[profile]:
+            errors.append("editorial_humanizer_reference_style_mismatch")
+        if not _text(item.get("learned_feature"), 8):
+            errors.append("editorial_humanizer_reference_learning_missing")
+    if project_refs < 2:
+        errors.append("editorial_humanizer_needs_two_project_bank_references")
+    if len(distinct_sources) < 3:
+        errors.append("editorial_humanizer_needs_three_distinct_sources")
+    return errors
 
 def check(root: Path, profile: str, day: str, markdown: str) -> dict:
     if profile not in CHECKS or date.fromisoformat(day).isoformat() != day:
@@ -84,6 +160,8 @@ def check(root: Path, profile: str, day: str, markdown: str) -> dict:
             errors.append("editorial_missing_" + field)
     evidence = rec.get("evidence")
     body = _visible(markdown)
+    if day >= HUMANIZER_ACTIVATION:
+        errors.extend(_humanizer_errors(rec, profile, body))
     if not isinstance(evidence, list) or not evidence:
         errors.append("editorial_source_evidence_missing")
     else:

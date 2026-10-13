@@ -72,7 +72,7 @@ jobs:
           test -f "$RECEIPT"
           git config user.name "jingyun-draft-bot"
           git config user.email "jingyun-draft-bot@users.noreply.github.com"
-          git add -- "$RECEIPT"
+          git add -- "$RECEIPT" content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp
           git commit -m "status(jingyun): record approved draft update"
           for attempt in 1 2 3 4 5; do
             git pull --rebase origin main

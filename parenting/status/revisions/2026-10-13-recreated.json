@@ -1,6 +1,6 @@
 {
   "state": "confirmed",
-  "status": "pending_readback",
+  "status": "success",
   "operation": "create_one_new_missing_work_revised_draft",
   "date": "2026-10-13",
   "profile": "parenting",
@@ -29,5 +29,7 @@
   },
   "workflow_run_id": "38343451530",
   "user_authorized_one_new_draft": true,
-  "draft_media_id": "cyRgts0DS_D6YB0L1h-Eu-Vf-IXRlNLV4klrI21r4CQcwG8FyaHFkIw2cUEG5N7q"
+  "draft_media_id": "cyRgts0DS_D6YB0L1h-Eu-Vf-IXRlNLV4klrI21r4CQcwG8FyaHFkIw2cUEG5N7q",
+  "verified_images": 3,
+  "readback_body_sha256": "d0e8e4a060de0c943e74bea1f399edb32d438b70f4a18e34247f2fb802456c4a"
 }

@@ -1,0 +1,27 @@
+{
+  "profiles": {
+    "jingyun": {
+      "candidates": [
+        "为什么总把自己的事留到以后",
+        "到了中年，为什么自己的时间总要让路",
+        "女人忙了一天，别再把自己排到最后"
+      ],
+      "selected_title": "为什么总把自己的事留到以后",
+      "rationale": "聚焦成年女性长期推迟个人愿望这一现实困境，与前日女性友情及此前家庭隐形劳动选题不同；举例为概括性情境，没有虚构作者亲历；WHO自我照护指南只用于支持日常生活照护的原则，不作具体疗效断言；AI原生图真实生成并提交私有图片入库。",
+      "basis": [
+        "WHO 2026-06-03《Self-care for health and well-being》确认日常睡眠、身体活动、社会联结为自我照护相关行为",
+        "近30日静筠归档去重：未将个人愿望无限期延后的主题作为当日重复",
+        "情境均为概括性讨论，不涉及真实个案、投稿或采访"
+      ],
+      "verified_views": null,
+      "evidence": {
+        "facts_checked": true,
+        "image_rights_checked": true,
+        "source_urls": [
+          "https://www.who.int/news-room/fact-sheets/detail/self-care-health-interventions"
+        ]
+      }
+    }
+  },
+  "date": "2026-10-13"
+}

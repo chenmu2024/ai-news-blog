@@ -1,0 +1,24 @@
+{
+  "library_id": "wechat-humanizer-v3-2014-2016",
+  "version": "v3",
+  "built_on": "2026-10-13",
+  "corpus": {
+    "raw_articles": 714075,
+    "period": "2014-2016",
+    "source": "ChatGPT Project sources: articles.z01-z14 + articles.zip",
+    "usage": "internal research only"
+  },
+  "selected": {
+    "article_bank": 500,
+    "segment_bank": 2290,
+    "unique_sources": 382
+  },
+  "runtime": {
+    "fulltext_location": "ChatGPT Project/private research context",
+    "public_repo_contains_fulltext": false,
+    "dynamic_reference_count": "3-5",
+    "minimum_project_bank_references": 2,
+    "minimum_distinct_sources": 3
+  },
+  "copyright_policy": "Do not publish or redistribute the old WeChat fulltext corpus from this public repository. Store only IDs, aggregate statistics and derived writing features here."
+}

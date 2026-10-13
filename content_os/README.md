@@ -4,7 +4,7 @@
 
 > **先读执行手册**：`content_os/OPERATIONS.md` 是每日07:00生产和11:20补漏的前置约束。先对每篇未提交稿运行 `publish_readiness.py`、适用 Gate 和 `image_preflight.py`，不要等 Actions 创建草稿时才发现缺卡、无效图片或数据来源问题。成功回执不可覆盖；见到 `draft-attempts/YYYY-MM-DD.json` 必须先核验，不允许重发。
 
-本目录是多个公众号方向共用的发布前质量层。选题、Research、公众号生态扫描和正文 Humanize 由上游内容任务执行；仓库通过 `content_os/humanizer/` 固化 V3 路由、参考库契约和硬 Gate，并在真正创建草稿前核对编辑记录。旧公众号全文研究库已持久化在用户私有 Library `/微信公众号/Humanizer V4/`，不公开复制到本公开仓库。
+本目录是多个公众号方向共用的发布前质量层。选题、Research、公众号生态扫描和正文 Humanize 由上游内容任务执行；仓库通过 `content_os/humanizer/` 固化 V4 路由、参考库契约和硬 Gate，并在真正创建草稿前核对编辑记录。旧公众号全文研究库已持久化在用户私有 Library `/微信公众号/Humanizer V4/`，不公开复制到本公开仓库。
 
 ## 当前 Direction Profiles
 
@@ -20,9 +20,18 @@
 
 ## 固定全局流程
 
-候选池 → 微信公众号 Topic Intelligence → 撞题/去重 → Research / Fact Check（原典类先过 Source Gate） → Draft → **Humanizer V4 动态真人参考** → 读者阅读删改与事实阅读 → 正文绑定编辑记录 → Humanizer/启发式可读性 Gate → 配图 Gate → 用户聊天确认 → 草稿箱 → 数据复盘。
+候选池 → 微信公众号 Topic Intelligence → 撞题/去重 → Research / Fact Check（原典类先过 Source Gate） → Draft → **Humanizer V4 动态真人参考** → 读者阅读删改与事实阅读 → 正文绑定编辑记录 → Humanizer/启发式可读性 Gate → 配图 Gate → 用户聊天确认 → 草稿箱 → **V5真实表现反馈学习** → 下一轮编辑实验。
 
 微信公众号文章只作为选题、标题和中文读者兴趣信号；外部事实必须回到官方/原始来源或高可信独立来源核验。
+
+## Humanizer V5 数据学习层
+
+`content_os/feedback-learning/` 负责把真实发布表现回流到下一轮写作，但不自动改方向：
+
+- 文章反馈数据库：archive + 标题决策 + Humanizer角色 + verified metrics；
+- 标题表现分析：至少5篇账号样本、3篇特征样本才进入学习；
+- 七账号学习画像：只提供编辑建议和单变量实验，`auto_apply=false`；
+- 当前没有真实阅读数据时，系统必须保持 `insufficient_data`。
 
 ## quality_gate.py
 

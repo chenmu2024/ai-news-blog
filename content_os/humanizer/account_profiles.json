@@ -1,0 +1,67 @@
+{
+  "version": "v3",
+  "activation": "2026-10-14",
+  "reference_library": "wechat-humanizer-v3-2014-2016",
+  "defaults": {
+    "reference_min": 3,
+    "reference_max": 5,
+    "project_bank_min": 2,
+    "distinct_sources_min": 3
+  },
+  "profiles": {
+    "qiezhi": {
+      "styles": [
+        "opinion",
+        "explainer",
+        "story"
+      ],
+      "voice": "原典准确、问题具体、敢反问，不把毛选改成鸡汤"
+    },
+    "wechat": {
+      "styles": [
+        "explainer",
+        "opinion",
+        "story"
+      ],
+      "voice": "像真正做产品和算账的人，具体商业证据优先，不冒充实测"
+    },
+    "business": {
+      "styles": [
+        "explainer",
+        "life"
+      ],
+      "voice": "像替办事人提前看坑的编辑，先说谁能办、在哪办、限制是什么"
+    },
+    "zizhitongjian": {
+      "styles": [
+        "story",
+        "culture",
+        "opinion"
+      ],
+      "voice": "先让史事成立，再做判断；不虚构古人心理和现场"
+    },
+    "parenting": {
+      "styles": [
+        "explainer",
+        "life"
+      ],
+      "voice": "像把政策查清后讲给家人听，准确、温和、不制造焦虑"
+    },
+    "jingyun": {
+      "styles": [
+        "life",
+        "opinion",
+        "story"
+      ],
+      "voice": "成熟、克制、具体，保留两难，不虚构作者婚姻家庭亲历"
+    },
+    "fashion": {
+      "styles": [
+        "culture",
+        "explainer",
+        "life"
+      ],
+      "voice": "从照片可见细节出发，有审美判断，不写电商种草腔"
+    }
+  }
+}

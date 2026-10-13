@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "zizhitongjian",
   "article_path": "zizhitongjian/archive/2026-10-13.md",
   "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
@@ -68,5 +68,6 @@
       "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
       "article_path": "zizhitongjian/archive/2026-10-13.md"
     }
-  }
+  },
+  "draft_media_id": "Ew3n3AUcZRS6Fu5y58VPvadmimlOgoZ7weW65x3R2jITtGw6fzgRRB6Hsv1_qNdR"
 }

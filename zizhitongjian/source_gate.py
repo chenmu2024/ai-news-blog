@@ -8,6 +8,7 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 from html import unescape
 import requests
+from functools import lru_cache
 
 MARKER_RE = re.compile(r"<!--\s*ZZTJ_SOURCE\s*(\{[\s\S]*?\})\s*-->", re.M)
 
@@ -37,6 +38,7 @@ def normalize_text(text: str) -> str:
     text = text.replace("〇", "零")
     return text
 
+@lru_cache(maxsize=32)
 def fetch_page(url: str) -> str:
     r = requests.get(
         url,
@@ -47,6 +49,7 @@ def fetch_page(url: str) -> str:
     r.raise_for_status()
     return r.text
 
+@lru_cache(maxsize=32)
 def fetch_wikisource_text(url: str, variant: str = "zh-hant") -> str:
     parsed = urlparse(url)
     parts = [unquote(x) for x in parsed.path.split("/") if x]
@@ -78,6 +81,7 @@ def fetch_wikisource_text(url: str, variant: str = "zh-hant") -> str:
         raise RuntimeError("MediaWiki API 未返回正文")
     return normalize_text(html)
 
+@lru_cache(maxsize=32)
 def fetch_wikisource_wikitext(url: str) -> str:
     parsed = urlparse(url)
     parts = [unquote(x) for x in parsed.path.split("/") if x]
@@ -106,6 +110,40 @@ def fetch_wikisource_wikitext(url: str) -> str:
     if not raw:
         raise RuntimeError("MediaWiki API 未返回原始维基文本")
     return normalize_text(raw)
+
+
+
+def source_contains(url: str, exact_excerpt: str) -> bool:
+    """Check the exact volume, querying expensive MediaWiki API only if needed.
+
+    Previously one invocation fetched all four representations once for the
+    excerpt and *again* for every quotation; this caused HTTP 429 at the second
+    quote. Successful source responses are cached per process. We do not
+    accept a claimed quote unless it was found on the exact source volume.
+    """
+    target = normalize_text(exact_excerpt)
+    if not target:
+        return False
+    readable = False
+    failures = []
+    representations = (
+        ("rendered", lambda: normalize_text(fetch_page(url))),
+        ("zh-hant", lambda: fetch_wikisource_text(url, "zh-hant")),
+        ("zh-hans", lambda: fetch_wikisource_text(url, "zh-hans")),
+        ("wikitext", lambda: fetch_wikisource_wikitext(url)),
+    )
+    for kind, loader in representations:
+        try:
+            body = loader()
+            if body:
+                readable = True
+            if target in body:
+                return True
+        except (requests.RequestException, RuntimeError, ValueError) as exc:
+            failures.append(f"{kind}:{type(exc).__name__}")
+    if not readable:
+        raise RuntimeError("该卷全部原文表示不可访问: " + ",".join(failures))
+    return False
 
 
 def main() -> int:
@@ -177,36 +215,17 @@ def main() -> int:
     if len(excerpt) < 20:
         errors.append("original_excerpt 至少需要 20 个汉字，证明本篇实际核对过原文")
 
-    # Live verification: the recorded excerpt must actually appear on the
-    # exact Wikisource volume page. This prevents fabricated source metadata.
+    # Live verification always binds both editions to their exact volume.
+    # Download only until the matching source is found; reuse cache for quotes.
     if not errors:
         try:
-            excerpt_norm = normalize_text(excerpt)
-            page_hant = fetch_wikisource_text(primary, "zh-hant")
-            page_hans = fetch_wikisource_text(primary, "zh-hans")
-            # MediaWiki parse output can occasionally differ from the rendered
-            # volume page because of variant/rendering transforms. Keep the
-            # check strict to the exact same volume URL, but allow the rendered
-            # page as a second representation of that primary source.
-            page_rendered = normalize_text(fetch_page(primary))
-            page_wikitext = fetch_wikisource_wikitext(primary)
-            if (
-                excerpt_norm not in page_hant
-                and excerpt_norm not in page_hans
-                and excerpt_norm not in page_rendered
-                and excerpt_norm not in page_wikitext
-            ):
+            if not source_contains(primary, excerpt):
                 errors.append("original_excerpt 未在 primary_text_url 对应的维基文库卷页中找到")
         except Exception as e:
             errors.append("无法在线核验 primary_text_url: " + str(e))
-
         if fallback:
             try:
-                second_hant = fetch_wikisource_text(alternate_url, "zh-hant")
-                second_hans = fetch_wikisource_text(alternate_url, "zh-hans")
-                second_html = normalize_text(fetch_page(alternate_url))
-                alternative = normalize_text(alternate_excerpt)
-                if alternative not in second_hant and alternative not in second_hans and alternative not in second_html:
+                if not source_contains(alternate_url, alternate_excerpt):
                     errors.append("alternate_excerpt 未在四库全书本具体卷中找到")
             except Exception as e:
                 errors.append("第二版本原典在线核验失败: " + str(e))
@@ -239,17 +258,7 @@ def main() -> int:
                 errors.append(f"direct_quotes[{i}] 未在正文中找到，来源记录与正文不一致")
             if text and not any("primary_text_url" in e for e in errors):
                 try:
-                    q = normalize_text(text)
-                    quote_hant = fetch_wikisource_text(primary, "zh-hant")
-                    quote_hans = fetch_wikisource_text(primary, "zh-hans")
-                    quote_rendered = normalize_text(fetch_page(primary))
-                    quote_wikitext = fetch_wikisource_wikitext(primary)
-                    if (
-                        q not in quote_hant
-                        and q not in quote_hans
-                        and q not in quote_rendered
-                        and q not in quote_wikitext
-                    ):
+                    if not source_contains(primary, text):
                         errors.append(f"direct_quotes[{i}] 未在对应《资治通鉴》卷页原文中找到")
                 except Exception as e:
                     errors.append(f"direct_quotes[{i}] 原文在线核验失败: {e}")

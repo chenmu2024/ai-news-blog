@@ -3,10 +3,23 @@
   "profile": "zizhitongjian",
   "required_visuals": 2,
   "visual_count": 2,
-  "markdown_images": 0,
+  "markdown_images": 1,
   "html_images": 0,
-  "renderable_cards": 2,
+  "renderable_cards": 1,
   "hard_failures": [],
-  "article_sha256": "3cadf475ceb602b95d68e97c319cca218fe696c1b1ebac06edf2aff688089db4",
-  "article_path": "zizhitongjian/archive/2026-10-12.md"
+  "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
+  "article_path": "zizhitongjian/archive/2026-10-13.md",
+  "wechat_inline_readback": {
+    "draft_get_verified": true,
+    "state": "verified",
+    "profile": "zizhitongjian",
+    "draft_media_id": "Ew3n3AUcZRS6Fu5y58VPvadmimlOgoZ7weW65x3R2jITtGw6fzgRRB6Hsv1_qNdR",
+    "inline_image_count": 2,
+    "expected_inline_image_count": 2,
+    "readback_body_sha256": "478f53ea0b82e571ad5a8c909806cc208b4d240bd3eecbdd5d159e6e2e7f8339",
+    "verified_at_utc": "2026-10-13T01:23:51.374827+00:00",
+    "article_path": "zizhitongjian/archive/2026-10-13.md",
+    "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
+    "article_date": "2026-10-13"
+  }
 }

@@ -68,7 +68,7 @@
 
 <!-- AI_SCENE {"profile":"jingyun","article_date":"2026-10-13","image_url":"https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp","sha256":"f9df5293aa2fdd4948e07958ce71f311c1560fe291b93b64ada439e6ab92809d","generator":"openai_image_gen","generation_id":"2a935786-2d84-460b-9e45-f2f6dceaf1ec","rights":"ai_created_owned","synthetic":true,"scene_role":"illustration","scene_description":"虚构成年亚洲女性在温暖夜间客厅看手机，旁边放着外套、购物袋与家庭账单，表现个人消费与家庭开支之间的犹豫，不对应真实人物或个案","pretends_to_be_real_person_or_record":false} -->
 
-![夜晚客厅里的消费犹豫场景](https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp)
+![夜晚客厅里的个人消费选择场景](https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp)
 
 有人赚钱以后，天然觉得那是家庭的钱。
 

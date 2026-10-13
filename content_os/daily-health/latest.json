@@ -1,11 +1,11 @@
 {
   "date": "2026-10-13",
-  "generated_at": "2026-10-13T08:50:17.749620+08:00",
+  "generated_at": "2026-10-13T09:04:12.588557+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 1,
+  "success_count": 2,
   "expected_count": 7,
-  "draft_confirmed_count": 1,
+  "draft_confirmed_count": 2,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 1,
+    "complete_count": 2,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -72,16 +72,21 @@
         ]
       },
       "parenting": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "北京育儿补贴每孩每年3600元，怎么申领",
+        "candidates": [
+          "北京育儿补贴每孩每年3600元，怎么申领",
+          "北京三岁以下孩子怎么领育儿补贴",
+          "北京育儿补贴按年发：户籍和材料要看清"
+        ],
+        "rationale": "以北京实际生效的育儿补贴方案说明户籍、年龄、出生时间、年度折算与办理材料，区别前日武汉多孩购房补贴，避免混同生育津贴及虚构到账日期。",
+        "basis": [
+          "北京市卫健委、市财政局京卫家庭〔2025〕12号现行实施方案",
+          "中共中央办公厅、国务院办公厅育儿补贴制度实施方案",
+          "2026-10-13近30日家庭政策归档选题核对"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "jingyun": {
         "status": "complete",
@@ -239,33 +244,25 @@
     },
     "parenting": {
       "profile": "parenting",
-      "status": "incomplete",
+      "status": "success",
       "archive": "parenting/archive/2026-10-13.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38174988443",
+      "title": "北京育儿补贴每孩每年3600元，怎么申领",
+      "archive_title": "北京育儿补贴每孩每年3600元，怎么申领",
+      "workflow_run_id": "38330273682",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "wechat_inline_readback_verified": false,
-      "wechat_inline_image_count": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed",
-        "wechat_inline_image_readback_missing_or_mismatched"
-      ]
+      "wechat_inline_readback_verified": true,
+      "wechat_inline_image_count": 2,
+      "errors": []
     },
     "jingyun": {
       "profile": "jingyun",

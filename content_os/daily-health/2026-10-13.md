@@ -1,8 +1,8 @@
 # 七公众号草稿健康检查 2026-10-13
 
-仓库一致 1/7；状态：incomplete
-durable草稿确认 1/7；确认状态：incomplete
-标题3选1记录 1/7；编辑告警：True
+仓库一致 2/7；状态：incomplete
+durable草稿确认 2/7；确认状态：incomplete
+标题3选1记录 2/7；编辑告警：True
 
 | 方向 | 仓库一致 | 草稿确认模式 | 失败环节 |
 |---|---|---|---|
@@ -10,7 +10,7 @@ durable草稿确认 1/7；确认状态：incomplete
 | wechat | incomplete | unconfirmed | archive_missing_or_unreadable, archive_title_missing, receipt_date_mismatch, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed, wechat_inline_image_readback_missing_or_mismatched |
 | business | incomplete | unconfirmed | archive_missing_or_unreadable, archive_title_missing, receipt_date_mismatch, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed, wechat_inline_image_readback_missing_or_mismatched |
 | zizhitongjian | incomplete | unconfirmed | archive_missing_or_unreadable, archive_title_missing, receipt_date_mismatch, gate_not_bound_to_archive:source-gate.json, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed, wechat_inline_image_readback_missing_or_mismatched |
-| parenting | incomplete | unconfirmed | archive_missing_or_unreadable, archive_title_missing, receipt_date_mismatch, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed, wechat_inline_image_readback_missing_or_mismatched |
+| parenting | success | confirmed_journal | 无 |
 | jingyun | success | confirmed_journal | 无 |
 | fashion | incomplete | unconfirmed | archive_missing_or_unreadable, archive_title_missing, receipt_date_mismatch, gate_not_bound_to_archive:image-gate.json, gate_not_bound_to_archive:quality-gate.json, gate_not_bound_to_archive:visual-gate.json, draft_add_journal_missing_or_unconfirmed, wechat_inline_image_readback_missing_or_mismatched |
 

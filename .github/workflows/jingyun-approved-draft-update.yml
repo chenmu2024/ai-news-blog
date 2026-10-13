@@ -53,19 +53,24 @@ jobs:
           from pathlib import Path
           from PIL import Image
 
-          src = Path("content_os/asset-source/jingyun/2026-10-13-shopping-cart.b64")
-          out = Path("content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp")
-          raw = "".join(src.read_text("utf-8").split())
+          folder = Path("content_os/asset-source/jingyun")
+          parts = sorted(folder.glob("2026-10-13-shopping-cart.part*.b64"))
+          if len(parts) != 5:
+              raise SystemExit(f"Expected 5 AI scene chunks, found {len(parts)}")
+          raw = "".join("".join(p.read_text("utf-8").split()) for p in parts)
           data = base64.b64decode(raw, validate=True)
-          expected = "f9df5293aa2fdd4948e07958ce71f311c1560fe291b93b64ada439e6ab92809d"
+          expected = "2894b74e3244cee46d472640c57f899290d946f20e61050e25bd26665092a98b"
           actual = hashlib.sha256(data).hexdigest()
           if actual != expected:
               raise SystemExit(f"AI scene SHA mismatch: {actual} != {expected}")
+          out = Path("content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.jpg")
           out.parent.mkdir(parents=True, exist_ok=True)
           out.write_bytes(data)
           with Image.open(out) as im:
+              if im.size != (200, 160):
+                  raise SystemExit(f"Unexpected image size: {im.size}")
               im.verify()
-          print("[AI_SCENE] materialized verified WebP", len(data), actual)
+          print("[AI_SCENE] materialized verified JPEG", len(data), actual)
           PY
 
       - name: Publisher input contract
@@ -95,7 +100,7 @@ jobs:
           test -f "$RECEIPT"
           git config user.name "jingyun-draft-bot"
           git config user.email "jingyun-draft-bot@users.noreply.github.com"
-          git add -- "$RECEIPT" content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp
+          git add -- "$RECEIPT" content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.jpg
           git commit -m "status(jingyun): record approved draft update"
           for attempt in 1 2 3 4 5; do
             git pull --rebase origin main

@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 PROFILES={"qiezhi","wechat","business","zizhitongjian","parenting","jingyun","fashion"}
+ACTIVATION="2026-10-14"
 TEMPLATES=[
     r"首先[,，]?", r"其次[,，]?", r"最后[,，]?", r"综上所述", r"总而言之",
     r"值得注意的是", r"与此同时", r"总体来看", r"从某种程度上(?:说|看)",
@@ -70,7 +71,11 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--profile",required=True,choices=sorted(PROFILES))
     ap.add_argument("--article",required=True,type=Path)
+    ap.add_argument("--date")
     args=ap.parse_args()
+    if args.date and args.date < ACTIVATION:
+        print(json.dumps({"status":"NOT_REQUIRED","profile":args.profile,"date":args.date},ensure_ascii=False,indent=2))
+        return 0
     result=evaluate(args.profile,args.article.read_text("utf-8"))
     print(json.dumps(result,ensure_ascii=False,indent=2))
     return int(result["status"]=="FAIL")

@@ -1,0 +1,84 @@
+name: Jingyun Approved Draft Update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content_os/approved-revisions/jingyun/*.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: jingyun-approved-draft-update
+  cancel-in-progress: false
+
+jobs:
+  update-existing-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve approved revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          ARTICLE_PATH="$(find content_os/approved-revisions/jingyun -maxdepth 1 -type f -name '*.md' | sort | tail -n 1)"
+          test -n "$ARTICLE_PATH"
+          STEM="$(basename "$ARTICLE_PATH" .md)"
+          ORIGINAL_DRAFT_DATE="${STEM:0:10}"
+          echo "ARTICLE_PATH=$ARTICLE_PATH" >> "$GITHUB_ENV"
+          echo "ORIGINAL_DRAFT_DATE=$ORIGINAL_DRAFT_DATE" >> "$GITHUB_ENV"
+          echo "[ARTICLE_PATH] $ARTICLE_PATH"
+          echo "[ORIGINAL_DRAFT_DATE] $ORIGINAL_DRAFT_DATE"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r jingyun/requirements.txt
+
+      - name: Publisher input contract
+        run: python content_os/publish_readiness.py --profile jingyun --article "$ARTICLE_PATH" --date "$ORIGINAL_DRAFT_DATE"
+
+      - name: Content quality gate
+        run: python content_os/quality_gate.py --profile jingyun --article "$ARTICLE_PATH"
+
+      - name: Image preflight
+        run: python content_os/image_preflight.py --profile jingyun --article "$ARTICLE_PATH"
+
+      - name: Update confirmed draft in place and read back
+        env:
+          WECHAT_APP_ID: ${{ secrets.JINGYUN_WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.JINGYUN_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: "静筠"
+          ARTICLE_PATH: ${{ env.ARTICLE_PATH }}
+          ORIGINAL_DRAFT_DATE: ${{ env.ORIGINAL_DRAFT_DATE }}
+        run: python jingyun/update_existing_draft.py
+
+      - name: Persist verified revision receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          RECEIPT="jingyun/status/revisions/$(basename "$ARTICLE_PATH" .md).json"
+          test -f "$RECEIPT"
+          git config user.name "jingyun-draft-bot"
+          git config user.email "jingyun-draft-bot@users.noreply.github.com"
+          git add -- "$RECEIPT"
+          git commit -m "status(jingyun): record approved draft update"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          exit 1

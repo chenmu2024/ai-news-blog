@@ -1,12 +1,22 @@
 {
-  "version": "v3",
+  "version": "v4",
   "activation": "2026-10-14",
-  "reference_library": "wechat-humanizer-v3-2014-2016",
+  "reference_library": "wechat-humanizer-v4-2014-2016",
+  "private_library_path": "/微信公众号/Humanizer V4/reference_segment_bank_2290.jsonl",
   "defaults": {
     "reference_min": 3,
     "reference_max": 5,
     "project_bank_min": 2,
-    "distinct_sources_min": 3
+    "distinct_sources_min": 3,
+    "roles": [
+      "opening",
+      "structure",
+      "detail",
+      "stance",
+      "ending"
+    ],
+    "distinct_roles_min": 4,
+    "pollution_threshold_chars": 24
   },
   "profiles": {
     "qiezhi": {
@@ -15,6 +25,11 @@
         "explainer",
         "story"
       ],
+      "weights": {
+        "opinion": 0.42,
+        "explainer": 0.36,
+        "story": 0.22
+      },
       "voice": "原典准确、问题具体、敢反问，不把毛选改成鸡汤"
     },
     "wechat": {
@@ -23,6 +38,11 @@
         "opinion",
         "story"
       ],
+      "weights": {
+        "explainer": 0.42,
+        "opinion": 0.33,
+        "story": 0.25
+      },
       "voice": "像真正做产品和算账的人，具体商业证据优先，不冒充实测"
     },
     "business": {
@@ -30,6 +50,10 @@
         "explainer",
         "life"
       ],
+      "weights": {
+        "explainer": 0.68,
+        "life": 0.32
+      },
       "voice": "像替办事人提前看坑的编辑，先说谁能办、在哪办、限制是什么"
     },
     "zizhitongjian": {
@@ -38,6 +62,11 @@
         "culture",
         "opinion"
       ],
+      "weights": {
+        "story": 0.5,
+        "culture": 0.3,
+        "opinion": 0.2
+      },
       "voice": "先让史事成立，再做判断；不虚构古人心理和现场"
     },
     "parenting": {
@@ -45,6 +74,10 @@
         "explainer",
         "life"
       ],
+      "weights": {
+        "explainer": 0.62,
+        "life": 0.38
+      },
       "voice": "像把政策查清后讲给家人听，准确、温和、不制造焦虑"
     },
     "jingyun": {
@@ -53,6 +86,11 @@
         "opinion",
         "story"
       ],
+      "weights": {
+        "life": 0.45,
+        "opinion": 0.3,
+        "story": 0.25
+      },
       "voice": "成熟、克制、具体，保留两难，不虚构作者婚姻家庭亲历"
     },
     "fashion": {
@@ -61,6 +99,11 @@
         "explainer",
         "life"
       ],
+      "weights": {
+        "culture": 0.45,
+        "explainer": 0.4,
+        "life": 0.15
+      },
       "voice": "从照片可见细节出发，有审美判断，不写电商种草腔"
     }
   }

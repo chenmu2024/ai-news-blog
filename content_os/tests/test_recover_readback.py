@@ -84,6 +84,26 @@ class ReadbackRecoveryTests(unittest.TestCase):
         self.assertEqual(result["result"], "skip_already_readback_verified")
         fake.assert_not_called()
 
+    def test_title_mismatch_records_safe_evidence_with_no_draft_write(self):
+        def fake(method, url, **kwargs):
+            response = Mock()
+            response.json.return_value = (
+                {"access_token": "example-token"} if url.endswith("/token")
+                else {"news_item": [{"title": "微信不同标题",
+                                     "content": '<img src="' + self.expected + '" />'}]})
+            return response
+        transport = Mock(side_effect=fake)
+        outcome = m.recover_one(self.root, self.profile, self.day,
+                                transport=transport, credentials=("app-id", "app-secret"))
+        self.assertEqual(outcome["result"], "readback_failed")
+        path = self.root / self.profile / "status" / "draft-readback-diagnostic" / (self.day + ".json")
+        evidence = json.loads(path.read_text("utf-8"))
+        self.assertEqual(evidence["expected_title"], "测试标题")
+        self.assertEqual(evidence["observed_title"], "微信不同标题")
+        self.assertTrue(evidence["no_write_operation"])
+        self.assertNotIn("app-secret", path.read_text("utf-8"))
+        self.assertTrue(all(not x.args[1].endswith("/draft/add") for x in transport.call_args_list))
+
     def test_network_failure_is_reported_without_leaking_token_or_secret(self):
         bad = Mock(side_effect=RuntimeError("SHOULD_NOT_LEAK_TEST_SECRET"))
         result = m.recover_one(self.root, self.profile, self.day,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T11:05:14.972096+08:00",
+  "generated_at": "2026-10-13T10:04:39.262191+08:00",
   "source": "manual_verified_only",
   "records": 0,
   "profiles": {
@@ -7,43 +7,50 @@
       "records": 0,
       "numeric_records": 0,
       "avg_views": null,
-      "features": {}
+      "features": {},
+      "qualitative_feedback": []
     },
     "fashion": {
       "records": 0,
       "numeric_records": 0,
       "avg_views": null,
-      "features": {}
+      "features": {},
+      "qualitative_feedback": []
     },
     "jingyun": {
       "records": 0,
       "numeric_records": 0,
       "avg_views": null,
-      "features": {}
+      "features": {},
+      "qualitative_feedback": []
     },
     "parenting": {
       "records": 0,
       "numeric_records": 0,
       "avg_views": null,
-      "features": {}
+      "features": {},
+      "qualitative_feedback": []
     },
     "qiezhi": {
       "records": 0,
       "numeric_records": 0,
       "avg_views": null,
-      "features": {}
+      "features": {},
+      "qualitative_feedback": []
     },
     "wechat": {
       "records": 0,
       "numeric_records": 0,
       "avg_views": null,
-      "features": {}
+      "features": {},
+      "qualitative_feedback": []
     },
     "zizhitongjian": {
       "records": 0,
       "numeric_records": 0,
       "avg_views": null,
-      "features": {}
+      "features": {},
+      "qualitative_feedback": []
     }
   },
   "policy": "No missing views are inferred; qualitative records never become numeric metrics."

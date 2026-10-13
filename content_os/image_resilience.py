@@ -40,7 +40,7 @@ ALL_PROFILES = SCENE_IMAGE_PROFILES | STRICT_IMAGE_PROFILES
 MAX_BYTES = 14 * 1024 * 1024
 MAX_PIXELS = 28_000_000
 Image.MAX_IMAGE_PIXELS = MAX_PIXELS
-UA = "Mozilla/5.0 (compatible; ContentOSImagePreflight/1.0)"
+UA = "ContentOSWeChatDraft/1.0 (https://github.com/chenmu2024/ai-news-blog; support: https://github.com/chenmu2024/ai-news-blog/issues)"
 
 
 def public_https(url: str) -> bool:
@@ -188,8 +188,9 @@ def _get_image(url: str, session=None) -> tuple[bytes, str, str]:
                 time.sleep(attempt + 1)
                 continue
             break
+    status = getattr(getattr(last, "response", None), "status_code", None)
     raise RuntimeError("Image source unavailable: " + url + " (" +
-                       type(last).__name__ + ")") from last
+                       type(last).__name__ + ("/HTTP" + str(status) if status else "") + ")") from last
 
 
 def save_prepared_cache(markdown: str, profile: str,

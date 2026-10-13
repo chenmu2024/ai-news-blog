@@ -1,0 +1,65 @@
+{
+  "state": "attempted",
+  "profile": "parenting",
+  "article_path": "parenting/archive/2026-10-13.md",
+  "article_sha256": "c3791f0c22d0e649c456a344c2c46c565d412ab60c55d0be84018ee8ab6af834",
+  "title": "北京育儿补贴每孩每年3600元，怎么申领",
+  "run_id": "38330273682",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/38fm2PhQcLiciaS4DAkxyRnpVBLlQCfiaBZ1Z5xPzQb4jlFDVbSNv0ClrwUT4qN7pjAhs3ibnGOuwJqBU3x0ibgzaBl47LeEgrX6GicTzflHPVDj8/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/38fm2PhQcLibyjiaXlI1tzIyaG3PzOgCdtcBK1JV2tLmMRNLib0as2TDib47ppv4cRqFcu7JeXW9BFGBo2TnTPLLhcMrSAMDDIrMXwZ7M3kFskA/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "parenting",
+      "profile_name": "民生家庭政策与生育福利指南",
+      "score": 0,
+      "body_chars": 2469,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 137,
+      "stance_signals": 5,
+      "paragraph_regularity": {
+        "paragraphs": 22,
+        "cv": 0.934
+      },
+      "sentence_repetition": {
+        "sentences": 50,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.154,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "editorial_title_guard": {
+        "status": "PASS",
+        "reasons": [],
+        "compared": 9,
+        "prior_six_titles": [
+          "武汉二孩买房补贴6万：外地人怎么申请",
+          "孩子被同学移出群聊，家长该怎么找老师",
+          "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
+          "孩子早上说不想去学校，先别急着问“为什么又闹”",
+          "孩子作业拖到深夜，很多家长第一步就问错了",
+          "手机一收就翻脸，很多家庭真正缺的不是“限时”"
+        ],
+        "template_family": null
+      },
+      "article_sha256": "c3791f0c22d0e649c456a344c2c46c565d412ab60c55d0be84018ee8ab6af834",
+      "article_path": "parenting/archive/2026-10-13.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "parenting",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 1,
+      "hard_failures": [],
+      "article_sha256": "c3791f0c22d0e649c456a344c2c46c565d412ab60c55d0be84018ee8ab6af834",
+      "article_path": "parenting/archive/2026-10-13.md"
+    }
+  }
+}

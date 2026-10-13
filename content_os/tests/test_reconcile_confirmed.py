@@ -59,6 +59,35 @@ class ConfirmedRecoveryTests(unittest.TestCase):
         self.assertEqual(recovery.reconcile(self.root, self.profile, self.day)["result"],
                          "already_confirmed")
 
+    def test_recovery_keeps_wechat_image_readback_in_visual_gate(self):
+        self.day = "2026-10-13"
+        self.archive = self.base / "archive" / (self.day + ".md")
+        self.archive.write_text("# 本日瑞幸故事\n\n真实原创文章。", "utf-8")
+        self.digest = hashlib.sha256(self.archive.read_bytes()).hexdigest()
+        rel = f"{self.profile}/archive/{self.day}.md"
+        self.intent.update({
+            "article_path": rel, "article_sha256": self.digest,
+            "passed_gates": {
+                key: {"status": "PASS", "article_path": rel,
+                      "article_sha256": self.digest}
+                for key in ("quality-gate.json", "visual-gate.json")
+            },
+        })
+        self.write_intent()
+        proof = {
+            "draft_get_verified": True,
+            "draft_media_id": self.intent["draft_media_id"],
+            "article_path": rel, "article_sha256": self.digest,
+            "article_date": self.day, "inline_image_count": 2,
+        }
+        out = self.status / "draft-readback" / (self.day + ".json")
+        out.parent.mkdir()
+        out.write_text(json.dumps(proof), "utf-8")
+        result = recovery.reconcile(self.root, self.profile, self.day)
+        self.assertEqual(result["result"], "recovered_confirmed_without_wechat_call")
+        gate = json.loads((self.status / "visual-gate.json").read_text("utf-8"))
+        self.assertEqual(gate["wechat_inline_readback"], proof)
+
     def test_attempted_is_never_recovered(self):
         self.intent["state"] = "attempted"
         self.write_intent()

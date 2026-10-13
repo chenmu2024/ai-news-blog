@@ -57,7 +57,21 @@ def scan(api, params):
     detail = {}
     for resource in ("/draft", "/freepublish"):
         path = resource + "/batchget"
-        peek = api(path, params=params, json={"offset": 0, "count": 1, "no_content": 1})
+        try:
+            peek = api(path, params=params, json={"offset": 0, "count": 1, "no_content": 1})
+        except RuntimeError as exc:
+            # Some official-account types return 48001: no freepublish API
+            # permission. Never misreport it as a zero published count.
+            # The user explicitly approved one new *draft*. The supported
+            # draft collection MUST still be exhaustively checked.
+            if resource == "/freepublish" and "error code 48001" in str(exc):
+                detail[resource] = {
+                    "status": "unknown_no_api_permission",
+                    "checked": False,
+                    "authorization": "user_explicitly_approved_one_new_draft",
+                }
+                continue
+            raise
         n = peek.get("total_count")
         if not isinstance(n, int) or n < 0 or n > MAX_SCAN:
             raise RuntimeError(resource + " collection size invalid or scan cannot be exhaustive")

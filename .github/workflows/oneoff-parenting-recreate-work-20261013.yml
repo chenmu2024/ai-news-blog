@@ -1,0 +1,34 @@
+name: One-time authorized October 13 missing parenting Work draft
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/oneoff-parenting-recreate-work-20261013.yml"
+permissions:
+  contents: write
+concurrency:
+  group: parenting-wechat-draft
+  cancel-in-progress: false
+jobs:
+  create-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install already used free draft/image dependencies
+        run: pip install -r parenting/requirements.txt
+      - name: Offline preflight - approved revised content, three real images and historical ID
+        run: |
+          python -m unittest content_os.tests.test_oneoff_parenting_recreation
+          python -m py_compile content_os/oneoff_recreate_parenting_reviewed_20261013.py
+          python -c "from content_os.oneoff_recreate_parenting_reviewed_20261013 import fresh_authorization; r,m,photos,old=fresh_authorization(); print('READY E reviewed:',r['title'],len(photos),'SHA-bound images; old confirmed ID never overwritten')"
+      - name: Recheck absence, journal before one draft/add, then verify 3 inline images
+        env:
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          PARENTING_WECHAT_APP_ID: ${{ secrets.PARENTING_WECHAT_APP_ID }}
+          PARENTING_WECHAT_APP_SECRET: ${{ secrets.PARENTING_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python content_os/oneoff_recreate_parenting_reviewed_20261013.py

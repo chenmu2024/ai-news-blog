@@ -73,7 +73,20 @@ def reconcile(root: Path, profile: str, day: str) -> dict:
     today.write_bytes(raw)
     for name in gate_names:
         path = base / "status" / name
-        path.write_text(json.dumps(snapshot[name], ensure_ascii=False, indent=2) + "\n", "utf-8")
+        record = dict(snapshot[name])
+        if name == "visual-gate.json":
+            # Preserve independently verified draft/get proof if restoring a
+            # confirmed journal would otherwise overwrite the Visual Gate.
+            proof = _read(base / "status" / "draft-readback" / (day + ".json"))
+            if (proof.get("draft_get_verified") is True and
+                proof.get("draft_media_id") == journal["draft_media_id"] and
+                proof.get("article_sha256") == digest and
+                proof.get("article_path") == expected_path and
+                proof.get("article_date") == day and
+                (proof.get("inline_image_count") or 0) >=
+                    (5 if profile == "fashion" else 1)):
+                record["wechat_inline_readback"] = proof
+        path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", "utf-8")
     status = {
         "status": "success",
         "title": title,

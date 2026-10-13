@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "jingyun",
   "article_path": "jingyun/archive/2026-10-13.md",
   "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
@@ -47,5 +47,6 @@
       "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
       "article_path": "jingyun/archive/2026-10-13.md"
     }
-  }
+  },
+  "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsFBKrfE629EcNw-We5HGOOX0Tpf3J-ObnQrmJLLSoDCM"
 }

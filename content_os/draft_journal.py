@@ -100,7 +100,23 @@ def gate_snapshot(profile: str, article: Path) -> dict | None:
     return checked
 
 
-def reserve(profile: str, article: Path, title: str) -> None:
+def reserve(profile: str, article: Path, title: str, public_body_html: str | None = None) -> None:
+    """Record the public WeChat image URLs before its non-idempotent draft/add.
+
+    The already-uploaded image URLs let a later health audit verify the very
+    same saved draft using only draft/get. No image upload or second add needed.
+    """
+    from content_os.public_draft_contract import image_sources
+    from urllib.parse import urlparse
+    urls = image_sources(public_body_html or "")
+    if article.stem >= "2026-10-13":
+        minimum = 5 if profile == "fashion" else 1
+        if len(urls) < minimum:
+            raise RuntimeError("Cannot reserve new draft without required inline WeChat images")
+        for image_url in urls:
+            parsed = urlparse(image_url)
+            if parsed.scheme != "https" or parsed.hostname != "mmbiz.qpic.cn":
+                raise RuntimeError("Non-WeChat image URL in prepared draft body")
     token, repo, run_id = _environment()
     path = journal_path(profile, article)
     existing, _ = _get(token, repo, path)
@@ -114,6 +130,7 @@ def reserve(profile: str, article: Path, title: str) -> None:
         "article_sha256": hashlib.sha256(article.read_bytes()).hexdigest(),
         "title": title,
         "run_id": run_id,
+        "expected_inline_urls": urls,
     }
     passed_gates = gate_snapshot(profile, article)
     if article.stem >= "2026-10-11" and passed_gates is None:

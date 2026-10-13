@@ -1,0 +1,27 @@
+name: One-off October 13 D E read-only draft identity inspection
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content_os/oneoff_draft_identity_check_20261013.py"
+      - ".github/workflows/oneoff-draft-identity-20261013.yml"
+permissions:
+  contents: read
+jobs:
+  read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "requests[socks]>=2.32,<3"
+      - name: Fetch D E existing drafts, count and title matches (no writes)
+        env:
+          TONGJIAN_WECHAT_APP_ID: ${{ secrets.TONGJIAN_WECHAT_APP_ID }}
+          TONGJIAN_WECHAT_APP_SECRET: ${{ secrets.TONGJIAN_WECHAT_APP_SECRET }}
+          PARENTING_WECHAT_APP_ID: ${{ secrets.PARENTING_WECHAT_APP_ID }}
+          PARENTING_WECHAT_APP_SECRET: ${{ secrets.PARENTING_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python content_os/oneoff_draft_identity_check_20261013.py

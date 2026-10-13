@@ -4,7 +4,6 @@ Checks existing drafts AND published-article index. Never creates or sends.
 import json, os
 from pathlib import Path
 import requests
-from content_os.public_draft_contract import image_sources
 
 BASE="https://api.weixin.qq.com/cgi-bin"
 def main():

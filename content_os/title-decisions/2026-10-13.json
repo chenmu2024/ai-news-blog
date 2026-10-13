@@ -92,6 +92,31 @@
           "https://elevenlabs.io/voice-cloning"
         ]
       }
+    },
+    "qiezhi": {
+      "candidates": [
+        "毛选《实践论》：别把知道误当成做到",
+        "读《实践论》：为什么懂了还做不好",
+        "毛选里的梨子比喻，真正讲的是什么"
+      ],
+      "selected_title": "毛选《实践论》：别把知道误当成做到",
+      "rationale": "围绕毛选第一卷《实践论》的直接经验和间接经验作原典解读，引用关键句与人民日报理论版核对，区别昨日《矛盾论》的主要矛盾主题，配知识卡与真实AI写实场景。",
+      "basis": [
+        "《毛泽东选集》第一卷《实践论》文本原句及上下文",
+        "人民日报2023-08-15《提升实践能力》对原句引文核对",
+        "人民2020-08-17《坚持和运用马克思主义实践观》",
+        "最近30日毛选栏目归档去重"
+      ],
+      "verified_views": null,
+      "evidence": {
+        "facts_checked": true,
+        "image_rights_checked": true,
+        "source_urls": [
+          "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm",
+          "https://theory.people.com.cn/n1/2023/0815/c40531-40056698.html",
+          "https://theory.people.com.cn/n1/2020/0817/c40531-31824408.html"
+        ]
+      }
     }
   },
   "date": "2026-10-13"

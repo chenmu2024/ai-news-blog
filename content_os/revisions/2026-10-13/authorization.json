@@ -12,5 +12,6 @@
     "fashion"
   ],
   "manifest_sha256": "d88a64ffcc06cc3403aed46be77176b55d891a5441a6150b277e366a146de755",
-  "review_sha256": "aee1b859fe0e9e71cfde0d8e5c939c28b942ef136e399e80d14d437f8559dab0"
+  "review_sha256": "aee1b859fe0e9e71cfde0d8e5c939c28b942ef136e399e80d14d437f8559dab0",
+  "retry_after_stable_field_fix": "2026-10-13 11:20 Asia/Shanghai; original draft update only, no draft/add; D/E blocked unless original ID and content pass strict guards"
 }

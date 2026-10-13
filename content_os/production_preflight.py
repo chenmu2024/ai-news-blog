@@ -88,6 +88,11 @@ def inspect(root: Path, day: str | None = None) -> dict:
         "date": day, "timezone": "Asia/Shanghai",
         "generated_at": datetime.now(TZ).isoformat(),
         "editorial_brief": "content_os/PRODUCTION_BRIEF.md",
+        "delivery_goal": (
+            "每号交付完整好稿与实际看过、贴合正文的图片，并确认送达微信公众号草稿箱。"
+            "逐号完成研究、写作、配图、删改、送稿与回读。"
+            "记录和测试不能代替成品；必须先阅读PRODUCTION_BRIEF.md的成品验收要求。"
+        ),
         "editorial_feedback": "content_os/editorial-feedback.json",
         "editorial_review_required_from": "2026-10-14",
         "profiles": results,

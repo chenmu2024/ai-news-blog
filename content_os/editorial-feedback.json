@@ -6,7 +6,7 @@
       "active": true,
       "profiles": ["qiezhi", "wechat", "business", "zizhitongjian", "parenting", "jingyun", "fashion"],
       "source": "User feedback in Codex, 2026-10-13",
-      "user_feedback": "都不满意。最重要的是整个系统要全部优化好，而不是写今天的文章。",
+      "user_feedback": "都不满意。最重要的是整个系统要全部优化好，而不是写今天的文章。其实我的要求就是让你写好每一篇文章然后发送到微信公众号，内容和图片和重要，你要把系统弄好",
       "editorial_diagnosis": "10月13日七稿普遍解释多、具体发现少；泛化例子、反复提醒和相似论说口吻削弱阅读体验。此为编辑诊断，不冒充用户逐段评价。",
       "required_response": "先选证据充分的具体问题，逐号落实PRODUCTION_BRIEF的内容价值；记录读者审稿的具体删改及最终摘句，不以Quality Gate PASS代替编辑判断。"
     }

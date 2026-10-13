@@ -15,7 +15,10 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 from urllib.parse import urlparse
 
-from content_os.public_draft_contract import PROFILES, verify_and_record
+try:
+    from content_os.public_draft_contract import PROFILES, verify_and_record
+except ModuleNotFoundError:
+    from public_draft_contract import PROFILES, verify_and_record
 
 ROOT = Path(__file__).resolve().parents[1]
 API = "https://api.weixin.qq.com/cgi-bin"

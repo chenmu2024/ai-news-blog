@@ -98,9 +98,16 @@ def recover_one(root: Path, profile: str, day: str, transport=None,
         transport = requests.request
     proxy = os.getenv("PROXY_URL", "").strip()
     proxies = {"http": proxy, "https": proxy} if proxy else None
+    observed_title = None
     def request(method, url, **kwargs):
+        nonlocal observed_title
         result = transport(method, url, proxies=proxies, **kwargs)
         result.raise_for_status()
+        if url.endswith("/draft/get"):
+            payload = result.json()
+            items = payload.get("news_item") or []
+            if items and isinstance(items[0], dict):
+                observed_title = items[0].get("title")
         return result
     try:
         res = request("GET", API + "/token", params={
@@ -120,7 +127,20 @@ def recover_one(root: Path, profile: str, day: str, transport=None,
         return {"profile": profile, "result": "recovered_verified_existing_draft",
                 "image_count": len(state["urls"])}
     except Exception as exc:
-        # Never log request URLs: /token includes the app secret in parameters.
+        # Document a *read-only* title mismatch for reconciliation; never retry
+        # the already confirmed draft/add, never log access tokens or app secrets.
+        if observed_title is not None and "title mismatch" in str(exc):
+            diagnostic = {
+                "date": day, "profile": profile, "state": "confirmed_readback_title_mismatch",
+                "expected_title": state["title"],
+                "observed_title": str(observed_title)[:128],
+                "draft_media_id": state["journal"]["draft_media_id"],
+                "article_sha256": state["journal"]["article_sha256"],
+                "no_write_operation": True,
+            }
+            path = root / profile / "status" / "draft-readback-diagnostic" / (day + ".json")
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(diagnostic, ensure_ascii=False, indent=2) + "\n", "utf-8")
         return {"profile": profile, "result": "readback_failed",
                 "error_class": type(exc).__name__}
 

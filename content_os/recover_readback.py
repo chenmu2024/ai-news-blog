@@ -78,7 +78,7 @@ def candidate(root: Path, profile: str, day: str) -> tuple[dict | None, str]:
     urls = journal.get("expected_inline_urls")
     min_images = 5 if profile == "fashion" else 1
     if (not isinstance(urls, list) or len(urls) < min_images or
-        not all(isinstance(u, str) and urlparse(u).scheme == "https" and
+        not all(isinstance(u, str) and urlparse(u).scheme in ("http", "https") and
                 urlparse(u).hostname == "mmbiz.qpic.cn" for u in urls)):
         return None, "blocked_missing_uploaded_image_fingerprints"
     return {"journal": journal, "archive": archive, "title": title, "urls": urls}, "eligible"

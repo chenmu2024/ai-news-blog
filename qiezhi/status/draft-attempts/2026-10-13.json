@@ -1,0 +1,51 @@
+{
+  "state": "attempted",
+  "profile": "qiezhi",
+  "article_path": "qiezhi/archive/2026-10-13.md",
+  "article_sha256": "86e8d9ac6b74504c8bdcb03458e65f840263715a7fa2205704032e444065a61c",
+  "title": "毛选《实践论》：别把知道误当成做到",
+  "run_id": "38330664265",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/fsKSNOEtRvElp031BicdYGNkEFjE7jiaKyNfuS5ciao8aJfKvEWbJhXzAc6tICpdN8icPk0ibIsy5oYJ0WAx7GUJydiafaDRibOSV0XibtkXtOtiaUPI/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/fsKSNOEtRvFpmthUp5JqyoHS4o4W6uzZgiavOdgacEHjKejOozl8FDEq8vu0khL3yP4EKxdbclKnShFmBhN2cicib8XWGFIJo79JYiaPIcG3icd8/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "qiezhi",
+      "profile_name": "且知｜毛选/思想方法",
+      "score": 0,
+      "body_chars": 2626,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 16,
+      "stance_signals": 2,
+      "paragraph_regularity": {
+        "paragraphs": 24,
+        "cv": 0.933
+      },
+      "sentence_repetition": {
+        "sentences": 57,
+        "repeated_starts": 1,
+        "ratio": 0.018
+      },
+      "very_short_paragraph_ratio": 0.103,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "86e8d9ac6b74504c8bdcb03458e65f840263715a7fa2205704032e444065a61c",
+      "article_path": "qiezhi/archive/2026-10-13.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "qiezhi",
+      "required_visuals": 2,
+      "visual_count": 3,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 2,
+      "hard_failures": [],
+      "article_sha256": "86e8d9ac6b74504c8bdcb03458e65f840263715a7fa2205704032e444065a61c",
+      "article_path": "qiezhi/archive/2026-10-13.md"
+    }
+  }
+}

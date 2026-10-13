@@ -1,0 +1,51 @@
+{
+  "state": "attempted",
+  "profile": "wechat",
+  "article_path": "wechat/archive/2026-10-13.md",
+  "article_sha256": "365b2ba1c024788499aee9361c39c2618ca3015c467d395e422d1ebf9fc3833d",
+  "title": "一家AI语音公司的订阅生意，值得一人公司学什么",
+  "run_id": "38330513850",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/To6vHlqnF5rBcmib7rR8JKflGu1ic9nJCkCx0OGAshvSfviaicmE9Gc32IJIFoRiaw20orADhwc3hYNJ4Sw3t9D1LAA0mKolqFewYL8ibPy2ooOSc/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/To6vHlqnF5qOnxic5l1WqDOoLc8rJT7lWkdWnsjzJchRv6wEHadya8uIbXJxqCia0mloa70SlIOjutKy84jIexCibHicgXujx4sMC9Bz3XQvLps/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "ai_business",
+      "profile_name": "陈慕｜AI 一人公司实战",
+      "score": 6,
+      "body_chars": 2569,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 11,
+      "stance_signals": 2,
+      "paragraph_regularity": {
+        "paragraphs": 21,
+        "cv": 0.887
+      },
+      "sentence_repetition": {
+        "sentences": 52,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.16,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "365b2ba1c024788499aee9361c39c2618ca3015c467d395e422d1ebf9fc3833d",
+      "article_path": "wechat/archive/2026-10-13.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "ai_business",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 1,
+      "hard_failures": [],
+      "article_sha256": "365b2ba1c024788499aee9361c39c2618ca3015c467d395e422d1ebf9fc3833d",
+      "article_path": "wechat/archive/2026-10-13.md"
+    }
+  }
+}

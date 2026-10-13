@@ -3,10 +3,23 @@
   "profile": "business_story",
   "required_visuals": 2,
   "visual_count": 2,
-  "markdown_images": 0,
+  "markdown_images": 1,
   "html_images": 0,
-  "renderable_cards": 2,
+  "renderable_cards": 1,
   "hard_failures": [],
-  "article_sha256": "435ae9c0b017bde16380e3a951f2a4d5b31c8bbad3cb4b53da6a8d2802c9e09b",
-  "article_path": "business/archive/2026-10-12.md"
+  "article_sha256": "db741e0ea648490058984b7674a4d84df80bfa19e976b5f08db2db3d17f09b89",
+  "article_path": "business/archive/2026-10-13.md",
+  "wechat_inline_readback": {
+    "draft_get_verified": true,
+    "state": "verified",
+    "profile": "business",
+    "draft_media_id": "NG_wEUXyotkqJkaF2RZgwJzkBsPr7x5AjN9u3-eFQ6-TiE0sO1XPQIH3_-KtHvRR",
+    "inline_image_count": 2,
+    "expected_inline_image_count": 2,
+    "readback_body_sha256": "c869a6a24c264e82563f421ba274dc498ae5432993c515bc4ed62b54126d4d8a",
+    "verified_at_utc": "2026-10-13T01:05:10.895303+00:00",
+    "article_path": "business/archive/2026-10-13.md",
+    "article_sha256": "db741e0ea648490058984b7674a4d84df80bfa19e976b5f08db2db3d17f09b89",
+    "article_date": "2026-10-13"
+  }
 }

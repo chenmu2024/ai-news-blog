@@ -2,38 +2,38 @@
   "status": "PASS",
   "profile": "business_story",
   "profile_name": "民生政策与福利指南｜办事攻略",
-  "score": 20,
-  "body_chars": 1985,
-  "template_hits": 6,
+  "score": 0,
+  "body_chars": 2424,
+  "template_hits": 0,
   "internal_hits": 0,
-  "fact_signals": 148,
-  "stance_signals": 5,
+  "fact_signals": 81,
+  "stance_signals": 2,
   "paragraph_regularity": {
-    "paragraphs": 20,
-    "cv": 0.319
+    "paragraphs": 21,
+    "cv": 0.925
   },
   "sentence_repetition": {
-    "sentences": 54,
-    "repeated_starts": 1,
-    "ratio": 0.019
+    "sentences": 50,
+    "repeated_starts": 3,
+    "ratio": 0.061
   },
-  "very_short_paragraph_ratio": 0.2,
+  "very_short_paragraph_ratio": 0.16,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
   "editorial_title_guard": {
     "status": "PASS",
     "reasons": [],
-    "compared": 8,
+    "compared": 9,
     "prior_six_titles": [
+      "上海失业金每月2340元：谁能领、怎么办",
       "海底捞海外半年收入涨12%，开店反而很克制",
       "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
       "必胜客被27亿美元拆卖：百胜为什么不再自己养这个老品牌",
       "Boots以89亿美元再易主：一家老药房，为什么又被当成零售宝贝？",
-      "Uber花23亿美元买下ezCater，真正想抢的不是午饭",
-      "Nike越裁员，越暴露真正的问题不在成本"
+      "Uber花23亿美元买下ezCater，真正想抢的不是午饭"
     ],
     "template_family": null
   },
-  "article_sha256": "435ae9c0b017bde16380e3a951f2a4d5b31c8bbad3cb4b53da6a8d2802c9e09b",
-  "article_path": "business/archive/2026-10-12.md"
+  "article_sha256": "db741e0ea648490058984b7674a4d84df80bfa19e976b5f08db2db3d17f09b89",
+  "article_path": "business/archive/2026-10-13.md"
 }

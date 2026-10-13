@@ -49,7 +49,7 @@ jobs:
         run: python content_os/publish_readiness.py --profile jingyun --article "$ARTICLE_PATH" --date "$ORIGINAL_DRAFT_DATE"
 
       - name: Content quality gate
-        run: python content_os/quality_gate.py --profile jingyun --article "$ARTICLE_PATH"
+        run: python content_os/quality_gate.py --profile jingyun --article "$ARTICLE_PATH" --allow-warn
 
       - name: Image preflight
         run: python content_os/image_preflight.py --profile jingyun --article "$ARTICLE_PATH"

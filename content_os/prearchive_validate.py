@@ -165,6 +165,8 @@ def validate(root: Path, profile: str, day: str, article: Path,
         commands = [
             ("humanizer", [sys.executable, str(root/"content_os/humanizer/humanizer_gate.py"),
                            "--profile", profile, "--article", str(staged), "--date", day]),
+            ("humanizer_pollution", [sys.executable, str(root/"content_os/humanizer/pollution_gate.py"),
+                                     "--profile", profile, "--date", day, "--root", str(root)]),
             ("quality", [sys.executable, str(root/"content_os/quality_gate.py"),
                          "--profile", quality_profile, "--article", str(staged)]),
             ("visual", [sys.executable, str(root/"content_os/visual_gate.py"),

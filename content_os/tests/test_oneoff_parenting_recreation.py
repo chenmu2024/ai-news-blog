@@ -72,7 +72,7 @@ class OneOffParentingTests(unittest.TestCase):
             self.assertNotIn(forbidden, source)
         # The one single draft/add is gated by a committed remote receipt.
         self.assertLess(source.index("persist(github_token, repo, NEW_PATH, journal)"),
-                        source.index('created = api("/draft/add"')))
+                        source.index('created = api("/draft/add"'))
 
 
 if __name__ == "__main__":

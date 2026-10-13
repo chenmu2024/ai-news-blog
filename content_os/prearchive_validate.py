@@ -32,6 +32,41 @@ QUALITY_NAMES = {"wechat": "ai_business", "business": "business_story"}
 def _title(text: str) -> str:
     return next((line[2:].strip() for line in text.splitlines() if line.startswith("# ")), "")
 
+def fashion_evergreen_star_repeat(archive_dir: Path, day: str, title: str) -> bool:
+    """Reject repeated same-celebrity evergreen five-look collections in 14 days."""
+    aliases = {
+        "jisoo": ("jisoo", "金智秀"),
+        "jennie": ("jennie", "金珍妮"),
+        "rose": ("rosé", "rose", "朴彩英"),
+        "lisa": ("lisa", "lalisa", "丽莎"),
+        "sana": ("sana", "凑崎纱夏", "湊﨑紗夏"),
+        "宋慧乔": ("宋慧乔", "song hyekyo"),
+        "iu": ("李知恩", "iu", "lee ji-eun"),
+    }
+    def people(v):
+        t=v.casefold()
+        return {person for person,forms in aliases.items()
+                if any(form.casefold() in t for form in forms)}
+    def is_roundup(v):
+        return (bool(re.search(r"(?:[4-9]|四|五|六|七|八|九)[套张组次]", v))
+                and bool(re.search(r"造型|穿搭|旧照|照片|亮相|经典|同款",v)))
+    if not is_roundup(title):
+        return False
+    stars=people(title)
+    if not stars:
+        return False
+    for old in archive_dir.glob("????-??-??.md"):
+        try:
+            days=(date.fromisoformat(day)-date.fromisoformat(old.stem)).days
+        except ValueError:
+            continue
+        if 0 < days <= 14:
+            old_title=_title(old.read_text("utf-8"))
+            if is_roundup(old_title) and stars.intersection(people(old_title)):
+                return True
+    return False
+
+
 def static_check(root: Path, profile: str, day: str, text: str) -> dict:
     if profile not in PROFILES:
         raise ValueError("Unknown profile")
@@ -79,6 +114,8 @@ def static_check(root: Path, profile: str, day: str, text: str) -> dict:
                 errors.append("30day_exact_duplicate_title")
                 break
     if profile == "fashion":
+        if fashion_evergreen_star_repeat(archive.parent, day, _title(text)):
+            errors.append("fashion: repeated celebrity outfit roundup within 14 days")
         from fashion.image_gate import celebrity_quota_error, SOURCE_RE
         m = SOURCE_RE.search(text)
         if m:

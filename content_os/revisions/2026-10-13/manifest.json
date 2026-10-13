@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-13",
+  "delivery": "local_illustrated_preview",
+  "wechat_changed": false,
+  "articles": [
+    {
+      "profile": "qiezhi",
+      "account": "且知",
+      "title": "毛选：读懂《实践论》，别只记住吃梨子",
+      "title_characters": 18,
+      "chinese_characters": 1237,
+      "images": [
+        [
+          "读懂实践论",
+          "assets/qiezhi-cover.png"
+        ],
+        [
+          "梨子与书桌",
+          "assets/qiezhi-scene.png"
+        ],
+        [
+          "从反馈到判断",
+          "assets/qiezhi-framework.png"
+        ],
+        [
+          "一次结果留下适用条件",
+          "assets/qiezhi-evidence.png"
+        ],
+        [
+          "一次修改的记录",
+          "assets/qiezhi-action.png"
+        ]
+      ],
+      "markdown_sha256": "b67025b1163e3442b9e4bb6e18317622a855dbb4f52eb8ad6feb1c48974a3ea1"
+    },
+    {
+      "profile": "wechat",
+      "account": "AI一人公司",
+      "title": "一家AI公司月费6美元，客户改稿谁买单",
+      "title_characters": 19,
+      "chinese_characters": 1174,
+      "images": [
+        [
+          "配音制作工作台",
+          "assets/wechat-scene.png"
+        ],
+        [
+          "配音额度示例",
+          "assets/wechat-budget.png"
+        ]
+      ],
+      "markdown_sha256": "588df34e8f462aa9220acb29bf7838deb7d4e523f015901fde6bff4aec977d54"
+    },
+    {
+      "profile": "business",
+      "account": "职工民生政策",
+      "title": "给外省父母用医保余额，别只绑亲情账户",
+      "title_characters": 18,
+      "chinese_characters": 1195,
+      "images": [
+        [
+          "家人陪同在药房办理",
+          "assets/business-scene.png"
+        ],
+        [
+          "三种功能的区别",
+          "assets/business-accounts.png"
+        ],
+        [
+          "跨省共济办理顺序",
+          "assets/business-steps.png"
+        ]
+      ],
+      "markdown_sha256": "16101f5fc1f914579c2bf9b98c873d4895157210ee823b0e7820caa9aa6b8fe3"
+    },
+    {
+      "profile": "zizhitongjian",
+      "account": "资治通鉴",
+      "title": "商鞅兑现了五十金，却容不下一句改口",
+      "title_characters": 17,
+      "chinese_characters": 1193,
+      "images": [
+        [
+          "古城门与立木",
+          "assets/zizhitongjian-scene.png"
+        ],
+        [
+          "徙木之后的事件次序",
+          "assets/zizhitongjian-sequence.png"
+        ]
+      ],
+      "markdown_sha256": "76c053e943d7fb7fbaf74c121e3ffc1a2ca71641d774049682a5bc62d895adbe"
+    },
+    {
+      "profile": "parenting",
+      "account": "家庭育儿政策",
+      "title": "北京育儿补贴漏领了？今年还有补申请通道",
+      "title_characters": 19,
+      "chinese_characters": 1226,
+      "images": [
+        [
+          "家庭整理申请材料",
+          "assets/parenting-scene.png"
+        ],
+        [
+          "申请年份与截止时间",
+          "assets/parenting-deadlines.png"
+        ],
+        [
+          "金额与发放方式",
+          "assets/parenting-amounts.png"
+        ]
+      ],
+      "markdown_sha256": "b0d594b40c1d4aff11840f97987f15da9eff232591e8f016767a57a0c8d9e55e"
+    },
+    {
+      "profile": "jingyun",
+      "account": "静筠日记",
+      "title": "那双准备出门的鞋，又放回了鞋柜",
+      "title_characters": 15,
+      "chinese_characters": 1038,
+      "images": [
+        [
+          "椅背上的外套与准备出门的鞋",
+          "assets/jingyun-scene.png"
+        ],
+        [
+          "秋日下午的散步",
+          "assets/jingyun-walk.png"
+        ]
+      ],
+      "markdown_sha256": "1e68d0749aabcb9bbab14b676f70e58fc28fecb6625d5e9edd4b65200c0449a3"
+    },
+    {
+      "profile": "fashion",
+      "account": "女装穿搭",
+      "title": "Jisoo五张旧照：领口比“同款”更值得抄",
+      "title_characters": 21,
+      "chinese_characters": 1374,
+      "images": [
+        [
+          "Jisoo黑西装与白衬衫造型",
+          "assets/fashion-1.jpg"
+        ],
+        [
+          "Jisoo黑外套与灰色内搭造型",
+          "assets/fashion-2.jpg"
+        ],
+        [
+          "Jisoo粉色条纹针织与黑色包袋造型",
+          "assets/fashion-3.jpg"
+        ],
+        [
+          "Jisoo牛仔外套机场造型",
+          "assets/fashion-4.jpg"
+        ],
+        [
+          "Jisoo紫色外套与荷叶领舞台造型",
+          "assets/fashion-5.jpg"
+        ]
+      ],
+      "markdown_sha256": "da5bf3229b2ee7d7a328865bd3c9e56b99c3e1d48d7db70de786b8d6a3bbedf8"
+    }
+  ],
+  "generated_images": [
+    {
+      "path": "assets/qiezhi-scene.png",
+      "tool": "image_gen.imagegen",
+      "artifact_filename": "exec-30f55f27-4525-4a30-a399-04227e43a0cf.png",
+      "sha256": "eb8a1a584398b9d4b6aee7e9a37df595be3af975e1e18fd1aa51e1a0f2dcffca",
+      "synthetic": true,
+      "visually_reviewed": true,
+      "note": "Tool did not expose model version or a separate generation id; actual returned artifact filename retained."
+    },
+    {
+      "path": "assets/wechat-scene.png",
+      "tool": "image_gen.imagegen",
+      "artifact_filename": "exec-7b8d5c29-450c-4fb9-8276-96bc0abff3ce.png",
+      "sha256": "34d1afe3f5d07de3d96fae64247e81e99b575bb7b7fb6a8489838ed88d1c7260",
+      "synthetic": true,
+      "visually_reviewed": true,
+      "note": "Tool did not expose model version or a separate generation id; actual returned artifact filename retained."
+    },
+    {
+      "path": "assets/business-scene.png",
+      "tool": "image_gen.imagegen",
+      "artifact_filename": "exec-5df713f6-7f87-4c82-b62b-e29604c9ae07.png",
+      "sha256": "8292c4f28b904b211137ea2bbd9605e1eca8533c018921b0dd21d8b56f101923",
+      "synthetic": true,
+      "visually_reviewed": true,
+      "note": "Tool did not expose model version or a separate generation id; actual returned artifact filename retained."
+    },
+    {
+      "path": "assets/zizhitongjian-scene.png",
+      "tool": "image_gen.imagegen",
+      "artifact_filename": "exec-95cf3985-c580-4850-9eb0-a2c2cea101a4.png",
+      "sha256": "7d9bca78926ac576722eafdec00a9140eedb8a9010ec6f86742821e1e29f6b33",
+      "synthetic": true,
+      "visually_reviewed": true,
+      "note": "Tool did not expose model version or a separate generation id; actual returned artifact filename retained."
+    },
+    {
+      "path": "assets/parenting-scene.png",
+      "tool": "image_gen.imagegen",
+      "artifact_filename": "exec-1a5e0573-3d2d-4566-bf66-145917e0a485.png",
+      "sha256": "ce356754a1b81a744d392d71642ba641c400b659a3ecea719ae74794297b23fd",
+      "synthetic": true,
+      "visually_reviewed": true,
+      "note": "Tool did not expose model version or a separate generation id; actual returned artifact filename retained."
+    },
+    {
+      "path": "assets/jingyun-scene.png",
+      "tool": "image_gen.imagegen",
+      "artifact_filename": "exec-cb88852c-7925-442f-80aa-9ee163ea1058.png",
+      "sha256": "4d3b2d4153090f82a33585b135a12fb57db772639eb51775b3c558f9d5044890",
+      "synthetic": true,
+      "visually_reviewed": true,
+      "note": "Tool did not expose model version or a separate generation id; actual returned artifact filename retained."
+    },
+    {
+      "path": "assets/jingyun-walk.png",
+      "tool": "image_gen.imagegen",
+      "artifact_filename": "exec-10cda5a2-b019-42ad-b0b5-17a0ecb64cb2.png",
+      "sha256": "7c3c454080be93e26f8045e6e560b67a5b48bc3f81a575c2f1bec0de763fc141",
+      "synthetic": true,
+      "visually_reviewed": true,
+      "note": "Tool did not expose model version or a separate generation id; actual returned artifact filename retained."
+    }
+  ]
+}

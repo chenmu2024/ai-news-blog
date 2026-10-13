@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-13",
+  "authorization": "用户明确要求：替换原草稿",
+  "operation": "in_place_draft_update",
+  "profiles": [
+    "qiezhi",
+    "wechat",
+    "business",
+    "zizhitongjian",
+    "parenting",
+    "jingyun",
+    "fashion"
+  ],
+  "manifest_sha256": "acd2f7971214e1aec8f12968e651f2a30721a286d8b0249aa9945af3bae3ee2d",
+  "review_sha256": "2351b534741ea4c45b4145985d87510c8b331d4fd451d04c79bca7d207f8e7e5"
+}

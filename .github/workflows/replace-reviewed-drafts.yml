@@ -1,0 +1,46 @@
+name: Replace seven reviewed October 13 drafts in place
+
+on:
+  push:
+    branches: [main]
+    paths: ["content_os/revisions/2026-10-13/authorization.json"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - {profile: qiezhi, id: QIEZHI_WECHAT_APP_ID, secret: QIEZHI_WECHAT_APP_SECRET}
+          - {profile: wechat, id: WECHAT_APP_ID, secret: WECHAT_APP_SECRET}
+          - {profile: business, id: BUSINESS_WECHAT_APP_ID, secret: BUSINESS_WECHAT_APP_SECRET}
+          - {profile: zizhitongjian, id: TONGJIAN_WECHAT_APP_ID, secret: TONGJIAN_WECHAT_APP_SECRET}
+          - {profile: parenting, id: PARENTING_WECHAT_APP_ID, secret: PARENTING_WECHAT_APP_SECRET}
+          - {profile: jingyun, id: JINGYUN_WECHAT_APP_ID, secret: JINGYUN_WECHAT_APP_SECRET}
+          - {profile: fashion, id: FASHION_WECHAT_APP_ID, secret: FASHION_WECHAT_APP_SECRET}
+    concurrency:
+      group: ${{ matrix.profile }}-wechat-draft
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install existing publisher dependencies
+        run: pip install -r fashion/requirements.txt
+      - name: Validate replacement safeguards
+        run: python -m unittest content_os.tests.test_replace_reviewed_drafts
+      - name: Replace and verify original draft ID
+        env:
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          WECHAT_APP_ID: ${{ secrets[matrix.id] }}
+          WECHAT_APP_SECRET: ${{ secrets[matrix.secret] }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python content_os/replace_reviewed_drafts.py ${{ matrix.profile }}

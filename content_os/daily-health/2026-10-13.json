@@ -1,6 +1,6 @@
 {
   "date": "2026-10-13",
-  "generated_at": "2026-10-13T10:03:56.901150+08:00",
+  "generated_at": "2026-10-13T17:21:23.241138+08:00",
   "timezone": "Asia/Shanghai",
   "status": "complete",
   "success_count": 7,
@@ -326,8 +326,8 @@
       "errors": []
     }
   },
-  "topic_scan_date": null,
-  "topic_scan_available": false,
+  "topic_scan_date": "2026-10-13",
+  "topic_scan_available": true,
   "topic_popularity_verified_count": {
     "qiezhi": 0,
     "wechat": 0,

@@ -15,4 +15,3 @@ durable草稿确认 7/7；确认状态：confirmed
 | fashion | success | confirmed_journal | 无 |
 
 注：仓库 success 不等于 durable 草稿确认；2026-10-11 起 success 必须同时满足 confirmed journal + media_id。仍非微信公众号后台视觉验收。
-选题扫描数据缺失；此状态不得阻断合格文章写作。

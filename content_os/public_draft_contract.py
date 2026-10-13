@@ -162,6 +162,25 @@ def verify_saved_payload(profile: str, title: str, media_id: str,
     }
 
 
+def decode_wechat_response(response) -> dict:
+    """Interpret WeChat JSON as UTF-8, ignoring misleading HTTP charset headers.
+
+    Requests.Response.json() can decode its UTF-8 JSON payload as ISO-8859-1
+    when the upstream Content-Type carries the wrong charset. This converts
+    Chinese titles/body into mojibake and must never pass production checks.
+    """
+    raw = getattr(response, "content", None)
+    if isinstance(raw, bytes) and raw.lstrip().startswith((b"{", b"[")):
+        value = json.loads(raw.decode("utf-8-sig"))
+    else:
+        # Test transports and alternate HTTP clients may implement json()
+        # without exposing raw bytes; leave strict payload verification intact.
+        value = response.json()
+    if not isinstance(value, dict):
+        raise RuntimeError("WeChat draft/get returned invalid JSON object")
+    return value
+
+
 def verify_and_record(profile: str, article: Path, title: str, media_id: str,
                       body_html: str, token: str, request_fn, api_root: str) -> dict:
     """Read back only; persist proof for the existing status synchronization step."""
@@ -172,7 +191,7 @@ def verify_and_record(profile: str, article: Path, title: str, media_id: str,
         headers={"Content-Type": "application/json; charset=utf-8"},
         timeout=60,
     )
-    result = verify_saved_payload(profile, title, media_id, body_html, response.json())
+    result = verify_saved_payload(profile, title, media_id, body_html, decode_wechat_response(response))
     article = Path(article)
     result["article_path"] = article.resolve().relative_to(Path.cwd().resolve()).as_posix()
     result["article_sha256"] = hashlib.sha256(article.read_bytes()).hexdigest()

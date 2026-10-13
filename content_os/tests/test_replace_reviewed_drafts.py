@@ -1,5 +1,5 @@
 import unittest
-from content_os.replace_reviewed_drafts import identical, prepared, render, PROFILES
+from content_os.replace_reviewed_drafts import identical, unchanged_draft, prepared, render, PROFILES
 
 
 class ReplacementTest(unittest.TestCase):
@@ -25,6 +25,19 @@ class ReplacementTest(unittest.TestCase):
         changed = dict(self.article, content=self.body.replace('mmbiz.qpic.cn', 'example.com'))
         self.assertFalse(identical(changed, '标题', self.body))
         self.assertFalse(identical(self.article, '标题', self.body, 'wrong-cover'))
+
+    def test_original_readback_ignores_only_volatile_api_fields(self):
+        original = dict(self.article, author="编辑", update_time=111, read_count=2)
+        reread = dict(original, update_time=222, read_count=4)
+        self.assertTrue(unchanged_draft(original, reread))
+        for changed in (
+            dict(reread, content=self.body.replace('正文', '已修改')),
+            dict(reread, title='另一标题'),
+            dict(reread, thumb_media_id='other-cover'),
+            dict(reread, author='其他作者'),
+        ):
+            with self.subTest(changed=changed):
+                self.assertFalse(unchanged_draft(original, changed))
 
     def test_approved_package(self):
         count = 0

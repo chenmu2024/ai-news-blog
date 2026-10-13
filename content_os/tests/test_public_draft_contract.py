@@ -6,6 +6,7 @@ from unittest.mock import Mock, patch
 
 from content_os.public_draft_contract import (
     image_sources, strip_figure_captions, verify_saved_payload, verify_and_record,
+    decode_wechat_response,
 )
 
 def body(count=1):
@@ -86,6 +87,21 @@ class PublicBodyTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             verify_saved_payload("fashion", "标题", "mid", html,
                                  {"news_item": [{"title": "标题", "content": repeated}]})
+
+    def test_wechat_wrong_http_charset_must_not_corrupt_chinese_title(self):
+        import json
+        title = "为什么总把自己的事留到以后"
+        original = {"news_item": [{"title": title, "content": body()}]}
+        response = Mock()
+        response.content = json.dumps(original, ensure_ascii=False).encode("utf-8")
+        response.json.return_value = {"news_item": [{
+            "title": response.content.decode("latin-1"),
+            "content": body(),
+        }]}
+        payload = decode_wechat_response(response)
+        self.assertEqual(payload["news_item"][0]["title"], title)
+        receipt = verify_saved_payload("jingyun", title, "existing-mid", body(), payload)
+        self.assertTrue(receipt["draft_get_verified"])
 
     def test_verify_calls_only_draft_get(self):
         with tempfile.TemporaryDirectory() as root:

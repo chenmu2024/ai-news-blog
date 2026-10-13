@@ -13,6 +13,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -48,7 +49,7 @@ def relevant_duplicate(article: dict) -> bool:
     title = str(article.get("title") or "")
     body = text(str(article.get("content") or ""))
     return (title in (OLD_TITLE, NEW_TITLE) or
-            ("北京育儿补贴" in title and ("首次申请" in body or "补申请" in body)))
+            (bool(re.search(r"北京(?:市)?育儿补贴", title)) and ("首次申请" in body or "补申请" in body)))
 
 
 def scan(api, params):

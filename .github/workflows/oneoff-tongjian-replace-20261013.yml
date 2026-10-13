@@ -1,0 +1,33 @@
+name: One-off verified October 13 Tongjian in-place draft replacement
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/oneoff-tongjian-replace-20261013.yml"
+permissions:
+  contents: write
+concurrency:
+  group: zizhitongjian-wechat-draft
+  cancel-in-progress: false
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install existing content publisher dependencies
+        run: pip install -r fashion/requirements.txt
+      - name: Validate syntax, approved Work images and original archive identity
+        run: |
+          python -m py_compile content_os/oneoff_replace_verified_tongjian_20261013.py
+          python -c "from content_os.replace_reviewed_drafts import prepared; r,m,im,j=prepared('zizhitongjian'); print('D verified package:',r['title'],len(im),'images',j['state'])"
+      - name: Backup actual draft and update SAME media ID only if identity matches
+        env:
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          TONGJIAN_WECHAT_APP_ID: ${{ secrets.TONGJIAN_WECHAT_APP_ID }}
+          TONGJIAN_WECHAT_APP_SECRET: ${{ secrets.TONGJIAN_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python content_os/oneoff_replace_verified_tongjian_20261013.py

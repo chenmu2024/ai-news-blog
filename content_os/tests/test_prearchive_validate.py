@@ -5,7 +5,7 @@ import sys
 import tempfile
 import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from prearchive_validate import static_check
+from prearchive_validate import static_check, fashion_evergreen_star_repeat
 
 class CandidateValidationTests(unittest.TestCase):
     def setUp(self):
@@ -41,6 +41,18 @@ class CandidateValidationTests(unittest.TestCase):
         md = '# 中年女性重新找工作\n![Scene](https://images.example.com/a.jpg)'
         self.assertIn("30day_exact_duplicate_title",
                       static_check(self.root,"jingyun",self.day,md)["errors"])
+
+    def test_fashion_same_star_repeat_blocks_changed_title(self):
+        folder = self.root / "fashion/archive"
+        folder.mkdir(parents=True)
+        (folder/"2026-10-11.md").write_text(
+            "# Jisoo五套经典造型，普通人最该学哪一招\n",encoding="utf-8")
+        self.assertTrue(fashion_evergreen_star_repeat(
+            folder,"2026-10-13","Jisoo五张旧照：领口比同款更值得抄"))
+        self.assertFalse(fashion_evergreen_star_repeat(
+            folder,"2026-10-13","Sana五次公开亮相，哪些衣服值得照搬"))
+        self.assertFalse(fashion_evergreen_star_repeat(
+            folder,"2026-10-13","Jisoo今日发布新的具体活动通告"))
 
     def test_fashion_missing_rights_is_blocked(self):
         manifest = {"topic_type":"celebrity","subject":"Jisoo",

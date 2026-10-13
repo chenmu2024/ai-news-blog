@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-13",
+  "profile": "fashion",
+  "reason": "The October 11 Jisoo five-outfit theme was already used; October 13 Jisoo draft was duplicate.",
+  "operation": "second_in_place_update_same_draft_media_id",
+  "title": "Sana五次公开亮相，哪些衣服值得照搬",
+  "photos": [
+    {
+      "id": "sana-2025-airport",
+      "filename": "Sana Minatozaki 湊﨑 紗夏 20250118 01.jpg",
+      "creator": "K-POPIT 케이팝잇",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "date": "2025-01-18",
+      "context": "2025年1月仁川机场",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Sana_Minatozaki_%E6%B9%8A%EF%A8%91_%E7%B4%97%E5%A4%8F_20250118_01.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sana_Minatozaki_%E6%B9%8A%EF%A8%91_%E7%B4%97%E5%A4%8F_20250118_01.jpg"
+    },
+    {
+      "id": "sana-2024-prada",
+      "filename": "20240809 Sana Minatozaki 湊﨑 紗夏 for PRADA 2024 06.jpg",
+      "creator": "K-POPIT 케이팝잇",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "date": "2024-08-09",
+      "context": "2024年8月PRADA活动",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:20240809_Sana_Minatozaki_%E6%B9%8A%EF%A8%91_%E7%B4%97%E5%A4%8F_for_PRADA_2024_06.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20240809_Sana_Minatozaki_%E6%B9%8A%EF%A8%91_%E7%B4%97%E5%A4%8F_for_PRADA_2024_06.jpg"
+    },
+    {
+      "id": "sana-2026-polo",
+      "filename": "Sana Minatozaki in April 2026.png",
+      "creator": "TV10",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "date": "2026-04-21",
+      "context": "2026年4月Polo Ralph Lauren相关公开活动",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Sana_Minatozaki_in_April_2026.png",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sana_Minatozaki_in_April_2026.png"
+    },
+    {
+      "id": "sana-2026-jo-malone",
+      "filename": "081226 Sana at Jo Malone London photocall 01.png",
+      "creator": "K-POPIT 케이팝잇",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "date": "2026-08-12",
+      "context": "2026年8月Jo Malone London公开活动",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:081226_Sana_at_Jo_Malone_London_photocall_01.png",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/081226_Sana_at_Jo_Malone_London_photocall_01.png"
+    },
+    {
+      "id": "sana-2022-fans",
+      "filename": "Sana Minatozaki 2022.jpg",
+      "creator": "mang2goon",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "date": "2022-09-04",
+      "context": "2022年9月粉丝活动",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Sana_Minatozaki_2022.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sana_Minatozaki_2022.jpg"
+    }
+  ],
+  "article_path": "content_os/revisions/2026-10-13/fashion-fresh-sana/fashion.md",
+  "previous_revision_receipt": "fashion/status/revisions/2026-10-13.json",
+  "no_new_draft": true
+}

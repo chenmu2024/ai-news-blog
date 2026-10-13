@@ -1,6 +1,6 @@
 {
-  "library_id": "wechat-humanizer-v3-2014-2016",
-  "version": "v3",
+  "library_id": "wechat-humanizer-v4-2014-2016",
+  "version": "v4",
   "built_on": "2026-10-13",
   "corpus": {
     "raw_articles": 714075,
@@ -13,12 +13,34 @@
     "segment_bank": 2290,
     "unique_sources": 382
   },
-  "runtime": {
-    "fulltext_location": "ChatGPT Project/private research context",
-    "public_repo_contains_fulltext": false,
+  "retrieval": {
+    "dimensions": [
+      "topic_similarity",
+      "style_fit",
+      "account_fit",
+      "structure_fit"
+    ],
+    "roles": [
+      "opening",
+      "structure",
+      "detail",
+      "stance",
+      "ending"
+    ],
     "dynamic_reference_count": "3-5",
     "minimum_project_bank_references": 2,
-    "minimum_distinct_sources": 3
+    "minimum_distinct_sources": 3,
+    "minimum_distinct_roles": 4
   },
-  "copyright_policy": "Do not publish or redistribute the old WeChat fulltext corpus from this public repository. Store only IDs, aggregate statistics and derived writing features here."
+  "pollution_check": {
+    "engine": "private_exact_overlap_v1",
+    "threshold_chars": 24,
+    "rule": "block when any selected reference has >=24 normalized consecutive exact characters in final copy"
+  },
+  "runtime": {
+    "private_library_path": "/微信公众号/Humanizer V4/reference_segment_bank_2290.jsonl",
+    "article_bank_path": "/微信公众号/Humanizer V4/reference_article_bank_500.jsonl",
+    "public_repo_contains_fulltext": false
+  },
+  "copyright_policy": "Do not publish or redistribute the old WeChat fulltext corpus from this public repository. Keep fulltext in the user's private Library and store only rules, aggregate statistics and audit evidence here."
 }

@@ -115,7 +115,7 @@ def reserve(profile: str, article: Path, title: str, public_body_html: str | Non
             raise RuntimeError("Cannot reserve new draft without required inline WeChat images")
         for image_url in urls:
             parsed = urlparse(image_url)
-            if parsed.scheme != "https" or parsed.hostname != "mmbiz.qpic.cn":
+            if parsed.scheme not in ("http", "https") or parsed.hostname != "mmbiz.qpic.cn":
                 raise RuntimeError("Non-WeChat image URL in prepared draft body")
     token, repo, run_id = _environment()
     path = journal_path(profile, article)

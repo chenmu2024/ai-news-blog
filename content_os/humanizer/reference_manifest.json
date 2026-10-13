@@ -11,13 +11,14 @@
   "selected": {
     "article_bank": 500,
     "segment_bank": 2290,
-    "unique_sources": 382
+    "unique_sources": 382,
+    "trusted_core_sources": 29
   },
   "retrieval": {
     "dimensions": [
       "topic_similarity",
       "style_fit",
-      "account_fit",
+      "source_trust",
       "structure_fit"
     ],
     "roles": [
@@ -27,10 +28,18 @@
       "stance",
       "ending"
     ],
+    "weights": {
+      "topic": 0.3,
+      "style": 0.15,
+      "source_trust": 0.2,
+      "segment_quality": 0.1,
+      "role_fit": 0.25
+    },
     "dynamic_reference_count": "3-5",
     "minimum_project_bank_references": 2,
     "minimum_distinct_sources": 3,
-    "minimum_distinct_roles": 4
+    "minimum_distinct_roles": 4,
+    "source_policy": "trusted_core first; then gold/whitelist; fallback only when necessary"
   },
   "pollution_check": {
     "engine": "private_exact_overlap_v1",
@@ -40,6 +49,7 @@
   "runtime": {
     "private_library_path": "/微信公众号/Humanizer V4/reference_segment_bank_2290.jsonl",
     "article_bank_path": "/微信公众号/Humanizer V4/reference_article_bank_500.jsonl",
+    "package_path": "/微信公众号/Humanizer V4/portable_humanizer_v4.zip",
     "public_repo_contains_fulltext": false
   },
   "copyright_policy": "Do not publish or redistribute the old WeChat fulltext corpus from this public repository. Keep fulltext in the user's private Library and store only rules, aggregate statistics and audit evidence here."

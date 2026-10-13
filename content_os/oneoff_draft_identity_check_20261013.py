@@ -2,7 +2,8 @@
 May call /token, /draft/get, /draft/count, /draft/batchget only.
 Never writes or creates any WeChat draft.
 """
-import hashlib, json, os
+import hashlib, json, os, sys
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[1]))
 from pathlib import Path
 import requests
 

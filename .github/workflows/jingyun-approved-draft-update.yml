@@ -45,6 +45,29 @@ jobs:
       - name: Install dependencies
         run: pip install -r jingyun/requirements.txt
 
+      - name: Materialize approved AI scene
+        shell: bash
+        run: |
+          python - <<'PY'
+          import base64, hashlib
+          from pathlib import Path
+          from PIL import Image
+
+          src = Path("content_os/asset-source/jingyun/2026-10-13-shopping-cart.b64")
+          out = Path("content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp")
+          raw = "".join(src.read_text("utf-8").split())
+          data = base64.b64decode(raw, validate=True)
+          expected = "f9df5293aa2fdd4948e07958ce71f311c1560fe291b93b64ada439e6ab92809d"
+          actual = hashlib.sha256(data).hexdigest()
+          if actual != expected:
+              raise SystemExit(f"AI scene SHA mismatch: {actual} != {expected}")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_bytes(data)
+          with Image.open(out) as im:
+              im.verify()
+          print("[AI_SCENE] materialized verified WebP", len(data), actual)
+          PY
+
       - name: Publisher input contract
         run: python content_os/publish_readiness.py --profile jingyun --article "$ARTICLE_PATH" --date "$ORIGINAL_DRAFT_DATE"
 

@@ -27,7 +27,7 @@ source discovery -> fallback decision -> date verification -> event duplicate re
 - F jingyun: avoid invented personal narrative and inflammatory stereotypes.
 - G fashion: celebrity-led; at least five distinct confirmed accessible authentic photos with provenance and reuse rights.
 - Every account must pass its existing visual/image constraints; no invented source popularity, reads, rankings or permissions.
-- Automation schedule remains 08:20 production and 11:20 missing-only review; never auto mass-send.
+- Automation schedule remains 07:00 production and 11:20 missing-only review; never auto mass-send.
 
 ## Release validation
 `python -m unittest content_os.test_editorial_intelligence`

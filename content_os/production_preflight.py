@@ -87,6 +87,9 @@ def inspect(root: Path, day: str | None = None) -> dict:
     return {
         "date": day, "timezone": "Asia/Shanghai",
         "generated_at": datetime.now(TZ).isoformat(),
+        "editorial_brief": "content_os/PRODUCTION_BRIEF.md",
+        "editorial_feedback": "content_os/editorial-feedback.json",
+        "editorial_review_required_from": "2026-10-14",
         "profiles": results,
         "input_freshness": _freshness(root, day),
         "confirmed_count": sum(v["action"] == "skip_confirmed" for v in results.values()),

@@ -1,6 +1,8 @@
 # 公众号 Content OS
 
-> **先读执行手册**：`content_os/OPERATIONS.md` 是每日08:20生产和11:20补漏的前置约束。先对每篇未提交稿运行 `publish_readiness.py`、适用 Gate 和 `image_preflight.py`，不要等 Actions 创建草稿时才发现缺卡、无效图片或数据来源问题。成功回执不可覆盖；见到 `draft-attempts/YYYY-MM-DD.json` 必须先核验，不允许重发。
+> **每次新稿统一入口**：[PRODUCTION_BRIEF.md](PRODUCTION_BRIEF.md)。2026-10-14起，必须提交与最终正文绑定的编辑记录；旧固定字数和模板建议以该简报为准。
+
+> **先读执行手册**：`content_os/OPERATIONS.md` 是每日07:00生产和11:20补漏的前置约束。先对每篇未提交稿运行 `publish_readiness.py`、适用 Gate 和 `image_preflight.py`，不要等 Actions 创建草稿时才发现缺卡、无效图片或数据来源问题。成功回执不可覆盖；见到 `draft-attempts/YYYY-MM-DD.json` 必须先核验，不允许重发。
 
 本目录是多个公众号方向共用的发布前质量层。选题、Research、公众号生态扫描和 Humanize 由上游内容任务执行；仓库负责在真正创建草稿前再做一次可审计的硬 Gate。
 
@@ -8,9 +10,9 @@
 
 - `ai_business`：陈慕｜AI 一人公司实战
 - `qiezhi`：且知｜毛选/思想方法
-- `business_story`：生意显微镜｜商业故事
+- `business_story`：职工民生｜社保医保公积金及劳动者待遇（保留兼容profile名）
 - `zizhitongjian`：资治通鉴｜原典·人性·决策
-- `parenting`：陈慕｜育儿与家庭教育
+- `parenting`：家庭政策｜育儿补贴、生育待遇、儿童医保与托育
 - `jingyun`：静筠日记｜女性生活
 - `fashion`：女装穿搭｜Image-first（明星穿搭 × 日韩穿搭 × 普通人复刻）
 
@@ -18,7 +20,7 @@
 
 ## 固定全局流程
 
-候选池 → 微信公众号 Topic Intelligence → 撞题/去重 → Research / Fact Check（原典类先过 Source Gate） → Draft → Humanize → AI味/可读性 Gate → 配图 Gate → 草稿箱 → 数据复盘。
+候选池 → 微信公众号 Topic Intelligence → 撞题/去重 → Research / Fact Check（原典类先过 Source Gate） → Draft → 读者阅读删改与事实阅读 → 正文绑定编辑记录 → 启发式可读性 Gate → 配图 Gate → 草稿箱 → 数据复盘。
 
 微信公众号文章只作为选题、标题和中文读者兴趣信号；外部事实必须回到官方/原始来源或高可信独立来源核验。
 
@@ -41,7 +43,7 @@
 - 31–40：WARN
 - >40：FAIL
 
-GitHub Actions 中 WARN 也会阻止发布，要求上游先完成 Humanize 再重新归档，避免“带着警告也照样发”。
+GitHub Actions 中 WARN 也会阻止发布，要求上游先完成实际删改与编辑复审 再重新归档，避免“带着警告也照样发”。
 
 ## 发布边界
 
@@ -58,7 +60,7 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成 Humanize 再�
 
 - 七个方向互相独立，`cancel-in-progress=false`；每次发布前先用 `content_os/draft_preflight.py` 核对 SHA-256 成功回执，重复运行不应重复创建相同草稿。
 - `content_os/daily_healthcheck.py` 扫描当天七份归档、状态、标题、SHA、today 文件及 Gate，生成 `content_os/daily-health`。10:15/13:15 北京时间 GitHub Actions 自动核查并尝试恢复已存在但未成功的归档。
-- 上游 08:20 ChatGPT 写作任务仍负责研究和生成文章；GitHub 不存在免费的独立原创文章生成器。选题热度不足不得阻断写作，但不能伪报热门阅读数据。
+- 上游 07:00 ChatGPT 写作任务仍负责研究和生成文章；GitHub 不存在免费的独立原创文章生成器。选题热度不足不得阻断写作，但不能伪报热门阅读数据。
 - 只有当日7/7回执与文章完全一致才能宣称仓库侧全部成功。不会调用微信正式发布接口；微信后台视觉验收另行确认。
 
 ## 外部图片与免费扫描容错（2026-10-09）

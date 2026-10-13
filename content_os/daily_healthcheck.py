@@ -150,12 +150,19 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
     if day >= "2026-10-13" and not readback_verified:
         errors.append("wechat_inline_image_readback_missing_or_mismatched")
     source = read_json(base / "status" / "source-gate.json") if profile == "zizhitongjian" else {}
+    try:
+        from content_os.editorial_review import check as editorial_check
+    except ImportError:
+        from editorial_review import check as editorial_check
+    editorial = editorial_check(root, profile, day, raw.decode("utf-8") if raw else "")
+    errors.extend("editorial_review:" + x for x in editorial["errors"])
     return {
         "profile": profile, "status": "success" if not errors else "incomplete",
         "archive": archive.relative_to(root).as_posix(),
         "title": (fashion_revision["title"] if fashion_revision and
                   fashion_revision["status"] == "success" else title),
         "archive_title": title,
+        "editorial_review": editorial,
         "workflow_run_id": status.get("current_revision_workflow_run_id") or status.get("workflow_run_id"),
         "gates": gate_data,
         "journal_state": journal.get("state") or "MISSING",

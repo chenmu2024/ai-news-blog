@@ -6,6 +6,10 @@ on:
     branches: [main]
     paths:
       - "content_os/inbox/**"
+      - "content_os/editorial-reviews/**"
+      - "content_os/editorial_review.py"
+      - "content_os/PRODUCTION_BRIEF.md"
+      - "content_os/editorial-feedback.json"
       - "content_os/asset-staging/**"
       - "content_os/ingest_ai_assets.py"
       - "content_os/inbox_promote.py"

@@ -1,6 +1,6 @@
 # Headline decision ledger
 
-From 2026-10-11, the 08:20 editorial task should create
+From 2026-10-11, the 07:00 editorial task should create
 `content_os/title-decisions/YYYY-MM-DD.json` after drafting the seven articles.
 
 Each profile must contain **exactly three unique headline candidates**. The

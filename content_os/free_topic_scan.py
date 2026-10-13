@@ -27,9 +27,9 @@ LOCAL = ZoneInfo("Asia/Shanghai")
 PROFILES = {
     "qiezhi": {"query": "毛泽东选集 人生 思想 公众号", "image": "history books"},
     "wechat": {"query": "AI Agent 独立开发 SaaS 一人公司 公众号", "image": "artificial intelligence computer"},
-    "business": {"query": "泡泡玛特 瑞幸 蜜雪冰城 品牌 兴衰 公众号", "image": "business office"},
+    "business": {"query": "社保 医保 公积金 失业金 劳动者 福利政策 公众号", "image": "public service office"},
     "zizhitongjian": {"query": "资治通鉴 历史 人性 管理 公众号", "image": "historical books"},
-    "parenting": {"query": "小学生 家长群 家校沟通 教育 公众号", "image": "family reading"},
+    "parenting": {"query": "育儿补贴 生育津贴 儿童医保 托育 家庭政策 公众号", "image": "family child care"},
     "jingyun": {"query": "女性 中年 婚姻 职场 公众号", "image": "women street life"},
     "fashion": {"query": "2026 女明星 Jisoo 张员瑛 杨幂 机场穿搭 公众号", "image": "celebrity airport fashion"},
 }
@@ -38,9 +38,9 @@ PROFILES = {
 SUPPLEMENTARY_QUERIES = {
     "qiezhi": "毛选 调查研究 工作 方法 公众号",
     "wechat": "AI创业 SaaS 独立开发者 真实案例 公众号",
-    "business": "胖东来 小米 比亚迪 消费品牌 商业转折 公众号",
+    "business": "灵活就业 养老金 租房 人才补贴 申请条件 官方 公众号",
     "zizhitongjian": "资治通鉴 帝王 决策 历史故事 公众号",
-    "parenting": "初中家长 青春期 手机 学习压力 公众号",
+    "parenting": "孕产 生育保险 多子女购房补贴 申请 户籍 官方 公众号",
     "jingyun": "中年女人 母女 经济独立 婚姻 公众号",
     "fashion": "女明星 Jisoo Jennie 宋慧乔 刘亦菲 机场 穿搭 公众号",
 }
@@ -171,9 +171,9 @@ def news_index_results(query, limit=8):
 BING_FALLBACK_QUERIES = {
     "qiezhi": "学习 方法 调查研究 读书",
     "wechat": "人工智能 Agent SaaS 创业 公司",
-    "business": "消费品牌 零售 公司 转型 业绩",
+    "business": "职工医保 社保 公积金 失业金 申领 政策",
     "zizhitongjian": "资治通鉴 历史 人物 决策",
-    "parenting": "中小学 家长 家校沟通 教育政策 青少年",
+    "parenting": "育儿补贴 生育津贴 儿童医保 托育补助 政策",
     "jingyun": "女性 职场 婚姻 家庭",
     "fashion": "女明星 机场 时装周 造型 杨幂 张员瑛 Jisoo 2026",
 }

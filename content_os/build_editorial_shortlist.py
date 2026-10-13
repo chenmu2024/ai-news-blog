@@ -18,13 +18,14 @@ except ImportError:
 PROFILE_POSITIVE = {
     "qiezhi": re.compile(r"毛选|毛泽东|调查研究|实践论|矛盾论|群众路线|实事求是"),
     "wechat": re.compile(r"AI|Agent|SaaS|创业|独立开发|公司|产品|融资|收入|工作流", re.I),
-    "business": re.compile(r"公司|品牌|营收|利润|业绩|门店|收购|融资|上市|转型|增长|亏损|供应链"),
+    "business": re.compile(r"社保|医保|公积金|失业金|养老金|灵活就业|工伤|劳动权益|租房补贴|人才补贴"),
     "zizhitongjian": re.compile(r"资治通鉴|司马光|智伯|赵魏韩|秦|汉|魏|晋|唐|宋|君臣|决策|权力"),
-    "parenting": re.compile(r"家长|孩子|学校|老师|教育|家校|青春期|手机|学习|作业|同伴|家庭"),
+    "parenting": re.compile(r"育儿补贴|生育津贴|生育保险|儿童医保|托育|孕产|多子女|多孩|二孩|三孩|学前"),
     "jingyun": re.compile(r"女性|女人|中年|婚姻|职场|家庭|母女|经济独立|养老|工作"),
     "fashion": re.compile(r"杨幂|刘亦菲|赵露思|Jisoo|Jennie|张员瑛|宋慧乔|林允儿|机场|时装周|穿搭|造型|礼服|秀场", re.I),
 }
-MARKETING = re.compile(r"福利|课程|合集|PDF下载|加微信|领取|训练营|知识付费|好书推荐|全套")
+MARKETING = re.compile(r"福利课程|课程|合集|PDF下载|加微信|训练营|知识付费|好书推荐|全套")
+POLICY_ACTION = re.compile(r"政策|补贴|津贴|待遇|申领|申请|缴费|报销|共济|领取|办理|新规|通知|补助")
 SENSATIONAL = re.compile(r"炸锅|低胸|身材大变|走光|跳楼|自杀|惨死|杀害|万箭穿心")
 RELATIONSHIP_CLICKBAIT = re.compile(r"实录[:：]?|婚外情|出轨|抓奸|原配|小三")
 FASHION_CONTEXT = re.compile(r"穿搭|造型|礼服|秀场|街拍|西装|裙|外套|鞋|包|上衣|裤|风衣|针织|大衣")
@@ -56,8 +57,8 @@ def editorial_quality(profile, title):
         if not FASHION_CONTEXT.search(title):
             flags.append("fashion_weak_outfit_context")
             relevance-=25
-    if profile=="business" and not re.search(r"公司|品牌|营收|利润|业绩|门店|收购|融资|上市|供应链", title):
-        flags.append("business_weak_company_event_signal")
+    if profile in ("business", "parenting") and not POLICY_ACTION.search(title):
+        flags.append("policy_weak_action_signal")
         relevance-=20
     if profile=="zizhitongjian" and MARKETING.search(title):
         flags.append("history_commercial_content")
@@ -110,7 +111,7 @@ def main():
             combined=list(dict.fromkeys(event.get("flags",[])+event.get("editorial_flags",[])))
             event["flags"]=combined
             severe={"marketing_or_sales_content","fashion_no_named_priority_celebrity","fashion_weak_outfit_context",
-                    "business_weak_company_event_signal","sensational_or_sensitive_framing","relationship_clickbait_requires_manual_review","weak_profile_match"}
+                    "policy_weak_action_signal","sensational_or_sensitive_framing","relationship_clickbait_requires_manual_review","weak_profile_match"}
             event["editorial_status"]="reject_or_research_only" if severe.intersection(combined) else "needs_manual_source_and_date_review"
             event["eligible_for_auto_selection"]=False
             feats=headline_features(event["title"])
@@ -119,6 +120,7 @@ def main():
             usable={f:feature_stats[f] for f in feats if f in feature_stats and feature_stats[f].get("count",0)>=3}
             event["headline_features"]=feats
             event["performance_feedback"]=usable
+            event["qualitative_feedback"]=profile_feedback.get("qualitative_feedback",[])
             event["performance_feedback_status"]="ready" if usable else "insufficient_samples"
             if "unverified_heat" not in event["flags"]:
                 event["flags"].append("original_publication_date_unverified")

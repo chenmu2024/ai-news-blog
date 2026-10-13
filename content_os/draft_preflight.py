@@ -13,7 +13,10 @@ from pathlib import Path
 import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from draft_journal import locate
+try:
+    from content_os.draft_journal import locate
+except ImportError:
+    from draft_journal import locate
 
 
 def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict:
@@ -82,6 +85,15 @@ def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict
             "but its receipt differs. Do not re-publish; reconcile the stored draft "
             "and approved archive snapshot manually."
         )
+    if not confirmed:
+        try:
+            from content_os.editorial_review import check as editorial_check
+        except ImportError:
+            from editorial_review import check as editorial_check
+        review = editorial_check(article.resolve().parents[2], profile, article.stem,
+                                 raw.decode("utf-8"))
+        if review["status"] == "FAIL":
+            raise ValueError("Editorial review required before any upload: " + "; ".join(review["errors"]))
     return {
         "profile": profile,
         "article_path": article.as_posix(),

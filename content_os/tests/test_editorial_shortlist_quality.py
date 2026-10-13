@@ -5,13 +5,23 @@ class ShortlistQualityTests(unittest.TestCase):
     def test_business_generic_marketing_is_weak(self):
         relevance, _, flags = editorial_quality("business", "成为小红书种草高手：福利课程PDF下载")
         self.assertIn("marketing_or_sales_content", flags)
-        self.assertIn("business_weak_company_event_signal", flags)
+        self.assertIn("weak_profile_match", flags)
         self.assertLess(relevance, 40)
 
-    def test_business_company_event_is_relevant(self):
+    def test_business_company_event_is_no_longer_relevant(self):
         relevance, _, flags = editorial_quality("business", "瑞幸海外门店突破100家，供应链怎么复制")
-        self.assertNotIn("business_weak_company_event_signal", flags)
+        self.assertIn("weak_profile_match", flags)
+        self.assertLess(relevance, 60)
+
+    def test_worker_and_family_policy_actions_are_relevant_not_marketing(self):
+        relevance, _, flags = editorial_quality("business", "职工医保家庭共济如何办理")
         self.assertGreaterEqual(relevance, 70)
+        self.assertNotIn("policy_weak_action_signal", flags)
+        relevance, _, flags = editorial_quality("parenting", "北京育儿补贴怎么领，申请要哪些材料")
+        self.assertGreaterEqual(relevance, 70)
+        self.assertNotIn("marketing_or_sales_content", flags)
+        _, _, flags = editorial_quality("parenting", "孩子不写作业，家长先别催")
+        self.assertIn("weak_profile_match", flags)
 
     def test_fashion_requires_named_priority_celeb_and_outfit(self):
         _, _, flags = editorial_quality("fashion", "秋天西装怎么穿更显瘦")

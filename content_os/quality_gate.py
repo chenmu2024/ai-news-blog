@@ -7,14 +7,17 @@ import statistics
 import sys
 from pathlib import Path
 
-from editorial_guard import assess_editorial_title
+try:
+    from content_os.editorial_guard import assess_editorial_title
+except ImportError:
+    from editorial_guard import assess_editorial_title
 
 PROFILES = {
     "ai_business": {
         "name": "陈慕｜AI 一人公司实战",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 1800,
+        "min_body_chars": 700,
         "max_body_chars": 5200,
         "min_fact_signals": 4,
         "min_stance_signals": 2,
@@ -24,7 +27,7 @@ PROFILES = {
         "name": "民生政策与福利指南｜办事攻略",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 850,
+        "min_body_chars": 600,
         "max_body_chars": 4600,
         "min_fact_signals": 5,
         "min_stance_signals": 1,
@@ -33,7 +36,7 @@ PROFILES = {
         "name": "资治通鉴｜原典·人性·决策",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 1500,
+        "min_body_chars": 700,
         "max_body_chars": 5000,
         "min_fact_signals": 4,
         "min_stance_signals": 1,
@@ -42,7 +45,7 @@ PROFILES = {
         "name": "女装穿搭｜Image-first",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 1100,
+        "min_body_chars": 500,
         "max_body_chars": 3800,
         "min_fact_signals": 3,
         "min_stance_signals": 2,
@@ -51,7 +54,7 @@ PROFILES = {
         "name": "静筠日记｜女性生活",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 1500,
+        "min_body_chars": 600,
         "max_body_chars": 5000,
         "min_fact_signals": 2,
         "min_stance_signals": 2,
@@ -61,7 +64,7 @@ PROFILES = {
         "max_score": 30,
         "warn_score": 40,
         # Family welfare explainer: actionable, sourced prose with verified cards.
-        "min_body_chars": 850,
+        "min_body_chars": 600,
         "max_body_chars": 4600,
         "min_fact_signals": 5,
         "min_stance_signals": 1,
@@ -70,7 +73,7 @@ PROFILES = {
         "name": "且知｜毛选/思想方法",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 1400,
+        "min_body_chars": 700,
         "max_body_chars": 4800,
         "min_fact_signals": 2,
         "min_stance_signals": 1,
@@ -173,7 +176,8 @@ FACT_PATTERNS_QIEZHI = [
 ]
 
 def strip_production_markup(md: str) -> str:
-    text = re.sub(r"<!--\s*ZZTJ_SOURCE\s*\{[\s\S]*?\}\s*-->", "", md, flags=re.S)
+    # Hidden asset/source JSON is never reader-facing prose or fact evidence.
+    text = re.sub(r"<!--.*?-->", "", md, flags=re.S)
     text = re.sub(r"<!--\s*FASHION_SOURCE\s*\{[\s\S]*?\}\s*-->", "", text, flags=re.S)
     text = re.sub(r"<!--\s*(?:WECHAT_CARD|QIEZHI_CARD)\s+.*?-->", "", text, flags=re.S)
     text = re.sub(r"```[\s\S]*?```", "", text)

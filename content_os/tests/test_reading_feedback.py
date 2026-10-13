@@ -31,5 +31,20 @@ class ReadingFeedbackTests(unittest.TestCase):
         self.assertIn("number",f)
         self.assertIn("starts_with_一家",f)
 
+    def test_qualitative_feedback_survives_without_inventing_metrics(self):
+        row={"profile":"jingyun","date":"2026-10-13","title":"生活观察",
+             "views":None,"source":"user feedback","note":"全篇只有通用建议，没有可见生活细节"}
+        result=summarize([row])["jingyun"]
+        self.assertEqual(result["qualitative_feedback"][0]["note"],row["note"])
+        self.assertEqual(result["numeric_records"],0)
+        self.assertIsNone(result["avg_views"])
+
+    def test_boolean_is_not_a_reading_count(self):
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)/"manual.jsonl"
+            p.write_text(json.dumps({"profile":"business","date":"2026-10-13","title":"政策",
+                                    "views":True,"source":"manual"}),encoding="utf-8")
+            with self.assertRaises(ValueError):load_jsonl(p)
+
 if __name__=="__main__":
     unittest.main()

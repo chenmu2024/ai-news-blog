@@ -33,7 +33,7 @@ def promote(root,profile,day,check_network=True):
         if not isinstance(record,dict):raise ValueError("sidecar not an object")
     except (ValueError,OSError) as e:
         return {"profile":profile,"status":"FAIL","reasons":["invalid_title_sidecar",str(e)]}
-    text=source.read_text("utf-8")
+    text=source.read_bytes().decode("utf-8")
     title=next((line[2:].strip() for line in text.splitlines() if line.startswith("# ")),"")
     errors=validate_record(profile,record,title)
     evidence=record.get("evidence")

@@ -55,6 +55,9 @@ def static_check(root: Path, profile: str, day: str, text: str) -> dict:
             errors.append("unreadable_status_requires_manual_review")
     readiness = publisher_check(profile, text, day)
     errors.extend("publisher: " + x for x in readiness["errors"])
+    from content_os.editorial_review import check as editorial_check
+    review = editorial_check(root, profile, day, text)
+    errors.extend("editorial_review: " + x for x in review["errors"])
     # Real archive folder is authoritative; /tmp article paths do not carry
     # title-duplication history. Compare the proposed title to it directly.
     audit_profile = QUALITY_NAMES.get(profile, profile)
@@ -110,7 +113,7 @@ def static_check(root: Path, profile: str, day: str, text: str) -> dict:
 
 def validate(root: Path, profile: str, day: str, article: Path,
              skip_image_network: bool = False) -> dict:
-    content = article.read_text("utf-8")
+    content = article.read_bytes().decode("utf-8")
     result = static_check(root, profile, day, content)
     result["checks"] = []
     if result["status"] != "PASS":

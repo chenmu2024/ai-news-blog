@@ -133,8 +133,8 @@ class HealthTests(unittest.TestCase):
         (base / "articles").mkdir(parents=True)
         (base / "status").mkdir(parents=True)
         text = "# Example title\n\nVerified daily article"
-        (base / "archive" / (self.day + ".md")).write_text(text, encoding="utf-8")
-        (base / "articles" / "today.md").write_text(text, encoding="utf-8")
+        (base / "archive" / (self.day + ".md")).write_text(text, encoding="utf-8", newline="\n")
+        (base / "articles" / "today.md").write_text(text, encoding="utf-8", newline="\n")
         content = text.encode("utf-8")
         digest = hashlib.sha256(content).hexdigest()
         (base / "status" / "latest.json").write_text(

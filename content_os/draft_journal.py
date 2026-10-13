@@ -106,6 +106,14 @@ def reserve(profile: str, article: Path, title: str, public_body_html: str | Non
     The already-uploaded image URLs let a later health audit verify the very
     same saved draft using only draft/get. No image upload or second add needed.
     """
+    try:
+        from content_os.editorial_review import check as editorial_check
+    except ImportError:
+        from editorial_review import check as editorial_check
+    review = editorial_check(article.resolve().parents[2], profile, article.stem,
+                             article.read_bytes().decode("utf-8"))
+    if review["status"] == "FAIL":
+        raise RuntimeError("Editorial review failed; refuse draft/add: " + "; ".join(review["errors"]))
     from content_os.public_draft_contract import image_sources
     from urllib.parse import urlparse
     urls = image_sources(public_body_html or "")

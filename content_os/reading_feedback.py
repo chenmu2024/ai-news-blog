@@ -32,7 +32,7 @@ def load_jsonl(path:Path)->list[dict]:
         if item.get("profile") not in PROFILES: raise ValueError(f"line {n}: bad profile")
         if not item.get("title") or not item.get("date"): raise ValueError(f"line {n}: title/date required")
         views=item.get("views")
-        if views is not None and (not isinstance(views,int) or views<0):
+        if views is not None and (type(views) is not int or views<0):
             raise ValueError(f"line {n}: views must be non-negative integer or null")
         if not item.get("source"):
             raise ValueError(f"line {n}: source required")
@@ -40,15 +40,17 @@ def load_jsonl(path:Path)->list[dict]:
     return rows
 
 def summarize(rows:list[dict])->dict:
-    by_profile={p:{"records":0,"numeric_records":0,"avg_views":None,"features":{}} for p in sorted(PROFILES)}
+    by_profile={p:{"records":0,"numeric_records":0,"avg_views":None,"features":{},"qualitative_feedback":[]} for p in sorted(PROFILES)}
     feat=defaultdict(lambda:defaultdict(list))
     for x in rows:
         p=x["profile"]; by_profile[p]["records"]+=1
-        if isinstance(x.get("views"),int):
+        if isinstance(x.get("note"),str) and x["note"].strip():
+            by_profile[p]["qualitative_feedback"].append({k:x.get(k) for k in ("date","title","source","note")})
+        if type(x.get("views")) is int:
             by_profile[p]["numeric_records"]+=1
             for f in headline_features(x["title"]): feat[p][f].append(x["views"])
     for p in PROFILES:
-        vals=[x["views"] for x in rows if x["profile"]==p and isinstance(x.get("views"),int)]
+        vals=[x["views"] for x in rows if x["profile"]==p and type(x.get("views")) is int]
         by_profile[p]["avg_views"]=round(mean(vals),2) if vals else None
         by_profile[p]["features"]={k:{"count":len(v),"avg_views":round(mean(v),2)} for k,v in feat[p].items()}
     return by_profile

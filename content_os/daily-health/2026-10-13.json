@@ -1,11 +1,11 @@
 {
   "date": "2026-10-13",
-  "generated_at": "2026-10-13T09:08:57.845333+08:00",
+  "generated_at": "2026-10-13T09:24:09.289614+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 5,
+  "success_count": 6,
   "expected_count": 7,
-  "draft_confirmed_count": 5,
+  "draft_confirmed_count": 6,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 5,
+    "complete_count": 6,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -76,16 +76,21 @@
         "errors": []
       },
       "zizhitongjian": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "商鞅徙木立信：司马光真正担心的是什么",
+        "candidates": [
+          "商鞅徙木立信：司马光真正担心的是什么",
+          "商鞅赏了五十金，后来为何没人敢议论",
+          "徙木立信之后，《资治通鉴》还写了什么"
+        ],
+        "rationale": "对照资治通鉴卷二《周纪二》与四库全书本卷二，严格区分历史叙事、商鞅行法与司马光臣光曰评论，并补足处罚和民莫敢议令的上下文；与昨日赵奢税务故事不重复。",
+        "basis": [
+          "维基文库《资治通鉴》卷002周纪二逐段核对",
+          "维基文库四库全书本卷002并列核验",
+          "CText卷第二记录入口，影印未逐页完成故如实注明fallback"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "parenting": {
         "status": "complete",
@@ -204,35 +209,26 @@
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
-      "status": "incomplete",
+      "status": "success",
       "archive": "zizhitongjian/archive/2026-10-13.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38183134669",
+      "title": "商鞅徙木立信：司马光真正担心的是什么",
+      "archive_title": "商鞅徙木立信：司马光真正担心的是什么",
+      "workflow_run_id": "38331879999",
       "gates": {
         "source-gate.json": "PASS",
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
-      "wechat_inline_readback_verified": false,
-      "wechat_inline_image_count": null,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:source-gate.json",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed",
-        "wechat_inline_image_readback_missing_or_mismatched"
-      ]
+      "wechat_inline_readback_verified": true,
+      "wechat_inline_image_count": 2,
+      "errors": []
     },
     "parenting": {
       "profile": "parenting",

@@ -37,6 +37,24 @@ class OneOffParentingTests(unittest.TestCase):
         self.assertEqual(out["/freepublish"]["count"], 0)
         self.assertEqual(set(calls), {"/draft/batchget", "/freepublish/batchget"})
 
+    def test_unsupported_publication_list_is_not_misreported_as_zero(self):
+        def fake(endpoint, **kwargs):
+            if endpoint == "/draft/batchget":
+                return {"total_count": 0, "item": []}
+            if endpoint == "/freepublish/batchget":
+                raise RuntimeError("WeChat /freepublish/batchget error code 48001")
+            raise AssertionError("Unexpected endpoint " + endpoint)
+        result = scan(fake, {"access_token": "fake"})
+        self.assertEqual(result["/draft"]["count"], 0)
+        self.assertEqual(result["/freepublish"]["status"], "unknown_no_api_permission")
+        self.assertFalse(result["/freepublish"]["checked"])
+
+    def test_draft_api_permission_failure_still_blocks(self):
+        def fake(endpoint, **kwargs):
+            raise RuntimeError("WeChat " + endpoint + " error code 48001")
+        with self.assertRaisesRegex(RuntimeError, "48001"):
+            scan(fake, {})
+
     def test_duplicate_or_unbounded_scan_fails_closed(self):
         for kind in ("original", "revised", "related", "huge"):
             def fake(endpoint, **kwargs):

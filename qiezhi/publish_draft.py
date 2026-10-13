@@ -382,7 +382,7 @@ def create_draft(tok, title, body, cover_id):
     payload = {"articles": [{"article_type": "news", "title": title, "author": AUTHOR[:16], "content": body, "content_source_url": "", "thumb_media_id": cover_id, "need_open_comment": 0, "only_fans_can_comment": 0}]}
     # Durable intent must be committed to GitHub BEFORE the non-idempotent
     # WeChat draft/add API. Unknown outcomes must never be blindly retried.
-    reserve_draft_add("qiezhi", ARTICLE, title)
+    reserve_draft_add("qiezhi", ARTICLE, title, public_body_html=body)
     r = request_wechat("POST", WECHAT_API + "/draft/add", params={"access_token": tok}, data=json.dumps(payload, ensure_ascii=False).encode("utf-8"), headers={"Content-Type": "application/json; charset=utf-8"}, timeout=90)
     d = r.json()
     if not d.get("media_id"):

@@ -49,12 +49,12 @@ def load():
         raise RuntimeError("Five photo order/identity mismatch")
     if any(p["creator"].strip() == "" or not p["source_page_url"].startswith("https://commons.wikimedia.org/wiki/File:") or
            p["license"] not in ("CC BY 3.0","CC BY 4.0") or
-           p["license_url"] != "https://creativecommons.org/licenses/by/" + p["license"][-4:] + "/" for p in photos):
+           p["license_url"] != "https://creativecommons.org/licenses/by/" + p["license"].split()[-1] + "/" for p in photos):
         raise RuntimeError("Unverified source/credit/license")
     old = json.loads(Path(PREVIOUS).read_text("utf-8"))
-    if old.get("state") != "confirmed" or old.get("status") != "success" or
-       old.get("verified_images") != 5 or not old.get("draft_media_id") or
-       old.get("verified_title") != "Jisoo五张旧照：领口比“同款”更值得抄":
+    if (old.get("state") != "confirmed" or old.get("status") != "success" or
+        old.get("verified_images") != 5 or not old.get("draft_media_id") or
+        old.get("verified_title") != "Jisoo五张旧照：领口比“同款”更值得抄"):
         raise RuntimeError("Original confirmed Jisoo replacement receipt missing")
     past_articles = [p.read_text("utf-8") for p in Path("fashion/archive").glob("*.md")]
     if sum("Jisoo" in x for x in past_articles) < 2:

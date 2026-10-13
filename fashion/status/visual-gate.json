@@ -7,6 +7,19 @@
   "html_images": 0,
   "renderable_cards": 0,
   "hard_failures": [],
-  "article_sha256": "9168c6d6b096a13cd12d26ecc0132512d6c52785470154a8712ffc9132238848",
-  "article_path": "fashion/archive/2026-10-12.md"
+  "article_sha256": "9279019457bf679feb0f540920b5f67a6a3fc0d7a3e9d8222eb7b273df1847a5",
+  "article_path": "fashion/archive/2026-10-13.md",
+  "wechat_inline_readback": {
+    "draft_get_verified": true,
+    "state": "verified",
+    "profile": "fashion",
+    "draft_media_id": "gcTqbaQ9A7M3U7aJTBB3ZXpVNcVqV9anSCsljX6dpRgstUtaB8mgaGUkay9qBBmm",
+    "inline_image_count": 5,
+    "expected_inline_image_count": 5,
+    "readback_body_sha256": "bd1631a177e158066a63d534273a783f8eafbe61df38cb3d2fc0565be3319fc0",
+    "verified_at_utc": "2026-10-13T01:27:37.044865+00:00",
+    "article_path": "fashion/archive/2026-10-13.md",
+    "article_sha256": "9279019457bf679feb0f540920b5f67a6a3fc0d7a3e9d8222eb7b273df1847a5",
+    "article_date": "2026-10-13"
+  }
 }

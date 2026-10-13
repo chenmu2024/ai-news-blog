@@ -1,0 +1,72 @@
+{
+  "state": "attempted",
+  "profile": "zizhitongjian",
+  "article_path": "zizhitongjian/archive/2026-10-13.md",
+  "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
+  "title": "商鞅徙木立信：司马光真正担心的是什么",
+  "run_id": "38331879999",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/g6tpQqYrb46eiaTl6mK848wQl8auUdn5ZicYVWjGdNnBUFDibTUulmTsic0icEyFibQAIaagdKhYjbCBIzhGTOMNXnCKcyfeXuPkU5zjX3IfNCA74/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/g6tpQqYrb47jo0Zr2hSzz3aVxW9icwk0Qo6CplcodgdqFB0GiblX1UWxd8YSV4ENlfjriaQllC8Vic4ibujGExQIkflqLMSMWDMdZCE3MArDbuAI/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "zizhitongjian",
+      "profile_name": "资治通鉴｜原典·人性·决策",
+      "score": 15,
+      "body_chars": 2439,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 31,
+      "stance_signals": 0,
+      "paragraph_regularity": {
+        "paragraphs": 20,
+        "cv": 0.926
+      },
+      "sentence_repetition": {
+        "sentences": 50,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.222,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
+      "article_path": "zizhitongjian/archive/2026-10-13.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "zizhitongjian",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 1,
+      "hard_failures": [],
+      "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
+      "article_path": "zizhitongjian/archive/2026-10-13.md"
+    },
+    "source-gate.json": {
+      "status": "PASS",
+      "work": "资治通鉴",
+      "volume": 2,
+      "chronicle": "周纪二",
+      "year": "周显王十年（前359年）",
+      "primary_text_url": "https://zh.wikisource.org/zh-hant/資治通鑑/卷002",
+      "image_check_url": "https://ctext.org/wiki.pl?chapter=66452&if=gb",
+      "image_check_done": false,
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "alternate_text_url": "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷002",
+      "alternate_access_reason": "以维基文库《资治通鉴》卷002和四库全书本卷002逐段核对徙木前后叙事；未逐页核验CText影印，不将文本对校称为影印核验。",
+      "context_verified": true,
+      "original_excerpt_chars": 34,
+      "direct_quote_count": 2,
+      "live_primary_excerpt_check": "PASS",
+      "image_source_reachable": "NOT_CHECKED_CTEXT_FALLBACK",
+      "hard_failures": [],
+      "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
+      "article_path": "zizhitongjian/archive/2026-10-13.md"
+    }
+  }
+}

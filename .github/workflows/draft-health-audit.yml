@@ -14,6 +14,7 @@ on:
       - "content_os/image_preflight.py"
       - "content_os/draft_journal.py"
       - "content_os/reconcile_confirmed.py"
+      - "content_os/recover_readback.py"
       - "content_os/tests/test_reconcile_confirmed.py"
       - "content_os/tests/test_publish_readiness.py"
       - ".github/workflows/draft-health-audit.yml"
@@ -49,7 +50,7 @@ jobs:
       - name: Audit all seven profiles without publishing
         run: python content_os/daily_healthcheck.py --output-dir content_os/daily-health
       - name: Install free readback-only recovery dependency
-        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
         run: pip install 'requests[socks]>=2.32,<3'
       - name: Persist daily health report
         env:
@@ -81,7 +82,7 @@ jobs:
             # Only a confirmed media_id PLUS the immutable PASS-gate snapshot
             # permits state repair. This script never calls WeChat draft/add.
             python content_os/reconcile_confirmed.py --root . > /tmp/content-os-reconcile.json
-            if [ "$GITHUB_EVENT_NAME" = "schedule" ] || [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            if [ "$GITHUB_EVENT_NAME" = "schedule" ] || [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || [ "$GITHUB_EVENT_NAME" = "push" ]; then
               # This script may ONLY read existing official drafts. It never
               # calls draft/add or generates a replacement publication.
               python content_os/recover_readback.py --root . > /tmp/content-os-readback-recovery.json

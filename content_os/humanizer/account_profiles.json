@@ -3,6 +3,43 @@
   "activation": "2026-10-14",
   "reference_library": "wechat-humanizer-v4-2014-2016",
   "private_library_path": "/微信公众号/Humanizer V4/reference_segment_bank_2290.jsonl",
+  "trusted_sources": [
+    "ELLEMEN睿士",
+    "ONE一个",
+    "中国新闻周刊",
+    "正午故事",
+    "每日人物",
+    "南方人物周刊",
+    "大象公会",
+    "理想国imaginist",
+    "理想国",
+    "香港凤凰周刊",
+    "第一财经资讯",
+    "时代财经",
+    "博客天下",
+    "南都周刊",
+    "央视财经",
+    "人民网财经",
+    "财经杂志评论",
+    "财经领袖",
+    "法律读库",
+    "诗刊社",
+    "生活月刊",
+    "西西弗书店",
+    "BetterRead",
+    "吴晓波频道",
+    "读者数码",
+    "大河文摘报",
+    "为你读诗",
+    "南艺当代视觉艺术研究中心",
+    "人类学之滇"
+  ],
+  "source_trust": {
+    "trusted_core": 1,
+    "gold": 0.82,
+    "whitelist": 0.72,
+    "fallback": 0.38
+  },
   "defaults": {
     "reference_min": 3,
     "reference_max": 5,
@@ -23,12 +60,36 @@
       "styles": [
         "opinion",
         "explainer",
-        "story"
+        "story",
+        "culture"
       ],
       "weights": {
-        "opinion": 0.42,
-        "explainer": 0.36,
-        "story": 0.22
+        "opinion": 0.38,
+        "explainer": 0.24,
+        "story": 0.2,
+        "culture": 0.18
+      },
+      "role_styles": {
+        "opening": [
+          "story",
+          "opinion"
+        ],
+        "structure": [
+          "explainer",
+          "opinion"
+        ],
+        "detail": [
+          "story",
+          "culture"
+        ],
+        "stance": [
+          "opinion",
+          "culture"
+        ],
+        "ending": [
+          "opinion",
+          "story"
+        ]
       },
       "voice": "原典准确、问题具体、敢反问，不把毛选改成鸡汤"
     },
@@ -39,20 +100,68 @@
         "story"
       ],
       "weights": {
-        "explainer": 0.42,
-        "opinion": 0.33,
-        "story": 0.25
+        "explainer": 0.38,
+        "opinion": 0.34,
+        "story": 0.28
+      },
+      "role_styles": {
+        "opening": [
+          "story",
+          "opinion"
+        ],
+        "structure": [
+          "explainer",
+          "opinion"
+        ],
+        "detail": [
+          "story",
+          "explainer"
+        ],
+        "stance": [
+          "opinion",
+          "explainer"
+        ],
+        "ending": [
+          "opinion",
+          "story"
+        ]
       },
       "voice": "像真正做产品和算账的人，具体商业证据优先，不冒充实测"
     },
     "business": {
       "styles": [
         "explainer",
-        "life"
+        "life",
+        "story",
+        "opinion"
       ],
       "weights": {
-        "explainer": 0.68,
-        "life": 0.32
+        "explainer": 0.38,
+        "life": 0.2,
+        "story": 0.22,
+        "opinion": 0.2
+      },
+      "role_styles": {
+        "opening": [
+          "story",
+          "life"
+        ],
+        "structure": [
+          "explainer",
+          "opinion"
+        ],
+        "detail": [
+          "explainer",
+          "story"
+        ],
+        "stance": [
+          "opinion",
+          "explainer"
+        ],
+        "ending": [
+          "life",
+          "opinion"
+        ]
       },
       "voice": "像替办事人提前看坑的编辑，先说谁能办、在哪办、限制是什么"
     },
@@ -63,20 +172,68 @@
         "opinion"
       ],
       "weights": {
-        "story": 0.5,
-        "culture": 0.3,
+        "story": 0.48,
+        "culture": 0.32,
         "opinion": 0.2
+      },
+      "role_styles": {
+        "opening": [
+          "story",
+          "culture"
+        ],
+        "structure": [
+          "story",
+          "culture"
+        ],
+        "detail": [
+          "story",
+          "culture"
+        ],
+        "stance": [
+          "opinion",
+          "culture"
+        ],
+        "ending": [
+          "culture",
+          "opinion"
+        ]
       },
       "voice": "先让史事成立，再做判断；不虚构古人心理和现场"
     },
     "parenting": {
       "styles": [
         "explainer",
-        "life"
+        "life",
+        "story",
+        "opinion"
       ],
       "weights": {
-        "explainer": 0.62,
-        "life": 0.38
+        "explainer": 0.36,
+        "life": 0.24,
+        "story": 0.22,
+        "opinion": 0.18
+      },
+      "role_styles": {
+        "opening": [
+          "story",
+          "life"
+        ],
+        "structure": [
+          "explainer",
+          "opinion"
+        ],
+        "detail": [
+          "explainer",
+          "story"
+        ],
+        "stance": [
+          "opinion",
+          "explainer"
+        ],
+        "ending": [
+          "life",
+          "opinion"
+        ]
       },
       "voice": "像把政策查清后讲给家人听，准确、温和、不制造焦虑"
     },
@@ -84,12 +241,36 @@
       "styles": [
         "life",
         "opinion",
-        "story"
+        "story",
+        "culture"
       ],
       "weights": {
-        "life": 0.45,
-        "opinion": 0.3,
-        "story": 0.25
+        "life": 0.34,
+        "opinion": 0.28,
+        "story": 0.26,
+        "culture": 0.12
+      },
+      "role_styles": {
+        "opening": [
+          "story",
+          "life"
+        ],
+        "structure": [
+          "life",
+          "story"
+        ],
+        "detail": [
+          "story",
+          "life"
+        ],
+        "stance": [
+          "opinion",
+          "life"
+        ],
+        "ending": [
+          "life",
+          "opinion"
+        ]
       },
       "voice": "成熟、克制、具体，保留两难，不虚构作者婚姻家庭亲历"
     },
@@ -97,12 +278,36 @@
       "styles": [
         "culture",
         "explainer",
-        "life"
+        "life",
+        "story"
       ],
       "weights": {
-        "culture": 0.45,
-        "explainer": 0.4,
-        "life": 0.15
+        "culture": 0.38,
+        "explainer": 0.28,
+        "life": 0.14,
+        "story": 0.2
+      },
+      "role_styles": {
+        "opening": [
+          "culture",
+          "story"
+        ],
+        "structure": [
+          "culture",
+          "explainer"
+        ],
+        "detail": [
+          "culture",
+          "story"
+        ],
+        "stance": [
+          "opinion",
+          "culture"
+        ],
+        "ending": [
+          "culture",
+          "life"
+        ]
       },
       "voice": "从照片可见细节出发，有审美判断，不写电商种草腔"
     }

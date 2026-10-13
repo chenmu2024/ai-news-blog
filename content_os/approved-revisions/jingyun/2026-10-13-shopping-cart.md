@@ -66,9 +66,9 @@
 
 可如果800元并不会伤害家庭的安全感，仍然让一个人反复不安，那么真正需要看的，可能不是银行卡余额，而是她如何理解“属于自己的钱”。
 
-<!-- AI_SCENE {"profile":"jingyun","article_date":"2026-10-13","image_url":"https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp","sha256":"f9df5293aa2fdd4948e07958ce71f311c1560fe291b93b64ada439e6ab92809d","generator":"openai_image_gen","generation_id":"2a935786-2d84-460b-9e45-f2f6dceaf1ec","rights":"ai_created_owned","synthetic":true,"scene_role":"illustration","scene_description":"虚构成年亚洲女性在温暖夜间客厅看手机，旁边放着外套、购物袋与家庭账单，表现个人消费与家庭开支之间的犹豫，不对应真实人物或个案","pretends_to_be_real_person_or_record":false} -->
+<!-- AI_SCENE {"profile":"jingyun","article_date":"2026-10-13","image_url":"https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.jpg","sha256":"2894b74e3244cee46d472640c57f899290d946f20e61050e25bd26665092a98b","generator":"openai_image_gen","generation_id":"2a935786-2d84-460b-9e45-f2f6dceaf1ec","rights":"ai_created_owned","synthetic":true,"scene_role":"illustration","scene_description":"虚构成年亚洲女性在温暖夜间客厅看手机，旁边放着外套、购物袋与家庭账单，表现个人消费与家庭开支之间的犹豫，不对应真实人物或个案","pretends_to_be_real_person_or_record":false} -->
 
-![夜晚客厅里的个人消费选择场景](https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.webp)
+![夜晚客厅里的个人消费选择场景](https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/jingyun/2026-10-13/shopping-cart.jpg)
 
 有人赚钱以后，天然觉得那是家庭的钱。
 

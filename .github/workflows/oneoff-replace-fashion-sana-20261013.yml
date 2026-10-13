@@ -1,0 +1,34 @@
+name: One-time replacement of duplicated fashion draft with Sana
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/oneoff-replace-fashion-sana-20261013.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: fashion-wechat-draft
+  cancel-in-progress: false
+jobs:
+  replace-same-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install already used image and draft dependencies
+        run: pip install -r fashion/requirements.txt
+      - name: Offline syntax, title, distinct identity and rights preflight
+        run: |
+          python -m py_compile content_os/replace_duplicate_fashion_20261013.py
+          python -c "from content_os.replace_duplicate_fashion_20261013 import load; p,m,o=load(); print('Preflight:',p['title'],len(p['photos']),'licensed photos; original media ID bound')"
+      - name: Update only previously confirmed fashion draft in place
+        env:
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          FASHION_WECHAT_APP_ID: ${{ secrets.FASHION_WECHAT_APP_ID }}
+          FASHION_WECHAT_APP_SECRET: ${{ secrets.FASHION_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python content_os/replace_duplicate_fashion_20261013.py

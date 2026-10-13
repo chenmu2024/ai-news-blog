@@ -1,0 +1,51 @@
+{
+  "state": "attempted",
+  "profile": "jingyun",
+  "article_path": "jingyun/archive/2026-10-13.md",
+  "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
+  "title": "为什么总把自己的事留到以后",
+  "run_id": "38328415865",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/1lvNK0VGgialoT3ybWpicLkrcSInTDom0ibdG8m5DfLbOywtc66nGCVuvwC6guXtxRJJQ18p2xvkBMYJF3ENsvFtx5ayGZIHoeFhXaQQxTJNa0/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/1lvNK0VGgiam2JiaeDlVKzZSib3MvRW9RNsP38YGhekWvYUa14cPFXwNRnNWXILH3K4W28N6rkca1nYDD06863j0joYHKPTV2qibpD4bSNdISpI/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "jingyun",
+      "profile_name": "静筠日记｜女性生活",
+      "score": 23,
+      "body_chars": 2490,
+      "template_hits": 2,
+      "internal_hits": 0,
+      "fact_signals": 11,
+      "stance_signals": 0,
+      "paragraph_regularity": {
+        "paragraphs": 28,
+        "cv": 1.063
+      },
+      "sentence_repetition": {
+        "sentences": 60,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.121,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
+      "article_path": "jingyun/archive/2026-10-13.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "jingyun",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 1,
+      "hard_failures": [],
+      "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
+      "article_path": "jingyun/archive/2026-10-13.md"
+    }
+  }
+}

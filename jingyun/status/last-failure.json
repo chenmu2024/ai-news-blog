@@ -1,11 +1,18 @@
 {
   "status": "failure",
   "profile": "jingyun",
-  "date": "2026-10-08",
-  "workflow_run_id": "37711227338",
-  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/37711227338",
-  "article_path": "jingyun/archive/2026-10-08.md",
-  "jobs": [],
-  "apiError": "Resource not accessible by integration",
+  "date": "2026-10-13",
+  "workflow_run_id": "38328415865",
+  "workflow_url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/38328415865",
+  "article_path": "jingyun/archive/2026-10-13.md",
+  "jobs": [
+    {
+      "id": 115072379661,
+      "name": "create-jingyun-draft",
+      "conclusion": null,
+      "steps": []
+    }
+  ],
+  "apiError": null,
   "note": "Diagnostic metadata only; inspect workflow logs for actual traceback."
 }

@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from content_os.editorial_review import check, policy_hash, review_path, CHECKS
+from content_os.editorial_review import check, policy_hash, review_path, CHECKS, HUMANIZER_STYLES
 
 
 class EditorialReviewTests(unittest.TestCase):
@@ -19,6 +19,9 @@ class EditorialReviewTests(unittest.TestCase):
         self.body = "# 一家公司的实际付费任务\n\n用户为了反复修改的工作付费，而不是只生成一次。\n\n调用费用并不是唯一成本，返工时间也需要计算。\n\n本文依据公开资料进行产品观察，没有声称真实测试过。\n"
         for name in ("PRODUCTION_BRIEF.md", "EDITORIAL_VOICE.md"):
             self.write("content_os/" + name, "Current production instructions\n")
+        self.write("content_os/humanizer/README.md", "Humanizer V3 instructions\n")
+        self.write("content_os/humanizer/account_profiles.json", "{}\n")
+        self.write("content_os/humanizer/reference_manifest.json", "{}\n")
         self.write("content_os/editorial-feedback.json", json.dumps({"items": [
             {"id": "feedback-1", "active": True, "profiles": list(CHECKS)}]}))
 
@@ -46,6 +49,23 @@ class EditorialReviewTests(unittest.TestCase):
             "history": [], "profile_checks": {name: excerpt for name in CHECKS[profile]},
             "reader_review": {"finding": "原稿只有功能罗列没有具体任务", "change": "删去重复建议并明确本篇分析范围", "final_excerpt": excerpt, "unresolved": []},
             "fact_review": {"finding": "原稿把资料观察误写成实际测试", "change": "明确没有做实测并核对公开产品资料", "final_excerpt": excerpt, "unresolved": []},
+            "humanizer": {
+                "version": "v3",
+                "reference_library": "wechat-humanizer-v3-2014-2016",
+                "reference_examples": [
+                    {"origin": "project_bank", "reference_id": "project:001", "source_name": "来源甲",
+                     "style": sorted(HUMANIZER_STYLES[profile])[0], "learned_feature": "学习自然开头和不等长段落"},
+                    {"origin": "project_bank", "reference_id": "project:002", "source_name": "来源乙",
+                     "style": sorted(HUMANIZER_STYLES[profile])[0], "learned_feature": "学习具体细节先于抽象总结"},
+                    {"origin": "web_benchmark", "reference_id": "web:003", "source_name": "来源丙",
+                     "style": sorted(HUMANIZER_STYLES[profile])[0], "learned_feature": "学习克制结尾与作者判断",
+                     "url": "https://example.org/benchmark"}
+                ],
+                "anti_patterns_removed": ["删除机械总结", "打破等长段落"],
+                "final_excerpt": excerpt,
+                "copied_reference_text": False,
+                "fact_recheck": True
+            },
             "feedback_applied": [{"id": "feedback-1", "change": "删去泛化建议，用一个任务支撑正文判断"}],
         }
         return rec

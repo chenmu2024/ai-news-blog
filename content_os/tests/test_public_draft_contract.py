@@ -28,6 +28,47 @@ class PublicBodyTests(unittest.TestCase):
         original = "![a](https://a.net/1.jpg)\n\n文章接着讨论事实。\n"
         self.assertEqual(strip_figure_captions(original, "business"), original)
 
+    def test_italic_after_image_must_not_be_deleted_if_it_is_article_prose(self):
+        original = ("# 正文\n\n![办公](https://example.com/office.jpg)\n\n"
+                    "*这个判断并不适用于所有城市。*\n\n下一段。\n")
+        for p in ("qiezhi", "wechat", "business", "zizhitongjian", "parenting", "jingyun"):
+            self.assertEqual(strip_figure_captions(original, p), original)
+
+    def test_six_profiles_remove_explicit_captions_only(self):
+        variations = ["*图片说明：虚构工作场景*", "**AI配图：室内**",
+                      "图 1：家庭生活", "AI 原创写实配图：办公室",
+                      "场景：普通劳动者办理手续"]
+        for line in variations:
+            with self.subTest(text=line):
+                md = "# 正文\n\n![图](https://example.com/x.jpg)\n\n" + line + "\n\n政策正文。"
+                fixed = strip_figure_captions(md, "business")
+                self.assertNotIn(line, fixed)
+                self.assertIn("政策正文。", fixed)
+                self.assertIn("![图]", fixed)
+
+    def test_draft_get_rejects_caption_paragraph_with_no_banned_literal(self):
+        expected = body(1)
+        saved = expected + "<p>场景：虚构家庭在家中照看孩子</p>"
+        with self.assertRaisesRegex(RuntimeError, "caption"):
+            verify_saved_payload("parenting", "标题", "mid", expected,
+                {"news_item": [{"title": "标题", "content": saved}]})
+
+    def test_draft_get_rejects_unknown_or_missing_title(self):
+        expected = body(1)
+        for article in ({"content": expected},
+                        {"title": "不一致", "content": expected}):
+            with self.subTest(article=article):
+                with self.assertRaisesRegex(RuntimeError, "title mismatch"):
+                    verify_saved_payload("wechat", "标题", "mid", expected,
+                                         {"news_item": [article]})
+
+    def test_draft_get_preserves_g_licensed_caption_exception(self):
+        expected = body(5)
+        saved = expected + "<p>图片来源：获授权摄影机构</p>"
+        result = verify_saved_payload("fashion", "标题", "media", expected,
+                            {"news_item": [{"title": "标题", "content": saved}]})
+        self.assertTrue(result["draft_get_verified"])
+
     def test_success_and_invalid_payloads(self):
         html = body(2)
         payload = {"news_item": [{"title": "标题", "content": html}]}

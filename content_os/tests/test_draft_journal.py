@@ -51,6 +51,19 @@ class JournalTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "already attempted"):
             journal.reserve("business", self.article, "新稿")
 
+    def test_new_draft_requires_uploaded_wechat_image_and_records_exact_urls(self):
+        new = self.article.with_name("2026-10-13.md")
+        new.write_text("# 新稿\n\n正文", "utf-8")
+        with self.assertRaisesRegex(RuntimeError, "required inline WeChat images"):
+            journal.reserve("business", new, "新稿", public_body_html="<p>No image</p>")
+        image_url = "https://mmbiz.qpic.cn/mmbiz_jpg/specific_fingerprint/0"
+        body = f'<p><img src="{image_url}" /></p>'
+        journal.reserve("business", new, "新稿", public_body_html=body)
+        key = journal.journal_path("business", new)
+        self.assertEqual(self.state[key]["expected_inline_urls"], [image_url])
+        with self.assertRaisesRegex(RuntimeError, "already attempted"):
+            journal.reserve("business", new, "新稿", public_body_html=body)
+
     def test_media_id_is_confirmed_durably(self):
         journal.reserve("business", self.article, "新稿")
         journal.confirm("business", self.article, "media-confirmed-123")

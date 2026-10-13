@@ -1,0 +1,65 @@
+{
+  "state": "attempted",
+  "profile": "fashion",
+  "article_path": "fashion/archive/2026-10-13.md",
+  "article_sha256": "9279019457bf679feb0f540920b5f67a6a3fc0d7a3e9d8222eb7b273df1847a5",
+  "title": "Jisoo五套旧造型，真正值得学的是比例",
+  "run_id": "38332164729",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/bwYjpTUcUCJdA5K6pnniaDXb7jX4iarNbrrEGgrLkBOGLXHXzhh5Wh9ib7ruX5WZwFESAMWLITxlCtz47hBU5ovq7f7FgQwhm93GbskC1PTjicU/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/bwYjpTUcUCKP70ANBFAWKmdcnSm3YGDCqg7IqhdOIiakJmicVvnsr6VsAm7d1ERLSuMicKTCeGl5yszcibricxC7Q9ILmBRuPhy2mdhVzYwQOlfo/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/bwYjpTUcUCJ6PCr1n2eeafdvWKbArmCw5pIvUomK7egFqC2uQkicb6PkO2TxVRFBibFErmsaFibE8epdDA9zS6pOiaicX6Ym9Rgfib3vaEf9f1Qwk/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/bwYjpTUcUCLXQUSgXkwmicqxr5ccBMDtfiaaLTYtSK86cZCTwe400a9FiaibiaCy4GNYKGnbFWmTw5VZUbaFTXnHxyBhBtl5oW5Yev1mEfbtBOhU/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/bwYjpTUcUCLwibJohicSf65wgsMicycA6YUG5LEwHiacQCUYj5yg6wToicPHN8bWPvVywn4kQSAevazBBYbYpZp2FyOiaiaWfxFPJpEnp0GLBwDvDk/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "fashion",
+      "profile_name": "女装穿搭｜Image-first",
+      "score": 8,
+      "body_chars": 2204,
+      "template_hits": 2,
+      "internal_hits": 0,
+      "fact_signals": 23,
+      "stance_signals": 11,
+      "paragraph_regularity": {
+        "paragraphs": 18,
+        "cv": 1.136
+      },
+      "sentence_repetition": {
+        "sentences": 50,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.182,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "9279019457bf679feb0f540920b5f67a6a3fc0d7a3e9d8222eb7b273df1847a5",
+      "article_path": "fashion/archive/2026-10-13.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "fashion",
+      "required_visuals": 5,
+      "visual_count": 5,
+      "markdown_images": 5,
+      "html_images": 0,
+      "renderable_cards": 0,
+      "hard_failures": [],
+      "article_sha256": "9279019457bf679feb0f540920b5f67a6a3fc0d7a3e9d8222eb7b273df1847a5",
+      "article_path": "fashion/archive/2026-10-13.md"
+    },
+    "image-gate.json": {
+      "status": "PASS",
+      "topic_type": "celebrity",
+      "image_count": 5,
+      "body_image_count": 5,
+      "item_claim_count": 0,
+      "hard_failures": [],
+      "warnings": [],
+      "article_sha256": "9279019457bf679feb0f540920b5f67a6a3fc0d7a3e9d8222eb7b273df1847a5",
+      "article_path": "fashion/archive/2026-10-13.md"
+    }
+  }
+}

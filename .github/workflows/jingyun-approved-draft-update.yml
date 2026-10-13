@@ -88,6 +88,7 @@ jobs:
           WECHAT_APP_SECRET: ${{ secrets.JINGYUN_WECHAT_APP_SECRET }}
           PROXY_URL: ${{ secrets.PROXY_URL }}
           WECHAT_AUTHOR: "静筠"
+          GITHUB_TOKEN: ${{ github.token }}
           ARTICLE_PATH: ${{ env.ARTICLE_PATH }}
           ORIGINAL_DRAFT_DATE: ${{ env.ORIGINAL_DRAFT_DATE }}
         run: python jingyun/update_existing_draft.py

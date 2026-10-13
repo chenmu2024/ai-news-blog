@@ -1,0 +1,25 @@
+name: One-off missing E draft published-index read-only check
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/oneoff-parenting-published-20261013.yml"
+permissions:
+  contents: read
+jobs:
+  read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "requests[socks]>=2.32,<3"
+      - run: python -m py_compile content_os/oneoff_parenting_published_check_20261013.py
+      - name: Search published articles without creating or sending
+        env:
+          PARENTING_WECHAT_APP_ID: ${{ secrets.PARENTING_WECHAT_APP_ID }}
+          PARENTING_WECHAT_APP_SECRET: ${{ secrets.PARENTING_WECHAT_APP_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python content_os/oneoff_parenting_published_check_20261013.py

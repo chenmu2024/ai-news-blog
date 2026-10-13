@@ -16,8 +16,9 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 ACTIVATION = "2026-10-14"
 HUMANIZER_ACTIVATION = "2026-10-14"
-HUMANIZER_VERSION = "v3"
-HUMANIZER_LIBRARY = "wechat-humanizer-v3-2014-2016"
+HUMANIZER_VERSION = "v4"
+HUMANIZER_LIBRARY = "wechat-humanizer-v4-2014-2016"
+HUMANIZER_ROLES = {"opening", "structure", "detail", "stance", "ending"}
 HUMANIZER_STYLES = {
     "qiezhi": {"opinion", "explainer", "story"},
     "wechat": {"explainer", "opinion", "story"},
@@ -72,11 +73,11 @@ def recent_archives(root, profile, day):
 
 
 def _humanizer_errors(rec, profile, body):
-    """Validate Humanizer V3 handoff evidence; never expose corpus fulltext."""
+    """Validate Humanizer V4 handoff evidence; never expose corpus fulltext."""
     errors = []
     data = rec.get("humanizer")
     if not isinstance(data, dict):
-        return ["editorial_humanizer_v3_missing"]
+        return ["editorial_humanizer_v4_missing"]
     if data.get("version") != HUMANIZER_VERSION:
         errors.append("editorial_humanizer_version_mismatch")
     if data.get("reference_library") != HUMANIZER_LIBRARY:
@@ -96,6 +97,7 @@ def _humanizer_errors(rec, profile, body):
         errors.append("editorial_humanizer_requires_3_to_5_references")
         return errors
     distinct_sources = set()
+    distinct_roles = set()
     project_refs = 0
     for item in refs:
         if not isinstance(item, dict):
@@ -122,8 +124,26 @@ def _humanizer_errors(rec, profile, body):
             errors.append("editorial_humanizer_reference_id_missing")
         if item.get("style") not in HUMANIZER_STYLES[profile]:
             errors.append("editorial_humanizer_reference_style_mismatch")
+        role = item.get("role")
+        if role not in HUMANIZER_ROLES:
+            errors.append("editorial_humanizer_reference_role_invalid")
+        else:
+            distinct_roles.add(role)
+        scores = item.get("scores")
+        required_scores = ("topic_similarity", "style_fit", "account_fit", "structure_fit", "total")
+        if not isinstance(scores, dict):
+            errors.append("editorial_humanizer_reference_scores_missing")
+        else:
+            for key in required_scores:
+                value = scores.get(key)
+                if not isinstance(value, (int, float)) or not (0 <= value <= 1):
+                    errors.append("editorial_humanizer_reference_score_invalid:" + key)
+        if not _text(item.get("retrieval_reason"), 8):
+            errors.append("editorial_humanizer_reference_reason_missing")
         if not _text(item.get("learned_feature"), 8):
             errors.append("editorial_humanizer_reference_learning_missing")
+    if len(distinct_roles) < min(4, len(refs)):
+        errors.append("editorial_humanizer_reference_roles_not_diverse")
     if project_refs < 2:
         errors.append("editorial_humanizer_needs_two_project_bank_references")
     if len(distinct_sources) < 3:

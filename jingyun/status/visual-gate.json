@@ -3,10 +3,10 @@
   "profile": "jingyun",
   "required_visuals": 2,
   "visual_count": 2,
-  "markdown_images": 0,
+  "markdown_images": 1,
   "html_images": 0,
-  "renderable_cards": 2,
+  "renderable_cards": 1,
   "hard_failures": [],
-  "article_sha256": "437b0bd7cebe16bbc4aa71cd504b98b1a40e1f20f8cfd131a4d5b5d7bb07db62",
-  "article_path": "jingyun/archive/2026-10-12.md"
+  "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
+  "article_path": "jingyun/archive/2026-10-13.md"
 }

@@ -1,11 +1,11 @@
 {
   "date": "2026-10-13",
-  "generated_at": "2026-10-13T08:09:57.081929+08:00",
+  "generated_at": "2026-10-13T08:47:52.421441+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
   "success_count": 0,
   "expected_count": 7,
-  "draft_confirmed_count": 0,
+  "draft_confirmed_count": 1,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -20,7 +20,7 @@
   ],
   "headline_decisions": {
     "status": "incomplete",
-    "complete_count": 0,
+    "complete_count": 1,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -84,16 +84,21 @@
         ]
       },
       "jingyun": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "为什么总把自己的事留到以后",
+        "candidates": [
+          "为什么总把自己的事留到以后",
+          "到了中年，为什么自己的时间总要让路",
+          "女人忙了一天，别再把自己排到最后"
+        ],
+        "rationale": "聚焦成年女性长期推迟个人愿望这一现实困境，与前日女性友情及此前家庭隐形劳动选题不同；举例为概括性情境，没有虚构作者亲历；WHO自我照护指南只用于支持日常生活照护的原则，不作具体疗效断言；AI原生图真实生成并提交私有图片入库。",
+        "basis": [
+          "WHO 2026-06-03《Self-care for health and well-being》确认日常睡眠、身体活动、社会联结为自我照护相关行为",
+          "近30日静筠归档去重：未将个人愿望无限期延后的主题作为当日重复",
+          "情境均为概括性讨论，不涉及真实个案、投稿或采访"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "fashion": {
         "status": "missing_or_invalid",
@@ -266,29 +271,23 @@
       "profile": "jingyun",
       "status": "incomplete",
       "archive": "jingyun/archive/2026-10-13.md",
-      "title": "",
-      "archive_title": "",
-      "workflow_run_id": "38183313844",
+      "title": "为什么总把自己的事留到以后",
+      "archive_title": "为什么总把自己的事留到以后",
+      "workflow_run_id": "38328415865",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
       "wechat_inline_readback_verified": false,
       "wechat_inline_image_count": null,
       "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed",
         "wechat_inline_image_readback_missing_or_mismatched"
       ]
     },

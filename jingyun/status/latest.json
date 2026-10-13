@@ -1,9 +1,10 @@
 {
   "status": "success",
-  "title": "到了中年，朋友慢慢走散，还要主动联系吗",
-  "article_path": "jingyun/archive/2026-10-12.md",
-  "article_sha256": "437b0bd7cebe16bbc4aa71cd504b98b1a40e1f20f8cfd131a4d5b5d7bb07db62",
-  "workflow_run_id": "38183313844",
-  "commit_sha": "7913f4e9cdca7ceadc93dde4da4da1a679f01487",
-  "completed_at_utc": "2026-10-11T23:11:39.961871+00:00"
+  "title": "为什么总把自己的事留到以后",
+  "article_path": "jingyun/archive/2026-10-13.md",
+  "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
+  "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsFBKrfE629EcNw-We5HGOOX0Tpf3J-ObnQrmJLLSoDCM",
+  "workflow_run_id": "38328415865",
+  "recovered_from_confirmed_journal": true,
+  "completed_at_utc": "2026-10-13T00:47:50.080456+00:00"
 }

@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-13",
+  "profile": "jingyun",
+  "state": "confirmed_readback_title_mismatch",
+  "expected_title": "为什么总把自己的事留到以后",
+  "observed_title": "ä¸ºä»ä¹æ»æèªå·±çäºçå°ä»¥å",
+  "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsFBKrfE629EcNw-We5HGOOX0Tpf3J-ObnQrmJLLSoDCM",
+  "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
+  "no_write_operation": true
+}

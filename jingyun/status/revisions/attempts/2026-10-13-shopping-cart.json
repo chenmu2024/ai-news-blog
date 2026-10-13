@@ -1,14 +1,12 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "operation": "draft/add",
   "profile": "jingyun",
   "article_path": "content_os/approved-revisions/jingyun/2026-10-13-shopping-cart.md",
   "article_sha256": "ec5d062ded3fe7e6b6d86dca1ee9276db24780dadbd325676536313aa2f5c0ea",
   "title": "为什么给自己花钱，总要找个理由",
-  "original_title_absent_in_batchget": true,
-  "new_title_absent_in_batchget": true,
-  "original_title": "为什么总把自己的事留到以后",
-  "reserved_at_utc": "2026-10-13T05:49:03.266560+00:00",
+  "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsEDui1EzgBECVe8KGxprE1Wl4pecCyMWBdIl_eBedjCX",
+  "confirmed_at_utc": "2026-10-13T05:49:08.250080+00:00",
   "workflow_run_id": "38353324778",
-  "safety": "Durable write-ahead reservation before non-idempotent WeChat draft/add."
+  "safety": "WeChat returned media_id; future runs must not call draft/add again."
 }

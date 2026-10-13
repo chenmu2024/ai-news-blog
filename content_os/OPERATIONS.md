@@ -6,7 +6,7 @@
 
 **规则优先级**：2026-10-13起先执行 `content_os/AI_SCENE_POLICY.md` 的AI写实图、无图注与微信正文回读硬规则；其次执行本手册、每号最新STYLE/SOURCE_POLICY与事实/原典/版权要求；旧 `RESILIENCE_POLICY.md` 中“图卡/库存图备用”的说明只能作为额外素材备选，不得替代A–F每篇至少一张有真实生成记录、SHA256与微信正文回读的AI写实图。若相互冲突，以当前硬规则为准。
 
-**写作质量最高优先级（从下一批新稿起）**：每次执行前必须完整阅读 `content_os/EDITORIAL_VOICE.md`，同时读取相应账号 STYLE/SOURCE_POLICY 与近30日文章。七号必须采用不同的作者立场、具体证据锚点与叙事节奏，严禁全部套用“引子→五个一二三分论点→误区→总结”的通用模板。选题先说明读者真正困在哪里、有什么经过核实的细节、证据支持哪一个独立判断；初稿后必须做一轮**从目标读者视角的删改/重组编辑**，把空洞评价、重复“不是X而是Y”、机械总结、无来源的虚构故事删掉。作者感必须由真实细节、矛盾与判断产生，不能靠虚构采访、第一人称亲历或情绪金句制造。旧质量门禁只查最低合规，不可把 `Quality Gate PASS` 当作“读起来好”或“像真人写的”证明。**只对新稿执行；已经 confirmed 的历史微信草稿及archive不可为改文风而覆盖或再提交**。
+**写作质量最高优先级（从下一批新稿起）**：每次执行前必须完整阅读 `content_os/EDITORIAL_VOICE.md`、`content_os/humanizer/README.md`，同时读取相应账号 STYLE/SOURCE_POLICY 与近30日文章。七号必须采用不同的作者立场、具体证据锚点与叙事节奏，严禁全部套用“引子→五个一二三分论点→误区→总结”的通用模板。选题先说明读者真正困在哪里、有什么经过核实的细节、证据支持哪一个独立判断；初稿后必须做一轮**从目标读者视角的删改/重组编辑**，把空洞评价、重复“不是X而是Y”、机械总结、无来源的虚构故事删掉。作者感必须由真实细节、矛盾与判断产生，不能靠虚构采访、第一人称亲历或情绪金句制造。旧质量门禁只查最低合规，不可把 `Quality Gate PASS` 当作“读起来好”或“像真人写的”证明。**只对新稿执行；已经 confirmed 的历史微信草稿及archive不可为改文风而覆盖或再提交**。
 
 **长周期运行口径**：北京时间07:00由唯一ChatGPT内容任务生产，11:20仍使用同一任务只补今日未完成号；两次运行都必须先按 `production_preflight.py` 与微信journal划分已完成/未完成/结果不明，依账号独立交付、不要等七篇写完才首次落库。GitHub Actions只负责核验、草稿桥及健康审计，无法自行调用ChatGPT图像生成能力。今天无archive/无强确认时不得报告成功，也不得把CI绿灯当成内容交付。
 
@@ -31,7 +31,7 @@
 - 强制读取当天 `content_os/source-health/latest.json`、`content_os/editorial-intelligence/YYYY-MM-DD.json` 和 `content_os/reading-feedback/latest.json`。日期过期视为 stale；`reject_or_research_only` 不得直接作为主选题；`eligible_for_auto_selection=false` 只能当线索；阅读反馈只有真实 numeric_records 足够且对应标题特征 count>=3 才可作为辅助信号，缺失/未授权时保持 unknown，不得把 0、旧数据或“相对更好”换算成阅读量。主源在 GitHub Runner 健康检查失败时优先用同号可达备用源，并记录降级；可达性不等于事实已核验或版权可用。
 - 先完整草拟正文与来源记录，审查标题重复、官方原典、日期、所有引用、图片许可和场景描述。G至少5张获得再使用许可的真人明星照片；A至少封面+正文知识卡。2026-10-13起，除G外每号每篇额外必须有至少1张真实生成并实际保存的AI原创写实风格图片（人物/自然/生活/史实意境须与内容相关）；AI场景不能替代政策数字卡、原典考据或真实商业证据，卡片也不能替代该写实图。AI_SCENE记录生成模型、生成ID、图片SHA、私有GitHub资产标识、用途与合成身份；publish_readiness/visual_gate/image_preflight须在已checkout的私有仓库核验文件SHA256、解码及微信媒体可用性，未真实生成/未上传则FAIL，不得伪造字段；D Source Gate 需可核验卷次和上下文，CText不可访问时须真实双版本文本回退，不能虚称影印通过。
 - 从 2026-10-11 起，每号必须先给出 **3 个互不相同且都可用的标题候选**，最终标题必须是其中之一；保存到 `content_os/title-decisions/YYYY-MM-DD.json`，同时记录具体选择理由和依据（账号匹配、具体事件、30天去重、证据强度等）。最终 `selected_title` 必须与 archive 的 H1 完全一致，阅读量未知时 `verified_views=null`。标题决策缺失只触发编辑告警，绝不能因此对已成功草稿执行第二次 `draft/add`。
-- 2026-10-14起先按 `PRODUCTION_BRIEF.md` 完成选题对照、两次阅读和逐号证据，在 `editorial-reviews/<profile>/YYYY-MM-DD.json` 保存记录；正文改变须重审。候选、标题记录、编辑记录一并提交到main后才能promotion，直接archive同样受门禁约束。缺记录不得上传，已confirmed不得因此重发。
+- 2026-10-14起先按 `PRODUCTION_BRIEF.md` 完成选题对照、Humanizer V3动态真人参考、两次阅读和逐号证据，在 `editorial-reviews/<profile>/YYYY-MM-DD.json` 保存记录；正文改变须重审。Humanizer每篇3–5个参考，至少2个来自项目内500篇/2290段研究库，至少3个不同来源；只学写法，不复制参考文本，完成后重新核事实。候选、标题记录、编辑记录一并提交到main后才能promotion，直接archive同样受门禁约束。缺记录不得上传，已confirmed不得因此重发。
 - **提交新 archive 之前**，在临时文件上执行对应的结构、文风、源和图片校验。命令示例（以 C 为例）：
 
   `python content_os/publish_readiness.py --profile business --article /tmp/business-today.md`

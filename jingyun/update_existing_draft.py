@@ -57,7 +57,7 @@ def main() -> None:
     if latest.get("article_path") != original_archive.as_posix():
         fail("latest status points to another archive")
 
-    media_id = str(journal["draft_media_id"])
+    journal_media_id = str(journal["draft_media_id"])
 
     raw_md = ARTICLE.read_text("utf-8")
     md = strip_image_backup_notes(
@@ -77,13 +77,75 @@ def main() -> None:
 
     tok = publisher.token()
 
-    # Read the existing confirmed draft first and prove we are updating the same object.
-    before = publisher.get_draft(tok, media_id)
-    old_items = before.get("news_item") or []
-    if not old_items or not isinstance(old_items[0], dict):
-        fail("Confirmed media_id no longer resolves to a readable draft")
-    if old_items[0].get("title") != journal.get("title"):
-        fail("Existing draft title no longer matches confirmed journal; manual review required")
+    # Resolve the CURRENT draft object from WeChat itself. The durable journal can
+    # become stale if a draft was manually replaced in the WeChat backend.
+    # batchget is read-only and prevents blind draft/add or blind update attempts.
+    def batchget_all() -> list[dict]:
+        items: list[dict] = []
+        offset = 0
+        while True:
+            payload = {"offset": offset, "count": 20, "no_content": 0}
+            resp = publisher.request_with_proxy(
+                "POST",
+                publisher.API + "/draft/batchget",
+                params={"access_token": tok},
+                data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+                headers={"Content-Type": "application/json; charset=utf-8"},
+                timeout=60,
+            )
+            data = decode_wechat_response(resp)
+            if data.get("errcode") not in (None, 0):
+                fail("WeChat draft/batchget failed: " + json.dumps(data, ensure_ascii=False))
+            page = data.get("item") or []
+            if not isinstance(page, list):
+                fail("WeChat draft/batchget returned invalid item list")
+            items.extend(x for x in page if isinstance(x, dict))
+            total = int(data.get("total_count") or len(items))
+            offset += len(page)
+            if not page or offset >= total:
+                break
+            if offset > 500:
+                fail("Refuse unbounded WeChat draft pagination")
+        return items
+
+    drafts = batchget_all()
+    old_title = str(journal.get("title") or "")
+    matches: list[tuple[str, dict]] = []
+    new_title_matches: list[tuple[str, dict]] = []
+    for row in drafts:
+        mid = str(row.get("media_id") or "")
+        content = row.get("content") or {}
+        news = content.get("news_item") or []
+        if not mid or not news or not isinstance(news[0], dict):
+            continue
+        row_title = str(news[0].get("title") or "")
+        if row_title == old_title:
+            matches.append((mid, news[0]))
+        if row_title == api_title:
+            new_title_matches.append((mid, news[0]))
+
+    if len(matches) == 1:
+        media_id, old_item = matches[0]
+        resolution_mode = "batchget_title_match"
+    elif len(matches) == 0 and len(new_title_matches) == 1:
+        # A previous update may have succeeded after the client lost its response.
+        # Do not write again. Read back the one exact title match and record it as
+        # already-updated only after content/image verification below.
+        media_id, old_item = new_title_matches[0]
+        resolution_mode = "batchget_already_new_title"
+    elif len(matches) == 0:
+        fail(
+            "Current WeChat draft list has no exact original-title match; "
+            "refuse draft/add or guessing another media_id. "
+            f"journal_media_id={journal_media_id!r}, old_title={old_title!r}"
+        )
+    else:
+        fail(f"Multiple WeChat drafts match original title {old_title!r}; manual review required")
+
+    if journal_media_id != media_id:
+        print("[RECONCILE] journal media_id is stale; resolved current media_id by exact title")
+        print("[STALE_MEDIA_ID]", journal_media_id)
+        print("[CURRENT_MEDIA_ID]", media_id)
 
     body_md = re.sub(r"(?m)^#\s+.+?\s*$", "", md, count=1).lstrip()
     body_md, _ = publisher.replace_cards(body_md, tok)
@@ -107,21 +169,26 @@ def main() -> None:
             "only_fans_can_comment": 0,
         },
     }
-    response = publisher.request_with_proxy(
-        "POST",
-        publisher.API + "/draft/update",
+    if resolution_mode == "batchget_already_new_title":
+        after = publisher.get_draft(tok, media_id)
+        proof = verify_saved_payload(PROFILE, api_title, media_id, public_html, after)
+        update_result = {"errcode": 0, "errmsg": "already updated; write skipped after batchget reconciliation"}
+    else:
+        response = publisher.request_with_proxy(
+            "POST",
+            publisher.API + "/draft/update",
         params={"access_token": tok},
         data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
         headers={"Content-Type": "application/json; charset=utf-8"},
-        timeout=60,
-    )
-    update_result = decode_wechat_response(response)
-    if update_result.get("errcode") not in (None, 0):
-        fail("WeChat draft/update failed: " + json.dumps(update_result, ensure_ascii=False))
+            timeout=60,
+        )
+        update_result = decode_wechat_response(response)
+        if update_result.get("errcode") not in (None, 0):
+            fail("WeChat draft/update failed: " + json.dumps(update_result, ensure_ascii=False))
 
-    # Official readback of the SAME media_id proves this was an in-place update.
-    after = publisher.get_draft(tok, media_id)
-    proof = verify_saved_payload(PROFILE, api_title, media_id, public_html, after)
+        # Official readback of the SAME media_id proves this was an in-place update.
+        after = publisher.get_draft(tok, media_id)
+        proof = verify_saved_payload(PROFILE, api_title, media_id, public_html, after)
 
     article_sha = hashlib.sha256(ARTICLE.read_bytes()).hexdigest()
     receipt = {
@@ -131,7 +198,9 @@ def main() -> None:
         "original_draft_date": ORIGINAL_DAY,
         "original_archive": original_archive.as_posix(),
         "original_title": journal.get("title"),
+        "journal_draft_media_id": journal_media_id,
         "draft_media_id": media_id,
+        "media_id_resolution": resolution_mode,
         "new_title": api_title,
         "approved_article_path": ARTICLE.as_posix(),
         "approved_article_sha256": article_sha,
@@ -142,7 +211,7 @@ def main() -> None:
         "readback_body_sha256": proof.get("readback_body_sha256"),
         "workflow_run_id": os.environ.get("GITHUB_RUN_ID", ""),
         "updated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "safe_note": "Updated the existing confirmed draft media_id in place; draft/add and publish/broadcast were not called.",
+        "safe_note": "Resolved the current draft via read-only batchget, then updated that existing draft in place; draft/add and publish/broadcast were not called.",
     }
     out = Path(PROFILE) / "status" / "revisions" / (ARTICLE.stem + ".json")
     out.parent.mkdir(parents=True, exist_ok=True)

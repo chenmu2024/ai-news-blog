@@ -65,6 +65,19 @@ def identical(article, title, body, cover=None):
         return False
 
 
+def unchanged_draft(before, after):
+    """Compare stable, user-visible fields; WeChat can vary volatile API fields.
+
+    A changed title/body/inline photo/cover/author must still block the update.
+    We deliberately ignore counters, API-only fields and update timestamps.
+    """
+    return (
+        identical(after, before.get('title'), before.get('content', ''),
+                  before.get('thumb_media_id'))
+        and after.get('author') == before.get('author')
+    )
+
+
 def prepared(profile):
     if profile not in PROFILES:
         raise ValueError('Unknown profile')
@@ -203,8 +216,8 @@ def main(profile):
         if len(image_sources(body)) != len(row['images']):
             raise RuntimeError('Rendered image count mismatch')
         # Verify the original has not been edited during uploads.
-        if current() != saved:
-            raise RuntimeError('Original draft changed while preparing replacement')
+        if not unchanged_draft(saved, current()):
+            raise RuntimeError('Original draft visible content changed while preparing replacement')
         receipt = {'state': 'attempted', 'status': 'pending', 'operation': 'in_place_draft_update',
                    'original_article_path': original['article_path'], 'original_article_sha256': original['article_sha256'],
                    'revision_path': (BASE / (profile + '.md')).as_posix(),

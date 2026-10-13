@@ -24,6 +24,14 @@
 - `reader_review`和`fact_review`: 两个对象各含`finding`、`change`、`final_excerpt`、`unresolved`。
   finding是本次阅读发现，change是实际修改或核对结果，final_excerpt为最终正文摘句；不能写通用“已检查”。
   未解决问题列入unresolved，非空不得approve。两次阅读可以由同一任务依次完成，不虚称独立人类审稿。
+- `humanizer`（2026-10-14起新稿必填）：对象包含：
+  - `version: "v3"`、`reference_library: "wechat-humanizer-v3-2014-2016"`；
+  - `reference_examples`: 3–5个对象，每个含 `origin`（`project_bank`或`web_benchmark`）、`reference_id`、`source_name`、`style`、`learned_feature`；web标杆额外保存真实HTTPS `url`。至少2个`project_bank`，至少3个不同来源；style须符合该账号Humanizer profile；
+  - `anti_patterns_removed`: 至少2条本稿实际删改，不能填通用占位；
+  - `final_excerpt`: Humanizer后最终正文逐字摘句；
+  - `copied_reference_text: false`：没有复制参考稿原句/事实；
+  - `fact_recheck: true`：Humanizer后再次核对数字、人名、地点、时间、政策/作品名、直接引语和事实边界。
+  旧公众号参考全文只存在ChatGPT项目研究语料，不提交到公开仓库；编辑记录只留引用ID、来源名和提炼出的写法特征。
 - `feedback_applied`: 对每项适用active反馈写`id`与`change`；记录这一篇如何回应，不需要虚构阅读表现。
 
 执行：

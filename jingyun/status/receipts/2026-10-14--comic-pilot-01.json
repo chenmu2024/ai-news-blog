@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "profile": "jingyun",
+  "article_id": "2026-10-14--comic-pilot-01",
+  "article_date": "2026-10-14",
+  "title": "结婚九年，我们开始用便签说话",
+  "article_path": "jingyun/archive/2026-10-14--comic-pilot-01.md",
+  "article_sha256": "80332ba67bb6de350f3bb63e1aab75e53d5ff5d5d67a11cbc739e94d11957ccf",
+  "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsEM-J_PzRfv4fZSSZy3PhD6cESNURG01qkApDjVAw66c",
+  "inline_image_count": 6,
+  "readback_evidence": {
+    "source": "original_GitHub_Actions_run_log",
+    "workflow_run_id": "38512996694",
+    "url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/38512996694",
+    "observation": "[WECHAT_DRAFT_READBACK] verified jingyun 6",
+    "verified_in_original_run": true
+  },
+  "safe_recovery": "Confirmed journal and original draft/get success log; draft/add was NOT retried",
+  "safety": "No official WeChat mass publish or broadcast was initiated"
+}

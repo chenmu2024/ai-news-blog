@@ -111,6 +111,47 @@ jobs:
             echo "::endgroup::"
           done
 
+          # Additional user-approved articles have independent IDs/journals and
+          # may coexist with the first daily draft; never replace YYYY-MM-DD.md.
+          for PROFILE in qiezhi wechat business zizhitongjian parenting jingyun fashion; do
+            while IFS= read -r SOURCE; do
+              ID="$(basename "$SOURCE" .md)"
+              echo "::group::extra-$PROFILE-$ID"
+              for ATTEMPT in 1 2 3; do
+                git fetch origin main
+                git reset --hard origin/main
+                OUTPUT="$(mktemp)"
+                if ! python content_os/inbox_promote.py --profile "$PROFILE" --date "$DATE" --article-id "$ID" > "$OUTPUT" 2>&1; then
+                  tail -c 2500 "$OUTPUT"
+                  echo "::warning::extra candidate $PROFILE/$ID rejected; no WeChat call."
+                  rm -f "$OUTPUT"
+                  break
+                fi
+                tail -c 1000 "$OUTPUT"
+                rm -f "$OUTPUT"
+                FILE="$PROFILE/archive/$ID.md"
+                LEDGER="content_os/title-decisions/$ID.json"
+                if ! test -f "$FILE" || git ls-tree -r --name-only HEAD -- "$FILE" | grep -Fxq "$FILE"; then
+                  echo "[SKIP] No new supplementary article $FILE"
+                  break
+                fi
+                git add -- "$FILE" "$LEDGER"
+                git commit -m "content($PROFILE): promote approved extra $ID archive"
+                if git push origin HEAD:main; then
+                  echo "[PROMOTED EXTRA] $FILE"
+                  break
+                fi
+                if [ "$ATTEMPT" -eq 3 ]; then
+                  echo "::error::Could not persist extra archive $FILE"
+                  exit 1
+                fi
+                sleep "$ATTEMPT"
+              done
+              echo "::endgroup::"
+            done < <(find "content_os/inbox/$PROFILE" -maxdepth 1 -type f -name "$DATE--*.md" | sort)
+
+          done
+
       - name: Dispatch first safe WeChat draft workflow explicitly
         env:
           GH_TOKEN: ${{ github.token }}
@@ -125,3 +166,18 @@ jobs:
             # Each dispatch is guarded against existing daily Actions/journals.
             python content_os/safe_dispatch.py --profile "$PROFILE" --date "$DATE"
           done
+          # Each extra draft is dispatched independently; old daily workflows
+          # remain once-per-day and only guard YYYY-MM-DD.md.
+          for PROFILE in qiezhi wechat business zizhitongjian parenting jingyun fashion; do
+            while IFS= read -r FILE; do
+              ID="$(basename "$FILE" .md)"
+              JOURNAL="$PROFILE/status/draft-attempts/$ID.json"
+              if [ -f "$JOURNAL" ]; then
+                echo "[SKIP] $FILE has already attempted draft/add"
+                continue
+              fi
+              echo "[EXTRA_DISPATCH] $PROFILE $FILE"
+              gh workflow run multi-draft-bridge.yml --ref main -f profile="$PROFILE" -f article_path="$FILE"
+            done < <(find "$PROFILE/archive" -maxdepth 1 -type f -name "$DATE--*.md" | sort)
+          done
+

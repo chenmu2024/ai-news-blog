@@ -18,7 +18,10 @@ def main() -> int:
     parser.add_argument("--article", type=Path, required=True)
     args = parser.parse_args()
     original = args.article.read_text(encoding="utf-8")
-    from content_os.multi_draft import get_article_identity
+    try:
+        from content_os.multi_draft import get_article_identity
+    except ImportError:
+        from multi_draft import get_article_identity
     day, _ = get_article_identity(args.article, args.profile)
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", day):
         ai_errors = verify_ai_scene_bytes(args.profile, day, original)

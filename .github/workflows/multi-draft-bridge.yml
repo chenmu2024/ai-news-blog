@@ -140,6 +140,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "$PROFILE/status/draft-readback/$(basename "$ARTICLE_PATH" .md).json" "$PROFILE/status/receipts/$(basename "$ARTICLE_PATH" .md).json"
           git commit -m "receipt($PROFILE): confirm extra draft $(basename "$ARTICLE_PATH" .md)"
+          # Discard ephemeral quality/visual side effects after the receipt is
+          # committed; they are already bound in the durable journal snapshot.
+          # Otherwise git rebase refuses to run with unstaged gate report files.
+          git reset --hard HEAD
           for ATTEMPT in 1 2 3 4 5 6; do
             git fetch origin main
             git rebase origin/main

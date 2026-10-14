@@ -3,23 +3,23 @@
   "profile": "zizhitongjian",
   "profile_name": "资治通鉴｜原典·人性·决策",
   "score": 15,
-  "body_chars": 2439,
+  "body_chars": 1094,
   "template_hits": 0,
   "internal_hits": 0,
-  "fact_signals": 31,
+  "fact_signals": 11,
   "stance_signals": 0,
   "paragraph_regularity": {
-    "paragraphs": 20,
-    "cv": 0.926
+    "paragraphs": 18,
+    "cv": 0.387
   },
   "sentence_repetition": {
-    "sentences": 50,
-    "repeated_starts": 0,
-    "ratio": 0.0
+    "sentences": 35,
+    "repeated_starts": 1,
+    "ratio": 0.029
   },
-  "very_short_paragraph_ratio": 0.222,
+  "very_short_paragraph_ratio": 0.095,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
-  "article_sha256": "bcde4023ccba415e302882ddb97d798486a2fdc976c7a801d976b3f14a579af3",
-  "article_path": "zizhitongjian/archive/2026-10-13.md"
+  "article_sha256": "b47444ad10060e4e1610feccfbd0aff8cae52ae334a1e74f7352546ae8218a05",
+  "article_path": "zizhitongjian/archive/2026-10-14.md"
 }

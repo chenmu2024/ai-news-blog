@@ -2,24 +2,24 @@
   "status": "PASS",
   "profile": "ai_business",
   "profile_name": "陈慕｜AI 一人公司实战",
-  "score": 6,
-  "body_chars": 2569,
+  "score": 15,
+  "body_chars": 1525,
   "template_hits": 0,
   "internal_hits": 0,
-  "fact_signals": 11,
-  "stance_signals": 2,
+  "fact_signals": 24,
+  "stance_signals": 0,
   "paragraph_regularity": {
-    "paragraphs": 21,
-    "cv": 0.887
+    "paragraphs": 18,
+    "cv": 0.343
   },
   "sentence_repetition": {
-    "sentences": 52,
-    "repeated_starts": 0,
-    "ratio": 0.0
+    "sentences": 42,
+    "repeated_starts": 3,
+    "ratio": 0.071
   },
-  "very_short_paragraph_ratio": 0.16,
+  "very_short_paragraph_ratio": 0.143,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
-  "article_sha256": "365b2ba1c024788499aee9361c39c2618ca3015c467d395e422d1ebf9fc3833d",
-  "article_path": "wechat/archive/2026-10-13.md"
+  "article_sha256": "7ff4ffd32ed5bf0095c299b1ecbc5577f5c7b15f7c7a31644e2923b32168269c",
+  "article_path": "wechat/archive/2026-10-14.md"
 }

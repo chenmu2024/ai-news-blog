@@ -1,0 +1,13 @@
+{
+  "draft_get_verified": true,
+  "state": "verified",
+  "profile": "wechat",
+  "draft_media_id": "7atnsfbEXVAzgXv2wTjVvACgriIm0z3znyG-CyCKs6pZfXOSOACFc0iDsYzo2EcH",
+  "inline_image_count": 2,
+  "expected_inline_image_count": 2,
+  "readback_body_sha256": "e2a7b69a7a62ed31c353d07691609ca85b2e9ceaa485ff0625c06e65248cf4ed",
+  "verified_at_utc": "2026-10-14T00:43:25.999159+00:00",
+  "article_path": "wechat/archive/2026-10-14.md",
+  "article_sha256": "7ff4ffd32ed5bf0095c299b1ecbc5577f5c7b15f7c7a31644e2923b32168269c",
+  "article_date": "2026-10-14"
+}

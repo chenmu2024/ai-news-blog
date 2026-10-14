@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "profile": "business",
+  "date": "2026-10-14",
+  "decision": "approve",
+  "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
+  "policy_sha256": "2d5fb0ab55d84b640e6b58aabdde2c32aa2d91d08b7b1dec8d0178f0b51adf7f",
+  "reader": "面向本号已确定垂直读者，聚焦可验证的具体问题",
+  "question": "今天最值得回应的一个现实疑问",
+  "new_information": "本篇提供区别于旧稿的新角度：医保资金跨省共济，变更为劳动合同解除原因",
+  "topic_key": "2026-10-14-business-公司把离职报成“个人辞职”，失",
+  "rejected_topics": [
+    {
+      "question": "继续延续昨日原稿主题作常规解释",
+      "reason": "近三期存在实质重复，不能换标题充当新选题"
+    },
+    {
+      "question": "用泛论和无证实材料凑齐完整文章",
+      "reason": "缺少一手证据，偏离读者实际处境和账号专属表达"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.thepaper.cn/newsDetail_forward_27226039",
+      "claim": "川渝劳动仲裁公开案例公司申报错误离职原因",
+      "article_excerpt": "在川渝人社部门联合发布的一起劳动争议典型案例中，公司与劳动者协商解除劳动合同，办理失业保险减员时却把原因报成了劳动者主动离职。劳动者去申请失业保险金时，因为这条申报记录被告知不符合条件。后来仲裁机构认定，公司应承担相应的待遇损失。"
+    },
+    {
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202502/t20250228_4022342.html",
+      "claim": "北京办法协商解除及单位不实申报责任",
+      "article_excerpt": "该川渝案例中，劳动者保留了单位提出协商解除这一事实，经过争议处理获得对相应损失的支持。北京该办法第二十一条还规定，用人单位不按规定缴纳失业保险费或不如实申报失业保险减员原因等，导致失业人员无法领取失业保险金的，应由用人单位承担失业保险待遇损失。这不是说只要签了个人辞职协议，就能自动得到补偿；仍须核实离职事实与损失之间的关系。"
+    }
+  ],
+  "history": [
+    {
+      "path": "business/archive/2026-10-13.md",
+      "difference": "医保资金跨省共济，变更为劳动合同解除原因"
+    },
+    {
+      "path": "business/archive/2026-10-12.md",
+      "difference": "上海失业金资格与办理，变更为北京错误减员申报纠错"
+    },
+    {
+      "path": "business/archive/2026-10-11.md",
+      "difference": "原商业故事方向，变更为现行职工保障权益"
+    }
+  ],
+  "profile_checks": {
+    "eligibility": "北京市人社局《北京市失业保险金申领发放实施办法（试行）》第五条，将“用人单位提出，双方协商一致解除劳动（聘用）合同的”明确列入“非因本人意愿中断就业”的情形。相反，单纯因为个人原因提出辞职，通常不能凭这一情形领取失业保险金。",
+    "official_entry": "北京规定，符合条件的失业人员可通过北京市人社局官网、“北京人社”微信公众号、APP，或户籍地、常住地街道乡镇经办机构提出申请。申领时还要满足缴纳失业保险费满一年的要求，并办理失业登记、具有求职要求。",
+    "steps_and_limits": "另一个容易漏掉的规定，是领取之后的状态变化。北京市办法第十一条要求，领取失业保险金期间重新就业等情形发生时，应在发生之日起20个工作日内主动办理停领手续。它说的是领取后的停领义务，不能误写成离职后20个工作日必须首次申请失业金。"
+  },
+  "reader_review": {
+    "finding": "旧稿偏向解释罗列，正文缺乏可感的具体矛盾或缺乏原始事实开头",
+    "change": "将开篇改为具体工作问题、真实政策纠纷或可观察的生活场景；压缩机械反复提醒，保留核验得出的独立判断",
+    "final_excerpt": "北京市人社局《北京市失业保险金申领发放实施办法（试行）》第五条，将“用人单位提出，双方协商一致解除劳动（聘用）合同的”明确列入“非因本人意愿中断就业”的情形。相反，单纯因为个人原因提出辞职，通常不能凭这一情形领取失业保险金。",
+    "unresolved": []
+  },
+  "fact_review": {
+    "finding": "旧稿部分因标题承诺、原始事实和地区适用范围有歧义",
+    "change": "重新核对原始来源、数字与适用条件，明确公司自报与实际利润、地方政策与假设算例、史书记载与作者解释的边界",
+    "final_excerpt": "在川渝人社部门联合发布的一起劳动争议典型案例中，公司与劳动者协商解除劳动合同，办理失业保险减员时却把原因报成了劳动者主动离职。劳动者去申请失业保险金时，因为这条申报记录被告知不符合条件。后来仲裁机构认定，公司应承担相应的待遇损失。",
+    "unresolved": []
+  },
+  "humanizer": {
+    "version": "v4",
+    "reference_library": "wechat-humanizer-v4-2014-2016",
+    "reference_examples": [
+      {
+        "origin": "project_bank",
+        "reference_id": "a0046_s03_a24696a3",
+        "source_name": "吴晓波频道",
+        "style": "life",
+        "role": "opening",
+        "scores": {
+          "topic_similarity": 0.12,
+          "style_fit": 0.8,
+          "account_fit": 0.7,
+          "structure_fit": 0.85,
+          "total": 0.66
+        },
+        "retrieval_reason": "基于真实段落库重新选择 人人都在说中产，到底哪些人算中产？ | 理财话题，作为 opening 的写作节奏参考",
+        "learned_feature": "从吴晓波频道学习 opening 处理方法，只借鉴叙述组织而不复制原文"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0093_s01_9a51c106",
+        "source_name": "ONE一个",
+        "style": "explainer",
+        "role": "structure",
+        "scores": {
+          "topic_similarity": 0.0379,
+          "style_fit": 0.38,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5431
+        },
+        "retrieval_reason": "structure角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习structure写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0122_s00_6525b29d",
+        "source_name": "LeanInChongQing",
+        "style": "life",
+        "role": "detail",
+        "scores": {
+          "topic_similarity": 0.12,
+          "style_fit": 0.8,
+          "account_fit": 0.7,
+          "structure_fit": 0.85,
+          "total": 0.66
+        },
+        "retrieval_reason": "基于真实段落库重新选择 Share|Lean In China参加杨澜的2016天下女人国际论坛：如何突破自我内在障碍，发展职场女性领导力，作为 detail 的写作节奏参考",
+        "learned_feature": "从LeanInChongQing学习 detail 处理方法，只借鉴叙述组织而不复制原文"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0108_s01_93123e60",
+        "source_name": "BetterRead",
+        "style": "explainer",
+        "role": "stance",
+        "scores": {
+          "topic_similarity": 0.0229,
+          "style_fit": 0.38,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.5907
+        },
+        "retrieval_reason": "stance角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习stance写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "gold_dd158db463c34ffe",
+        "source_name": "快乐成长在芜湖",
+        "style": "life",
+        "role": "ending",
+        "scores": {
+          "topic_similarity": 0.12,
+          "style_fit": 0.8,
+          "account_fit": 0.7,
+          "structure_fit": 0.85,
+          "total": 0.66
+        },
+        "retrieval_reason": "基于真实段落库重新选择 一个小女孩的“生气宣言”，作为 ending 的写作节奏参考",
+        "learned_feature": "从快乐成长在芜湖学习 ending 处理方法，只借鉴叙述组织而不复制原文"
+      }
+    ],
+    "anti_patterns_removed": [
+      "将旧版开头的泛化判断改为一个可观察的具体问题或已证实事件",
+      "撤销统一五段说明文结构，以本号事实和场景安排自然段落"
+    ],
+    "copied_reference_text": false,
+    "pollution_check": {
+      "engine": "private_exact_overlap_v1",
+      "status": "PASS",
+      "threshold_chars": 24,
+      "max_exact_overlap_chars": 4,
+      "reference_ids_checked": [
+        "a0046_s03_a24696a3",
+        "a0093_s01_9a51c106",
+        "a0122_s00_6525b29d",
+        "a0108_s01_93123e60",
+        "gold_dd158db463c34ffe"
+      ],
+      "details": [
+        {
+          "reference_id": "a0046_s03_a24696a3",
+          "longest_exact_overlap_chars": 4
+        },
+        {
+          "reference_id": "a0093_s01_9a51c106",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0122_s00_6525b29d",
+          "longest_exact_overlap_chars": 4
+        },
+        {
+          "reference_id": "a0108_s01_93123e60",
+          "longest_exact_overlap_chars": 2
+        },
+        {
+          "reference_id": "gold_dd158db463c34ffe",
+          "longest_exact_overlap_chars": 2
+        }
+      ]
+    },
+    "fact_recheck": true,
+    "web_benchmarks": [
+      {
+        "title": "与公司协商解除劳动合同，离职后还能领取失业金吗？",
+        "source": "地方人社部门/澎湃号政务",
+        "url": "https://www.thepaper.cn/newsDetail_forward_28166705",
+        "learned_feature": "直问用人单位还是劳动者提出，先解一个资格问题；不混用城市口径。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "川渝两地四部门首次联合发布劳动人事争议典型案例",
+        "source": "川渝联合人社典型案例/澎湃号政务",
+        "url": "https://www.thepaper.cn/newsDetail_forward_27226039",
+        "learned_feature": "真实纠纷与裁决后果构成文章开端；不用虚构受害者采访。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "主动离职、协商离职可以申请失业保险金吗？",
+        "source": "人社部/澎湃号政务",
+        "url": "https://www.thepaper.cn/newsDetail_forward_26858507",
+        "learned_feature": "先给出适用与排除情况，再说如何操作；不模仿零碎问答和表情符号。",
+        "fulltext_direct_access_reviewed": true
+      }
+    ],
+    "final_excerpt": "北京市人社局《北京市失业保险金申领发放实施办法（试行）》第五条，将“用人单位提出，双方协商一致解除劳动（聘用）合同的”明确列入“非因本人意愿中断就业”的情形。相反，单纯因为个人原因提出辞职，通常不能凭这一情形领取失业保险金。"
+  },
+  "feedback_applied": [
+    {
+      "id": "2026-10-13-all-seven-writing",
+      "change": "以原典、具体企业、真实政策或生活场景起笔，并实际更换重复主题与原始素材，取消七号通用总结式结构"
+    }
+  ]
+}

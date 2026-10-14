@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "profile": "fashion",
+  "date": "2026-10-14",
+  "decision": "approve",
+  "article_sha256": "e41b97b0a9ab674b62b5824ed4639f985ebd36a8d9f52580b5151f286614b5c2",
+  "policy_sha256": "d5cb9d8562a986aa26923703101d6fd18cc091a28d7407348a01eb9fecd8f1c3",
+  "reader": "面向本号已确定垂直读者，聚焦可验证的具体问题",
+  "question": "今天最值得回应的一个现实疑问",
+  "new_information": "本篇提供区别于旧稿的新角度：Jisoo五套旧照，改为Karina五张不同时期真实造型",
+  "topic_key": "2026-10-14-fashion-Karina五套黑色造型，普通",
+  "rejected_topics": [
+    {
+      "question": "继续延续昨日原稿主题作常规解释",
+      "reason": "近三期存在实质重复，不能换标题充当新选题"
+    },
+    {
+      "question": "用泛论和无证实材料凑齐完整文章",
+      "reason": "缺少一手证据，偏离读者实际处境和账号专属表达"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Aespa_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_20240618_01.png",
+      "claim": "2024活动 照片的原始授权页和摄影者署名",
+      "article_excerpt": "黑色容易穿，却也容易穿得没有变化。aespa成员Karina在不同场合穿过的几套深色造型，恰好可以放在一起看：颜色接近，衣服承担的任务却完全不同。"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Aespa_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_20240618_01.png",
+      "claim": "第1张照片的原始来源与CC著作权使用要求",
+      "article_excerpt": "- 2024发布会：**티비텐**， [原文件](https://commons.wikimedia.org/wiki/File:Aespa_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_20240618_01.png)，[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)。\n- 2024 MMA：**10Asia**， [原文件](https://c"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Aespa_Karina_2024_MMA.jpg",
+      "claim": "第2张照片的原始来源与CC著作权使用要求",
+      "article_excerpt": "- 2024发布会：**티비텐**， [原文件](https://commons.wikimedia.org/wiki/File:Aespa_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_20240618_01.png)，[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)。\n- 2024 MMA：**10Asia**， [原文件](https://c"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:20250226_Aespa%27s_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_02.jpg",
+      "claim": "第3张照片的原始来源与CC著作权使用要求",
+      "article_excerpt": "- 2024发布会：**티비텐**， [原文件](https://commons.wikimedia.org/wiki/File:Aespa_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_20240618_01.png)，[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)。\n- 2024 MMA：**10Asia**， [原文件](https://c"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:241019_aespa_Karina_%40_2024_K-WONDER_CONCERT_IN_TAOYUAN.jpg",
+      "claim": "第4张照片的原始来源与CC著作权使用要求",
+      "article_excerpt": "- 2024发布会：**티비텐**， [原文件](https://commons.wikimedia.org/wiki/File:Aespa_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_20240618_01.png)，[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)。\n- 2024 MMA：**10Asia**， [原文件](https://c"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:231225_Karina_of_aespa_%40SBS_Gayo_Daejeon.jpg",
+      "claim": "第5张照片的原始来源与CC著作权使用要求",
+      "article_excerpt": "- 2024发布会：**티비텐**， [原文件](https://commons.wikimedia.org/wiki/File:Aespa_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_20240618_01.png)，[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)。\n- 2024 MMA：**10Asia**， [原文件](https://c"
+    }
+  ],
+  "history": [
+    {
+      "path": "fashion/archive/2026-10-13.md",
+      "difference": "Jisoo五套旧照，改为Karina五张不同时期真实造型"
+    },
+    {
+      "path": "fashion/archive/2026-10-12.md",
+      "difference": "Rosé配色比例专题，改为Karina黑色材质分层"
+    },
+    {
+      "path": "fashion/archive/2026-10-11.md",
+      "difference": "近期日本西装主题，改为实际舞台/机场黑色穿搭"
+    }
+  ],
+  "profile_checks": {
+    "photo_analysis": [
+      {
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Aespa_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_20240618_01.png",
+        "article_excerpt": "无袖黑色上装将注意力集中在领口和肩部。上半身缺少繁复装饰，头发与衣服形成比较清晰的轮廓。普通人不需要照搬露肤程度；选择肩线合适、领口干净的黑色上衣，比多堆几件饰品更稳妥。照片没有展示的下装，不作推断。"
+      },
+      {
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Aespa_Karina_2024_MMA.jpg",
+        "article_excerpt": "同样是黑色，露肩领口把视觉重点移到肩颈，长耳饰也更加醒目。这属于正式活动的表达，不必搬到办公室。若想借鉴，可以从一件剪裁准确的方领、船领或一字肩上衣开始；不喜欢露肩的人，用领口细节达到同样的变化即可。"
+      },
+      {
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/20250226_Aespa%27s_Karina_%EC%B9%B4%EB%A6%AC%EB%82%98_02.jpg",
+        "article_excerpt": "机场照片中的深色羽绒外套有明显的蓬松感。它的视觉体积已经很大，内搭不必再叠同样宽厚的层次。日常选羽绒服，要先核对肩部活动空间与实际保暖需要，而不是只按照明星照片选一个尺码。"
+      },
+      {
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/241019_aespa_Karina_%40_2024_K-WONDER_CONCERT_IN_TAOYUAN.jpg",
+        "article_excerpt": "这套舞台造型利用领口附近的金属配件，给深色服装增加视觉重心。舞台灯光会进一步放大材质对比，因此现实生活中无需复制所有装饰。黑色背心配一件设计清楚的首饰，往往比多条项链一起使用更容易收住。"
+      },
+      {
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/231225_Karina_of_aespa_%40SBS_Gayo_Daejeon.jpg",
+        "article_excerpt": "最后一张主要由蓝色、黑色以及金属质感的细节组成。即使颜色没有很多，光泽、拼接与服装结构仍然让造型成立。普通人借鉴时，可以使用一件藏蓝针织搭配黑色直筒下装，保留色彩关系，放弃难以在日常场景使用的舞台装饰。"
+      }
+    ]
+  },
+  "reader_review": {
+    "finding": "旧稿偏向解释罗列，正文缺乏可感的具体矛盾或缺乏原始事实开头",
+    "change": "将开篇改为具体工作问题、真实政策纠纷或可观察的生活场景；压缩机械反复提醒，保留核验得出的独立判断",
+    "final_excerpt": "黑色容易穿，却也容易穿得没有变化。aespa成员Karina在不同场合穿过的几套深色造型，恰好可以放在一起看：颜色接近，衣服承担的任务却完全不同。",
+    "unresolved": []
+  },
+  "fact_review": {
+    "finding": "旧稿部分因标题承诺、原始事实和地区适用范围有歧义",
+    "change": "重新核对原始来源、数字与适用条件，明确公司自报与实际利润、地方政策与假设算例、史书记载与作者解释的边界",
+    "final_excerpt": "黑色容易穿，却也容易穿得没有变化。aespa成员Karina在不同场合穿过的几套深色造型，恰好可以放在一起看：颜色接近，衣服承担的任务却完全不同。",
+    "unresolved": []
+  },
+  "humanizer": {
+    "version": "v4",
+    "reference_library": "wechat-humanizer-v4-2014-2016",
+    "reference_examples": [
+      {
+        "origin": "project_bank",
+        "reference_id": "a0027_s04_feb9ad06",
+        "source_name": "人类学之滇",
+        "style": "culture",
+        "role": "opening",
+        "scores": {
+          "topic_similarity": 0.0226,
+          "style_fit": 0.38,
+          "account_fit": 1.0,
+          "structure_fit": 0.8,
+          "total": 0.5611
+        },
+        "retrieval_reason": "opening角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习opening写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0022_s02_30bdbd60",
+        "source_name": "南方人物周刊",
+        "style": "culture",
+        "role": "structure",
+        "scores": {
+          "topic_similarity": 0.0225,
+          "style_fit": 0.38,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5491
+        },
+        "retrieval_reason": "structure角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习structure写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0037_s07_6bd2dc35",
+        "source_name": "南艺当代视觉艺术研究中心",
+        "style": "culture",
+        "role": "detail",
+        "scores": {
+          "topic_similarity": 0.0226,
+          "style_fit": 0.38,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.6104
+        },
+        "retrieval_reason": "detail角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习detail写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0066_s02_c4f41f6d",
+        "source_name": "法律读库",
+        "style": "culture",
+        "role": "stance",
+        "scores": {
+          "topic_similarity": 0.0155,
+          "style_fit": 0.38,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.5972
+        },
+        "retrieval_reason": "stance角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习stance写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0068_s03_19408aea",
+        "source_name": "博客天下",
+        "style": "culture",
+        "role": "ending",
+        "scores": {
+          "topic_similarity": 0.0268,
+          "style_fit": 0.38,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5464
+        },
+        "retrieval_reason": "ending角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习ending写法，不复制事实、人物、比喻或原句"
+      }
+    ],
+    "anti_patterns_removed": [
+      "将旧版开头的泛化判断改为一个可观察的具体问题或已证实事件",
+      "撤销统一五段说明文结构，以本号事实和场景安排自然段落"
+    ],
+    "copied_reference_text": false,
+    "pollution_check": {
+      "engine": "private_exact_overlap_v1",
+      "status": "PASS",
+      "threshold_chars": 24,
+      "max_exact_overlap_chars": 4,
+      "reference_ids_checked": [
+        "a0027_s04_feb9ad06",
+        "a0022_s02_30bdbd60",
+        "a0037_s07_6bd2dc35",
+        "a0066_s02_c4f41f6d",
+        "a0068_s03_19408aea"
+      ],
+      "details": [
+        {
+          "reference_id": "a0027_s04_feb9ad06",
+          "longest_exact_overlap_chars": 2
+        },
+        {
+          "reference_id": "a0022_s02_30bdbd60",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0037_s07_6bd2dc35",
+          "longest_exact_overlap_chars": 4
+        },
+        {
+          "reference_id": "a0066_s02_c4f41f6d",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0068_s03_19408aea",
+          "longest_exact_overlap_chars": 4
+        }
+      ]
+    },
+    "fact_recheck": true,
+    "web_benchmarks": [
+      {
+        "title": "Here’s How Celebrities Master the All-Black Outfit",
+        "source": "Vogue",
+        "url": "https://www.vogue.com/article/celebrities-all-black-outfits",
+        "learned_feature": "图后紧跟具体视觉观察，留意黑色质感；不复制品牌导购。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "7 All-Black Outfit Ideas That Are Anything But Basic",
+        "source": "Vogue",
+        "url": "https://www.vogue.com/article/all-black-outfits",
+        "learned_feature": "强调材质、领口、比例而非只有同款；不导入高价商品参数。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "봄 한가운데, 카리나",
+        "source": "Vogue Korea",
+        "url": "https://www.vogue.co.kr/2026/03/23/%EB%B4%84-%ED%95%9C%EA%B0%80%EC%9A%B4%EB%8D%B0-%EC%B9%B4%EB%A6%AC%EB%82%98/",
+        "learned_feature": "用具体可见的廓形和材质拆解人物穿衣；不使用其未获授权摄影作品。",
+        "fulltext_direct_access_reviewed": true
+      }
+    ],
+    "final_excerpt": "黑色容易穿，却也容易穿得没有变化。aespa成员Karina在不同场合穿过的几套深色造型，恰好可以放在一起看：颜色接近，衣服承担的任务却完全不同。"
+  },
+  "feedback_applied": [
+    {
+      "id": "2026-10-13-all-seven-writing",
+      "change": "以原典、具体企业、真实政策或生活场景起笔，并实际更换重复主题与原始素材，取消七号通用总结式结构"
+    }
+  ]
+}

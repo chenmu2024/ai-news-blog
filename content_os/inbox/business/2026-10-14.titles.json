@@ -1,0 +1,23 @@
+{
+  "candidates": [
+    "公司把离职报成“个人辞职”，失业金可能领不到",
+    "单位提出协商解除，却填成个人辞职怎么办",
+    "离职原因写错了，失业保险待遇谁来负责"
+  ],
+  "selected_title": "公司把离职报成“个人辞职”，失业金可能领不到",
+  "rationale": "2026-10-14用户确认审核后入稿。business围绕经核验的具体主题，排除近30天相近题材，标题直接回答核心疑问并满足字数限制。",
+  "basis": [
+    "近30天账号归档对照",
+    "具体事实与一手来源查证",
+    "账号读者任务及文体适配"
+  ],
+  "verified_views": null,
+  "evidence": {
+    "facts_checked": true,
+    "image_rights_checked": true,
+    "source_urls": [
+      "https://www.thepaper.cn/newsDetail_forward_27226039",
+      "https://www.beijing.gov.cn/zhengce/zhengcefagui/202502/t20250228_4022342.html"
+    ]
+  }
+}

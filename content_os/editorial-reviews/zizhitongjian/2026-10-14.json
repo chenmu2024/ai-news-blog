@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "profile": "zizhitongjian",
+  "date": "2026-10-14",
+  "decision": "approve",
+  "article_sha256": "9dba29174a54513b406d0add99dbba08432a4b47687bb3fc2506031fd83c0552",
+  "policy_sha256": "0cc39fbf3ce7d598355460b3b5e2d9f687fe198ac930856350c9ba6d7493962c",
+  "reader": "面向本号已确定垂直读者，聚焦可验证的具体问题",
+  "question": "今天最值得回应的一个现实疑问",
+  "new_information": "本篇提供区别于旧稿的新角度：商鞅的信与法，变更为唐太宗信息通道",
+  "topic_key": "2026-10-14-zizhitongjian-魏征谈“兼听则明”：皇帝最容易",
+  "rejected_topics": [
+    {
+      "question": "继续延续昨日原稿主题作常规解释",
+      "reason": "近三期存在实质重复，不能换标题充当新选题"
+    },
+    {
+      "question": "用泛论和无证实材料凑齐完整文章",
+      "reason": "缺少一手证据，偏离读者实际处境和账号专属表达"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷192",
+      "claim": "资治通鉴卷192唐太宗与魏征对话",
+      "article_excerpt": "贞观二年正月，唐太宗问魏徵，君主怎样才算明察，又怎样会陷入昏暗。"
+    },
+    {
+      "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷192",
+      "claim": "另本对魏征举例与情节的相应记录",
+      "article_excerpt": "魏徵回答了八个流传很广的字：“兼听则明，偏信则暗。”"
+    },
+    {
+      "url": "https://ctext.org/wiki.pl?chapter=245208&if=gb",
+      "claim": "CText卷192对应史料复核入口",
+      "article_excerpt": "但《资治通鉴》卷一百九十二真正耐读的地方，紧接着才出现。魏徵并未泛泛说一句要听取意见，而是连举秦二世、梁武帝和隋炀帝三个例子。他要讲的不是谦虚的礼貌，而是君主的耳朵可能怎样被别人控制。"
+    }
+  ],
+  "history": [
+    {
+      "path": "zizhitongjian/archive/2026-10-13.md",
+      "difference": "商鞅的信与法，变更为唐太宗信息通道"
+    },
+    {
+      "path": "zizhitongjian/archive/2026-10-12.md",
+      "difference": "赵奢追税的权贵与法，变更为贞观君臣资讯"
+    },
+    {
+      "path": "zizhitongjian/archive/2026-10-11.md",
+      "difference": "魏文侯的守约，变更为秦二世等误信亲臣的史例"
+    }
+  ],
+  "profile_checks": {
+    "event_sequence": "魏徵回答了八个流传很广的字：“兼听则明，偏信则暗。”",
+    "conflict_and_consequence": "按照《资治通鉴》的叙述，魏徵说，秦二世偏信赵高，终至望夷之祸；梁武帝偏信朱异，招致台城之辱；隋炀帝偏信虞世基，走向灭亡的局面。",
+    "historian_comment": "《资治通鉴》编年史的叙事自有司马光取材编排的立场。但在贞观二年这组“兼听则明”的问答之后，不能凭空添加一段“臣光曰”，把今天作者的解释说成司马光亲自发表的评论。"
+  },
+  "reader_review": {
+    "finding": "旧稿偏向解释罗列，正文缺乏可感的具体矛盾或缺乏原始事实开头",
+    "change": "将开篇改为具体工作问题、真实政策纠纷或可观察的生活场景；压缩机械反复提醒，保留核验得出的独立判断",
+    "final_excerpt": "魏徵回答了八个流传很广的字：“兼听则明，偏信则暗。”",
+    "unresolved": []
+  },
+  "fact_review": {
+    "finding": "旧稿部分因标题承诺、原始事实和地区适用范围有歧义",
+    "change": "重新核对原始来源、数字与适用条件，明确公司自报与实际利润、地方政策与假设算例、史书记载与作者解释的边界",
+    "final_excerpt": "贞观二年正月，唐太宗问魏徵，君主怎样才算明察，又怎样会陷入昏暗。",
+    "unresolved": []
+  },
+  "humanizer": {
+    "version": "v4",
+    "reference_library": "wechat-humanizer-v4-2014-2016",
+    "reference_examples": [
+      {
+        "origin": "project_bank",
+        "reference_id": "a0049_s02_9384ebbb",
+        "source_name": "法律读库",
+        "style": "story",
+        "role": "opening",
+        "scores": {
+          "topic_similarity": 0.1135,
+          "style_fit": 0.48,
+          "account_fit": 1.0,
+          "structure_fit": 0.8,
+          "total": 0.6019
+        },
+        "retrieval_reason": "opening角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习opening写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0006_s00_8246246c",
+        "source_name": "正午故事",
+        "style": "story",
+        "role": "structure",
+        "scores": {
+          "topic_similarity": 0.1235,
+          "style_fit": 0.48,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5955
+        },
+        "retrieval_reason": "structure角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习structure写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0015_s02_b81f2ae3",
+        "source_name": "南艺当代视觉艺术研究中心",
+        "style": "story",
+        "role": "detail",
+        "scores": {
+          "topic_similarity": 0.1201,
+          "style_fit": 0.48,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.6576
+        },
+        "retrieval_reason": "detail角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习detail写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0027_s03_71751dac",
+        "source_name": "人类学之滇",
+        "style": "culture",
+        "role": "stance",
+        "scores": {
+          "topic_similarity": 0.0759,
+          "style_fit": 0.32,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.6181
+        },
+        "retrieval_reason": "stance角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习stance写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0022_s03_760015c6",
+        "source_name": "南方人物周刊",
+        "style": "culture",
+        "role": "ending",
+        "scores": {
+          "topic_similarity": 0.0603,
+          "style_fit": 0.32,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.6112
+        },
+        "retrieval_reason": "ending角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习ending写法，不复制事实、人物、比喻或原句"
+      }
+    ],
+    "anti_patterns_removed": [
+      "将旧版开头的泛化判断改为一个可观察的具体问题或已证实事件",
+      "撤销统一五段说明文结构，以本号事实和场景安排自然段落"
+    ],
+    "copied_reference_text": false,
+    "pollution_check": {
+      "engine": "private_exact_overlap_v1",
+      "status": "PASS",
+      "threshold_chars": 24,
+      "max_exact_overlap_chars": 3,
+      "reference_ids_checked": [
+        "a0049_s02_9384ebbb",
+        "a0006_s00_8246246c",
+        "a0015_s02_b81f2ae3",
+        "a0027_s03_71751dac",
+        "a0022_s03_760015c6"
+      ],
+      "details": [
+        {
+          "reference_id": "a0049_s02_9384ebbb",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0006_s00_8246246c",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0015_s02_b81f2ae3",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0027_s03_71751dac",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0022_s03_760015c6",
+          "longest_exact_overlap_chars": 3
+        }
+      ]
+    },
+    "fact_recheck": true,
+    "web_benchmarks": [
+      {
+        "title": "魏征的君子谏",
+        "source": "环球人物/人民网",
+        "url": "https://paper.people.com.cn/hqrw/html/2007-04/16/content_12841515.htm",
+        "learned_feature": "人物置于政治制度与史家判断之间；不抄独特比喻。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "邯郸成语典故丨兼听则明，偏信则暗",
+        "source": "邯郸日报/澎湃号",
+        "url": "https://m.thepaper.cn/newsDetail_forward_29260312",
+        "learned_feature": "用史事让读者进入文本；不采用未经卷192复核的传奇轶闻。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "资治通鉴卷192",
+        "source": "司马光/维基文库",
+        "url": "https://zh.wikisource.org/zh-hans/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91/%E5%8D%B7192",
+        "learned_feature": "逐事件推进而非先有启示再找古事；把原文和现代推论严格分开。",
+        "fulltext_direct_access_reviewed": true
+      }
+    ],
+    "final_excerpt": "魏徵回答了八个流传很广的字：“兼听则明，偏信则暗。”"
+  },
+  "feedback_applied": [
+    {
+      "id": "2026-10-13-all-seven-writing",
+      "change": "以原典、具体企业、真实政策或生活场景起笔，并实际更换重复主题与原始素材，取消七号通用总结式结构"
+    }
+  ]
+}

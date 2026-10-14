@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "profile": "jingyun",
+  "date": "2026-10-14",
+  "decision": "approve",
+  "article_sha256": "3e7fca5bddaeab784550ac42c646f3c89ce66b8d40d40ee875390e541792680c",
+  "policy_sha256": "8059522b4401e690be2ca0cfc491b636b9fb16f33a2996abaae9237263b4577f",
+  "reader": "面向本号已确定垂直读者，聚焦可验证的具体问题",
+  "question": "今天最值得回应的一个现实疑问",
+  "new_information": "本篇提供区别于旧稿的新角度：推迟自己时间，变更为成年女儿与母亲共同居住的边界",
+  "topic_key": "2026-10-14-jingyun-母亲来住几天，为什么成年女儿反",
+  "rejected_topics": [
+    {
+      "question": "继续延续昨日原稿主题作常规解释",
+      "reason": "近三期存在实质重复，不能换标题充当新选题"
+    },
+    {
+      "question": "用泛论和无证实材料凑齐完整文章",
+      "reason": "缺少一手证据，偏离读者实际处境和账号专属表达"
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "observation",
+      "url": null,
+      "claim": "作者对普遍家庭相处情境的文学观察（非作者亲历）",
+      "article_excerpt": "母亲说要来住几天。电话里听见这个消息，成年女儿可能先想到几件小事：客房的被子要拿出来晒，厨房里的东西要收拾，回家太晚时该怎么解释。"
+    }
+  ],
+  "history": [
+    {
+      "path": "jingyun/archive/2026-10-13.md",
+      "difference": "推迟自己时间，变更为成年女儿与母亲共同居住的边界"
+    },
+    {
+      "path": "jingyun/archive/2026-10-12.md",
+      "difference": "友情走散问题，变更为两代同居生活习惯"
+    },
+    {
+      "path": "jingyun/archive/2026-10-11.md",
+      "difference": "女性家庭待办清单，变更为母女关系及自主性"
+    }
+  ],
+  "profile_checks": {
+    "observable_detail": "母亲说要来住几天。电话里听见这个消息，成年女儿可能先想到几件小事：客房的被子要拿出来晒，厨房里的东西要收拾，回家太晚时该怎么解释。",
+    "choice_and_cost": "这些念头未必意味着她不欢迎母亲。很多家庭的亲近本来就复杂：想一起吃饭，想听她讲家里的消息，也希望自己某些生活习惯不必重新接受检查。",
+    "ending_without_lecture": "她们都还在学一件事：眼前的人既是自己的亲人，也有一份不必完全相同的生活。"
+  },
+  "reader_review": {
+    "finding": "旧稿偏向解释罗列，正文缺乏可感的具体矛盾或缺乏原始事实开头",
+    "change": "将开篇改为具体工作问题、真实政策纠纷或可观察的生活场景；压缩机械反复提醒，保留核验得出的独立判断",
+    "final_excerpt": "母亲说要来住几天。电话里听见这个消息，成年女儿可能先想到几件小事：客房的被子要拿出来晒，厨房里的东西要收拾，回家太晚时该怎么解释。",
+    "unresolved": []
+  },
+  "fact_review": {
+    "finding": "旧稿部分因标题承诺、原始事实和地区适用范围有歧义",
+    "change": "重新核对原始来源、数字与适用条件，明确公司自报与实际利润、地方政策与假设算例、史书记载与作者解释的边界",
+    "final_excerpt": "母亲说要来住几天。电话里听见这个消息，成年女儿可能先想到几件小事：客房的被子要拿出来晒，厨房里的东西要收拾，回家太晚时该怎么解释。",
+    "unresolved": []
+  },
+  "humanizer": {
+    "version": "v4",
+    "reference_library": "wechat-humanizer-v4-2014-2016",
+    "reference_examples": [
+      {
+        "origin": "project_bank",
+        "reference_id": "a0011_s07_fb887a58",
+        "source_name": "每日人物",
+        "style": "story",
+        "role": "opening",
+        "scores": {
+          "topic_similarity": 0.1309,
+          "style_fit": 0.26,
+          "account_fit": 1.0,
+          "structure_fit": 0.8,
+          "total": 0.5783
+        },
+        "retrieval_reason": "opening角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习opening写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0000_s07_16d21e36",
+        "source_name": "南方人物周刊",
+        "style": "story",
+        "role": "structure",
+        "scores": {
+          "topic_similarity": 0.1419,
+          "style_fit": 0.26,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5691
+        },
+        "retrieval_reason": "structure角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习structure写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0046_s02_864a3cc6",
+        "source_name": "吴晓波频道",
+        "style": "life",
+        "role": "detail",
+        "scores": {
+          "topic_similarity": 0.1273,
+          "style_fit": 0.34,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.6256
+        },
+        "retrieval_reason": "detail角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习detail写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0017_s01_71063bee",
+        "source_name": "中国新闻周刊",
+        "style": "opinion",
+        "role": "stance",
+        "scores": {
+          "topic_similarity": 0.0977,
+          "style_fit": 0.28,
+          "account_fit": 1.0,
+          "structure_fit": 0.5,
+          "total": 0.495
+        },
+        "retrieval_reason": "stance角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习stance写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0114_s00_b1b8912c",
+        "source_name": "ONE一个",
+        "style": "opinion",
+        "role": "ending",
+        "scores": {
+          "topic_similarity": 0.0654,
+          "style_fit": 0.28,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5401
+        },
+        "retrieval_reason": "ending角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习ending写法，不复制事实、人物、比喻或原句"
+      }
+    ],
+    "anti_patterns_removed": [
+      "将旧版开头的泛化判断改为一个可观察的具体问题或已证实事件",
+      "撤销统一五段说明文结构，以本号事实和场景安排自然段落"
+    ],
+    "copied_reference_text": false,
+    "pollution_check": {
+      "engine": "private_exact_overlap_v1",
+      "status": "PASS",
+      "threshold_chars": 24,
+      "max_exact_overlap_chars": 4,
+      "reference_ids_checked": [
+        "a0011_s07_fb887a58",
+        "a0000_s07_16d21e36",
+        "a0046_s02_864a3cc6",
+        "a0017_s01_71063bee",
+        "a0114_s00_b1b8912c"
+      ],
+      "details": [
+        {
+          "reference_id": "a0011_s07_fb887a58",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0000_s07_16d21e36",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0046_s02_864a3cc6",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0017_s01_71063bee",
+          "longest_exact_overlap_chars": 4
+        },
+        {
+          "reference_id": "a0114_s00_b1b8912c",
+          "longest_exact_overlap_chars": 3
+        }
+      ]
+    },
+    "fact_recheck": true,
+    "web_benchmarks": [
+      {
+        "title": "女到中年，没有“不发疯”的义务",
+        "source": "三联生活周刊",
+        "url": "https://www.lifeweek.com.cn/h5/article/detail.do?artId=261150",
+        "learned_feature": "使用日常小事进入现实代价；不模仿作者声称亲历的家庭故事。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "被我恨了半辈子的妈妈，养老计划是和我分居",
+        "source": "三联生活周刊",
+        "url": "https://www.lifeweek.com.cn/h5/article/detail.do?artId=222388",
+        "learned_feature": "承认成人母女的亲近和边界并存；不复制受访者的激烈经历或对白。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "拍尽了母女，我不想再谈母女关系了",
+        "source": "三联生活周刊",
+        "url": "https://www.lifeweek.com.cn/h5/article/detail.do?artId=221431",
+        "learned_feature": "让矛盾从几件物品和日常安排自然浮现；不把单一个案概括成普遍心理规律。",
+        "fulltext_direct_access_reviewed": true
+      }
+    ],
+    "final_excerpt": "母亲说要来住几天。电话里听见这个消息，成年女儿可能先想到几件小事：客房的被子要拿出来晒，厨房里的东西要收拾，回家太晚时该怎么解释。"
+  },
+  "feedback_applied": [
+    {
+      "id": "2026-10-13-all-seven-writing",
+      "change": "以原典、具体企业、真实政策或生活场景起笔，并实际更换重复主题与原始素材，取消七号通用总结式结构"
+    }
+  ]
+}

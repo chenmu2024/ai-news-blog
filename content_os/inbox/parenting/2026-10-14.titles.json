@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    "民办园大班免保教费，为什么家长还要交钱？",
+    "民办幼儿园大班免费了，差额怎么计算",
+    "北京大班保教费减免，三类幼儿园不同"
+  ],
+  "selected_title": "民办园大班免保教费，为什么家长还要交钱？",
+  "rationale": "2026-10-14用户确认审核后入稿。parenting围绕经核验的具体主题，排除近30天相近题材，标题直接回答核心疑问并满足字数限制。",
+  "basis": [
+    "近30天账号归档对照",
+    "具体事实与一手来源查证",
+    "账号读者任务及文体适配"
+  ],
+  "verified_views": null,
+  "evidence": {
+    "facts_checked": true,
+    "image_rights_checked": true,
+    "source_urls": [
+      "https://www.beijing.gov.cn/zhengce/zhengcefagui/202508/t20250829_4187361.html",
+      "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202508/t20250807_3969596.htm",
+      "https://m.mof.gov.cn/czxw/202508/t20250805_3969453.htm"
+    ]
+  }
+}

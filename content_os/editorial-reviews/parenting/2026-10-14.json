@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "profile": "parenting",
+  "date": "2026-10-14",
+  "decision": "approve",
+  "article_sha256": "4d326371920a2d308d0c453d92cc5bfdc4d5e82989659acff4d47e7435854c63",
+  "policy_sha256": "23f43e8a299446425a98ad640bbe1606891ac6041ee65f767b3667ee3a97cad1",
+  "reader": "面向本号已确定垂直读者，聚焦可验证的具体问题",
+  "question": "今天最值得回应的一个现实疑问",
+  "new_information": "本篇提供区别于旧稿的新角度：北京育儿补贴的孩子资格，变更为学前一年教育收费",
+  "topic_key": "2026-10-14-parenting-民办园大班免保教费，为什么家长",
+  "rejected_topics": [
+    {
+      "question": "继续延续昨日原稿主题作常规解释",
+      "reason": "近三期存在实质重复，不能换标题充当新选题"
+    },
+    {
+      "question": "用泛论和无证实材料凑齐完整文章",
+      "reason": "缺少一手证据，偏离读者实际处境和账号专属表达"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202508/t20250829_4187361.html",
+      "claim": "北京京财教育2025年1486号规定民办收费减免差异",
+      "article_excerpt": "北京市财政局、北京市教委印发的京财教育〔2025〕1486号文件明确：公办园按所在区批准的保育教育费标准免除；普惠性民办园按与区教育部门约定的标准免除；非普惠性民办园则参照所在区核定的同类型公办园的免除水平减免，具体标准由区教育部门核定。"
+    },
+    {
+      "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202508/t20250807_3969596.htm",
+      "claim": "财政部官方800/500/300假设算例",
+      "article_excerpt": "国务院政策吹风会上，财政部曾用一个清晰的算例解释差额：假定某民办园每月保教费800元，当地同类型公办园每月500元，那么按照500元标准减免后，家长仍需承担300元。**这属于主管部门为解释国家政策给出的假设算例，并非北京任意一家园所的核定价格。**"
+    },
+    {
+      "url": "https://m.mof.gov.cn/czxw/202508/t20250805_3969453.htm",
+      "claim": "国务院规定从2025年秋季学期推行",
+      "article_excerpt": "答案往往藏在“免费”的具体项目和收费标准里。国家从2025年秋季学期起逐步推行免费学前教育，先覆盖符合条件的学前一年在园儿童；北京的实施方案既覆盖公办园，也覆盖民办园，但不同类别幼儿园按不同标准减免。"
+    }
+  ],
+  "history": [
+    {
+      "path": "parenting/archive/2026-10-13.md",
+      "difference": "北京育儿补贴的孩子资格，变更为学前一年教育收费"
+    },
+    {
+      "path": "parenting/archive/2026-10-12.md",
+      "difference": "武汉二孩购房补助，变更为免费学前教育"
+    },
+    {
+      "path": "parenting/archive/2026-10-11.md",
+      "difference": "旧育儿行为文，变更为幼儿园具体费用及官方算例"
+    }
+  ],
+  "profile_checks": {
+    "eligibility": "答案往往藏在“免费”的具体项目和收费标准里。国家从2025年秋季学期起逐步推行免费学前教育，先覆盖符合条件的学前一年在园儿童；北京的实施方案既覆盖公办园，也覆盖民办园，但不同类别幼儿园按不同标准减免。",
+    "amount_example": "国务院政策吹风会上，财政部曾用一个清晰的算例解释差额：假定某民办园每月保教费800元，当地同类型公办园每月500元，那么按照500元标准减免后，家长仍需承担300元。**这属于主管部门为解释国家政策给出的假设算例，并非北京任意一家园所的核定价格。**",
+    "official_entry": "北京市财政局、北京市教委印发的京财教育〔2025〕1486号文件明确：公办园按所在区批准的保育教育费标准免除；普惠性民办园按与区教育部门约定的标准免除；非普惠性民办园则参照所在区核定的同类型公办园的免除水平减免，具体标准由区教育部门核定。"
+  },
+  "reader_review": {
+    "finding": "旧稿偏向解释罗列，正文缺乏可感的具体矛盾或缺乏原始事实开头",
+    "change": "将开篇改为具体工作问题、真实政策纠纷或可观察的生活场景；压缩机械反复提醒，保留核验得出的独立判断",
+    "final_excerpt": "同一座城市里，两个孩子都上幼儿园大班，一家收到的缴费通知里保育教育费已经减免，另一家却仍有一笔差额。家长很容易问：免费学前教育不是国家政策吗，为什么民办园还要继续交钱？",
+    "unresolved": []
+  },
+  "fact_review": {
+    "finding": "旧稿部分因标题承诺、原始事实和地区适用范围有歧义",
+    "change": "重新核对原始来源、数字与适用条件，明确公司自报与实际利润、地方政策与假设算例、史书记载与作者解释的边界",
+    "final_excerpt": "北京市财政局、北京市教委印发的京财教育〔2025〕1486号文件明确：公办园按所在区批准的保育教育费标准免除；普惠性民办园按与区教育部门约定的标准免除；非普惠性民办园则参照所在区核定的同类型公办园的免除水平减免，具体标准由区教育部门核定。",
+    "unresolved": []
+  },
+  "humanizer": {
+    "version": "v4",
+    "reference_library": "wechat-humanizer-v4-2014-2016",
+    "reference_examples": [
+      {
+        "origin": "project_bank",
+        "reference_id": "a0046_s03_a24696a3",
+        "source_name": "吴晓波频道",
+        "style": "life",
+        "role": "opening",
+        "scores": {
+          "topic_similarity": 0.12,
+          "style_fit": 0.8,
+          "account_fit": 0.7,
+          "structure_fit": 0.85,
+          "total": 0.66
+        },
+        "retrieval_reason": "基于真实段落库重新选择 人人都在说中产，到底哪些人算中产？ | 理财话题，作为 opening 的写作节奏参考",
+        "learned_feature": "从吴晓波频道学习 opening 处理方法，只借鉴叙述组织而不复制原文"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0093_s01_9a51c106",
+        "source_name": "ONE一个",
+        "style": "explainer",
+        "role": "structure",
+        "scores": {
+          "topic_similarity": 0.0302,
+          "style_fit": 0.36,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5378
+        },
+        "retrieval_reason": "structure角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习structure写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0122_s00_6525b29d",
+        "source_name": "LeanInChongQing",
+        "style": "life",
+        "role": "detail",
+        "scores": {
+          "topic_similarity": 0.12,
+          "style_fit": 0.8,
+          "account_fit": 0.7,
+          "structure_fit": 0.85,
+          "total": 0.66
+        },
+        "retrieval_reason": "基于真实段落库重新选择 Share|Lean In China参加杨澜的2016天下女人国际论坛：如何突破自我内在障碍，发展职场女性领导力，作为 detail 的写作节奏参考",
+        "learned_feature": "从LeanInChongQing学习 detail 处理方法，只借鉴叙述组织而不复制原文"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0108_s01_93123e60",
+        "source_name": "BetterRead",
+        "style": "explainer",
+        "role": "stance",
+        "scores": {
+          "topic_similarity": 0.0411,
+          "style_fit": 0.36,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.5931
+        },
+        "retrieval_reason": "stance角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习stance写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "gold_dd158db463c34ffe",
+        "source_name": "快乐成长在芜湖",
+        "style": "life",
+        "role": "ending",
+        "scores": {
+          "topic_similarity": 0.12,
+          "style_fit": 0.8,
+          "account_fit": 0.7,
+          "structure_fit": 0.85,
+          "total": 0.66
+        },
+        "retrieval_reason": "基于真实段落库重新选择 一个小女孩的“生气宣言”，作为 ending 的写作节奏参考",
+        "learned_feature": "从快乐成长在芜湖学习 ending 处理方法，只借鉴叙述组织而不复制原文"
+      }
+    ],
+    "anti_patterns_removed": [
+      "将旧版开头的泛化判断改为一个可观察的具体问题或已证实事件",
+      "撤销统一五段说明文结构，以本号事实和场景安排自然段落"
+    ],
+    "copied_reference_text": false,
+    "pollution_check": {
+      "engine": "private_exact_overlap_v1",
+      "status": "PASS",
+      "threshold_chars": 24,
+      "max_exact_overlap_chars": 4,
+      "reference_ids_checked": [
+        "a0046_s03_a24696a3",
+        "a0093_s01_9a51c106",
+        "a0122_s00_6525b29d",
+        "a0108_s01_93123e60",
+        "gold_dd158db463c34ffe"
+      ],
+      "details": [
+        {
+          "reference_id": "a0046_s03_a24696a3",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0093_s01_9a51c106",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "a0122_s00_6525b29d",
+          "longest_exact_overlap_chars": 4
+        },
+        {
+          "reference_id": "a0108_s01_93123e60",
+          "longest_exact_overlap_chars": 3
+        },
+        {
+          "reference_id": "gold_dd158db463c34ffe",
+          "longest_exact_overlap_chars": 4
+        }
+      ]
+    },
+    "fact_recheck": true,
+    "web_benchmarks": [
+      {
+        "title": "关于免费学前教育，六问六答",
+        "source": "中国政府网/上海市教委转载",
+        "url": "https://edu.sh.gov.cn/mbjy_tpxw/20250808/60f1f4b86e3241c8b70aa2a5668e28ec.html",
+        "learned_feature": "紧扣家长最关心的减免项目；不用一问一答机械铺满全文。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "国新办政策例行吹风会文字实录",
+        "source": "财政部",
+        "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202508/t20250807_3969596.htm",
+        "learned_feature": "使用已标注为官方假设的800/500元算例；不把算例当实际园所收费。",
+        "fulltext_direct_access_reviewed": true
+      },
+      {
+        "title": "北京市落实免费学前教育实施方案政策解读",
+        "source": "北京市政府",
+        "url": "https://www.beijing.gov.cn/zhengce/zcjd/202508/t20250829_4187362.html",
+        "learned_feature": "清晰区分公办、普惠民办、非普惠民办；不写全国统一金额。",
+        "fulltext_direct_access_reviewed": true
+      }
+    ],
+    "final_excerpt": "同一座城市里，两个孩子都上幼儿园大班，一家收到的缴费通知里保育教育费已经减免，另一家却仍有一笔差额。家长很容易问：免费学前教育不是国家政策吗，为什么民办园还要继续交钱？"
+  },
+  "feedback_applied": [
+    {
+      "id": "2026-10-13-all-seven-writing",
+      "change": "以原典、具体企业、真实政策或生活场景起笔，并实际更换重复主题与原始素材，取消七号通用总结式结构"
+    }
+  ]
+}

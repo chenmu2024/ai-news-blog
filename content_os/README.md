@@ -93,5 +93,5 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成实际删改�
 ## A–F 漫画内容切换（2026-10-14 起）
 六账号新稿请先读 `skills/wechat-comic-content-os/SKILL.md` 与 `content_os/PRODUCTION_BRIEF.md`。上文旧的 AI 写实图、可替换图库/信息卡策略仅适用于旧稿或证据型辅助图，不得替代新稿真实连续漫画。G女装穿搭全部规则不变。依用户要求，先聊天展示实际内容和图，明确批准后才同步微信草稿；已尝试的草稿不得重复创建。
 
-## 漫画优先（2026-10-14以后 A–F 新稿）
+## 漫画优先（2026-10-15以后 A–F 新稿）
 必须执行 skills/wechat-comic-content-os/SKILL.md；新稿与漫画现行约束发生冲突时，旧写实AI场景图片、知识卡替代逻辑不再适用。新稿需过 content_os/comic_gate.py 的 COMIC_PACKAGE 结构/图像/审批哈希门禁。G女装真实照片规则完全不改。尚未得到本次用户“同步草稿”批准只能聊天预览，不能同步inbox进而触发自动工作流。

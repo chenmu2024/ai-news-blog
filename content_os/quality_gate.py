@@ -288,8 +288,25 @@ def evaluate(md: str, profile_key: str) -> dict:
     if internal_hits:
         hard_failures.append(f"检测到 {internal_hits} 处内部生产/编辑元信息")
     body_chars = len(re.sub(r"\s+", "", body))
-    if body_chars < profile["min_body_chars"]:
-        hard_failures.append(f"正文过短：{body_chars} 字符 < {profile['min_body_chars']}")
+    minimum_chars = profile["min_body_chars"]
+    # Real original comic images tell most of the story. Do not pad an image-led
+    # story with text merely to meet old essay quotas. Other gates verify the art.
+    manifest = re.search(r"<!--\\s*COMIC_PACKAGE\\s*(\\{[^<>]*\\})\\s*-->", md, re.S)
+    if manifest:
+        try:
+            comic = json.loads(manifest.group(1))
+            panels = comic.get("panels") or []
+            images = comic.get("images") or []
+            urls = [item.get("url") for item in images if isinstance(item,dict)]
+            if (comic.get("mode") == "original_sequential_comic"
+                    and 10 <= len(panels) <= 16 and 5 <= len(images) <= 9
+                    and len(set(urls)) == len(urls)
+                    and all(md.count("]("+url+")") == 1 for url in urls if isinstance(url,str))):
+                minimum_chars = 300
+        except (ValueError, TypeError, AttributeError):
+            pass
+    if body_chars < minimum_chars:
+        hard_failures.append(f"正文过短：{body_chars} 字符 < {minimum_chars}")
     if body_chars > profile["max_body_chars"]:
         hard_failures.append(f"正文过长：{body_chars} 字符 > {profile['max_body_chars']}")
 

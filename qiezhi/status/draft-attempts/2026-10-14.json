@@ -1,0 +1,51 @@
+{
+  "state": "attempted",
+  "profile": "qiezhi",
+  "article_path": "qiezhi/archive/2026-10-14.md",
+  "article_sha256": "37edb9740358c3ad5d2cbac1b72c2c59aa743ee29833a8ae7ea74564abf24538",
+  "title": "毛选《反对党八股》：文章越长，为什么越没人看",
+  "run_id": "38491701262",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/fsKSNOEtRvEsXXqToPLqwMad0t6qddfsIvPMBXH9O6ibDDfdzw2My1ibxMuWpPGTVLg6kdOHq53XgO50ITO7PKvibqL6gkM6kg2REbcSvfnWkY/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/fsKSNOEtRvFhsEE3Qff29H7Qib2169rdlj8nhQggaUkgoxQUB7JJFiaic9gQ1dyialObS60tpkiayPKCIAmxC033qDtJuwsuibRQmLuBHvmp5Isfc/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "qiezhi",
+      "profile_name": "且知｜毛选/思想方法",
+      "score": 15,
+      "body_chars": 1254,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 10,
+      "stance_signals": 0,
+      "paragraph_regularity": {
+        "paragraphs": 18,
+        "cv": 0.3
+      },
+      "sentence_repetition": {
+        "sentences": 40,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.143,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "37edb9740358c3ad5d2cbac1b72c2c59aa743ee29833a8ae7ea74564abf24538",
+      "article_path": "qiezhi/archive/2026-10-14.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "qiezhi",
+      "required_visuals": 2,
+      "visual_count": 3,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 2,
+      "hard_failures": [],
+      "article_sha256": "37edb9740358c3ad5d2cbac1b72c2c59aa743ee29833a8ae7ea74564abf24538",
+      "article_path": "qiezhi/archive/2026-10-14.md"
+    }
+  }
+}

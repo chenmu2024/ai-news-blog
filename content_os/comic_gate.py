@@ -1,7 +1,7 @@
 """Fail-closed sequential comic contract for new A-F drafts only.
 
 Metadata is a production assertion, NOT image generation or proof of user consent.
-Only applies to newly written articles from 2026-10-14 onward. Never mutates drafts.
+Only applies to newly written articles from 2026-10-15 onward. Never mutates drafts.
 """
 from __future__ import annotations
 import hashlib
@@ -10,7 +10,7 @@ import re
 from datetime import date
 from pathlib import Path
 
-FIRST_DAY = date(2026, 10, 14)
+FIRST_DAY = date(2026, 10, 15)
 ALIASES = {"ai_business": "wechat", "business_story": "business"}
 ACCOUNTS = {"qiezhi", "wechat", "business", "zizhitongjian", "parenting", "jingyun"}
 MARKER = re.compile(r"<!--\s*COMIC_PACKAGE\s*(\{[^<>]*\})\s*-->", re.S)

@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "parenting",
   "article_path": "parenting/archive/2026-10-14.md",
   "article_sha256": "4d326371920a2d308d0c453d92cc5bfdc4d5e82989659acff4d47e7435854c63",
@@ -61,5 +61,6 @@
       "article_sha256": "4d326371920a2d308d0c453d92cc5bfdc4d5e82989659acff4d47e7435854c63",
       "article_path": "parenting/archive/2026-10-14.md"
     }
-  }
+  },
+  "draft_media_id": "cyRgts0DS_D6YB0L1h-Eu_X63LeOelZkUBWJT_5zgIUs_zhzUi_yMOCLi8NH2md9"
 }

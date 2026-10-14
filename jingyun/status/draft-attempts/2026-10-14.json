@@ -1,0 +1,51 @@
+{
+  "state": "attempted",
+  "profile": "jingyun",
+  "article_path": "jingyun/archive/2026-10-14.md",
+  "article_sha256": "3e7fca5bddaeab784550ac42c646f3c89ce66b8d40d40ee875390e541792680c",
+  "title": "母亲来住几天，为什么成年女儿反而有点紧张？",
+  "run_id": "38491720169",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/1lvNK0VGgiankS9iaGbRvbtK9ctMe04rlmMSOH9CkovTKBGKGs6NrqDbDOCa3uMnK1Gorr2rXK4RNiaYctoxicLDWFdaWj0z2wic3SOkLfhYCDGY/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/1lvNK0VGgiamzWgWwiaXdAxvF0tps49BOUibrIad7ia6aXnzlceW4HYhLuEiam9VQVabCMjBMV9OiaDliaQJlnDoomIM3eAmshIIf54rzLoiaFGT14g/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "jingyun",
+      "profile_name": "静筠日记｜女性生活",
+      "score": 15,
+      "body_chars": 970,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 5,
+      "stance_signals": 1,
+      "paragraph_regularity": {
+        "paragraphs": 18,
+        "cv": 0.372
+      },
+      "sentence_repetition": {
+        "sentences": 35,
+        "repeated_starts": 2,
+        "ratio": 0.057
+      },
+      "very_short_paragraph_ratio": 0.1,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "3e7fca5bddaeab784550ac42c646f3c89ce66b8d40d40ee875390e541792680c",
+      "article_path": "jingyun/archive/2026-10-14.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "jingyun",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 2,
+      "html_images": 0,
+      "renderable_cards": 0,
+      "hard_failures": [],
+      "article_sha256": "3e7fca5bddaeab784550ac42c646f3c89ce66b8d40d40ee875390e541792680c",
+      "article_path": "jingyun/archive/2026-10-14.md"
+    }
+  }
+}

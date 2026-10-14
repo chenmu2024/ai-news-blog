@@ -1,0 +1,154 @@
+name: Extra Approved WeChat Draft Bridge
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: Existing account key
+        required: true
+        type: choice
+        options: [qiezhi, wechat, business, zizhitongjian, parenting, jingyun, fashion]
+      article_path:
+        description: Exact supplementary archive path (YYYY-MM-DD--slug.md)
+        required: true
+        type: string
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  # Serializes with each profile's old daily workflow to avoid status races.
+  group: ${{ inputs.profile }}-wechat-draft
+  cancel-in-progress: false
+jobs:
+  extra-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PROFILE: ${{ inputs.profile }}
+      ARTICLE_PATH: ${{ inputs.article_path }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Ensure exact approved article ID, no daily file collision
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          from content_os.multi_draft import get_article_identity
+          profile = os.environ["PROFILE"]
+          path = Path(os.environ["ARTICLE_PATH"])
+          day, article_id = get_article_identity(path, profile)
+          if article_id == day:
+              raise SystemExit("Additional drafts MUST use --slug; daily draft is separate")
+          if day != datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat():
+              raise SystemExit("Extra draft must be for the current Asia/Shanghai calendar date")
+          if not path.is_file():
+              raise SystemExit("Approved archive missing")
+          print("EXTRA_ARTICLE_ID", profile, article_id)
+          PY
+      - name: Install existing free publisher dependencies
+        run: |
+          python -m pip install -r "$PROFILE/requirements.txt"
+      - name: Exact draft approval, immutable archive and journal preflight
+        id: preflight
+        run: |
+          python content_os/draft_preflight.py --today-only --profile "$PROFILE" --article "$ARTICLE_PATH"
+      - name: Strict publisher input, source and image provenance checks
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        run: |
+          set -euo pipefail
+          python content_os/publish_readiness.py --profile "$PROFILE" --article "$ARTICLE_PATH"
+          if [ "$PROFILE" = zizhitongjian ]; then
+            python zizhitongjian/source_gate.py --article "$ARTICLE_PATH" --json-out zizhitongjian/status/source-gate.json
+          fi
+          if [ "$PROFILE" = fashion ]; then
+            python fashion/image_gate.py --article "$ARTICLE_PATH" --json-out fashion/status/image-gate.json
+          fi
+          python content_os/quality_gate.py --profile "$([ "$PROFILE" = wechat ] && echo ai_business || ( [ "$PROFILE" = business ] && echo business_story || echo "$PROFILE" ))" --article "$ARTICLE_PATH" --json-out "$PROFILE/status/quality-gate.json"
+          python content_os/visual_gate.py --profile "$([ "$PROFILE" = wechat ] && echo ai_business || ( [ "$PROFILE" = business ] && echo business_story || echo "$PROFILE" ))" --article "$ARTICLE_PATH" --json-out "$PROFILE/status/visual-gate.json"
+          python content_os/gate_trace.py --profile "$PROFILE" --article "$ARTICLE_PATH"
+      - name: Validate actual images and cache exact bytes
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        env:
+          CONTENT_OS_IMAGE_CACHE_DIR: ${{ runner.temp }}/content-os-multi-images-${{ github.run_id }}
+        timeout-minutes: 5
+        run: python content_os/image_preflight.py --profile "$PROFILE" --article "$ARTICLE_PATH"
+      - name: Install Chinese font if missing
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        timeout-minutes: 5
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'; then
+            timeout 90s sudo apt-get update -qq -o Acquire::Retries=1 -o Acquire::http::Timeout=15
+            timeout 120s sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends fonts-noto-cjk
+          fi
+          fc-list :lang=zh family | grep -Eiq 'Noto Sans CJK|Noto Serif CJK|Source Han Sans'
+      - name: Create exactly one WeChat draft and verify via draft/get
+        if: ${{ steps.preflight.outputs.should_publish == 'true' }}
+        env:
+          CONTENT_OS_GITHUB_TOKEN: ${{ github.token }}
+          CONTENT_OS_IMAGE_CACHE_DIR: ${{ runner.temp }}/content-os-multi-images-${{ github.run_id }}
+          CONTENT_OS_IMAGE_CACHE_READ: "1"
+          WECHAT_APP_ID: ${{ inputs.profile == 'qiezhi' && secrets.QIEZHI_WECHAT_APP_ID || inputs.profile == 'wechat' && secrets.WECHAT_APP_ID || inputs.profile == 'business' && secrets.BUSINESS_WECHAT_APP_ID || inputs.profile == 'zizhitongjian' && secrets.TONGJIAN_WECHAT_APP_ID || inputs.profile == 'parenting' && secrets.PARENTING_WECHAT_APP_ID || inputs.profile == 'jingyun' && secrets.JINGYUN_WECHAT_APP_ID || inputs.profile == 'fashion' && secrets.FASHION_WECHAT_APP_ID || '' }}
+          WECHAT_APP_SECRET: ${{ inputs.profile == 'qiezhi' && secrets.QIEZHI_WECHAT_APP_SECRET || inputs.profile == 'wechat' && secrets.WECHAT_APP_SECRET || inputs.profile == 'business' && secrets.BUSINESS_WECHAT_APP_SECRET || inputs.profile == 'zizhitongjian' && secrets.TONGJIAN_WECHAT_APP_SECRET || inputs.profile == 'parenting' && secrets.PARENTING_WECHAT_APP_SECRET || inputs.profile == 'jingyun' && secrets.JINGYUN_WECHAT_APP_SECRET || inputs.profile == 'fashion' && secrets.FASHION_WECHAT_APP_SECRET || '' }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          WECHAT_AUTHOR: ${{ inputs.profile == 'qiezhi' && '且知' || inputs.profile == 'jingyun' && '静筠' || inputs.profile == 'fashion' && '' || '陈慕' }}
+          STATUS_PATH: ${{ inputs.profile }}/status/receipts/${{ github.run_id }}.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$WECHAT_APP_ID" && test -n "$WECHAT_APP_SECRET" || { echo "::error::Account WeChat secrets absent"; exit 1; }
+          python "$PROFILE/publish_draft.py"
+      - name: Persist per-article receipt; do not touch daily latest/today files
+        if: ${{ steps.preflight.outputs.should_publish == 'true' && success() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          from datetime import datetime,timezone
+          profile=os.environ["PROFILE"]
+          article=Path(os.environ["ARTICLE_PATH"])
+          receipt=Path(profile)/"status"/"draft-readback"/(article.stem+".json")
+          if not receipt.is_file():
+              raise SystemExit("draft/get readback missing; do not claim draft success")
+          data=json.loads(receipt.read_text("utf-8"))
+          if data.get("state") != "verified" or not data.get("draft_media_id"):
+              raise SystemExit("draft/get readback not verified; reconcile journal")
+          dest=Path(profile)/"status"/"receipts"/(article.stem+".json")
+          if dest.exists():
+              raise SystemExit("Per-article receipt already exists: unsafe collision")
+          dest.parent.mkdir(parents=True,exist_ok=True)
+          value={"status":"success","profile":profile,"article_id":article.stem,
+                 "article_date":article.stem[:10],"article_path":article.as_posix(),
+                 "article_sha256":hashlib.sha256(article.read_bytes()).hexdigest(),
+                 "draft_media_id":data["draft_media_id"],
+                 "completed_at_utc":datetime.now(timezone.utc).isoformat(),
+                 "workflow_run_id":os.getenv("GITHUB_RUN_ID","")}
+          dest.write_text(json.dumps(value,ensure_ascii=False,indent=2)+"\n","utf-8")
+          PY
+          git config user.name "wechat-extra-draft-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$PROFILE/status/draft-readback/$(basename "$ARTICLE_PATH" .md).json" "$PROFILE/status/receipts/$(basename "$ARTICLE_PATH" .md).json"
+          git commit -m "receipt($PROFILE): confirm extra draft $(basename "$ARTICLE_PATH" .md)"
+          for ATTEMPT in 1 2 3 4 5 6; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$ATTEMPT"
+          done
+          echo "::error::Receipt sync failed; durable journal may be confirmed, DO NOT retry draft/add"
+          exit 1
+      - name: Refuse automatic retry after any attempted WeChat API call
+        if: ${{ failure() }}
+        run: |
+          echo "::error::Extra draft failure requires journal/media_id reconciliation; do not rerun blindly."

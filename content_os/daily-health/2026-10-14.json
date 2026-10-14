@@ -1,11 +1,11 @@
 {
   "date": "2026-10-14",
-  "generated_at": "2026-10-14T08:43:33.166785+08:00",
+  "generated_at": "2026-10-14T08:43:53.426682+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
-  "success_count": 3,
+  "success_count": 5,
   "expected_count": 7,
-  "draft_confirmed_count": 3,
+  "draft_confirmed_count": 5,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "incomplete",
@@ -191,7 +191,7 @@
     },
     "business": {
       "profile": "business",
-      "status": "incomplete",
+      "status": "success",
       "archive": "business/archive/2026-10-14.md",
       "title": "公司把离职报成“个人辞职”，失业金可能领不到",
       "archive_title": "公司把离职报成“个人辞职”，失业金可能领不到",
@@ -200,30 +200,21 @@
         "errors": [],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
-      "workflow_run_id": "38330374492",
+      "workflow_run_id": "38491710378",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "wechat_inline_readback_verified": false,
+      "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": [
-        "receipt_sha_mismatch_or_stale",
-        "receipt_title_mismatch",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed",
-        "today_not_identical_to_current_article",
-        "wechat_inline_image_readback_missing_or_mismatched"
-      ]
+      "errors": []
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
@@ -308,7 +299,7 @@
     },
     "jingyun": {
       "profile": "jingyun",
-      "status": "incomplete",
+      "status": "success",
       "archive": "jingyun/archive/2026-10-14.md",
       "title": "母亲来住几天，为什么成年女儿反而有点紧张？",
       "archive_title": "母亲来住几天，为什么成年女儿反而有点紧张？",
@@ -317,30 +308,21 @@
         "errors": [],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
-      "workflow_run_id": "38328415865",
+      "workflow_run_id": "38491720169",
       "gates": {
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "attempted",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": null,
       "image_check_done": null,
-      "wechat_inline_readback_verified": false,
+      "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": [
-        "receipt_sha_mismatch_or_stale",
-        "receipt_title_mismatch",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed",
-        "today_not_identical_to_current_article",
-        "wechat_inline_image_readback_missing_or_mismatched"
-      ]
+      "errors": []
     },
     "fashion": {
       "profile": "fashion",

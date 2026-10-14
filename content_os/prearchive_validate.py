@@ -55,12 +55,12 @@ def fashion_evergreen_star_repeat(archive_dir: Path, day: str, title: str) -> bo
     stars=people(title)
     if not stars:
         return False
-    for old in archive_dir.glob("????-??-??.md"):
+    for old in archive_dir.glob("*.md"):
         try:
-            days=(date.fromisoformat(day)-date.fromisoformat(old.stem)).days
+            days=(date.fromisoformat(day)-date.fromisoformat(old.stem[:10])).days
         except ValueError:
             continue
-        if 0 < days <= 14:
+        if 0 <= days <= 14:
             old_title=_title(old.read_text("utf-8"))
             if is_roundup(old_title) and stars.intersection(people(old_title)):
                 return True

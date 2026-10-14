@@ -213,6 +213,12 @@ def check(root: Path, profile: str, day: str, markdown: str, *, article_id: str 
     for path in recent_archives(root, profile, day):
         if not _text(compared.get(path.relative_to(root).as_posix())):
             errors.append("editorial_recent_history_comparison_missing")
+    # Supplementary drafts must compare with the already-approved daily article,
+    # not just yesterday's archives (daily review records remain unchanged).
+    if article_id is not None and article_id != day:
+        for earlier in (root / profile / "archive").glob(day + "*.md"):
+            if earlier.stem != article_id and not _text(compared.get(earlier.relative_to(root).as_posix())):
+                errors.append("editorial_same_day_history_comparison_missing")
     checks = rec.get("profile_checks")
     if not isinstance(checks, dict):
         checks = {}

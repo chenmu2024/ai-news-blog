@@ -1,4 +1,4 @@
-"""Write-ahead, per-day WeChat draft/add journal (GitHub Contents API).
+"""Write-ahead, per-ARTICLE WeChat draft/add journal (GitHub Contents API).
 
 This is intentionally fail-closed. Recording intent happens IMMEDIATELY before
 /draft/add; a lost HTTP response cannot be interpreted as permission to retry.
@@ -110,8 +110,18 @@ def reserve(profile: str, article: Path, title: str, public_body_html: str | Non
         from content_os.editorial_review import check as editorial_check
     except ImportError:
         from editorial_review import check as editorial_check
-    review = editorial_check(article.resolve().parents[2], profile, article.stem,
-                             article.read_bytes().decode("utf-8"))
+    try:
+        from content_os.multi_draft import get_article_identity, verify_extra_approval
+    except ImportError:
+        from multi_draft import get_article_identity, verify_extra_approval
+    day, article_id = get_article_identity(article, profile)
+    if article_id != day:
+        issues = verify_extra_approval(article.resolve().parents[2], profile, article_id,
+                                       article.read_text("utf-8"))
+        if issues:
+            raise RuntimeError("No approval for supplementary draft: " + "; ".join(issues))
+    review = editorial_check(article.resolve().parents[2], profile, day,
+                             article.read_bytes().decode("utf-8"), article_id=article_id)
     if review["status"] == "FAIL":
         raise RuntimeError("Editorial review failed; refuse draft/add: " + "; ".join(review["errors"]))
     from content_os.public_draft_contract import image_sources
@@ -129,7 +139,7 @@ def reserve(profile: str, article: Path, title: str, public_body_html: str | Non
     path = journal_path(profile, article)
     existing, _ = _get(token, repo, path)
     if existing:
-        raise RuntimeError("Draft/add already attempted for this date; reconcile "
+        raise RuntimeError("Draft/add already attempted for this article; reconcile "
                            "journal/media_id before any new WeChat upload: " + path)
     intent = {
         "state": "attempted",

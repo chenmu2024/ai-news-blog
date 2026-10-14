@@ -26,7 +26,7 @@ def celebrity_quota_error(article: Path, topic_type: str) -> str | None:
     if article.parent.name != "archive" or article.parent.parent.name != "fashion":
         return None
     try:
-        article_day = date.fromisoformat(article.stem)
+        article_day = date.fromisoformat(article.stem[:10])
     except ValueError:
         return None
     if article_day < CELEBRITY_START:
@@ -141,7 +141,7 @@ def main() -> int:
             warnings.append(f"images[{idx}] verified 未标记 true")
 
     if (topic_type == "celebrity" and path.parent.name == "archive" and
-            path.stem >= CELEBRITY_START.isoformat()):
+            path.stem[:10] >= CELEBRITY_START.isoformat()):
         authentic = [
             entry for entry in images
             if isinstance(entry, dict)

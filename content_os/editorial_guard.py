@@ -47,7 +47,7 @@ def assess_editorial_title(
     if profile not in PROFILE_DIR:
         return {"status": "SKIP", "reasons": [], "compared": 0}
     try:
-        target_day = date.fromisoformat(article.stem)
+        target_day = date.fromisoformat(article.stem[:10])
     except ValueError:
         return {"status": "SKIP", "reasons": [], "compared": 0}
     if target_day < ACTIVATION:
@@ -56,12 +56,12 @@ def assess_editorial_title(
     if root.name != "archive" and archive_dir is None:
         return {"status": "SKIP", "reasons": [], "compared": 0}
     recent: list[tuple[date, str]] = []
-    for item in root.glob("????-??-??.md"):
+    for item in root.glob("*.md"):
         if item.resolve() == article.resolve():
             continue
         try:
-            day = date.fromisoformat(item.stem)
-            if 0 < (target_day - day).days <= 30:
+            day = date.fromisoformat(item.stem[:10])
+            if 0 <= (target_day - day).days <= 30:
                 prev_title = extract_title(item.read_text(encoding="utf-8"))
                 if prev_title:
                     recent.append((day, prev_title))

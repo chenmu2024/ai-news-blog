@@ -1,26 +1,21 @@
 {
   "date": "2026-10-14",
-  "generated_at": "2026-10-14T08:48:28.915989+08:00",
+  "generated_at": "2026-10-14T08:51:00.825319+08:00",
   "timezone": "Asia/Shanghai",
-  "status": "incomplete",
-  "success_count": 6,
+  "status": "complete",
+  "success_count": 7,
   "expected_count": 7,
-  "draft_confirmed_count": 6,
+  "draft_confirmed_count": 7,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
-  "draft_confirmation_status": "incomplete",
-  "alert_required": true,
-  "alert_reasons": [
-    "repository_or_gate_incomplete",
-    "durable_draft_confirmation_incomplete"
-  ],
-  "editorial_alert_required": true,
-  "editorial_alert_reasons": [
-    "headline_decision_ledger_incomplete"
-  ],
+  "draft_confirmation_status": "confirmed",
+  "alert_required": false,
+  "alert_reasons": [],
+  "editorial_alert_required": false,
+  "editorial_alert_reasons": [],
   "headline_decisions": {
-    "status": "incomplete",
-    "complete_count": 6,
+    "status": "complete",
+    "complete_count": 7,
     "expected_count": 7,
     "profiles": {
       "qiezhi": {
@@ -75,16 +70,21 @@
         "errors": []
       },
       "zizhitongjian": {
-        "status": "missing_or_invalid",
-        "selected_title": null,
-        "candidates": [],
-        "rationale": null,
-        "basis": [],
+        "status": "complete",
+        "selected_title": "魏征谈“兼听则明”：皇帝最容易看不见什么",
+        "candidates": [
+          "魏征谈“兼听则明”：皇帝最容易看不见什么",
+          "魏征为何用三个败亡皇帝回答唐太宗",
+          "唐太宗问“明暗”，魏征提醒的是什么"
+        ],
+        "rationale": "2026-10-14用户确认审核后入稿。zizhitongjian围绕经核验的具体主题，排除近30天相近题材，标题直接回答核心疑问并满足字数限制。",
+        "basis": [
+          "近30天账号归档对照",
+          "具体事实与一手来源查证",
+          "账号读者任务及文体适配"
+        ],
         "verified_views": null,
-        "errors": [
-          "decision_record_missing",
-          "archive_title_missing"
-        ]
+        "errors": []
       },
       "parenting": {
         "status": "complete",
@@ -223,57 +223,31 @@
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
-      "status": "incomplete",
+      "status": "success",
       "archive": "zizhitongjian/archive/2026-10-14.md",
-      "title": "",
-      "archive_title": "",
+      "title": "魏征谈“兼听则明”：皇帝最容易看不见什么",
+      "archive_title": "魏征谈“兼听则明”：皇帝最容易看不见什么",
       "editorial_review": {
-        "status": "FAIL",
-        "errors": [
-          "editorial_humanizer_final_excerpt_missing",
-          "editorial_incomplete_fact_review",
-          "editorial_incomplete_reader_review",
-          "editorial_profile_evidence_missing:conflict_and_consequence",
-          "editorial_profile_evidence_missing:event_sequence",
-          "editorial_profile_evidence_missing:historian_comment",
-          "editorial_review_stale_article",
-          "editorial_source_evidence_invalid"
-        ],
+        "status": "PASS",
+        "errors": [],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
-      "workflow_run_id": "38331879999",
+      "workflow_run_id": "38492384814",
       "gates": {
         "source-gate.json": "PASS",
         "quality-gate.json": "PASS",
         "visual-gate.json": "PASS"
       },
-      "journal_state": "MISSING",
+      "journal_state": "confirmed",
       "fashion_revision": null,
-      "draft_media_id_recorded": false,
-      "draft_confirmation_mode": "unconfirmed",
-      "draft_confirmed": false,
+      "draft_media_id_recorded": true,
+      "draft_confirmation_mode": "confirmed_journal",
+      "draft_confirmed": true,
       "verification_mode": "dual_edition_text_fallback_no_facsimile",
       "image_check_done": false,
-      "wechat_inline_readback_verified": false,
+      "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": [
-        "archive_missing_or_unreadable",
-        "archive_title_missing",
-        "receipt_date_mismatch",
-        "gate_not_bound_to_archive:source-gate.json",
-        "gate_not_bound_to_archive:quality-gate.json",
-        "gate_not_bound_to_archive:visual-gate.json",
-        "draft_add_journal_missing_or_unconfirmed",
-        "wechat_inline_image_readback_missing_or_mismatched",
-        "editorial_review:editorial_humanizer_final_excerpt_missing",
-        "editorial_review:editorial_incomplete_fact_review",
-        "editorial_review:editorial_incomplete_reader_review",
-        "editorial_review:editorial_profile_evidence_missing:conflict_and_consequence",
-        "editorial_review:editorial_profile_evidence_missing:event_sequence",
-        "editorial_review:editorial_profile_evidence_missing:historian_comment",
-        "editorial_review:editorial_review_stale_article",
-        "editorial_review:editorial_source_evidence_invalid"
-      ]
+      "errors": []
     },
     "parenting": {
       "profile": "parenting",

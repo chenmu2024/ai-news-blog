@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "business",
   "article_path": "business/archive/2026-10-14.md",
   "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
@@ -61,5 +61,6 @@
       "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
       "article_path": "business/archive/2026-10-14.md"
     }
-  }
+  },
+  "draft_media_id": "NG_wEUXyotkqJkaF2RZgwPwo_zIuH75z-Qd-YeaIHH14Ne4Dho7R1FhAX7pnv2ib"
 }

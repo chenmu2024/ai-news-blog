@@ -1,0 +1,51 @@
+{
+  "state": "attempted",
+  "profile": "wechat",
+  "article_path": "wechat/archive/2026-10-14.md",
+  "article_sha256": "7ff4ffd32ed5bf0095c299b1ecbc5577f5c7b15f7c7a31644e2923b32168269c",
+  "title": "一家表单公司靠AI获客43%，它为什么不急着收费",
+  "run_id": "38491706518",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/To6vHlqnF5pdnlv6U12KyP2Ze2icFO6xtjNuLUhEGxw1sD3e4YQcTkS5tG231lxkUssTrzo9pxsxRFGYHibegxibGvzFe5DSp6cBEtkOU5lTkI/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/To6vHlqnF5ouU68tTUkfVvuML3sPjdeTffia15NsFynXNzlo3RFTD09zMwPaHLjma6S5mwp26NX05zF0wEUg47lcT6Rm1AR6gVREqSkibVb1Y/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "ai_business",
+      "profile_name": "陈慕｜AI 一人公司实战",
+      "score": 15,
+      "body_chars": 1525,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 24,
+      "stance_signals": 0,
+      "paragraph_regularity": {
+        "paragraphs": 18,
+        "cv": 0.343
+      },
+      "sentence_repetition": {
+        "sentences": 42,
+        "repeated_starts": 3,
+        "ratio": 0.071
+      },
+      "very_short_paragraph_ratio": 0.143,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "7ff4ffd32ed5bf0095c299b1ecbc5577f5c7b15f7c7a31644e2923b32168269c",
+      "article_path": "wechat/archive/2026-10-14.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "ai_business",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 1,
+      "hard_failures": [],
+      "article_sha256": "7ff4ffd32ed5bf0095c299b1ecbc5577f5c7b15f7c7a31644e2923b32168269c",
+      "article_path": "wechat/archive/2026-10-14.md"
+    }
+  }
+}

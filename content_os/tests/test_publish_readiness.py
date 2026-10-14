@@ -20,7 +20,7 @@ def card(role):
 class ReadyTests(unittest.TestCase):
     def test_qiezhi_stock_photos_without_card_are_rejected(self):
         md = "# 本日文章\n\n![Photo](https://www.example.com/1.jpg)\n![Photo](https://www.example.com/2.jpg)"
-        r = readiness.check("qiezhi", md)
+        r = readiness.check("qiezhi", md, "2026-10-14")
         self.assertEqual(r["status"], "FAIL")
         self.assertIn("QIEZHI_CARD", " ".join(r["errors"]))
 

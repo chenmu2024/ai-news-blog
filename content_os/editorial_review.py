@@ -22,17 +22,17 @@ HUMANIZER_ROLES = {"opening", "structure", "detail", "stance", "ending"}
 HUMANIZER_STYLES = {
     "qiezhi": {"opinion", "explainer", "story"},
     "wechat": {"explainer", "opinion", "story"},
-    "business": {"explainer", "life"},
+    "business": {"story", "life", "culture", "opinion"},
     "zizhitongjian": {"story", "culture", "opinion"},
-    "parenting": {"explainer", "life"},
+    "parenting": {"story", "life", "explainer", "opinion"},
     "jingyun": {"life", "opinion", "story"},
     "fashion": {"culture", "explainer", "life"},
 }
 CHECKS = {
     "qiezhi": ("original_context", "single_real_problem"),
     "wechat": ("paid_task", "cost_or_tradeoff", "evidence_scope"),
-    "business": ("eligibility", "official_entry", "steps_and_limits"),
-    "parenting": ("eligibility", "amount_example", "official_entry"),
+    "business": ("emotional_turn", "observable_care", "earned_resolution"),
+    "parenting": ("parent_child_conflict", "child_perspective", "actionable_parent_response"),
     "zizhitongjian": ("event_sequence", "conflict_and_consequence", "historian_comment"),
     "jingyun": ("observable_detail", "choice_and_cost", "ending_without_lecture"),
     "fashion": (),
@@ -196,7 +196,10 @@ def check(root: Path, profile: str, day: str, markdown: str, *, article_id: str 
                 valid_url = url.scheme == "https" and bool(url.hostname)
             except ValueError:
                 valid_url = False
-            observation = profile == "jingyun" and item.get("kind") == "observation" and not item.get("url")
+            observation = ((profile == "jingyun" and item.get("kind") == "observation" and not item.get("url"))
+                           or (profile in ("business", "parenting") and day >= "2026-10-15"
+                               and item.get("kind") == "creative_fiction" and not item.get("url")
+                               and "原创虚构" in body))
             if ((not observation and not valid_url) or not _text(item.get("claim"))
                     or not _anchor(item.get("article_excerpt"), body)):
                 errors.append("editorial_source_evidence_invalid")

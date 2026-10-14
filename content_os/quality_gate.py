@@ -23,13 +23,13 @@ PROFILES = {
         "min_stance_signals": 2,
     },
     "business_story": {
-        # Internal legacy profile key retained for backwards-compatible workflows.
-        "name": "民生政策与福利指南｜办事攻略",
+        # Technical key retained. From 2026-10-15 C is fictional healing comics.
+        "name": "暖心人间｜治愈原创连续漫画",
         "max_score": 30,
         "warn_score": 40,
-        "min_body_chars": 600,
+        "min_body_chars": 300,
         "max_body_chars": 4600,
-        "min_fact_signals": 5,
+        "min_fact_signals": 2,
         "min_stance_signals": 1,
     },
     "zizhitongjian": {
@@ -60,13 +60,12 @@ PROFILES = {
         "min_stance_signals": 2,
     },
     "parenting": {
-        "name": "民生家庭政策与生育福利指南",
+        "name": "育儿亲子｜原创连续漫画",
         "max_score": 30,
         "warn_score": 40,
-        # Family welfare explainer: actionable, sourced prose with verified cards.
-        "min_body_chars": 600,
+        "min_body_chars": 300,
         "max_body_chars": 4600,
-        "min_fact_signals": 5,
+        "min_fact_signals": 2,
         "min_stance_signals": 1,
     },
     "qiezhi": {
@@ -102,9 +101,7 @@ STANCE_PATTERNS_AI = [
     r"如果是我", r"我会先", r"我反而", r"我的判断",
 ]
 STANCE_PATTERNS_BUSINESS = [
-    # Public-benefit explainers prioritize accurate eligibility/action over opinions.
-    r"符合条件", r"不符合", r"先确认", r"需要注意", r"具体以",
-    r"要分清", r"可以申请", r"办理前", r"不要混淆",
+    r"转身|停住|轻声|推过去|递给|留下|陪着|看见|握住|点头|等你|谢谢|原来|没关系|有人|伸手|笑了",
 ]
 STANCE_PATTERNS_TONGJIAN = [
     r"我的判断", r"真正的问题", r"更值得看的是", r"放回当时",
@@ -120,8 +117,7 @@ STANCE_PATTERNS_JINGYUN = [
     r"很多女人", r"到了这个年纪", r"真正需要", r"更重要的是",
 ]
 STANCE_PATTERNS_PARENTING = [
-    r"符合条件", r"不符合", r"先确认", r"申请前", r"需要注意",
-    r"具体以", r"可以申领", r"不要混淆", r"家长可以",
+    r"孩子|蹲下|我知道|听见|害怕|着急|不舒服|可以选择|先试试|陪你|轮到|约好|停下来|再来|告诉我|你想",
 ]
 STANCE_PATTERNS_QIEZHI = [
     r"今天(?:我们|你|普通人|做事)", r"真正要做的", r"更重要的是",
@@ -133,11 +129,9 @@ FACT_PATTERNS_AI = [
     r"(?:20\d{2}|19\d{2})[年/-]", r"\b(?:ARR|MRR|CPC|KD|GPU|API|SEO|SaaS)\b",
 ]
 FACT_PATTERNS_BUSINESS = [
-    r"\d+(?:\.\d+)?%", r"\d+(?:\.\d+)?\s*(?:万|亿|元|个月|年|月|天|周)",
-    r"(?:20\d{2}|19\d{2})[年/-]",
-    r"(?:社保|医保|人社|公积金|养老金|生育津贴|失业金|工伤|职工医保|居民医保|产假|育儿补贴)",
-    r"(?:申请|申领|缴费|到账|受理|审核|待遇|材料|期限|工作日|身份证|居住证|户籍|参保)",
-    r"(?:政策|通知|办法|实施细则|官方|政务服务|政府|医保局|人社局)",
+    r"店门|雨伞|车站|邻居|朋友|奶奶|爷爷|老人|陌生人|小店|老板|路灯|末班车|街角",
+    r"纸条|书包|围巾|门把手|钥匙|雨衣|纸杯|衣角|餐桌|面包|零钱|照片",
+    r"停住|拉开|递给|扶住|望着|拍了拍|转身|脚步|蹲下|推门|等了|微笑|挥手",
 ]
 FACT_PATTERNS_TONGJIAN = [
     r"《资治通鉴》", r"司马光", r"臣光曰", r"卷[一二三四五六七八九十百零〇0-9]{1,8}",
@@ -156,11 +150,9 @@ FACT_PATTERNS_JINGYUN = [
     r"(?:民法典|法院|统计局|卫健|妇联|WHO|UN Women|ILO|OECD)",
 ]
 FACT_PATTERNS_PARENTING = [
-    r"\d+(?:\.\d+)?%", r"\d+(?:\.\d+)?\s*(?:元|万|年|月|天|周|岁|个月)",
-    r"(?:20\d{2}|19\d{2})[年/-]",
-    r"(?:生育|孕产|产检|津贴|育儿补贴|儿童医保|居民医保|职工医保|医疗|托育|多子女|二孩|三孩|购房补贴)",
-    r"(?:申请|申领|参保|结算|报销|审核|材料|截止|户籍|异地|官方|政策|政府|服务包)",
-    r"(?:卫健|医保局|住房|人社|发放|补助|待遇|补贴|支付)",
+    r"孩子|爸爸|妈妈|家长|老师|同伴|哥哥|姐姐|弟弟|妹妹|幼儿园|小学",
+    r"玩具|睡觉|出门|吃饭|不肯|哭了|吵架|害怕|迟到|不想|情绪|同桌|考试",
+    r"蹲下来|先听|抱抱|轮流|约好|限时|选择|提醒|一起收|说出来|示范|先试试",
 ]
 JINGYUN_FABRICATED_FIRST_PERSON_PATTERNS = [
     r"我老公", r"我丈夫", r"我老婆", r"我女儿", r"我儿子",

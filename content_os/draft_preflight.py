@@ -87,6 +87,14 @@ def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict
             "and approved archive snapshot manually."
         )
     if not confirmed:
+        if article_id != day:
+            try:
+                from content_os.multi_draft import verify_extra_approval
+            except ImportError:
+                from multi_draft import verify_extra_approval
+            violations = verify_extra_approval(article.resolve().parents[2], profile, article_id, raw.decode("utf-8"))
+            if violations:
+                raise ValueError("Supplemental draft approval missing: " + "; ".join(violations))
         try:
             from content_os.editorial_review import check as editorial_check
         except ImportError:

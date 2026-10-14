@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "jingyun",
   "article_path": "jingyun/archive/2026-10-14--comic-pilot-01.md",
   "article_sha256": "80332ba67bb6de350f3bb63e1aab75e53d5ff5d5d67a11cbc739e94d11957ccf",
@@ -51,5 +51,6 @@
       "article_sha256": "80332ba67bb6de350f3bb63e1aab75e53d5ff5d5d67a11cbc739e94d11957ccf",
       "article_path": "jingyun/archive/2026-10-14--comic-pilot-01.md"
     }
-  }
+  },
+  "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsEM-J_PzRfv4fZSSZy3PhD6cESNURG01qkApDjVAw66c"
 }

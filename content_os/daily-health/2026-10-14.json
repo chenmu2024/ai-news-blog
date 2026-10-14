@@ -1,16 +1,18 @@
 {
   "date": "2026-10-14",
-  "generated_at": "2026-10-14T08:51:00.825319+08:00",
+  "generated_at": "2026-10-14T11:23:16.330848+08:00",
   "timezone": "Asia/Shanghai",
-  "status": "complete",
-  "success_count": 7,
+  "status": "incomplete",
+  "success_count": 0,
   "expected_count": 7,
   "draft_confirmed_count": 7,
   "legacy_media_id_receipt_count": 0,
   "legacy_repo_receipt_only_count": 0,
   "draft_confirmation_status": "confirmed",
-  "alert_required": false,
-  "alert_reasons": [],
+  "alert_required": true,
+  "alert_reasons": [
+    "repository_or_gate_incomplete"
+  ],
   "editorial_alert_required": false,
   "editorial_alert_reasons": [],
   "headline_decisions": {
@@ -142,13 +144,15 @@
   "accounts": {
     "qiezhi": {
       "profile": "qiezhi",
-      "status": "success",
+      "status": "incomplete",
       "archive": "qiezhi/archive/2026-10-14.md",
       "title": "毛选《反对党八股》：文章越长，为什么越没人看",
       "archive_title": "毛选《反对党八股》：文章越长，为什么越没人看",
       "editorial_review": {
-        "status": "PASS",
-        "errors": [],
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_stale_policy"
+        ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
       "workflow_run_id": null,
@@ -165,17 +169,21 @@
       "image_check_done": null,
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": []
+      "errors": [
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "wechat": {
       "profile": "wechat",
-      "status": "success",
+      "status": "incomplete",
       "archive": "wechat/archive/2026-10-14.md",
       "title": "一家表单公司靠AI获客43%，它为什么不急着收费",
       "archive_title": "一家表单公司靠AI获客43%，它为什么不急着收费",
       "editorial_review": {
-        "status": "PASS",
-        "errors": [],
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_stale_policy"
+        ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
       "workflow_run_id": "38491706518",
@@ -192,17 +200,21 @@
       "image_check_done": null,
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": []
+      "errors": [
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "business": {
       "profile": "business",
-      "status": "success",
+      "status": "incomplete",
       "archive": "business/archive/2026-10-14.md",
       "title": "公司把离职报成“个人辞职”，失业金可能领不到",
       "archive_title": "公司把离职报成“个人辞职”，失业金可能领不到",
       "editorial_review": {
-        "status": "PASS",
-        "errors": [],
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_stale_policy"
+        ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
       "workflow_run_id": "38491710378",
@@ -219,17 +231,21 @@
       "image_check_done": null,
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": []
+      "errors": [
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "zizhitongjian": {
       "profile": "zizhitongjian",
-      "status": "success",
+      "status": "incomplete",
       "archive": "zizhitongjian/archive/2026-10-14.md",
       "title": "魏征谈“兼听则明”：皇帝最容易看不见什么",
       "archive_title": "魏征谈“兼听则明”：皇帝最容易看不见什么",
       "editorial_review": {
-        "status": "PASS",
-        "errors": [],
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_stale_policy"
+        ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
       "workflow_run_id": "38492384814",
@@ -247,17 +263,21 @@
       "image_check_done": false,
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": []
+      "errors": [
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "parenting": {
       "profile": "parenting",
-      "status": "success",
+      "status": "incomplete",
       "archive": "parenting/archive/2026-10-14.md",
       "title": "民办园大班免保教费，为什么家长还要交钱？",
       "archive_title": "民办园大班免保教费，为什么家长还要交钱？",
       "editorial_review": {
-        "status": "PASS",
-        "errors": [],
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_stale_policy"
+        ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
       "workflow_run_id": "38491715675",
@@ -274,17 +294,21 @@
       "image_check_done": null,
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": []
+      "errors": [
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "jingyun": {
       "profile": "jingyun",
-      "status": "success",
+      "status": "incomplete",
       "archive": "jingyun/archive/2026-10-14.md",
       "title": "母亲来住几天，为什么成年女儿反而有点紧张？",
       "archive_title": "母亲来住几天，为什么成年女儿反而有点紧张？",
       "editorial_review": {
-        "status": "PASS",
-        "errors": [],
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_stale_policy"
+        ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
       "workflow_run_id": "38491720169",
@@ -301,17 +325,21 @@
       "image_check_done": null,
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
-      "errors": []
+      "errors": [
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "fashion": {
       "profile": "fashion",
-      "status": "success",
+      "status": "incomplete",
       "archive": "fashion/archive/2026-10-14.md",
       "title": "Karina五套黑色造型，普通人能借鉴什么？",
       "archive_title": "Karina五套黑色造型，普通人能借鉴什么？",
       "editorial_review": {
-        "status": "PASS",
-        "errors": [],
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_stale_policy"
+        ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
       },
       "workflow_run_id": "38492133156",
@@ -329,11 +357,13 @@
       "image_check_done": null,
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 5,
-      "errors": []
+      "errors": [
+        "editorial_review:editorial_review_stale_policy"
+      ]
     }
   },
-  "topic_scan_date": null,
-  "topic_scan_available": false,
+  "topic_scan_date": "2026-10-14",
+  "topic_scan_available": true,
   "topic_popularity_verified_count": {
     "qiezhi": 0,
     "wechat": 0,

@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "fashion",
   "article_path": "fashion/archive/2026-10-14.md",
   "article_sha256": "e41b97b0a9ab674b62b5824ed4639f985ebd36a8d9f52580b5151f286614b5c2",
@@ -61,5 +61,6 @@
       "article_sha256": "e41b97b0a9ab674b62b5824ed4639f985ebd36a8d9f52580b5151f286614b5c2",
       "article_path": "fashion/archive/2026-10-14.md"
     }
-  }
+  },
+  "draft_media_id": "gcTqbaQ9A7M3U7aJTBB3ZeOqsi_TBmy5UV_SejOtKl6i1TQKkGtNuT1TtP2Emrz4"
 }

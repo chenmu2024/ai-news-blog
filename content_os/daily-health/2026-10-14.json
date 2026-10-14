@@ -1,6 +1,6 @@
 {
   "date": "2026-10-14",
-  "generated_at": "2026-10-14T11:59:56.760806+08:00",
+  "generated_at": "2026-10-14T15:32:30.671469+08:00",
   "timezone": "Asia/Shanghai",
   "status": "incomplete",
   "success_count": 0,
@@ -213,6 +213,10 @@
       "editorial_review": {
         "status": "FAIL",
         "errors": [
+          "editorial_humanizer_reference_style_mismatch",
+          "editorial_profile_evidence_missing:earned_resolution",
+          "editorial_profile_evidence_missing:emotional_turn",
+          "editorial_profile_evidence_missing:observable_care",
           "editorial_review_stale_policy"
         ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
@@ -232,6 +236,10 @@
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
       "errors": [
+        "editorial_review:editorial_humanizer_reference_style_mismatch",
+        "editorial_review:editorial_profile_evidence_missing:earned_resolution",
+        "editorial_review:editorial_profile_evidence_missing:emotional_turn",
+        "editorial_review:editorial_profile_evidence_missing:observable_care",
         "editorial_review:editorial_review_stale_policy"
       ]
     },
@@ -276,6 +284,9 @@
       "editorial_review": {
         "status": "FAIL",
         "errors": [
+          "editorial_profile_evidence_missing:actionable_parent_response",
+          "editorial_profile_evidence_missing:child_perspective",
+          "editorial_profile_evidence_missing:parent_child_conflict",
           "editorial_review_stale_policy"
         ],
         "note": "Evidence completeness only; not a score of writing quality or verified facts."
@@ -295,6 +306,9 @@
       "wechat_inline_readback_verified": true,
       "wechat_inline_image_count": 2,
       "errors": [
+        "editorial_review:editorial_profile_evidence_missing:actionable_parent_response",
+        "editorial_review:editorial_profile_evidence_missing:child_perspective",
+        "editorial_review:editorial_profile_evidence_missing:parent_child_conflict",
         "editorial_review:editorial_review_stale_policy"
       ]
     },

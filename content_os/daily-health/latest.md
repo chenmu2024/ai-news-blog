@@ -8,9 +8,9 @@ durable草稿确认 7/7；确认状态：confirmed
 |---|---|---|---|
 | qiezhi | incomplete | confirmed_journal | editorial_review:editorial_review_stale_policy |
 | wechat | incomplete | confirmed_journal | editorial_review:editorial_review_stale_policy |
-| business | incomplete | confirmed_journal | editorial_review:editorial_review_stale_policy |
+| business | incomplete | confirmed_journal | editorial_review:editorial_humanizer_reference_style_mismatch, editorial_review:editorial_profile_evidence_missing:earned_resolution, editorial_review:editorial_profile_evidence_missing:emotional_turn, editorial_review:editorial_profile_evidence_missing:observable_care, editorial_review:editorial_review_stale_policy |
 | zizhitongjian | incomplete | confirmed_journal | editorial_review:editorial_review_stale_policy |
-| parenting | incomplete | confirmed_journal | editorial_review:editorial_review_stale_policy |
+| parenting | incomplete | confirmed_journal | editorial_review:editorial_profile_evidence_missing:actionable_parent_response, editorial_review:editorial_profile_evidence_missing:child_perspective, editorial_review:editorial_profile_evidence_missing:parent_child_conflict, editorial_review:editorial_review_stale_policy |
 | jingyun | incomplete | confirmed_journal | editorial_review:editorial_review_stale_policy |
 | fashion | incomplete | confirmed_journal | editorial_review:editorial_review_stale_policy |
 

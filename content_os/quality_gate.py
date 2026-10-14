@@ -291,7 +291,7 @@ def evaluate(md: str, profile_key: str) -> dict:
     minimum_chars = profile["min_body_chars"]
     # Real original comic images tell most of the story. Do not pad an image-led
     # story with text merely to meet old essay quotas. Other gates verify the art.
-    manifest = re.search(r"<!--\\s*COMIC_PACKAGE\\s*(\\{[^<>]*\\})\\s*-->", md, re.S)
+    manifest = re.search(r"<!--\s*COMIC_PACKAGE\s*(\{[^<>]*\})\s*-->", md, re.S)
     if manifest:
         try:
             comic = json.loads(manifest.group(1))

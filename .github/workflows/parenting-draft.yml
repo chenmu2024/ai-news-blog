@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "parenting/archive/????-??-??.md"
+      - "parenting/archive/*.md"
   workflow_dispatch:
 
 concurrency:

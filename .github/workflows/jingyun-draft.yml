@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "jingyun/archive/????-??-??.md"
+      - "jingyun/archive/*.md"
   workflow_dispatch:
 
 concurrency:

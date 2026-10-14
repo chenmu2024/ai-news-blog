@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "fashion/archive/????-??-??.md"
+      - "fashion/archive/*.md"
   workflow_dispatch:
 
 concurrency:

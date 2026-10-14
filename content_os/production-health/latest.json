@@ -1,93 +1,129 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "timezone": "Asia/Shanghai",
-  "generated_at": "2026-10-13T19:04:00.193577+08:00",
+  "generated_at": "2026-10-14T14:14:06.340313+08:00",
   "editorial_brief": "content_os/PRODUCTION_BRIEF.md",
   "delivery_goal": "每号交付完整好稿与实际看过、贴合正文的图片，并确认送达微信公众号草稿箱。逐号完成研究、写作、配图、删改、送稿与回读。记录和测试不能代替成品；必须先阅读PRODUCTION_BRIEF.md的成品验收要求。",
   "editorial_feedback": "content_os/editorial-feedback.json",
   "editorial_review_required_from": "2026-10-14",
   "profiles": {
     "qiezhi": {
-      "action": "skip_confirmed",
-      "archive": "qiezhi/archive/2026-10-13.md",
+      "action": "manual_review_required",
+      "archive": "qiezhi/archive/2026-10-14.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "qiezhi/archive/2026-10-13.md",
-      "reasons": []
+      "receipt_path": "qiezhi/archive/2026-10-14.md",
+      "reasons": [
+        "draft_journal_present_not_fully_reconciled",
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "wechat": {
-      "action": "skip_confirmed",
-      "archive": "wechat/archive/2026-10-13.md",
+      "action": "manual_review_required",
+      "archive": "wechat/archive/2026-10-14.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "wechat/archive/2026-10-13.md",
-      "reasons": []
+      "receipt_path": "wechat/archive/2026-10-14.md",
+      "reasons": [
+        "draft_journal_present_not_fully_reconciled",
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "business": {
-      "action": "skip_confirmed",
-      "archive": "business/archive/2026-10-13.md",
+      "action": "manual_review_required",
+      "archive": "business/archive/2026-10-14.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "business/archive/2026-10-13.md",
-      "reasons": []
+      "receipt_path": "business/archive/2026-10-14.md",
+      "reasons": [
+        "draft_journal_present_not_fully_reconciled",
+        "editorial_review:editorial_humanizer_reference_style_mismatch",
+        "editorial_review:editorial_profile_evidence_missing:earned_resolution",
+        "editorial_review:editorial_profile_evidence_missing:emotional_turn",
+        "editorial_review:editorial_profile_evidence_missing:observable_care",
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "zizhitongjian": {
-      "action": "skip_confirmed",
-      "archive": "zizhitongjian/archive/2026-10-13.md",
+      "action": "manual_review_required",
+      "archive": "zizhitongjian/archive/2026-10-14.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "zizhitongjian/archive/2026-10-13.md",
-      "reasons": []
+      "receipt_path": "zizhitongjian/archive/2026-10-14.md",
+      "reasons": [
+        "draft_journal_present_not_fully_reconciled",
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "parenting": {
-      "action": "skip_confirmed",
-      "archive": "parenting/archive/2026-10-13.md",
+      "action": "manual_review_required",
+      "archive": "parenting/archive/2026-10-14.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "parenting/archive/2026-10-13.md",
-      "reasons": []
+      "receipt_path": "parenting/archive/2026-10-14.md",
+      "reasons": [
+        "draft_journal_present_not_fully_reconciled",
+        "editorial_review:editorial_profile_evidence_missing:actionable_parent_response",
+        "editorial_review:editorial_profile_evidence_missing:child_perspective",
+        "editorial_review:editorial_profile_evidence_missing:parent_child_conflict",
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "jingyun": {
-      "action": "skip_confirmed",
-      "archive": "jingyun/archive/2026-10-13.md",
+      "action": "manual_review_required",
+      "archive": "jingyun/archive/2026-10-14.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "jingyun/archive/2026-10-13.md",
-      "reasons": []
+      "receipt_path": "jingyun/archive/2026-10-14.md",
+      "reasons": [
+        "draft_journal_present_not_fully_reconciled",
+        "editorial_review:editorial_review_stale_policy"
+      ]
     },
     "fashion": {
-      "action": "skip_confirmed",
-      "archive": "fashion/archive/2026-10-13.md",
+      "action": "manual_review_required",
+      "archive": "fashion/archive/2026-10-14.md",
       "archive_exists": true,
       "journal_state": "confirmed",
-      "receipt_path": "fashion/archive/2026-10-13.md",
-      "reasons": []
+      "receipt_path": "fashion/archive/2026-10-14.md",
+      "reasons": [
+        "draft_journal_present_not_fully_reconciled",
+        "editorial_review:editorial_review_stale_policy"
+      ]
     }
   },
   "input_freshness": {
     "source_health": {
-      "recorded_date": "2026-10-13",
+      "recorded_date": "2026-10-14",
       "fresh": true
     },
     "editorial_intelligence": {
-      "recorded_date": "2026-10-13",
+      "recorded_date": "2026-10-14",
       "fresh": true
     },
     "reading_feedback": {
-      "recorded_date": "2026-10-13",
+      "recorded_date": "2026-10-14",
       "fresh": true
     },
     "daily_health": {
-      "recorded_date": "2026-10-13",
+      "recorded_date": "2026-10-14",
       "fresh": true
     },
     "topic_intelligence": {
-      "recorded_date": "2026-10-13",
+      "recorded_date": "2026-10-14",
       "fresh": true
     }
   },
-  "confirmed_count": 7,
+  "confirmed_count": 0,
   "missing_archives": [],
-  "manual_review": [],
+  "manual_review": [
+    "qiezhi",
+    "wechat",
+    "business",
+    "zizhitongjian",
+    "parenting",
+    "jingyun",
+    "fashion"
+  ],
   "policy": "Missing/stale research, reading feedback and health are NON-BLOCKING for responsible original writing. Record insufficient_evidence, verify facts independently, and complete permitted accounts one by one. This classifier NEVER authorizes draft/add; inspect Actions and run all applicable gates before archive creation or API access."
 }

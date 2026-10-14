@@ -1,9 +1,9 @@
 """Regression: A-F require comic packages; fashion and historical days retain old behavior."""
-import copy
 import hashlib
 import json
 import unittest
-from content_os.comic_gate import check, body_without_marker, binding_sha256, required
+from content_os.comic_gate import check, binding_sha256, required
+from content_os.publish_readiness import check as readiness
 
 BASE = "https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/"
 DAY = "2026-10-14"
@@ -30,7 +30,7 @@ def story(profile="parenting"):
     text += "这是一个原创虚构情境演绎。\n\n"
     for item in images:
         text += f"![漫画](\u0024URL)\n".replace("$URL",item["url"])
-        text += "<!-- AI_SCENE " + json.dumps({"image_url":item["url"],"sha256":item["sha256"],"synthetic":True},ensure_ascii=False) + " -->\n"
+        text += "<!-- AI_SCENE " + json.dumps({"image_url":item["url"],"sha256":item["sha256"],"synthetic":True,"profile":profile,"article_date":DAY,"generator":"openai_image_gen","generation_id":"test-generated-fixture","rights":"ai_created_owned","scene_role":"illustration","scene_description":"漫画角色身处不同场景的连续剧情原创绘制示意","pretends_to_be_real_person_or_record":False},ensure_ascii=False) + " -->\n"
     def wrap(x): return text + "<!-- COMIC_PACKAGE " + json.dumps(x,ensure_ascii=False) + " -->\n"
     pkg["approval"]["body_sha256"] = binding_sha256(wrap(pkg))
     return wrap(pkg)
@@ -57,5 +57,19 @@ class ComicPolicyTests(unittest.TestCase):
         s=story()
         self.assertIn("comic_panel_2_missing_visual_action_shot_or_setting",
                       check("parenting",DAY,s.replace("主角翻看不同的材料第2页","a")))
+
+    def test_production_readiness_accepts_real_comic_contract(self):
+        for profile in ("qiezhi", "wechat", "business", "parenting", "jingyun"):
+            with self.subTest(profile=profile):
+                result = readiness(profile, story(profile), DAY)
+                self.assertEqual(result["status"], "PASS", result["errors"])
+    def test_image_provenance_legacy_checker_reused(self):
+        from content_os.ai_scene_policy import check as scene_check
+        self.assertEqual(scene_check("parenting", DAY, story())[0], [])
+    def test_public_copy_strips_internal_package(self):
+        from content_os.image_resilience import strip_image_backup_notes
+        body = strip_image_backup_notes(story(), "parenting")
+        self.assertNotIn("COMIC_PACKAGE", body)
+        self.assertNotIn("AI_SCENE", body)
 
 if __name__ == "__main__": unittest.main()

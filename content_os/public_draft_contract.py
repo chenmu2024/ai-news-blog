@@ -195,7 +195,8 @@ def verify_and_record(profile: str, article: Path, title: str, media_id: str,
     article = Path(article)
     result["article_path"] = article.resolve().relative_to(Path.cwd().resolve()).as_posix()
     result["article_sha256"] = hashlib.sha256(article.read_bytes()).hexdigest()
-    result["article_date"] = article.stem
+    result["article_date"] = article.stem[:10]
+    result["article_id"] = article.stem
     out = Path(profile) / "status" / "draft-readback" / (article.stem + ".json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

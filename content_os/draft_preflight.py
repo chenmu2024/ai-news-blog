@@ -15,8 +15,10 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 try:
     from content_os.draft_journal import locate
+    from content_os.multi_draft import get_article_identity
 except ImportError:
     from draft_journal import locate
+    from multi_draft import get_article_identity
 
 
 def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict:
@@ -25,8 +27,7 @@ def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict
         raise ValueError(f"Unknown profile: {profile}")
     if not article.is_file() or article.parent.name != "archive" or article.parent.parent.name != profile:
         raise ValueError(f"Expected {profile}/archive/YYYY-MM-DD.md: {article}")
-    if not (len(article.stem) == 10 and article.stem[4] == "-" and article.stem[7] == "-"):
-        raise ValueError("Archive filename must be a calendar date")
+    day, article_id = get_article_identity(article, profile)
     raw = article.read_bytes()
     digest = hashlib.sha256(raw).hexdigest()
     status_file = status_dir / "latest.json" if status_dir else Path(profile) / "status" / "latest.json"
@@ -90,8 +91,8 @@ def inspect(article: Path, profile: str, status_dir: Path | None = None) -> dict
             from content_os.editorial_review import check as editorial_check
         except ImportError:
             from editorial_review import check as editorial_check
-        review = editorial_check(article.resolve().parents[2], profile, article.stem,
-                                 raw.decode("utf-8"))
+        review = editorial_check(article.resolve().parents[2], profile, day,
+                                 raw.decode("utf-8"), article_id=article_id)
         if review["status"] == "FAIL":
             raise ValueError("Editorial review required before any upload: " + "; ".join(review["errors"]))
     return {
@@ -118,7 +119,7 @@ def main() -> int:
         # A daily draft bridge must never publish yesterday's latest archive
         # when today's writing task has not created its new file.
         today = datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
-        if args.today_only and Path(args.article).stem != today:
+        if args.today_only and get_article_identity(Path(args.article), args.profile)[0] != today:
             result["should_publish"] = False
             result["reason"] = "archive_not_today"
     except (OSError, ValueError) as exc:

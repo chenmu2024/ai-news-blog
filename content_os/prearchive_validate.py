@@ -67,14 +67,16 @@ def fashion_evergreen_star_repeat(archive_dir: Path, day: str, title: str) -> bo
     return False
 
 
-def static_check(root: Path, profile: str, day: str, text: str) -> dict:
+def static_check(root: Path, profile: str, day: str, text: str, *, article_id: str | None = None) -> dict:
     if profile not in PROFILES:
         raise ValueError("Unknown profile")
     if date.fromisoformat(day).isoformat() != day:
         raise ValueError("Invalid day")
+    from content_os.multi_draft import validate_article_id
+    article_id = validate_article_id(day, article_id or day)
     errors = []
-    archive = root / profile / "archive" / f"{day}.md"
-    journal = root / profile / "status" / "draft-attempts" / f"{day}.json"
+    archive = root / profile / "archive" / f"{article_id}.md"
+    journal = root / profile / "status" / "draft-attempts" / f"{article_id}.json"
     status_path = root / profile / "status" / "latest.json"
     # Never overwrite an existing article, even if draft publishing failed.
     if archive.exists():
@@ -84,14 +86,14 @@ def static_check(root: Path, profile: str, day: str, text: str) -> dict:
     if status_path.exists():
         try:
             prior = json.loads(status_path.read_text("utf-8"))
-            if prior.get("article_path") == f"{profile}/archive/{day}.md":
+            if prior.get("article_path") == f"{profile}/archive/{article_id}.md":
                 errors.append("today_draft_receipt_exists_never_duplicate")
         except (ValueError, OSError):
             errors.append("unreadable_status_requires_manual_review")
     readiness = publisher_check(profile, text, day)
     errors.extend("publisher: " + x for x in readiness["errors"])
     from content_os.editorial_review import check as editorial_check
-    review = editorial_check(root, profile, day, text)
+    review = editorial_check(root, profile, day, text, article_id=article_id)
     errors.extend("editorial_review: " + x for x in review["errors"])
     # Real archive folder is authoritative; /tmp article paths do not carry
     # title-duplication history. Compare the proposed title to it directly.
@@ -103,12 +105,14 @@ def static_check(root: Path, profile: str, day: str, text: str) -> dict:
     # normalized 30-day title de-dup across ALL seven account profiles.
     from content_os.editorial_guard import normalize_title
     current = normalize_title(_title(text))
-    for past in archive.parent.glob("????-??-??.md"):
+    for past in archive.parent.glob("*.md"):
+        if past.stem == article_id:
+            continue
         try:
-            older = date.fromisoformat(past.stem)
+            older = date.fromisoformat(past.stem[:10])
         except ValueError:
             continue
-        if older < date.fromisoformat(day) and (date.fromisoformat(day) - older).days <= 30:
+        if older <= date.fromisoformat(day) and (date.fromisoformat(day) - older).days <= 30:
             previous = _title(past.read_text("utf-8"))
             if current and normalize_title(previous) == current:
                 errors.append("30day_exact_duplicate_title")
@@ -141,7 +145,7 @@ def static_check(root: Path, profile: str, day: str, text: str) -> dict:
         "status": "FAIL" if errors else "PASS",
         "profile": profile,
         "date": day,
-        "archive": f"{profile}/archive/{day}.md",
+        "archive": f"{profile}/archive/{article_id}.md",
         "title": _title(text),
         "readiness": readiness["status"],
         "editorial": editorial["status"],
@@ -149,16 +153,16 @@ def static_check(root: Path, profile: str, day: str, text: str) -> dict:
     }
 
 def validate(root: Path, profile: str, day: str, article: Path,
-             skip_image_network: bool = False) -> dict:
+             skip_image_network: bool = False, *, article_id: str | None = None) -> dict:
     content = article.read_bytes().decode("utf-8")
-    result = static_check(root, profile, day, content)
+    result = static_check(root, profile, day, content, article_id=article_id)
     result["checks"] = []
     if result["status"] != "PASS":
         return result
     # Shadow archive prevents source/image gates from assuming a random
     # temporary basename while keeping immutable on-disk archives untouched.
     with tempfile.TemporaryDirectory() as tmp:
-        staged = Path(tmp) / profile / "archive" / f"{day}.md"
+        staged = Path(tmp) / profile / "archive" / f"{article_id or day}.md"
         staged.parent.mkdir(parents=True, exist_ok=True)
         staged.write_text(content, "utf-8")
         # Validate fashion's 7-day celebrity quota against the REAL prior archive
@@ -214,12 +218,13 @@ def main() -> int:
     parser.add_argument("--profile", required=True, choices=PROFILES)
     parser.add_argument("--article", type=Path, required=True)
     parser.add_argument("--date", required=True)
+    parser.add_argument("--article-id", help="Immutable article ID, YYYY-MM-DD or YYYY-MM-DD--slug")
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--skip-image-network", action="store_true",
                         help="Offline diagnostics only. NEVER proof of publish readiness.")
     args = parser.parse_args()
     result = validate(args.root.resolve(), args.profile, args.date,
-                      args.article.resolve(), args.skip_image_network)
+                      args.article.resolve(), args.skip_image_network, article_id=args.article_id)
     if args.skip_image_network:
         result["network_verification"] = "NOT_RUN_NEVER_PUBLISH_ON_THIS_RESULT"
         # Even structurally clean drafts are NOT fully approved.

@@ -51,8 +51,8 @@ def _anchor(value, body):
     return _text(value) and re.sub(r"\s+", "", value) in re.sub(r"\s+", "", body)
 
 
-def review_path(root, profile, day):
-    return root / "content_os/editorial-reviews" / profile / (day + ".json")
+def review_path(root, profile, day, article_id=None):
+    return root / "content_os/editorial-reviews" / profile / ((article_id or day) + ".json")
 
 
 def policy_hash(root, profile):
@@ -150,14 +150,14 @@ def _humanizer_errors(rec, profile, body):
         errors.append("editorial_humanizer_needs_three_distinct_sources")
     return errors
 
-def check(root: Path, profile: str, day: str, markdown: str) -> dict:
+def check(root: Path, profile: str, day: str, markdown: str, *, article_id: str | None = None) -> dict:
     if profile not in CHECKS or date.fromisoformat(day).isoformat() != day:
         raise ValueError("Invalid editorial profile/date")
     if day < ACTIVATION:
         return {"status": "NOT_REQUIRED", "errors": []}
     errors = []
     try:
-        rec = json.loads(review_path(root, profile, day).read_text("utf-8"))
+        rec = json.loads(review_path(root, profile, day, article_id).read_text("utf-8"))
         if not isinstance(rec, dict):
             raise ValueError("not an object")
         feedback = json.loads((root / "content_os/editorial-feedback.json").read_text("utf-8"))
@@ -171,6 +171,8 @@ def check(root: Path, profile: str, day: str, markdown: str) -> dict:
     if (rec.get("schema_version") != 1 or rec.get("profile") != profile
             or rec.get("date") != day or rec.get("decision") != "approve"):
         errors.append("editorial_review_not_approved_for_profile_and_date")
+    if article_id is not None and article_id != day and rec.get("article_id") != article_id:
+        errors.append("editorial_article_id_mismatch")
     if rec.get("article_sha256") != hashlib.sha256(markdown.encode("utf-8")).hexdigest():
         errors.append("editorial_review_stale_article")
     if rec.get("policy_sha256") != expected_policy:
@@ -250,10 +252,13 @@ def check(root: Path, profile: str, day: str, markdown: str) -> dict:
     others = [profile] + (["parenting"] if profile == "business" else
                           ["business"] if profile == "parenting" else [])
     for other in others:
-        for path in (root / "content_os/editorial-reviews" / other).glob("????-??-??.json"):
-            old_day = date.fromisoformat(path.stem)
+        for path in (root / "content_os/editorial-reviews" / other).glob("*.json"):
+            try:
+                old_day = date.fromisoformat(path.stem[:10])
+            except ValueError:
+                continue
             distance = (date.fromisoformat(day) - old_day).days
-            if not (0 < distance <= 30 or (distance == 0 and other != profile)):
+            if not (0 < distance <= 30 or (distance == 0 and (other != profile or (article_id and path.stem != article_id)))):
                 continue
             try:
                 old = json.loads(path.read_text("utf-8"))

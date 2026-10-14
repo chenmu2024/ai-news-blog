@@ -95,3 +95,6 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成实际删改�
 
 ## 漫画优先（2026-10-15以后 A–F 新稿）
 必须执行 skills/wechat-comic-content-os/SKILL.md；新稿与漫画现行约束发生冲突时，旧写实AI场景图片、知识卡替代逻辑不再适用。新稿需过 content_os/comic_gate.py 的 COMIC_PACKAGE 结构/图像/审批哈希门禁。G女装真实照片规则完全不改。尚未得到本次用户“同步草稿”批准只能聊天预览，不能同步inbox进而触发自动工作流。
+
+## 同账号同日多篇草稿（2026-10-14起支持；不改变既有日更任务）
+可以为同一账号创建多篇**不同且已经逐篇获用户批准**的微信草稿；禁止再把“当天已成功一篇”作为第二篇独立稿件的阻断理由。旧日常文章保留 `<profile>/archive/YYYY-MM-DD.md`，新增草稿使用 `<profile>/archive/YYYY-MM-DD--slug.md`（slug为英文小写和数字、连字符，最多48字符），且每篇单独对应 `content_os/inbox/<profile>/YYYY-MM-DD--slug.md`、`*.titles.json`、`content_os/editorial-reviews/<profile>/YYYY-MM-DD--slug.json`、`<profile>/status/draft-attempts/YYYY-MM-DD--slug.json` 和独立微信media_id。新稿先完整聊天审阅、得到具体版本同意后方能创建inbox；漫画/政策/原典/Humanizer/图片审查保持不变。不允许因同日多篇而重复提交相同内容，已尝试和不明状态须先回查media_id。额外草稿在独立工作流中处理，旧日更归档/已确认草稿绝不覆盖，G真实穿搭与其照片版权规则保持不变。

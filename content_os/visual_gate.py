@@ -48,7 +48,8 @@ def main() -> int:
     required = MIN_VISUALS[args.profile]
 
     failures = []
-    article_date = p.stem if re.fullmatch(r"\d{4}-\d{2}-\d{2}", p.stem) else None
+    m = re.fullmatch(r"(\d{4}-\d{2}-\d{2})(?:--[a-z0-9][a-z0-9-]{0,47})?", p.stem)
+    article_date = m.group(1) if m else None
     if article_date:
         ai_errors, _ = check_ai_scene(args.profile, article_date, md)
         failures.extend(ai_errors)

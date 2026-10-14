@@ -126,3 +126,6 @@ GitHub Actions 使用默认 `GITHUB_TOKEN` 推送生成的 archive 时，不会�
 ## 2026-10-11 资治通鉴早期工作流失败的一次性恢复
 - 当天原稿归档已完成，第一次 `Zizhi Tongjian WeChat Draft Bridge` 在安装依赖前执行 source_gate，出现 `ModuleNotFoundError: requests`，**微信草稿步骤当次为skipped**，且无 `draft-attempts/2026-10-11.json`。已将 `pip install -r zizhitongjian/requirements.txt` 移到原典 Gate 之前。
 - 安全分发脚本只对此账号、当天、同一篇已验证 archive、**恰好一次**已完成的 workflow_dispatch 失败、对应原典 source step=FAIL 与 `Create Zizhi Tongjian WeChat draft only`=SKIPPED、预检成功、没有同日日志/回执的情形，允许一次额外分发，且在下次运行发现第二次工作流就停止。其余任何未知结果或API边界不清绝不能重试。该脚本只分发GitHub Actions，不直接访问微信。
+
+## 同账号同日多篇草稿（2026-10-14起支持；不改变既有日更任务）
+可以为同一账号创建多篇**不同且已经逐篇获用户批准**的微信草稿；禁止再把“当天已成功一篇”作为第二篇独立稿件的阻断理由。旧日常文章保留 `<profile>/archive/YYYY-MM-DD.md`，新增草稿使用 `<profile>/archive/YYYY-MM-DD--slug.md`（slug为英文小写和数字、连字符，最多48字符），且每篇单独对应 `content_os/inbox/<profile>/YYYY-MM-DD--slug.md`、`*.titles.json`、`content_os/editorial-reviews/<profile>/YYYY-MM-DD--slug.json`、`<profile>/status/draft-attempts/YYYY-MM-DD--slug.json` 和独立微信media_id。新稿先完整聊天审阅、得到具体版本同意后方能创建inbox；漫画/政策/原典/Humanizer/图片审查保持不变。不允许因同日多篇而重复提交相同内容，已尝试和不明状态须先回查media_id。额外草稿在独立工作流中处理，旧日更归档/已确认草稿绝不覆盖，G真实穿搭与其照片版权规则保持不变。

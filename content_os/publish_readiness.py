@@ -101,8 +101,10 @@ def main() -> int:
     p.add_argument("--date", help="Target Asia/Shanghai article date YYYY-MM-DD; defaults to today's date for temporary files")
     args = p.parse_args()
     target_day = args.date
-    if target_day is None and re.fullmatch(r"\d{4}-\d{2}-\d{2}", args.article.stem):
-        target_day = args.article.stem
+    if target_day is None:
+        ident = re.fullmatch(r"(\d{4}-\d{2}-\d{2})(?:--[a-z0-9][a-z0-9-]{0,47})?", args.article.stem)
+        if ident:
+            target_day = ident.group(1)
     result = check(args.profile, args.article.read_text(encoding="utf-8"), target_day)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return int(result["status"] != "PASS")

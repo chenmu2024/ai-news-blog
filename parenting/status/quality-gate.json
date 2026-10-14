@@ -3,37 +3,37 @@
   "profile": "parenting",
   "profile_name": "民生家庭政策与生育福利指南",
   "score": 0,
-  "body_chars": 2469,
+  "body_chars": 1113,
   "template_hits": 0,
   "internal_hits": 0,
-  "fact_signals": 137,
-  "stance_signals": 5,
+  "fact_signals": 14,
+  "stance_signals": 2,
   "paragraph_regularity": {
-    "paragraphs": 22,
-    "cv": 0.934
+    "paragraphs": 13,
+    "cv": 0.31
   },
   "sentence_repetition": {
-    "sentences": 50,
+    "sentences": 28,
     "repeated_starts": 0,
     "ratio": 0.0
   },
-  "very_short_paragraph_ratio": 0.154,
+  "very_short_paragraph_ratio": 0.188,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
   "editorial_title_guard": {
     "status": "PASS",
     "reasons": [],
-    "compared": 9,
+    "compared": 10,
     "prior_six_titles": [
+      "北京育儿补贴每孩每年3600元，怎么申领",
       "武汉二孩买房补贴6万：外地人怎么申请",
       "孩子被同学移出群聊，家长该怎么找老师",
       "家长群里最让人疲惫的，不是消息多，而是学校和家庭的责任说不清",
       "孩子早上说不想去学校，先别急着问“为什么又闹”",
-      "孩子作业拖到深夜，很多家长第一步就问错了",
-      "手机一收就翻脸，很多家庭真正缺的不是“限时”"
+      "孩子作业拖到深夜，很多家长第一步就问错了"
     ],
     "template_family": null
   },
-  "article_sha256": "c3791f0c22d0e649c456a344c2c46c565d412ab60c55d0be84018ee8ab6af834",
-  "article_path": "parenting/archive/2026-10-13.md"
+  "article_sha256": "4d326371920a2d308d0c453d92cc5bfdc4d5e82989659acff4d47e7435854c63",
+  "article_path": "parenting/archive/2026-10-14.md"
 }

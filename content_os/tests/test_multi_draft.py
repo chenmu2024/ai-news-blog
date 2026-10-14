@@ -54,8 +54,8 @@ class MultiDraftTests(unittest.TestCase):
              patch("content_os.editorial_review.check",return_value={"status":"PASS","errors":[]}),\
              patch("content_os.prearchive_validate.assess_editorial_title",return_value={"status":"PASS","reasons":[]}):
             result=static_check(self.root,self.profile,DAY,self.second.read_text("utf-8"),article_id=ID1)
-        self.assertNotIn("today_archive_already_exists_never_overwrite",result["errors"])
-        self.assertIn("today_archive_already_exists_never_overwrite",result["errors"]) if False else None
+        # Only the SAME supplementary ID blocks; the daily file does not.
+        self.assertEqual(result["errors"],["today_archive_already_exists_never_overwrite"])
         # Existing same-ID immutable archive must block, but existing daily alone does not.
         self.assertEqual(result["status"],"FAIL")
         self.assertEqual(result["errors"],["today_archive_already_exists_never_overwrite"])

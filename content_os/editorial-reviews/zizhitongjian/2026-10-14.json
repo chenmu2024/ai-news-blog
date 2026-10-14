@@ -3,7 +3,7 @@
   "profile": "zizhitongjian",
   "date": "2026-10-14",
   "decision": "approve",
-  "article_sha256": "4d4f46af92208c02be4360d2c904f80d5c9e6e8ed6219d763da3eb7ac6cf5cdb",
+  "article_sha256": "b47444ad10060e4e1610feccfbd0aff8cae52ae334a1e74f7352546ae8218a05",
   "policy_sha256": "0cc39fbf3ce7d598355460b3b5e2d9f687fe198ac930856350c9ba6d7493962c",
   "reader": "面向本号已确定垂直读者，聚焦可验证的具体问题",
   "question": "今天最值得回应的一个现实疑问",
@@ -26,8 +26,8 @@
       "article_excerpt": "贞观二年正月，唐太宗问魏徵，君主怎样才算明察，又怎样会陷入昏暗。"
     },
     {
-      "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷192",
-      "claim": "另本对魏征举例与情节的相应记录",
+      "url": "https://zh.wikisource.org/zh-hant/資治通鑑_(四庫全書本)/卷192",
+      "claim": "《四库全书本》卷192对贞观二年唐太宗与魏征对话的原典核对",
       "article_excerpt": "魏徵回答了八个流传很广的字：“兼听则明，偏信则暗。”"
     },
     {

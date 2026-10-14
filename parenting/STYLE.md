@@ -29,5 +29,5 @@
 
 保持 `parenting/archive/YYYY-MM-DD.md`、现有账号凭据与工作流，现有质量Gate内部`parenting`键仅为技术兼容，不应再强制4–8张漫画分镜或儿童心理学叙事。先审查当天archive/inbox/attempt journal，已确认成功或状态未知不得重复非幂等微信draft/add；先写完整正文、至少3个不同的可用标题（各<=32字符）、官方事实证据及图片，再按inbox→门禁→archive→微信草稿核验。草稿完成需要实际media_id/confirmed journal及状态一致，禁止把GitHub提交当成微信草稿成功。阅读、收藏、分享仅根据真实后台数据判断，未取得时保持unknown。
 
-## 新增漫画视觉身份｜E 家庭政策（2026-10-14起新稿）
+## 新增漫画视觉身份｜E 家庭政策（2026-10-15起新稿）
 完整执行 skills/wechat-comic-content-os/SKILL.md、references/ACCOUNT_ART_BIBLES.md。原创“阿宁一家”作为情境角色，分镜围绕孩子/家庭真实福利资格、时点、资金范围和办理过程推进；杏黄/湖绿，默认10–16格/5–9幅长图。政策数字、地域、具体政策窗口用政府原文逐项校核；不虚构政府通知或已到账结果，与C职工政策区分。旧写实图要求仅适用于历史旧稿。

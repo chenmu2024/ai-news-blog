@@ -1,0 +1,72 @@
+{
+  "state": "attempted",
+  "profile": "zizhitongjian",
+  "article_path": "zizhitongjian/archive/2026-10-14.md",
+  "article_sha256": "b47444ad10060e4e1610feccfbd0aff8cae52ae334a1e74f7352546ae8218a05",
+  "title": "魏征谈“兼听则明”：皇帝最容易看不见什么",
+  "run_id": "38492384814",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/g6tpQqYrb45S7qN7Bo3LlrOT4qbUXXvt0eClW8T9wXiazEicnhY1zRIzEnSluiaGkohtHHSdtibTCPdTnhsWGXUsWrN6rXHGickGB2du6VfXVyHg/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/g6tpQqYrb44VwMFsicxwTHIoavGpVNl43ILY7iaBgyjpo2qc181mYf9JCibZPicK6jgtyPYn95K7WLgZbCrOib0HeHIButgqjQhUO4A0kNPNykCU/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "zizhitongjian",
+      "profile_name": "资治通鉴｜原典·人性·决策",
+      "score": 15,
+      "body_chars": 1094,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 11,
+      "stance_signals": 0,
+      "paragraph_regularity": {
+        "paragraphs": 18,
+        "cv": 0.387
+      },
+      "sentence_repetition": {
+        "sentences": 35,
+        "repeated_starts": 1,
+        "ratio": 0.029
+      },
+      "very_short_paragraph_ratio": 0.095,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "b47444ad10060e4e1610feccfbd0aff8cae52ae334a1e74f7352546ae8218a05",
+      "article_path": "zizhitongjian/archive/2026-10-14.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "zizhitongjian",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 1,
+      "hard_failures": [],
+      "article_sha256": "b47444ad10060e4e1610feccfbd0aff8cae52ae334a1e74f7352546ae8218a05",
+      "article_path": "zizhitongjian/archive/2026-10-14.md"
+    },
+    "source-gate.json": {
+      "status": "PASS",
+      "work": "资治通鉴",
+      "volume": 192,
+      "chronicle": "唐纪八",
+      "year": "贞观二年（628年）",
+      "primary_text_url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷192",
+      "image_check_url": "https://ctext.org/wiki.pl?chapter=245208&if=gb",
+      "image_check_done": false,
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "alternate_text_url": "https://zh.wikisource.org/zh-hant/資治通鑑_(四庫全書本)/卷192",
+      "alternate_access_reason": "使用维基文库《四库全书本》卷192与通常本卷192两种原典文本逐句核对；未取得CText影印页逐页查看，不冒称影印已经核验。",
+      "context_verified": true,
+      "original_excerpt_chars": 25,
+      "direct_quote_count": 1,
+      "live_primary_excerpt_check": "PASS",
+      "image_source_reachable": "NOT_CHECKED_CTEXT_FALLBACK",
+      "hard_failures": [],
+      "article_sha256": "b47444ad10060e4e1610feccfbd0aff8cae52ae334a1e74f7352546ae8218a05",
+      "article_path": "zizhitongjian/archive/2026-10-14.md"
+    }
+  }
+}

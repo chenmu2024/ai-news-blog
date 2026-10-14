@@ -148,7 +148,7 @@ def check(profile: str, day: str, markdown: str, *, root: Path | None = None,
         approval = {}
     if (approval.get("status") != "approved" or approval.get("by") != "user" or
         approval.get("source") != "chat" or
-        not re.search(r"同步草稿|确认同步", str(approval.get("message_text", ""))) or
+        not re.search(r"同步草稿|确认同步|创建到微信公众号草稿箱|创建微信草稿", str(approval.get("message_text", ""))) or
         not str(approval.get("approved_at", "")).strip()):
         errors.append("comic_user_approval_not_recorded_for_exact_candidate")
     if approval.get("body_sha256") != binding_sha256(markdown):

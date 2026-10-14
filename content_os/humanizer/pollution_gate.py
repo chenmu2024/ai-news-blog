@@ -13,10 +13,10 @@ from pathlib import Path
 ACTIVATION="2026-10-14"
 THRESHOLD=24
 
-def check(root: Path, profile: str, day: str) -> dict:
+def check(root: Path, profile: str, day: str, article_id: str | None = None) -> dict:
     if day < ACTIVATION:
         return {"status":"NOT_REQUIRED","profile":profile,"date":day,"errors":[]}
-    path=root/"content_os"/"editorial-reviews"/profile/(day+".json")
+    path=root/"content_os"/"editorial-reviews"/profile/((article_id or day)+".json")
     errors=[]
     try:
         rec=json.loads(path.read_text("utf-8"))
@@ -56,9 +56,10 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--profile",required=True)
     ap.add_argument("--date",required=True)
+    ap.add_argument("--article-id")
     ap.add_argument("--root",type=Path,default=Path(__file__).resolve().parents[2])
     args=ap.parse_args()
-    result=check(args.root.resolve(),args.profile,args.date)
+    result=check(args.root.resolve(),args.profile,args.date,article_id=args.article_id)
     print(json.dumps(result,ensure_ascii=False,indent=2))
     return int(result["status"]=="FAIL")
 if __name__=="__main__":

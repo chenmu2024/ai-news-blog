@@ -60,7 +60,7 @@ def verify_extra_approval(root: Path, profile: str, article_id: str, markdown: s
     if (record.get("status") != "approved" or record.get("approved_by") != "user"
         or record.get("source") != "chat" or
         not str(record.get("approved_at") or "").strip() or
-        not any(s in str(record.get("user_confirmation") or "") for s in ("创建微信草稿", "同步草稿", "确认同步"))):
+        not any(s in str(record.get("user_confirmation") or "") for s in ("创建微信草稿", "同步草稿", "确认同步", "创建到微信公众号草稿箱", "创建到微信草稿箱"))):
         errors.append("multi_draft_explicit_user_permission_missing")
     if record.get("previewed_with_real_images") is not True:
         errors.append("multi_draft_final_visual_preview_not_verified")

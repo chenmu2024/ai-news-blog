@@ -1,0 +1,23 @@
+{
+  "candidates": [
+    "结婚九年，我们开始用便签说话",
+    "他们在同一个家里，却总靠纸条沟通",
+    "晚饭留到深夜，她终于撕下那张便签"
+  ],
+  "selected_title": "结婚九年，我们开始用便签说话",
+  "rationale": "原创新漫画把真实家庭场景中的具体误解转成有行动的故事，并逐镜头推进，不复用当天原归档。",
+  "basis": [
+    "用户已确认两篇试运行漫画创建微信草稿",
+    "全部六张漫画逐图及角色连续性核对",
+    "近30天账号标题与主题对照",
+    "原创虚构的情境边界与情绪节奏复核"
+  ],
+  "verified_views": null,
+  "evidence": {
+    "facts_checked": true,
+    "image_rights_checked": true,
+    "source_urls": [
+      "https://github.com/chenmu2024/ai-news-blog/tree/main/content_os/assets/ai-scenes/jingyun/2026-10-14"
+    ]
+  }
+}

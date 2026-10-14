@@ -1,5 +1,5 @@
 {
-  "state": "attempted",
+  "state": "confirmed",
   "profile": "parenting",
   "article_path": "parenting/archive/2026-10-14--comic-pilot-01.md",
   "article_sha256": "ecee8a15dc6ad27cd82a9b74a2d3163242ebcaff75af5102de07724cafa599e5",
@@ -65,5 +65,6 @@
       "article_sha256": "ecee8a15dc6ad27cd82a9b74a2d3163242ebcaff75af5102de07724cafa599e5",
       "article_path": "parenting/archive/2026-10-14--comic-pilot-01.md"
     }
-  }
+  },
+  "draft_media_id": "cyRgts0DS_D6YB0L1h-Eu0hZqYjPPDj8qLogFWh-iwug-JPlRF6fkQwRoXhCO802"
 }

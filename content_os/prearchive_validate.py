@@ -161,6 +161,17 @@ def validate(root: Path, profile: str, day: str, article: Path,
         staged = Path(tmp) / profile / "archive" / f"{day}.md"
         staged.parent.mkdir(parents=True, exist_ok=True)
         staged.write_text(content, "utf-8")
+        # Validate fashion's 7-day celebrity quota against the REAL prior archive
+        # history, not an empty temporary directory.
+        if profile == "fashion":
+            target_date = date.fromisoformat(day)
+            for prior in (root / "fashion" / "archive").glob("????-??-??.md"):
+                try:
+                    age = (target_date - date.fromisoformat(prior.stem)).days
+                except ValueError:
+                    continue
+                if 0 < age <= 6:
+                    (staged.parent / prior.name).write_bytes(prior.read_bytes())
         quality_profile = QUALITY_NAMES.get(profile, profile)
         commands = [
             ("humanizer", [sys.executable, str(root/"content_os/humanizer/humanizer_gate.py"),

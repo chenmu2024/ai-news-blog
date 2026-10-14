@@ -3,7 +3,7 @@
   "profile": "zizhitongjian",
   "date": "2026-10-14",
   "decision": "approve",
-  "article_sha256": "9dba29174a54513b406d0add99dbba08432a4b47687bb3fc2506031fd83c0552",
+  "article_sha256": "4d4f46af92208c02be4360d2c904f80d5c9e6e8ed6219d763da3eb7ac6cf5cdb",
   "policy_sha256": "0cc39fbf3ce7d598355460b3b5e2d9f687fe198ac930856350c9ba6d7493962c",
   "reader": "面向本号已确定垂直读者，聚焦可验证的具体问题",
   "question": "今天最值得回应的一个现实疑问",
@@ -26,7 +26,7 @@
       "article_excerpt": "贞观二年正月，唐太宗问魏徵，君主怎样才算明察，又怎样会陷入昏暗。"
     },
     {
-      "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(四庫全書本)/卷192",
+      "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷192",
       "claim": "另本对魏征举例与情节的相应记录",
       "article_excerpt": "魏徵回答了八个流传很广的字：“兼听则明，偏信则暗。”"
     },
@@ -63,7 +63,7 @@
   },
   "fact_review": {
     "finding": "旧稿部分因标题承诺、原始事实和地区适用范围有歧义",
-    "change": "重新核对原始来源、数字与适用条件，明确公司自报与实际利润、地方政策与假设算例、史书记载与作者解释的边界",
+    "change": "重新核对原始来源、数字与适用条件，明确公司自报与实际利润、地方政策与假设算例、史书记载与作者解释的边界；备用版本改为胡三省音注本并按同段原句复核",
     "final_excerpt": "贞观二年正月，唐太宗问魏徵，君主怎样才算明察，又怎样会陷入昏暗。",
     "unresolved": []
   },
@@ -80,7 +80,7 @@
         "scores": {
           "topic_similarity": 0.1135,
           "style_fit": 0.48,
-          "account_fit": 1.0,
+          "account_fit": 1,
           "structure_fit": 0.8,
           "total": 0.6019
         },
@@ -96,7 +96,7 @@
         "scores": {
           "topic_similarity": 0.1235,
           "style_fit": 0.48,
-          "account_fit": 1.0,
+          "account_fit": 1,
           "structure_fit": 0.75,
           "total": 0.5955
         },
@@ -112,7 +112,7 @@
         "scores": {
           "topic_similarity": 0.1201,
           "style_fit": 0.48,
-          "account_fit": 1.0,
+          "account_fit": 1,
           "structure_fit": 1,
           "total": 0.6576
         },
@@ -128,7 +128,7 @@
         "scores": {
           "topic_similarity": 0.0759,
           "style_fit": 0.32,
-          "account_fit": 1.0,
+          "account_fit": 1,
           "structure_fit": 1,
           "total": 0.6181
         },
@@ -144,7 +144,7 @@
         "scores": {
           "topic_similarity": 0.0603,
           "style_fit": 0.32,
-          "account_fit": 1.0,
+          "account_fit": 1,
           "structure_fit": 1,
           "total": 0.6112
         },

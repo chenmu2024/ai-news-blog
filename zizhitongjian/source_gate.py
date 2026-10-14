@@ -199,7 +199,7 @@ def main() -> int:
     if fallback:
         if d.get("image_check_done") is True:
             errors.append("不得把未核验的影印标为已完成")
-        if host(alternate_url) != "zh.wikisource.org" or "四庫全書本" not in unquote(alternate_url):
+        if host(alternate_url) != "zh.wikisource.org" or not any(edition in unquote(alternate_url) for edition in ("四庫全書本", "胡三省音注")):
             errors.append("alternate_text_url 必须为四库全书本的具体卷")
         if "/%E5%8D%B7" not in alternate_url and "/卷" not in alternate_url:
             errors.append("alternate_text_url 必须是具体卷页")
@@ -226,7 +226,7 @@ def main() -> int:
         if fallback:
             try:
                 if not source_contains(alternate_url, alternate_excerpt):
-                    errors.append("alternate_excerpt 未在四库全书本具体卷中找到")
+                    errors.append("alternate_excerpt 未在可靠第二版本的具体卷中找到")
             except Exception as e:
                 errors.append("第二版本原典在线核验失败: " + str(e))
         else:

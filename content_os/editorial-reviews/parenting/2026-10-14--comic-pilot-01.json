@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "profile": "parenting",
+  "date": "2026-10-14",
+  "article_id": "2026-10-14--comic-pilot-01",
+  "decision": "approve",
+  "article_sha256": "ecee8a15dc6ad27cd82a9b74a2d3163242ebcaff75af5102de07724cafa599e5",
+  "policy_sha256": "81c772895c207fed9b1cfe603462b8977b4872b449872a1f68dc79dfb8d15e02",
+  "reader": "2022—2024年出生婴幼儿家长，去年漏办首次育儿补贴，担心无法补申请",
+  "question": "2025年底未交首次申请，现在2026年10月还能申请什么、从哪里申请？",
+  "new_information": "卫健委2026年7月延长首次申请时间至12月31日，按2022、2023、2024出生年份分别1、2、3次机会，并区分首次申请与续领入口。",
+  "topic_key": "nhc-2026-july-retroactive-childcare-subsidy-extension",
+  "rejected_topics": [
+    {
+      "question": "再写一篇学前教育免费政策？",
+      "reason": "今天原归档是学前教育收费减免，重复选题，改用独立官方延期通知。"
+    },
+    {
+      "question": "2022年出生孩子都一次领满3600元？",
+      "reason": "此标题将按实际应补贴月数折算忽略，属于误导，予以否决。"
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.nhc.gov.cn/rkjcyjtfzs/c100148/202607/6db6c47697544b97bc86bc4ac78d0b32.shtml",
+      "claim": "2022—2024年出生婴幼儿首次申请延长至2026-12-31及按出生年份分次",
+      "article_excerpt": "2022—2024年出生婴幼儿首次申请截止时间，延长至2026年12月31日"
+    },
+    {
+      "url": "https://www.nhc.gov.cn/rkjcyjtfzs/c100147/202607/981a0cc093a541129984334050cf8363.shtml",
+      "claim": "国家每孩每年3600元基础标准及按应补贴月数折算",
+      "article_excerpt": "育儿补贴的国家基础标准为**每孩每年3600元**"
+    }
+  ],
+  "history": [
+    {
+      "path": "parenting/archive/2026-10-14.md",
+      "difference": "同日原稿讲北京学前一年教育减免，本篇讲2026年育儿补贴首次申请延期。"
+    },
+    {
+      "path": "parenting/archive/2026-10-13.md",
+      "difference": "上期讲地方学费政策，本文改为国家官方延期时点与次数。"
+    },
+    {
+      "path": "parenting/archive/2026-10-12.md",
+      "difference": "前期涉及武汉多孩住房补贴，与本次全国育儿补贴申请无交集。"
+    },
+    {
+      "path": "parenting/archive/2026-10-11.md",
+      "difference": "前期是儿童教育/行为稿，本次是可以立即办理的补贴。"
+    }
+  ],
+  "profile_checks": {
+    "eligibility": "2022—2024年出生婴幼儿首次申请截止时间，延长至2026年12月31日",
+    "amount_example": "育儿补贴的国家基础标准为**每孩每年3600元**",
+    "official_entry": "微信、支付宝搜索官方“育儿补贴”小程序"
+  },
+  "reader_review": {
+    "finding": "读者容易把“申请”理解成已到账，且不知道第一次和续领入口不同。",
+    "change": "加入分出生年份次数和申领渠道的区分，同时说明要等待实际审核。",
+    "final_excerpt": "提交申请不等于审批通过，更不意味着已经到账",
+    "unresolved": []
+  },
+  "fact_review": {
+    "finding": "早于2025年出生的孩子不能一律视为都可领满3600元，且各年份续领期限有差异。",
+    "change": "对照国家卫健委2026年7月通知和正式解读，分别复核2022/2023/2024申请次数及到期日。",
+    "final_excerpt": "2024年出生：共可申请3次",
+    "unresolved": []
+  },
+  "humanizer": {
+    "version": "v4",
+    "reference_library": "wechat-humanizer-v4-2014-2016",
+    "reference_examples": [
+      {
+        "origin": "project_bank",
+        "reference_id": "a0003_s00_2e9c5760",
+        "source_name": "ELLEMEN睿士",
+        "style": "story",
+        "role": "opening",
+        "scores": {
+          "topic_similarity": 0.0681,
+          "style_fit": 0.22,
+          "account_fit": 1.0,
+          "structure_fit": 0.8,
+          "total": 0.5534
+        },
+        "retrieval_reason": "opening角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习opening写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0093_s01_9a51c106",
+        "source_name": "ONE一个",
+        "style": "explainer",
+        "role": "structure",
+        "scores": {
+          "topic_similarity": 0.0236,
+          "style_fit": 0.36,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5358
+        },
+        "retrieval_reason": "structure角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习structure写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0036_s00_0fe34b88",
+        "source_name": "博客天下",
+        "style": "story",
+        "role": "detail",
+        "scores": {
+          "topic_similarity": 0.1313,
+          "style_fit": 0.22,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.6149
+        },
+        "retrieval_reason": "detail角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习detail写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0108_s01_93123e60",
+        "source_name": "BetterRead",
+        "style": "explainer",
+        "role": "stance",
+        "scores": {
+          "topic_similarity": 0.0045,
+          "style_fit": 0.36,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.5822
+        },
+        "retrieval_reason": "stance角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习stance写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0017_s01_71063bee",
+        "source_name": "中国新闻周刊",
+        "style": "opinion",
+        "role": "ending",
+        "scores": {
+          "topic_similarity": 0.0156,
+          "style_fit": 0.18,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.5804
+        },
+        "retrieval_reason": "ending角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习ending写法，不复制事实、人物、比喻或原句"
+      }
+    ],
+    "anti_patterns_removed": [
+      "删去笼统的“人人可以补领”表达",
+      "将补贴数额改为基础标准并明确应补贴月数折算"
+    ],
+    "final_excerpt": "2022—2024年出生婴幼儿首次申请截止时间，延长至2026年12月31日",
+    "copied_reference_text": false,
+    "fact_recheck": true,
+    "pollution_check": {
+      "engine": "private_exact_overlap_v1",
+      "status": "PASS",
+      "threshold_chars": 24,
+      "max_exact_overlap_chars": 3,
+      "reference_ids_checked": [
+        "a0003_s00_2e9c5760",
+        "a0093_s01_9a51c106",
+        "a0036_s00_0fe34b88",
+        "a0108_s01_93123e60",
+        "a0017_s01_71063bee"
+      ],
+      "web_references_checked": true
+    }
+  },
+  "feedback_applied": [
+    {
+      "id": "2026-10-13-all-seven-writing",
+      "change": "以便签细节和真实家庭补贴申请场景推进漫画，舍弃泛用总结与假数据，并保存真实AI原创漫画全图。"
+    }
+  ]
+}

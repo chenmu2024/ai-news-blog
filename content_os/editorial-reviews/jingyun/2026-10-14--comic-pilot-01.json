@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "profile": "jingyun",
+  "date": "2026-10-14",
+  "article_id": "2026-10-14--comic-pilot-01",
+  "decision": "approve",
+  "article_sha256": "80332ba67bb6de350f3bb63e1aab75e53d5ff5d5d67a11cbc739e94d11957ccf",
+  "policy_sha256": "7c9c6649783d5d8039bd6132a1d36fe631a06ba726b3db1d554b414ae3bab3b3",
+  "reader": "成年婚姻女性读者，经历关系里长时间用字条代替交谈的疏离",
+  "question": "一对多年夫妻怎样从只用便签交流，到愿意重新开口？",
+  "new_information": "不是“靠一句话修好婚姻”，而是人物在回家时决定不再把对话留在纸上，承认问题尚未解决。",
+  "topic_key": "jingyun-marriage-notes-return-to-speaking-fiction-2026",
+  "rejected_topics": [
+    {
+      "question": "写“夫妻不说话就是不爱了”的结论？",
+      "reason": "没有真实普遍性证据，夸大虚构故事并容易变成道德评判。"
+    },
+    {
+      "question": "写“一个女人强大后不再需要婚姻”的鸡汤？",
+      "reason": "脱离原创场景且走向口号，不能替代人物有成本的选择。"
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "observation",
+      "claim": "全文为作者创作的虚构夫妻互动场景，不宣称采访或者统计真实性",
+      "article_excerpt": "这是虚构的原创漫画故事，人物和婚姻经历均非真人投稿"
+    }
+  ],
+  "history": [
+    {
+      "path": "jingyun/archive/2026-10-14.md",
+      "difference": "同日旧稿是母女短住中的生活边界，本篇转向夫妻沉默与开口选择。"
+    },
+    {
+      "path": "jingyun/archive/2026-10-13.md",
+      "difference": "上期涉及成年家庭中个人时间安排，这篇聚焦夫妻日常微动作。"
+    },
+    {
+      "path": "jingyun/archive/2026-10-12.md",
+      "difference": "旧稿讨论成年人友情走散，而这篇以便签道具推动婚姻关系剧情。"
+    },
+    {
+      "path": "jingyun/archive/2026-10-11.md",
+      "difference": "旧稿涉及家庭待办清单，这篇强调当事人愿意坐下谈话。"
+    }
+  ],
+  "profile_checks": {
+    "observable_detail": "晚饭放在哪里、出门记得带伞",
+    "choice_and_cost": "她并不打算靠一张纸条解决九年的沉默",
+    "ending_without_lecture": "但至少今晚，他们没有再拿起笔"
+  },
+  "reader_review": {
+    "finding": "原试运行字幕节奏过快，文字若再长会稀释人物在门口停顿的情绪。",
+    "change": "保留12格漫画原始剧情，短段落只承接门口与餐桌动作，不增加道德评价。",
+    "final_excerpt": "但至少今晚，他们没有再拿起笔",
+    "unresolved": []
+  },
+  "fact_review": {
+    "finding": "“九年”属于虚构人物背景，不可冒充作者自己或者真人匿名投稿。",
+    "change": "添加虚构情境说明，避免虚构角色经历当作事实证据。",
+    "final_excerpt": "这是虚构的原创漫画故事，人物和婚姻经历均非真人投稿",
+    "unresolved": []
+  },
+  "humanizer": {
+    "version": "v4",
+    "reference_library": "wechat-humanizer-v4-2014-2016",
+    "reference_examples": [
+      {
+        "origin": "project_bank",
+        "reference_id": "a0011_s02_1e1ba3d9",
+        "source_name": "每日人物",
+        "style": "story",
+        "role": "opening",
+        "scores": {
+          "topic_similarity": 0.0971,
+          "style_fit": 0.26,
+          "account_fit": 1.0,
+          "structure_fit": 0.8,
+          "total": 0.5681
+        },
+        "retrieval_reason": "opening角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习opening写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0005_s00_8bf6508c",
+        "source_name": "南艺当代视觉艺术研究中心",
+        "style": "story",
+        "role": "structure",
+        "scores": {
+          "topic_similarity": 0.0891,
+          "style_fit": 0.26,
+          "account_fit": 1.0,
+          "structure_fit": 0.75,
+          "total": 0.5523
+        },
+        "retrieval_reason": "structure角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习structure写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0000_s07_16d21e36",
+        "source_name": "南方人物周刊",
+        "style": "story",
+        "role": "detail",
+        "scores": {
+          "topic_similarity": 0.0753,
+          "style_fit": 0.26,
+          "account_fit": 1.0,
+          "structure_fit": 1,
+          "total": 0.6116
+        },
+        "retrieval_reason": "detail角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习detail写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0017_s01_71063bee",
+        "source_name": "中国新闻周刊",
+        "style": "opinion",
+        "role": "stance",
+        "scores": {
+          "topic_similarity": 0.0694,
+          "style_fit": 0.28,
+          "account_fit": 1.0,
+          "structure_fit": 0.5,
+          "total": 0.4865
+        },
+        "retrieval_reason": "stance角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习stance写法，不复制事实、人物、比喻或原句"
+      },
+      {
+        "origin": "project_bank",
+        "reference_id": "a0071_s01_95311790",
+        "source_name": "吴晓波频道",
+        "style": "opinion",
+        "role": "ending",
+        "scores": {
+          "topic_similarity": 0.0636,
+          "style_fit": 0.28,
+          "account_fit": 1.0,
+          "structure_fit": 0.9,
+          "total": 0.5668
+        },
+        "retrieval_reason": "ending角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
+        "learned_feature": "仅学习ending写法，不复制事实、人物、比喻或原句"
+      }
+    ],
+    "anti_patterns_removed": [
+      "删除婚姻必须怎样的泛化判断",
+      "避免开头堆常识或结尾强行提供人生建议"
+    ],
+    "final_excerpt": "她并不打算靠一张纸条解决九年的沉默",
+    "copied_reference_text": false,
+    "fact_recheck": true,
+    "pollution_check": {
+      "engine": "private_exact_overlap_v1",
+      "status": "PASS",
+      "threshold_chars": 24,
+      "max_exact_overlap_chars": 4,
+      "reference_ids_checked": [
+        "a0011_s02_1e1ba3d9",
+        "a0005_s00_8bf6508c",
+        "a0000_s07_16d21e36",
+        "a0017_s01_71063bee",
+        "a0071_s01_95311790"
+      ],
+      "web_references_checked": true
+    }
+  },
+  "feedback_applied": [
+    {
+      "id": "2026-10-13-all-seven-writing",
+      "change": "以便签细节和真实家庭补贴申请场景推进漫画，舍弃泛用总结与假数据，并保存真实AI原创漫画全图。"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "state": "attempted",
+  "profile": "fashion",
+  "article_path": "fashion/archive/2026-10-14.md",
+  "article_sha256": "e41b97b0a9ab674b62b5824ed4639f985ebd36a8d9f52580b5151f286614b5c2",
+  "title": "Karina五套黑色造型，普通人能借鉴什么？",
+  "run_id": "38492133156",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/bwYjpTUcUCJ6lT4ja0dKDd6SDFRwHKnp3sbQic9Wy04VtHQLHyqhEoibooNQsL30ugpmTDaZTGfe8UEVoL99Pn6bpaagmfbC1YMR88JLGmdFw/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/bwYjpTUcUCJ8S73AxnIGM9VDGpaLDyvEeOAoibflDG6FoA6HsaY86UiaFy949qLwxiblHxbRVz19msqaicwmsKTS63YBPTACMkFXCVib8cYMFk3Q/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/bwYjpTUcUCJjdLcxzU5rpjIDSOJ8yDv8NckZYf1SicEurZEniafs9vNzcK8ehYeatnCaOMTbIOZUQbUMqicP5GMw7MLZK7AmvhvKd1hXRATiaiaM/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/bwYjpTUcUCIWaNTp83oILFiaHX3gIpicUzNznxc8rttazzOoG4WyWB95EzYWsdadrzaMzBDJhuK7vgFM0elyUG9SBL4bUsdv2jldJ1GCLAwibA/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/bwYjpTUcUCLJVw8ibvFOibzw5kcBg7Nr1dq4OrNef7DicrsbN7soRT173en2iaH0oD6kaRstVNj6vU9ViaguvpEQpeNqfCIxicmKKMibnKalRxYhuI/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "fashion",
+      "profile_name": "女装穿搭｜Image-first",
+      "score": 10,
+      "body_chars": 1708,
+      "template_hits": 1,
+      "internal_hits": 0,
+      "fact_signals": 15,
+      "stance_signals": 3,
+      "paragraph_regularity": {
+        "paragraphs": 11,
+        "cv": 1.57
+      },
+      "sentence_repetition": {
+        "sentences": 33,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.312,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "e41b97b0a9ab674b62b5824ed4639f985ebd36a8d9f52580b5151f286614b5c2",
+      "article_path": "fashion/archive/2026-10-14.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "fashion",
+      "required_visuals": 5,
+      "visual_count": 5,
+      "markdown_images": 5,
+      "html_images": 0,
+      "renderable_cards": 0,
+      "hard_failures": [],
+      "article_sha256": "e41b97b0a9ab674b62b5824ed4639f985ebd36a8d9f52580b5151f286614b5c2",
+      "article_path": "fashion/archive/2026-10-14.md"
+    },
+    "image-gate.json": {
+      "status": "PASS",
+      "topic_type": "celebrity",
+      "image_count": 5,
+      "body_image_count": 5,
+      "item_claim_count": 0,
+      "hard_failures": [],
+      "warnings": [],
+      "article_sha256": "e41b97b0a9ab674b62b5824ed4639f985ebd36a8d9f52580b5151f286614b5c2",
+      "article_path": "fashion/archive/2026-10-14.md"
+    }
+  }
+}

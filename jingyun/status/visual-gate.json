@@ -3,23 +3,23 @@
   "profile": "jingyun",
   "required_visuals": 2,
   "visual_count": 2,
-  "markdown_images": 1,
+  "markdown_images": 2,
   "html_images": 0,
-  "renderable_cards": 1,
+  "renderable_cards": 0,
   "hard_failures": [],
-  "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
-  "article_path": "jingyun/archive/2026-10-13.md",
+  "article_sha256": "3e7fca5bddaeab784550ac42c646f3c89ce66b8d40d40ee875390e541792680c",
+  "article_path": "jingyun/archive/2026-10-14.md",
   "wechat_inline_readback": {
     "draft_get_verified": true,
     "state": "verified",
     "profile": "jingyun",
-    "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsFBKrfE629EcNw-We5HGOOX0Tpf3J-ObnQrmJLLSoDCM",
+    "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsJicZuxxfMCIitLU1_E_2qezcvHSQkL8k7gZK8jKSkVK",
     "inline_image_count": 2,
     "expected_inline_image_count": 2,
-    "readback_body_sha256": "b3f5f6cc051511229bb3aa2f69b3f121cb200d676c05bc9431a314bc227efa86",
-    "verified_at_utc": "2026-10-13T00:50:17.681555+00:00",
-    "article_path": "jingyun/archive/2026-10-13.md",
-    "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
-    "article_date": "2026-10-13"
+    "readback_body_sha256": "6a5054293c5cd17e8605bda46741f0f19a3032766a64c0a53c8f67ebab32a5b5",
+    "verified_at_utc": "2026-10-14T00:43:36.935002+00:00",
+    "article_path": "jingyun/archive/2026-10-14.md",
+    "article_sha256": "3e7fca5bddaeab784550ac42c646f3c89ce66b8d40d40ee875390e541792680c",
+    "article_date": "2026-10-14"
   }
 }

@@ -1,10 +1,9 @@
 {
   "status": "success",
-  "title": "为什么总把自己的事留到以后",
-  "article_path": "jingyun/archive/2026-10-13.md",
-  "article_sha256": "f1da2e2ee7b346d4f36600112e45830a7ae2e33b171b8e91147d7eeb9dcb1006",
-  "draft_media_id": "qDPeD_MVp5DpmMkoYeFhsFBKrfE629EcNw-We5HGOOX0Tpf3J-ObnQrmJLLSoDCM",
-  "workflow_run_id": "38328415865",
-  "recovered_from_confirmed_journal": true,
-  "completed_at_utc": "2026-10-13T00:47:50.080456+00:00"
+  "title": "母亲来住几天，为什么成年女儿反而有点紧张？",
+  "article_path": "jingyun/archive/2026-10-14.md",
+  "article_sha256": "3e7fca5bddaeab784550ac42c646f3c89ce66b8d40d40ee875390e541792680c",
+  "workflow_run_id": "38491720169",
+  "commit_sha": "8102216e001e8a80fffa5d4f420499ad7ac14fa7",
+  "completed_at_utc": "2026-10-14T00:43:37.610403+00:00"
 }

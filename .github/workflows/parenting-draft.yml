@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "parenting/archive/*.md"
+      - "parenting/archive/????-??-??.md"
   workflow_dispatch:
 
 concurrency:
@@ -28,7 +28,7 @@ jobs:
       - name: Resolve latest archived article
         shell: bash
         run: |
-          LATEST="$(find parenting/archive -maxdepth 1 -type f -name '*.md' | sort | tail -n 1)"
+          LATEST="$(find parenting/archive -maxdepth 1 -type f -name '????-??-??.md' | sort | tail -n 1)"
           if [ -z "$LATEST" ]; then
             echo "No parenting article found."
             exit 1

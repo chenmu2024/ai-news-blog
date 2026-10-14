@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "qiezhi/archive/*.md"
+      - "qiezhi/archive/????-??-??.md"
   workflow_dispatch:
 
 concurrency:
@@ -28,7 +28,7 @@ jobs:
       - name: Resolve latest archived article
         shell: bash
         run: |
-          LATEST="$(find qiezhi/archive -maxdepth 1 -type f -name '*.md' | sort | tail -n 1)"
+          LATEST="$(find qiezhi/archive -maxdepth 1 -type f -name '????-??-??.md' | sort | tail -n 1)"
           if [ -z "$LATEST" ]; then
             echo "No archived Qiezhi article found."
             exit 1

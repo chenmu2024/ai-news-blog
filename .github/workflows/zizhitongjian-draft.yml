@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "zizhitongjian/archive/*.md"
+      - "zizhitongjian/archive/????-??-??.md"
   workflow_dispatch:
 
 concurrency:
@@ -28,7 +28,7 @@ jobs:
       - name: Resolve latest archived article
         shell: bash
         run: |
-          LATEST="$(find zizhitongjian/archive -maxdepth 1 -type f -name '*.md' | sort | tail -n 1)"
+          LATEST="$(find zizhitongjian/archive -maxdepth 1 -type f -name '????-??-??.md' | sort | tail -n 1)"
           if [ -z "$LATEST" ]; then
             echo "No Zizhi Tongjian article found."
             exit 1

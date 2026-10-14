@@ -64,7 +64,7 @@
   "fact_review": {
     "finding": "早于2025年出生的孩子不能一律视为都可领满3600元，且各年份续领期限有差异。",
     "change": "对照国家卫健委2026年7月通知和正式解读，分别复核2022/2023/2024申请次数及到期日。",
-    "final_excerpt": "2024年出生：共可申请3次",
+    "final_excerpt": "第三次须在2027年12月31日前提交",
     "unresolved": []
   },
   "humanizer": {
@@ -73,16 +73,16 @@
     "reference_examples": [
       {
         "origin": "project_bank",
-        "reference_id": "a0003_s00_2e9c5760",
-        "source_name": "ELLEMEN睿士",
-        "style": "story",
+        "reference_id": "a0129_s00_914952ba",
+        "source_name": "BetterRead",
+        "style": "life",
         "role": "opening",
         "scores": {
-          "topic_similarity": 0.0681,
-          "style_fit": 0.22,
+          "topic_similarity": 0.0069,
+          "style_fit": 0.24,
           "account_fit": 1.0,
-          "structure_fit": 0.8,
-          "total": 0.5534
+          "structure_fit": 0.58,
+          "total": 0.4579
         },
         "retrieval_reason": "opening角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
         "learned_feature": "仅学习opening写法，不复制事实、人物、比喻或原句"
@@ -94,59 +94,59 @@
         "style": "explainer",
         "role": "structure",
         "scores": {
-          "topic_similarity": 0.0236,
+          "topic_similarity": 0.0037,
           "style_fit": 0.36,
           "account_fit": 1.0,
           "structure_fit": 0.75,
-          "total": 0.5358
+          "total": 0.5299
         },
         "retrieval_reason": "structure角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
         "learned_feature": "仅学习structure写法，不复制事实、人物、比喻或原句"
       },
       {
         "origin": "project_bank",
-        "reference_id": "a0036_s00_0fe34b88",
-        "source_name": "博客天下",
-        "style": "story",
+        "reference_id": "gold_6b5295f5bafcd196",
+        "source_name": "19楼",
+        "style": "explainer",
         "role": "detail",
         "scores": {
-          "topic_similarity": 0.1313,
-          "style_fit": 0.22,
-          "account_fit": 1.0,
+          "topic_similarity": 0.0103,
+          "style_fit": 0.36,
+          "account_fit": 0.82,
           "structure_fit": 1,
-          "total": 0.6149
+          "total": 0.5561
         },
         "retrieval_reason": "detail角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
         "learned_feature": "仅学习detail写法，不复制事实、人物、比喻或原句"
       },
       {
         "origin": "project_bank",
-        "reference_id": "a0108_s01_93123e60",
-        "source_name": "BetterRead",
+        "reference_id": "gold_0117e9ad2979e20a",
+        "source_name": "广州富力FC",
         "style": "explainer",
         "role": "stance",
         "scores": {
-          "topic_similarity": 0.0045,
+          "topic_similarity": 0.0062,
           "style_fit": 0.36,
-          "account_fit": 1.0,
+          "account_fit": 0.82,
           "structure_fit": 1,
-          "total": 0.5822
+          "total": 0.5549
         },
         "retrieval_reason": "stance角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
         "learned_feature": "仅学习stance写法，不复制事实、人物、比喻或原句"
       },
       {
         "origin": "project_bank",
-        "reference_id": "a0017_s01_71063bee",
-        "source_name": "中国新闻周刊",
-        "style": "opinion",
+        "reference_id": "a0046_s01_54cf14b6",
+        "source_name": "吴晓波频道",
+        "style": "life",
         "role": "ending",
         "scores": {
-          "topic_similarity": 0.0156,
-          "style_fit": 0.18,
+          "topic_similarity": 0.0191,
+          "style_fit": 0.24,
           "account_fit": 1.0,
-          "structure_fit": 1,
-          "total": 0.5804
+          "structure_fit": 0.6,
+          "total": 0.4668
         },
         "retrieval_reason": "ending角色匹配；优先成熟编辑来源并结合主题、文体与结构评分",
         "learned_feature": "仅学习ending写法，不复制事实、人物、比喻或原句"
@@ -163,13 +163,13 @@
       "engine": "private_exact_overlap_v1",
       "status": "PASS",
       "threshold_chars": 24,
-      "max_exact_overlap_chars": 3,
+      "max_exact_overlap_chars": 4,
       "reference_ids_checked": [
-        "a0003_s00_2e9c5760",
+        "a0129_s00_914952ba",
         "a0093_s01_9a51c106",
-        "a0036_s00_0fe34b88",
-        "a0108_s01_93123e60",
-        "a0017_s01_71063bee"
+        "gold_6b5295f5bafcd196",
+        "gold_0117e9ad2979e20a",
+        "a0046_s01_54cf14b6"
       ],
       "web_references_checked": true
     }

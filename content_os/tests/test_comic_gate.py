@@ -6,7 +6,7 @@ from content_os.comic_gate import check, binding_sha256, required
 from content_os.publish_readiness import check as readiness
 
 BASE = "https://raw.githubusercontent.com/chenmu2024/ai-news-blog/main/content_os/assets/ai-scenes/"
-DAY = "2026-10-14"
+DAY = "2026-10-15"
 
 def story(profile="parenting"):
     images = []
@@ -38,6 +38,7 @@ def story(profile="parenting"):
 class ComicPolicyTests(unittest.TestCase):
     def test_old_dates_and_fashion_unaffected(self):
         self.assertFalse(required("parenting","2026-10-13"))
+        self.assertFalse(required("parenting","2026-10-14"))
         self.assertFalse(required("fashion",DAY))
         self.assertEqual(check("fashion",DAY,"# 真实明星照片"),[])
     def test_6_profiles_valid_metadata(self):

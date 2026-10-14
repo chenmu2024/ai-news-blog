@@ -1,0 +1,55 @@
+{
+  "state": "attempted",
+  "profile": "jingyun",
+  "article_path": "jingyun/archive/2026-10-14--comic-pilot-01.md",
+  "article_sha256": "80332ba67bb6de350f3bb63e1aab75e53d5ff5d5d67a11cbc739e94d11957ccf",
+  "title": "结婚九年，我们开始用便签说话",
+  "run_id": "38512996694",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/1lvNK0VGgiammfCVuB9AZ3LKkr5CCEQXibe0V9bbgibTmuUq6OGoTraBfEVfDUficJdGbPJanH6Zb3ThRCia1doe1G44sgazl4iakpsMrWEdcHnFY/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/1lvNK0VGgiak1qfupnVVOxjY7C0LJzvf2VlktU4koxCQnQdw2xu6ia7FxLovmUOmBnhsSWkllfbiaqNBeHTutWyicb5ia1icibcWNxqYSRYmPcnu58/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/1lvNK0VGgiakqbFqbglw96vv44lJ7z7VoVNNMP8iaiaibQjt0XILibSqmWvDAib4Uy1dzAjibENaiaGhRhicKFF7h1iccBboFicsPhjicKCUqUfoqFDySs0/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/1lvNK0VGgial0eFOCgV1hIVXBoUbj6w0QM3dhdJJ8r13w7NqVRaTyd6PWC8fmlcbUCUaQPysib3Lrm0YtnfGxYJQPBZp8Gm4PMYSa7RMcOIB8/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/1lvNK0VGgialhTHzc8aYZzgCjnuNbM4pibIiaOJb38mqIEXqSKaS5mcoA43LicRcByD8qk6UsOdTygkicWwqklV42F84D81YUyTJ4icV8XpcRoKp4/0?from=appmsg",
+    "http://mmbiz.qpic.cn/mmbiz_jpg/1lvNK0VGgialSDfx4DaxarWZ8YK2WoqLkCFN47tORibD35IeyEdz83MDAVMBRgy9xI9tS0vE5LHKnQYPuRhWwGna6o6iaBBL6Dm7vEWPYzHD7o/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "jingyun",
+      "profile_name": "静筠日记｜女性生活",
+      "score": 23,
+      "body_chars": 395,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 2,
+      "stance_signals": 1,
+      "paragraph_regularity": {
+        "paragraphs": 6,
+        "cv": 0.329
+      },
+      "sentence_repetition": {
+        "sentences": 17,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.25,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "article_sha256": "80332ba67bb6de350f3bb63e1aab75e53d5ff5d5d67a11cbc739e94d11957ccf",
+      "article_path": "jingyun/archive/2026-10-14--comic-pilot-01.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "jingyun",
+      "required_visuals": 2,
+      "visual_count": 6,
+      "markdown_images": 6,
+      "html_images": 0,
+      "renderable_cards": 0,
+      "hard_failures": [],
+      "article_sha256": "80332ba67bb6de350f3bb63e1aab75e53d5ff5d5d67a11cbc739e94d11957ccf",
+      "article_path": "jingyun/archive/2026-10-14--comic-pilot-01.md"
+    }
+  }
+}

@@ -18,16 +18,29 @@ class ProductionContractDocumentationTests(unittest.TestCase):
         self.assertIn("库存图", policy)
         self.assertIn("不能替代", policy)
 
-    def test_c_and_e_must_not_revert_to_card_only_editorial_direction(self):
-        for profile in ("business", "parenting"):
+    def test_c_and_e_comic_direction_cannot_revert_to_policy_or_card_only(self):
+        # 2026-10-15 user changed C to healing stories, E back to parenting.
+        for profile, must_contain, source in (
+            ("business", ("2026-10-15", "暖心", "治愈", "漫画", "F", "不再写"), "business/SOURCE_POLICY.md"),
+            ("parenting", ("2026-10-15", "育儿", "孩子", "漫画", "不再做"), "parenting/SOURCE_POLICY.md"),
+        ):
             style = self.text(f"{profile}/STYLE.md")
             with self.subTest(profile=profile):
-                self.assertIn("2026-10-13", style)
-                self.assertIn("至少1张", style)
-                self.assertIn("AI", style)
-                self.assertIn("图注", style)
-                self.assertIn("不能替代", style)
-                self.assertIn("draft/get", style)
+                for phrase in must_contain:
+                    self.assertIn(phrase, style)
+                self.assertIn("原创", self.text(source))
+                self.assertIn("SOURCE_POLICY", style)
+        skill=self.text("skills/wechat-comic-content-os/SKILL.md")
+        self.assertIn("C：普通人遇到",skill)
+        self.assertIn("E：家长与0–12岁孩子",skill)
+
+    def test_historical_photo_policy_kept_without_replacing_comic_requirement(self):
+        # The 2026-10-13 real-scene policy remains for old immutable archives.
+        old=self.text("content_os/AI_SCENE_POLICY.md")
+        self.assertIn("2026-10-13",old)
+        self.assertIn("draft/get",old)
+        self.assertIn("2026-10-15",self.text("AGENTS.md"))
+        self.assertIn("COMIC_PACKAGE",self.text("content_os/PRODUCTION_BRIEF.md"))
 
     def test_resilience_and_operations_keep_same_precedence(self):
         rules = self.text("content_os/RESILIENCE_POLICY.md")

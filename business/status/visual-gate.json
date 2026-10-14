@@ -7,19 +7,19 @@
   "html_images": 0,
   "renderable_cards": 1,
   "hard_failures": [],
-  "article_sha256": "db741e0ea648490058984b7674a4d84df80bfa19e976b5f08db2db3d17f09b89",
-  "article_path": "business/archive/2026-10-13.md",
+  "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
+  "article_path": "business/archive/2026-10-14.md",
   "wechat_inline_readback": {
     "draft_get_verified": true,
     "state": "verified",
     "profile": "business",
-    "draft_media_id": "NG_wEUXyotkqJkaF2RZgwJzkBsPr7x5AjN9u3-eFQ6-TiE0sO1XPQIH3_-KtHvRR",
+    "draft_media_id": "NG_wEUXyotkqJkaF2RZgwPwo_zIuH75z-Qd-YeaIHH14Ne4Dho7R1FhAX7pnv2ib",
     "inline_image_count": 2,
     "expected_inline_image_count": 2,
-    "readback_body_sha256": "c869a6a24c264e82563f421ba274dc498ae5432993c515bc4ed62b54126d4d8a",
-    "verified_at_utc": "2026-10-13T01:05:29.389494+00:00",
-    "article_path": "business/archive/2026-10-13.md",
-    "article_sha256": "db741e0ea648490058984b7674a4d84df80bfa19e976b5f08db2db3d17f09b89",
-    "article_date": "2026-10-13"
+    "readback_body_sha256": "92089de082b92d9a70adb4b83eb7b0b5d10bc2c1513ef2b2ab4781845d54d145",
+    "verified_at_utc": "2026-10-14T00:43:46.302038+00:00",
+    "article_path": "business/archive/2026-10-14.md",
+    "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
+    "article_date": "2026-10-14"
   }
 }

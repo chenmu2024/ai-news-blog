@@ -3,37 +3,37 @@
   "profile": "business_story",
   "profile_name": "民生政策与福利指南｜办事攻略",
   "score": 0,
-  "body_chars": 2424,
+  "body_chars": 1222,
   "template_hits": 0,
   "internal_hits": 0,
-  "fact_signals": 81,
-  "stance_signals": 2,
+  "fact_signals": 37,
+  "stance_signals": 3,
   "paragraph_regularity": {
-    "paragraphs": 21,
-    "cv": 0.925
+    "paragraphs": 15,
+    "cv": 0.459
   },
   "sentence_repetition": {
-    "sentences": 50,
-    "repeated_starts": 3,
-    "ratio": 0.061
+    "sentences": 32,
+    "repeated_starts": 0,
+    "ratio": 0.0
   },
-  "very_short_paragraph_ratio": 0.16,
+  "very_short_paragraph_ratio": 0.118,
   "hard_failures": [],
   "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
   "editorial_title_guard": {
     "status": "PASS",
     "reasons": [],
-    "compared": 9,
+    "compared": 10,
     "prior_six_titles": [
+      "医保个人账户跨省给家人用，先分清这三件事",
       "上海失业金每月2340元：谁能领、怎么办",
       "海底捞海外半年收入涨12%，开店反而很克制",
       "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
       "必胜客被27亿美元拆卖：百胜为什么不再自己养这个老品牌",
-      "Boots以89亿美元再易主：一家老药房，为什么又被当成零售宝贝？",
-      "Uber花23亿美元买下ezCater，真正想抢的不是午饭"
+      "Boots以89亿美元再易主：一家老药房，为什么又被当成零售宝贝？"
     ],
     "template_family": null
   },
-  "article_sha256": "db741e0ea648490058984b7674a4d84df80bfa19e976b5f08db2db3d17f09b89",
-  "article_path": "business/archive/2026-10-13.md"
+  "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
+  "article_path": "business/archive/2026-10-14.md"
 }

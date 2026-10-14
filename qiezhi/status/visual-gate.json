@@ -7,19 +7,19 @@
   "html_images": 0,
   "renderable_cards": 2,
   "hard_failures": [],
-  "article_sha256": "86e8d9ac6b74504c8bdcb03458e65f840263715a7fa2205704032e444065a61c",
-  "article_path": "qiezhi/archive/2026-10-13.md",
+  "article_sha256": "37edb9740358c3ad5d2cbac1b72c2c59aa743ee29833a8ae7ea74564abf24538",
+  "article_path": "qiezhi/archive/2026-10-14.md",
   "wechat_inline_readback": {
     "draft_get_verified": true,
     "state": "verified",
     "profile": "qiezhi",
-    "draft_media_id": "YNxOnkeDOZzJhARCaZWR-f6bGzmA3IrDGgXHjKL4vbxbhq0ye31X4HqHRQQR9tW_",
+    "draft_media_id": "YNxOnkeDOZzJhARCaZWR-Up9PNBsZyPKlfpwwDW2HqSKjQEqqfNIF63R6Cuy3Pkf",
     "inline_image_count": 2,
     "expected_inline_image_count": 2,
-    "readback_body_sha256": "a3681420faa0126a80ecb28dce9f04ce06cee4f60715a1191e037a74281aa731",
-    "verified_at_utc": "2026-10-13T01:08:43.496487+00:00",
-    "article_path": "qiezhi/archive/2026-10-13.md",
-    "article_sha256": "86e8d9ac6b74504c8bdcb03458e65f840263715a7fa2205704032e444065a61c",
-    "article_date": "2026-10-13"
+    "readback_body_sha256": "16353bfea3e99190cea62ef327592c40eb82eacbbb14f3e418e2bd26b5780a1b",
+    "verified_at_utc": "2026-10-14T00:43:15.364905+00:00",
+    "article_path": "qiezhi/archive/2026-10-14.md",
+    "article_sha256": "37edb9740358c3ad5d2cbac1b72c2c59aa743ee29833a8ae7ea74564abf24538",
+    "article_date": "2026-10-14"
   }
 }

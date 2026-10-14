@@ -1,0 +1,13 @@
+{
+  "draft_get_verified": true,
+  "state": "verified",
+  "profile": "fashion",
+  "draft_media_id": "gcTqbaQ9A7M3U7aJTBB3ZeOqsi_TBmy5UV_SejOtKl6i1TQKkGtNuT1TtP2Emrz4",
+  "inline_image_count": 5,
+  "expected_inline_image_count": 5,
+  "readback_body_sha256": "86cdf450de9d8ce29725c6d34f88887d36c09206a1b92498ba4bfc2fdb4abd38",
+  "verified_at_utc": "2026-10-14T00:48:09.183413+00:00",
+  "article_path": "fashion/archive/2026-10-14.md",
+  "article_sha256": "e41b97b0a9ab674b62b5824ed4639f985ebd36a8d9f52580b5151f286614b5c2",
+  "article_date": "2026-10-14"
+}

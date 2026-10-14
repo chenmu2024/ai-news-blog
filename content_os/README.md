@@ -10,9 +10,9 @@
 
 - `ai_business`：陈慕｜AI 一人公司实战
 - `qiezhi`：且知｜毛选/思想方法
-- `business_story`：职工民生｜社保医保公积金及劳动者待遇（保留兼容profile名）
+- `business_story`：暖心治愈原创漫画｜城市群像、亲情友情、邻里与小店人情（仅保留兼容profile名）
 - `zizhitongjian`：资治通鉴｜原典·人性·决策
-- `parenting`：家庭政策｜育儿补贴、生育待遇、儿童医保与托育
+- `parenting`：亲子育儿故事漫画｜孩子视角、亲子冲突与可尝试的回应
 - `jingyun`：静筠日记｜女性生活
 - `fashion`：女装穿搭｜Image-first（明星穿搭 × 日韩穿搭 × 普通人复刻）
 
@@ -98,3 +98,6 @@ GitHub Actions 中 WARN 也会阻止发布，要求上游先完成实际删改�
 
 ## 同账号同日多篇草稿（2026-10-14起支持；不改变既有日更任务）
 可以为同一账号创建多篇**不同且已经逐篇获用户批准**的微信草稿；禁止再把“当天已成功一篇”作为第二篇独立稿件的阻断理由。旧日常文章保留 `<profile>/archive/YYYY-MM-DD.md`，新增草稿使用 `<profile>/archive/YYYY-MM-DD--slug.md`（slug为英文小写和数字、连字符，最多48字符），且每篇单独对应 `content_os/inbox/<profile>/YYYY-MM-DD--slug.md`、`*.titles.json`、`content_os/editorial-reviews/<profile>/YYYY-MM-DD--slug.json`、`<profile>/status/draft-attempts/YYYY-MM-DD--slug.json` 和独立微信media_id。新稿先完整聊天审阅、得到具体版本同意后方能创建inbox；漫画/政策/原典/Humanizer/图片审查保持不变。不允许因同日多篇而重复提交相同内容，已尝试和不明状态须先回查media_id。额外草稿在独立工作流中处理，旧日更归档/已确认草稿绝不覆盖，G真实穿搭与其照片版权规则保持不变。
+
+## 2026-10-14更新（2026-10-15及以后新稿）
+C business与E parenting 已停止政策赛道，改为城市温暖治愈与亲子育儿连续漫画；上文旧图片/政策/商战规范仅供历史复盘，现行硬规范看 `business/STYLE.md`、`parenting/STYLE.md` 与各自SOURCE_POLICY、漫画Skill、PRODUCTION_BRIEF。仍必须真实生图、聊天审阅后才建草稿，G女装及A/B/D/F不改。

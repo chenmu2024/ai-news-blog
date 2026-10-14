@@ -130,16 +130,16 @@
     },
     "business": {
       "styles": [
-        "explainer",
-        "life",
         "story",
+        "life",
+        "culture",
         "opinion"
       ],
       "weights": {
-        "explainer": 0.38,
-        "life": 0.2,
-        "story": 0.22,
-        "opinion": 0.2
+        "story": 0.48,
+        "life": 0.31,
+        "culture": 0.13,
+        "opinion": 0.08
       },
       "role_styles": {
         "opening": [
@@ -147,23 +147,23 @@
           "life"
         ],
         "structure": [
-          "explainer",
-          "opinion"
+          "story",
+          "life"
         ],
         "detail": [
-          "explainer",
+          "life",
           "story"
         ],
         "stance": [
-          "opinion",
-          "explainer"
-        ],
-        "ending": [
           "life",
           "opinion"
+        ],
+        "ending": [
+          "story",
+          "life"
         ]
       },
-      "voice": "像替办事人提前看坑的编辑，先说谁能办、在哪办、限制是什么"
+      "voice": "C暖心治愈漫画：城市群像、陌生人善意、亲情友情、邻里小店的人情，有具体动作与情绪转折；不重复F的成人婚恋和E的亲子教育，不写政策指南"
     },
     "zizhitongjian": {
       "styles": [
@@ -202,16 +202,16 @@
     },
     "parenting": {
       "styles": [
-        "explainer",
-        "life",
         "story",
+        "life",
+        "explainer",
         "opinion"
       ],
       "weights": {
-        "explainer": 0.36,
-        "life": 0.24,
-        "story": 0.22,
-        "opinion": 0.18
+        "story": 0.48,
+        "life": 0.32,
+        "explainer": 0.13,
+        "opinion": 0.07
       },
       "role_styles": {
         "opening": [
@@ -219,23 +219,23 @@
           "life"
         ],
         "structure": [
-          "explainer",
-          "opinion"
+          "story",
+          "life"
         ],
         "detail": [
-          "explainer",
-          "story"
+          "story",
+          "life"
         ],
         "stance": [
-          "opinion",
+          "life",
           "explainer"
         ],
         "ending": [
-          "life",
-          "opinion"
+          "story",
+          "life"
         ]
       },
-      "voice": "像把政策查清后讲给家人听，准确、温和、不制造焦虑"
+      "voice": "E原创育儿亲子漫画：0–12岁儿童视角、具体亲子冲突、家长能实践的安全回应；科学断言须查可信原文，不写福利政策申领"
     },
     "jingyun": {
       "styles": [

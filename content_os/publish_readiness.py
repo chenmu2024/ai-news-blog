@@ -15,6 +15,11 @@ try:
 except ImportError:
     from ai_scene_policy import check as check_ai_scene
 
+try:
+    from content_os.comic_gate import check as check_comic, required as needs_comic
+except ImportError:
+    from comic_gate import check as check_comic, required as needs_comic
+
 PROFILES = {"qiezhi", "wechat", "business", "zizhitongjian", "parenting", "jingyun", "fashion"}
 CARD_RE = re.compile(r"<!--\s*(QIEZHI_CARD|WECHAT_CARD)\s+(.+?)\s*-->", re.S)
 IMG_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
@@ -36,6 +41,7 @@ def check(profile: str, markdown: str, article_date: str | None = None) -> dict:
         errors.append("微信标题超过32字：将被发布器截短，必须在新建归档前改为32字以内")
     ai_errors, _ = check_ai_scene(profile, article_date, markdown)
     errors.extend(ai_errors)
+    errors.extend(check_comic(profile, article_date, markdown))
     if profile == "wechat" and not title.startswith("一家"):
         errors.append("AI channel headline must start with 一家")
     images = IMG_RE.findall(markdown)
@@ -61,7 +67,7 @@ def check(profile: str, markdown: str, article_date: str | None = None) -> dict:
                 errors.append("WECHAT_CARD requires items array")
         except (ValueError, TypeError, json.JSONDecodeError):
             errors.append("malformed " + tag + " JSON")
-    if profile == "qiezhi":
+    if profile == "qiezhi" and not needs_comic(profile, article_date):
         if "cover" not in roles or "inline" not in roles:
             errors.append("qiezhi requires both cover and inline QIEZHI_CARD for reliable illustration")
     if profile == "fashion":

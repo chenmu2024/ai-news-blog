@@ -9,6 +9,11 @@ try:
 except ImportError:
     from ai_scene_policy import check as check_ai_scene
 
+try:
+    from content_os.comic_gate import check as check_comic
+except ImportError:
+    from comic_gate import check as check_comic
+
 MIN_VISUALS = {
     "ai_business": 2,
     "business_story": 2,
@@ -47,6 +52,7 @@ def main() -> int:
     if article_date:
         ai_errors, _ = check_ai_scene(args.profile, article_date, md)
         failures.extend(ai_errors)
+        failures.extend(check_comic(args.profile, article_date, md))
     if total < required:
         failures.append(
             f"视觉内容不足：{total} < {required}。每篇公众号文章必须有图片，禁止纯文字稿进入草稿箱。"

@@ -283,8 +283,8 @@ def prepare_images(markdown: str, profile: str, session=None) -> dict[str, tuple
     return result
 
 
-def strip_image_backup_notes(markdown: str, profile: str | None = None) -> str:
+COMIC_PACKAGE_RE = re.compile(r"<!--\\s*COMIC_PACKAGE\\s*(\\{[\\s\\S]*?\\})\\s*-->", re.S)\n\ndef strip_image_backup_notes(markdown: str, profile: str | None = None) -> str:
     """Remove production metadata and A-F figure captions from public copy."""
     from content_os.public_draft_contract import strip_figure_captions
-    public = AI_SCENE_RE.sub("", BACKUPS_RE.sub("", markdown))
+    public = COMIC_PACKAGE_RE.sub("", AI_SCENE_RE.sub("", BACKUPS_RE.sub("", markdown)))
     return strip_figure_captions(public, profile) if profile else public

@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "profile": "parenting",
+  "article_id": "2026-10-14--comic-pilot-01",
+  "article_date": "2026-10-14",
+  "title": "错过育儿补贴首次申请，今年还能补吗？",
+  "article_path": "parenting/archive/2026-10-14--comic-pilot-01.md",
+  "article_sha256": "ecee8a15dc6ad27cd82a9b74a2d3163242ebcaff75af5102de07724cafa599e5",
+  "draft_media_id": "cyRgts0DS_D6YB0L1h-Eu0hZqYjPPDj8qLogFWh-iwug-JPlRF6fkQwRoXhCO802",
+  "inline_image_count": 6,
+  "readback_evidence": {
+    "source": "original_GitHub_Actions_run_log",
+    "workflow_run_id": "38512994697",
+    "url": "https://github.com/chenmu2024/ai-news-blog/actions/runs/38512994697",
+    "observation": "[WECHAT_DRAFT_READBACK] verified parenting 6",
+    "verified_in_original_run": true
+  },
+  "safe_recovery": "Confirmed journal and original draft/get success log; draft/add was NOT retried",
+  "safety": "No official WeChat mass publish or broadcast was initiated"
+}

@@ -1,0 +1,65 @@
+{
+  "state": "attempted",
+  "profile": "business",
+  "article_path": "business/archive/2026-10-14.md",
+  "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
+  "title": "公司把离职报成“个人辞职”，失业金可能领不到",
+  "run_id": "38491710378",
+  "expected_inline_urls": [
+    "http://mmbiz.qpic.cn/mmbiz_jpg/jVXYxXWgBgYbqsNxqOaOIFH0VfmSP6hDvbaA4nNibmDpRofos8I7C0HyuDVJ5yuUwrOh0zOHSwgXmRD3xQu8AHb3yF2f8n2h2jrxjhk2ZDDo/0?from=appmsg",
+    "http://mmbiz.qpic.cn/sz_mmbiz_jpg/jVXYxXWgBgaacHDHRKQ5urWg3YjfL82KfQYhZntFXic2R06djz6tlibqw1b8f7ia35I3MECHqpX3Eic8WKRmJWetC4eWSAIf1CN7kjFGF0AWfbk/0?from=appmsg"
+  ],
+  "passed_gates": {
+    "quality-gate.json": {
+      "status": "PASS",
+      "profile": "business_story",
+      "profile_name": "民生政策与福利指南｜办事攻略",
+      "score": 0,
+      "body_chars": 1222,
+      "template_hits": 0,
+      "internal_hits": 0,
+      "fact_signals": 37,
+      "stance_signals": 3,
+      "paragraph_regularity": {
+        "paragraphs": 15,
+        "cv": 0.459
+      },
+      "sentence_repetition": {
+        "sentences": 32,
+        "repeated_starts": 0,
+        "ratio": 0.0
+      },
+      "very_short_paragraph_ratio": 0.118,
+      "hard_failures": [],
+      "note": "这是文风/可读性启发式 Gate，不是作者身份或 AI 生成检测器。",
+      "editorial_title_guard": {
+        "status": "PASS",
+        "reasons": [],
+        "compared": 10,
+        "prior_six_titles": [
+          "医保个人账户跨省给家人用，先分清这三件事",
+          "上海失业金每月2340元：谁能领、怎么办",
+          "海底捞海外半年收入涨12%，开店反而很克制",
+          "瑞幸在新加坡开到100家：走出中国后，真正难复制的是什么",
+          "必胜客被27亿美元拆卖：百胜为什么不再自己养这个老品牌",
+          "Boots以89亿美元再易主：一家老药房，为什么又被当成零售宝贝？"
+        ],
+        "template_family": null
+      },
+      "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
+      "article_path": "business/archive/2026-10-14.md"
+    },
+    "visual-gate.json": {
+      "status": "PASS",
+      "profile": "business_story",
+      "required_visuals": 2,
+      "visual_count": 2,
+      "markdown_images": 1,
+      "html_images": 0,
+      "renderable_cards": 1,
+      "hard_failures": [],
+      "article_sha256": "aa6eb2c482eafb45ba24f3c139007109e6ae57501e8e9801caf8d08d9c085a92",
+      "article_path": "business/archive/2026-10-14.md"
+    }
+  }
+}

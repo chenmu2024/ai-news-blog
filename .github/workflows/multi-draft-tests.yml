@@ -1,0 +1,28 @@
+name: Multi Draft Identity and Safety Regression
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content_os/multi_draft.py'
+      - 'content_os/draft_preflight.py'
+      - 'content_os/inbox_promote.py'
+      - 'content_os/prearchive_validate.py'
+      - 'content_os/draft_journal.py'
+      - 'content_os/editorial_review.py'
+      - 'content_os/tests/test_multi_draft.py'
+      - '.github/workflows/multi-draft-bridge.yml'
+      - '.github/workflows/multi-draft-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  multi-draft-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m compileall -q content_os/multi_draft.py content_os/draft_preflight.py content_os/prearchive_validate.py content_os/inbox_promote.py content_os/draft_journal.py content_os/editorial_review.py
+      - run: python -m unittest -v content_os.tests.test_multi_draft content_os.tests.test_inbox_promote content_os.tests.test_draft_journal content_os.tests.test_prearchive_validate content_os.tests.test_editorial_review

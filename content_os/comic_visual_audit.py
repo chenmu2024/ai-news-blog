@@ -78,7 +78,10 @@ def main() -> int:
     ap.add_argument("--article", type=Path, required=True)
     ap.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     args = ap.parse_args()
-    from content_os.multi_draft import get_article_identity
+    try:
+        from content_os.multi_draft import get_article_identity
+    except ImportError:
+        from multi_draft import get_article_identity
     day, _ = get_article_identity(args.article, args.profile)
     failures = audit(args.profile, day, args.article.read_text("utf-8"), args.root)
     print(json.dumps({"status": "FAIL" if failures else "PASS",

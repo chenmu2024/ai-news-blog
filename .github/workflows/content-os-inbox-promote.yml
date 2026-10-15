@@ -177,7 +177,24 @@ jobs:
                 echo "[SKIP] $FILE has already attempted draft/add"
                 continue
               fi
-              echo "[EXTRA_DISPATCH] $PROFILE $FILE"
+              RESERVATION="content_os/dispatch-reservations/$PROFILE/$ID.json"
+              if [ -e "$RESERVATION" ]; then
+                echo "::warning::[EXTRA_DISPATCH] Already reserved; investigate historical run and media_id: $PROFILE/$ID"
+                continue
+              fi
+              # Durable one-shot reservation must be pushed before the
+              # non-idempotent workflow_dispatch; if push fails, NO DISPATCH.
+              # A timeout after this point is unknown, never auto-retried.
+              python content_os/extra_dispatch_reservation.py --profile "$PROFILE" --article "$FILE"
+              git config user.name "content-os-dispatch-bot"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git add -- "$RESERVATION"
+              git commit -m "dispatch($PROFILE): reserve approved extra $ID"
+              if ! git push origin HEAD:main; then
+                echo "::error::Could not durably save reservation; no WeChat dispatch attempted"
+                exit 1
+              fi
+              echo "[EXTRA_DISPATCH] Reserved exactly once: $PROFILE $ID"
               gh workflow run multi-draft-bridge.yml --ref main -f profile="$PROFILE" -f article_path="$FILE"
             done < <(find "$PROFILE/archive" -maxdepth 1 -type f -name "$DATE--*.md" | sort)
           done

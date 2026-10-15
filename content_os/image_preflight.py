@@ -28,6 +28,12 @@ def main() -> int:
         if ai_errors:
             print(json.dumps({"status": "FAIL", "profile": args.profile, "errors": ai_errors}, ensure_ascii=False))
             return 1
+    from content_os.comic_visual_audit import audit as audit_comic_strips
+    comic_errors = audit_comic_strips(args.profile, day, original, Path(__file__).resolve().parents[1])
+    if comic_errors:
+        print(json.dumps({"status": "FAIL", "profile": args.profile,
+                          "errors": comic_errors}, ensure_ascii=False))
+        return 1
     staged = prepare_images(original, args.profile)
     cache_dir = os.environ.get("CONTENT_OS_IMAGE_CACHE_DIR")
     if cache_dir:

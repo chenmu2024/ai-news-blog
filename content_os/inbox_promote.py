@@ -45,7 +45,17 @@ def promote(root,profile,day,check_network=True, *, article_id=None):
     evidence=record.get("evidence")
     if not isinstance(evidence,dict):evidence={}
     urls=evidence.get("source_urls")
-    if not isinstance(urls,list) or not urls or any(not isinstance(x,str) or not x.startswith("https://") for x in urls):
+    fiction_only = (day >= "2026-10-15" and profile in {"business", "parenting", "jingyun"}
+                    and evidence.get("kind") == "creative_fiction"
+                    and evidence.get("no_external_factual_claims") is True
+                    and ("原创虚构" in text or "原创故事" in text))
+    # A purely invented comic has no fact-source URL; demanding one incentivizes
+    # fabricated citations. Factual claims still need primary, verified sources.
+    if fiction_only:
+        if urls is not None and (not isinstance(urls, list) or
+                any(not isinstance(x, str) or not x.startswith("https://") for x in urls)):
+            errors.append("fiction_optional_source_urls_malformed")
+    elif not isinstance(urls,list) or not urls or any(not isinstance(x,str) or not x.startswith("https://") for x in urls):
         errors.append("real_https_source_evidence_required")
     if evidence.get("facts_checked") is not True:errors.append("facts_not_attested")
     if evidence.get("image_rights_checked") is not True:errors.append("image_rights_not_attested")

@@ -75,9 +75,8 @@ def static_check(root: Path, profile: str, day: str, text: str, *, article_id: s
     from content_os.multi_draft import validate_article_id
     article_id = validate_article_id(day, article_id or day)
     errors = []
-    if article_id != day:
-        from content_os.multi_draft import verify_extra_approval
-        errors.extend(verify_extra_approval(root,profile,article_id,text))
+    from content_os.multi_draft import verify_article_approval
+    errors.extend(verify_article_approval(root, profile, article_id, text))
     archive = root / profile / "archive" / f"{article_id}.md"
     journal = root / profile / "status" / "draft-attempts" / f"{article_id}.json"
     status_path = root / profile / "status" / "latest.json"

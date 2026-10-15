@@ -28,7 +28,10 @@ def main() -> int:
         if ai_errors:
             print(json.dumps({"status": "FAIL", "profile": args.profile, "errors": ai_errors}, ensure_ascii=False))
             return 1
-    from content_os.comic_visual_audit import audit as audit_comic_strips
+    try:
+        from content_os.comic_visual_audit import audit as audit_comic_strips
+    except ImportError:
+        from comic_visual_audit import audit as audit_comic_strips
     comic_errors = audit_comic_strips(args.profile, day, original, Path(__file__).resolve().parents[1])
     if comic_errors:
         print(json.dumps({"status": "FAIL", "profile": args.profile,

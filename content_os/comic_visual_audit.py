@@ -33,10 +33,22 @@ def _dhash(image: Image.Image) -> int:
     return bits
 
 
-def audit(profile: str, day: str, markdown: str, root: Path) -> list[str]:
+def audit(profile: str, day: str, markdown: str, root: Path, *, preview: bool = False) -> list[str]:
+    """Only an explicitly requested preview may skip *approval attestation*.
+
+    Every publishing path uses preview=False. PREVIEW_PASS is never a publish
+    approval or a substitute for Humanizer, editorial or user consent.
+    """
     if not required(profile, day):
         return []
     errors = check(profile, day, markdown, root=root, verify_files=True)
+    if preview:
+        # Do not bypass source/structural/image/hash checks. Editorial/approval
+        # attestation can be supplied only after the user sees the finished art.
+        ignored = {"comic_user_approval_not_recorded_for_exact_candidate",
+                   "comic_user_approved_body_hash_mismatch",
+                   "comic_editorial_and_visual_attestation_incomplete"}
+        errors = [e for e in errors if e not in ignored]
     # Structural errors invalidate image paths, so never guess paths on failure.
     if errors:
         return errors
@@ -77,14 +89,19 @@ def main() -> int:
     ap.add_argument("--profile", required=True)
     ap.add_argument("--article", type=Path, required=True)
     ap.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    ap.add_argument("--preview", action="store_true",
+                    help="Review-only; approval and editorial attestation remain pending. NEVER publish.")
     args = ap.parse_args()
     try:
         from content_os.multi_draft import get_article_identity
     except ImportError:
         from multi_draft import get_article_identity
     day, _ = get_article_identity(args.article, args.profile)
-    failures = audit(args.profile, day, args.article.read_text("utf-8"), args.root)
-    print(json.dumps({"status": "FAIL" if failures else "PASS",
+    failures = audit(args.profile, day, args.article.read_text("utf-8"), args.root,
+                     preview=args.preview)
+    print(json.dumps({"status": "FAIL" if failures else
+                      ("PREVIEW_PASS_ONLY" if args.preview else "PASS"),
+                      "publish_allowed": False if args.preview else not bool(failures),
                       "profile": args.profile, "article_date": day,
                       "errors": failures,
                       "note": "Binary and structural checks only; actual manual visual review remains required."},

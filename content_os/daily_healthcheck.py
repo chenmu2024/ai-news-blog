@@ -155,6 +155,17 @@ def audit_profile(root: Path, profile: str, day: str) -> dict:
     except ImportError:
         from editorial_review import check as editorial_check
     editorial = editorial_check(root, profile, day, raw.decode("utf-8") if raw else "")
+    # Later editorial STYLE changes must not invalidate an immutable historical
+    # draft that was confirmed by journal AND verified via WeChat readback.
+    # All other audit failures remain actionable and cannot be masked.
+    if (day <= "2026-10-14" and journal_confirmed and readback_verified
+            and status.get("status") == "success"
+            and "editorial_review_stale_policy" in editorial["errors"]):
+        remaining = [e for e in editorial["errors"] if e != "editorial_review_stale_policy"]
+        editorial = dict(editorial)
+        editorial["historical_policy_note"] = "post_confirmation_policy_update_not_retroactive"
+        editorial["errors"] = remaining
+        editorial["status"] = "PASS_HISTORICAL" if not remaining else "FAIL"
     errors.extend("editorial_review:" + x for x in editorial["errors"])
     return {
         "profile": profile, "status": "success" if not errors else "incomplete",

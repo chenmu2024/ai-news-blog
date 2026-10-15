@@ -23,6 +23,23 @@ class ProductionHandoffTests(unittest.TestCase):
             self.assertEqual(report["profiles"]["qiezhi"]["action"], "write_new_archive")
             self.assertFalse(report["input_freshness"]["daily_health"]["fresh"])
 
+    def test_new_day_requires_chat_preview_not_archive_write(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            day="2026-10-15"
+            report=inspect(root,day)
+            self.assertEqual(len(report["missing_archives"]),7)
+            self.assertEqual(len(report["awaiting_chat_preview"]),7)
+            self.assertEqual(report["profiles"]["business"]["action"],"prepare_chat_preview")
+            self.assertNotIn("write_new_archive",
+                             [v["action"] for v in report["profiles"].values()])
+            candidate=root/"content_os/inbox/business/2026-10-15.md"
+            candidate.parent.mkdir(parents=True)
+            candidate.write_text("# 未经批准不能直接提交",encoding="utf-8")
+            second=inspect(root,day)
+            self.assertEqual(second["profiles"]["business"]["action"],"inspect_candidate_approval")
+            self.assertNotIn("business",second["awaiting_chat_preview"])
+
     def test_yesterdays_success_never_counts_as_today(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

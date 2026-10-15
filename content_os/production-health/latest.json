@@ -1,7 +1,7 @@
 {
   "date": "2026-10-15",
   "timezone": "Asia/Shanghai",
-  "generated_at": "2026-10-15T08:25:25.368641+08:00",
+  "generated_at": "2026-10-15T13:57:29.382903+08:00",
   "editorial_brief": "content_os/PRODUCTION_BRIEF.md",
   "delivery_goal": "每号先向用户交付完整正文及全部真实图片供聊天审阅；只有明确批准具体终版后才可写入inbox/archive或微信草稿。逐号完成研究、写作、配图、删改、送稿与回读。记录和测试不能代替成品；必须先阅读PRODUCTION_BRIEF.md的成品验收要求。",
   "editorial_feedback": "content_os/editorial-feedback.json",
@@ -80,24 +80,24 @@
   },
   "input_freshness": {
     "source_health": {
-      "recorded_date": "2026-10-14",
-      "fresh": false
+      "recorded_date": "2026-10-15",
+      "fresh": true
     },
     "editorial_intelligence": {
-      "recorded_date": null,
-      "fresh": false
+      "recorded_date": "2026-10-15",
+      "fresh": true
     },
     "reading_feedback": {
-      "recorded_date": "2026-10-14",
-      "fresh": false
+      "recorded_date": "2026-10-15",
+      "fresh": true
     },
     "daily_health": {
       "recorded_date": "2026-10-15",
       "fresh": true
     },
     "topic_intelligence": {
-      "recorded_date": "2026-10-14",
-      "fresh": false
+      "recorded_date": "2026-10-15",
+      "fresh": true
     }
   },
   "confirmed_count": 0,

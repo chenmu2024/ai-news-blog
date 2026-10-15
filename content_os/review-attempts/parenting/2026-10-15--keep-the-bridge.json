@@ -1,0 +1,108 @@
+{
+  "profile": "parenting",
+  "article_id": "2026-10-15--keep-the-bridge",
+  "title": "积木不能收，车明天还要过桥",
+  "stage": "TEXT_STORYBOARD_REVIEW_ONLY_NOT_COMIC",
+  "created_for": "chat_preview_preapproval_only",
+  "storyline": [
+    {
+      "id": "01",
+      "strip_index": 0,
+      "caption": "晚饭前，客厅到厨房的路被积木占了。",
+      "visible_action": "妈妈端水果路过，险些碰到地上的积木",
+      "dialogue": "妈妈：阿宁，先把积木收起来。"
+    },
+    {
+      "id": "02",
+      "strip_index": 0,
+      "caption": "阿宁护住那座桥。",
+      "visible_action": "孩子张开双手护住红色拱桥",
+      "dialogue": "阿宁：不能拆！车还没回家。"
+    },
+    {
+      "id": "03",
+      "strip_index": 1,
+      "caption": "她给小车搭的路，刚修到河边。",
+      "visible_action": "从孩子视角看蓝色小车停在未完工拱桥前",
+      "dialogue": "阿宁：你看，桥这头还差两块。"
+    },
+    {
+      "id": "04",
+      "strip_index": 1,
+      "caption": "妈妈伸手去拿路边的积木。",
+      "visible_action": "妈妈误碰桥柱，一小段坍塌",
+      "dialogue": "阿宁：别动！它要倒了！"
+    },
+    {
+      "id": "05",
+      "strip_index": 2,
+      "caption": "妈妈的手停住了。",
+      "visible_action": "妈妈停手，放回积木并蹲下来",
+      "dialogue": "妈妈：我刚才没问你，就动了它。对不起。"
+    },
+    {
+      "id": "06",
+      "strip_index": 2,
+      "caption": "阿宁指着桥墩后面的空位。",
+      "visible_action": "孩子托着掉下的红拱桥",
+      "dialogue": "阿宁：明天，我还想从这里接着搭。"
+    },
+    {
+      "id": "07",
+      "strip_index": 3,
+      "caption": "妈妈看了一眼被占住的走道。",
+      "visible_action": "妈妈指向厨房和餐桌间必须保持畅通的通道",
+      "dialogue": "妈妈：桥可以留，但走路的地方得清出来。"
+    },
+    {
+      "id": "08",
+      "strip_index": 3,
+      "caption": "妈妈找来一只大托盘。",
+      "visible_action": "她将托盘放到靠墙矮柜上",
+      "dialogue": "妈妈：留一段在盘子里，剩下的先回盒子。"
+    },
+    {
+      "id": "09",
+      "strip_index": 4,
+      "caption": "整座桥比托盘还长。",
+      "visible_action": "孩子尝试搬整座桥，但托盘太小",
+      "dialogue": "阿宁：放不下。"
+    },
+    {
+      "id": "10",
+      "strip_index": 4,
+      "caption": "阿宁拆下一小段，放到盘里。",
+      "visible_action": "孩子保留红色拱门和灰桥墩",
+      "dialogue": "阿宁：那就留这一段。明天从这里继续。"
+    },
+    {
+      "id": "11",
+      "strip_index": 5,
+      "caption": "地上的积木还不少。",
+      "visible_action": "妈妈和孩子各收一部分，孩子仍有些不情愿",
+      "dialogue": "妈妈：你收这三块，其他的我来。阿宁：好……等我一下。"
+    },
+    {
+      "id": "12",
+      "strip_index": 5,
+      "caption": "走道空出来了。桥还没搭完。",
+      "visible_action": "孩子把小蓝车停在托盘里的拱桥旁",
+      "dialogue": "阿宁：车明天从这儿出发。"
+    }
+  ],
+  "image_count": 0,
+  "required_images": "5–9 genuinely original sequential comic strips; none yet created or approved",
+  "characters": "fictional mother and 5-year-old child 阿宁",
+  "kind": "creative_fiction",
+  "science_sources": [
+    "https://www.unicef.org/eca/how-discipline-your-child-smart-and-healthy-way",
+    "https://www.healthychildren.org/English/family-life/power-of-play/Pages/young-children-learn-a-lot-when-they-play.aspx"
+  ],
+  "initial_humanizer_scan": "5 project-bank reference articles / 5 different sources / 5 structural roles / 0 exact 24-character overlaps in current text; full Editorial and Humanizer V4 gates NOT PASSED",
+  "benchmarks": "3 full publicly readable comics not yet verified",
+  "visual_gate": "NOT_RUN",
+  "comic_gate": "FAIL_NO_IMAGES",
+  "editorial_gate": "NOT_RUN",
+  "user_approved": false,
+  "side_effect_policy": "No inbox/archive/assets/promotion/WeChat draft/add allowed before exact final article and complete images are explicitly approved by user. This review attempt is not draft permission."
+}

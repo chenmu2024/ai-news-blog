@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "content_os/inbox/**"
+      - "content_os/draft-approvals/**"
       - "content_os/editorial-reviews/**"
       - "content_os/editorial_review.py"
       - "content_os/PRODUCTION_BRIEF.md"
@@ -67,7 +68,7 @@ jobs:
             sleep "$ATTEMPT"
           done
       - name: Validate promotion safety tests
-        run: python -m unittest content_os.tests.test_inbox_promote content_os.tests.test_safe_dispatch -v
+        run: python -m unittest content_os.tests.test_article_approval content_os.tests.test_inbox_promote content_os.tests.test_comic_gate content_os.tests.test_comic_visual_audit content_os.tests.test_safe_dispatch -v
       - name: Verify each account and create new archive only after all gates PASS
         shell: bash
         run: |

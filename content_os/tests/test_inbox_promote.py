@@ -60,8 +60,7 @@ class PromotionTests(unittest.TestCase):
     def test_disclosed_fiction_does_not_require_invented_fact_urls(self):
         if DAY < "2026-10-15":
             self.skipTest("purely fictional comics are enabled starting 2026-10-15")
-        body="# 她关店时，门外还有一个人\\n\\n原创虚构漫画故事：一把伞改变了一次误会。\\n"
-        body=body.replace("\\\\n","\\n")
+        body="# 她关店时，门外还有一个人" + chr(10)*2 + "原创虚构漫画故事：一把伞改变了一次误会。" + chr(10)
         candidate=self.root/"content_os/inbox/business"/f"{DAY}.md"
         candidate.parent.mkdir(parents=True,exist_ok=True)
         candidate.write_text(body,encoding="utf-8")
@@ -93,7 +92,7 @@ class PromotionTests(unittest.TestCase):
     def test_fiction_does_not_suppress_actual_fact_source_requirements(self):
         if DAY < "2026-10-15":
             self.skipTest("new daily fiction route only")
-        self.candidate.write_text(self.candidate.read_text("utf-8")+"原创虚构漫画故事\\n",encoding="utf-8")
+        self.candidate.write_text(self.candidate.read_text("utf-8")+"原创虚构漫画故事"+chr(10),encoding="utf-8")
         record=json.loads(self.approval.read_text("utf-8"))
         record["article_sha256"]=hashlib.sha256(self.candidate.read_bytes()).hexdigest()
         self.approval.write_text(json.dumps(record,ensure_ascii=False),encoding="utf-8")

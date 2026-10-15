@@ -36,11 +36,10 @@ def promote(root,profile,day,check_network=True, *, article_id=None):
     except (ValueError,OSError) as e:
         return {"profile":profile,"status":"FAIL","reasons":["invalid_title_sidecar",str(e)]}
     text=source.read_bytes().decode("utf-8")
-    if article_id != day:
-        from content_os.multi_draft import verify_extra_approval
-        approval_errors = verify_extra_approval(root,profile,article_id,text)
-        if approval_errors:
-            return {"profile":profile,"article_id":article_id,"status":"FAIL","reasons":approval_errors}
+    from content_os.multi_draft import verify_article_approval
+    approval_errors = verify_article_approval(root, profile, article_id, text)
+    if approval_errors:
+        return {"profile":profile,"article_id":article_id,"status":"FAIL","reasons":approval_errors}
     title=next((line[2:].strip() for line in text.splitlines() if line.startswith("# ")),"")
     errors=validate_record(profile,record,title)
     evidence=record.get("evidence")

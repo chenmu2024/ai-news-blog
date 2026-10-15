@@ -36,15 +36,16 @@ def approval_path(root: Path, profile: str, article_id: str) -> Path:
         raise ValueError("Unknown profile")
     return root / "content_os" / "draft-approvals" / profile / (article_id + ".json")
 
-def verify_extra_approval(root: Path, profile: str, article_id: str, markdown: str) -> list[str]:
-    """Extra articles require article-bound human consent, not yesterday's approval.
+def verify_article_approval(root: Path, profile: str, article_id: str, markdown: str) -> list[str]:
+    """All new articles from 2026-10-15 require article-bound human consent.
 
     A manifest is only an attestation and cannot independently prove a user
     said these words in a chat; the producer must preserve the real approval.
     """
     import hashlib
     import json
-    if article_id == article_id[:10]:
+    if article_id == article_id[:10] and article_id[:10] < "2026-10-15":
+        # Historical daily drafts: do not impose new policy retrospectively.
         return []
     try:
         record = json.loads(approval_path(root, profile, article_id).read_text("utf-8"))
@@ -65,3 +66,8 @@ def verify_extra_approval(root: Path, profile: str, article_id: str, markdown: s
     if record.get("previewed_with_real_images") is not True:
         errors.append("multi_draft_final_visual_preview_not_verified")
     return errors
+
+
+def verify_extra_approval(root: Path, profile: str, article_id: str, markdown: str) -> list[str]:
+    """Backward-compatible alias for the per-article approval gate."""
+    return verify_article_approval(root, profile, article_id, markdown)

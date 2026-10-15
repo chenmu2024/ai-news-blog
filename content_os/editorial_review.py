@@ -197,9 +197,9 @@ def check(root: Path, profile: str, day: str, markdown: str, *, article_id: str 
             except ValueError:
                 valid_url = False
             observation = ((profile == "jingyun" and item.get("kind") == "observation" and not item.get("url"))
-                           or (profile in ("business", "parenting") and day >= "2026-10-15"
+                           or (profile in ("business", "parenting", "jingyun") and day >= "2026-10-15"
                                and item.get("kind") == "creative_fiction" and not item.get("url")
-                               and "原创虚构" in body))
+                               and ("原创虚构" in body or "原创故事" in body)))
             if ((not observation and not valid_url) or not _text(item.get("claim"))
                     or not _anchor(item.get("article_excerpt"), body)):
                 errors.append("editorial_source_evidence_invalid")

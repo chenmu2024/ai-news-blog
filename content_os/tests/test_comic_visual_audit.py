@@ -57,6 +57,25 @@ class ComicVisualAuditTests(unittest.TestCase):
         image.save(self.paths[0],format="JPEG",quality=95)
         self.assertTrue(any("unreadable_mobile_dimensions" in x for x in self.run_audit()))
 
+    def test_preview_can_audit_actual_images_without_final_approval(self):
+        # Preview mode deliberately skips ONLY the missing approval/editorial
+        # attestations; all real image-byte checks remain active.
+        with patch("content_os.comic_visual_audit.check", return_value=[
+            "comic_user_approval_not_recorded_for_exact_candidate",
+            "comic_user_approved_body_hash_mismatch",
+            "comic_editorial_and_visual_attestation_incomplete"
+        ]):
+            self.assertEqual(audit(PROFILE, DAY, self.md, self.root, preview=True), [])
+            self.assertNotEqual(audit(PROFILE, DAY, self.md, self.root), [])
+
+    def test_preview_does_not_suppress_missing_file_errors(self):
+        with patch("content_os.comic_visual_audit.check", return_value=[
+            "comic_user_approval_not_recorded_for_exact_candidate",
+            "comic_strip_3_asset_not_persisted"
+        ]):
+            self.assertIn("comic_strip_3_asset_not_persisted",
+                          audit(PROFILE, DAY, self.md, self.root, preview=True))
+
     def test_old_draft_is_not_subject_to_new_rule(self):
         self.assertEqual(audit(PROFILE,"2026-10-14","no comic",self.root),[])
 

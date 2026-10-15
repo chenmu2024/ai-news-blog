@@ -2,7 +2,7 @@
   "profile": "business",
   "article_id": "2026-10-15--photo-edge",
   "title": "照片右边，别裁掉",
-  "stage": "CHAT_REVIEW_ONLY",
+  "stage": "VISUAL_REVIEW_BLOCKED_REPEATED_STORYBOARD",
   "published": false,
   "user_approved": false,
   "images_persisted_to_repository": false,
@@ -63,5 +63,15 @@
     "No user chat approval"
   ],
   "permission_boundary": "No inbox, archive, image asset persistence, promote, draft/add or public publish until exact final user approval and all gates pass",
-  "revision_note": "Local chat preview updated after silent-panel and crop corrections; SHA prefixes refreshed. All images remain unpublished and outside repository."
+  "revision_note": "Local chat preview updated after silent-panel and crop corrections; SHA prefixes refreshed. All images remain unpublished and outside repository.",
+  "confirmed_new_findings": [
+    "All six separate AI generation IDs produced substantially similar master-page layouts and recurrent camera angles; independent provenance does NOT prove twelve independent new actions.",
+    "The same family photo changes the number and identity of depicted people across pages; a single artifact reference has not been rendered consistently.",
+    "The source-photo continuity defect is not solvable by just editing text or recropping another copy of the same collage.",
+    "New image generation for a single reusable prop returned another full Chinese-text collage (generation_id d0b7a820-7e04-4fbe-bfab-9ceb660fa1a2); rejected.",
+    "A later two-panel fully written visual was also generated (generation_id 85a98392-bcab-48ee-922f-51062e5c7f69) but contains directly rendered Chinese rather than separate postproduction lettering; not inserted into publishable pages."
+  ],
+  "last_round_gate": "FAIL_C_SOURCE_PHOTO_CONTINUITY_AND_PANEL_NOVELTY",
+  "image_assets_persisted_to_repo": false,
+  "wechat_draft_created": false
 }

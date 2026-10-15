@@ -58,7 +58,7 @@ jobs:
           PY
       - name: Compile reliability and all seven draft publishers
         run: |
-          python -m py_compile content_os/{editorial_review,ai_scene_policy,comic_gate,comic_visual_audit,multi_draft,draft_journal,draft_preflight,daily_healthcheck,gate_trace,publish_readiness,prearchive_validate,inbox_promote,safe_dispatch,production_preflight,recover_readback,public_draft_contract,image_preflight,image_resilience,quality_gate,visual_gate,editorial_intelligence,build_editorial_shortlist,source_health,reading_feedback,manual_review,title_decisions,article_feedback_database,title_performance_analyzer,account_learning_profile}.py
+          python -m py_compile content_os/{editorial_review,ai_scene_policy,comic_gate,comic_visual_audit,multi_draft,extra_dispatch_reservation,draft_journal,draft_preflight,daily_healthcheck,gate_trace,publish_readiness,prearchive_validate,inbox_promote,safe_dispatch,production_preflight,recover_readback,public_draft_contract,image_preflight,image_resilience,quality_gate,visual_gate,editorial_intelligence,build_editorial_shortlist,source_health,reading_feedback,manual_review,title_decisions,article_feedback_database,title_performance_analyzer,account_learning_profile}.py
           python -m py_compile content_os/humanizer/{humanizer_gate,pollution_gate}.py
           python -m py_compile {qiezhi,wechat,business,zizhitongjian,parenting,jingyun,fashion}/publish_draft.py
       - name: Offline full regression suite (no WeChat API)

@@ -1,5 +1,6 @@
 """Offline verification of immutable inbox promotion."""
 import json
+import hashlib
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -27,6 +28,35 @@ class PromotionTests(unittest.TestCase):
             "evidence":{"facts_checked":True,"image_rights_checked":True,
                         "source_urls":["https://github.com/example/repo"]}}
         self.sidecar.write_text(json.dumps(self.rec,ensure_ascii=False),"utf-8")
+        self.approval=self.root/"content_os"/"draft-approvals"/"wechat"/f"{DAY}.json"
+        self.approval.parent.mkdir(parents=True)
+        self.approval.write_text(json.dumps({
+            "profile": "wechat", "article_id": DAY,
+            "article_sha256": hashlib.sha256(self.candidate.read_bytes()).hexdigest(),
+            "status": "approved", "approved_by": "user", "source": "chat",
+            "approved_at": DAY + "T08:00:00+08:00",
+            "user_confirmation": "同步草稿",
+            "previewed_with_real_images": True,
+        },ensure_ascii=False),"utf-8")
+    def test_missing_daily_approval_must_not_create_archive(self):
+        self.approval.unlink()
+        result=promote(self.root,"wechat",DAY)
+        if DAY >= "2026-10-15":
+            self.assertEqual(result["status"],"FAIL",result)
+            self.assertIn("multi_draft_missing_verified_user_approval_record",result["reasons"])
+            self.assertFalse((self.root/"wechat"/"archive"/f"{DAY}.md").exists())
+
+    def test_stale_daily_approval_must_not_create_archive(self):
+        if DAY < "2026-10-15":
+            self.skipTest("new rule only applies to future drafts")
+        record=json.loads(self.approval.read_text("utf-8"))
+        record["article_sha256"]="0"*64
+        self.approval.write_text(json.dumps(record,ensure_ascii=False),"utf-8")
+        result=promote(self.root,"wechat",DAY)
+        self.assertEqual(result["status"],"FAIL",result)
+        self.assertIn("multi_draft_approval_stale_body",result["reasons"])
+        self.assertFalse((self.root/"wechat"/"archive"/f"{DAY}.md").exists())
+
     def test_missing_candidate_skips(self):
         self.candidate.unlink()
         self.assertEqual(promote(self.root,"wechat",DAY)["status"],"SKIP")

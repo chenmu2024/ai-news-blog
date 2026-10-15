@@ -28,9 +28,9 @@ def story(profile="parenting"):
                        "approved_at":"2026-10-14T11:00:00+08:00","body_sha256":""}}
     text = "# 一家AI公司获得订单后的难题\n" if profile == "wechat" else "# 办理待遇前的两次确认\n"
     text += "这是一个原创虚构情境演绎。\n\n"
-    for item in images:
+    for source_idx, item in enumerate(images):
         text += f"![漫画](\u0024URL)\n".replace("$URL",item["url"])
-        text += "<!-- AI_SCENE " + json.dumps({"image_url":item["url"],"sha256":item["sha256"],"synthetic":True,"profile":profile,"article_date":DAY,"generator":"openai_image_gen","generation_id":"test-generated-fixture","rights":"ai_created_owned","scene_role":"illustration","scene_description":"漫画角色身处不同场景的连续剧情原创绘制示意","pretends_to_be_real_person_or_record":False},ensure_ascii=False) + " -->\n"
+        text += "<!-- AI_SCENE " + json.dumps({"image_url":item["url"],"sha256":item["sha256"],"synthetic":True,"profile":profile,"article_date":DAY,"generator":"openai_image_gen","generation_id":f"test-generated-fixture-{source_idx}","rights":"ai_created_owned","scene_role":"illustration","scene_description":"漫画角色身处不同场景的连续剧情原创绘制示意","pretends_to_be_real_person_or_record":False},ensure_ascii=False) + " -->\n"
     def wrap(x): return text + "<!-- COMIC_PACKAGE " + json.dumps(x,ensure_ascii=False) + " -->\n"
     pkg["approval"]["body_sha256"] = binding_sha256(wrap(pkg))
     return wrap(pkg)
@@ -45,6 +45,17 @@ class ComicPolicyTests(unittest.TestCase):
         for p in ("qiezhi","wechat","business","zizhitongjian","parenting","jingyun"):
             with self.subTest(p=p):
                 self.assertEqual(check(p,DAY,story(p)),[])
+    def test_cropped_single_generation_cannot_count_as_five_originals(self):
+        # Real issue: one output collage was split into six files while the
+        # contract requires independent AI-generated page artwork.
+        story_text = story("business")
+        story_text = story_text.replace(
+            '"generation_id": "test-generated-fixture-1"',
+            '"generation_id": "test-generated-fixture-0"',
+        )
+        self.assertIn("comic_strip_2_reuses_generation_canvas_of_1",
+                      check("business", DAY, story_text))
+
     def test_no_manifest_blocks(self):
         self.assertIn("comic_package_requires_exactly_one_manifest",check("parenting",DAY,"# 纯文字"))
     def test_hash_binding_blocks_edits(self):

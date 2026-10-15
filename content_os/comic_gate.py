@@ -104,6 +104,7 @@ def check(profile: str, day: str, markdown: str, *, root: Path | None = None,
             errors.append("comic_invalid_ai_scene_provenance")
     image_urls = []
     seen_digests = set()
+    generation_origins: dict[str, int] = {}
     root = (root or Path(__file__).resolve().parents[1]).resolve()
     for idx, item in enumerate(imgs, 1):
         if not isinstance(item, dict):
@@ -131,6 +132,20 @@ def check(profile: str, day: str, markdown: str, *, root: Path | None = None,
         rec = ai_scene.get(url)
         if not isinstance(rec, dict) or rec.get("sha256") != sha or rec.get("synthetic") is not True:
             errors.append(f"comic_strip_{idx}_missing_matching_ai_scene_provenance")
+        else:
+            # A single generated full-page collage cut into 5–9 files is NOT
+            # 5–9 independently created original comic strips. The same
+            # generation_id cannot be asserted as multiple source artworks.
+            # This is a provenance check, not a classifier: a dishonest
+            # manifest can still lie, hence mandatory human visual review.
+            origin = rec.get("generation_id")
+            if not isinstance(origin, str) or not origin.strip():
+                errors.append(f"comic_strip_{idx}_source_generation_id_missing")
+            elif origin.strip() in generation_origins:
+                previous = generation_origins[origin.strip()]
+                errors.append(f"comic_strip_{idx}_reuses_generation_canvas_of_{previous}")
+            else:
+                generation_origins[origin.strip()] = idx
         if verify_files:
             target = (root / relative).resolve()
             if not target.is_relative_to(root) or not target.is_file():

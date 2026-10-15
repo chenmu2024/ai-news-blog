@@ -18,7 +18,7 @@
     {
       "page": "01",
       "generation_id": "e3659b4b-06cb-418c-8fd6-f4aefe85d20e",
-      "local_sha_prefix_for_orientation_only": "d3fca3e03711"
+      "local_sha_prefix_for_orientation_only": "95e23c9aab9c"
     },
     {
       "page": "02",
@@ -28,7 +28,7 @@
     {
       "page": "03",
       "generation_id": "2bd93b59-bb7f-469b-ba57-0bd488b0918d",
-      "local_sha_prefix_for_orientation_only": "4c05dde2f185"
+      "local_sha_prefix_for_orientation_only": "c3d335881c27"
     },
     {
       "page": "04",
@@ -43,7 +43,7 @@
     {
       "page": "06",
       "generation_id": "39f6f11f-17be-466f-8578-eb87334bfe85",
-      "local_sha_prefix_for_orientation_only": "8b870cefd282"
+      "local_sha_prefix_for_orientation_only": "2dd97b943980"
     }
   ],
   "local_review_files_not_in_repository": true,
@@ -62,5 +62,6 @@
     "Source/Editorial/Comic/WeChat integration gates not all run or bound to final stored assets",
     "No user chat approval"
   ],
-  "permission_boundary": "No inbox, archive, image asset persistence, promote, draft/add or public publish until exact final user approval and all gates pass"
+  "permission_boundary": "No inbox, archive, image asset persistence, promote, draft/add or public publish until exact final user approval and all gates pass",
+  "revision_note": "Local chat preview updated after silent-panel and crop corrections; SHA prefixes refreshed. All images remain unpublished and outside repository."
 }

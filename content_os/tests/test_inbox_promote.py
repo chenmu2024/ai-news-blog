@@ -57,6 +57,51 @@ class PromotionTests(unittest.TestCase):
         self.assertIn("multi_draft_approval_stale_body",result["reasons"])
         self.assertFalse((self.root/"wechat"/"archive"/f"{DAY}.md").exists())
 
+    def test_disclosed_fiction_does_not_require_invented_fact_urls(self):
+        if DAY < "2026-10-15":
+            self.skipTest("purely fictional comics are enabled starting 2026-10-15")
+        body="# 她关店时，门外还有一个人\\n\\n原创虚构漫画故事：一把伞改变了一次误会。\\n"
+        body=body.replace("\\\\n","\\n")
+        candidate=self.root/"content_os/inbox/business"/f"{DAY}.md"
+        candidate.parent.mkdir(parents=True,exist_ok=True)
+        candidate.write_text(body,encoding="utf-8")
+        approval=self.root/"content_os/draft-approvals/business"/f"{DAY}.json"
+        approval.parent.mkdir(parents=True,exist_ok=True)
+        approval.write_text(json.dumps({
+            "profile":"business","article_id":DAY,
+            "article_sha256":hashlib.sha256(body.encode("utf-8")).hexdigest(),
+            "status":"approved","approved_by":"user","source":"chat",
+            "approved_at":DAY+"T08:00:00+08:00",
+            "user_confirmation":"同步草稿",
+            "previewed_with_real_images":True
+        },ensure_ascii=False),encoding="utf-8")
+        title="她关店时，门外还有一个人"
+        sidecar=candidate.with_suffix(".titles.json")
+        sidecar.write_text(json.dumps({
+            "candidates":[title,"雨夜小店门口的一个误会","把伞送回去的那个晚上"],
+            "selected_title":title,
+            "rationale":"原创暖心城市群像，明确虚构身份，不用伪造政务来源。",
+            "basis":["真实故事与虚构情境明确分离"],
+            "verified_views":None,
+            "evidence":{"kind":"creative_fiction","no_external_factual_claims":True,
+                        "source_urls":[],"facts_checked":True,"image_rights_checked":True}
+        },ensure_ascii=False),encoding="utf-8")
+        with patch("content_os.inbox_promote.validate",return_value={"status":"PASS","errors":[]}):
+            result=promote(self.root,"business",DAY)
+        self.assertEqual(result["status"],"READY_FOR_COMMIT",result)
+
+    def test_fiction_does_not_suppress_actual_fact_source_requirements(self):
+        if DAY < "2026-10-15":
+            self.skipTest("new daily fiction route only")
+        self.candidate.write_text(self.candidate.read_text("utf-8")+"原创虚构漫画故事\\n",encoding="utf-8")
+        record=json.loads(self.approval.read_text("utf-8"))
+        record["article_sha256"]=hashlib.sha256(self.candidate.read_bytes()).hexdigest()
+        self.approval.write_text(json.dumps(record,ensure_ascii=False),encoding="utf-8")
+        self.rec["evidence"]={"facts_checked":True,"image_rights_checked":True,"source_urls":[]}
+        self.sidecar.write_text(json.dumps(self.rec,ensure_ascii=False),encoding="utf-8")
+        result=promote(self.root,"wechat",DAY)
+        self.assertIn("real_https_source_evidence_required",result["reasons"])
+
     def test_missing_candidate_skips(self):
         self.candidate.unlink()
         self.assertEqual(promote(self.root,"wechat",DAY)["status"],"SKIP")

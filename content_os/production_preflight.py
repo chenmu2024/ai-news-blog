@@ -74,8 +74,16 @@ def inspect(root: Path, day: str | None = None) -> dict:
             action = "inspect_actions_before_dispatch"
             reasons.append("archive_exists_no_attempt_journal_check_remote_runs")
         else:
-            action = "write_new_archive"
-            reasons.append("today_archive_missing")
+            if day >= "2026-10-15":
+                # A missing archive is not an authorization to create one.
+                # Chat preview, original images and per-article user approval
+                # must exist before any inbox/archive mutation.
+                candidate = root / "content_os" / "inbox" / profile / (day + ".md")
+                action = "inspect_candidate_approval" if candidate.is_file() else "prepare_chat_preview"
+                reasons.append("today_archive_missing_preview_and_approval_required")
+            else:
+                action = "write_new_archive"
+                reasons.append("today_archive_missing")
         results[profile] = {
             "action": action,
             "archive": f"{profile}/archive/{day}.md",
@@ -89,7 +97,7 @@ def inspect(root: Path, day: str | None = None) -> dict:
         "generated_at": datetime.now(TZ).isoformat(),
         "editorial_brief": "content_os/PRODUCTION_BRIEF.md",
         "delivery_goal": (
-            "每号交付完整好稿与实际看过、贴合正文的图片，并确认送达微信公众号草稿箱。"
+            "每号先向用户交付完整正文及全部真实图片供聊天审阅；只有明确批准具体终版后才可写入inbox/archive或微信草稿。"
             "逐号完成研究、写作、配图、删改、送稿与回读。"
             "记录和测试不能代替成品；必须先阅读PRODUCTION_BRIEF.md的成品验收要求。"
         ),
@@ -98,7 +106,8 @@ def inspect(root: Path, day: str | None = None) -> dict:
         "profiles": results,
         "input_freshness": _freshness(root, day),
         "confirmed_count": sum(v["action"] == "skip_confirmed" for v in results.values()),
-        "missing_archives": [p for p,v in results.items() if v["action"] == "write_new_archive"],
+        "missing_archives": [p for p,v in results.items() if not v["archive_exists"]],
+        "awaiting_chat_preview": [p for p,v in results.items() if v["action"] == "prepare_chat_preview"],
         "manual_review": [p for p,v in results.items() if v["action"] == "manual_review_required"],
         "policy": (
             "Missing/stale research, reading feedback and health are NON-BLOCKING "

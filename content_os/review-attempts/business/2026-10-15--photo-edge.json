@@ -1,0 +1,65 @@
+{
+  "article_id": "2026-10-15--photo-edge",
+  "profile": "business",
+  "working_title": "照片右边，别裁掉",
+  "task_scope": "chat_visual_proof_only_no_wechat_draft",
+  "status": "BLOCKED_IMAGE_GENERATION",
+  "genre": "原创虚构暖心人间漫画",
+  "story_panels_planned": 12,
+  "source_attempts": [
+    {
+      "generation_id": "3c73b573-0892-4cd6-94ca-87524988e33d",
+      "result": "multi-panel source with embedded Chinese bubbles; not independent no-text original strips"
+    },
+    {
+      "generation_id": "100332c0-5b4e-4fb2-b975-7f7fb1828b4f",
+      "result": "editing again produced embedded text; character continuity inconsistent"
+    },
+    {
+      "generation_id": "73796ec4-1089-4d5c-a53f-2624f7b0149e",
+      "result": "requested small unit produced six-page montage and text"
+    },
+    {
+      "generation_id": "faaf8e56-3294-401c-b4be-ff563798d228",
+      "result": "attempt to render independent wordless keyframes returned full-page collage with text"
+    },
+    {
+      "generation_id": "23205dd7-5bf9-46ed-b8f5-ed5baa3d3288",
+      "result": "portrait single-scene attempt still yielded multi-page collage with embedded Chinese"
+    }
+  ],
+  "last_generated_master": {
+    "local_review_only": "a_detailed_warm_pastel_clean_comic_strip_mang.png",
+    "sha256": "4f3fa27ee6272b26e2f4db578dab5bd732085b10c799a83cbc618451e7d8d468",
+    "dimensions": [
+      1295,
+      1215
+    ],
+    "independent_source_image_count": 1,
+    "generated_as": "one stitched collage, NOT six separately generated strip files"
+  },
+  "previous_preview": {
+    "local_review_only": "c_photo_edge_comic_preview_6pages.zip",
+    "page_count": 6,
+    "actual_provenance": "6 cropped pages derived from one AI collage, not six standalone original scene generations",
+    "quality": "NOT_APPROVED"
+  },
+  "gate_findings": [
+    "AI model auto-added original Chinese balloons and captions despite requested no-text art",
+    "same AI master cannot be cropped into separate claimed original panels",
+    "outfit, hair and group photo continuity inconsistent",
+    "Humanizer V4 independent reference audit not completed for the composed final comic",
+    "no article-bound user chat approval, no approved inbox/archive permitted"
+  ],
+  "comic_visual_quality": "FAIL",
+  "source_gate": "NOT_RUN",
+  "editorial_gate": "NOT_RUN",
+  "comic_package_gate": "FAIL_NO_INDEPENDENT_ORIGINAL_STRIPS",
+  "user_approval": "NOT_GIVEN",
+  "inbox_created": false,
+  "archive_created": false,
+  "draft_add_called": false,
+  "wechat_media_id": null,
+  "release_rule": "Never pass publishing or claim draft created unless 5-9 genuinely independently generated original wordless strips, later correctly lettered and manually verified, are approved in chat and all gates pass.",
+  "note": "This is a preapproval review-attempt record ONLY, not approval, content, or a publication trigger."
+}

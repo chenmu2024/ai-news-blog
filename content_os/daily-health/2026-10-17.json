@@ -1,0 +1,389 @@
+{
+  "date": "2026-10-17",
+  "generated_at": "2026-10-17T14:52:59.299008+08:00",
+  "timezone": "Asia/Shanghai",
+  "status": "incomplete",
+  "success_count": 0,
+  "expected_count": 7,
+  "draft_confirmed_count": 0,
+  "legacy_media_id_receipt_count": 0,
+  "legacy_repo_receipt_only_count": 0,
+  "draft_confirmation_status": "incomplete",
+  "alert_required": true,
+  "alert_reasons": [
+    "repository_or_gate_incomplete",
+    "durable_draft_confirmation_incomplete"
+  ],
+  "editorial_alert_required": true,
+  "editorial_alert_reasons": [
+    "headline_decision_ledger_incomplete"
+  ],
+  "headline_decisions": {
+    "status": "incomplete",
+    "complete_count": 0,
+    "expected_count": 7,
+    "profiles": {
+      "qiezhi": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "wechat": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "business": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "zizhitongjian": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "parenting": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "jingyun": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      },
+      "fashion": {
+        "status": "missing_or_invalid",
+        "selected_title": null,
+        "candidates": [],
+        "rationale": null,
+        "basis": [],
+        "verified_views": null,
+        "errors": [
+          "decision_record_missing",
+          "archive_title_missing"
+        ]
+      }
+    }
+  },
+  "accounts": {
+    "qiezhi": {
+      "profile": "qiezhi",
+      "status": "incomplete",
+      "archive": "qiezhi/archive/2026-10-17.md",
+      "title": "",
+      "archive_title": "",
+      "editorial_review": {
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_or_policy_missing_or_invalid"
+        ]
+      },
+      "workflow_run_id": null,
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "wechat_inline_readback_verified": false,
+      "wechat_inline_image_count": 2,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed",
+        "wechat_inline_image_readback_missing_or_mismatched",
+        "editorial_review:editorial_review_or_policy_missing_or_invalid"
+      ]
+    },
+    "wechat": {
+      "profile": "wechat",
+      "status": "incomplete",
+      "archive": "wechat/archive/2026-10-17.md",
+      "title": "",
+      "archive_title": "",
+      "editorial_review": {
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_or_policy_missing_or_invalid"
+        ]
+      },
+      "workflow_run_id": "38491706518",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "wechat_inline_readback_verified": false,
+      "wechat_inline_image_count": 2,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed",
+        "wechat_inline_image_readback_missing_or_mismatched",
+        "editorial_review:editorial_review_or_policy_missing_or_invalid"
+      ]
+    },
+    "business": {
+      "profile": "business",
+      "status": "incomplete",
+      "archive": "business/archive/2026-10-17.md",
+      "title": "",
+      "archive_title": "",
+      "editorial_review": {
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_or_policy_missing_or_invalid"
+        ]
+      },
+      "workflow_run_id": "38491710378",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "wechat_inline_readback_verified": false,
+      "wechat_inline_image_count": 2,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed",
+        "wechat_inline_image_readback_missing_or_mismatched",
+        "editorial_review:editorial_review_or_policy_missing_or_invalid"
+      ]
+    },
+    "zizhitongjian": {
+      "profile": "zizhitongjian",
+      "status": "incomplete",
+      "archive": "zizhitongjian/archive/2026-10-17.md",
+      "title": "",
+      "archive_title": "",
+      "editorial_review": {
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_or_policy_missing_or_invalid"
+        ]
+      },
+      "workflow_run_id": "38492384814",
+      "gates": {
+        "source-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": "dual_edition_text_fallback_no_facsimile",
+      "image_check_done": false,
+      "wechat_inline_readback_verified": false,
+      "wechat_inline_image_count": 2,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:source-gate.json",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed",
+        "wechat_inline_image_readback_missing_or_mismatched",
+        "editorial_review:editorial_review_or_policy_missing_or_invalid"
+      ]
+    },
+    "parenting": {
+      "profile": "parenting",
+      "status": "incomplete",
+      "archive": "parenting/archive/2026-10-17.md",
+      "title": "",
+      "archive_title": "",
+      "editorial_review": {
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_or_policy_missing_or_invalid"
+        ]
+      },
+      "workflow_run_id": "38491715675",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "wechat_inline_readback_verified": false,
+      "wechat_inline_image_count": 2,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed",
+        "wechat_inline_image_readback_missing_or_mismatched",
+        "editorial_review:editorial_review_or_policy_missing_or_invalid"
+      ]
+    },
+    "jingyun": {
+      "profile": "jingyun",
+      "status": "incomplete",
+      "archive": "jingyun/archive/2026-10-17.md",
+      "title": "",
+      "archive_title": "",
+      "editorial_review": {
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_or_policy_missing_or_invalid"
+        ]
+      },
+      "workflow_run_id": "38491720169",
+      "gates": {
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "wechat_inline_readback_verified": false,
+      "wechat_inline_image_count": 2,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed",
+        "wechat_inline_image_readback_missing_or_mismatched",
+        "editorial_review:editorial_review_or_policy_missing_or_invalid"
+      ]
+    },
+    "fashion": {
+      "profile": "fashion",
+      "status": "incomplete",
+      "archive": "fashion/archive/2026-10-17.md",
+      "title": "",
+      "archive_title": "",
+      "editorial_review": {
+        "status": "FAIL",
+        "errors": [
+          "editorial_review_or_policy_missing_or_invalid"
+        ]
+      },
+      "workflow_run_id": "38492133156",
+      "gates": {
+        "image-gate.json": "PASS",
+        "quality-gate.json": "PASS",
+        "visual-gate.json": "PASS"
+      },
+      "journal_state": "MISSING",
+      "fashion_revision": null,
+      "draft_media_id_recorded": false,
+      "draft_confirmation_mode": "unconfirmed",
+      "draft_confirmed": false,
+      "verification_mode": null,
+      "image_check_done": null,
+      "wechat_inline_readback_verified": false,
+      "wechat_inline_image_count": 5,
+      "errors": [
+        "archive_missing_or_unreadable",
+        "archive_title_missing",
+        "receipt_date_mismatch",
+        "gate_not_bound_to_archive:image-gate.json",
+        "gate_not_bound_to_archive:quality-gate.json",
+        "gate_not_bound_to_archive:visual-gate.json",
+        "draft_add_journal_missing_or_unconfirmed",
+        "wechat_inline_image_readback_missing_or_mismatched",
+        "editorial_review:editorial_review_or_policy_missing_or_invalid"
+      ]
+    }
+  },
+  "topic_scan_date": "2026-10-17",
+  "topic_scan_available": true,
+  "topic_popularity_verified_count": {
+    "qiezhi": 0,
+    "wechat": 0,
+    "business": 0,
+    "zizhitongjian": 0,
+    "parenting": 0,
+    "jingyun": 0,
+    "fashion": 0
+  },
+  "note": "status/success_count is repository compatibility. draft_confirmed_count requires the durable confirmed journal + matching SHA/path + media_id. This is not direct WeChat UI visual confirmation."
+}

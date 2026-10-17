@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-16",
-  "generated_at": "2026-10-16T10:03:01.605606+08:00",
+  "date": "2026-10-17",
+  "generated_at": "2026-10-17T08:22:45.363428+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -99,10 +99,9 @@
         },
         {
           "url": "https://www.mohurd.gov.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.mohurd.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
           "role": "primary"
         },
         {
@@ -184,10 +183,9 @@
         },
         {
           "url": "https://www.mohurd.gov.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.mohurd.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
           "role": "primary"
         },
         {

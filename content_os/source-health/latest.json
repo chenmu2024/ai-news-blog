@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-20",
-  "generated_at": "2026-10-20T10:28:30.594324+08:00",
+  "date": "2026-10-21",
+  "generated_at": "2026-10-21T08:33:58.229611+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -45,9 +45,10 @@
         },
         {
           "url": "https://openai.com/news/",
-          "status": "http_error",
-          "http_status": 403,
-          "error": "HTTP Error 403: Forbidden",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://openai.com/news/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {
@@ -106,9 +107,10 @@
         },
         {
           "url": "https://www.nhsa.gov.cn/",
-          "status": "unreachable",
-          "http_status": null,
-          "error": "<urlopen error timed out>",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.nhsa.gov.cn/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {
@@ -196,9 +198,10 @@
         },
         {
           "url": "https://www.nhsa.gov.cn/",
-          "status": "unreachable",
-          "http_status": null,
-          "error": "<urlopen error timed out>",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.nhsa.gov.cn/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {

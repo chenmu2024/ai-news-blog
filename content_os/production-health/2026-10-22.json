@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "generated_at": "2026-10-22T14:10:08.012711+08:00",
+  "editorial_brief": "content_os/PRODUCTION_BRIEF.md",
+  "delivery_goal": "每号先向用户交付完整正文及全部真实图片供聊天审阅；只有明确批准具体终版后才可写入inbox/archive或微信草稿。逐号完成研究、写作、配图、删改、送稿与回读。记录和测试不能代替成品；必须先阅读PRODUCTION_BRIEF.md的成品验收要求。",
+  "editorial_feedback": "content_os/editorial-feedback.json",
+  "editorial_review_required_from": "2026-10-14",
+  "profiles": {
+    "qiezhi": {
+      "action": "prepare_chat_preview",
+      "archive": "qiezhi/archive/2026-10-22.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "qiezhi/archive/2026-10-14.md",
+      "reasons": [
+        "today_archive_missing_preview_and_approval_required"
+      ]
+    },
+    "wechat": {
+      "action": "prepare_chat_preview",
+      "archive": "wechat/archive/2026-10-22.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "wechat/archive/2026-10-14.md",
+      "reasons": [
+        "today_archive_missing_preview_and_approval_required"
+      ]
+    },
+    "business": {
+      "action": "prepare_chat_preview",
+      "archive": "business/archive/2026-10-22.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "business/archive/2026-10-14.md",
+      "reasons": [
+        "today_archive_missing_preview_and_approval_required"
+      ]
+    },
+    "zizhitongjian": {
+      "action": "prepare_chat_preview",
+      "archive": "zizhitongjian/archive/2026-10-22.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "zizhitongjian/archive/2026-10-14.md",
+      "reasons": [
+        "today_archive_missing_preview_and_approval_required"
+      ]
+    },
+    "parenting": {
+      "action": "prepare_chat_preview",
+      "archive": "parenting/archive/2026-10-22.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "parenting/archive/2026-10-14.md",
+      "reasons": [
+        "today_archive_missing_preview_and_approval_required"
+      ]
+    },
+    "jingyun": {
+      "action": "prepare_chat_preview",
+      "archive": "jingyun/archive/2026-10-22.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "jingyun/archive/2026-10-14.md",
+      "reasons": [
+        "today_archive_missing_preview_and_approval_required"
+      ]
+    },
+    "fashion": {
+      "action": "prepare_chat_preview",
+      "archive": "fashion/archive/2026-10-22.md",
+      "archive_exists": false,
+      "journal_state": null,
+      "receipt_path": "fashion/archive/2026-10-14.md",
+      "reasons": [
+        "today_archive_missing_preview_and_approval_required"
+      ]
+    }
+  },
+  "input_freshness": {
+    "source_health": {
+      "recorded_date": "2026-10-22",
+      "fresh": true
+    },
+    "editorial_intelligence": {
+      "recorded_date": "2026-10-22",
+      "fresh": true
+    },
+    "reading_feedback": {
+      "recorded_date": "2026-10-22",
+      "fresh": true
+    },
+    "daily_health": {
+      "recorded_date": "2026-10-21",
+      "fresh": false
+    },
+    "topic_intelligence": {
+      "recorded_date": "2026-10-22",
+      "fresh": true
+    }
+  },
+  "confirmed_count": 0,
+  "missing_archives": [
+    "qiezhi",
+    "wechat",
+    "business",
+    "zizhitongjian",
+    "parenting",
+    "jingyun",
+    "fashion"
+  ],
+  "awaiting_chat_preview": [
+    "qiezhi",
+    "wechat",
+    "business",
+    "zizhitongjian",
+    "parenting",
+    "jingyun",
+    "fashion"
+  ],
+  "manual_review": [],
+  "policy": "Missing/stale research, reading feedback and health are NON-BLOCKING for responsible original writing. Record insufficient_evidence, verify facts independently, and complete permitted accounts one by one. This classifier NEVER authorizes draft/add; inspect Actions and run all applicable gates before archive creation or API access."
+}

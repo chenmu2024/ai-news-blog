@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-23",
-  "generated_at": "2026-10-23T10:23:03.615711+08:00",
+  "date": "2026-10-24",
+  "generated_at": "2026-10-24T08:33:55.239899+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -106,10 +106,9 @@
         },
         {
           "url": "https://www.nhsa.gov.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.nhsa.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error timed out>",
           "role": "primary"
         },
         {
@@ -197,10 +196,9 @@
         },
         {
           "url": "https://www.nhsa.gov.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.nhsa.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error timed out>",
           "role": "primary"
         },
         {

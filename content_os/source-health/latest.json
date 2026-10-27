@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-26",
-  "generated_at": "2026-10-26T10:08:42.121084+08:00",
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T09:26:13.648389+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -190,9 +190,10 @@
         },
         {
           "url": "https://www.nhc.gov.cn/",
-          "status": "http_error",
-          "http_status": 412,
-          "error": "HTTP Error 412: Precondition Failed",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.nhc.gov.cn/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {

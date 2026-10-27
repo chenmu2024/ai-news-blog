@@ -1,7 +1,7 @@
 {
   "date": "2026-10-27",
   "timezone": "Asia/Shanghai",
-  "generated_at": "2026-10-27T14:24:30.319960+08:00",
+  "generated_at": "2026-10-27T17:20:03.273223+08:00",
   "editorial_brief": "content_os/PRODUCTION_BRIEF.md",
   "delivery_goal": "每号先向用户交付完整正文及全部真实图片供聊天审阅；只有明确批准具体终版后才可写入inbox/archive或微信草稿。逐号完成研究、写作、配图、删改、送稿与回读。记录和测试不能代替成品；必须先阅读PRODUCTION_BRIEF.md的成品验收要求。",
   "editorial_feedback": "content_os/editorial-feedback.json",
@@ -92,8 +92,8 @@
       "fresh": true
     },
     "daily_health": {
-      "recorded_date": "2026-10-26",
-      "fresh": false
+      "recorded_date": "2026-10-27",
+      "fresh": true
     },
     "topic_intelligence": {
       "recorded_date": "2026-10-27",

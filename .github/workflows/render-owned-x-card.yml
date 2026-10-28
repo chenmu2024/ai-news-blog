@@ -1,0 +1,42 @@
+name: Render owned X editorial card
+on:
+  push:
+    paths:
+      - 'media/x/2026-10-28-lfm3.svg'
+      - '.github/workflows/render-owned-x-card.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: original-x-card-generation
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Render original graphic at no API cost
+        run: |
+          python -m pip install --disable-pip-version-check --quiet cairosvg
+          python - <<'PY'
+          from pathlib import Path
+          import cairosvg
+          source=Path("media/x/2026-10-28-lfm3.svg")
+          dest=Path("media/x/2026-10-28-lfm3.png")
+          cairosvg.svg2png(url=str(source), write_to=str(dest), output_width=1200, output_height=675)
+          assert dest.stat().st_size < 9_000_000
+          print("Image saved",dest,dest.stat().st_size)
+          PY
+      - name: Commit only the generated public image
+        run: |
+          git add media/x/2026-10-28-lfm3.png
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'media: render original LFM3 X card [skip ci]'
+            git push
+          fi

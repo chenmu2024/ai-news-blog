@@ -1,6 +1,6 @@
 {
   "date": "2026-10-31",
-  "generated_at": "2026-10-31T10:37:20.623355+08:00",
+  "generated_at": "2026-10-31T11:04:35.118647+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -91,10 +91,9 @@
         },
         {
           "url": "https://www.mohrss.gov.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.mohrss.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error timed out>",
           "role": "primary"
         },
         {
@@ -175,10 +174,9 @@
         },
         {
           "url": "https://www.moe.gov.cn/",
-          "status": "insecure_redirect",
-          "http_status": 200,
-          "final_url": "http://www.moe.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error [Errno 101] Network is unreachable>",
           "role": "primary"
         },
         {
@@ -212,15 +210,14 @@
         },
         {
           "url": "https://www.mohrss.gov.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.mohrss.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error timed out>",
           "role": "fallback"
         }
       ],
       "primary_reachable": true,
-      "fallback_reachable": true,
+      "fallback_reachable": false,
       "note": "Reachability only; content/date/licence/fact checks remain mandatory."
     },
     "jingyun": {

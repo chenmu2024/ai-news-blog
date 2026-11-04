@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-03",
-  "generated_at": "2026-11-03T12:25:43.628860+08:00",
+  "date": "2026-11-04",
+  "generated_at": "2026-11-04T10:12:40.517025+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -108,7 +108,7 @@
           "url": "https://www.nhsa.gov.cn/",
           "status": "unreachable",
           "http_status": null,
-          "error": "<urlopen error timed out>",
+          "error": "The read operation timed out",
           "role": "primary"
         },
         {
@@ -198,7 +198,7 @@
           "url": "https://www.nhsa.gov.cn/",
           "status": "unreachable",
           "http_status": null,
-          "error": "<urlopen error timed out>",
+          "error": "<urlopen error _ssl.c:994: The handshake operation timed out>",
           "role": "primary"
         },
         {

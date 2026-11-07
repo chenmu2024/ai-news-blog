@@ -1,14 +1,15 @@
 {
   "date": "2026-11-07",
-  "generated_at": "2026-11-07T10:25:37.648520+08:00",
+  "generated_at": "2026-11-07T10:58:33.918050+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
         {
           "url": "https://www.dswxyjy.org.cn/",
-          "status": "unreachable",
-          "http_status": null,
-          "error": "<urlopen error [Errno 101] Network is unreachable>",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://www.dswxyjy.org.cn/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {
@@ -28,7 +29,7 @@
           "role": "fallback"
         }
       ],
-      "primary_reachable": false,
+      "primary_reachable": true,
       "fallback_reachable": true,
       "note": "Reachability only; content/date/licence/fact checks remain mandatory."
     },
@@ -105,10 +106,9 @@
         },
         {
           "url": "https://www.nhsa.gov.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.nhsa.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error timed out>",
           "role": "primary"
         },
         {
@@ -196,10 +196,9 @@
         },
         {
           "url": "https://www.nhsa.gov.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.nhsa.gov.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error timed out>",
           "role": "primary"
         },
         {

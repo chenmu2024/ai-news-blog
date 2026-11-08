@@ -1,16 +1,48 @@
 {
   "date": "2026-11-08",
   "status": "advisory_only",
-  "discovery_generated_at": "2026-11-08T10:37:03.899975+08:00",
+  "discovery_generated_at": "2026-11-08T11:06:10.250925+08:00",
   "ranking_provenance": "public discovery, not verified WeChat virality",
-  "reading_feedback_generated_at": "2026-11-08T10:39:06.076147+08:00",
+  "reading_feedback_generated_at": "2026-11-08T11:06:52.792480+08:00",
   "reading_feedback_policy": "No missing views are inferred; qualitative records never become numeric metrics.",
   "profiles": {
     "qiezhi": [
       {
+        "event_id": "31d1277df664",
+        "title": "读完《毛选》,我总结的最有价值的思想武器",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfszoqlJ8ok_rF_mOLsgfno1qXa8Fplpd9Ty68-qeCIfEgXiyNswlHyOLmXUHXual_M9F4T-8Q6HNSEHjL252Rj7XtOQxhhesUGEtyFbxssHqiV80ZWk-NhfipvdU6fqnMmGRsyYoVmw_AePASgpSXCU7JPJAkYBPJHqHzUKNfiPGh5GDkvjDbYpT3iA3YTV9DuWVhY33RGgkSYTqT4eyLmA..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=29748EF81FBA548ACDC89276EE74D8C6CED634BA6AEFE724",
+        "score": 52.0,
+        "flags": [
+          "unverified_heat",
+          "primary_text_unverified",
+          "single_source",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "needs_manual_source_and_date_review",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "plain"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
         "event_id": "6676abbbade9",
         "title": "《毛选》为何长盛不衰:一部跨越时代的思想畅销书",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf2QHMMeNIfw_F_mOLsgfno1qXa8Fplpd9n0OLHUvfSgPIh71iAVDBgLwA14GSMXpnTN2VtxAKVkT6ObGa_H1XGrA2XwXq0tbzgYMKIUTAW5Q1XOVXfX60Kgz5YdWPRIY3uiX2VKTX_mTdAgaLOu1-1hHGi1fXDggPCw6fhNaaIycfZL8RapDeizKnSon3I1YpntbBcZFLrgRQ_LeJW-Rhtg..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939A912C06A2CC1F1F7AF4A49504631F19D3C076AEFE052",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfszoqlJ8ok_rF_mOLsgfno1qXa8Fplpd9n0OLHUvfSgPIh71iAVDBgLwA14GSMXpnTN2VtxAKVkT6ObGa_H1XGrA2XwXq0tbzgYMKIUTAW5Q1XOVXfX60Kv9O-17CZUVRr_hPNBfQ6ODcTe3rXMLgy0VX10j07pdSKjFlFgc1slZ-rWY-2NjE4QCgTnn46G4rmd4H0CXYCkB535pjGOOjYg..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=29748EF81FBA548ACDC89276EE74D8C6CED634BA6AEFE724",
         "score": 51.6,
         "flags": [
           "unverified_heat",
@@ -42,7 +74,7 @@
       {
         "event_id": "6f0b85d01637",
         "title": "毛选思想方法工作方法30条",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf2QHMMeNIfw_F_mOLsgfno1qXa8Fplpd9Opnb9PZjDafhr9XywfAhGZ61kKIORt8JbArhRfryC8YtNUsZ6jdxDv55q4mRTsUUNlMp7Bq9S7vKN0BymdJqFLHZBnGemNbS5Sy-U0VQwW9MGwWJ36QG3p9xccIwd_G1X29aSvLO9I-4H2dCEqv_gSRp-gxkXK85aZqQMvjzEnTdrgozfSg6bw..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939A912C06A2CC1F1F7AF4A49504631F19D3C076AEFE052",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfszoqlJ8ok_rF_mOLsgfno1qXa8Fplpd9Opnb9PZjDafhr9XywfAhGZ61kKIORt8JbArhRfryC8YtNUsZ6jdxDv55q4mRTsUUNlMp7Bq9S7vKN0BymdJqFF6oxacp-t3stuhAeU1-iVGGmAruGDwuVXBs4g_O3-6EBifcENktBHEK9lKxyxyvVjIOAs91LjqWYKs1r9VVwk9S6t2rFt2rnA..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=29748EF81FBA548ACDC89276EE74D8C6CED634BA6AEFE724",
         "score": 51.5,
         "flags": [
           "unverified_heat",
@@ -72,9 +104,9 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "2f3664a17b31",
-        "title": "被甲方反复折磨?《毛选》教你一招“调查研究”,彻底终结无效返工",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf2QHMMeNIfw_F_mOLsgfno1qXa8Fplpd9borZ43u_WppoeAjoUiRvf9LvZYGFK1Iv56EM4vHtM6xUwfMPuXtbnn-xNLGAYAAv5QaqVxoeyWQSSos_r6Z1sw5vDPaVtXL4BDGylym2Y0LH_WdOt_p-MWstg8l7HvLZsON-byd68UC_zF0apeDLxu3GJM67Kw2cAcS3JyihfXh6VKrzu_4XKA..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939A912C06A2CC1F1F7AF4A49504631F19D3C076AEFE052",
+        "event_id": "2147251e6800",
+        "title": "【福利】毛选看不懂?我建议先看看这几本书",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfszoqlJ8ok_rF_mOLsgfno1qXa8Fplpd9AckmQnSq7caSVvy_lz5HUnW93g99qIHw1HLhUNM_8YNVFmFSRhaiBcCHrhTlQML_t8snB8OBBQM-gjehgijKyAkmX39ueR5amfjFsIu4IT81o4XEYDly8ZS5OgTX5s2uvYJ-QSKhR4FVVfsLmqTIzw67K-OHWcyczPtQNlNgo-hFH6In5Ei3zg..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=29748EF81FBA548ACDC89276EE74D8C6CED634BA6AEFE724",
         "score": 51.4,
         "flags": [
           "unverified_heat",
@@ -104,9 +136,9 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "9b6e8e2aa38c",
-        "title": "《毛选》中的5个战略思维,打造你的胜利之路",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf2QHMMeNIfw_F_mOLsgfno1qXa8Fplpd9mvx9XOV4WNZOkbTU73MNPM1lgG8iwfYmhHdXQwY6lSwn5XXBAbkG81gl8I16P5cyMrzwfPVLRdmQeY2Qvy4NCCPkuRtfnz6pwKEkbeQqJP4LuCbD4NZgjsXhUEqUVxRQB-b63ABL8lhGUiI4MzSJ2cVHR62_6V5sLIXqIiDE2E9S6t2rFt2rnA..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939A912C06A2CC1F1F7AF4A49504631F19D3C076AEFE052",
+        "event_id": "2f3664a17b31",
+        "title": "被甲方反复折磨?《毛选》教你一招“调查研究”,彻底终结无效返工",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfszoqlJ8ok_rF_mOLsgfno1qXa8Fplpd9borZ43u_WppoeAjoUiRvf9LvZYGFK1Iv56EM4vHtM6xUwfMPuXtbnn-xNLGAYAAv5QaqVxoeyWQSSos_r6Z1s6VIPSTVtTJOfVg7SoA94Ak6qcof4Us7b6lhblnOqDQJT9NHbgmWjGKlrMGI5irUuIWK1fiXPYpQNWHm-xir_9xr1dbZWbKUeQ..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=29748EF81FBA548ACDC89276EE74D8C6CED634BA6AEFE724",
         "score": 51.4,
         "flags": [
           "unverified_heat",
@@ -129,7 +161,7 @@
         "editorial_status": "needs_manual_source_and_date_review",
         "eligible_for_auto_selection": false,
         "headline_features": [
-          "number"
+          "question"
         ],
         "performance_feedback": {},
         "qualitative_feedback": [],
@@ -138,7 +170,7 @@
       {
         "event_id": "f406209161e1",
         "title": "深度|为什么说毛选是成年人必修课?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf2QHMMeNIfw_F_mOLsgfno1qXa8Fplpd9yVLGyhtUSJ0y4GHkr414R6pHIFGe7N866jvQfofUcizyAFDQ9h-0HB6E-K93lJevH7km6zQdPEtxoOWYi-iojbob4uheje6tWqQ0vAJQvvx8U8h1GcIif_dZtrQf5oGo4xf07eRBbtg8cnRgXLaw6TMz9TgXp-wqpJBhiaTJdfO00NVofL2iDw..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939A912C06A2CC1F1F7AF4A49504631F19D3C076AEFE052",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfszoqlJ8ok_rF_mOLsgfno1qXa8Fplpd9yVLGyhtUSJ0y4GHkr414R6pHIFGe7N866jvQfofUcizyAFDQ9h-0HB6E-K93lJevH7km6zQdPEtxoOWYi-iojaWXbviFmrMjvjdtP7xSIahU4jNZS7bpdjV2Ec6Ko63ik6rwBDCqhmTZ2jiDs1VahwuZBtUwfkcFvgpxjrr03nF535pjGOOjYg..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=29748EF81FBA548ACDC89276EE74D8C6CED634BA6AEFE724",
         "score": 51.4,
         "flags": [
           "unverified_heat",
@@ -169,41 +201,9 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "764012cd980c",
-        "title": "一位毛粉学习毛选的“灵魂七问”",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf2QHMMeNIfw_F_mOLsgfno1qXa8Fplpd9uFIXQbQDGhOQQBa2XTb6e_0d2eH2SvAvpGs_7DihJt1hBXCYVDAweBC4FnTc2A8RLuvYgfc0XXNgNnNH_kdvKHiN8XMGCQHGHZmoO0VyVNcg8Rhs0gxoiX0Uyo3fuoJsHRK4mi_SICBGNWBhsbPJ4K96gZKAEwtsIAR6UgY6aN8HpHkoPMgL3A..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939A912C06A2CC1F1F7AF4A49504631F19D3C076AEFE052",
-        "score": 51.0,
-        "flags": [
-          "unverified_heat",
-          "primary_text_unverified",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "plain"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
         "event_id": "893eae1264e1",
         "title": "花钱买课全是水?峰哥教你用《毛选》“调查研究”法,避开职场知识付费大坑",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf2QHMMeNIfw_F_mOLsgfno1qXa8Fplpd9borZ43u_WppoeAjoUiRvf9LvZYGFK1Iv56EM4vHtM6xUwfMPuXtbnhNQrmzSn8WAiWcpklZEFbDV_DA1-lWA6yN8HJgAv1wL_HUVQbLzSw2KQT9IUbJpqMrDg9w4_7l8edTJ8PWzkuO0P4gxUogq-rhkEfq924y7qzlQH_AhmkrFcvUoAZZH7Q..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939A912C06A2CC1F1F7AF4A49504631F19D3C076AEFE052",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfszoqlJ8ok_rF_mOLsgfno1qXa8Fplpd9borZ43u_WppoeAjoUiRvf9LvZYGFK1Iv56EM4vHtM6xUwfMPuXtbnhNQrmzSn8WAiWcpklZEFbDV_DA1-lWA6w8T5oCotB1cFhtExKHG2iDKDzR-VuC4RByddptJYKctqzz_f6XL4h29vsq7tDd7_werHmr1ZJBAzk1ouYSAPWc5eBgmN3LoYQ..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=29748EF81FBA548ACDC89276EE74D8C6CED634BA6AEFE724",
         "score": 41.5,
         "flags": [
           "unverified_heat",
@@ -238,7 +238,7 @@
       {
         "event_id": "e18ee5d2aa5e",
         "title": "1972年,宋平到临洮调研,当地杀鸡招待,他却大怒:这里刚遭了大旱灾",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf2QHMMeNIfw_F_mOLsgfno1qXa8Fplpd9U-JZHkOZ43vM6Q63huAbXzB3UpODdBWe52TLHrSbsn5ixIDj1UegbniwF7fmKccvTvYaW2ZOPkzcwoyVd7P0naphow08pTtfaUDyK_amwZkv2xVTM-YBQ_r84dT1ncGe44t7htqqUF07gLwX3DN4FlOnYQD0MnaWAnA9UV9856_Yl_Q5RRZQjg..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939A912C06A2CC1F1F7AF4A49504631F19D3C076AEFE052",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfszoqlJ8ok_rF_mOLsgfno1qXa8Fplpd9U-JZHkOZ43vM6Q63huAbXzB3UpODdBWe52TLHrSbsn5ixIDj1UegbniwF7fmKccvTvYaW2ZOPkzcwoyVd7P0nRmmWy8eyxhjNUVpu6TTHIn13cEJTRQYX0168V0kjD90DRFktpomy8ZvALkCjdErvKePPkCnSJrN-aXGw9514Kpj3x9Nw6p-Fg..&type=2&query=%E6%AF%9B%E9%80%89 %E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6 %E5%B7%A5%E4%BD%9C %E6%96%B9%E6%B3%95 %E5%85%AC%E4%BC%97%E5%8F%B7&token=29748EF81FBA548ACDC89276EE74D8C6CED634BA6AEFE724",
         "score": 41.0,
         "flags": [
           "unverified_heat",
@@ -276,7 +276,7 @@
       {
         "event_id": "4e6447896155",
         "title": "AI Agent狂潮:2026年普通人如何用AI智能体提效10倍",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf5LSGnXeoNZ3F_mOLsgfno1qXa8Fplpd9eXJC-NS7grJL5eTlunomMZ7_rHj5gV4CNF-K2ClARrRQNIrkrzExpJoeAgZ5NpxJURjCzzxE7B0ZELmcycbKjeIGyqPtg1iwqPGZKoFOnlg7KgqUD0VTGyok4h1s9IrI_J80Ayypd4aFfFYbQioXZ-_vfKcJWif5M4oGasZ_0CUCYioxHkzTmA..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939C4038E24638FBEB9E005076E0A06BFEE179E6AEFE055",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfgOQBBJjulYvF_mOLsgfno1qXa8Fplpd9eXJC-NS7grJL5eTlunomMZ7_rHj5gV4CNF-K2ClARrRQNIrkrzExpJoeAgZ5NpxJURjCzzxE7B0ZELmcycbKjUz4_1KBtw2Rc-yFZRwXxrK8c1rQLMb6Apo2SUNqI0QX7aBrb6Jx81zYUJiwcmHtDgKBvmMc8CxE7Wa6aWjl9eYYJSSFPgfogQ..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974A9A07CD934E9AEABF2168D43B825AE08E8CF6AEFE728",
         "score": 51.9,
         "flags": [
           "unverified_heat",
@@ -305,72 +305,10 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "28373523c075",
-        "title": "SaaS业数千亿市值蒸发:AI如何变革组织架构?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf5LSGnXeoNZ3F_mOLsgfno1qXa8Fplpd9QwBCtG1UyouGeTIjyZtCoO2oT453uTlmBSRPtBJCgyU3FVeBEB8lNQd-FN6UdGjAP81XybWlrxzujEedeOVpfxlz9JvZYO7HxtL2Xf_oKJl7wg5GIG4mL2zOyZfGQhNeBhD2DlVBAjcQtnydyIH-w8Cbk_OAplAO4HSWwHlvSDbf3q8uRDTfkw..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939C4038E24638FBEB9E005076E0A06BFEE179E6AEFE055",
-        "score": 51.8,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "question"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
         "event_id": "5de7fd3feead",
         "title": "AI Agent :AI 下一个浪潮--产业链深度解析(附全景图&细分龙头)",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf5LSGnXeoNZ3F_mOLsgfno1qXa8Fplpd9HKhLYrvnZgAoC5P6KqWaSZTmn0Xt42NHm3Pjo14FIlPEmdnVkXvBr8T4Exv3i3TpT-luh9nVnZKFMs_xxA7N9iB9bV_x2jlJjD8_8wwJXJGpBqMDjw-1a6mg-nNRAHUmyGrxkcjaxOrBQIYxi36qghk6lhJKbDtImecoqX8rTgECYioxHkzTmA..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939C4038E24638FBEB9E005076E0A06BFEE179E6AEFE055",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfgOQBBJjulYvF_mOLsgfno1qXa8Fplpd9HKhLYrvnZgAoC5P6KqWaSZTmn0Xt42NHm3Pjo14FIlPEmdnVkXvBr8T4Exv3i3TpT-luh9nVnZKFMs_xxA7N9kCytciP72M4Mo-echtRT4aiupiasslCON7_KBv_I00ySJ7xjA2yxf_TPxXc1oCP5K66xkgMZkgCd0X59dxPuDb6zvkPgoArRQ..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974A9A07CD934E9AEABF2168D43B825AE08E8CF6AEFE728",
         "score": 51.6,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "plain"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "5e1910d7a1d3",
-        "title": "深度探讨:无AI Agent,不SaaS!",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf5LSGnXeoNZ3F_mOLsgfno1qXa8Fplpd9jiqQEg4UrSEizzqlnu1WanuVunIbRUKn3O-YRCbMyA_MQ4Jrih_bTy3xReZRxemVmFDd_jHJ-DICWJf5XlaC_7Ev7GyBrdecT3yu3vcGetVQ_6d51FP6w7DQjY1uWSO4Lbdh9G_CwOX5VA0j-ixHlVahqbBapykRHF7c9kRjSDi54z_tGSZTqA..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939C4038E24638FBEB9E005076E0A06BFEE179E6AEFE055",
-        "score": 51.5,
         "flags": [
           "unverified_heat",
           "single_source",
@@ -400,7 +338,7 @@
       {
         "event_id": "23abd9b831dc",
         "title": "2026 一人公司狂飙:AI Agent 正在重构个体创业",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf5LSGnXeoNZ3F_mOLsgfno1qXa8Fplpd9A9KOou8oD79L6zMUcvbpzTial2YFLOuQUIXSvnPkXhtic04dZqQFiQjmTqkwb49VFUoSKAEyQJ0rDLf-79KwWYpFBJ9zr8tCsFj6sfVNbqeMBo6_HOczG8xfyADKvRtW9e8sowi4kPyNDf8GSV6hZf1k4K7IxFHHXGq0lMSpzEqrCDCayYmfpA..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939C4038E24638FBEB9E005076E0A06BFEE179E6AEFE055",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfgOQBBJjulYvF_mOLsgfno1qXa8Fplpd9A9KOou8oD79L6zMUcvbpzTial2YFLOuQUIXSvnPkXhtic04dZqQFiQjmTqkwb49VFUoSKAEyQJ0rDLf-79KwWXPKdmGzBF_kWpCHqlWSfPZ3bwcaStC-vQiGRnsjwEAIK4XoiCM4wdUT7g4Y2WspZsaUopSrbU0pCwhbfR7sI9UYJSSFPgfogQ..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974A9A07CD934E9AEABF2168D43B825AE08E8CF6AEFE728",
         "score": 51.4,
         "flags": [
           "unverified_heat",
@@ -432,7 +370,38 @@
       {
         "event_id": "323c69e7cb7d",
         "title": "一人公司 * AI智能体--全球赚钱案例、中国机遇与实战指南",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf5LSGnXeoNZ3F_mOLsgfno1qXa8Fplpd9GrwR2hj3FxerCB7Js30rNmzMnFXAUALeyrBf4gs9wkJ6EQ2FvaegDVlSqC-TzG2mB5slQIlpgqgJUFn0Jg1zC7FLMgllDY6Wm9M4GMc_YmRmMMzQe68c9WbQ0iY5VNkHHppRy3AtJ2IvPx6-jCeA7ixzU6p5Ewm6iOXV2rTNwPQSYTqT4eyLmA..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939C4038E24638FBEB9E005076E0A06BFEE179E6AEFE055",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfgOQBBJjulYvF_mOLsgfno1qXa8Fplpd9GrwR2hj3FxerCB7Js30rNmzMnFXAUALeyrBf4gs9wkJ6EQ2FvaegDVlSqC-TzG2mB5slQIlpgqgJUFn0Jg1zC9ZDrRnNLifEoD35Gh88yIYRcZqfKJcIly-OF1AazBdYMFNq8EdTUueXE4cFLe40GSIlM9LoqX-I1TMRQ0FjIykYJSSFPgfogQ..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974A9A07CD934E9AEABF2168D43B825AE08E8CF6AEFE728",
+        "score": 51.4,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "needs_manual_source_and_date_review",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "company_or_brand"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "99fb6717bd90",
+        "title": "在AI时代,如何创办自己的“一个人公司”,如果你真的是一个人,来看看详细操作指南吧!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfgOQBBJjulYvF_mOLsgfno1qXa8Fplpd9zvPgb5KJjCssPjY_SCyVMt-rlL_eZTTYFziYEtUBQp8KBd4fzkk-t5x0Lx7HO1MvsIG-IkjJI_yEzlu10Qx60ChPqgqw0XYrQd6-qWAIhd7T8L_NoHEC9An9m1b0JXeZnQC3cftyHW6NsIqkMa9gKC27f2kUd2Igoo0Xjc552Kb0OK9DLfgmPA..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974A9A07CD934E9AEABF2168D43B825AE08E8CF6AEFE728",
         "score": 51.4,
         "flags": [
           "unverified_heat",
@@ -463,7 +432,7 @@
       {
         "event_id": "560c2b2583f0",
         "title": "2026年AI赚钱新范式:一人公司如何月入10万+",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf5LSGnXeoNZ3F_mOLsgfno1qXa8Fplpd9RdHkw20rBtzMl1NgQmnMS1fWFh53J9Cv0SjAs6GUb0WbustkSr26742EnTf8i2LFUbHGcMvKCmMID0lY3d1xl6Tvrl4gbOVbxClum5cjJQ5uMEefFX8Up2eqtZu0luFCGuAJquYPxOKAwIK79qLZydaSEGHr-tJLxEwdRdaDWobvzHZXxeLdyg..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939C4038E24638FBEB9E005076E0A06BFEE179E6AEFE055",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfgOQBBJjulYvF_mOLsgfno1qXa8Fplpd9RdHkw20rBtzMl1NgQmnMS1fWFh53J9Cv0SjAs6GUb0WbustkSr26742EnTf8i2LFUbHGcMvKCmMID0lY3d1xl5MPsRf5FyXKy0NDvbB3D4CPHMWoT2gUKdmpyntpwojV_FAV8ki88UPP4Xso4sZCSKSleVd6JoBz_6dQx1razYJj32-j2KiwUw..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974A9A07CD934E9AEABF2168D43B825AE08E8CF6AEFE728",
         "score": 51.0,
         "flags": [
           "unverified_heat",
@@ -493,14 +462,13 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "62cd8e5ce5ce",
-        "title": "【报告】Agent专题一:2025年中国企业级AIAgent应用实践研究报告(附PDF下载)",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnf5LSGnXeoNZ3F_mOLsgfno1qXa8Fplpd9Uu5mFOEC4MWw9OdmidXJdOJSDvgTPplTCUAGFfRiW-fyJ8v70dnSVevhYTonzkZkCqMORqoav9ryQtXyCJU8IMfUGX3_aCrhm781k7SFzfh1R1lEhcHG2k1I7e7Y08sP7a9hao7BXStIbi6wItA_GYAcMdSlCOqb022uXj6TTNEHpHkoPMgL3A..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939C4038E24638FBEB9E005076E0A06BFEE179E6AEFE055",
-        "score": 41.8,
+        "event_id": "f132de4b453d",
+        "title": "2026年,靠AI＂一人公司＂月入10万的人,都在用什么工具?",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfgOQBBJjulYvF_mOLsgfno1qXa8Fplpd93Hqw6DAXnAC1M0MnbztfGxAK9oiScIlzPCAKx00y83VxDZ4ZZWmb2st2k8k0UZYKk2sJJ2pdHNpEVTjUEP7TTTIMamlGD-HThJc0mQftnj2jhnzwp2t2UX6AADOtNOk9ujJOFTBWzO9z6pkPJRRPL0hEdHUhb0Aq96SC6BWh_uBAe0f8bRARvQ..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974A9A07CD934E9AEABF2168D43B825AE08E8CF6AEFE728",
+        "score": 50.5,
         "flags": [
           "unverified_heat",
           "single_source",
-          "marketing_or_sales_content",
           "original_publication_date_unverified",
           "insufficient_popularity_evidence"
         ],
@@ -510,17 +478,48 @@
         "cluster_size": 1,
         "title_candidates": [],
         "published_at": null,
-        "editorial_flags": [
-          "marketing_or_sales_content"
-        ],
+        "editorial_flags": [],
         "metrics": {
           "views": null,
           "baseline_views": null
         },
-        "editorial_status": "reject_or_research_only",
+        "editorial_status": "needs_manual_source_and_date_review",
         "eligible_for_auto_selection": false,
         "headline_features": [
-          "number"
+          "question",
+          "number",
+          "company_or_brand"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "51baaf22c885",
+        "title": "一个人,一家公司,一支 AI 团队",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfgOQBBJjulYvF_mOLsgfno1qXa8Fplpd9WcKVAKosoZe2rogVds9vk4YrBx_Ad-S5osiVubtiEa4GVoX9FrkmvcXorFsISmouY_rTKPRa7FGjdTqWwYZIeclhwICD-gn8IC3LnaL2VJIn_YMpb7pRvuv__we_KKhs3W9BvYHXee4qsnx4Rz_r06MaZ2CTzc8hf8UzqM8VSIVf_71bqkOtiw..&type=2&query=AI Agent %E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91 SaaS %E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974A9A07CD934E9AEABF2168D43B825AE08E8CF6AEFE728",
+        "score": 50.4,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "needs_manual_source_and_date_review",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "company_or_brand"
         ],
         "performance_feedback": {},
         "qualitative_feedback": [],
@@ -531,7 +530,7 @@
       {
         "event_id": "3d6c36f81df6",
         "title": "2026社保公积金全攻略:缴费、使用、维权一文读懂",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfvyNyblVFPL3F_mOLsgfno1qXa8Fplpd9o5R_M-MNXhMSF_5N5MgFETKFiHf9ml9I0-W-e79l_MJhJvje9YBnSx8XzZnrbGF9jsIJZHDps4WeDuymBGS310TJJvheLo7ZfhKwRmMrI18oZLgvE-sTY5FKqTYTpRAilfaUOqSKWWVOzqsGjs9-RPvGsq6i9rrH9rvDXRr59J5FH6In5Ei3zg..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939DD7AC96327CAF9FFA54343FBB7A9FAE232E16AEFE058",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfUiKxYnI7pa3F_mOLsgfno1qXa8Fplpd9o5R_M-MNXhMSF_5N5MgFETKFiHf9ml9I0-W-e79l_MJhJvje9YBnSx8XzZnrbGF9jsIJZHDps4WeDuymBGS3173WEc9QPauL9rVtZZRRDFjjm8_qLI-Z-FMjs0EG5u2xDyWeboBoSSJQg8VBpeBimO_UTzXaXAbtbSICTRj2OdN5Nu7CnoSqqg..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974C145319479A7E2E4BC59C3F8666AE306F2D06AEFE72B",
         "score": 52.8,
         "flags": [
           "unverified_heat",
@@ -562,7 +561,7 @@
       {
         "event_id": "7b18eec7440f",
         "title": "《社保部分政策解读》",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfvyNyblVFPL3F_mOLsgfno1qXa8Fplpd9FjjJFLBouL4TQvv_jTz7J9eulK0Ibb0BOLra7A4SZZmPfYra4UQCmuAzbRpDmRMQMDU82YgNlLCy-SQIiMaj7dEuU98FElmtlOaG3Zc8eH19XPuJMhw5LpNG0OY0C1VOyFSBXeF6Ax48893OYc30VTfMAx7Hz7PXIjybM9BooBJ5Nu7CnoSqqg..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939DD7AC96327CAF9FFA54343FBB7A9FAE232E16AEFE058",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfUiKxYnI7pa3F_mOLsgfno1qXa8Fplpd9FjjJFLBouL4TQvv_jTz7J9eulK0Ibb0BOLra7A4SZZmPfYra4UQCmuAzbRpDmRMQMDU82YgNlLCy-SQIiMaj7RAjtdqZhhJkPDwLfF55M5bCn3HweJc_jbX06ENnP8Fs8U5_O9CF1M1uSW5FOBPXz6CafkYNOPfoVOikLoz5SY_FcvUoAZZH7Q..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974C145319479A7E2E4BC59C3F8666AE306F2D06AEFE72B",
         "score": 52.2,
         "flags": [
           "unverified_heat",
@@ -591,75 +590,10 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "aa2685994a1f",
-        "title": "领取失业金期间有哪些待遇?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfvyNyblVFPL3F_mOLsgfno1qXa8Fplpd91JNxL7U2Jnxmpj1sZ2x76Y04S9Yuk9gw1nWXGR79nVGo-QYGwTsNWDm0JT4Uh9Uwi6iYNNicWGzuAkpdX_VjENcLzysLxceRu9VjqUwkAMTHDPcBk4V2zY4VmP0EBctAoll5noFdZeDm3Qtak6p9soZzXFzPmT1IEPE5GrfI_9RCy6umSSPEsg..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939DD7AC96327CAF9FFA54343FBB7A9FAE232E16AEFE058",
-        "score": 51.8,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "question"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "386272bb0a9f",
-        "title": "社保不能断缴,否则这些资格全部清零,交满15年后,每个月领多少钱,这些你要知道.",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfvyNyblVFPL3F_mOLsgfno1qXa8Fplpd9W8vJXb-qk2ykR2SMndED7aCiucNIvY0PSYLV8KlVZuBkGYS8Ycynmpm1Sq-qrrVvzJmsurR5pvZqbcTlVZRKk6F-6DERintDmS0dNuptYJT4g2HUk3kcQFpNGVYZo9aiSNMiqimQOiFrMruAXoFJ-rdFS1ttGc9tV4PGn2qXnKHm0CtGSSkZQQ..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939DD7AC96327CAF9FFA54343FBB7A9FAE232E16AEFE058",
-        "score": 46.8,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "policy_weak_action_signal",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [
-          "policy_weak_action_signal"
-        ],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "reject_or_research_only",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "number"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "ff61c5bc5add",
-        "title": "辞职了,社保怎么处理?打了61次社保局电话后,写了此篇",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfvyNyblVFPL3F_mOLsgfno1qXa8Fplpd9BhSZiXs_XdCT9AOkw05GJC2obJmr6VfSl3NKDyzDZODaw8_4lX4k5jWadgZGz4Vp0JqT9fO6ScXGG2REmJPkDgwKOoVMBximzEjwCgxYbMPWV25tOtv3ZDrYWyZZE0bRc88qblYlKT3XN2Ig8oV8prqVim62wj8mqYAQXuCwIU8Cn9lOoZLP2Q..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939DD7AC96327CAF9FFA54343FBB7A9FAE232E16AEFE058",
-        "score": 46.8,
+        "event_id": "395cf5698715",
+        "title": "我不想缴纳社保,自愿放弃缴纳社保,可以吗?官方回复了!社保未交满15年的有救了! ​",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfUiKxYnI7pa3F_mOLsgfno1qXa8Fplpd9bjsOqUhQHXiYFSvAl_CjEVdZ6-t6Dyf2TXulPmQKXtqo2cqEukRw-ZJlA-VbThIA6iBrjsxLc0xgmLmwxSrpItRIE_er0GyX_lBowvCylAixcLwLHBi4WpinRkOrQIYDTC_ig-EL-velyV_knEaiM-S_eLn9xMPbG24wEtO8v7IYJSSFPgfogQ..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974C145319479A7E2E4BC59C3F8666AE306F2D06AEFE72B",
+        "score": 47.0,
         "flags": [
           "unverified_heat",
           "single_source",
@@ -691,9 +625,77 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
+        "event_id": "1bd623e0ec24",
+        "title": "正式实施!深圳社保缴纳有大变化!你到手工资可能会变少!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfUiKxYnI7pa3F_mOLsgfno1qXa8Fplpd93lI_rIKIL7TBYZLYJIaeBLspS-yUgENdWXNhhi9i_l9Sya4XXisTBQrzSGEiA8KQlL6a7iVyjP48hfQO5QW0FKxm9O_aD3F31pu-YI4EAXu90-bINZ3iK36oUyjdEzciRYLq-LpFrKzsz2ploWpFGHZD9oG3e9kdYt0-d3kXMYjwdVqCwyPdzA..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974C145319479A7E2E4BC59C3F8666AE306F2D06AEFE72B",
+        "score": 46.9,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "policy_weak_action_signal",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "policy_weak_action_signal"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "plain"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "386272bb0a9f",
+        "title": "社保不能断缴,否则这些资格全部清零,交满15年后,每个月领多少钱,这些你要知道.",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfUiKxYnI7pa3F_mOLsgfno1qXa8Fplpd9W8vJXb-qk2ykR2SMndED7aCiucNIvY0PSYLV8KlVZuBkGYS8Ycynmpm1Sq-qrrVvzJmsurR5pvZqbcTlVZRKkzcoJnhdJUdNiHuTMSBUmYazvLxud88ykj1XGKBXSF2nJVfEyoUx9BPRNzvKWtAMN_uklSHlEhevAzatTf7oYbb6zvkPgoArRQ..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974C145319479A7E2E4BC59C3F8666AE306F2D06AEFE72B",
+        "score": 46.8,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "policy_weak_action_signal",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "policy_weak_action_signal"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "number"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
         "event_id": "5b8c16ea89bb",
         "title": "油田社保公积金中心:做“有温度”的“贴心人”",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfvyNyblVFPL3F_mOLsgfno1qXa8Fplpd9jFLCw3NhObeu1jUz5EHqKbFinMRAj3FYwJGAjHkIDAtWQx_6xIpsoeZHKPnK17EPsrowkm-9-rAiz2pc7POYErcW8ybDumjeTNLfH0Le9Ir8fihgfvYa5FsBRJX6WPg1qf68jqiatftzZyFt9wHt3H5TtovwwhNfX4KMgwF49wDI3OTRHYU2og..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939DD7AC96327CAF9FFA54343FBB7A9FAE232E16AEFE058",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfUiKxYnI7pa3F_mOLsgfno1qXa8Fplpd9jFLCw3NhObeu1jUz5EHqKbFinMRAj3FYwJGAjHkIDAtWQx_6xIpsoeZHKPnK17EPsrowkm-9-rAiz2pc7POYEhNXiGFumkGqTwS57vIxGGpGz1WwjxsNxaUdpwOqWAmqKUN4avEzc3qfN_O_FVYQffTxz9bGQWNSIIY1kiGR9vk6Ebq8fk9diw..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974C145319479A7E2E4BC59C3F8666AE306F2D06AEFE72B",
         "score": 46.6,
         "flags": [
           "unverified_heat",
@@ -725,44 +727,10 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "1aea4cd0c9f9",
-        "title": "社保中断一个月有什么影响吗?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfvyNyblVFPL3F_mOLsgfno1qXa8Fplpd9Kmse9VTkx7TfnE6zFNwDtOC6LMnnNKdXK8ZJYt5OOAdQwG9_Z6Tl_6FSfg6za2yBRNkx5hG_1tEG9GTs68T09YTx9YO2cLvzvQSDxi4c1pCiiF2wXgdmvjvW_tbW3cYP67GgcyV-bbajkFsf7rI-4O2Wazv5-EK6G4E8afZYxErm0CtGSSkZQQ..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939DD7AC96327CAF9FFA54343FBB7A9FAE232E16AEFE058",
-        "score": 46.2,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "policy_weak_action_signal",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [
-          "policy_weak_action_signal"
-        ],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "reject_or_research_only",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "question"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "8c7fc9147807",
-        "title": "恭喜!9月1日起,工资、失业金等5笔钱都涨了!",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfvyNyblVFPL3F_mOLsgfno1qXa8Fplpd91ZWL_rM1Or94sUoRAaDF-G1HvUrdHuP9d9AsknGTna3wc0R_OJNX_gWRgqAfKYkbnDjIGh92pcEolV48qUql4EaXJQuMuYKQwznZ77I6jikSVBl-5If3RLygs1jdXgl4nAkyhtYausMAQet3yxlLid6UUJH0ynJ8OMYiRVcJljkNGbbB75bUeA..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939DD7AC96327CAF9FFA54343FBB7A9FAE232E16AEFE058",
-        "score": 46.1,
+        "event_id": "5dc4759cba43",
+        "title": "社保断缴1次,这些福利全部清零!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfUiKxYnI7pa3F_mOLsgfno1qXa8Fplpd9y599sh3d0wP9RMInPvmbVPV_TNfleadvq5TkJwO-j1Q8_I4i4m8IcKP70NC5ftZEt9NUwsroJrWOt9Sf70pPN09KBzeMWZJWXES6h4XqkTFxba7nI1J23h0ZheEcMf-gdyLGX0U0765dyXqjDMqEU7pY5apJKy7GyswnqdNp_tcCYioxHkzTmA..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974C145319479A7E2E4BC59C3F8666AE306F2D06AEFE72B",
+        "score": 46.5,
         "flags": [
           "unverified_heat",
           "single_source",
@@ -791,14 +759,82 @@
         "performance_feedback": {},
         "qualitative_feedback": [],
         "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "69e799ec9e9d",
+        "title": "科普:失业保险,你了解多少?",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfUiKxYnI7pa3F_mOLsgfno1qXa8Fplpd9ThzhtKAUmWrVB237_QSwFwtdG4AYIj75x9ZnyW1mr2nMws8-mxExDCeFWn_ELEDe9v1qaEDvQyl0gUqy61uALDPqayrIC1Qmb6okcktl7FKcE--KeSHpq_IPvHtY6kDwQLx1mzM-NnCJ1Iplj6qwmrjNkyTrpCmlR2C-iULvrq8O8fIRwtipOg..&type=2&query=%E7%A4%BE%E4%BF%9D %E5%8C%BB%E4%BF%9D %E5%85%AC%E7%A7%AF%E9%87%91 %E5%A4%B1%E4%B8%9A%E9%87%91 %E5%8A%B3%E5%8A%A8%E8%80%85 %E7%A6%8F%E5%88%A9%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974C145319479A7E2E4BC59C3F8666AE306F2D06AEFE72B",
+        "score": 34.4,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "weak_profile_match",
+          "policy_weak_action_signal",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "weak_profile_match",
+          "policy_weak_action_signal"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "question"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
       }
     ],
     "zizhitongjian": [
       {
-        "event_id": "baadfa64b2f2",
-        "title": "历史兴衰与人性解析‖重读《资治通鉴》卷第八十七 晋纪九",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfR4uwVXm58DLF_mOLsgfno1qXa8Fplpd9uRQFMCudvRraNlq6lrf1JiDsgT2lqU5Bj3YU4bhXF-48sxN3QxWYWJx-kh_Ibq2XiEhcilTLV1pbEkXIZvNj50_jfchZJHtgSl_mGvPpsKxoRG8z5NiIfJ4oX3Jsnzrhwi0wUNWzRiO6keAx3k6xPgmE_djkbnTOcaqoVy1CWcHRtmyIGw2VAg..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939FA8CB2185FB28187DD3B3BB815F982A7F2706AEFE05C",
-        "score": 53.2,
+        "event_id": "1f00285dfdc6",
+        "title": "《资治通鉴》:人在低谷,千万别做这3件事",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbrTG6V5sIvLF_mOLsgfno1qXa8Fplpd9s6Djp6YKvnLpqp9tkOEcdtrsyQtILR6Hqclin9EbI_E92ZNgLdHWhVPgqR_g6_N9XlTuoGeJNnJJPhFUxlohTUu7pej3FxwPEifPqwroXeMSI5ry8LSR_WWgKOjlEmhOI3yGE3A43FEDHu-ara1ThiBzrOikwEat5P0ijIe1T4nRtmyIGw2VAg..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974E4CBC6628F5114124BAE3474947C15CE716F6AEFE72F",
+        "score": 53.1,
+        "flags": [
+          "unverified_heat",
+          "primary_text_unverified",
+          "single_source",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "needs_manual_source_and_date_review",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "number"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "642ca10c1590",
+        "title": "历史的镜鉴,人生的智慧——读《极简资治通鉴》有感",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbrTG6V5sIvLF_mOLsgfno1qXa8Fplpd96EK74Ioscv_6Z8SFbJRQq5VQLBBuHNh1h4odXsimsoq40Dpwq6u4E2C0BOT1v6-UddbMnX2XV8zHBjDOvvy0LEHVhV6WC0NZz8wSLCnclPTBYQSFB8thDqJk-7K3ljFCB6dMQDZqwerEqhHkWl7WgN68yI8l3EYGuFbR-ksxRnVQ_LeJW-Rhtg..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974E4CBC6628F5114124BAE3474947C15CE716F6AEFE72F",
+        "score": 53.1,
         "flags": [
           "unverified_heat",
           "primary_text_unverified",
@@ -827,73 +863,9 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "0a54571787c7",
-        "title": "《资治通鉴》的格调与格局",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfR4uwVXm58DLF_mOLsgfno1qXa8Fplpd9PBP5BX2Q75IQ2Cuzg329vKPjSJJ3udiTo3dReKCRAW2T45iI6YoU2FrKqyac_atNGHYH0kPAqT_9DY3BusCl-Yh7EllzmrWRkzqro40JAF7rHUq35xfRic91sSkFjiAJ1BI4-eorJz-lRKBvlXxeS5jbNBjOeWPAbQP-AhQXt9M89kyxDwoXvg..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939FA8CB2185FB28187DD3B3BB815F982A7F2706AEFE05C",
-        "score": 53.0,
-        "flags": [
-          "unverified_heat",
-          "primary_text_unverified",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "plain"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "885147d28209",
-        "title": "资治通鉴:历史反复验证的人性铁律,功劳最会让人飘,你以为自己站在山顶,其实已经站在悬崖,心一乱就越界,定心守线才能赢得久",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfR4uwVXm58DLF_mOLsgfno1qXa8Fplpd9ry6E7RVNiFxh5XF6DXw3vcsqCdLjbkKfkymFeoQtGqvRiAp2RHxQ0S3RPDWSOYIXJrXJM9ADfxqOZpXFTjYcSR1nx79ebuhS6yLa3v5mM5LoJ-7NoXuPXNfXxxL6K1bDaQtoRfxjg9PKrh54fle32QrHBNwOT68xtniKkLJDlJO00NVofL2iDw..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939FA8CB2185FB28187DD3B3BB815F982A7F2706AEFE05C",
-        "score": 52.8,
-        "flags": [
-          "unverified_heat",
-          "primary_text_unverified",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "plain"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "8c764832f5a1",
-        "title": "《资治通鉴》里的这些故事,看懂两个就够你用一生了",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfR4uwVXm58DLF_mOLsgfno1qXa8Fplpd9XiacIu-FXymC3UkrLrgzuEF91lqQRT6oXqLhKAEb5y0xJS-opYWessJ8UdxOIdg6e0uGEqnVlPSaCvzU9CTp0mBPp2-MYF_Ge61y9anpzEvaqNR44Eewj6fMmkfNJJslGRUXuovODdC3C3GqWgYMTDSb0peoeZzXCEXuRfUvjutj3x9Nw6p-Fg..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939FA8CB2185FB28187DD3B3BB815F982A7F2706AEFE05C",
+        "event_id": "1df95ce9f2c4",
+        "title": "《资治通鉴》:越是会算计、敢翻脸敢掀桌,能豁出去的人,才是真正能干大事的人,能在关键时刻扛起事",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbrTG6V5sIvLF_mOLsgfno1qXa8Fplpd9Y5hESxdZ2y5WkGig1ry_H7vGHTENNVtA5aR_EAu27ZBOItDEJvHs0aLyzC_oIzqrJ1x7j7PslpjmJoh2cnqFECwN70M6pBoShFDLOy5BgXAZvl4wBx099T1_gvrvol3MHUsoK-RXPFz_N2b_HcDZoyPmFKwa-cRbvcBOwnzY1HAYJSSFPgfogQ..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974E4CBC6628F5114124BAE3474947C15CE716F6AEFE72F",
         "score": 52.6,
         "flags": [
           "unverified_heat",
@@ -916,49 +888,17 @@
         "editorial_status": "needs_manual_source_and_date_review",
         "eligible_for_auto_selection": false,
         "headline_features": [
-          "plain"
+          "contrast"
         ],
         "performance_feedback": {},
         "qualitative_feedback": [],
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "46d10677e8a3",
-        "title": "江文:《资治通鉴》的领导伦理观",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfR4uwVXm58DLF_mOLsgfno1qXa8Fplpd9KjxhcXr32YU7kDIxnJYOEMjDvULbNk62cCwHOzpDsP4fyAnUOFBe8BuRyPrHP8UyoxmzxKM1MMvwtht4r-rgm5eMN2yXubA1L9Or7pwgfhFUORanSs5EjHFW64ArjtC4fFNUpk2OpkPGr6s9yHbKliPGKC-uA4xdW2ZlfFbq39Y5eBgmN3LoYQ..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939FA8CB2185FB28187DD3B3BB815F982A7F2706AEFE05C",
-        "score": 52.5,
-        "flags": [
-          "unverified_heat",
-          "primary_text_unverified",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "plain"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "68c7bd98f890",
-        "title": "资治通鉴:皇帝最怕看的历史书,写尽了人性所有的阴暗面",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfR4uwVXm58DLF_mOLsgfno1qXa8Fplpd9yFUi7S6LEMufqqwlSUysqvl46EvYB2U0SBK4-QF8sY9sbJ0YL6jat3wNfSj-jvbKVgXVyRKJi64VKTPW7rhtMerEkuG29u2-rZXQWfP-x2rerEsRYFSFiLZoDCCCv5bj_zOJqfOgTIcWLbR2ZbBG_xXpRSwpDX36FD27kF_fGEHS-e4Yz84xMA..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939FA8CB2185FB28187DD3B3BB815F982A7F2706AEFE05C",
-        "score": 51.8,
+        "event_id": "8c764832f5a1",
+        "title": "《资治通鉴》里的这些故事,看懂两个就够你用一生了",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbrTG6V5sIvLF_mOLsgfno1qXa8Fplpd9XiacIu-FXymC3UkrLrgzuEF91lqQRT6oXqLhKAEb5y0xJS-opYWessJ8UdxOIdg6e0uGEqnVlPSaCvzU9CTp0jEPEf2TDEttGzyOxP0P2B_MI1HU6mE-GGmvdKrNroVCpwDRSiCKETgIY0ErJrN2lymPXP8hBXpJTj71UDAagj_RtmyIGw2VAg..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974E4CBC6628F5114124BAE3474947C15CE716F6AEFE72F",
+        "score": 52.6,
         "flags": [
           "unverified_heat",
           "primary_text_unverified",
@@ -989,7 +929,7 @@
       {
         "event_id": "433c79fc9f52",
         "title": "资治通鉴:人生没有白走的路,每一步都算数",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfR4uwVXm58DLF_mOLsgfno1qXa8Fplpd9qBY4dab92RvCEm7C3TIvBPBsXmJNpWYOEzcgI7ueWYwmXq0-d4Aa-i8gOrSNmLMJpS4wNM0bb5ZoRgZInPiyra3O06488888ZrndbzFDTHFTCFxd_8zjVjAAxyGdfFOsENvsrpWLQVnO1Ba_pzsPUNZq4TfI3gzoxmgTkKiA-_gSYTqT4eyLmA..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939FA8CB2185FB28187DD3B3BB815F982A7F2706AEFE05C",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbrTG6V5sIvLF_mOLsgfno1qXa8Fplpd9qBY4dab92RvCEm7C3TIvBPBsXmJNpWYOEzcgI7ueWYwmXq0-d4Aa-thRxeEMy3JcJRgiY367fh_GEu2eySXhmulsbY6lSqGgWFjlam4e7F88dEZfPWvNsMiLOZRvEYHMmQa1d2pPdr0XAC9xdzM2TeGa1nu-Sp6dq47Jcrly5XPYl_Q5RRZQjg..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974E4CBC6628F5114124BAE3474947C15CE716F6AEFE72F",
         "score": 51.5,
         "flags": [
           "unverified_heat",
@@ -1021,7 +961,7 @@
       {
         "event_id": "b9cc965f3e58",
         "title": "冯唐《讲资治通鉴》全部课程视频合集",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfR4uwVXm58DLF_mOLsgfno1qXa8Fplpd9JuWI560lTQdjFb4WQAUK68byg2PcSykVtNkOahSdBXk_TVYh0imKqMwSHxX-md9XtaAyPPSjJ7OW5zZVGbdylk2ebilbKQMlM8Ys2gzdBEb1Y7mnbBh7b5vMgYkWoPMsMCmUyDqof32_PVCOS4cBRxF692zagtSzE9mh1sF2JGerCDCayYmfpA..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2939FA8CB2185FB28187DD3B3BB815F982A7F2706AEFE05C",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbrTG6V5sIvLF_mOLsgfno1qXa8Fplpd9JuWI560lTQdjFb4WQAUK68byg2PcSykVtNkOahSdBXk_TVYh0imKqMwSHxX-md9XtaAyPPSjJ7OW5zZVGbdyli5fDW-Q30mYvXLWsIly2dt4oHerHAER-XDOT3_GBvYZTeIUaistUKVxdkf2vkDtPVWYwnS6-hRgWECX2dbPRt1Ae0f8bRARvQ..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974E4CBC6628F5114124BAE3474947C15CE716F6AEFE72F",
         "score": 43.2,
         "flags": [
           "unverified_heat",
@@ -1054,13 +994,145 @@
         "performance_feedback": {},
         "qualitative_feedback": [],
         "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "c7c155f4967c",
+        "title": "黄仁宇是历史学界的琼瑶?",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbrTG6V5sIvLF_mOLsgfno1qXa8Fplpd9YGKteReGu3WA3T66aXdhUEmQtT6RZ2yWRbQXAQ2Wz_TQqc5oEwU4QKnoY_P3L3qLl_IViNLunhf3F8Y1ycoi7A7cxF3wHazZKSXckUWKyT17nzQmVSI-R71-waNNrKMqGNKOD8mmVm1cYQJHnoAZcqH-t4BqD6ntHpp-NP_4xL5flztgI7RZ1g..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974E4CBC6628F5114124BAE3474947C15CE716F6AEFE72F",
+        "score": 40.8,
+        "flags": [
+          "unverified_heat",
+          "primary_text_unverified",
+          "single_source",
+          "weak_profile_match",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "weak_profile_match"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "question"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "a5cdc1d02cd7",
+        "title": "扎心的人性真相,这里早就说透了",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbrTG6V5sIvLF_mOLsgfno1qXa8Fplpd9nlajv_kth3GXybAEixUU7Q9R8zrx5DrY2_eMtTyw3ElR8vSspEEAS5iJF6QFgwvUzklGn09h8ng75c5xToOgaI-N3fnWppM6YKuxo8uh0awtZAaSsyD7fHnbU_fM2IBJQaC6zQbVEqpMiJfjW2CdSVevB3CCIGtwVMzR4HbSIJB5Nu7CnoSqqg..&type=2&query=%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4 %E5%8E%86%E5%8F%B2 %E4%BA%BA%E6%80%A7 %E7%AE%A1%E7%90%86 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974E4CBC6628F5114124BAE3474947C15CE716F6AEFE72F",
+        "score": 40.0,
+        "flags": [
+          "unverified_heat",
+          "primary_text_unverified",
+          "single_source",
+          "weak_profile_match",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "weak_profile_match"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "plain"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
       }
     ],
     "parenting": [
       {
-        "event_id": "61b8aeb82ae3",
-        "title": "买房补贴、分娩报销、育儿补贴可补报,广西生育友好政策梳理",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbqMOg8OTR_XF_mOLsgfno1qXa8Fplpd9CCff5PD5fhC9jLL5QOYjAKXzHSgUEE05dHqaOa20JEQZClRD6qH5c5V0AoSqMyP2V944nreaVrXTw1BcTc1gCiAx1Ld8noxJUqq2aoVVFf1hyi38zam8ddqr6N30FdCzNEmsLEnmQ-JejAgNpMmyFdfCCCEy_odZ4HTZZptnJWASYTqT4eyLmA..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A0FB1C46E29C5F4F3AB4F4D9192A4F508158B6AEFE05F",
+        "event_id": "6bc1f2080734",
+        "title": "拟取消相关生育制约,落实三孩生育补助!银川市优化生育政策正在征求意见!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfup3fhvGXzcjF_mOLsgfno1qXa8Fplpd9jndgzV1GWo5J3e4lHFBLGSuKwkpN16KIwKDeP2SGV97MsLSe7p1ShSFZSc6dFFkplOHLIQVcIbwwqfWkwhrH9VkowAlYPPGv6-WpN5foVYIo2SJzG3cL33qe1P4CEXwS-NCHDNMY5poLQqvA561M5aTf5LnS3EfPsXypRvRK-IpOJBjQH7pCxQ..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974FE721BBE538ECACC9572E85FA6F9CA091E986AEFE733",
+        "score": 53.0,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "needs_manual_source_and_date_review",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "plain"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "63b02aa1ead1",
+        "title": "重磅!三孩生育政策来了!国家卫健委:可先备案后补办!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfup3fhvGXzcjF_mOLsgfno1qXa8Fplpd9PXGX6Cvvsi3DiEUR-l2GxQyqfdNpVwQOyb_GihJdpuNV9JwC9noa2U07VDbEN2AH6HgnKv07BDPMbd8_ud8kSWvlVj92XyencsH970WksdJoZc8nyT85MINjpq-AcvIWMwkyJzSa95A2Sj7pn_cH0GJsc2qFFL293VR0bpyEYLpCy6umSSPEsg..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974FE721BBE538ECACC9572E85FA6F9CA091E986AEFE733",
+        "score": 52.8,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "needs_manual_source_and_date_review",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "plain"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "f999d14817be",
+        "title": "生育津贴/育儿补助/社保补贴……绍兴诸暨优化生育政策来啦!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfup3fhvGXzcjF_mOLsgfno1qXa8Fplpd9hxrvR-AoF3g__SlG4mfbA_v-Osm7v2pXQ42k6Uz146PlgSuCAdd0KeiQNbl0BcsRYxqOU_fSN8AVjoUUUd8hoQWZcnRoIRs21JWLS1-JU7F7j3-MRWpTKIvLziU5C0Bkyc2U5wvHc2ZYhK0wQi8qTXg96GCKOxEVva_mnKcZs49FkDr8IT4KYw..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974FE721BBE538ECACC9572E85FA6F9CA091E986AEFE733",
         "score": 51.9,
         "flags": [
           "unverified_heat",
@@ -1089,10 +1161,10 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "2aa2b4428ce5",
-        "title": "宁夏鼓励生三孩,可享超长产假和超万元育儿补贴金!",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbqMOg8OTR_XF_mOLsgfno1qXa8Fplpd9TwC7LzsYb13to1Y0vDWDvWC-VC04w4bwJirb8QF5zz6UCBA0DdrBWDbTWGFKZohyTHkPSBLNHJ55VQkNbKHy09fkq_dWCxS3_3Gqu1IOUk5d8QhCGPWuv5Ho_4Oh3lSXIo6RaLqkm6ga1SeB1GQYYtcbOLyRnnd3yqKSKnEsfaaq3X8EKMKOIA..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A0FB1C46E29C5F4F3AB4F4D9192A4F508158B6AEFE05F",
-        "score": 51.8,
+        "event_id": "0cf5da14a85a",
+        "title": "公共管理/MPA复试热点 | 育儿补贴政策",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfup3fhvGXzcjF_mOLsgfno1qXa8Fplpd9JABNcZzcqer6nPJp4FyhqzvmUXkQEi6CS7Jz9kRCVIYF1AU00Lq-Ag6WN4shTIuiQGWn9Zmaesn_WygyzSbLcitKm9sTdsOO3qT0ljtLCfNJOcknV6KIjY7U--XVcwrrg945PtPXnM2jNbX_JElmc4ka3zF6GSEAPsAX4e-RuGh5LU3lqtPw9g..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974FE721BBE538ECACC9572E85FA6F9CA091E986AEFE733",
+        "score": 51.5,
         "flags": [
           "unverified_heat",
           "single_source",
@@ -1120,102 +1192,9 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "852bf67991d9",
-        "title": "三孩每月5000元是谣言!2026育儿补贴官方标准来了,这些钱真能领",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbqMOg8OTR_XF_mOLsgfno1qXa8Fplpd99H8wG-uMYtoXNz_tshYdOzeSutvhdOi_5P8oz0u1MDG4O90mD5WyZj7kxeo8ovTxKJoHLnWpR6x4HD-VQQgLm1pQYMKQIU1cELWY6vVH_wbyE_4PQx07FssO7Pek15F1VGjjdeSYTw-jXVySVn8p5-0ILuK0USI2S370RBmT5MvzAjcIGepUqA..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A0FB1C46E29C5F4F3AB4F4D9192A4F508158B6AEFE05F",
-        "score": 51.8,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "number"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "5d8a03c0292a",
-        "title": "沈阳:三孩家庭每月发放500元育儿补贴 实施3项住房支持政策",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbqMOg8OTR_XF_mOLsgfno1qXa8Fplpd9pmHabF3raR0otokjR__xR08J3IAbUgxaooXF2L3ie0RdReaas5Q19zEx67ghB6Sj4EXRlOuiWMGxMJ8SvWxt3hbcoEa2QBdMYZV41v-sDf_xR4akxcRXI8bglRB0hkoQc9QGMZAtz5yyqYLY2K5c1fJ_9M_ZCpl2Sj5EUMlFMEk89kyxDwoXvg..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A0FB1C46E29C5F4F3AB4F4D9192A4F508158B6AEFE05F",
-        "score": 51.6,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "number"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "41dac2b09994",
-        "title": "郑州生育新政公布:三孩补贴1.5万,增加育儿假→",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbqMOg8OTR_XF_mOLsgfno1qXa8Fplpd99RGJay1SUlXoGHoGORflz2-F3DnjhOAdtIGKnZCG4eQmdY8WkRQ-7C_WAoq1HjknClvbY8bOQlw3p_pT071TyPKUDygALAGNxd8sNplYPxZpN6QzARYzHq14uriDm_of3BZS9LzwS_vbeU8vpVjcodm0UTR9WksS8MHlGrfOO6t6VKrzu_4XKA..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A0FB1C46E29C5F4F3AB4F4D9192A4F508158B6AEFE05F",
-        "score": 51.5,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "number"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
         "event_id": "0936a3838b97",
         "title": "别只知道育儿补贴!这些幼儿福利你领了吗?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbqMOg8OTR_XF_mOLsgfno1qXa8Fplpd9wg1N24QlpGza-azgxNQx5CmE4DnxcC0E0XzTzxU95hAEnjuNM--MoMfvHe2ys76wV6fouEMioVh45tPEfHRPa6teJWvjcXAZ3O1X9lR7foAcF3MswVlLspKcAqGIXTK-QAoumgCDXYu9-H6k499LfHJyd5GxcCruQIvsj_e5L58O8fIRwtipOg..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A0FB1C46E29C5F4F3AB4F4D9192A4F508158B6AEFE05F",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfup3fhvGXzcjF_mOLsgfno1qXa8Fplpd9wg1N24QlpGza-azgxNQx5CmE4DnxcC0E0XzTzxU95hAEnjuNM--MoMfvHe2ys76wV6fouEMioVh45tPEfHRPa6tMq16SIXlc3uWwkzJ4vhsAdXK-zfeyu6hDwax_UOs1do10MFEJFrYKe_4KLZpNi_K5JlQdgjgu1BHNA-erVq-jotuuiAmOIg..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974FE721BBE538ECACC9572E85FA6F9CA091E986AEFE733",
         "score": 51.0,
         "flags": [
           "unverified_heat",
@@ -1244,9 +1223,9 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "4120cc8941e6",
-        "title": "云南二孩三孩生育补贴来了",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbqMOg8OTR_XF_mOLsgfno1qXa8Fplpd9nZtrLS_ftBZrT4GNCdc_nwmsTq652C3333s_UazMQfso6U54KtIO6nua7AT1eD5q0ZTlVVuSkkA4e5oXMPOWgXKp8CGePlcMgnaYpYwnKKquUgSVAEhxs81DjZTaR7oA1dt4FZVdRMXEi4K0LaYvaKyCMj4vIszX8lkUcmoEMuhQ_LeJW-Rhtg..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A0FB1C46E29C5F4F3AB4F4D9192A4F508158B6AEFE05F",
+        "event_id": "38138eb8ae2a",
+        "title": "面试热点丨育儿补贴政策",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfup3fhvGXzcjF_mOLsgfno1qXa8Fplpd9h1th7hh3C2pg4DuD4DhaMx89BUJuJttaM8iFJZf3YGaxSerLMvAYxrKoyg5fvU1XAwY62X5m9iqZENRKW42BBQWNU8KCgut9KoX5pyYSnAiHSLEa9iTKmuE0eC9e1imw8RQpe__bs3oMsq6IMpTn32ztAh9FyjV1Bz2HReRr5xG00NVofL2iDw..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974FE721BBE538ECACC9572E85FA6F9CA091E986AEFE733",
         "score": 51.0,
         "flags": [
           "unverified_heat",
@@ -1275,10 +1254,41 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "6b3ac49041c8",
-        "title": "海宁出台家庭育儿支持政策!报销、补贴怎么算?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfbqMOg8OTR_XF_mOLsgfno1qXa8Fplpd9CizKKoMLAzcbINq0Lm_3Sezg81-7PTaoddQiiyNxR1LrRgjaLZmUCnAZMdyZDZAY3jlPMdC7QZqE2cpg3GVpokvQ8kKBZrnvsSAiEb5TmWgMBEPdPvsgaCu1xVjC3f9tU1wcYBGxN9obONZ6RlVWPZ5ByLLHhgq4jPkvlz9kj32jotuuiAmOIg..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A0FB1C46E29C5F4F3AB4F4D9192A4F508158B6AEFE05F",
-        "score": 38.5,
+        "event_id": "f0e2fb7ce70b",
+        "title": "山东一地官宣:二孩三孩家庭,每月补贴600元至3周岁!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfup3fhvGXzcjF_mOLsgfno1qXa8Fplpd95Jv6W2JfEOr_rHwRhS0Ij-LBJL7liGbWtSYO1rxquJtH6OMtOxc5crHKqp_tpfNv0sLoqj5o3eWz5aIX9So3aksVcGKVn6OszgRR81LnS2WJImgHZn8AmGgF4LWtgKh3nHyxAz6xuwBzmDVI4VHRJMgRmQtXfs8apMLmWhuCk655Nu7CnoSqqg..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974FE721BBE538ECACC9572E85FA6F9CA091E986AEFE733",
+        "score": 51.0,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "needs_manual_source_and_date_review",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "number"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "cd3ec47c90c1",
+        "title": "华安:事关生育!补贴措施公布!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfup3fhvGXzcjF_mOLsgfno1qXa8Fplpd9XFzj0velVpHPUwVz2o3n1kt3NpCQ8QkWICidFMB0Nno2CIkFum-aixrRwRhCSxXfEPvBCa2GAesnnMu4PGLyFq-yc-TDR5FIJKm-26DXXk3Ko-aM5lSrNflfSULjxZ-0Qcz8rns5UmL0-H_VBGt_4FptXe4vnixRXnNZYdOvCKjf3q8uRDTfkw..&type=2&query=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4 %E7%94%9F%E8%82%B2%E6%B4%A5%E8%B4%B4 %E5%84%BF%E7%AB%A5%E5%8C%BB%E4%BF%9D %E6%89%98%E8%82%B2 %E5%AE%B6%E5%BA%AD%E6%94%BF%E7%AD%96 %E5%85%AC%E4%BC%97%E5%8F%B7&token=2974FE721BBE538ECACC9572E85FA6F9CA091E986AEFE733",
+        "score": 39.9,
         "flags": [
           "unverified_heat",
           "single_source",
@@ -1302,7 +1312,7 @@
         "editorial_status": "reject_or_research_only",
         "eligible_for_auto_selection": false,
         "headline_features": [
-          "question"
+          "plain"
         ],
         "performance_feedback": {},
         "qualitative_feedback": [],
@@ -1311,41 +1321,9 @@
     ],
     "jingyun": [
       {
-        "event_id": "6cd38d600e4b",
-        "title": "30多岁的职场女性,怎么才能过得从容?| Morgan McKinley Sharing",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfSxF-_Yf4LQDF_mOLsgfno1qXa8Fplpd9V7ent0BieE4t4usDQ04O-_LMj6NLq5u7Bu8pOGbQJjsw_QaNRPCO2Msfej4uJrbAXA78E3mtubS165oQqpOGmSPToOwHk6Lb5N__-nN29SI57zoJwK9TcS1nUDgpGYgKvGvjJtT6f0BOiw4jnOdqc3F5WqPRnzuIWsyEbibbbKCTJmCU1UgHwQ..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A25BB5AF0B65A6B6D34D1D3F93D526B612FFA6AEFE062",
-        "score": 52.6,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "question",
-          "number"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
         "event_id": "c29c765c99af",
         "title": "写公众号,关注公众号后,发现发文的大多数是35+中年女性, why?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfSxF-_Yf4LQDF_mOLsgfno1qXa8Fplpd9XZpuyqvLxbhDzv8huG85kyX_5BTRVUGcjDi1RHZKx-A_ZIMlj1yVFIxJr3OFeyPFAB4hUJF7cHV3FM2cCEYqLxPd4ThAplCxt3Ttx8ByF4zrHmLPdrkNnP7U0xW4lPTonnh9ABJ698ES0nz814G3lsNbzTc7RAfgzXSVqvuEo2mFW6cwuUnkdA..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A25BB5AF0B65A6B6D34D1D3F93D526B612FFA6AEFE062",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfQ6yHpK71DyvF_mOLsgfno1qXa8Fplpd9XZpuyqvLxbhDzv8huG85kyX_5BTRVUGcjDi1RHZKx-A_ZIMlj1yVFIxJr3OFeyPFAB4hUJF7cHV3FM2cCEYqL5nAa8StcyxpcGtA-Kr4j8vEdHQnwsQaJZNEueUs2CcuidYn771IkfBY-3MM3k8QKcHRLfbgdwg6wPvrUgB3JEI6Ebq8fk9diw..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=2975266846E30FD19593CA2EB57F086D95793FD46AEFE738",
         "score": 52.5,
         "flags": [
           "unverified_heat",
@@ -1375,10 +1353,10 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "f69a583d4218",
-        "title": "30多岁的职场女性,怎么才能过得从容?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfSxF-_Yf4LQDF_mOLsgfno1qXa8Fplpd9_nhYzafEbCEP5fXaJ_NaleWZgOeetfMawpe-lnhY-62GYipV4cQheNPuFOzE58xqsj7PqS-xUy6UowwBj87kLympzeQojgVyVkHTYdBPg04NwlARmP_rjZg8M5oRwLlukLvzdfNYaUNgGWoBeKytGXdqRPYkEfXoUW0effBgTHKrCDCayYmfpA..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A25BB5AF0B65A6B6D34D1D3F93D526B612FFA6AEFE062",
-        "score": 52.0,
+        "event_id": "531bfa46d374",
+        "title": "男人和女人谁更需要婚姻?",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfQ6yHpK71DyvF_mOLsgfno1qXa8Fplpd9YZ0ugAR0mVDqmj2Sjhox1I2ul962v1Y6K7wPOWQT5qTrz8nC8jvtZpsUFwy2hvRuVEYa8Llegx5x0JhjgWXKH0OI1egFGbrBZrKCHM9IGP2g4k0YNQmiK8H95Lk0PhbqHIuA7HLHNYrelp494DeK9siDE2BgzZ488RvkNrvR7oANGbbB75bUeA..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=2975266846E30FD19593CA2EB57F086D95793FD46AEFE738",
+        "score": 52.4,
         "flags": [
           "unverified_heat",
           "single_source",
@@ -1399,49 +1377,16 @@
         "editorial_status": "needs_manual_source_and_date_review",
         "eligible_for_auto_selection": false,
         "headline_features": [
-          "question",
-          "number"
+          "question"
         ],
         "performance_feedback": {},
         "qualitative_feedback": [],
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "66ceb6e72b11",
-        "title": "70、80后的中年职场危机!?为何不想结婚~",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfSxF-_Yf4LQDF_mOLsgfno1qXa8Fplpd9UW46dXTkmtsE_Gd5FL-JMmeFnbxLBU1l59zW3KCMAfwhx7PrI99K-syn4nbsUsJ9s9b44bJZNZs4v1fOhSoQeK-j1WNadtVyqnb4OV8PAxxv1OSsWtbmHJmfyxoAaaWmT5ftWU-ZzDa7AkEND5PNEqfUT4TSfFueJIVuDxgW28i00NVofL2iDw..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A25BB5AF0B65A6B6D34D1D3F93D526B612FFA6AEFE062",
-        "score": 51.5,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "needs_manual_source_and_date_review",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "question",
-          "number"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "820d7f9097ef",
-        "title": "消失在朋友圈的中年女人,崩溃仅自己可见",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfSxF-_Yf4LQDF_mOLsgfno1qXa8Fplpd9p5s2HtADWCX-XdtD4wWchyyBmi4xIkM-gxD_i-OaFEcDpKxNHenvnMcQZd_Fvq5oRYAl7zOb0P-LMaBnC7KXE2slVMWji_u7UDdWz39gRdvNe97aEarMiupTAltLou-Z7Z2USkwrSI3WIzpw--vLLs-Bux5SYT-HeznSkMaNeCxhWLv6O878UA..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A25BB5AF0B65A6B6D34D1D3F93D526B612FFA6AEFE062",
+        "event_id": "05008d691eaa",
+        "title": "中年女性公众号:写对情绪,就赢了一半",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfQ6yHpK71DyvF_mOLsgfno1qXa8Fplpd9rFu9JAC2v1b_jNW-hz3WN1By4z8AyIbgJga2iAjFhe653caqMv4LibVAhRo5lU9cKQaoN-sDbMtyX8eK247v-3SoDn4p9cNmZE1430jMbyNe2Q7-sxguIiT5BL-rY3l8EwNAtVrf4TKtjQqv4HMUzvuh_PU5gclUR3r1wcbeDPZe0WC6Sbi7DA..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=2975266846E30FD19593CA2EB57F086D95793FD46AEFE738",
         "score": 51.5,
         "flags": [
           "unverified_heat",
@@ -1470,9 +1415,41 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
+        "event_id": "66ceb6e72b11",
+        "title": "70、80后的中年职场危机!?为何不想结婚~",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfQ6yHpK71DyvF_mOLsgfno1qXa8Fplpd9UW46dXTkmtsE_Gd5FL-JMmeFnbxLBU1l59zW3KCMAfwhx7PrI99K-syn4nbsUsJ9s9b44bJZNZs4v1fOhSoQeJVvxVO9MQ38sv9KEzbf2lQq-F1DMk_0-39Pspqs4FptyXofr2ADFQVxPW_APb2qZL3qKtISMZ91fJz3ecrYAzA6Ebq8fk9diw..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=2975266846E30FD19593CA2EB57F086D95793FD46AEFE738",
+        "score": 51.5,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "needs_manual_source_and_date_review",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "question",
+          "number"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
         "event_id": "53ae1469e533",
         "title": "中年女人婚姻困境:走进职场不像女人,做回女人靠不住男人",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfSxF-_Yf4LQDF_mOLsgfno1qXa8Fplpd9aRPimAhHZmc7-qESkFGtmcET2XlvpQmKIyZTa1fvTFlFQR65mlSj1LJ9ZElRzQNql_5-8Fo8Yq4-hWNiYHR6kWsgXk-c4Q2z34UnwALEqjDNVsp4rSiq6AEmSO4qviPonZNWOIpadgDP6d3-_U0Zn32RDubrgO8eFR00QpQafVJAe0f8bRARvQ..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A25BB5AF0B65A6B6D34D1D3F93D526B612FFA6AEFE062",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfQ6yHpK71DyvF_mOLsgfno1qXa8Fplpd9aRPimAhHZmc7-qESkFGtmcET2XlvpQmKIyZTa1fvTFlFQR65mlSj1LJ9ZElRzQNql_5-8Fo8Yq4-hWNiYHR6kbwO-31WW_Jl89zvlsudhDj-iw9tpZQD6zIL8zlZLdJSHaVqHbAJYsSBlEC-_mZOamTN0l8BtcHw_WR75F-gGNdOJBjQH7pCxQ..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=2975266846E30FD19593CA2EB57F086D95793FD46AEFE738",
         "score": 51.1,
         "flags": [
           "unverified_heat",
@@ -1501,10 +1478,10 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "91794892b5c2",
-        "title": "中年女人真的不好骗了",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfSxF-_Yf4LQDF_mOLsgfno1qXa8Fplpd9p5s2HtADWCX-XdtD4wWchyyBmi4xIkM-gxD_i-OaFEcDpKxNHenvnHTo9jHe9XspXxxvP--inknd4ZrHbANTeElWkWge3_JOsQ4tqk6SVGM8KvpOsWizka4mKiDUQ9AnrakDjqEAFTrTDON9nQ_gRFBcebXYLQD1dFynF_U-ZZYCYioxHkzTmA..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A25BB5AF0B65A6B6D34D1D3F93D526B612FFA6AEFE062",
-        "score": 50.0,
+        "event_id": "82fbb97c0cdd",
+        "title": "中年女性,最舒服的婚姻状态是:婚内独活",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfQ6yHpK71DyvF_mOLsgfno1qXa8Fplpd9GW_HAVeTBj0y3qML-syLf4Zsbd_YhB5vvVoki6OWlnO_rqSR_KqGIVGxKa3P8Nma0dO6jTgl-PMCY0TGW9UHogXhAaii9dxloDxa4iK5JmjiXRTPV0MAKPyDx9_RD6020W_2sBhq8ub-dIqrlKO8gECV7g43t26mWOq4sYBYsO_drgozfSg6bw..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=2975266846E30FD19593CA2EB57F086D95793FD46AEFE738",
+        "score": 50.6,
         "flags": [
           "unverified_heat",
           "single_source",
@@ -1534,7 +1511,7 @@
       {
         "event_id": "42411dc2e4f1",
         "title": "那个35岁离婚又失业的中年女人,并没有跳楼",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfSxF-_Yf4LQDF_mOLsgfno1qXa8Fplpd929jktZKiagu6vYjuIlbcPQmoUd5BCMout_-duBWVge3Svy7K1bGA2BoG97U1Jr0bcRsRplkaY_Hf1T2chVWxAxYJxU2jYtXi0sbSPvfqyyac95dKKggLln-9tRL2FB8cB1Cb12gmsUvbtZyvxtKxv7TziRPbPQkNsnvyDO9FGWNQ_LeJW-Rhtg..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A25BB5AF0B65A6B6D34D1D3F93D526B612FFA6AEFE062",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfQ6yHpK71DyvF_mOLsgfno1qXa8Fplpd929jktZKiagu6vYjuIlbcPQmoUd5BCMout_-duBWVge3Svy7K1bGA2BoG97U1Jr0bcRsRplkaY_Hf1T2chVWxA3kketzty6DfZOJLKo2CEwTO4M7WqEmeI2b8TGtbdK6KmX913SblqhQGQFJKFK2MMMgtm4O0in4XAxT_mwXcb9he0WC6Sbi7DA..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=2975266846E30FD19593CA2EB57F086D95793FD46AEFE738",
         "score": 42.2,
         "flags": [
           "unverified_heat",
@@ -1564,13 +1541,49 @@
         "performance_feedback": {},
         "qualitative_feedback": [],
         "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "b4c2bb5f0a25",
+        "title": "实录:一个中年女人那万箭穿心的婚外情.",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfQ6yHpK71DyvF_mOLsgfno1qXa8Fplpd9BIojjWwTINGoihZ6_OmlsBC4ijmG6_7rRPY1NTkWQD8dXOlLrmnIZAzi3DOlwI_nnJlfPo6e9IUD8pRy7Lts7pyBeL9PE86VBhh82T9oBeuITuZ23gjEqz_CGt_32tnRPfe_ek1K2NADNBvheMim5wat_mkLVFINkJu_UsH9qbxhWLv6O878UA..&type=2&query=%E5%A5%B3%E6%80%A7 %E4%B8%AD%E5%B9%B4 %E5%A9%9A%E5%A7%BB %E8%81%8C%E5%9C%BA %E5%85%AC%E4%BC%97%E5%8F%B7&token=2975266846E30FD19593CA2EB57F086D95793FD46AEFE738",
+        "score": 34.0,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "sensational_or_sensitive_framing",
+          "relationship_clickbait_requires_manual_review",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "sensational_or_sensitive_framing",
+          "relationship_clickbait_requires_manual_review"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "plain"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
       }
     ],
     "fashion": [
       {
         "event_id": "c82b7db50fa2",
         "title": "穿得漂亮,才能练得更漂亮,女明星健身穿搭盘点",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfYpPgBE8X7eDF_mOLsgfno1qXa8Fplpd9n4VK6u3pGQaOiS2paSD-Fco0_YxxtrzKJjmzcHrFmY2pji_cqQZjXxtOHNN5NYjbDtwV29UvnnS_WWbVJ5jUfxjIS4Rwuvvm1IiKrFmteoTZju3xbmRdn1zyeEOKN8dyPLh-DZ-egH2ItKQALgDI8pLVzQ9hJaat4k_tuFQ8hb9S6t2rFt2rnA..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A3831B71255B78781D7323E3E2960885A63106AEFE064",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfMqOZehM5AwDF_mOLsgfno1qXa8Fplpd9n4VK6u3pGQaOiS2paSD-Fco0_YxxtrzKJjmzcHrFmY2pji_cqQZjXxtOHNN5NYjbDtwV29UvnnS_WWbVJ5jUf9feuH0JR9fNc7txF2Py_PutlFnj0YQwhJr18j7_tiIGWktEklkNUdaiVECL-QNi_TyOdieWurQkOs8n4dHq_Nff3q8uRDTfkw..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=29753F12F452BF6125207A9D07393FD5262785E96AEFE73C",
         "score": 45.2,
         "flags": [
           "unverified_heat",
@@ -1602,10 +1615,78 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "c4bd7fe731d9",
-        "title": "淘宝卫衣、碎花裙,明星春季穿搭好好看!",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfYpPgBE8X7eDF_mOLsgfno1qXa8Fplpd9v0NUaMIyDgSf8CtOi0n6hc6O2cb_SLp9L-C6RGRpnUAqgsQ4Q5UCTKQW1lmKsvPzQshT167vVuB7nqypCeqabmnHk_sXeCcBG4V25-QJnsyFQavij5Jc14u4VW5mJjY8Uk3sUPv_ajdtrEoHWnJpzLXkpoAchLzrKOPidObMGlBFH6In5Ei3zg..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A3831B71255B78781D7323E3E2960885A63106AEFE064",
-        "score": 45.1,
+        "event_id": "21e97ff797c9",
+        "title": "杨幂穿超季唐嫣坐C位,Maria FENDI回归首秀,蒋勤勤陈妍希宋雨琦闪耀,米兰女装周把关注度拉满了!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfMqOZehM5AwDF_mOLsgfno1qXa8Fplpd9pUxvGuwK5GnjPzUfWUrFO3cPjiUSy-oOzQrm1EV1HheDAYOA8a2E0I0hzTOUq1vsnwUR5mIxxl6dU0KDsEny9jjfIK3QKS2XxQXDMBSfMj3eSkRJS_IeoS5QUWBfuy1m4PuPfRVlw77kP76MaXwfvHc9__rUSUCI8JuJ3oCyBqfdrgozfSg6bw..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=29753F12F452BF6125207A9D07393FD5262785E96AEFE73C",
+        "score": 45.0,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "fashion_weak_outfit_context",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "fashion_weak_outfit_context"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "plain"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "8827f2d1a207",
+        "title": "《杨幂泰国机场生图疯传:当明星收起光环,我们到底在追什么?》",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfMqOZehM5AwDF_mOLsgfno1qXa8Fplpd93rFoXDTB_xyv3cjsamJ-nso2cDDf5Tlb8pPTXzZftXKKN_pK9ZVokkh3l9epzGLQTCCabrBuWVC_OXONgv05xnEPBkzWH4bXZwB5WIceQfzV3O2TPPUrRjxX9gx1w_cu-eQuLU027awmM2UaEU35nnitFii4yulGcDAiX5KgoA6fxjh3za6jWA..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=29753F12F452BF6125207A9D07393FD5262785E96AEFE73C",
+        "score": 44.8,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "fashion_weak_outfit_context",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "fashion_weak_outfit_context"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "question"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
+        "event_id": "58e46a81dbf4",
+        "title": "跟着女星学穿搭,买买买!不后悔!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6ft3wfAVofsP5Peu-UiA4DBy4m3Jw4RdTl6CpxuUH90SVgrFeYQugDplZKPUx4oHwwxNIPUuzgp5DcSVBZMJNFJFhkdULt37KoiN8gRXopIHKm7DEXMIjtEvCvyPm_CW6yALt3TzqfQAwChInVWN4GAj0io5nW-cWnD-rZNjxx87Sh1_MNmZjS-QPCgvF_oU8f-w2meEOVxr4e26RwNAyQ67O2LQSbxqo5TCePsDWzgstc-In-t-9k30EycasQnurHIXUY1rNeBk.&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=29753F12F452BF6125207A9D07393FD5262785E96AEFE73C",
+        "score": 44.5,
         "flags": [
           "unverified_heat",
           "single_source",
@@ -1638,7 +1719,7 @@
       {
         "event_id": "a45a7ac050f5",
         "title": "运动服这样穿,Kendall的高级杨幂的性感都能有!",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfYpPgBE8X7eDF_mOLsgfno1qXa8Fplpd98XCywvt_U_6TMyKpoFRvdwVG0G9QvmBS3q7yMhkqIssXn9zzkcMYDo4fvBIj_Zjdo46t3BTZYM2Z4q7WWo3MEt9S3xxgPpZCmTrVteeqbS-4QyhZibNEiCMgDslrNSdArfnca5p8RdKrT2xudcCgcX1qwQOIJC1QPblmezyovVejotuuiAmOIg..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A3831B71255B78781D7323E3E2960885A63106AEFE064",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfMqOZehM5AwDF_mOLsgfno1qXa8Fplpd98XCywvt_U_6TMyKpoFRvdwVG0G9QvmBS3q7yMhkqIssXn9zzkcMYDo4fvBIj_Zjdo46t3BTZYM2Z4q7WWo3MEnF3rVqGIr5H836nA06o-84fx1TZHzFh_lzNWEVxpGTT-6mCnx1Rjzvui9f6Op9_gRc16NKgUZfCN9w4c1zkuirYl_Q5RRZQjg..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=29753F12F452BF6125207A9D07393FD5262785E96AEFE73C",
         "score": 44.5,
         "flags": [
           "unverified_heat",
@@ -1670,14 +1751,14 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
-        "event_id": "36ad7825b37d",
-        "title": "三伏天JISOO娜扎纷纷穿起毛衣,女明星为何中暑也要穿?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfYpPgBE8X7eDF_mOLsgfno1qXa8Fplpd9f7rlmfDNmLHr9Cdja6utR-A_sABJgilEJ91f2iwRNLa-0_lh1jwNfnTNMUNIvKY2MYhyGSoj6VSULAMOqnUl0v5svCUAlCWB_6yL5yIy_LlrDdfiy5N01CsvS6q5Ghh8jD9PEM2uQqe6bQ5eKfiT_UDGZJQNGxghmWf676waKtbzAjcIGepUqA..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A3831B71255B78781D7323E3E2960885A63106AEFE064",
-        "score": 44.0,
+        "event_id": "d9d9fda90a1b",
+        "title": "明星的街拍穿搭,我们普通人照搬也能好看!",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfMqOZehM5AwDF_mOLsgfno1qXa8Fplpd9iE84Fho-X3QBHzFGYM0-XryKhR16R6j2nYtNz37mgbqf3uY6qcQHqY4Ocs-rm3-es3Umro8skfGIldaacUfs9OMp11DTX7KbVZZ7tmnSkE3aW6FhYuuILmjJgnwj8R0xz_x-s6uD0aMyS0KOyr2j09hkCauK_41T4JUtLEOapAXy08OLTBhW0A..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=29753F12F452BF6125207A9D07393FD5262785E96AEFE73C",
+        "score": 43.8,
         "flags": [
           "unverified_heat",
           "single_source",
-          "fashion_weak_outfit_context",
+          "fashion_no_named_priority_celebrity",
           "original_publication_date_unverified",
           "insufficient_popularity_evidence"
         ],
@@ -1688,41 +1769,7 @@
         "title_candidates": [],
         "published_at": null,
         "editorial_flags": [
-          "fashion_weak_outfit_context"
-        ],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "reject_or_research_only",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "question"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "82e255a8ce15",
-        "title": "BLACKPINK | JISOO金智秀:夏日解暑果汁系少女",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfYpPgBE8X7eDF_mOLsgfno1qXa8Fplpd9ia7w_iLSeMWEZ_cwyOF7-Ql7p10AraVU3QqOpRjodyCaix5dBzGV53wTPz48dI472D0n7lW6_RiSyo8IisB6jT4sLBXSLnts6rCTwPAJyOyHUryCiQs9rAXwHzWMewpmJuWtRvHrd7e2k-9mTvRt2tO-wQtPRLlFioPIL5YBLvVFH6In5Ei3zg..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A3831B71255B78781D7323E3E2960885A63106AEFE064",
-        "score": 44.0,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "fashion_weak_outfit_context",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [
-          "fashion_weak_outfit_context"
+          "fashion_no_named_priority_celebrity"
         ],
         "metrics": {
           "views": null,
@@ -1738,9 +1785,43 @@
         "performance_feedback_status": "insufficient_samples"
       },
       {
+        "event_id": "1996486cd099",
+        "title": "39岁杨幂身材大变,穿低胸裙加厚垫弥补,手拿开瞬间炸锅了",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfMqOZehM5AwDF_mOLsgfno1qXa8Fplpd9CG_MUPSv4c6JNCEIq8GS_HpwHqughHjuSPRWDwKWAD8WXH06dFqIrW1bvItQj7uoGfmyNZBw3yxXBy27E9ghIlcjx7-NjKXk_LHZhA8l1wj5-yOYthuhrv73mrmroqDS0RbWxnDhIHVD2kX-R4FAIDJAn2XWZc_35pJQIQ8K69n1AfaFW2DefQ..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=29753F12F452BF6125207A9D07393FD5262785E96AEFE73C",
+        "score": 43.5,
+        "flags": [
+          "unverified_heat",
+          "single_source",
+          "sensational_or_sensitive_framing",
+          "original_publication_date_unverified",
+          "insufficient_popularity_evidence"
+        ],
+        "independent_sources": [
+          "sogou_wechat_index"
+        ],
+        "cluster_size": 1,
+        "title_candidates": [],
+        "published_at": null,
+        "editorial_flags": [
+          "sensational_or_sensitive_framing"
+        ],
+        "metrics": {
+          "views": null,
+          "baseline_views": null
+        },
+        "editorial_status": "reject_or_research_only",
+        "eligible_for_auto_selection": false,
+        "headline_features": [
+          "number"
+        ],
+        "performance_feedback": {},
+        "qualitative_feedback": [],
+        "performance_feedback_status": "insufficient_samples"
+      },
+      {
         "event_id": "163fb62be3f4",
         "title": "全球最时髦的95后女明星们!最近都在背什么包?",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfYpPgBE8X7eDF_mOLsgfno1qXa8Fplpd9wVlT4GsEvqQhPRP0gBYkCJiggMFDzzdI10Q5NcaoaZiLJBeCkuHnrrxXWDO02chORSI2UjKVqqNd-w0gOFW-PGgXr0NjXZ1e4hRTJFCOo2crenSma9rL21nMzbqN4EkZavr8NuT3s1KxZf2JKYb-FHyzb_SajLxqDM7WQLnprSdj3x9Nw6p-Fg..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A3831B71255B78781D7323E3E2960885A63106AEFE064",
+        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfMqOZehM5AwDF_mOLsgfno1qXa8Fplpd9wVlT4GsEvqQhPRP0gBYkCJiggMFDzzdI10Q5NcaoaZiLJBeCkuHnrrxXWDO02chORSI2UjKVqqNd-w0gOFW-PMQPRQMqnrMP7bMhXMOkuSjbkCn5jXAjf0WmDSpogF_fdgO1g9Hde2AhgGOx10iwx_VcCgk4cNSvVu8VRZdtQtxAe0f8bRARvQ..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=29753F12F452BF6125207A9D07393FD5262785E96AEFE73C",
         "score": 33.0,
         "flags": [
           "unverified_heat",
@@ -1769,44 +1850,6 @@
         "headline_features": [
           "question",
           "number"
-        ],
-        "performance_feedback": {},
-        "qualitative_feedback": [],
-        "performance_feedback_status": "insufficient_samples"
-      },
-      {
-        "event_id": "c9a1f115528c",
-        "title": "秋天买什么毛衣,可以参考韩国女星",
-        "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3GU9-78ySnfYpPgBE8X7eDF_mOLsgfno1qXa8Fplpd9pT1Fn0Xx2cFrS5PnkgmQAgPsYIcsgmsuS1k3iUyJDGeJfUW7tBFUGBQlJ7UMStGzXVK0pRt2qlBzcJtSZK3tMTocoQi0AJJXgk0Cos40lFBjZhVEBjq8qKCKvT8vbPQRtPnRLLW_MGhTdhdCnLPv3ySCKTB2d_bZBdQqA30nr4Jr1dbZWbKUeQ..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=293A3831B71255B78781D7323E3E2960885A63106AEFE064",
-        "score": 27.9,
-        "flags": [
-          "unverified_heat",
-          "single_source",
-          "weak_profile_match",
-          "fashion_no_named_priority_celebrity",
-          "fashion_weak_outfit_context",
-          "original_publication_date_unverified",
-          "insufficient_popularity_evidence"
-        ],
-        "independent_sources": [
-          "sogou_wechat_index"
-        ],
-        "cluster_size": 1,
-        "title_candidates": [],
-        "published_at": null,
-        "editorial_flags": [
-          "weak_profile_match",
-          "fashion_no_named_priority_celebrity",
-          "fashion_weak_outfit_context"
-        ],
-        "metrics": {
-          "views": null,
-          "baseline_views": null
-        },
-        "editorial_status": "reject_or_research_only",
-        "eligible_for_auto_selection": false,
-        "headline_features": [
-          "plain"
         ],
         "performance_feedback": {},
         "qualitative_feedback": [],

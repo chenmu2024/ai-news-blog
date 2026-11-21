@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-20",
-  "generated_at": "2026-11-20T12:43:45.474625+08:00",
+  "date": "2026-11-21",
+  "generated_at": "2026-11-21T11:08:47.447189+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
@@ -45,9 +45,10 @@
         },
         {
           "url": "https://openai.com/news/",
-          "status": "http_error",
-          "http_status": 403,
-          "error": "HTTP Error 403: Forbidden",
+          "status": "reachable",
+          "http_status": 200,
+          "final_url": "https://openai.com/news/",
+          "content_type": "text/html",
           "role": "primary"
         },
         {

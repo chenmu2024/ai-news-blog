@@ -1,15 +1,14 @@
 {
   "date": "2026-11-22",
-  "generated_at": "2026-11-22T11:19:32.853698+08:00",
+  "generated_at": "2026-11-22T11:53:10.202746+08:00",
   "profiles": {
     "qiezhi": {
       "sources": [
         {
           "url": "https://www.dswxyjy.org.cn/",
-          "status": "reachable",
-          "http_status": 200,
-          "final_url": "https://www.dswxyjy.org.cn/",
-          "content_type": "text/html",
+          "status": "unreachable",
+          "http_status": null,
+          "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
           "role": "primary"
         },
         {
@@ -29,7 +28,7 @@
           "role": "fallback"
         }
       ],
-      "primary_reachable": true,
+      "primary_reachable": false,
       "fallback_reachable": true,
       "note": "Reachability only; content/date/licence/fact checks remain mandatory."
     },

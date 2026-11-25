@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T12:51:44.376812+08:00",
+  "generated_at": "2026-11-25T13:04:09.176483+08:00",
   "local_date": "2026-11-25",
   "monetary_cost": "no paid API",
   "auto_publish": false,
@@ -91,9 +91,9 @@
           "count": 5
         },
         "bing_news_fallback": {
-          "status": "empty",
+          "status": "error",
           "count": 0,
-          "note": "Non-WeChat news clues only; facts require primary verification."
+          "message": "not well-formed (invalid token): line 1, column 41"
         },
         "general_news_fallback": {
           "status": "ok",
@@ -113,18 +113,6 @@
           "platform": "google_news_general_non_wechat",
           "published_at": null,
           "indexed_at": "Fri, 11 Sep 2026 07:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "市委举行树立和践行正确政绩观学习教育读书班开班式 - 腾讯新闻",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBJUjhDZG1GUUJDQlJySHVXQnFYSGd6WnlTVW80Ukl5clE3TWpTRElpSEtsbnAzQlZkVVlZYzgxdWllZFhtZXRvVFpzZ05JRmFpenR5cUdB?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Wed, 22 Apr 2026 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -173,6 +161,18 @@
           "platform": "google_news_general_non_wechat",
           "published_at": null,
           "indexed_at": "Fri, 02 Jun 2023 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "海关总署党委学习贯彻习近平新时代中国特色社会主义思想主题教育读书班开班（图） - 中华人民共和国海关总署",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNWnVUTFdjQ1NkSnZiTXZfaC1PeHFnMXVUOUtQSEFoSFlWWWZrTTBkaWlFYkNWa0N2czZRcnFEVE5ZLTFfVTFWQXl2OEZ2SUZFS0pmcG5rdnptamtPZVp6R3J6TVh1R19DSnFmY29rVzBLUllRbzRURkJ2LWtFeTJieXZrVQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Tue, 25 Apr 2023 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -287,9 +287,9 @@
           "count": 5
         },
         "bing_news_fallback": {
-          "status": "empty",
+          "status": "error",
           "count": 0,
-          "note": "Non-WeChat news clues only; facts require primary verification."
+          "message": "not well-formed (invalid token): line 1, column 41"
         },
         "general_news_fallback": {
           "status": "ok",
@@ -500,11 +500,11 @@
       "articles": [],
       "fallback_news_signals": [
         {
-          "title": "2026深圳灵活就业社保+公积金全指南｜基数、比例、每月交多少钱 - Sohu",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mcllScGVqR3J3cGg1WHBTQmVDdTRMX3I5SllQbEVmbDUwVkNIUlY1OXpVM285LVJSRG1ud3Z0a1lQUjl3R3pSa0hoWTlIR2d3TFJv?oc=5",
+          "title": "12月1日起，河南医保支付范围部分项目有调整！ - news.qq.com",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xTE8wSXQyTXBvdXhQMXVoYjBPRWJndmxtMmc3MGZzTzZXcjI1eVBYUkIwSk1KTDRCdTlDbVQ5SGRfSThNOVQ2YzU1UXg4eklHai1jRTVB?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Mon, 17 Aug 2026 07:00:00 GMT",
+          "indexed_at": "Sat, 21 Nov 2026 13:03:36 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -512,11 +512,11 @@
           "reference_only": true
         },
         {
-          "title": "【民生连线】5·15政务公开日政策红利直达百姓家！沈阳10部门权威解读民生热点-在线访谈 - 沈阳市人民政府",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAzWUNlVjdiUi13YkIxUHl1dk9ZN0NDblcwaWhCMndQbzI1S0FocmQzMXB1S29pVkdnUG56ZW9VZTNrOWZPd0JabE5YV1M4b3pwckdEZ09BaXVOM0F4LTgycklIY2Ixd2p5SGdsSWljYmx6SWd5Qnc?oc=5",
+          "title": "2026深圳灵活就业社保+公积金全指南｜基数、比例、每月交多少钱 - Sohu",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mcllScGVqR3J3cGg1WHBTQmVDdTRMX3I5SllQbEVmbDUwVkNIUlY1OXpVM285LVJSRG1ud3Z0a1lQUjl3R3pSa0hoWTlIR2d3TFJv?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Thu, 15 May 2025 07:00:00 GMT",
+          "indexed_at": "Mon, 17 Aug 2026 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -536,11 +536,11 @@
           "reference_only": true
         },
         {
-          "title": "时刻帮丨社保断了有什么影响？怎么补缴？ - 湖南红网",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE13bGpnQXR0OGRJUEUxVkpzbzVmX1J4MG9GMElaRkZ2VDdUSnd5TUpReXBnMDdfRnZNS3ZyamVueTRWQ0diUWRpMzJiV1pNT1JwSzc1TzJxb2J4RTVtSTRleXBR?oc=5",
+          "title": "养老政策知多少丨广州市民最关心这些养老保险问题 - 广州市人民政府",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQRzZOT0lCRUpyeEVMaXBLYk9hQ3JkbFV4bzhqX2RMcFNRb0RrMGIxeUFyOGJfbEdDRW9xQ3VkMUZROHU4ZldpSUNwNWgwd3R3dnVfX3BYZEdyWFNySHFSbWxTbUV6SVl3UjVxSkNiZUQ?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Wed, 18 Sep 2024 07:00:00 GMT",
+          "indexed_at": "Fri, 06 Feb 2026 08:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -548,11 +548,11 @@
           "reference_only": true
         },
         {
-          "title": "2026年社保缴费新基数 - 新浪财经",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE03Qy1pODhmYWhFS3IwaVZCM3JDbEVGQ1NGeEtLVi1OREUtUVU1WU9hUy1HZGZhdEhaMVhaZjlwbGFDX09kVFBNS0R6ckM2eE1lejVhOGFfYTh4UnBGcGticmxzdmFaQzZzb1hUQ1BRamplMURuQXc?oc=5",
+          "title": "【民生连线】5·15政务公开日政策红利直达百姓家！沈阳10部门权威解读民生热点-在线访谈 - 沈阳市人民政府",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAzWUNlVjdiUi13YkIxUHl1dk9ZN0NDblcwaWhCMndQbzI1S0FocmQzMXB1S29pVkdnUG56ZW9VZTNrOWZPd0JabE5YV1M4b3pwckdEZ09BaXVOM0F4LTgycklIY2Ixd2p5SGdsSWljYmx6SWd5Qnc?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Tue, 13 Jan 2026 08:00:00 GMT",
+          "indexed_at": "Thu, 15 May 2025 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -684,35 +684,11 @@
       "articles": [],
       "fallback_news_signals": [
         {
-          "title": "AI赋能沉浸式读史，少儿通鉴APP践行2025素养教育新范式 - 中华网",
-          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFA2eGdPQnlaclotT0ZMVUdXdmFaWkpuLU90NURONy1YbXBzQW1RZVhFcW1hTHFoMzUtM3BOT0tMWXhuNGpudWw0X0stT0ZuTXF4NVhXYV9RQUNRWV8zNnc?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Tue, 18 Nov 2025 08:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
           "title": "普通人如何读完300万字的《资治通鉴》？_快讯 - 中国出版传媒商报",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9pNE5nT19QN21mV0JJQ0E0OFhsc3hMaEYzUkFNdkFqNUF6YTRNNGIxMkpQS3RUY1ktQzRuMWRFb2ZmM005MmpNLTFRSFF4Rkc0clAyV0d2eGZUYWQt?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
           "indexed_at": "Fri, 23 Oct 2026 07:46:35 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "30岁后，建议多读读《资治通鉴》 - 三联生活周刊",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE50ejlyUnE4cE10MVUyVVpVMHhLa3RIMFJZZk9OTnN1ZDU4eXRoMk5FQjk4LXh5Z2cyQlhGYzVPV3k2X3dxYUtDTGZzcFFZeGVnd3YwZy02Sk9NSU5SSjJQc0M1dGhxYWlMODRfWExn?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Thu, 18 Dec 2025 08:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -732,11 +708,11 @@
           "reference_only": true
         },
         {
-          "title": "25秒售空2万口，一条视频捧红“传家锅” - 36氪",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFByaHZDZUU2UHlUVmhkaWFRVml6RlZiLUN0WGx2VXJvdVVGWmdxSWk2Q3lGb3NpcUdNbGI2R2M5X1ZjYklGRjdXdkpOaXFRQQ?oc=5",
+          "title": "宋徽宗“南幸”与姚平仲劫寨 - ThePaper.cn",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE42WnVwSTZ1ZWh2Tk1fOWsxdGRtQm1fU0U1YWQ3cEp1aHZJOHVtSnR2am1GNDA5MUtYTFFKVUVIZXVxY3diNjh6YWJwd29NN3lGTUh1ZjFqaHVmTFBhMkZ0Vg?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Mon, 08 Dec 2025 08:00:00 GMT",
+          "indexed_at": "Sat, 27 Jun 2026 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -744,11 +720,35 @@
           "reference_only": true
         },
         {
-          "title": "为什么成功人士都爱读历史？清华大学历史系教授张国刚读书日谈读书 - 新浪财经_金融信息服务商",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5fMmhBNUV6czJoYkFCbDROMjlBV2xCZFZTMEZzX0dXLU1JaWR2MkJmZm5obUlzZEFLN3Fhd1I2SWRESXd0U2VVM2VNeEZjdUE0TFJpbHU0N2tlaHdEWEdmb0JHWnBKTHhUTWY5dHhXUm1CS1gwRF9qRg?oc=5",
+          "title": "AI赋能沉浸式读史，少儿通鉴APP践行2025素养教育新范式 - 中华网",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFA2eGdPQnlaclotT0ZMVUdXdmFaWkpuLU90NURONy1YbXBzQW1RZVhFcW1hTHFoMzUtM3BOT0tMWXhuNGpudWw0X0stT0ZuTXF4NVhXYV9RQUNRWV8zNnc?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Sun, 23 Apr 2023 07:00:00 GMT",
+          "indexed_at": "Tue, 18 Nov 2025 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "30岁后，建议多读读《资治通鉴》 - 三联生活周刊",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE50ejlyUnE4cE10MVUyVVpVMHhLa3RIMFJZZk9OTnN1ZDU4eXRoMk5FQjk4LXh5Z2cyQlhGYzVPV3k2X3dxYUtDTGZzcFFZeGVnd3YwZy02Sk9NSU5SSjJQc0M1dGhxYWlMODRfWExn?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Thu, 18 Dec 2025 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "25秒售空2万口，一条视频捧红“传家锅” - 36氪",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFByaHZDZUU2UHlUVmhkaWFRVml6RlZiLUN0WGx2VXJvdVVGWmdxSWk2Q3lGb3NpcUdNbGI2R2M5X1ZjYklGRjdXdkpOaXFRQQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 08 Dec 2025 08:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -843,13 +843,13 @@
           ]
         },
         "google_news_index": {
-          "status": "error",
+          "status": "empty",
           "count": 0,
           "attempts": [
             {
               "query": "育儿补贴 生育津贴 儿童医保 托育 家庭政策 公众号",
-              "status": "error",
-              "message": "HTTP Error 429: Too Many Requests"
+              "status": "ok",
+              "count": 0
             },
             {
               "query": "孕产 生育保险 多子女购房补贴 申请 户籍 官方 公众号",
@@ -863,9 +863,9 @@
           "count": 5
         },
         "bing_news_fallback": {
-          "status": "empty",
+          "status": "error",
           "count": 0,
-          "note": "Non-WeChat news clues only; facts require primary verification."
+          "message": "not well-formed (invalid token): line 1, column 41"
         },
         "general_news_fallback": {
           "status": "ok",
@@ -1076,71 +1076,71 @@
       "articles": [],
       "fallback_news_signals": [
         {
+          "title": "法治护航职场权益 依法守护幸福家庭 浔阳区司法局走进九江石化开展女职工普法宣讲 - 九江新闻网",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9Ob2VMS3k0dk9rRXpxcENSdGsxR0pTazJpcW5IV3dpQ05oNzdCT25kSGxjcFVqRjR6Z0VibXVfMGhjbElvSk5hUEdCNzkzSnAtUmZVdndvNlVlZk41azRZ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 23 Nov 2026 02:57:53 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "马景涛前妻吴佳尼分享婚姻感悟，直言不后悔结婚，最后悔的是放弃工作 - 新浪网",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbGUtM0JvSEoza2FXS1B6ZFNvQkIyTFh6SlQzV2N1Y1ZhM2p5cXdaTzB6RGVGbzZxZEVtRVZzOWJoWjNtSVFJWTU5Q0EwMUVpcC1ZVDRsQ3YzeTRmVVdFb19icV91QmZfSFpuZERPejJVakY1eTF6aHFDWW9JMk5DY0lNdl9JR1VKWkpmQVY2a3hWTGZsLWNRZEhwQzNBcVBVQ29Mdw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Thu, 26 Mar 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "职场人婚育生活状态洞察：54.46%家庭开支为男女双方AA，近四成男性愿当全职爸爸 - 21财经",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNN3gxRTcydnp2cE1qT0JwdG52d2U4eGttOEpqVXpNZTgyTWpTUEZuRkxRbzZGTzVWdC1ja3BxNFZEbnZndWVEdUF0R3J4RlcyOUw5X2EzTTFyemM5RFRlRjJMTTlXLWgzNTFNQXRIbXB0VU93M2RmY25SdXRCaTVXbjBwQmNINTRJc0VGcDlB?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 07 Jan 2022 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "《美人余》杀青：直击女性真实困境 共鸣当代“破局”心声 - 潮新闻客户端",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ScjFWcnJJWS1ucG1qd2hwcFdGWGVROXdtMlF2U2tTTkNTQ0xhYmhLcVEzeVc0UDVieFBhMWdnQ3JSbXhNRWE4bXZJTHcySjlxejBwYWNLVnJiQWNJRDc3UDEyUi1iVUI2WjV5UmdyeElYRG8?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sun, 11 Jan 2026 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "“男士优先”：中国女性面临的职场歧视和婚姻困局 - 纽约时报中文网",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE13cmtoX0NBZ1VzOTZtVXMzTWxfa20yZm1YQVhGbHA3MzhZZmtKbHlPZFJ5QTlaOUZoRHRjUmUtM2NMM1MwenR1dFEySkRYOFZRUzUxUUo5WkRrNnNCUkV1NmNQdGhIV3hydGFrMWxZcTZQdjQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Wed, 17 Jul 2019 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
           "title": "生育成本、职场歧视、婚姻恐惧：为何越来越多中国女性不想要孩子 - BBC",
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBPMHNnakJYSjFCTzg1dDkyUEhrMVZmb1hLMFhSamlLaFZidzYtdkNXX0pHNnN1QW1CcWNGSERwUVdxUVExaUw3T2kwWVdnNlBSRnVvc01YUl9GeUIxZzhZeGRudXpGUdIBa0FVX3lxTE51RVo4QjJZclI5SlFHa29nOVRYSlM1OEJ3NlZlTnl4bGhoNWNnaG5CaTZqNDFaWjRIemNSQzgwQWlFYjQzZzlpSTJ4V2xrdGdXcFh0SWZoc1BzdFdLM25qWnhVNmhMTXRYdlRv?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
           "indexed_at": "Mon, 27 Feb 2023 08:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "会里会外丨张晓兰：如果遭遇就业性别歧视，妇联会怎么帮你？ - 中国之声",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB4TVdkQ2V2eG4zSHpSWXpoUFVmODF2bV9ObzRqMG5Ldy1sRl9zNzU4SVhvZFllRFhQdDA1cFpOYmsyTzg5QTF5MlJiRUNwYUNTTHcweVprcFpyNFp1R19VdTdPeDRESlVzMUtoNA?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Wed, 08 Mar 2023 08:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "习近平为中国女性设立的目标：结婚生子、照顾家庭 - 纽约时报中文网",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE96ZDBtUjBYNW5abGg0UzBnRDI1UW1LWDdoQnZYSVlZbEdDNXV3ck9kUHY4bVBDMDUwMklYX2d2Sm9wOThldl9mUHNPVWJKX1ZfUE4tVkNHRDNpd2F6aVBYVTFabWQ0WVJxellXY2I4TlN1b2h4U1RFRg?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Fri, 03 Nov 2023 07:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "韩国：非婚生子女家庭越来越多 - DW.com",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOTHVJYXM3czZxeGdNandnREZKQlFWVE51TFd0RmNfU25KNG1MR29MYnQ5RUxQNndvNk9lbnp2ejNMRTFOX2FLVFI3RzJ5RkhhVC1lWWxvd21hUlFlZkpaSVRZWEpuWnV2MUZpVGFSSW96NDIzSTBTQ3BRd0dPMW9lb0RPbHpoTjJhVmR0VkMzd2xvVTdISC1zNEJWTERQVGk4UE1GcXB3MmljWEJCb2pRU0dvZkRGOUFtcHF1Y1gxYllYUzMwVkNUTWs1cC1WVVFQZ0RLRkw3VllMMExuODlTWkZOTFnSAeQBQVVfeXFMT3FZWFdqcjlkM0pqZnhyOVMtZGFfZG1EV18yd2FPSlRkaU1CUEZEcW5sVUt4bHN1LXVmczRKaDh3VG1PSGEyNjhBZE1GdGhnU3ZhV3R6bmhpUUtielF4YnJxeFFaQm9mUDl3X0ZKU3NxclFEd2RzSjJLWDRwdEZLaXdTb1pjLUxLTndDTURPSkZ2cXhSYkNXWmI2OENUc0t4WHlqaXVFbTFvaDRybjhldHVLdzR0Q1M3Smh6dVN1WVZ5UU8xVHpTUzZYbE9Nck95UGNEU20zTGNiUHBXLUV2VU5zVmtu?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Sun, 22 Sep 2024 07:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "中国离婚率最高的城市排名、离婚年龄排名、离婚原因排名，职业也有排名？ - 中国金融网",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Rczh1UDRKaHFWemoxV0ZlNGNIUUROMGFsZEFGM2Ixa0lIRzk1dEs5b2J1SGszMjNON1F4eUt3SVpBWlg2ZHVES1V4WVBJbjRweU1TZHowU1pEU2M?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Sat, 22 Aug 2026 07:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "婚姻：女性受教育程度提高，“下嫁”会成为新常态？ - BBC",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1ad0YxcGtRYXFvanY4WXNlTzZUT3RPSWZyVDY3VkxDbWwwN3V0N0JrSS12ZWRCdEtPWlpEZkpOVG1naWFpZWpJRkxrb3gyTWxCNG14NjZqX0tTQ1RNRFF5ZWN5Y2FIUdIBa0FVX3lxTE1sMjNLeVJyN0tyZU1aLXZfLURCaE9Jc1lOSWtoM1hSTDBaSXhLTHhiUjBvQk1hTG9PN0dKVk1UMGVjRE9SN1ZaOW5jM2w4TkhIbXZkS1VyVW1qWHJET1RKTlNRWkhrWk11TE5V?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Tue, 20 May 2025 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -1235,7 +1235,7 @@
           ]
         },
         "google_news_index": {
-          "status": "error",
+          "status": "empty",
           "count": 0,
           "attempts": [
             {
@@ -1245,8 +1245,8 @@
             },
             {
               "query": "女明星 Jisoo Jennie 宋慧乔 刘亦菲 机场 穿搭 公众号",
-              "status": "error",
-              "message": "HTTP Error 429: Too Many Requests"
+              "status": "ok",
+              "count": 0
             }
           ]
         },
@@ -1267,11 +1267,6 @@
         "public_rankings": {
           "status": "no_profile_match",
           "count": 0
-        },
-        "stale_reference": {
-          "status": "historical_reference_only",
-          "count": 5,
-          "date": "2026-11-24"
         }
       },
       "articles": [],
@@ -1309,75 +1304,7 @@
           "usage": "illustrative inspiration only; never infer actual celebrity outfit"
         }
       ],
-      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative.",
-      "prior_reference_date": "2026-11-24",
-      "prior_references": [
-        {
-          "title": "穿得漂亮,才能练得更漂亮,女明星健身穿搭盘点",
-          "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7bmsFp351he7kbWFhVfadhFpVq6Ggp2zVqXa8Fplpd9btMGuUuTtCJyVVcHMAcqIF73-6_7A1OSA0_RM9iUDa6XeQa7l8JhjVH0UKNWmNFRmjFsoKQ0JMVKCLA50OtwGc4WJQUMg5OiWXrJu6HCdkb0EwECeT9vLmBva08SRDcXbJdOoLzmH-eZXGGv3xflezwpfch1DTOyN_F1lH7Xl2Z6VKrzu_4XKA..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=C1B905DAFDB41A016663046626FF6CBD662CC9926B053606",
-          "platform": "sogou_wechat_index",
-          "published_at": null,
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "discoverable title only; no reading-count evidence",
-          "title_mechanisms": [
-            "主题直述"
-          ]
-        },
-        {
-          "title": "全球最时髦的95后女明星们!最近都在背什么包?",
-          "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7bmsFp351he7kbWFhVfadhFpVq6Ggp2zVqXa8Fplpd9Y19Nz053To7sxh3Yn_j8Xa-EsS8tT8wHS4bH7AbZIBiLfattHSsh3DZ2odp_UYQ07kvhkYNuxIOqFriGdaZEeaUGrPBbGoOFE9ZHqmXcR1t6CKIDda0jmZ1nTRUEQwUHAd2VwcOo_iOi9q6hPrV0IbL_sNbZ1XMj2F06z8uHWXJ5LU3lqtPw9g..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=C1B905DAFDB41A016663046626FF6CBD662CC9926B053606",
-          "platform": "sogou_wechat_index",
-          "published_at": null,
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "discoverable title only; no reading-count evidence",
-          "title_mechanisms": [
-            "悬念提问"
-          ]
-        },
-        {
-          "title": "明星的街拍穿搭,我们普通人照搬也能好看!",
-          "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7bmsFp351he7kbWFhVfadhFpVq6Ggp2zVqXa8Fplpd9ApCKc_SuLsP7UqT_lKKCrQI5ueXbS5qbp0_2B9Vk9AaGL9_wnyySte_zzSRnRGQuPuctzMYLoWhyKkGg0VS9_hMlCi1p-bPxEFATJD2vueQjkW44xvWfEC6e-4jBWauV57-PySmcLFxZFOFtRb9owwr9itl4tlZ9wyXBfGuOL8XvzHZXxeLdyg..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=C1B905DAFDB41A016663046626FF6CBD662CC9926B053606",
-          "platform": "sogou_wechat_index",
-          "published_at": null,
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "discoverable title only; no reading-count evidence",
-          "title_mechanisms": [
-            "具体人群"
-          ]
-        },
-        {
-          "title": "跟着女星学穿搭,买买买!不后悔!",
-          "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6ft3wfAVofsP5Peu-UiA4DArAFTzR-YcmNr2zJ5Ys6wuVgrFeYQugDplZKPUx4oHwwxNIPUuzgp5DcSVBZMJNFJFhkdULt37KoiN8gRXopIHKm7DEXMIjtEvCvyPm_CW6yALt3TzqfQAwChInVWN4GAj0io5nW-cWnD-rZNjxx87Sh1_MNmZjS-QPCgvF_oU8f-w2meEOVxr4e26RwNAyQ67O2LQSbxqoqCOdpRSGbylKrfxVr2bVlnUQVe2NfiAjQQLqbYowjKs.&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=C1B905DAFDB41A016663046626FF6CBD662CC9926B053606",
-          "platform": "sogou_wechat_index",
-          "published_at": null,
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "discoverable title only; no reading-count evidence",
-          "title_mechanisms": [
-            "主题直述"
-          ]
-        },
-        {
-          "title": "杨幂穿超季唐嫣坐C位,Maria FENDI回归首秀,蒋勤勤陈妍希宋雨琦闪耀,米兰女装周把关注度拉满了!",
-          "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7bmsFp351he7kbWFhVfadhFpVq6Ggp2zVqXa8Fplpd9o9r8XyAEsB_-ocC8AArfCY9MMXMA0S7aUp9NGciHQyCnIRWaI9ZM13AXEwVCO-yGrDmaDMAv29uBmGho2EnwmzicM_ihx_W3MjdYAogWTV7FPmcS3TU18O91uShe-hlD28AUX5wZjxEJs_kQ0HtBuakBpDrqsfV-6j-PG1iIAzfYl_Q5RRZQjg..&type=2&query=2026 %E5%A5%B3%E6%98%8E%E6%98%9F Jisoo %E5%BC%A0%E5%91%98%E7%91%9B %E6%9D%A8%E5%B9%82 %E6%9C%BA%E5%9C%BA%E7%A9%BF%E6%90%AD %E5%85%AC%E4%BC%97%E5%8F%B7&token=C1B905DAFDB41A016663046626FF6CBD662CC9926B053606",
-          "platform": "sogou_wechat_index",
-          "published_at": null,
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "discoverable title only; no reading-count evidence",
-          "title_mechanisms": [
-            "主题直述"
-          ]
-        }
-      ]
+      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."
     }
   },
   "all_live_sources_unavailable": false

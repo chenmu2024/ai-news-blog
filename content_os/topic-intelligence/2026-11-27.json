@@ -1,0 +1,1311 @@
+{
+  "generated_at": "2026-11-27T12:09:45.297662+08:00",
+  "local_date": "2026-11-27",
+  "monetary_cost": "no paid API",
+  "auto_publish": false,
+  "public_ranking_discovery": {
+    "status": "unavailable",
+    "pages_found": 0,
+    "errors": [
+      {
+        "day": "2026-11-26",
+        "status": "unavailable",
+        "reason": "ranking marker or expected day absent; do not trust snapshot"
+      },
+      {
+        "day": "2026-11-25",
+        "status": "unavailable",
+        "reason": "ranking marker or expected day absent; do not trust snapshot"
+      },
+      {
+        "day": "2026-11-24",
+        "status": "unavailable",
+        "reason": "ranking marker or expected day absent; do not trust snapshot"
+      },
+      {
+        "day": "2026-11-23",
+        "status": "unavailable",
+        "reason": "ranking marker or expected day absent; do not trust snapshot"
+      },
+      {
+        "day": "2026-11-22",
+        "status": "unavailable",
+        "reason": "ranking marker or expected day absent; do not trust snapshot"
+      }
+    ],
+    "freshness_status": "unverifiable_single_day",
+    "daily_overlap_checks": [],
+    "independent_recent_viral_evidence": false,
+    "warning": "Third-party ranking claims still require original article verification."
+  },
+  "profiles": {
+    "qiezhi": {
+      "profile": "qiezhi",
+      "query": "毛泽东选集 人生 思想 公众号",
+      "sample_count": 0,
+      "heat_evidence_count": 0,
+      "public_ranking_signal_count": 0,
+      "public_ranking_signals": [],
+      "required_samples": 5,
+      "required_heat_evidence": 2,
+      "topic_gate": "insufficient_evidence",
+      "writing_allowed": true,
+      "writing_mode": "fact_verified_source_fallback",
+      "candidate_confidence": "indexed_title_only",
+      "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
+      "sources": {
+        "wechat": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "毛泽东选集 人生 思想 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "毛选 调查研究 工作 方法 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "google_news_index": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "毛泽东选集 人生 思想 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "毛选 调查研究 工作 方法 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "images": {
+          "status": "ok",
+          "count": 5
+        },
+        "bing_news_fallback": {
+          "status": "empty",
+          "count": 0,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "general_news_fallback": {
+          "status": "ok",
+          "count": 6,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "public_rankings": {
+          "status": "no_profile_match",
+          "count": 0
+        }
+      },
+      "articles": [],
+      "fallback_news_signals": [
+        {
+          "title": "学廉知纪明底线，知行合一赴基层——中国清洁发展机制基金管理中心组织青年开展廉洁教育与基层工作方法专题学习活动 - 中国清洁发展机制基金",
+          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE8xSWdLYXVXczFuMVdQc19SN2NtRFozMklqa29QZ2JGOXNmUV9qeUVPQUJTeXNZazV1MWo4MDVVdmE4MGlITjJ5YQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 11 Sep 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "附属第一医院举办学习贯彻习近平新时代中国特色社会主义思想主题教育理论学习第三期读书班 - 中山大学SUN YAT-SEN UNIVERSITY",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1qWnl4RUc4VmhPNHI0X2RRUUZMY2N5Y29JbEdrNXlpT3ZLS3hyNTNPN1lHVnZqN0RDQmRQU1pNLU1zMDdtRURvSG8zMmgtWFdtSTdfWUR1clhSZklzelFR?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Wed, 10 May 2023 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "深学细照笃行，让主题教育在清华“落地生花”! - 清华大学",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1XTHB4VGNDNkZ4NFB6Z1FudG5nN0JUSTFhcjVkRE1waWJpekwxM3l4cEdJZTRQVkhtcTRBelZkbXN2bGlRdDNiWWlQSVF0UUQ4dGlPRnJPZEpTcTh5?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 12 May 2023 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "科技部直属机关党委党支部组织召开主题教育读书班第三次专题报告会 - 中华人民共和国科学技术部",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBuV2lLMnY4dFh6bHkxQWUzdkxNQ1MzZWlGT1RVMjVRbmpKVVhoRVFLQmg2OTFqRmxmcU5Ma0czM0I1b0tZeWprdURHSWhDaExpVUF0bUpobDN2S0lIX1M5U3pEeC0zUlhfQzVKSk5GSExLSWdtMnc?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 05 Jun 2023 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "海关总署党委学习贯彻习近平新时代中国特色社会主义思想主题教育读书班开班（图） - 中华人民共和国海关总署",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOM1g2THFVQTBua1RxeEtkUFlqUDNkallKRDUwY3g0bVh2OWNralZBd2ViRlV0R09SaFZfSzh1LXRSdjV0Q0R0Skt6N2FfdS1MNXJScDdhVnVmb1BLSjBvTG9zcVVOUVNiTldiNFJQZm1hTld2Qzd4Zk00Y3lhMlZqU0dZYw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Tue, 25 Apr 2023 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "新疆维吾尔自治区司法厅以实干担当推动主题教育扎实有效开展 - 中华人民共和国司法部",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcTRkYVN3VDd0cXNJOXdUaUx2d0VEM180NHNjZHU1RzQxLVFHX2dWbkxmRmxLaVg3dC1zcmZWMTY5b3Frakg1MFo2ajRZWVRCVENLUmtDWXZTRGxnc2NMa19OOFNpWlYyTFRVcWJ3RE1tSGlieThxREJGWUZaRUlKem8xdGVrRkNQLVgxT0Nqc0o5M0NKZGsxV3h3bXZMUjUtaHlsWEpqSzlwSS1ZVjhtdlBocw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 02 Jun 2023 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        }
+      ],
+      "fallback_news_count": 6,
+      "image_candidates": [
+        {
+          "title": "File:BritNatural History Museum2.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/BritNatural_History_Museum2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:BritNatural_History_Museum2.jpg",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "creator": "Thorfinn StainforthPerspective corrected on 2009-01-03 by Berthold Werner",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Claude Bernou Carte de lAmerique septentrionale.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Claude_Bernou_Carte_de_lAmerique_septentrionale.jpg/960px-Claude_Bernou_Carte_de_lAmerique_septentrionale.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Claude_Bernou_Carte_de_lAmerique_septentrionale.jpg",
+          "license_url": null,
+          "creator": "\nBernou, Claude (b. 16..–d. 17..), Abbot",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Collections for a history of Staffordshire (1899) (14757167366).jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Collections_for_a_history_of_Staffordshire_%281899%29_%2814757167366%29.jpg/960px-Collections_for_a_history_of_Staffordshire_%281899%29_%2814757167366%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Collections_for_a_history_of_Staffordshire_(1899)_(14757167366).jpg",
+          "license_url": "https://www.flickr.com/commons/usage/",
+          "creator": "Internet Archive Book Images",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Confederate 100 Dollars.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Confederate_100_Dollars.jpg/960px-Confederate_100_Dollars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Confederate_100_Dollars.jpg",
+          "license_url": null,
+          "creator": "Confederate States of America.",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Franeker. Twee weeskinderen. 03-08-2021. (actm) 03.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Franeker._Twee_weeskinderen._03-08-2021._%28actm%29_03.jpg/960px-Franeker._Twee_weeskinderen._03-08-2021._%28actm%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Franeker._Twee_weeskinderen._03-08-2021._(actm)_03.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "Agnes Monkelbaan",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        }
+      ],
+      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."
+    },
+    "wechat": {
+      "profile": "wechat",
+      "query": "AI Agent 独立开发 SaaS 一人公司 公众号",
+      "sample_count": 0,
+      "heat_evidence_count": 0,
+      "public_ranking_signal_count": 0,
+      "public_ranking_signals": [],
+      "required_samples": 5,
+      "required_heat_evidence": 2,
+      "topic_gate": "insufficient_evidence",
+      "writing_allowed": true,
+      "writing_mode": "fact_verified_source_fallback",
+      "candidate_confidence": "indexed_title_only",
+      "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
+      "sources": {
+        "wechat": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "AI Agent 独立开发 SaaS 一人公司 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "AI创业 SaaS 独立开发者 真实案例 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "google_news_index": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "AI Agent 独立开发 SaaS 一人公司 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "AI创业 SaaS 独立开发者 真实案例 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "images": {
+          "status": "ok",
+          "count": 5
+        },
+        "bing_news_fallback": {
+          "status": "empty",
+          "count": 0,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "general_news_fallback": {
+          "status": "ok",
+          "count": 6,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "public_rankings": {
+          "status": "no_profile_match",
+          "count": 0
+        }
+      },
+      "articles": [],
+      "fallback_news_signals": [
+        {
+          "title": "背靠阿里、Tether两大巨头，AIsa 启动百万美金AI创业扶持计划，首期200席 - 36Kr",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBva0tNYWxVTTE0UklGbWJPeFE1R2NOSGd0Mm1BUmdCWm5aYUQtZXNXamNRSUhCaEFrOTNCbHlqU25LSDhGZmg0d3Z1dkVHdw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Thu, 19 Nov 2026 19:05:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "36氪研究院:《2026年中国AI Agent行业发展研究报告｜投资分析》 - 发现报告",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE8tZGw1TjJocmhJSkQxUGFma2NBMHc1dTJxSEFSclZQd0Q0ZGcwMmF1b2Y5Vzh5ZHV0VUg3em9iTlI2MEY3OXdGZ19zQThfNXBR?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sat, 26 Sep 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "Anthropic出手，一批Agent创业公司死去 - 智源社区",
+          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1aUWxWU3hIa2RRSjB5T0pGZUdFSjdsMjNLMURTZ3dsd1R0MkdSdnotcjRoYXcyXy1OZG1Lck9oaDdpcXFpZ2hlVw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sat, 11 Apr 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "2026 AI真正元年：从一人公司到AI自治社交 - ThePaper.cn",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1rb3hkNmJJLTB0cDVTVVc4aU16Ykt5bjJQUGprZzhqVEZQSnQ0bEt5SXVUS25vWVlud2pxQzBaSHpadGFkek9qcW1BWkE1TE5jYjFoSlh4UERyOGEyVmpodw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 09 Feb 2026 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "18 岁创业者用 OpenClaw 管 16 个 AI Agent，一个人的 Agent 公司怎么运转 - InfoQ.cn",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1tNEE5Y28tbXgtZGxHdTlha2FNcW1YMkVNQzZodEpMWk9QV0tRbG84N0VReTV4OHJja24xNW9qaG9ZY3VzSENlUlVmZWpkbHFWakdlSEVOeU1yRWNpMEE?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 13 Mar 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "专家探讨To Agent时代App与SaaS的价值重构与商业变革 - 虎嗅",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE14eHF6bzRfZHllbG5JTDJBendoRW9QaWJ3ajVWRXZCbkpha3Y4TjlaNmFtMVpLM1FZX2ZwSzZvcFJlWENGWmxGU0g5UEtCRnZxS1dBeA?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Tue, 26 May 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        }
+      ],
+      "fallback_news_count": 6,
+      "image_candidates": [
+        {
+          "title": "File:Artificial Intelligence, AI.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Artificial_Intelligence%2C_AI.jpg/960px-Artificial_Intelligence%2C_AI.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Artificial_Intelligence,_AI.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "mikemacmarketing",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Artificial Intelligence & AI & Machine Learning.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Artificial_Intelligence_%26_AI_%26_Machine_Learning.jpg/960px-Artificial_Intelligence_%26_AI_%26_Machine_Learning.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Artificial_Intelligence_%26_AI_%26_Machine_Learning.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "mikemacmarketing",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Artificial intelligence prompt completion by dalle mini.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Artificial_intelligence_prompt_completion_by_dalle_mini.jpg/960px-Artificial_intelligence_prompt_completion_by_dalle_mini.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Artificial_intelligence_prompt_completion_by_dalle_mini.jpg",
+          "license_url": null,
+          "creator": "Prompt by JPxG, model by Boris Dayma, upscaler by Xintao Wang, Liangbin Xie et al.",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Artificial male intelligence.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Artificial_male_intelligence.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Artificial_male_intelligence.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "BAUSCHRON",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Clickworker 3d-printed by Max Gruber.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Clickworker_3d-printed_by_Max_Gruber.jpg/960px-Clickworker_3d-printed_by_Max_Gruber.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Clickworker_3d-printed_by_Max_Gruber.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "creator": "Max Gruber",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        }
+      ],
+      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."
+    },
+    "business": {
+      "profile": "business",
+      "query": "社保 医保 公积金 失业金 劳动者 福利政策 公众号",
+      "sample_count": 0,
+      "heat_evidence_count": 0,
+      "public_ranking_signal_count": 0,
+      "public_ranking_signals": [],
+      "required_samples": 5,
+      "required_heat_evidence": 2,
+      "topic_gate": "insufficient_evidence",
+      "writing_allowed": true,
+      "writing_mode": "fact_verified_source_fallback",
+      "candidate_confidence": "indexed_title_only",
+      "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
+      "sources": {
+        "wechat": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "社保 医保 公积金 失业金 劳动者 福利政策 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "灵活就业 养老金 租房 人才补贴 申请条件 官方 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "google_news_index": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "社保 医保 公积金 失业金 劳动者 福利政策 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "灵活就业 养老金 租房 人才补贴 申请条件 官方 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "images": {
+          "status": "ok",
+          "count": 5
+        },
+        "bing_news_fallback": {
+          "status": "empty",
+          "count": 0,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "general_news_fallback": {
+          "status": "ok",
+          "count": 5,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "public_rankings": {
+          "status": "no_profile_match",
+          "count": 0
+        }
+      },
+      "articles": [],
+      "fallback_news_signals": [
+        {
+          "title": "12月1日起，河南医保支付范围部分项目有调整！ - news.qq.com",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xTE8wSXQyTXBvdXhQMXVoYjBPRWJndmxtMmc3MGZzTzZXcjI1eVBYUkIwSk1KTDRCdTlDbVQ5SGRfSThNOVQ2YzU1UXg4eklHai1jRTVB?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sat, 21 Nov 2026 13:03:36 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "2026深圳灵活就业社保+公积金全指南｜基数、比例、每月交多少钱 - Sohu",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mcllScGVqR3J3cGg1WHBTQmVDdTRMX3I5SllQbEVmbDUwVkNIUlY1OXpVM285LVJSRG1ud3Z0a1lQUjl3R3pSa0hoWTlIR2d3TFJv?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 17 Aug 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "北京个人怎么交五险一金，没有单位也能全缴，四步搞定不跑冤枉路 - 腾讯新闻",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5za2xabnBIb1J3YlVid0cwb2RuS0JiQnhtUWVYbWZyckN0Rzc3Y3R4aklVWDhfNDZWRGdzNEVHclZoaFNBMmNSYndIV1Z1LV90Vm1UU0dB?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Thu, 17 Sep 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "2026唐山社保、公积金缴费基数 - 腾讯新闻",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE15bVZROVltYzBGRWoyZWRfd2JzN0FyX1ZfYUtSV0ItcnhWMmx2SndrcEdqSXZZd1JadWhRWTlJTWdBVmxuRlN2QzF1MVB1M1JIMGdPb3h3?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Thu, 13 Aug 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "养老政策知多少丨广州市民最关心这些养老保险问题 - 广州市人民政府",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQRzZOT0lCRUpyeEVMaXBLYk9hQ3JkbFV4bzhqX2RMcFNRb0RrMGIxeUFyOGJfbEdDRW9xQ3VkMUZROHU4ZldpSUNwNWgwd3R3dnVfX3BYZEdyWFNySHFSbWxTbUV6SVl3UjVxSkNiZUQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 06 Feb 2026 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        }
+      ],
+      "fallback_news_count": 5,
+      "image_candidates": [
+        {
+          "title": "File:Bulacan Public Employment Service Office 11.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Bulacan_Public_Employment_Service_Office_11.jpg/960px-Bulacan_Public_Employment_Service_Office_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bulacan_Public_Employment_Service_Office_11.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "FBenjr123",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Bulacan Public Employment Service Office 12.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Bulacan_Public_Employment_Service_Office_12.jpg/960px-Bulacan_Public_Employment_Service_Office_12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bulacan_Public_Employment_Service_Office_12.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "FBenjr123",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Bulacan Public Employment Service Office 13.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bulacan_Public_Employment_Service_Office_13.jpg/960px-Bulacan_Public_Employment_Service_Office_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bulacan_Public_Employment_Service_Office_13.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "FBenjr123",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Bulacan Public Employment Service Office 15.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Bulacan_Public_Employment_Service_Office_15.jpg/960px-Bulacan_Public_Employment_Service_Office_15.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bulacan_Public_Employment_Service_Office_15.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "FBenjr123",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Bulacan Public Employment Service Office 17.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Bulacan_Public_Employment_Service_Office_17.jpg/960px-Bulacan_Public_Employment_Service_Office_17.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bulacan_Public_Employment_Service_Office_17.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "FBenjr123",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        }
+      ],
+      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."
+    },
+    "zizhitongjian": {
+      "profile": "zizhitongjian",
+      "query": "资治通鉴 历史 人性 管理 公众号",
+      "sample_count": 0,
+      "heat_evidence_count": 0,
+      "public_ranking_signal_count": 0,
+      "public_ranking_signals": [],
+      "required_samples": 5,
+      "required_heat_evidence": 2,
+      "topic_gate": "insufficient_evidence",
+      "writing_allowed": true,
+      "writing_mode": "fact_verified_source_fallback",
+      "candidate_confidence": "indexed_title_only",
+      "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
+      "sources": {
+        "wechat": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "资治通鉴 历史 人性 管理 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "资治通鉴 帝王 决策 历史故事 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "google_news_index": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "资治通鉴 历史 人性 管理 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "资治通鉴 帝王 决策 历史故事 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "images": {
+          "status": "ok",
+          "count": 5
+        },
+        "bing_news_fallback": {
+          "status": "empty",
+          "count": 0,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "general_news_fallback": {
+          "status": "ok",
+          "count": 6,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "public_rankings": {
+          "status": "no_profile_match",
+          "count": 0
+        }
+      },
+      "articles": [],
+      "fallback_news_signals": [
+        {
+          "title": "AI赋能沉浸式读史，少儿通鉴APP践行2025素养教育新范式 - 中华网",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFA2eGdPQnlaclotT0ZMVUdXdmFaWkpuLU90NURONy1YbXBzQW1RZVhFcW1hTHFoMzUtM3BOT0tMWXhuNGpudWw0X0stT0ZuTXF4NVhXYV9RQUNRWV8zNnc?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Tue, 18 Nov 2025 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "普通人如何读完300万字的《资治通鉴》？_快讯 - 中国出版传媒商报",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9pNE5nT19QN21mV0JJQ0E0OFhsc3hMaEYzUkFNdkFqNUF6YTRNNGIxMkpQS3RUY1ktQzRuMWRFb2ZmM005MmpNLTFRSFF4Rkc0clAyV0d2eGZUYWQt?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 23 Oct 2026 07:46:35 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "30岁后，建议多读读《资治通鉴》 - 三联生活周刊",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE50ejlyUnE4cE10MVUyVVpVMHhLa3RIMFJZZk9OTnN1ZDU4eXRoMk5FQjk4LXh5Z2cyQlhGYzVPV3k2X3dxYUtDTGZzcFFZeGVnd3YwZy02Sk9NSU5SSjJQc0M1dGhxYWlMODRfWExn?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Thu, 18 Dec 2025 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "宋徽宗“南幸”与姚平仲劫寨 - ThePaper.cn",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE42WnVwSTZ1ZWh2Tk1fOWsxdGRtQm1fU0U1YWQ3cEp1aHZJOHVtSnR2am1GNDA5MUtYTFFKVUVIZXVxY3diNjh6YWJwd29NN3lGTUh1ZjFqaHVmTFBhMkZ0Vg?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sat, 27 Jun 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "中国历史上最纷乱的时代之一，12本书读懂魏晋南北朝 - 腾讯新闻",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1BRXROLXBtN2trRGx0clNGVl9jQzZ3TGN4d2poVWplTTNRMk5tMTc0a3ZZSmlzX01uM28yVFMzQzg2alRQY3FYWDZsbDJ3NnE1Nlg1enVn?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sat, 14 Nov 2026 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "为什么成功人士都爱读历史？清华大学历史系教授张国刚读书日谈读书 - 每日经济新闻",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9HQXlHRmgweUFiNGlhVjZIc09pMHZOekVHTFdfYTF2WmZxNHBYOXZNcTVnVzFxR1BMV1U4Z1JBb0JfenNyMnJ0bGI3ZkU3ZWNsZXRwM2hqNEMtcmptbHVGbG5iZ3ZFQQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sun, 23 Apr 2023 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        }
+      ],
+      "fallback_news_count": 6,
+      "image_candidates": [
+        {
+          "title": "File:Books at the Bisbee Historical Museum, Arizona.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Books_at_the_Bisbee_Historical_Museum%2C_Arizona.jpg/960px-Books_at_the_Bisbee_Historical_Museum%2C_Arizona.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Books_at_the_Bisbee_Historical_Museum,_Arizona.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "Woody Hibbard",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Books in Russian. img 05.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Books_in_Russian._img_05.jpg/960px-Books_in_Russian._img_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Books_in_Russian._img_05.jpg",
+          "license_url": null,
+          "creator": "Scanning Dmitry Makeev, scan date - 2020 year.",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Historical Dictionary of Zambia.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Historical_Dictionary_of_Zambia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Historical_Dictionary_of_Zambia.jpg",
+          "license_url": null,
+          "creator": "Government of Zambia (flag) and Scarecrow Press",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Historical Law books.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Historical_Law_books.jpg/960px-Historical_Law_books.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Historical_Law_books.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "Indian-photographer",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Historical Museum of LBOT bank books.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Historical_Museum_of_LBOT_bank_books.jpg/960px-Historical_Museum_of_LBOT_bank_books.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Historical_Museum_of_LBOT_bank_books.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "creator": "Solomon203",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        }
+      ],
+      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."
+    },
+    "parenting": {
+      "profile": "parenting",
+      "query": "育儿补贴 生育津贴 儿童医保 托育 家庭政策 公众号",
+      "sample_count": 0,
+      "heat_evidence_count": 0,
+      "public_ranking_signal_count": 0,
+      "public_ranking_signals": [],
+      "required_samples": 5,
+      "required_heat_evidence": 2,
+      "topic_gate": "insufficient_evidence",
+      "writing_allowed": true,
+      "writing_mode": "fact_verified_source_fallback",
+      "candidate_confidence": "indexed_title_only",
+      "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
+      "sources": {
+        "wechat": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "育儿补贴 生育津贴 儿童医保 托育 家庭政策 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "孕产 生育保险 多子女购房补贴 申请 户籍 官方 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "google_news_index": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "育儿补贴 生育津贴 儿童医保 托育 家庭政策 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "孕产 生育保险 多子女购房补贴 申请 户籍 官方 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "images": {
+          "status": "ok",
+          "count": 5
+        },
+        "bing_news_fallback": {
+          "status": "empty",
+          "count": 0,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "general_news_fallback": {
+          "status": "ok",
+          "count": 6,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "public_rankings": {
+          "status": "no_profile_match",
+          "count": 0
+        }
+      },
+      "articles": [],
+      "fallback_news_signals": [
+        {
+          "title": "发钱了！3000多元已入账！湖北很多人已领到- 湖北日报新闻客户端 - 湖北日报传媒集团",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5kUGsxRDdwRmNBMFhHbWJEWUVLODRKSVJ3Z0tjRFloU3FMOEdKcXFxRGEtWHFvdUdkdGtmLU1OU0NWUVlqOFJDUDVQQ3Nfd0RXTWd1SHpLODQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Tue, 27 Jan 2026 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "育儿补贴制度详解来了（大健康观察） - 人民日报",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPTDE1YU16RHVDZjRleTVVUTI5T2xieU5kTXVoSlBfRmpoaVBMbVVyUFo1SUI5bUl6WnZnR3dtRVpMQ1ZiTHBCaGY5U2ZWVnpQYlpndTBEd21qd1pabmUwTGhITVZvU2xOemdFcllPbzAyM3I0RnlJREREZV9tTlRsemo3dGU?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 01 Aug 2025 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "科学与健康丨全方位支持 降低生育养育教育成本 - 新华网",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE44a2FJU29FVEo5NlJVbUZhN0dxR2p2bmpOWDRJWGRFOGVKM0pJdk9xQkR4Z3h3SjVDR2hJNjJBNm50emU0cDJwb0VnLWFYT0xCM3pfSjY3T3NHZ2tJNEhoOVZmODkyaVduZmxMQmFFUG5jTkp2akx5TEMwdlJuNU0?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sat, 17 Jan 2026 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "生育补贴怎么补？“带娃难”如何缓解？各地持续探索完善→ - 华龙网",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdTJjQVp3UFBoQzYtb1k0YWJaMHRuRlJZYm1iRkViM00wSElISFhmOGF6RUtDRHota3huYy1lYU5MRVdTcWFlTjE3VVVTYlhMNkFxdTVXR21oRFJ2YXprV3NaM0pFdDdYeUVYR1p0M3F2U2d6Q0EwYmd1V2JhUmdFWkc1ZnRaZV85THJRZDJOUWhmQQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Sat, 28 Dec 2024 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "荆门推出27条暖心举措，让生养孩子更有底气！ - 湖北日报传媒集团",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBNNzNHQUpmV1VZcG9XenNSYWsxM3dMV1pJWVJnd3dHNVNQWmVVa0pGelN4SDhLcER2NHBzd3dGN0V2aEgyMm5JNllPZGhLS2kzSHFDNmRCbk1mZjNpTVE?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Tue, 09 Dec 2025 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "倡导积极婚育观 精准施策稳生育 - 人民日报",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNYTMxSGEyYmRLLVc4M3BPNzVIR0Vqajk4Rm5kc1Y3cnA5VWp4Vk5CQjBaTUwyMENfblZpaVlzTXVhSERHY1JnNTEwRTQ5ejRCdjU4R2xUdld6ckZhbDc0d2VCY01UNDdEYzVNMm0tV3hFTDNfV3NPN1JqbkpGVUtiRw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 05 Jan 2026 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        }
+      ],
+      "fallback_news_count": 6,
+      "image_candidates": [
+        {
+          "title": "File:Agreement on Family Child Care Providers (11983499754).jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Agreement_on_Family_Child_Care_Providers_%2811983499754%29.jpg/960px-Agreement_on_Family_Child_Care_Providers_%2811983499754%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Agreement_on_Family_Child_Care_Providers_(11983499754).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "Dannel Malloy",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Center-Based Child Care Costs Compared to Other Major Household Expenses.tiff",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Center-Based_Child_Care_Costs_Compared_to_Other_Major_Household_Expenses.tiff/lossless-page1-960px-Center-Based_Child_Care_Costs_Compared_to_Other_Major_Household_Expenses.tiff.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Center-Based_Child_Care_Costs_Compared_to_Other_Major_Household_Expenses.tiff",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "Cakingry",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Center-Based Child Care Costs and Other Major Household Expenses.png",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Center-Based_Child_Care_Costs_and_Other_Major_Household_Expenses.png/960px-Center-Based_Child_Care_Costs_and_Other_Major_Household_Expenses.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Center-Based_Child_Care_Costs_and_Other_Major_Household_Expenses.png",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "Cakingry",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Child care options while on the CDC waitlist (5560894).jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Child_care_options_while_on_the_CDC_waitlist_%285560894%29.jpg/960px-Child_care_options_while_on_the_CDC_waitlist_%285560894%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Child_care_options_while_on_the_CDC_waitlist_(5560894).jpg",
+          "license_url": null,
+          "creator": "U.S. Air Force photo by  Shaylee Borcsani",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Family Day - Early Learning & Child Care @ Thornhill Community Centre.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Family_Day_-_Early_Learning_%26_Child_Care_%40_Thornhill_Community_Centre.jpg/960px-Family_Day_-_Early_Learning_%26_Child_Care_%40_Thornhill_Community_Centre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Family_Day_-_Early_Learning_%26_Child_Care_@_Thornhill_Community_Centre.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "creator": "Silver Dovelet",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        }
+      ],
+      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."
+    },
+    "jingyun": {
+      "profile": "jingyun",
+      "query": "女性 中年 婚姻 职场 公众号",
+      "sample_count": 0,
+      "heat_evidence_count": 0,
+      "public_ranking_signal_count": 0,
+      "public_ranking_signals": [],
+      "required_samples": 5,
+      "required_heat_evidence": 2,
+      "topic_gate": "insufficient_evidence",
+      "writing_allowed": true,
+      "writing_mode": "fact_verified_source_fallback",
+      "candidate_confidence": "indexed_title_only",
+      "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
+      "sources": {
+        "wechat": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "女性 中年 婚姻 职场 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "中年女人 母女 经济独立 婚姻 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "google_news_index": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "女性 中年 婚姻 职场 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "中年女人 母女 经济独立 婚姻 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "images": {
+          "status": "ok",
+          "count": 5
+        },
+        "bing_news_fallback": {
+          "status": "empty",
+          "count": 0,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "general_news_fallback": {
+          "status": "ok",
+          "count": 6,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "public_rankings": {
+          "status": "no_profile_match",
+          "count": 0
+        }
+      },
+      "articles": [],
+      "fallback_news_signals": [
+        {
+          "title": "法治护航职场权益 依法守护幸福家庭 浔阳区司法局走进九江石化开展女职工普法宣讲 - 九江新闻网",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9Ob2VMS3k0dk9rRXpxcENSdGsxR0pTazJpcW5IV3dpQ05oNzdCT25kSGxjcFVqRjR6Z0VibXVfMGhjbElvSk5hUEdCNzkzSnAtUmZVdndvNlVlZk41azRZ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 23 Nov 2026 02:57:53 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "马景涛前妻吴佳尼分享婚姻感悟，直言不后悔结婚，最后悔的是放弃工作 - 新浪网",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbGUtM0JvSEoza2FXS1B6ZFNvQkIyTFh6SlQzV2N1Y1ZhM2p5cXdaTzB6RGVGbzZxZEVtRVZzOWJoWjNtSVFJWTU5Q0EwMUVpcC1ZVDRsQ3YzeTRmVVdFb19icV91QmZfSFpuZERPejJVakY1eTF6aHFDWW9JMk5DY0lNdl9JR1VKWkpmQVY2a3hWTGZsLWNRZEhwQzNBcVBVQ29Mdw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Thu, 26 Mar 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "职场人婚育生活状态洞察：54.46%家庭开支为男女双方AA，近四成男性愿当全职爸爸 - 21财经",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNN3gxRTcydnp2cE1qT0JwdG52d2U4eGttOEpqVXpNZTgyTWpTUEZuRkxRbzZGTzVWdC1ja3BxNFZEbnZndWVEdUF0R3J4RlcyOUw5X2EzTTFyemM5RFRlRjJMTTlXLWgzNTFNQXRIbXB0VU93M2RmY25SdXRCaTVXbjBwQmNINTRJc0VGcDlB?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Fri, 07 Jan 2022 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "“男士优先”：中国女性面临的职场歧视和婚姻困局 - 纽约时报中文网",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE13cmtoX0NBZ1VzOTZtVXMzTWxfa20yZm1YQVhGbHA3MzhZZmtKbHlPZFJ5QTlaOUZoRHRjUmUtM2NMM1MwenR1dFEySkRYOFZRUzUxUUo5WkRrNnNCUkV1NmNQdGhIV3hydGFrMWxZcTZQdjQ?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Wed, 17 Jul 2019 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "生育成本、职场歧视、婚姻恐惧：为何越来越多中国女性不想要孩子 - BBC",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBPMHNnakJYSjFCTzg1dDkyUEhrMVZmb1hLMFhSamlLaFZidzYtdkNXX0pHNnN1QW1CcWNGSERwUVdxUVExaUw3T2kwWVdnNlBSRnVvc01YUl9GeUIxZzhZeGRudXpGUdIBa0FVX3lxTE51RVo4QjJZclI5SlFHa29nOVRYSlM1OEJ3NlZlTnl4bGhoNWNnaG5CaTZqNDFaWjRIemNSQzgwQWlFYjQzZzlpSTJ4V2xrdGdXcFh0SWZoc1BzdFdLM25qWnhVNmhMTXRYdlRv?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 27 Feb 2023 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "学者聚焦：新女性的家庭观 - 中国青年报",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9VQjlFMFZoZlNPb0xITGs2VW8tcm4wSFBxNGp0YXZtQjVlczRvVENyY1ZnSmlXVXNyNEZPM1U3MElDanp3Wm9HblpmRmFNMk5Ydi1RTVRBa3Z4aVl6VG9POVk1VUFvWldwSTNrNDhXQkgxenh0dENoeGJn?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Mon, 05 Jan 2015 08:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        }
+      ],
+      "fallback_news_count": 6,
+      "image_candidates": [
+        {
+          "title": "File:An elderly Tibetan women holding a prayer wheel on Lhasa, Barkhor.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/An_elderly_Tibetan_women_holding_a_prayer_wheel_on_Lhasa%2C_Barkhor.jpg/960px-An_elderly_Tibetan_women_holding_a_prayer_wheel_on_Lhasa%2C_Barkhor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:An_elderly_Tibetan_women_holding_a_prayer_wheel_on_Lhasa,_Barkhor.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+          "creator": "Luca Galuzzi (Lucag)",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Barcelona Street Life (7852490320).jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Barcelona_Street_Life_%287852490320%29.jpg/960px-Barcelona_Street_Life_%287852490320%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Barcelona_Street_Life_(7852490320).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "Craig Sunter from Manchester, UK",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Street life (16300759537).jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Street_life_%2816300759537%29.jpg/960px-Street_life_%2816300759537%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Street_life_(16300759537).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "Bryan Ledgard",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Street life (3660097465).jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Street_life_%283660097465%29.jpg/960px-Street_life_%283660097465%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Street_life_(3660097465).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "Bryan Ledgard",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Street life (48422195552).jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Street_life_%2848422195552%29.jpg/960px-Street_life_%2848422195552%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Street_life_(48422195552).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "madras91",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        }
+      ],
+      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."
+    },
+    "fashion": {
+      "profile": "fashion",
+      "query": "2026 女明星 Jisoo 张员瑛 杨幂 机场穿搭 公众号",
+      "sample_count": 0,
+      "heat_evidence_count": 0,
+      "public_ranking_signal_count": 0,
+      "public_ranking_signals": [],
+      "required_samples": 5,
+      "required_heat_evidence": 2,
+      "topic_gate": "insufficient_evidence",
+      "writing_allowed": true,
+      "writing_mode": "fact_verified_source_fallback",
+      "candidate_confidence": "indexed_title_only",
+      "production_rule": "Never block daily original writing due to insufficient public heat; use verified primary facts, title dedup, original-source and image gates.",
+      "sources": {
+        "wechat": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "2026 女明星 Jisoo 张员瑛 杨幂 机场穿搭 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "女明星 Jisoo Jennie 宋慧乔 刘亦菲 机场 穿搭 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "google_news_index": {
+          "status": "empty",
+          "count": 0,
+          "attempts": [
+            {
+              "query": "2026 女明星 Jisoo 张员瑛 杨幂 机场穿搭 公众号",
+              "status": "ok",
+              "count": 0
+            },
+            {
+              "query": "女明星 Jisoo Jennie 宋慧乔 刘亦菲 机场 穿搭 公众号",
+              "status": "ok",
+              "count": 0
+            }
+          ]
+        },
+        "images": {
+          "status": "ok",
+          "count": 3
+        },
+        "bing_news_fallback": {
+          "status": "empty",
+          "count": 0,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "general_news_fallback": {
+          "status": "empty",
+          "count": 0,
+          "note": "Non-WeChat news clues only; facts require primary verification."
+        },
+        "public_rankings": {
+          "status": "no_profile_match",
+          "count": 0
+        }
+      },
+      "articles": [],
+      "fallback_news_signals": [],
+      "fallback_news_count": 0,
+      "image_candidates": [
+        {
+          "title": "File:James King of the RCMP (defund) - Heart and Stroke Foundation - The Heart Truth celebrity fashion show - Red Dress - Red Gown - Thursday February 8, 2012 - Creative Commons (6966986995).jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/James_King_of_the_RCMP_%28defund%29_-_Heart_and_Stroke_Foundation_-_The_Heart_Truth_celebrity_fashion_show_-_Red_Dress_-_Red_Gown_-_Thursday_February_8%2C_2012_-_Creative_Commons_%286966986995%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:James_King_of_the_RCMP_(defund)_-_Heart_and_Stroke_Foundation_-_The_Heart_Truth_celebrity_fashion_show_-_Red_Dress_-_Red_Gown_-_Thursday_February_8,_2012_-_Creative_Commons_(6966986995).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "Jason Hargrove from Toronto, Canada",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Sir Laurence Olivier and Vivien Leigh arriving at Archerfield airport, 1948 (7947282546).jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Sir_Laurence_Olivier_and_Vivien_Leigh_arriving_at_Archerfield_airport%2C_1948_%287947282546%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Sir_Laurence_Olivier_and_Vivien_Leigh_arriving_at_Archerfield_airport,_1948_(7947282546).jpg",
+          "license_url": "https://www.flickr.com/commons/usage/",
+          "creator": "State Library of Queensland, Australia",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        },
+        {
+          "title": "File:Staatsbezoek koning Boudewijn , aankomst op Schiphol, Bestanddeelnr 910-5002.jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Staatsbezoek_koning_Boudewijn_%2C_aankomst_op_Schiphol%2C_Bestanddeelnr_910-5002.jpg/960px-Staatsbezoek_koning_Boudewijn_%2C_aankomst_op_Schiphol%2C_Bestanddeelnr_910-5002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Staatsbezoek_koning_Boudewijn_,_aankomst_op_Schiphol,_Bestanddeelnr_910-5002.jpg",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "creator": "Anefo",
+          "rights_verified": false,
+          "requires_manual_license_review": true,
+          "usage": "illustrative inspiration only; never infer actual celebrity outfit"
+        }
+      ],
+      "note": "Indexed titles and third-party list positions are not independently verified WeChat reading counts; topic gate stays conservative."
+    }
+  },
+  "all_live_sources_unavailable": false
+}

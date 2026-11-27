@@ -1,12 +1,17 @@
 {
-  "generated_at": "2026-11-26T13:48:14.289109+08:00",
-  "local_date": "2026-11-26",
+  "generated_at": "2026-11-27T12:09:45.297662+08:00",
+  "local_date": "2026-11-27",
   "monetary_cost": "no paid API",
   "auto_publish": false,
   "public_ranking_discovery": {
     "status": "unavailable",
     "pages_found": 0,
     "errors": [
+      {
+        "day": "2026-11-26",
+        "status": "unavailable",
+        "reason": "ranking marker or expected day absent; do not trust snapshot"
+      },
       {
         "day": "2026-11-25",
         "status": "unavailable",
@@ -24,11 +29,6 @@
       },
       {
         "day": "2026-11-22",
-        "status": "unavailable",
-        "reason": "ranking marker or expected day absent; do not trust snapshot"
-      },
-      {
-        "day": "2026-11-21",
         "status": "unavailable",
         "reason": "ranking marker or expected day absent; do not trust snapshot"
       }
@@ -156,11 +156,11 @@
           "reference_only": true
         },
         {
-          "title": "新疆维吾尔自治区司法厅以实干担当推动主题教育扎实有效开展 - 中华人民共和国司法部",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcTRkYVN3VDd0cXNJOXdUaUx2d0VEM180NHNjZHU1RzQxLVFHX2dWbkxmRmxLaVg3dC1zcmZWMTY5b3Frakg1MFo2ajRZWVRCVENLUmtDWXZTRGxnc2NMa19OOFNpWlYyTFRVcWJ3RE1tSGlieThxREJGWUZaRUlKem8xdGVrRkNQLVgxT0Nqc0o5M0NKZGsxV3h3bXZMUjUtaHlsWEpqSzlwSS1ZVjhtdlBocw?oc=5",
+          "title": "海关总署党委学习贯彻习近平新时代中国特色社会主义思想主题教育读书班开班（图） - 中华人民共和国海关总署",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOM1g2THFVQTBua1RxeEtkUFlqUDNkallKRDUwY3g0bVh2OWNralZBd2ViRlV0R09SaFZfSzh1LXRSdjV0Q0R0Skt6N2FfdS1MNXJScDdhVnVmb1BLSjBvTG9zcVVOUVNiTldiNFJQZm1hTld2Qzd4Zk00Y3lhMlZqU0dZYw?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Fri, 02 Jun 2023 07:00:00 GMT",
+          "indexed_at": "Tue, 25 Apr 2023 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -168,11 +168,11 @@
           "reference_only": true
         },
         {
-          "title": "中共中央办公厅印发《关于在全党大兴调查研究的工作方案》 - 新华网",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9zZE5oUThDdE9UNUhvWHFfeWl6MU9xTS1WTTRlT0N2RHp6emVsLWxXeGNYUHlYcXRZRjR0VDVwYnFDcFY4WlZVOUprWC1EWGtpakZ3QThDRjZvcHJhNnZ0QzBZVndERVBHZFVEZVln?oc=5",
+          "title": "新疆维吾尔自治区司法厅以实干担当推动主题教育扎实有效开展 - 中华人民共和国司法部",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcTRkYVN3VDd0cXNJOXdUaUx2d0VEM180NHNjZHU1RzQxLVFHX2dWbkxmRmxLaVg3dC1zcmZWMTY5b3Frakg1MFo2ajRZWVRCVENLUmtDWXZTRGxnc2NMa19OOFNpWlYyTFRVcWJ3RE1tSGlieThxREJGWUZaRUlKem8xdGVrRkNQLVgxT0Nqc0o5M0NKZGsxV3h3bXZMUjUtaHlsWEpqSzlwSS1ZVjhtdlBocw?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Sun, 19 Mar 2023 07:00:00 GMT",
+          "indexed_at": "Fri, 02 Jun 2023 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -304,35 +304,23 @@
       "articles": [],
       "fallback_news_signals": [
         {
+          "title": "背靠阿里、Tether两大巨头，AIsa 启动百万美金AI创业扶持计划，首期200席 - 36Kr",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBva0tNYWxVTTE0UklGbWJPeFE1R2NOSGd0Mm1BUmdCWm5aYUQtZXNXamNRSUhCaEFrOTNCbHlqU25LSDhGZmg0d3Z1dkVHdw?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Thu, 19 Nov 2026 19:05:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
           "title": "36氪研究院:《2026年中国AI Agent行业发展研究报告｜投资分析》 - 发现报告",
           "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE8tZGw1TjJocmhJSkQxUGFma2NBMHc1dTJxSEFSclZQd0Q0ZGcwMmF1b2Y5Vzh5ZHV0VUg3em9iTlI2MEY3OXdGZ19zQThfNXBR?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
           "indexed_at": "Sat, 26 Sep 2026 07:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "Agent的坠落，只用了一个夏天 - 36氪",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBQWm5UemVuckNBOEhWR1FIZ08zcHM4VkVjSEZXNXpHWUIzc05Ha1E4NkFsV2Y0dXBQTWRfRGNOc0ZibW03VVVFdld5SXdKQQ?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Fri, 14 Aug 2026 07:00:00 GMT",
-          "account": null,
-          "heat": null,
-          "heat_verified": false,
-          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
-          "reference_only": true
-        },
-        {
-          "title": "18 岁创业者用 OpenClaw 管 16 个 AI Agent，一个人的 Agent 公司怎么运转 - InfoQ.cn",
-          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1tNEE5Y28tbXgtZGxHdTlha2FNcW1YMkVNQzZodEpMWk9QV0tRbG84N0VReTV4OHJja24xNW9qaG9ZY3VzSENlUlVmZWpkbHFWakdlSEVOeU1yRWNpMEE?oc=5",
-          "platform": "google_news_general_non_wechat",
-          "published_at": null,
-          "indexed_at": "Fri, 13 Mar 2026 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -352,11 +340,11 @@
           "reference_only": true
         },
         {
-          "title": "专家探讨To Agent时代App与SaaS的价值重构与商业变革 - 虎嗅",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE14eHF6bzRfZHllbG5JTDJBendoRW9QaWJ3ajVWRXZCbkpha3Y4TjlaNmFtMVpLM1FZX2ZwSzZvcFJlWENGWmxGU0g5UEtCRnZxS1dBeA?oc=5",
+          "title": "2026 AI真正元年：从一人公司到AI自治社交 - ThePaper.cn",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1rb3hkNmJJLTB0cDVTVVc4aU16Ykt5bjJQUGprZzhqVEZQSnQ0bEt5SXVUS25vWVlud2pxQzBaSHpadGFkek9qcW1BWkE1TE5jYjFoSlh4UERyOGEyVmpodw?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Tue, 26 May 2026 07:00:00 GMT",
+          "indexed_at": "Mon, 09 Feb 2026 08:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -364,11 +352,23 @@
           "reference_only": true
         },
         {
-          "title": "十年SaaS创业，一夜被AI Agent清零 - 雪球",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA1WGpZLWVwMU9hRE02cXlIME8xOVFaMlAyUXZKRzBvRFdLUHo0bUdFV1NpZXdoenNJUEdCNlB2NFIyVDlYcDR1RzdQcWpfOWVm?oc=5",
+          "title": "18 岁创业者用 OpenClaw 管 16 个 AI Agent，一个人的 Agent 公司怎么运转 - InfoQ.cn",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1tNEE5Y28tbXgtZGxHdTlha2FNcW1YMkVNQzZodEpMWk9QV0tRbG84N0VReTV4OHJja24xNW9qaG9ZY3VzSENlUlVmZWpkbHFWakdlSEVOeU1yRWNpMEE?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Tue, 03 Mar 2026 08:00:00 GMT",
+          "indexed_at": "Fri, 13 Mar 2026 07:00:00 GMT",
+          "account": null,
+          "heat": null,
+          "heat_verified": false,
+          "verification": "general news discovery only; not a WeChat article or independently verified popularity",
+          "reference_only": true
+        },
+        {
+          "title": "专家探讨To Agent时代App与SaaS的价值重构与商业变革 - 虎嗅",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE14eHF6bzRfZHllbG5JTDJBendoRW9QaWJ3ajVWRXZCbkpha3Y4TjlaNmFtMVpLM1FZX2ZwSzZvcFJlWENGWmxGU0g5UEtCRnZxS1dBeA?oc=5",
+          "platform": "google_news_general_non_wechat",
+          "published_at": null,
+          "indexed_at": "Tue, 26 May 2026 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -524,11 +524,11 @@
           "reference_only": true
         },
         {
-          "title": "全省暂停！10月15日24:00前，广东社保业务暂停办理！ - 腾讯新闻",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9UUGNhYW5PTS1JdlNSQ1ZzdjZMNHNXQXliV3ZHa3owZUh1NzQ1YWE5ejgwVXhxTlYtNVpYbXFDZGVzTTVGN0JGRVJyc1lOSXlVSUhFRWd3?oc=5",
+          "title": "北京个人怎么交五险一金，没有单位也能全缴，四步搞定不跑冤枉路 - 腾讯新闻",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5za2xabnBIb1J3YlVid0cwb2RuS0JiQnhtUWVYbWZyckN0Rzc3Y3R4aklVWDhfNDZWRGdzNEVHclZoaFNBMmNSYndIV1Z1LV90Vm1UU0dB?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Thu, 08 Oct 2026 07:00:00 GMT",
+          "indexed_at": "Thu, 17 Sep 2026 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -536,11 +536,11 @@
           "reference_only": true
         },
         {
-          "title": "北京个人怎么交五险一金，没有单位也能全缴，四步搞定不跑冤枉路 - 腾讯新闻",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5za2xabnBIb1J3YlVid0cwb2RuS0JiQnhtUWVYbWZyckN0Rzc3Y3R4aklVWDhfNDZWRGdzNEVHclZoaFNBMmNSYndIV1Z1LV90Vm1UU0dB?oc=5",
+          "title": "2026唐山社保、公积金缴费基数 - 腾讯新闻",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE15bVZROVltYzBGRWoyZWRfd2JzN0FyX1ZfYUtSV0ItcnhWMmx2SndrcEdqSXZZd1JadWhRWTlJTWdBVmxuRlN2QzF1MVB1M1JIMGdPb3h3?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Thu, 17 Sep 2026 07:00:00 GMT",
+          "indexed_at": "Thu, 13 Aug 2026 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -720,11 +720,11 @@
           "reference_only": true
         },
         {
-          "title": "求真而后传神——刘统的治史之路 - 光明网",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5ib1doNk13dGhGWnpZalc2VWljR05aWlYzTUhrM19HeUdmNllxRGpJNlcxT1RIY0hqWEhhNnBzN0NkVER0VHRveXpsZXQ5STVwSG1EaUppc3JaWTBSbjlIVU5xLU9oZTA?oc=5",
+          "title": "宋徽宗“南幸”与姚平仲劫寨 - ThePaper.cn",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE42WnVwSTZ1ZWh2Tk1fOWsxdGRtQm1fU0U1YWQ3cEp1aHZJOHVtSnR2am1GNDA5MUtYTFFKVUVIZXVxY3diNjh6YWJwd29NN3lGTUh1ZjFqaHVmTFBhMkZ0Vg?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Mon, 19 Oct 2026 07:00:00 GMT",
+          "indexed_at": "Sat, 27 Jun 2026 07:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -1124,11 +1124,11 @@
           "reference_only": true
         },
         {
-          "title": "会里会外丨张晓兰：如果遭遇就业性别歧视，妇联会怎么帮你？ - 中国之声",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB4TVdkQ2V2eG4zSHpSWXpoUFVmODF2bV9ObzRqMG5Ldy1sRl9zNzU4SVhvZFllRFhQdDA1cFpOYmsyTzg5QTF5MlJiRUNwYUNTTHcweVprcFpyNFp1R19VdTdPeDRESlVzMUtoNA?oc=5",
+          "title": "生育成本、职场歧视、婚姻恐惧：为何越来越多中国女性不想要孩子 - BBC",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBPMHNnakJYSjFCTzg1dDkyUEhrMVZmb1hLMFhSamlLaFZidzYtdkNXX0pHNnN1QW1CcWNGSERwUVdxUVExaUw3T2kwWVdnNlBSRnVvc01YUl9GeUIxZzhZeGRudXpGUdIBa0FVX3lxTE51RVo4QjJZclI5SlFHa29nOVRYSlM1OEJ3NlZlTnl4bGhoNWNnaG5CaTZqNDFaWjRIemNSQzgwQWlFYjQzZzlpSTJ4V2xrdGdXcFh0SWZoc1BzdFdLM25qWnhVNmhMTXRYdlRv?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Wed, 08 Mar 2023 08:00:00 GMT",
+          "indexed_at": "Mon, 27 Feb 2023 08:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -1136,11 +1136,11 @@
           "reference_only": true
         },
         {
-          "title": "“有勇气去结，也有实力去离”：年轻人正在重新计算婚姻 - 三联生活周刊",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBvSzJSTnR0dTNYdE5IRDZEYUNXc1BXU0x0R2tnb0FWLUpkYjdhMVB2T1J6ckRTT0FaWDVkUktrTzFlc1RMWjR2R25QTjdpQkFEUDg4WlVWdHZteEZvY0NuOEl6TFd3NlhPb2M3dkJ3?oc=5",
+          "title": "学者聚焦：新女性的家庭观 - 中国青年报",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9VQjlFMFZoZlNPb0xITGs2VW8tcm4wSFBxNGp0YXZtQjVlczRvVENyY1ZnSmlXVXNyNEZPM1U3MElDanp3Wm9HblpmRmFNMk5Ydi1RTVRBa3Z4aVl6VG9POVk1VUFvWldwSTNrNDhXQkgxenh0dENoeGJn?oc=5",
           "platform": "google_news_general_non_wechat",
           "published_at": null,
-          "indexed_at": "Sun, 30 Aug 2026 02:02:23 GMT",
+          "indexed_at": "Mon, 05 Jan 2015 08:00:00 GMT",
           "account": null,
           "heat": null,
           "heat_verified": false,
@@ -1181,9 +1181,9 @@
           "usage": "illustrative inspiration only; never infer actual celebrity outfit"
         },
         {
-          "title": "File:Street life (16527343395).jpg",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Street_life_%2816527343395%29.jpg/960px-Street_life_%2816527343395%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-          "source_page_url": "https://commons.wikimedia.org/wiki/File:Street_life_(16527343395).jpg",
+          "title": "File:Street life (3660097465).jpg",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Street_life_%283660097465%29.jpg/960px-Street_life_%283660097465%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Street_life_(3660097465).jpg",
           "license_url": "https://creativecommons.org/licenses/by/2.0",
           "creator": "Bryan Ledgard",
           "rights_verified": false,

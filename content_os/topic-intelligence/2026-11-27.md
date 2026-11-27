@@ -1,6 +1,6 @@
 # 七公众号｜免费公开选题发现
 
-生成时间：2026-11-27T12:36:25.976491+08:00
+生成时间：2026-11-27T13:13:38.815240+08:00
 
 **研究证据，不是已完成的微信热门验证。** 缺少阅读量或公开榜单证据时，不得认定爆款。
 公开榜单新鲜度：unverifiable_single_day
@@ -51,11 +51,11 @@ Third-party ranking claims still require original article verification.
 - 未获取有效公开样本；不代表该类别没有热门文章。
 
 **独立新闻RSS备用线索（非微信文章、非热门证据）：**
-- [12月1日起，河南医保支付范围部分项目有调整！ - news.qq.com](https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xTE8wSXQyTXBvdXhQMXVoYjBPRWJndmxtMmc3MGZzTzZXcjI1eVBYUkIwSk1KTDRCdTlDbVQ5SGRfSThNOVQ2YzU1UXg4eklHai1jRTVB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [2026深圳灵活就业社保+公积金全指南｜基数、比例、每月交多少钱 - Sohu](https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mcllScGVqR3J3cGg1WHBTQmVDdTRMX3I5SllQbEVmbDUwVkNIUlY1OXpVM285LVJSRG1ud3Z0a1lQUjl3R3pSa0hoWTlIR2d3TFJv?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [北京个人怎么交五险一金，没有单位也能全缴，四步搞定不跑冤枉路 - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE5za2xabnBIb1J3YlVid0cwb2RuS0JiQnhtUWVYbWZyckN0Rzc3Y3R4aklVWDhfNDZWRGdzNEVHclZoaFNBMmNSYndIV1Z1LV90Vm1UU0dB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [社保断缴多久会清零？很多临沂人都白担心了 - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE9IN3pqOENGSDliR0lHanpmTXE2SEVVTzl2aFVqeWYwRFlwQVRnYUpkQ3E4NnVZU0FjbVA4VHdGUUNBbllxNFJGRjJic2R0RWhDVEoyLS1R?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [养老政策知多少丨广州市民最关心这些养老保险问题 - 广州市人民政府](https://news.google.com/rss/articles/CBMicEFVX3lxTFBQRzZOT0lCRUpyeEVMaXBLYk9hQ3JkbFV4bzhqX2RMcFNRb0RrMGIxeUFyOGJfbEdDRW9xQ3VkMUZROHU4ZldpSUNwNWgwd3R3dnVfX3BYZEdyWFNySHFSbWxTbUV6SVl3UjVxSkNiZUQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [【民生连线】5·15政务公开日政策红利直达百姓家！沈阳10部门权威解读民生热点-在线访谈 - 沈阳市人民政府](https://news.google.com/rss/articles/CBMidkFVX3lxTFAzWUNlVjdiUi13YkIxUHl1dk9ZN0NDblcwaWhCMndQbzI1S0FocmQzMXB1S29pVkdnUG56ZW9VZTNrOWZPd0JabE5YV1M4b3pwckdEZ09BaXVOM0F4LTgycklIY2Ixd2p5SGdsSWljYmx6SWd5Qnc?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [时刻帮丨社保断了有什么影响？怎么补缴？ - 湖南红网](https://news.google.com/rss/articles/CBMiYkFVX3lxTE13bGpnQXR0OGRJUEUxVkpzbzVmX1J4MG9GMElaRkZ2VDdUSnd5TUpReXBnMDdfRnZNS3ZyamVueTRWQ0diUWRpMzJiV1pNT1JwSzc1TzJxb2J4RTVtSTRleXBR?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [【民生连线】你跳过槽吗？社保医保公积金档案可得上心办！详情请进-在线访谈 - 沈阳市人民政府](https://news.google.com/rss/articles/CBMidkFVX3lxTE8xdTdCemxyUzVYc1VZcUdxMU9Ec1loV3hKSVZTUGFDalgyeWN3Vi1fWENDVkd1RUNQRVpnR3BSNERNRmJPVGFlOEZFNVM4UnR0alRJd0h5ZDU4M1paQmhPMnhKbXJXVTU1RGo4bFV5ZGg1UkNYc2c?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 
@@ -91,7 +91,7 @@ Third-party ranking claims still require original article verification.
 - [科学与健康丨全方位支持 降低生育养育教育成本 - 新华网](https://news.google.com/rss/articles/CBMif0FVX3lxTE44a2FJU29FVEo5NlJVbUZhN0dxR2p2bmpOWDRJWGRFOGVKM0pJdk9xQkR4Z3h3SjVDR2hJNjJBNm50emU0cDJwb0VnLWFYT0xCM3pfSjY3T3NHZ2tJNEhoOVZmODkyaVduZmxMQmFFUG5jTkp2akx5TEMwdlJuNU0?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [生育补贴怎么补？“带娃难”如何缓解？各地持续探索完善→ - 华龙网](https://news.google.com/rss/articles/CBMikgFBVV95cUxPdTJjQVp3UFBoQzYtb1k0YWJaMHRuRlJZYm1iRkViM00wSElISFhmOGF6RUtDRHota3huYy1lYU5MRVdTcWFlTjE3VVVTYlhMNkFxdTVXR21oRFJ2YXprV3NaM0pFdDdYeUVYR1p0M3F2U2d6Q0EwYmd1V2JhUmdFWkc1ZnRaZV85THJRZDJOUWhmQQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [延长产假、育儿补贴……我国生育支持政策体系初步建立 - 中青在线](https://news.google.com/rss/articles/CBMickFVX3lxTFBPTDZDYjVUTjNrazZXeTl4MjZMLTdRMjhLOWIyZXFnajhpQktzS0hQVnZXY0I3eVpIWnN4ZlZFV3dKZVFhRW1BZV9pMnh1NkxIbW1VOC0xNEVkVGUtZXptUmRQRmFTOGc3dXVpek9WN21wUQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [荆门推出27条暖心举措，让生养孩子更有底气！ - 湖北日报传媒集团](https://news.google.com/rss/articles/CBMiXkFVX3lxTFBNNzNHQUpmV1VZcG9XenNSYWsxM3dMV1pJWVJnd3dHNVNQWmVVa0pGelN4SDhLcER2NHBzd3dGN0V2aEgyMm5JNllPZGhLS2kzSHFDNmRCbk1mZjNpTVE?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [生育支持政策体系加快完善（健康焦点） - 中国共产党新闻网](https://news.google.com/rss/articles/CBMiakFVX3lxTE1HZzRRVzdzdzFZbWdBUmJvTzEwWERPQ0FKNUktdVlDSUliczZvcXplanpSWVFmVG1iOTZCNHoyYURFN1N2OHZMS2x4cDFQaUhpUXlRdWFLYmwwSHh3eDFNVUZJeVZ2dWFmT2c?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 

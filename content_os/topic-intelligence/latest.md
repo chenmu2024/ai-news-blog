@@ -1,6 +1,6 @@
 # 七公众号｜免费公开选题发现
 
-生成时间：2026-11-28T12:49:06.301146+08:00
+生成时间：2026-11-28T13:21:46.814638+08:00
 
 **研究证据，不是已完成的微信热门验证。** 缺少阅读量或公开榜单证据时，不得认定爆款。
 公开榜单新鲜度：unverifiable_single_day
@@ -15,11 +15,12 @@ Third-party ranking claims still require original article verification.
 - 未获取有效公开样本；不代表该类别没有热门文章。
 
 **独立新闻RSS备用线索（非微信文章、非热门证据）：**
+- [学廉知纪明底线，知行合一赴基层——中国清洁发展机制基金管理中心组织青年开展廉洁教育与基层工作方法专题学习活动 - 中国清洁发展机制基金](https://news.google.com/rss/articles/CBMiSEFVX3lxTE8xSWdLYXVXczFuMVdQc19SN2NtRFozMklqa29QZ2JGOXNmUV9qeUVPQUJTeXNZazV1MWo4MDVVdmE4MGlITjJ5YQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [附属第一医院举办学习贯彻习近平新时代中国特色社会主义思想主题教育理论学习第三期读书班 - 中山大学SUN YAT-SEN UNIVERSITY](https://news.google.com/rss/articles/CBMiX0FVX3lxTE1qWnl4RUc4VmhPNHI0X2RRUUZMY2N5Y29JbEdrNXlpT3ZLS3hyNTNPN1lHVnZqN0RDQmRQU1pNLU1zMDdtRURvSG8zMmgtWFdtSTdfWUR1clhSZklzelFR?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [科技部直属机关党委党支部组织召开主题教育读书班第三次专题报告会 - 中华人民共和国科学技术部](https://news.google.com/rss/articles/CBMidkFVX3lxTFBuV2lLMnY4dFh6bHkxQWUzdkxNQ1MzZWlGT1RVMjVRbmpKVVhoRVFLQmg2OTFqRmxmcU5Ma0czM0I1b0tZeWprdURHSWhDaExpVUF0bUpobDN2S0lIX1M5U3pEeC0zUlhfQzVKSk5GSExLSWdtMnc?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [人民周刊 - 人民日报](https://news.google.com/rss/articles/CBMid0FVX3lxTE83U0hBZ2FsQ2ZNb1Q1RERnMGRZTlRId1JsOW5jbnJBM0lCZ25jNXlURVdGb0lSTzMyZ3RqOGU0T29JZk5sTkRLZENJWnJIRDhaZjZTX21yYk8xeTlRQlpLZGJzUmNxenV6TV9aSDMzTkY1eTR4OUI4?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [校党委召开树立和践行正确政绩观学习教育读书班结业式暨党委理论学习中心组（扩大）学习会 - 对外经济贸易大学新闻网](https://news.google.com/rss/articles/CBMiWEFVX3lxTE9IS1djcTV5TmU3bGJFXzdiUDc2U1lleHBUNzA5ekF0ekhWUTRwcUN3bEtwWElSZ0dxek9SbTZSNm9ENWhiMC1UZTVVam0zVFo2UEtPNk5CaFg?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [动物所领导班子开展主题教育读书班 - 中国科学院](https://news.google.com/rss/articles/CBMigwFBVV95cUxQUjJPb0Zyb1R6VGpBRThOZEZYRmtTeWJmdVBEYW1EcW13ZEdRM28wM0xHYl9kYm1MWVNvdHlUVE1MRl9rdW5fNmYzblJ1UWJCZFZCeWMzMDJFNFB1Z1lES2ZUYUtjVXVqaHNZQjRPVWtCVWQ3TnJ3akkybmxvUndyMDNBRQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [深学细照笃行，让主题教育在清华“落地生花”! - 清华大学](https://news.google.com/rss/articles/CBMiXEFVX3lxTE1XTHB4VGNDNkZ4NFB6Z1FudG5nN0JUSTFhcjVkRE1waWJpekwxM3l4cEdJZTRQVkhtcTRBelZkbXN2bGlRdDNiWWlQSVF0UUQ4dGlPRnJPZEpTcTh5?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [海关总署党委学习贯彻习近平新时代中国特色社会主义思想主题教育读书班开班（图） - 中华人民共和国海关总署](https://news.google.com/rss/articles/CBMigwFBVV95cUxOM1g2THFVQTBua1RxeEtkUFlqUDNkallKRDUwY3g0bVh2OWNralZBd2ViRlV0R09SaFZfSzh1LXRSdjV0Q0R0Skt6N2FfdS1MNXJScDdhVnVmb1BLSjBvTG9zcVVOUVNiTldiNFJQZm1hTld2Qzd4Zk00Y3lhMlZqU0dZYw?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [新疆维吾尔自治区司法厅以实干担当推动主题教育扎实有效开展 - 中华人民共和国司法部](https://news.google.com/rss/articles/CBMiswFBVV95cUxQcTRkYVN3VDd0cXNJOXdUaUx2d0VEM180NHNjZHU1RzQxLVFHX2dWbkxmRmxLaVg3dC1zcmZWMTY5b3Frakg1MFo2ajRZWVRCVENLUmtDWXZTRGxnc2NMa19OOFNpWlYyTFRVcWJ3RE1tSGlieThxREJGWUZaRUlKem8xdGVrRkNQLVgxT0Nqc0o5M0NKZGsxV3h3bXZMUjUtaHlsWEpqSzlwSS1ZVjhtdlBocw?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 
@@ -50,11 +51,11 @@ Third-party ranking claims still require original article verification.
 - 未获取有效公开样本；不代表该类别没有热门文章。
 
 **独立新闻RSS备用线索（非微信文章、非热门证据）：**
+- [12月1日起，河南医保支付范围部分项目有调整！ - news.qq.com](https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xTE8wSXQyTXBvdXhQMXVoYjBPRWJndmxtMmc3MGZzTzZXcjI1eVBYUkIwSk1KTDRCdTlDbVQ5SGRfSThNOVQ2YzU1UXg4eklHai1jRTVB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [2026深圳灵活就业社保+公积金全指南｜基数、比例、每月交多少钱 - Sohu](https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mcllScGVqR3J3cGg1WHBTQmVDdTRMX3I5SllQbEVmbDUwVkNIUlY1OXpVM285LVJSRG1ud3Z0a1lQUjl3R3pSa0hoWTlIR2d3TFJv?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [北京个人怎么交五险一金，没有单位也能全缴，四步搞定不跑冤枉路 - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE5za2xabnBIb1J3YlVid0cwb2RuS0JiQnhtUWVYbWZyckN0Rzc3Y3R4aklVWDhfNDZWRGdzNEVHclZoaFNBMmNSYndIV1Z1LV90Vm1UU0dB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [2026唐山社保、公积金缴费基数 - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE15bVZROVltYzBGRWoyZWRfd2JzN0FyX1ZfYUtSV0ItcnhWMmx2SndrcEdqSXZZd1JadWhRWTlJTWdBVmxuRlN2QzF1MVB1M1JIMGdPb3h3?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [养老政策知多少丨广州市民最关心这些养老保险问题 - 广州市人民政府](https://news.google.com/rss/articles/CBMicEFVX3lxTFBQRzZOT0lCRUpyeEVMaXBLYk9hQ3JkbFV4bzhqX2RMcFNRb0RrMGIxeUFyOGJfbEdDRW9xQ3VkMUZROHU4ZldpSUNwNWgwd3R3dnVfX3BYZEdyWFNySHFSbWxTbUV6SVl3UjVxSkNiZUQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [【民生连线】你跳过槽吗？社保医保公积金档案可得上心办！详情请进-在线访谈 - 沈阳市人民政府](https://news.google.com/rss/articles/CBMidkFVX3lxTE8xdTdCemxyUzVYc1VZcUdxMU9Ec1loV3hKSVZTUGFDalgyeWN3Vi1fWENDVkd1RUNQRVpnR3BSNERNRmJPVGFlOEZFNVM4UnR0alRJd0h5ZDU4M1paQmhPMnhKbXJXVTU1RGo4bFV5ZGg1UkNYc2c?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [时刻帮丨社保断了有什么影响？怎么补缴？ - 湖南红网](https://news.google.com/rss/articles/CBMiYkFVX3lxTE13bGpnQXR0OGRJUEUxVkpzbzVmX1J4MG9GMElaRkZ2VDdUSnd5TUpReXBnMDdfRnZNS3ZyamVueTRWQ0diUWRpMzJiV1pNT1JwSzc1TzJxb2J4RTVtSTRleXBR?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [2025郑州社保缴费基数及比例！ - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE9LZFRaTkI4Zk9YaEtMVk95ODd4SS01WVZhUnV5RGlYWnNkY0lMMXBOQ2s0MmZmLVlxa3VIWnBTUVZUYkpjaWREaDhkN25BN3lOV2otNXhB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 
@@ -89,8 +90,8 @@ Third-party ranking claims still require original article verification.
 - [科学与健康丨全方位支持 降低生育养育教育成本 - 新华网](https://news.google.com/rss/articles/CBMif0FVX3lxTE44a2FJU29FVEo5NlJVbUZhN0dxR2p2bmpOWDRJWGRFOGVKM0pJdk9xQkR4Z3h3SjVDR2hJNjJBNm50emU0cDJwb0VnLWFYT0xCM3pfSjY3T3NHZ2tJNEhoOVZmODkyaVduZmxMQmFFUG5jTkp2akx5TEMwdlJuNU0?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [荆门推出27条暖心举措，让生养孩子更有底气！ - 湖北日报传媒集团](https://news.google.com/rss/articles/CBMiXkFVX3lxTFBNNzNHQUpmV1VZcG9XenNSYWsxM3dMV1pJWVJnd3dHNVNQWmVVa0pGelN4SDhLcER2NHBzd3dGN0V2aEgyMm5JNllPZGhLS2kzSHFDNmRCbk1mZjNpTVE?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [生育补贴怎么补？“带娃难”如何缓解？各地持续探索完善→ - 华龙网](https://news.google.com/rss/articles/CBMikgFBVV95cUxPdTJjQVp3UFBoQzYtb1k0YWJaMHRuRlJZYm1iRkViM00wSElISFhmOGF6RUtDRHota3huYy1lYU5MRVdTcWFlTjE3VVVTYlhMNkFxdTVXR21oRFJ2YXprV3NaM0pFdDdYeUVYR1p0M3F2U2d6Q0EwYmd1V2JhUmdFWkc1ZnRaZV85THJRZDJOUWhmQQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [倡导积极婚育观 精准施策稳生育 - 人民日报](https://news.google.com/rss/articles/CBMigAFBVV95cUxNYTMxSGEyYmRLLVc4M3BPNzVIR0Vqajk4Rm5kc1Y3cnA5VWp4Vk5CQjBaTUwyMENfblZpaVlzTXVhSERHY1JnNTEwRTQ5ejRCdjU4R2xUdld6ckZhbDc0d2VCY01UNDdEYzVNMm0tV3hFTDNfV3NPN1JqbkpGVUtiRw?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [总和生育率1.3意味着什么？“想生不敢生”如何破解 - 央广网](https://news.google.com/rss/articles/CBMickFVX3lxTFBXa1pjVms4WkRXOEhMaEF5MEZCcmYzZEJIblJFWFRjMXBuRHhhUGxMdWhnZ252ckpERmM0WXQzcW1JZFVTVXhoMUNLbHVqdjRZUVFXb1BVNHRrWjVJajRKZjQ2SGE3ZFNESFhUaUV1X0M5Zw?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [两会热话题丨 尽力减轻家庭“三育”负担，代表委员这样说 - 四川新闻](https://news.google.com/rss/articles/CBMiY0FVX3lxTE4wbWhvWW56YWxPSFNwb1UwQlMtN0tvenJMb096cVBpOFlTbE9NLXJRZEpYc0xqSUtySUVxSlB5Rlh3Qm9ZNGI2ZlM3N1lKYlhETHV6NmsxMUgtdER1aUctaXNTSQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [生育支持政策体系加快完善（健康焦点） - 中国共产党新闻网](https://news.google.com/rss/articles/CBMiakFVX3lxTE1HZzRRVzdzdzFZbWdBUmJvTzEwWERPQ0FKNUktdVlDSUliczZvcXplanpSWVFmVG1iOTZCNHoyYURFN1N2OHZMS2x4cDFQaUhpUXlRdWFLYmwwSHh3eDFNVUZJeVZ2dWFmT2c?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 

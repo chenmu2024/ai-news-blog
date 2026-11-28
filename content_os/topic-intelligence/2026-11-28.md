@@ -1,6 +1,6 @@
 # 七公众号｜免费公开选题发现
 
-生成时间：2026-11-28T12:19:20.397861+08:00
+生成时间：2026-11-28T12:49:06.301146+08:00
 
 **研究证据，不是已完成的微信热门验证。** 缺少阅读量或公开榜单证据时，不得认定爆款。
 公开榜单新鲜度：unverifiable_single_day
@@ -18,8 +18,8 @@ Third-party ranking claims still require original article verification.
 - [附属第一医院举办学习贯彻习近平新时代中国特色社会主义思想主题教育理论学习第三期读书班 - 中山大学SUN YAT-SEN UNIVERSITY](https://news.google.com/rss/articles/CBMiX0FVX3lxTE1qWnl4RUc4VmhPNHI0X2RRUUZMY2N5Y29JbEdrNXlpT3ZLS3hyNTNPN1lHVnZqN0RDQmRQU1pNLU1zMDdtRURvSG8zMmgtWFdtSTdfWUR1clhSZklzelFR?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [科技部直属机关党委党支部组织召开主题教育读书班第三次专题报告会 - 中华人民共和国科学技术部](https://news.google.com/rss/articles/CBMidkFVX3lxTFBuV2lLMnY4dFh6bHkxQWUzdkxNQ1MzZWlGT1RVMjVRbmpKVVhoRVFLQmg2OTFqRmxmcU5Ma0czM0I1b0tZeWprdURHSWhDaExpVUF0bUpobDN2S0lIX1M5U3pEeC0zUlhfQzVKSk5GSExLSWdtMnc?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [人民周刊 - 人民日报](https://news.google.com/rss/articles/CBMid0FVX3lxTE83U0hBZ2FsQ2ZNb1Q1RERnMGRZTlRId1JsOW5jbnJBM0lCZ25jNXlURVdGb0lSTzMyZ3RqOGU0T29JZk5sTkRLZENJWnJIRDhaZjZTX21yYk8xeTlRQlpLZGJzUmNxenV6TV9aSDMzTkY1eTR4OUI4?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [校党委召开树立和践行正确政绩观学习教育读书班结业式暨党委理论学习中心组（扩大）学习会 - 对外经济贸易大学新闻网](https://news.google.com/rss/articles/CBMiWEFVX3lxTE9IS1djcTV5TmU3bGJFXzdiUDc2U1lleHBUNzA5ekF0ekhWUTRwcUN3bEtwWElSZ0dxek9SbTZSNm9ENWhiMC1UZTVVam0zVFo2UEtPNk5CaFg?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [动物所领导班子开展主题教育读书班 - 中国科学院](https://news.google.com/rss/articles/CBMigwFBVV95cUxQUjJPb0Zyb1R6VGpBRThOZEZYRmtTeWJmdVBEYW1EcW13ZEdRM28wM0xHYl9kYm1MWVNvdHlUVE1MRl9rdW5fNmYzblJ1UWJCZFZCeWMzMDJFNFB1Z1lES2ZUYUtjVXVqaHNZQjRPVWtCVWQ3TnJ3akkybmxvUndyMDNBRQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [读书班学习笔记丨省地质调查研究院党委书记、院长蒋俊：坚定做好地勘单位改革“后半篇”文章 - 四川新闻](https://news.google.com/rss/articles/CBMiY0FVX3lxTE0wbnpnQ1pzSnF2TlFhdXBsM0s4RFV6bXZJeF9KZzlWRXZ3VlpVMTdrVkF5WmhsMlFqTHZ1MDg5djg2SkZGeG5tdzdHNHMxSkdnOGlGZWdrLTFDVTdoVUVCY0N1SQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 
@@ -50,11 +50,11 @@ Third-party ranking claims still require original article verification.
 - 未获取有效公开样本；不代表该类别没有热门文章。
 
 **独立新闻RSS备用线索（非微信文章、非热门证据）：**
-- [12月1日起，河南医保支付范围部分项目有调整！ - news.qq.com](https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xTE8wSXQyTXBvdXhQMXVoYjBPRWJndmxtMmc3MGZzTzZXcjI1eVBYUkIwSk1KTDRCdTlDbVQ5SGRfSThNOVQ2YzU1UXg4eklHai1jRTVB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [2026深圳灵活就业社保+公积金全指南｜基数、比例、每月交多少钱 - Sohu](https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mcllScGVqR3J3cGg1WHBTQmVDdTRMX3I5SllQbEVmbDUwVkNIUlY1OXpVM285LVJSRG1ud3Z0a1lQUjl3R3pSa0hoWTlIR2d3TFJv?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [北京个人怎么交五险一金，没有单位也能全缴，四步搞定不跑冤枉路 - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE5za2xabnBIb1J3YlVid0cwb2RuS0JiQnhtUWVYbWZyckN0Rzc3Y3R4aklVWDhfNDZWRGdzNEVHclZoaFNBMmNSYndIV1Z1LV90Vm1UU0dB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [2026唐山社保、公积金缴费基数 - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE15bVZROVltYzBGRWoyZWRfd2JzN0FyX1ZfYUtSV0ItcnhWMmx2SndrcEdqSXZZd1JadWhRWTlJTWdBVmxuRlN2QzF1MVB1M1JIMGdPb3h3?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [养老政策知多少丨广州市民最关心这些养老保险问题 - 广州市人民政府](https://news.google.com/rss/articles/CBMicEFVX3lxTFBQRzZOT0lCRUpyeEVMaXBLYk9hQ3JkbFV4bzhqX2RMcFNRb0RrMGIxeUFyOGJfbEdDRW9xQ3VkMUZROHU4ZldpSUNwNWgwd3R3dnVfX3BYZEdyWFNySHFSbWxTbUV6SVl3UjVxSkNiZUQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [【民生连线】你跳过槽吗？社保医保公积金档案可得上心办！详情请进-在线访谈 - 沈阳市人民政府](https://news.google.com/rss/articles/CBMidkFVX3lxTE8xdTdCemxyUzVYc1VZcUdxMU9Ec1loV3hKSVZTUGFDalgyeWN3Vi1fWENDVkd1RUNQRVpnR3BSNERNRmJPVGFlOEZFNVM4UnR0alRJd0h5ZDU4M1paQmhPMnhKbXJXVTU1RGo4bFV5ZGg1UkNYc2c?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [时刻帮丨社保断了有什么影响？怎么补缴？ - 湖南红网](https://news.google.com/rss/articles/CBMiYkFVX3lxTE13bGpnQXR0OGRJUEUxVkpzbzVmX1J4MG9GMElaRkZ2VDdUSnd5TUpReXBnMDdfRnZNS3ZyamVueTRWQ0diUWRpMzJiV1pNT1JwSzc1TzJxb2J4RTVtSTRleXBR?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [2025郑州社保缴费基数及比例！ - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE9LZFRaTkI4Zk9YaEtMVk95ODd4SS01WVZhUnV5RGlYWnNkY0lMMXBOQ2s0MmZmLVlxa3VIWnBTUVZUYkpjaWREaDhkN25BN3lOV2otNXhB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 

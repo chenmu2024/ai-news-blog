@@ -1,6 +1,6 @@
 # 七公众号｜免费公开选题发现
 
-生成时间：2026-11-28T11:50:34.067866+08:00
+生成时间：2026-11-28T12:19:20.397861+08:00
 
 **研究证据，不是已完成的微信热门验证。** 缺少阅读量或公开榜单证据时，不得认定爆款。
 公开榜单新鲜度：unverifiable_single_day
@@ -50,11 +50,11 @@ Third-party ranking claims still require original article verification.
 - 未获取有效公开样本；不代表该类别没有热门文章。
 
 **独立新闻RSS备用线索（非微信文章、非热门证据）：**
+- [12月1日起，河南医保支付范围部分项目有调整！ - news.qq.com](https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xTE8wSXQyTXBvdXhQMXVoYjBPRWJndmxtMmc3MGZzTzZXcjI1eVBYUkIwSk1KTDRCdTlDbVQ5SGRfSThNOVQ2YzU1UXg4eklHai1jRTVB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [2026深圳灵活就业社保+公积金全指南｜基数、比例、每月交多少钱 - Sohu](https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mcllScGVqR3J3cGg1WHBTQmVDdTRMX3I5SllQbEVmbDUwVkNIUlY1OXpVM285LVJSRG1ud3Z0a1lQUjl3R3pSa0hoWTlIR2d3TFJv?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [北京个人怎么交五险一金，没有单位也能全缴，四步搞定不跑冤枉路 - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE5za2xabnBIb1J3YlVid0cwb2RuS0JiQnhtUWVYbWZyckN0Rzc3Y3R4aklVWDhfNDZWRGdzNEVHclZoaFNBMmNSYndIV1Z1LV90Vm1UU0dB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [2026唐山社保、公积金缴费基数 - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE15bVZROVltYzBGRWoyZWRfd2JzN0FyX1ZfYUtSV0ItcnhWMmx2SndrcEdqSXZZd1JadWhRWTlJTWdBVmxuRlN2QzF1MVB1M1JIMGdPb3h3?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [养老政策知多少丨广州市民最关心这些养老保险问题 - 广州市人民政府](https://news.google.com/rss/articles/CBMicEFVX3lxTFBQRzZOT0lCRUpyeEVMaXBLYk9hQ3JkbFV4bzhqX2RMcFNRb0RrMGIxeUFyOGJfbEdDRW9xQ3VkMUZROHU4ZldpSUNwNWgwd3R3dnVfX3BYZEdyWFNySHFSbWxTbUV6SVl3UjVxSkNiZUQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [【民生连线】你跳过槽吗？社保医保公积金档案可得上心办！详情请进-在线访谈 - 沈阳市人民政府](https://news.google.com/rss/articles/CBMidkFVX3lxTE8xdTdCemxyUzVYc1VZcUdxMU9Ec1loV3hKSVZTUGFDalgyeWN3Vi1fWENDVkd1RUNQRVpnR3BSNERNRmJPVGFlOEZFNVM4UnR0alRJd0h5ZDU4M1paQmhPMnhKbXJXVTU1RGo4bFV5ZGg1UkNYc2c?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [时刻帮丨社保断了有什么影响？怎么补缴？ - 湖南红网](https://news.google.com/rss/articles/CBMiYkFVX3lxTE13bGpnQXR0OGRJUEUxVkpzbzVmX1J4MG9GMElaRkZ2VDdUSnd5TUpReXBnMDdfRnZNS3ZyamVueTRWQ0diUWRpMzJiV1pNT1JwSzc1TzJxb2J4RTVtSTRleXBR?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [2025郑州社保缴费基数及比例！ - 腾讯新闻](https://news.google.com/rss/articles/CBMiVkFVX3lxTE9LZFRaTkI4Zk9YaEtMVk95ODd4SS01WVZhUnV5RGlYWnNkY0lMMXBOQ2s0MmZmLVlxa3VIWnBTUVZUYkpjaWREaDhkN25BN3lOV2otNXhB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 
@@ -103,12 +103,12 @@ Third-party ranking claims still require original article verification.
 - 未获取有效公开样本；不代表该类别没有热门文章。
 
 **独立新闻RSS备用线索（非微信文章、非热门证据）：**
-- [法治护航职场权益 依法守护幸福家庭 浔阳区司法局走进九江石化开展女职工普法宣讲 - 九江新闻网](https://news.google.com/rss/articles/CBMiX0FVX3lxTE9Ob2VMS3k0dk9rRXpxcENSdGsxR0pTazJpcW5IV3dpQ05oNzdCT25kSGxjcFVqRjR6Z0VibXVfMGhjbElvSk5hUEdCNzkzSnAtUmZVdndvNlVlZk41azRZ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [马景涛前妻吴佳尼分享婚姻感悟，直言不后悔结婚，最后悔的是放弃工作 - 新浪网](https://news.google.com/rss/articles/CBMipAFBVV95cUxNbGUtM0JvSEoza2FXS1B6ZFNvQkIyTFh6SlQzV2N1Y1ZhM2p5cXdaTzB6RGVGbzZxZEVtRVZzOWJoWjNtSVFJWTU5Q0EwMUVpcC1ZVDRsQ3YzeTRmVVdFb19icV91QmZfSFpuZERPejJVakY1eTF6aHFDWW9JMk5DY0lNdl9JR1VKWkpmQVY2a3hWTGZsLWNRZEhwQzNBcVBVQ29Mdw?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [职场人婚育生活状态洞察：54.46%家庭开支为男女双方AA，近四成男性愿当全职爸爸 - 21财经](https://news.google.com/rss/articles/CBMijgFBVV95cUxNN3gxRTcydnp2cE1qT0JwdG52d2U4eGttOEpqVXpNZTgyTWpTUEZuRkxRbzZGTzVWdC1ja3BxNFZEbnZndWVEdUF0R3J4RlcyOUw5X2EzTTFyemM5RFRlRjJMTTlXLWgzNTFNQXRIbXB0VU93M2RmY25SdXRCaTVXbjBwQmNINTRJc0VGcDlB?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
-- [“男士优先”：中国女性面临的职场歧视和婚姻困局 - 纽约时报中文网](https://news.google.com/rss/articles/CBMic0FVX3lxTE13cmtoX0NBZ1VzOTZtVXMzTWxfa20yZm1YQVhGbHA3MzhZZmtKbHlPZFJ5QTlaOUZoRHRjUmUtM2NMM1MwenR1dFEySkRYOFZRUzUxUUo5WkRrNnNCUkV1NmNQdGhIV3hydGFrMWxZcTZQdjQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [学者聚焦：新女性的家庭观 - 中国青年报](https://news.google.com/rss/articles/CBMiekFVX3lxTE9VQjlFMFZoZlNPb0xITGs2VW8tcm4wSFBxNGp0YXZtQjVlczRvVENyY1ZnSmlXVXNyNEZPM1U3MElDanp3Wm9HblpmRmFNMk5Ydi1RTVRBa3Z4aVl6VG9POVk1VUFvWldwSTNrNDhXQkgxenh0dENoeGJn?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 - [生育成本、职场歧视、婚姻恐惧：为何越来越多中国女性不想要孩子 - BBC](https://news.google.com/rss/articles/CBMiZkFVX3lxTFBPMHNnakJYSjFCTzg1dDkyUEhrMVZmb1hLMFhSamlLaFZidzYtdkNXX0pHNnN1QW1CcWNGSERwUVdxUVExaUw3T2kwWVdnNlBSRnVvc01YUl9GeUIxZzhZeGRudXpGUdIBa0FVX3lxTE51RVo4QjJZclI5SlFHa29nOVRYSlM1OEJ3NlZlTnl4bGhoNWNnaG5CaTZqNDFaWjRIemNSQzgwQWlFYjQzZzlpSTJ4V2xrdGdXcFh0SWZoc1BzdFdLM25qWnhVNmhMTXRYdlRv?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [会里会外丨张晓兰：如果遭遇就业性别歧视，妇联会怎么帮你？ - 中国之声](https://news.google.com/rss/articles/CBMibEFVX3lxTFB4TVdkQ2V2eG4zSHpSWXpoUFVmODF2bV9ObzRqMG5Ldy1sRl9zNzU4SVhvZFllRFhQdDA1cFpOYmsyTzg5QTF5MlJiRUNwYUNTTHcweVprcFpyNFp1R19VdTdPeDRESlVzMUtoNA?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [文化动态 - 中国网](https://news.google.com/rss/articles/CBMiZkFVX3lxTE4zVEVkRGNRWjFKTHo2blUxX0FYb3BNUHZGVHN2bHltRXdyN0I4TXdZTFhqUzY4T0F6bEptVHp3OVJzSXlqLUxwc19pNnVoLUcxM1VFYjVMOG14UDBMbDdRODBISHBSQQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [书评丨女性探索事业与家庭双赢之历程 - 21财经](https://news.google.com/rss/articles/CBMigwFBVV95cUxPU3pwVDVnb2hDdmJ5SmxOQUYxREpSdEttc1pVUFk2ODA2dU1vUzRRUi1zRmxRcHlOSmtORnJiRlBXd05hbnhYczN3ZmJTcXk4R3dxWlZvZWVtcGpMMkVrTF9DMVpJWjRJMm9EcWdMeUJONGFBZE1zWFF1ZmFPaUViMFBlUQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
+- [哈佛大学教授：女性真的能实现事业与家庭“双丰收”吗？ - 36Kr](https://news.google.com/rss/articles/CBMiTkFVX3lxTE9wSzJ0R0lNYjRxcHVlOTkyb3RLTjA4SVhCWklxN3ZoTWZRaW9fVloxWDMwb09jN3huT3MzQVhRWUNCQ0J4WW1GbThQT3RDQQ?oc=5)（免费新闻RSS备用线索；并非微信热度，事实仍需核验）
 
 **第三方公开榜单（仅榜单声称热度，非文章阅读数核验）：** 0
 
